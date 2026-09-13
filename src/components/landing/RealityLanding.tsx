@@ -6,6 +6,7 @@ import { breadcrumbSchema, faqPageSchema, organizationSchema } from "@/lib/schem
 import { getCaseStudy } from "@/lib/content/case-studies";
 import { realityLanding, AGENTIC_EXTENSION, AGENTIC_GUIDE, REALITY_ASSISTANTS } from "@/lib/content/reality-landing";
 import { CopyActivationPrompt } from "./CopyActivationPrompt";
+import { CLIENT_LOGOS } from "@/components/sections/v3/ClientLogos";
 import "./reality-landing.css";
 
 function Arrow() { return <span aria-hidden="true">↗</span>; }
@@ -64,10 +65,10 @@ export function RealityLanding({ locale }: { locale: "es" | "en" }) {
           </div>
         </div>
       </section>
-      <div className="reality-trust"><div className="reality-wrap reality-trust-inner"><p className="reality-mono">{t.trust}</p><div>
-        <Image src={incapto.logo} width={145} height={34} alt="Incapto" unoptimized />
-        <Image src={dreamplace.logo} width={160} height={37} alt="Dreamplace Hotels" unoptimized />
-        <Image src={palladium.logo} width={155} height={47} alt="Palladium Hotel Group" unoptimized />
+      <div className="reality-trust"><div className="reality-wrap reality-trust-inner"><p className="reality-mono">{t.trust}</p><div className="reality-client-logos">
+        {CLIENT_LOGOS.map(logo => <div className="reality-client-logo" key={logo.alt}>
+          <Image src={logo.src} width={220} height={logo.h ?? 40} style={{ height: logo.h ?? 40 }} alt={logo.alt} unoptimized />
+        </div>)}
       </div></div></div>
 
       <section className="reality-section reality-problem"><div className="reality-wrap">
