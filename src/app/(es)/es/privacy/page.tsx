@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              4 de septiembre de 2026 ·{" "}
+              13 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -293,9 +293,91 @@ export default function PrivacyPageEs() {
               </p>
             </div>
 
+            <div id="datos-de-google">
+              <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
+                9. Conector de Looker Studio y datos de usuario de Google
+              </h2>
+              <p className="mb-3">
+                El conector de Sealmetrics para Looker Studio es un Google Apps
+                Script que permite a los Clientes cargar sus analíticas de
+                Sealmetrics en sus propios informes de Looker Studio. Solicita
+                un único permiso de Google,{" "}
+                <span className="text-text-primary font-medium">
+                  script.external_request
+                </span>
+                , que usa exclusivamente para llamar a la API de Sealmetrics
+                (my.sealmetrics.com).
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Datos a los que accede.</strong>{" "}
+                El conector no lee datos de tu cuenta de Google: ni tu nombre,
+                ni tu email, ni tus contactos, ni Drive, Sheets o cualquier otro
+                servicio de Google. Solo maneja lo que introduces en Looker
+                Studio (tu API key de Sealmetrics, el sitio y el tipo de informe
+                que eliges) y el rango de fechas y los campos que pide cada
+                gráfico.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Uso.</strong> Esa
+                información se usa únicamente para autenticarse en la API de
+                Sealmetrics y devolver a tu propio informe las analíticas que
+                has pedido. No se usa para publicidad, perfilado ni para
+                entrenar modelos de IA/ML, y nunca se vende.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Compartición.</strong> Solo
+                se envía a la API de Sealmetrics, operada por Sealmetrics S.L. en
+                la UE. No se comparte, transfiere ni comunica a terceros.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Protección.</strong>
+              </p>
+              <ul className="space-y-1 pl-5 list-none">
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Todas las peticiones viajan cifradas por HTTPS (TLS).
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  En nuestros sistemas las API keys solo se guardan como hash SHA-256, pueden limitarse a permisos de solo lectura y a sitios concretos, y puedes revocarlas en cualquier momento en Ajustes &gt; API Keys.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  El conector no solicita a Google ningún permiso aparte de script.external_request.
+                </li>
+              </ul>
+              <p className="mt-3 mb-3">
+                <strong className="text-text-primary">Conservación y supresión.</strong>{" "}
+                Sealmetrics no guarda ningún dato de tu cuenta de Google. Para
+                que los informes carguen rápido, el conector guarda las
+                respuestas de la API en la caché de Apps Script de Google durante
+                un máximo de 15 minutos, tras los cuales caducan
+                automáticamente. La configuración del conector permanece en tu
+                fuente de datos de Looker Studio hasta que la borres. Puedes
+                retirar el acceso del conector en cualquier momento en{" "}
+                <a href="https://myaccount.google.com/permissions" className="underline">
+                  myaccount.google.com/permissions
+                </a>{" "}
+                y revocar la API key en Sealmetrics.
+              </p>
+              <p>
+                <strong className="text-text-primary">Uso limitado.</strong> El
+                uso y la transferencia a cualquier otra aplicación de la
+                información recibida de las API de Google por parte de
+                Sealmetrics se ajustarán a la{" "}
+                <a
+                  href="https://developers.google.com/terms/api-services-user-data-policy"
+                  className="underline"
+                >
+                  Google API Services User Data Policy
+                </a>
+                , incluidos los requisitos de uso limitado (Limited Use).
+              </p>
+            </div>
+
             <div>
               <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-                9. Contacto
+                10. Contacto
               </h2>
               <p>
                 Para cualquier consulta sobre privacidad o para ejercer tus
