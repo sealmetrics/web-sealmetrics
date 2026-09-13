@@ -208,7 +208,7 @@ export default function McpDocsPage() {
               "Revoking the authorisation in account settings kills the token immediately.",
             ].map((line) => (
               <li key={line} className="pl-6 relative">
-                <span aria-hidden className="absolute left-0 text-ink-mute">—</span>
+                <span aria-hidden className="absolute left-0 text-ink-soft">—</span>
                 {line}
               </li>
             ))}
@@ -232,7 +232,7 @@ export default function McpDocsPage() {
             <ul className="mt-7 space-y-3 text-[16px] leading-[1.65] text-ink-2 list-none p-0">
               {canDo.map((line) => (
                 <li key={line} className="pl-6 relative">
-                  <span aria-hidden className="absolute left-0 text-ink-mute">—</span>
+                  <span aria-hidden className="absolute left-0 text-ink-soft">—</span>
                   {line}
                 </li>
               ))}
@@ -249,7 +249,7 @@ export default function McpDocsPage() {
             <ul className="mt-7 space-y-3 text-[16px] leading-[1.65] text-ink-2 list-none p-0">
               {willNotDo.map((line) => (
                 <li key={line} className="pl-6 relative">
-                  <span aria-hidden className="absolute left-0 text-ink-mute">—</span>
+                  <span aria-hidden className="absolute left-0 text-ink-soft">—</span>
                   {line}
                 </li>
               ))}
@@ -319,7 +319,7 @@ export default function McpDocsPage() {
               "The connector inherits those terms. It adds a reader, not a new collection.",
             ].map((line) => (
               <li key={line} className="pl-6 relative">
-                <span aria-hidden className="absolute left-0 text-ink-mute">—</span>
+                <span aria-hidden className="absolute left-0 text-ink-soft">—</span>
                 {line}
               </li>
             ))}
