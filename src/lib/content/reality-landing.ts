@@ -22,7 +22,7 @@ export const realityLanding = {
     evidenceLink: "Mira lo que descubrió Incapto", chartTag: "INCAPTO / SHOPIFY", chartTitle: "Mismo negocio. Dos lecturas.",
     chartSubtitle: "Peso de las campañas de pago en el tráfico medido", chartFoot: "28 JUL — 06 AGO 2026 · CIFRAS REDONDEADAS",
     chartDelta: "puntos de diferencia", chartMeaning: "justo donde decides tu presupuesto.",
-    trust: "LA REALIDAD YA CAMBIÓ SUS DECISIONES",
+    trust: "EQUIPOS QUE YA TRABAJAN CON SEALMETRICS",
     problemTag: "01 / EL PUNTO CIEGO", problemStart: "Pagas por cada clic.", problemEnd: "Decide con más información.",
     problemBody: "Tu tienda registra pedidos. Las plataformas de anuncios muestran sus resultados. Pero si en tu analítica falta parte de la historia, la decisión de presupuesto puede salir de una foto incompleta.",
     problems: [
@@ -92,7 +92,7 @@ export const realityLanding = {
     evidenceLink: "See what Incapto discovered", chartTag: "INCAPTO / SHOPIFY", chartTitle: "One business. Two readings.",
     chartSubtitle: "Paid campaigns’ share of measured traffic", chartFoot: "28 JUL — 06 AUG 2026 · ROUNDED FIGURES",
     chartDelta: "percentage points apart", chartMeaning: "right where you allocate your budget.",
-    trust: "REAL DATA. DECISIONS ALREADY CHANGED.",
+    trust: "TEAMS ALREADY WORKING WITH SEALMETRICS",
     problemTag: "01 / THE BLIND SPOT", problemStart: "You pay for every click.", problemEnd: "Decide with more evidence.",
     problemBody: "Your store records orders. Ad platforms report their results. But when analytics misses part of the story, your budget decision can start from an incomplete picture.",
     problems: [["What to scale", "A campaign may contribute more than your report suggests."], ["What to cut", "The channel that looks weak may be poorly measured."], ["What to fix", "If you cannot see the buying steps, it is harder to know where to act."]],
