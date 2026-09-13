@@ -706,6 +706,9 @@ for (const p of pages) {
     continue;
   }
   const url = p.metaRefresh.replace(/^\s*\d+\s*;\s*url=/i, "");
+  // External targets (e.g. the Data Studio one-click link) keep a same-site
+  // canonical, so there is no destination to compare against.
+  if (/^https?:/.test(url)) continue;
   const norm = url.endsWith("/") ? url : url + "/";
   if (target && norm !== target) {
     fail(
