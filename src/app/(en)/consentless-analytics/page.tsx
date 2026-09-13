@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is consentless analytics actually legal under GDPR?",
-    a: "Yes, when the architecture meets the exemption criteria. GDPR applies to processing of personal data. ePrivacy Art. 5(3) governs storage/access to terminal-device information. If a measurement system stores no cookie, sets no identifier and processes no personal data, both rules are satisfied without a consent dialog. The CNIL has published explicit exemption criteria for analytics; the German DSK, Italian Garante, UK ICO and Dutch AP have all issued aligned guidance. This is not a workaround — it is the original carve-out the regulations contemplated.",
+    a: "It depends on the actual processing and applicable rules. Review whether personal data is processed, whether information is stored on or read from a device, and whether an exemption applies. The CNIL describes a conditional exemption for audience measurement. The other official sources linked below should be reviewed on their own terms; they do not establish a uniform exemption or certify a product.",
   },
   {
     q: "What would the EU Digital Omnibus change?",
-    a: "Nothing yet — it is a Commission proposal (COM(2025) 837, 19 November 2025), still in the ordinary legislative procedure, with substantive amendments likely and adoption realistically 2027–2028. As drafted it would move the terminal-device rules into the GDPR under a new Article 88a and exempt first-party, aggregated audience measurement for the controller's own use from consent. If it passes in that form the banner stops being the dividing line and the question becomes what a consent-exempt configuration costs you in measurement. A consentless architecture is unaffected either way — there is no banner to design and no consent to record.",
+    a: (<>The Commission proposal <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=COM:2025:837:FIN" className="text-brand underline">COM(2025) 837</a> addresses changes to the digital legislative framework, including data protection and terminal-device rules. Check the legislative procedure and final text before changing a compliance decision. A proposal is not evidence that a particular analytics deployment qualifies for an exemption.</>),
   },
   {
     q: "Do I still need a cookie banner for other reasons?",
@@ -57,15 +57,15 @@ const faqs = [
   },
   {
     q: "How does this differ from \"consent-light\" or \"privacy-friendly\" tools?",
-    a: "Most lightweight analytics tools still set a first-party cookie or a randomised visitor ID — they are consent-light, not consentless. The CNIL exemption is specific: no identifier, no cross-session linkage, no profiling. Sealmetrics is built to that bar. The trade-off is honest — no returning-visitor identification — and it is the deliberate design choice that produces the legal exemption.",
+    a: "Product labels are not enough to compare deployments. Check identifiers, purposes, data combination and reporting capabilities against the applicable requirements. Sealmetrics focuses on aggregate measurement; review its current documentation and your configuration before deciding whether consent is required.",
   },
   {
     q: "What about Schrems II and US transfers?",
-    a: "Processing is exclusively in Dublin, Ireland, on EU-owned infrastructure. There are no US sub-processors in the data path. A Schrems II transfer impact assessment is not required because no transfer occurs. The DPA, SCCs (where needed for ancillary services), and TPSR package are available for legal review.",
+    a: "Review the hosting location, sub-processors, remote access and actual data flows in the current DPA and TPSR package. Assess transfer requirements against that deployment; an EU hosting address alone does not settle every transfer question.",
   },
   {
     q: "Can the legal basis change if I add CRM or marketing tools later?",
-    a: "The legal basis for the analytics layer does not change. What changes is the overall surface: if you add a tool that stores cookies or processes personal data, that tool brings its own consent requirement. Sealmetrics' status is determined by its own architecture, not by the other tools running alongside it.",
+    a: "Review the combined setup whenever tools, purposes or data flows change. Linking analytics to CRM data or adding advertising tags can change the processing that needs assessment. Recheck the conditions of any exemption and the consent requirements for each tool.",
   },
 ];
 
@@ -73,38 +73,32 @@ const authorities = [
   {
     country: "France",
     body: "CNIL",
-    summary:
-      "Issued explicit analytics exemption criteria in 2020, reaffirmed 2024: no per-user identifier, no cross-session tracking, aggregate reporting, EU-only processing. Sealmetrics meets every criterion.",
+    summary: (<> Review the CNIL guidance on audience measurement and the conditions for a consent exemption. <a href="https://www.cnil.fr/fr/node/677" className="text-brand underline">Official guidance</a>.</>),
   },
   {
     country: "Germany",
     body: "DSK / BfDI",
-    summary:
-      "Datenschutzkonferenz guidance: analytics tools without cookies and without device fingerprinting do not require consent under §25 TDDDG. Aligned with CNIL position.",
+    summary: (<> Consult the DSK guidance for the rules applicable to the actual German deployment. <a href="https://www.datenschutzkonferenz-online.de/" className="text-brand underline">Official guidance</a>.</>),
   },
   {
     country: "Spain",
     body: "AEPD",
-    summary:
-      "Guía sobre el uso de cookies (2024): explicitly carves out anonymous aggregate measurement from the consent obligation. Aligns with EDPB Opinion 5/2019.",
+    summary: (<> Review the AEPD cookie guide and assess the purpose and configuration of measurement. <a href="https://www.aepd.es/guias/guia-cookies.pdf" className="text-brand underline">Official guidance</a>.</>),
   },
   {
     country: "Italy",
     body: "Garante",
-    summary:
-      "Post-Google-Analytics 2022 ruling: tools that anonymise at collection and host in the EU do not trigger the same restrictions. Sealmetrics' Dublin processing and zero-identifier design fit the exemption shape.",
+    summary: (<> Consult the Garante guidance on cookies and other tracking technologies. <a href="https://www.garanteprivacy.it/temi/cookie" className="text-brand underline">Official guidance</a>.</>),
   },
   {
     country: "United Kingdom",
     body: "ICO (PECR)",
-    summary:
-      "Section 99 of the Data (Use and Access) Act 2025 amends PECR Regulation 6 to permit storing or accessing information on a user's device without consent when the sole purpose is compiling statistics. In force since 5 February 2026.",
+    summary: (<> Review the current ICO guidance on PECR and the conditions relevant to statistical measurement. <a href="https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/cookies-and-similar-technologies/" className="text-brand underline">Official guidance</a>.</>),
   },
   {
     country: "Netherlands",
     body: "Autoriteit Persoonsgegevens",
-    summary:
-      "AP guidance follows the EDPB position: privacy-friendly analytics — no cookies, no identifiers, EU processing — are exempt from the consent requirement.",
+    summary: (<> Consult the Dutch authority guidance on cookies and analytics before assessing an exemption. <a href="https://www.autoriteitpersoonsgegevens.nl/en/themes/internet-telephone-apps/cookies" className="text-brand underline">Official guidance</a>.</>),
   },
 ];
 
@@ -128,7 +122,7 @@ export default function ConsentlessAnalyticsPillar() {
           headline:
             "Consentless analytics — the legal route to web measurement without cookie banners",
           description:
-            "How analytics can be lawful under GDPR and ePrivacy without a consent banner. The architectural exemption, authority guidance from six EU regulators, and the compliance stack.",
+            "How analytics can be lawful under GDPR and ePrivacy without a consent banner. The conditions to assess, official regulatory sources, and the compliance documentation.",
           datePublished: PILLAR_DATE_PUBLISHED,
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/consentless-analytics",
@@ -166,11 +160,10 @@ export default function ConsentlessAnalyticsPillar() {
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
-            The legal route to web measurement without a cookie dialog is not
-            a workaround — it is the carve-out GDPR and ePrivacy contemplated
-            from day one. Six European data-protection authorities have
-            described what the carve-out requires. This is what it looks
-            like in practice, and where the limits are.
+            Consent requirements depend on the processing and the applicable
+            rules. Review the technical configuration alongside official
+            guidance to understand when measurement can operate without
+            a consent dialog, and what conditions still apply.
           </p>
         </div>
       </section>
@@ -178,37 +171,49 @@ export default function ConsentlessAnalyticsPillar() {
       <TldrBlock
         answer={
           <>
-            Consentless analytics is web measurement that does not require a
-            cookie banner because it sets no cookie, stores no personal
-            identifier and creates no per-user profile. The lawful basis is
-            architectural: with no personal data processed, GDPR&apos;s
-            material scope does not apply; with no terminal-device storage,
-            ePrivacy Art. 5(3) consent requirement does not trigger. The
-            CNIL, German DSK, AEPD, Garante, ICO and AP have all published
-            aligned exemption guidance. The trade-off is concrete:
-            aggregate, anonymous measurement only — no returning-visitor
-            identification, no cross-session tracking.
+            Cookieless analytics and consent-exempt analytics describe
+            different things. Some analytics configurations may qualify for
+            a consent exemption, depending on their purpose and operation. Removing cookies alone does not establish
+            whether a deployment needs consent: the data collected, tracking
+            purposes, identifiers and applicable rules also matter. When
+            evaluating Sealmetrics, review the actual
+            implementation, data flows, hosting and reporting needs rather
+            than relying on a cookieless label. Check the relevant
+            regulator&apos;s conditions and the vendor&apos;s configuration
+            guidance. Avoid treating either the absence of cookies or a
+            product description as a blanket compliance guarantee.
           </>
         }
         bullets={[
           <>
-            <strong>GDPR Art. 6</strong> — no personal data processed, so no
-            lawful-basis selection is required.
+            <strong>Personal data</strong> — assess every processing stage,
+            including collection, before determining the applicable rules.
           </>,
           <>
-            <strong>ePrivacy Art. 5(3)</strong> — no terminal-device storage
-            or access, so no consent dialog required.
+            <strong>Device access</strong> — check storage and access practices
+            as well as the conditions of any applicable exemption.
           </>,
           <>
-            <strong>Six EU authorities</strong> have published explicit
-            exemption guidance (CNIL, DSK, AEPD, Garante, ICO, AP).
+            <strong>Local guidance</strong> needs a jurisdiction-specific review;
+            do not assume that exemptions are identical across countries.
           </>,
           <>
-            <strong>EU-only processing</strong> in Dublin, Ireland — Schrems
-            II transfer assessment moot because no transfer occurs.
+            <strong>Data flows</strong> — review hosting, sub-processors and
+            access arrangements when assessing transfer requirements.
           </>,
         ]}
       />
+
+      <p className="max-w-[840px] mx-auto px-5 sm:px-8 mt-6 text-[14px] leading-[1.7] text-ink-soft text-center">
+        Review the scope and conditions in the{" "}
+        <a
+          href="https://www.cnil.fr/fr/node/677"
+          className="text-brand underline decoration-1 underline-offset-2"
+        >
+          CNIL&apos;s analytics exemption criteria
+        </a>
+        .
+      </p>
 
       {/* WHY BANNERS FAILED */}
       <section className="py-20 bg-white border-t border-warm-100">
@@ -238,30 +243,25 @@ export default function ConsentlessAnalyticsPillar() {
 
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                Dark-pattern enforcement closed the gaming loophole
+                Review the consent interface as well as the analytics
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                The CNIL fined Google and Amazon for asymmetric banner
-                design in 2023. The Italian Garante followed, and national
-                regulators across the EU now treat a hidden
-                &ldquo;reject&rdquo; button as a breach in its own right:
-                the reject control must be as prominent as
-                &ldquo;accept&rdquo;, no pre-ticked boxes, no nudging copy.
-                The brief window in which clever banner design lifted
-                consent rates is closed.
+                If other tools on the site require consent, review their interface
+                and behavior separately. Check whether the choices shown to
+                visitors match the tracking that actually occurs, using the
+                relevant authority guidance linked below.
               </p>
             </div>
 
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                Banner fatigue is now a documented user-experience cost
+                Measure the effect of your consent interface
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                A 2025 University of Amsterdam study measured a 14% drop in
-                first-page engagement when a consent banner was the first
-                interaction. For an eCommerce site running paid acquisition
-                at €5–30 CPC, the abandonment cost on the banner alone now
-                exceeds the value of the analytics data it gates.
+                Check how your consent interface affects engagement on your own site.
+                Compare page interaction and consent choices using a measurement
+                method that respects those choices. Do not assume a universal
+                abandonment rate or attribute every lost visit to the banner.
               </p>
             </div>
 
@@ -317,8 +317,7 @@ export default function ConsentlessAnalyticsPillar() {
                 measurement system processes only aggregate counts — never
                 an identifier, never a fingerprint, never a behavioural
                 profile — the system does not process personal data. The
-                Regulation does not apply to its measurement output. The
-                EDPB confirmed this reasoning in Opinion 5/2019.
+                Regulation does not apply to its measurement output. Assess the data processed at every stage, not only the final report.
               </p>
             </div>
 
@@ -348,13 +347,12 @@ export default function ConsentlessAnalyticsPillar() {
                 The CNIL analytics exemption criteria
               </h4>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                The CNIL published five concrete criteria that an analytics
-                system must meet to qualify for the exemption: a strictly
-                limited purpose, no cross-site tracking, anonymised IP
-                addresses or none stored, no merging with personal data
-                from other sources, and aggregate reporting only. Sealmetrics
-                meets each criterion by design — not by configuration.
-                Other authorities have aligned around the same five points.
+                The CNIL describes a conditional exemption for audience measurement.
+                Its scope includes restrictions on purpose, combining data and
+                use across sites, alongside other requirements. Review the
+                complete <a href="https://www.cnil.fr/fr/node/677" className="text-brand underline">CNIL guidance</a>
+                against the deployed configuration. A product label alone
+                does not establish that every condition is met.
               </p>
             </div>
           </div>
@@ -387,10 +385,10 @@ export default function ConsentlessAnalyticsPillar() {
             Authority guidance, by country
           </h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft text-center max-w-[64ch] mx-auto">
-            Six European data-protection authorities have published explicit
-            exemption guidance for analytics meeting the architectural
-            criteria. The wording differs; the conclusion converges.
-          </p>
+                Consent rules and exemptions depend on the jurisdiction and the
+                deployed configuration. The official sources below provide
+                starting points for review; they are not product endorsements.
+              </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-12">
             {authorities.map((a) => (
@@ -423,19 +421,7 @@ export default function ConsentlessAnalyticsPillar() {
             >
               blog
             </Link>
-            . Dedicated country pages (
-            <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded">
-              /gdpr-analytics/france
-            </code>
-            ,
-            <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded ml-1">
-              /germany
-            </code>
-            ,
-            <code className="font-mono text-[13px] bg-warm-100 px-1.5 py-0.5 rounded ml-1">
-              /spain
-            </code>
-            ) are part of the Q3 2026 content roadmap.
+            .
           </p>
         </div>
       </section>
@@ -482,9 +468,9 @@ export default function ConsentlessAnalyticsPillar() {
               <ul className="space-y-2 text-[15px] leading-[1.6] text-ink list-none pl-0">
                 {[
                   "Sets no cookie, writes no localStorage, no visitor ID generated.",
-                  "GDPR material scope not engaged — no personal data processed.",
-                  "ePrivacy Art. 5(3) not triggered — nothing stored on the terminal device.",
-                  "Aligns with the CNIL exemption criteria, the AEPD guidance, the DSK position, the AP and ICO statements.",
+                  "Review the collection and processing stages to establish whether personal data is involved.",
+                  "Review terminal-device storage and access practices separately from reporting output.",
+                  "Review the deployed configuration against the applicable local guidance and exemption conditions.",
                 ].map((s) => (
                   <li key={s} className="flex gap-3">
                     <span className="text-brand" aria-hidden>—</span>
@@ -533,7 +519,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 name: "Hosting & residency",
                 detail:
-                  "All processing in Dublin, Ireland, on EU-owned infrastructure. No US sub-processors in the analytics data path. Schrems II transfer assessment unnecessary — no transfer occurs.",
+                  "Review the current hosting and sub-processor documentation, including jurisdictions and access arrangements, when assessing data residency and transfers.",
               },
               {
                 name: "Retention",
