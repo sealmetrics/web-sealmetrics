@@ -12,18 +12,26 @@ import { JsonLd } from "@/components/ui/JsonLd";
  * - Adds noindex so search engines don't index the alias
  * - Renders a visible fallback link for users without JS/meta-refresh
  */
-export function buildRedirectMetadata(destination: string): Metadata {
-  const absolute = destination.startsWith("http")
-    ? destination
-    : `https://sealmetrics.com${destination}`;
+export function buildRedirectMetadata(
+  destination: string,
+  options: { label?: string; canonical?: string } = {}
+): Metadata {
+  // External destinations keep the canonical on sealmetrics.com (the audit
+  // requires same-site canonicals), passed as `options.canonical`.
+  const absolute = options.canonical
+    ? `https://sealmetrics.com${options.canonical}`
+    : destination.startsWith("http")
+      ? destination
+      : `https://sealmetrics.com${destination}`;
+  const shown = options.label ?? destination;
   return {
-    title: `Redirecting to ${destination} — Sealmetrics`,
-    description: `This page has moved. Redirecting to ${destination}.`,
+    title: `Redirecting to ${shown} — Sealmetrics`,
+    description: `This page has moved. Redirecting to ${shown}.`,
     alternates: { canonical: absolute },
     robots: { index: false, follow: true },
     openGraph: {
-      title: `Redirecting to ${destination} — Sealmetrics`,
-      description: `This page has moved. Redirecting to ${destination}.`,
+      title: `Redirecting to ${shown} — Sealmetrics`,
+      description: `This page has moved. Redirecting to ${shown}.`,
       url: absolute,
       siteName: "Sealmetrics",
       type: "website",
@@ -31,15 +39,17 @@ export function buildRedirectMetadata(destination: string): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: `Redirecting to ${destination} — Sealmetrics`,
-      description: `This page has moved. Redirecting to ${destination}.`,
+      title: `Redirecting to ${shown} — Sealmetrics`,
+      description: `This page has moved. Redirecting to ${shown}.`,
       images: ["https://sealmetrics.com/og-image.png"],
     },
   };
 }
 
-export function RedirectStub({ to }: { to: string }) {
+/** `label` replaces the destination in the visible text, for long external URLs. */
+export function RedirectStub({ to, label }: { to: string; label?: string }) {
   const absolute = to.startsWith("http") ? to : `https://sealmetrics.com${to}`;
+  const shown = label ?? to;
 
   return (
     <>
@@ -64,7 +74,7 @@ export function RedirectStub({ to }: { to: string }) {
             Page moved
           </p>
           <h1 className="text-[28px] font-semibold text-ink tracking-[-0.02em] mb-4">
-            Redirecting you to <code className="font-mono text-[20px]">{to}</code>
+            Redirecting you to <code className="font-mono text-[20px]">{shown}</code>
           </h1>
           <p className="text-ink-soft mb-6">
             If your browser doesn&apos;t redirect automatically, click below.
@@ -73,7 +83,7 @@ export function RedirectStub({ to }: { to: string }) {
             href={to}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
-            Continue to {to} →
+            Continue to {shown} →
           </Link>
         </div>
       </section>
