@@ -149,7 +149,7 @@ export function RoasMath() {
               El presupuesto que ibas a cortar era tu canal que mejor convierte.
             </p>
             <p className="mt-3 text-[15px] text-dark-text-secondary leading-[1.55] max-w-[60ch]">
-              Cada conversión contada significa que los canales que funcionan dejan de esconderse dentro de
+              Contar las conversiones sin pérdida por consentimiento significa que los canales que funcionan dejan de esconderse dentro de
               «directo» y de tráfico sin consentimiento.
             </p>
           </div>

@@ -19,7 +19,7 @@ export function HeroD() {
             eCommerce analytics
           </span>
           <span className="text-ink-soft">
-            Cookieless · GDPR by architecture · EU-hosted in Dublin
+            Cookieless · Designed for GDPR · EU-hosted in Dublin
           </span>
         </div>
 
@@ -31,7 +31,7 @@ export function HeroD() {
           className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          Sealmetrics is cookieless analytics for eCommerce. Measure every visit and every sale — no
+          Sealmetrics is cookieless analytics for eCommerce. Measure visits and sales without depending on consent — no
           cookies, no consent banner, no 40–60% blind spot — so your real ROAS, your channel
           decisions and your board numbers finally match what actually happened.
         </p>
@@ -39,7 +39,7 @@ export function HeroD() {
         <DualCTA locale="en" className="justify-center mt-7" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["No consent-driven data loss", "No cookies · no consent banner", "GDPR by architecture", "Numbers that match Shopify"].map((b) => (
+          {["No consent-driven data loss", "No cookies · no consent banner", "Designed for GDPR", "Numbers that match Shopify"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -63,7 +63,7 @@ export function ConsentlessAnalytics() {
         <div>
           <span className="eyebrow mb-5">Consentless Analytics</span>
           <h2 className="h-section mt-5">
-            Privacy-first analytics, the complete data behind your <em>real ROAS.</em>
+            Privacy-first analytics, the consent-independent data behind your <em>real ROAS.</em>
           </h2>
           <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
             <Link href="/consentless-analytics" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
@@ -71,18 +71,18 @@ export function ConsentlessAnalytics() {
             </Link>{" "}
             measures your sales without depending on a consent banner — legally.{" "}
             <Link href="/security" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
-              GDPR by architecture
+              Designed for GDPR from the architecture up
             </Link>
-            , privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
+            {" "}(self-assessed), privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
             wall, no 40–60% blind spot.
           </p>
           <p className="mt-4 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
-            That&rsquo;s why your ROAS is finally <b className="text-ink font-semibold">real</b>: every
-            conversion counted, so the channels that actually work stop hiding inside
+            That&rsquo;s why your ROAS is finally <b className="text-ink font-semibold">real</b>: conversions
+            counted without consent loss, so the channels that actually work stop hiding inside
             &ldquo;direct&rdquo; and unconsented traffic.
           </p>
           <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-            {["GDPR by architecture", "ePrivacy", "Privacy-first worldwide", "Zero personal data"].map((b) => (
+            {["Designed for GDPR", "ePrivacy", "Privacy-first worldwide", "Zero personal data"].map((b) => (
               <span key={b} className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                 {b}
@@ -376,7 +376,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
             { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
             { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Medir sin pérdida por consentimiento y la privacidad son el mismo diseño." },
           ],
-          badges: ["RGPD por arquitectura", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
+          badges: ["Diseñada para el RGPD", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
         }
       : {
           quote:
@@ -399,7 +399,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
             { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
             { n: "03", t: "Nothing to consent to", d: "No profile to object to. Consent-independent measurement and privacy are the same design." },
           ],
-          badges: ["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
+          badges: ["Designed for GDPR", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
         };
 
   return (

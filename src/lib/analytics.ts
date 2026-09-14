@@ -14,7 +14,7 @@
 // this — it only gates the initial pageview; `spa=0` is what silences the
 // tracker's own SPA navigation listener.
 //
-// PRIVACY — Sealmetrics is cookieless and GDPR-compliant by architecture.
+// PRIVACY — Sealmetrics is cookieless and designed for GDPR from the architecture up.
 // Never send personal data (email, name, phone), order/transaction IDs, or
 // user/customer IDs to the pixel. PII keys are stripped centrally below; the
 // raw email flows only through the server-side forms relay, never to the pixel

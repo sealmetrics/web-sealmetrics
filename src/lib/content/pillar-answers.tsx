@@ -27,12 +27,12 @@ export const productAnswer: Record<Locale, ReactNode> = {
   en: (
     <p>
       Sealmetrics is a cookieless, consentless web analytics platform for
-      eCommerce. It measures every eligible visit without cookies, identifiers
-      or a consent banner, so the reported total is the whole population rather
-      than the share that accepted tracking — in the EU, GA4 typically reports
+      eCommerce. It measures visits without cookies, identifiers or a consent
+      banner, so the reported total covers visitors who accept and reject the
+      banner alike, not only the share that accepted tracking — in the EU, GA4 typically reports
       around 13% of real traffic once sampling, consent rejection and ad
       blockers are counted. Revenue is attributed on last click across that
-      complete dataset, under one declared model your team can name and defend.
+      data, without consent gaps, under one declared model your team can name and defend.
       Four layers run on the same defined inputs: collection, attribution, nine
       reporting surfaces, and activation through the REST API, the MCP server
       and BigQuery. Visitor data is processed and stored in Dublin only. What
@@ -43,12 +43,12 @@ export const productAnswer: Record<Locale, ReactNode> = {
   es: (
     <p>
       Sealmetrics es una plataforma de analítica web cookieless y sin
-      consentimiento para eCommerce. Mide cada visita elegible sin cookies, sin
-      identificadores y sin banner, así que el total que reporta es la población
-      entera y no la parte que aceptó ser medida — en la UE, GA4 suele reportar
+      consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores y sin
+      banner, así que el total que reporta incluye a quien acepta y a quien
+      rechaza el banner, no solo a la parte que aceptó ser medida — en la UE, GA4 suele reportar
       en torno al 13% del tráfico real una vez descontados el muestreo, el
       rechazo de consentimiento y los bloqueadores. Los ingresos se atribuyen a
-      último clic sobre ese dato completo, bajo un modelo declarado que tu
+      último clic sobre ese dato, sin huecos de consentimiento, bajo un modelo declarado que tu
       equipo puede nombrar y defender. Cuatro capas trabajan sobre las mismas
       entradas definidas: recogida, atribución, nueve superficies de reporting y
       activación por API REST, servidor MCP y BigQuery. El dato de visitante se
@@ -103,10 +103,10 @@ export const securityAnswer: Record<Locale, ReactNode> = {
       device and no IP address is retained, so there is no personal data to
       secure, to breach or to hand over. What remains is aggregate, anonymous
       event data — encrypted in transit and at rest, isolated per account and
-      deleted on a fixed retention schedule. Processing and storage happen in
-      Dublin, Ireland only, so no transfer leaves the EU, GDPR Chapter V is
-      never triggered, and there are no Standard Contractual Clauses or Transfer
-      Impact Assessment to maintain. A DPA and the TPSR package are included.
+      deleted on a fixed retention schedule. Visitor data is processed and stored in
+      Dublin, Ireland only, so no visitor-data transfer leaves the EU, GDPR
+      Chapter V is never triggered for it, and there are no Standard Contractual
+      Clauses or Transfer Impact Assessment to maintain on visitor data. A DPA and the TPSR package are included.
       The case rests on architecture rather than on a certificate, and that cuts
       both ways: Sealmetrics holds no ISO 27001 or SOC 2 certification today,
       which is worth knowing before a procurement review rather than after.
@@ -120,10 +120,10 @@ export const securityAnswer: Record<Locale, ReactNode> = {
       retiene ninguna IP, así que no hay dato personal que proteger, que filtrar
       ni que entregar. Lo que queda es dato de evento agregado y anónimo —
       cifrado en tránsito y en reposo, aislado por cuenta y borrado según un
-      calendario de retención fijo. El tratamiento y el almacenamiento ocurren
-      solo en Dublín, Irlanda, así que ninguna transferencia sale de la UE, el
-      Capítulo V del RGPD nunca se activa y no hay Cláusulas Contractuales Tipo
-      ni Transfer Impact Assessment que mantener. El DPA y el paquete TPSR van
+      calendario de retención fijo. El dato de visitante se trata y almacena
+      solo en Dublín, Irlanda, así que ninguna transferencia de ese dato sale de
+      la UE, el Capítulo V del RGPD nunca se activa para él y no hay Cláusulas
+      Contractuales Tipo ni Transfer Impact Assessment que mantener sobre él. El DPA y el paquete TPSR van
       incluidos. El argumento se sostiene en la arquitectura y no en un
       certificado, y eso corta por los dos lados: Sealmetrics no tiene hoy
       certificación ISO 27001 ni SOC 2, y conviene saberlo antes de una revisión
@@ -140,8 +140,8 @@ export const howItWorksAnswer: Record<Locale, ReactNode> = {
       is first-party and server-side: a script under 5 KB gzipped records the
       event, and no cookie, identifier or IP is stored on the way. Processing
       filters bot traffic and derives channel context from the URL and referrer
-      alone. Attribution assigns revenue on last click across the complete
-      dataset, under one declared model rather than a blend nobody can
+      alone. Attribution assigns revenue on last click across data without
+      consent gaps, under one declared model rather than a blend nobody can
       reproduce. Activation moves that same evidence out through the REST API,
       the MCP server and BigQuery export. Keeping collection separate from
       interpretation is what makes a disagreement diagnosable — you can tell
@@ -159,7 +159,7 @@ export const howItWorksAnswer: Record<Locale, ReactNode> = {
       ninguna cookie, ningún identificador ni ninguna IP. El procesado filtra el
       tráfico de bots y deriva el contexto de canal solo a partir de la URL y el
       referrer. La atribución asigna los ingresos a último clic sobre el dato
-      completo, bajo un modelo declarado y no una mezcla que nadie puede
+      sin huecos de consentimiento, bajo un modelo declarado y no una mezcla que nadie puede
       reproducir. La activación saca esa misma evidencia por API REST, servidor
       MCP y exportación a BigQuery. Mantener separadas la recogida y la
       interpretación es lo que hace diagnosticable un desacuerdo: puedes saber
@@ -186,11 +186,11 @@ export const homeAnswer: ReactNode = (
     Sealmetrics is a cookieless, consentless web analytics platform for
     eCommerce companies in the EU and UK. It records pageviews, events and
     conversions without setting a cookie, storing an identifier or asking for
-    consent, so the number it reports is the whole audience rather than the
-    fraction that accepted tracking — in the EU, GA4 typically sees around 13%
+    consent, so the number it reports includes visitors who reject the banner, not
+    only the fraction that accepted tracking — in the EU, GA4 typically sees around 13%
     of real traffic once sampling, consent rejection and ad blockers are
-    counted. Revenue is attributed on last click across that complete dataset,
-    and collection is first-party and server-side, processed and stored in
+    counted. Revenue is attributed on last click across that data, without consent
+    gaps, and collection is first-party and server-side, processed and stored in
     Dublin only. It is built to be checked rather than believed: run it beside
     your current analytics and compare both totals against the revenue your
     backend recorded. What it is not is a per-user tool — no profiles, no

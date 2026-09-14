@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "¿Qué tan preciso es el tracking sin cookies?",
-    a: "Una cadena hotelera española midió +30% más tráfico vs GA y 15–20% más venta atribuida — acercándose a la realidad del CRM. Palladium Hotel Group descubrió que el 40% de su tráfico no tenía atribución en su stack anterior y mejoró el Coste por Búsqueda en Display un +165% al cambiar. Sin muestreo, sin modelado — cada dato observado.",
+    a: "Una cadena hotelera española midió +30% más tráfico vs GA y 15–20% más venta atribuida — acercándose a la realidad del CRM. Palladium Hotel Group descubrió que el 40% de su tráfico no tenía atribución en su stack anterior y mejoró el Coste por Búsqueda en Display un +165% al cambiar. Sin muestreo, sin modelado — dato observado, no estimado.",
   },
   {
     q: "¿Tengo que quitar GA4?",
@@ -22,7 +22,7 @@ const ITEMS = [
   },
   {
     q: "¿Cumple RGPD sin banner de consentimiento?",
-    a: "Sí. Sin cookies por arquitectura — sin cookies, sin almacenamiento de datos personales, sin tracking cross-site. 100% alojado en UE, Dublín, Irlanda. Cumple RGPD, ePrivacy y Schrems II sin banners de consentimiento.",
+    a: "Está diseñada para ello; es nuestra autoevaluación, no una certificación. Sin cookies por arquitectura — sin cookies, sin almacenamiento de datos personales, sin tracking cross-site. 100% alojado en UE, Dublín, Irlanda. Diseñada para el RGPD, ePrivacy y Schrems II, sin banner de consentimiento.",
   },
   {
     q: "¿Cuánto tarda la implementación?",
