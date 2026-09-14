@@ -12,11 +12,11 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Sealmetrics vs Adobe Analytics — Enterprise alternative",
-  description: "Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
+  title: "Sealmetrics: An Adobe Analytics Alternative for Enterprise Teams",
+  description: "Looking for an Adobe Analytics alternative? Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
   openGraph: {
-    title: "Sealmetrics vs Adobe Analytics — Enterprise alternative",
-    description: "Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
+    title: "Sealmetrics: An Adobe Analytics Alternative for Enterprise Teams",
+    description: "Looking for an Adobe Analytics alternative? Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
     type: "website",
     images: [ogImage("/vs/adobe-analytics/")],
     url: "https://sealmetrics.com/vs/adobe-analytics/",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sealmetrics vs Adobe Analytics — Enterprise alternative",
-    description: "Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
+    title: "Sealmetrics: An Adobe Analytics Alternative for Enterprise Teams",
+    description: "Looking for an Adobe Analytics alternative? Adobe Analytics runs ~$50K-200K+ a year and requires specialists. Sealmetrics delivers complete data without consultants.",
     images: [ogImage("/vs/adobe-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/adobe-analytics/", languages: getAlternates("/vs/adobe-analytics") },
@@ -80,6 +80,14 @@ export default function Page() {
               For EU eCommerce the difference is completeness and compliance. Adobe still loses 40&ndash;60% of EU traffic to consent rejection and carries Schrems II overhead through US data flows, on top of months of implementation. Sealmetrics installs with one pixel, runs side by side from day one, and its Dublin-only infrastructure with zero non-EU sub-processors removes the transfer review. Teams keep Adobe for deep custom analysis where they need it and use Sealmetrics as the complete, board-ready revenue number.
             </p>
           </QuickAnswer>
+        </div>
+      </section>
+      <section className="bg-white border-t border-warm-100 py-12">
+        <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
+          <h2 className="text-2xl font-semibold text-warm-900 mb-4">Looking for an Adobe Analytics alternative?</h2>
+          <p className="text-warm-700">
+            Teams evaluating an Adobe Analytics alternative are usually trying to cut the $50,000&ndash;$200,000+ annual licence cost, avoid a multi-month implementation, and stop losing 40&ndash;60% of EU traffic to consent rejection. Sealmetrics is that alternative: a cookieless, EU-hosted analytics platform that installs with a single pixel, reports complete inbound traffic without consent dependency, and starts at &euro;499/month with no annual commit — no specialist headcount required.
+          </p>
         </div>
       </section>
       
