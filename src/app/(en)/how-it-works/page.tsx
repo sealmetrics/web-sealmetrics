@@ -10,7 +10,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "How Sealmetrics Works — First-party, Cookieless, EU-hosted",
   description:
-    "First-party 846-byte pixel. Anonymous server-side event counting. Dublin-hosted storage. GDPR-compliant by architecture, not by a compliance layer.",
+    "First-party 846-byte pixel. Anonymous server-side event counting. Dublin-hosted storage. Designed for GDPR from the architecture up, not by a compliance layer.",
   openGraph: {
     title: "How Sealmetrics Works — First-party, Cookieless, EU-hosted",
     description:

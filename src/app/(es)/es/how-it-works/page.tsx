@@ -10,7 +10,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Cómo funciona Sealmetrics — Sin cookies y UE",
   description:
-    "Pixel first-party de 846 bytes. Conteo de eventos anónimo en servidor. Almacenamiento en Dublín. RGPD por arquitectura, no por capa de compliance.",
+    "Pixel first-party de 846 bytes. Conteo de eventos anónimo en servidor. Almacenamiento en Dublín. Diseñado para el RGPD desde la arquitectura, no con una capa de compliance.",
   openGraph: {
     title: "Cómo funciona Sealmetrics — Sin cookies y UE",
     description:
