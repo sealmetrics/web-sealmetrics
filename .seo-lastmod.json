@@ -1020,7 +1020,7 @@
     "date": "2026-09-07"
   },
   "/platforms/woocommerce/": {
-    "hash": "9076e8b98be55df1",
+    "hash": "8bdb509e23a9517e",
     "date": "2026-09-14"
   },
   "/platforms/shopify/": {
@@ -1152,7 +1152,11 @@
     "date": "2026-09-14"
   },
   "/es/platforms/shopify/": {
-    "hash": "9a34bedc98b2be7d",
+    "hash": "8d0faecebd83ccd4",
+    "date": "2026-09-14"
+  },
+  "/es/platforms/woocommerce/": {
+    "hash": "8fddc15b709e7acc",
     "date": "2026-09-14"
   }
 }

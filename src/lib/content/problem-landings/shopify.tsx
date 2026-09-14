@@ -355,8 +355,8 @@ export const shopifyEs: ProblemLandingContent = {
     body: (
       <>
         Estos límites vienen con el diseño y con la propia Shopify. El mismo
-        planteamiento para tiendas WordPress está en la página de{" "}
-        <Link className={link} href="/es/platforms/">plataformas</Link>.
+        planteamiento para tiendas WordPress está en{" "}
+        <Link className={link} href="/es/platforms/woocommerce/">Sealmetrics para WooCommerce</Link>.
       </>
     ),
     items: [

@@ -1443,12 +1443,12 @@
     },
     "public/og/platforms/woocommerce.avif": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
+      "sourceHash": "9fd5dcfddb4692c2538b792e8091b27b7dd282336c27cce174914251bb28720a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/woocommerce.webp": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
+      "sourceHash": "9fd5dcfddb4692c2538b792e8091b27b7dd282336c27cce174914251bb28720a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/pricing.avif": {

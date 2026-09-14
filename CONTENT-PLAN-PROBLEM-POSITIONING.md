@@ -320,7 +320,7 @@ La plantilla fija el orden de toda landing de problema: dolor → respuesta ráp
 | Pieza | Estado |
 |---|---|
 | `/platforms/shopify` + Incapto, y crear `/es/platforms/shopify` | **Hecha** — plantilla v4, datos contrastados con la doc de Shopify (evento `begin_checkout`, webhook sin backfill, Managed Pricing); fuera la afirmación sin fuente sobre tipos de cambio del BCE |
-| `/platforms/woocommerce` + ES | Pendiente |
+| `/platforms/woocommerce` + ES | **Hecha** — contrastada con la doc: descarga desde el dashboard, compra enviada desde la página de confirmación (no en servidor); fuera WPML/Polylang, hooks concretos y detección de checkout por bloques, sin respaldo |
 | `/for/hotels` a la barra de 1.800 palabras + blog hoteles ES | Pendiente |
 | `/for/agencies` | Pendiente — necesita confirmar reseller con margen, white-label y onboarding en 15 min |
 | `/blog/cookieless-analytics-for-ecommerce` y `/blog/consentless-analytics-for-dtc` en ES | Pendiente |

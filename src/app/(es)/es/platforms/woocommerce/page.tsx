@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { WOOCOMMERCE_MODIFIED, WOOCOMMERCE_PUBLISHED, woocommerceEn as content } from "@/lib/content/problem-landings/woocommerce";
+import { WOOCOMMERCE_MODIFIED, woocommerceEs as content } from "@/lib/content/problem-landings/woocommerce";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
-const URL = "/platforms/woocommerce";
-const TITLE = "WooCommerce Analytics Without Cookies — Sealmetrics";
+/** The Spanish page is new; the English one was published on 2026-05-29. */
+const PUBLISHED_ES = "2026-09-14";
+const URL = "/es/platforms/woocommerce";
+const TITLE = "Analítica para WooCommerce sin cookies — Sealmetrics";
 const DESCRIPTION =
-  "Cookieless WooCommerce analytics: a WordPress plugin that tracks the full funnel, content groups, brands and variations, with no cookie or customer data.";
+  "Analítica sin cookies para WooCommerce: un plugin de WordPress que mide todo el funnel, grupos de contenido, marcas y variaciones, sin cookies.";
 const SOCIAL =
-  "A consent-gated tag loses the shoppers who reject the banner. Install the Sealmetrics plugin and see the channels behind every WooCommerce order.";
+  "Una etiqueta con consentimiento pierde a quien rechaza el banner. Instala el plugin de Sealmetrics y ve los canales detrás de cada pedido WooCommerce.";
 
 export const metadata: Metadata = {
   // Literal on purpose: generate-og-images.mjs reads the card title from it.
-  title: "WooCommerce Analytics Without Cookies — Sealmetrics",
+  title: "Analítica para WooCommerce sin cookies — Sealmetrics",
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     images: [ogImage(`${URL}/`)],
     url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
-    locale: "en_US",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,24 +39,24 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://sealmetrics.com${URL}/`,
-    languages: getAlternates("/platforms/woocommerce"),
+    languages: getAlternatesEs("/platforms/woocommerce"),
   },
 };
 
-export default function WooCommercePlatformPage() {
+export default function WooCommercePlatformPageEs() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Platforms", url: "/platforms" }, { name: "WooCommerce", url: URL }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Plataformas", url: "/es/platforms" }, { name: "WooCommerce", url: URL }])} />
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "WooCommerce analytics without cookies: install, events, reconciliation and limits",
+          headline: "Analítica para WooCommerce sin cookies: instalación, eventos, conciliación y límites",
           description: DESCRIPTION,
-          datePublished: WOOCOMMERCE_PUBLISHED,
+          datePublished: PUBLISHED_ES,
           dateModified: WOOCOMMERCE_MODIFIED,
           url: URL,
           category: "Integration",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />
