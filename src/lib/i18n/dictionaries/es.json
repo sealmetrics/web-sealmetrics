@@ -16,7 +16,7 @@
     "forCtos": "Para CTOs",
     "forCtosDesc": "Un script, cumplimiento total, cero mantenimiento",
     "forDpos": "Para DPOs",
-    "forDposDesc": "Cumplimiento GDPR por arquitectura",
+    "forDposDesc": "Diseñada para el RGPD",
     "ecommerce": "eCommerce",
     "ecommerceDesc": "Atribución completa de compras",
     "hotels": "Hoteles y Turismo",
@@ -66,7 +66,7 @@
     "aiBrandMonitoringDesc": "Informe gratuito: qué dicen quince modelos de ti"
   },
   "footer": {
-    "tagline": "Inteligencia de decisión para equipos eCommerce. Datos completos, sin cookies, cumplimiento GDPR por diseño.",
+    "tagline": "Inteligencia de decisión para equipos eCommerce. Datos completos, sin cookies, diseñada para el RGPD.",
     "product": "Producto",
     "platformOverview": "Vista General",
     "howItWorks": "Cómo Funciona",

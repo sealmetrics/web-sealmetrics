@@ -59,9 +59,9 @@ export default function ITPPage() {
           <p>Safari holds approximately 20% of European browser market share (higher on mobile). ITP means that any visitor who returns after 7 days appears as a &ldquo;new&rdquo; visitor in cookie-based analytics — inflating new user counts and fragmenting user journeys.</p>
           <p>For analytics that rely on cookies for session stitching and attribution, ITP makes accurate multi-visit tracking effectively impossible on Safari. Combined with Firefox&rsquo;s Enhanced Tracking Protection (ETP), more than 35% of browser traffic is subject to aggressive cookie restrictions.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why first-party measurement is unaffected</h2>
-          <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not store cookies on the visitor&rsquo;s device, so ITP and ETP have no effect on data collection. The <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless</Link> approach captures sessions regardless of browser privacy features.</p>
+          <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not store cookies on the visitor&rsquo;s device, so ITP and ETP have no effect on data collection. The <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party cookieless</Link> approach keeps capturing sessions when ITP and ETP restrict cookies.</p>
         </div>
-        <CommercialModule hook="ITP can't expire what was never stored. See your Safari traffic counted in full, cookie-free." />
+        <CommercialModule hook="ITP can't expire what was never stored. See your Safari traffic counted with no cookie to expire." />
 
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" />
         <div className="mt-10 pt-6 border-t border-warm-100">
@@ -76,7 +76,7 @@ export default function ITPPage() {
               Intelligent Tracking Prevention (ITP) is Apple Safari&rsquo;s machine-learning-driven privacy system that caps first-party analytics cookies at 7 days, drops third-party cookies entirely, and shortens cookie lifespan to 24 hours when the cookie is set via JavaScript on a page that arrived with a tracking query parameter. Firefox ships an equivalent feature called Enhanced Tracking Protection (ETP).
             </p>
             <p>
-              For analytics that depend on cookies to recognise returning visitors or stitch multi-day attribution, ITP makes accurate measurement effectively impossible on the 20%+ of EU traffic that uses Safari. Cookieless first-party server-side collection sets no cookie, so ITP and ETP have no effect — every visit is counted on the same anonymous-aggregate basis regardless of browser, regardless of how many days have passed.
+              For analytics that depend on cookies to recognise returning visitors or stitch multi-day attribution, ITP makes accurate measurement effectively impossible on the 20%+ of EU traffic that uses Safari. Cookieless first-party server-side collection sets no cookie, so ITP and ETP have no effect — visits are counted on the same anonymous-aggregate basis regardless of browser, regardless of how many days have passed.
             </p>
           </QuickAnswer>
         </div>

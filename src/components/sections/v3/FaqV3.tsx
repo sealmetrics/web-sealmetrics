@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "How accurate is cookieless tracking?",
-    a: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — every data point observed.",
+    a: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — observed data, not estimates.",
   },
   {
     q: "Do I need to remove GA4?",
@@ -22,7 +22,7 @@ const ITEMS = [
   },
   {
     q: "GDPR compliant without a consent banner?",
-    a: "Yes. Cookieless by architecture — no cookies, no personal data storage, no cross-site tracking. 100% EU-hosted in Dublin, Ireland. Complies with GDPR, ePrivacy and Schrems II without consent banners.",
+    a: "It is designed for it; this is our self-assessment, not a certification. Cookieless by architecture — no cookies, no personal data storage, no cross-site tracking. 100% EU-hosted in Dublin, Ireland. Designed for GDPR, ePrivacy and Schrems II, with no consent banner.",
   },
   {
     q: "How long does implementation take?",

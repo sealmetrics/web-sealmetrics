@@ -10,10 +10,10 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analytics for DPOs — GDPR by Architecture | Sealmetrics",
+  title: "Analytics for DPOs — Designed for GDPR | Sealmetrics",
   description: getVerticalData("dpo", "en").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analytics for DPOs — GDPR by Architecture | Sealmetrics",
+    title: "Analytics for DPOs — Designed for GDPR | Sealmetrics",
     description: getVerticalData("dpo", "en").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/for/dpo/")],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for DPOs — GDPR by Architecture | Sealmetrics",
+    title: "Analytics for DPOs — Designed for GDPR | Sealmetrics",
     description: getVerticalData("dpo", "en").lede.slice(0, 155) + "…",
     images: [ogImage("/for/dpo/")],
   },

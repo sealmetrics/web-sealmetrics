@@ -116,7 +116,7 @@ export default function HomeEs() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              Sealmetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que mide el tráfico entrante sin depender del consentimiento, atribuye cada conversión last-click a nivel de canal y está diseñada para el RGPD desde la arquitectura (autoevaluación), no con una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
+              Sealmetrics es la fuente neutral de verdad para el eCommerce europeo — una plataforma de analítica web sin cookies que mide el tráfico entrante sin depender del consentimiento, atribuye las conversiones last-click a nivel de canal y está diseñada para el RGPD desde la arquitectura (autoevaluación), no con una capa de consentimiento añadida después. Alojada exclusivamente en Dublín, Irlanda sobre infraestructura propiedad UE, elimina la revisión Schrems II que GA4 + Consent Mode requiere y el gap del 40-60% de rechazo de consentimiento que rompe el ROAS agregado por canal en Europa.
             </p>
             <p>
               Los clientes la usan para alinear marca, agencias de medios, finanzas y analítica interna sobre un único número que cada parte acepta. Palladium Hotel Group recuperó el 40% del tráfico previamente sin atribuir y mejoró el Coste por Búsqueda en Display un +165% en DV360 tras cambiar el modelo de medición. Precio desde €499/mes con facturación anual.

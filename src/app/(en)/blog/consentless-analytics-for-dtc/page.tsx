@@ -200,7 +200,7 @@ export default function Page() {
           </div>
 
           <CommercialModule
-            hook="Consentless means the banner stops deciding what your dashboard sees. Measure your DTC funnel on every visit, including the 40–60% who reject the banner."
+            hook="Consentless means the banner stops deciding what your dashboard sees. Measure your DTC funnel whether or not the banner is accepted, including the 40–60% who reject it."
           />
 
           <RelatedReading currentSlug="consentless-analytics-for-dtc" />

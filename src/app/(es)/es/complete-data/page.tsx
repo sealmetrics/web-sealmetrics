@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa «datos completos», exactamente?",
-    a: "Cada visitante contado. Cada conversión atribuida. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a la población completa — no al 13% que dio consentimiento.",
+    a: "Visitantes contados acepten o no el banner. Conversiones atribuidas sobre ese mismo dato. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a cada conversión observada — no al 13% que dio consentimiento.",
   },
   {
     q: "¿No lo está resolviendo ya el Consent Mode v2 de GA4?",
@@ -123,14 +123,15 @@ export default function CompleteDataPillarEs() {
             rellenando el hueco. Es el output de una decisión
             arquitectónica deliberada — sin cookies, sin consentimiento,
             first-party, sólo UE — que cambia tracking individual por
-            medición de población completa. Para un negocio eCommerce o
+            medición agregada que incluye a quienes rechazan el banner.
+            Para un negocio eCommerce o
             media tomando decisiones de inversión sobre mix de tráfico,
             ese cambio es casi siempre el correcto.
           </>
         }
         bullets={[
           <><strong>Pageviews sin pérdida por consentimiento</strong> — sin script-block, sin expiración.</>,
-          <><strong>Atribución de ingresos last-click</strong> aplicada a la población completa, no al 13% que dio consentimiento.</>,
+          <><strong>Atribución de ingresos last-click</strong> aplicada a quienes aceptan y a quienes rechazan el banner, no solo al 13% que dio consentimiento.</>,
           <><strong>Sin modelado</strong> — medición, no estimación.</>,
           <><strong>Sólo UE</strong> — procesamiento en Dublín, Irlanda.</>,
         ]}
@@ -221,12 +222,12 @@ export default function CompleteDataPillarEs() {
             {[
               {
                 num: "01",
-                title: "Cada visitante contado",
+                title: "Visitantes contados, con banner o sin él",
                 body: "Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies. La recolección first-party server-side corre desde tu propio dominio — no hay script third-party que los navegadores o las listas de reglas puedan interceptar.",
               },
               {
                 num: "02",
-                title: "Cada conversión atribuida",
+                title: "Conversiones atribuidas sin huecos de consentimiento",
                 body: "Atribución de ingresos last-click aplicada a las conversiones sin huecos de consentimiento, no solo al 13% que dio consentimiento. El canal que de hecho generó la conversión recibe el crédito — por datos, no por modelo.",
               },
               {
@@ -301,7 +302,8 @@ export default function CompleteDataPillarEs() {
                 <h3 className="text-[17px] font-semibold text-ink mb-2">Datos completos</h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
                   Ambos vectores de pérdida eliminados. Lo que queda es
-                  medición agregada, anónima, de población completa,
+                  medición agregada y anónima de quienes aceptan y rechazan
+                  el banner por igual,
                   atribuida last-click a nivel de canal. El diagrama del
                   pipeline está en{" "}
                   <Link href="/es/how-it-works" className="text-brand underline decoration-1 underline-offset-2">

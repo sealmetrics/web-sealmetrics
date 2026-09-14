@@ -722,7 +722,7 @@ export function Calculator() {
                   href="/demo"
                   className="inline-flex items-center px-10 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
                 >
-                  See Your Full Traffic
+                  See the Traffic GA4 Misses
                 </Link>
                 <p className="mt-4 text-[0.75rem] text-text-tertiary">
                   No commitment. Just your actual data.

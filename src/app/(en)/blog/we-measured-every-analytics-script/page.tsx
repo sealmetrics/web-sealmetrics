@@ -325,14 +325,14 @@ export default function MeasuredScriptsPage() {
             your site performance. A 1.1 KB script measures traffic without depending on consent
             through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party collection</Link>
-            , complies with{" "}
+            , is designed for{" "}
             <Link
               href="/glossary/gdpr-analytics-compliance"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              GDPR by design
+              GDPR
             </Link>
-            , and loads in under 50ms. The question is not whether you can
+            {" "}(self-assessed), and loads in under 50ms. The question is not whether you can
             afford to switch — it is whether you can afford not to.{" "}
             <Link
               href="/data-loss-calculator"

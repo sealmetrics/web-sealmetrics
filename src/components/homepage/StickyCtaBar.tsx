@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import { DualCTA } from "./DualCTA";
 
 const COPY = {
-  en: "Ready to see all your traffic?",
-  es: "¿Listo para ver todo tu tráfico?",
+  en: "Ready to see the traffic consent hides?",
+  es: "¿Listo para ver el tráfico que oculta el consentimiento?",
 } as const;
 
 export function StickyCtaBar({ locale = "en" }: { locale?: "en" | "es" }) {

@@ -73,7 +73,7 @@ export default function Page() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Implicaciones de privacidad</h2>
           <p>
-            Logra <Link href="/es/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cumplimiento RGPD por arquitectura</Link>: no se recoge dato personal, no se almacenan cookies y no se requiere consentimiento para que la analítica funcione. Es consistente con los criterios de exención de la CNIL (autoridad francesa) para herramientas de medición de audiencia.
+            Está <Link href="/es/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">diseñada para el RGPD desde la arquitectura</Link> (autoevaluación): no se recoge dato personal, no se almacenan cookies y no se requiere consentimiento para que la analítica funcione. Es consistente con los criterios de exención de la CNIL (autoridad francesa) para herramientas de medición de audiencia.
           </p>
         </div>
 

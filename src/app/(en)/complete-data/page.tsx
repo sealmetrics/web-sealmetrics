@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What does \"complete data\" actually mean?",
-    a: "Every visitor counted. Every conversion attributed. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means pageview and event capture that doesn't depend on consent, and last-click revenue attribution applied to every observed conversion — not the 13% that consented.",
+    a: "Visitors counted whether or not they accept the banner. Conversions attributed on that same data. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means pageview and event capture that doesn't depend on consent, and last-click revenue attribution applied to every observed conversion — not the 13% that consented.",
   },
   {
     q: "Isn't GA4's Consent Mode v2 already solving this?",
@@ -150,7 +150,8 @@ export default function CompleteDataPillar() {
             at 7 days, no statistical model filling the gap. It is the
             output of a deliberate architectural choice — cookieless,
             consentless, first-party, EU-only — that swaps individual
-            tracking for full-population measurement. For an eCommerce
+            tracking for aggregate measurement that includes visitors who
+            reject the banner. For an eCommerce
             or media business making investment decisions on traffic
             mix, that swap is almost always the correct one.
           </>
@@ -162,7 +163,8 @@ export default function CompleteDataPillar() {
           </>,
           <>
             <strong>Last-click revenue attribution</strong> applied to
-            the full population, not the consenting 13%.
+            visitors who accept and reject the banner alike, not just the
+            consenting 13%.
           </>,
           <>
             <strong>No modelling</strong> — measurement, not estimation.
@@ -273,13 +275,13 @@ export default function CompleteDataPillar() {
             {[
               {
                 num: "01",
-                title: "Every visitor counted",
+                title: "Visitors counted, banner or not",
                 body:
                   "No consent gate, no ad-blocker drop-off, no cookie expiry. First-party server-side collection runs from your own domain — there is no third-party script for browsers or rule lists to intercept.",
               },
               {
                 num: "02",
-                title: "Every conversion attributed",
+                title: "Conversions attributed without consent gaps",
                 body:
                   "Last-click revenue attribution applied to every observed conversion, not the 13% that consented. The channel that actually drove the conversion gets the credit — by data, not by model.",
               },
@@ -385,7 +387,8 @@ export default function CompleteDataPillar() {
                 </h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
                   Both loss vectors removed. What remains is aggregate,
-                  anonymous, full-population measurement, attributed
+                  anonymous measurement of visitors who accept and reject
+                  the banner alike, attributed
                   last-click at channel level. The pipeline diagram is
                   on{" "}
                   <Link
@@ -424,7 +427,7 @@ export default function CompleteDataPillar() {
                 tag: "CMO",
                 title: "Budget defence with numbers your CFO signs against",
                 body:
-                  "Channel performance reconciled to CRM revenue, on the full population. The quarterly board conversation moves from \"which number is right\" to \"what do we do about it.\"",
+                  "Channel performance reconciled to CRM revenue, including visitors who reject the banner. The quarterly board conversation moves from \"which number is right\" to \"what do we do about it.\"",
                 href: "/for/cmo",
               },
               {
@@ -438,7 +441,7 @@ export default function CompleteDataPillar() {
                 tag: "eCommerce manager",
                 title: "Attribution that matches what Shopify recorded",
                 body:
-                  "Last-click revenue at channel level, on every order. Stop arguing with paid agencies about whose pixel is right — the order ledger is the source of truth, and now your analytics matches it.",
+                  "Last-click revenue at channel level, on orders without consent gaps. Stop arguing with paid agencies about whose pixel is right — the order ledger is the source of truth, and now your analytics matches it.",
                 href: "/for/ecommerce",
               },
             ].map((c) => (

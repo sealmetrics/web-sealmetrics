@@ -8,7 +8,7 @@ const reports = {
   en: [
     ["01", "Overview", "Headline totals and the timestamp of the last observed hit."],
     ["02", "Evolution", "Metrics over time, with period-against-period context."],
-    ["03", "Sources", "Channel, campaign and referrer totals on the complete dataset."],
+    ["03", "Sources", "Channel, campaign and referrer totals on data without consent gaps."],
     ["04", "Pages", "Pageviews, landing pages and content groups."],
     ["05", "Conversions", "Conversions, microconversions and last-click revenue by channel."],
     ["06", "Funnel", "Step-level drop-off without sampling thresholds."],
@@ -19,7 +19,7 @@ const reports = {
   es: [
     ["01", "Overview", "Totales de cabecera y momento del último hit observado."],
     ["02", "Evolución", "Métricas en el tiempo, con contexto periodo contra periodo."],
-    ["03", "Fuentes", "Canal, campaña y referrer sobre el conjunto de datos completo."],
+    ["03", "Fuentes", "Canal, campaña y referrer sobre datos sin huecos de consentimiento."],
     ["04", "Páginas", "Pageviews, landing pages y agrupaciones de contenido."],
     ["05", "Conversiones", "Conversiones, microconversiones e ingresos last-click por canal."],
     ["06", "Embudo", "Abandono por paso sin umbrales de muestreo."],
@@ -65,7 +65,7 @@ const copy = {
     definitionBefore: "Sealmetrics is a ",
     cookieless: "cookieless, consentless web analytics platform",
     definitionMiddle: " for eCommerce that measures traffic without depending on consent and attributes revenue using ",
-    lastClick: "last-click on the full dataset",
+    lastClick: "last-click on data without consent gaps",
     definitionAfter: ". Designed for GDPR from the architecture up (self-assessed), hosted exclusively in the EU.",
     definitionCaveat:
       "The useful claim is not “more data” in isolation. It is a reported total you can compare with backend revenue, under an attribution model your team can name.",
@@ -80,7 +80,7 @@ const copy = {
       "Each layer uses the same defined inputs. That removes the hand-off where collection, attribution and reporting usually start telling different stories.",
     layers: [
       ["01", "Capture", "Cookieless aggregate measurement", "Observe eligible events without analytics cookies, persistent visitor IDs or fingerprinting."],
-      ["02", "Attribute", "Revenue under a declared model", "Connect recorded outcomes to channel, campaign and creative using last-click on the complete dataset."],
+      ["02", "Attribute", "Revenue under a declared model", "Connect recorded outcomes to channel, campaign and creative using last-click on data without consent gaps."],
       ["03", "Understand", "Reports plus LENS AI", "Inspect nine reporting surfaces or ask defined metrics a plain-language question."],
       ["04", "Activate", "API, MCP and BigQuery", "Move the same evidence into your warehouse, BI layer and supervised AI workflows."],
     ],
@@ -166,7 +166,7 @@ const copy = {
     definitionBefore: "Sealmetrics es una ",
     cookieless: "plataforma de analítica web sin cookies ni consentimiento",
     definitionMiddle: " para eCommerce que mide el tráfico sin depender del consentimiento y atribuye ingresos mediante ",
-    lastClick: "last-click sobre el conjunto de datos completo",
+    lastClick: "last-click sobre datos sin huecos de consentimiento",
     definitionAfter: ". Diseñada para el RGPD desde la arquitectura (autoevaluación) y alojada exclusivamente en la UE.",
     definitionCaveat:
       "La afirmación útil no es “más datos” de forma aislada. Es un total que puedes comparar con los ingresos del backend, bajo un modelo de atribución que tu equipo sabe nombrar.",
@@ -181,7 +181,7 @@ const copy = {
       "Cada capa utiliza los mismos inputs definidos. Así desaparece el punto donde captura, atribución y reporting suelen empezar a contar historias distintas.",
     layers: [
       ["01", "Captura", "Medición agregada sin cookies", "Observa eventos elegibles sin cookies analíticas, identificadores persistentes ni fingerprinting."],
-      ["02", "Atribuye", "Ingresos bajo un modelo declarado", "Conecta resultados registrados con canal, campaña y creatividad mediante last-click sobre datos completos."],
+      ["02", "Atribuye", "Ingresos bajo un modelo declarado", "Conecta resultados registrados con canal, campaña y creatividad mediante last-click sobre datos sin huecos de consentimiento."],
       ["03", "Entiende", "Informes y LENS AI", "Revisa nueve superficies de reporting o pregunta a métricas definidas en lenguaje natural."],
       ["04", "Activa", "API, MCP y BigQuery", "Lleva la misma evidencia a tu warehouse, BI y flujos de IA supervisados."],
     ],

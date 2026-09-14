@@ -10,10 +10,10 @@ import { getVerticalData } from "@/components/sections/v3/VerticalsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
+  title: "Analítica para DPOs — Diseñada para el RGPD | Sealmetrics",
   description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
   openGraph: {
-    title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
+    title: "Analítica para DPOs — Diseñada para el RGPD | Sealmetrics",
     description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     type: "website",
     images: [ogImage("/es/for/dpo/")],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para DPOs — RGPD por arquitectura | Sealmetrics",
+    title: "Analítica para DPOs — Diseñada para el RGPD | Sealmetrics",
     description: getVerticalData("dpo", "es").lede.slice(0, 155) + "…",
     images: [ogImage("/es/for/dpo/")],
   },

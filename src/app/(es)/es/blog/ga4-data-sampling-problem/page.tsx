@@ -165,7 +165,7 @@ export default function GA4DataSamplingPageEs() {
               analítica cookieless
             </Link>{" "}
             como Sealmetrics tienen un enfoque fundamentalmente distinto.
-            Al recoger datos por métodos cookieless first-party, cada sesión se captura independientemente del estado del banner, del ad blocker o de las restricciones del navegador. Y como el volumen de datos
+            Al recoger datos por métodos cookieless first-party, las sesiones se capturan sin depender del estado del banner ni de las cookies que restringe el navegador. Y como el volumen de datos
             se gestiona a nivel de infraestructura, no hace falta muestreo
             estadístico.
           </p>

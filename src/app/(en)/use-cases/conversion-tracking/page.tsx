@@ -165,7 +165,8 @@ export default function ConversionTrackingPage() {
               <p className="text-[15px] leading-[1.7] text-ink">
                 The number the CFO sees. Aggregate, anonymous, no
                 cookie, no identifier, no consent banner. Captures
-                observed conversions on the full population, without consent gaps.
+                observed conversions from visitors who accept and reject the
+                banner alike, without consent gaps.
                 Reconciles with the eCommerce backend on{" "}
                 <code className="font-mono text-[13px]">order_id</code>.
               </p>

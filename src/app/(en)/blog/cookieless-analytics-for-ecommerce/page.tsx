@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual customers across sessions?",
     answer:
-      "No. Sealmetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. By avoiding personal-data collection at the architecture level, the system meets GDPR by design — confirm against your specific implementation with your DPO; Sealmetrics ships a DPA and TPSR package for this review.",
+      "No. Sealmetrics does not identify individual visitors, does not stitch pageviews into per-user journeys and does not build behavioral profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page and country. By avoiding personal-data collection at the architecture level, the system is designed for GDPR from the architecture up (self-assessed) — confirm against your specific implementation with your DPO; Sealmetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "How does Sealmetrics attribute revenue without journeys?",
@@ -73,7 +73,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Cookieless Analytics for eCommerce: The 2026 Guide",
           description:
-            "How European eCommerce teams count every conversion without cookies or user-level tracking.",
+            "How European eCommerce teams count conversions without consent gaps, cookies or user-level tracking.",
           ...dates,
           url: "/blog/cookieless-analytics-for-ecommerce",
           category: "eCommerce",

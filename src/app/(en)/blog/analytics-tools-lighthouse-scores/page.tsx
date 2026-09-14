@@ -478,7 +478,7 @@ export default function LighthouseScoresPage() {
               cookieless first-party collection
             </Link>{" "}
             with zero measurable impact on page performance. No consent banner
-            required. No tag manager dependency. The data is complete and the
+            required. No tag manager dependency. The data isn&apos;t reduced by consent and the
             Lighthouse score stays where it was before you added analytics.
           </p>
 

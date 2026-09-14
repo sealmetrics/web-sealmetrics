@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "¿Existe una herramienta de analítica con IA conforme con el RGPD?",
-    a: "Sí. Sealmetrics es analítica con IA conforme con el RGPD por arquitectura: la capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
+    a: "Sealmetrics es analítica con IA diseñada para el RGPD desde la arquitectura; es nuestra autoevaluación, no una certificación. La capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
   },
   {
     q: "¿Puedo conectar ChatGPT o Claude a mi analítica?",
@@ -421,7 +421,7 @@ export default function AiAnalyticsEsPage() {
             ))}
           </div>
           <p className="mt-10 text-[15px] leading-[1.6] text-ink-soft max-w-[720px]">
-            El caso de cumplimiento se apoya en la arquitectura, no en un certificado — RGPD por diseño,
+            El caso de cumplimiento se apoya en la arquitectura, no en un certificado — diseñado para el RGPD (autoevaluación),
             ePrivacy limpio, alojado en la UE en Dublín, DPA incluido. Para la postura completa, ve{" "}
             <Link href="/es/security" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
               seguridad y cumplimiento

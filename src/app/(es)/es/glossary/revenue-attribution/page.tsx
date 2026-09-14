@@ -10,10 +10,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "¿Qué es la atribución de ingresos? — Glosario Sealmetrics",
   description:
-    "La atribución de ingresos asigna cada conversión a la fuente que la generó. Sobre datos completos last-click, es la métrica que más cuadra con el CRM.",
+    "La atribución de ingresos asigna cada conversión a la fuente que la generó. Last-click sin huecos de consentimiento es la métrica que más cuadra con el CRM.",
   openGraph: {
     title: "¿Qué es la atribución de ingresos?",
-    description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
+    description: "Asigna cada conversión a su fuente. Last-click sin huecos de consentimiento es la métrica que más cuadra con el CRM.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/revenue-attribution/",
     siteName: "Sealmetrics",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la atribución de ingresos?",
-    description: "Asigna cada conversión a su fuente. Sobre datos completos last-click es la métrica que más cuadra con el CRM.",
+    description: "Asigna cada conversión a su fuente. Last-click sin huecos de consentimiento es la métrica que más cuadra con el CRM.",
     images: [ogImage("/es/glossary/revenue-attribution/")],
   },
   alternates: {
@@ -48,11 +48,11 @@ export default function Page() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. Sealmetrics implementa atribución last-click sobre datos completos: la fuente observada en la pageview donde se dispara la conversión recibe el crédito; los totales se acumulan por canal.
+              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. Sealmetrics implementa atribución last-click sin huecos de consentimiento: la fuente observada en la pageview donde se dispara la conversión recibe el crédito; los totales se acumulan por canal.
             </p>
           </div>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click sobre datos completos</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click sin huecos de consentimiento</h2>
           <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre las conversiones observadas, sin huecos de consentimiento, reconcilia con el CRM dentro del 15-20% — significativamente mejor que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
           <p>La razón: los modelos avanzados (linear, time-decay, position-based, data-driven) aplicados sobre una muestra sesgada producen un sesgo amplificado, no un dato refinado.</p>
 

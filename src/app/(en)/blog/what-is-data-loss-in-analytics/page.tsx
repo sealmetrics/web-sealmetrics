@@ -380,7 +380,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how Sealmetrics eliminates data loss
+              See how Sealmetrics removes consent-driven data loss
             </Link>{" "}
             or{" "}
             <Link

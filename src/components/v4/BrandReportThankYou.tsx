@@ -44,7 +44,7 @@ const copy = {
       <>
         Consentless Analytics.
         <br />
-        <em>Every visit, no banner.</em>
+        <em>Visits counted, no banner.</em>
       </>
     ),
     productBody:
@@ -62,8 +62,8 @@ const copy = {
       ],
       [
         "03",
-        "GDPR by architecture",
-        "No personal data, no cross-site identifier, EU-hosted in Dublin, DPA included. Compliance is a property of the design, not a setting.",
+        "Designed for GDPR",
+        "No personal data, no cross-site identifier, EU-hosted in Dublin, DPA included. It is built into the design, not a setting — our self-assessment, not a certification.",
       ],
     ],
     caseTag: "Measured side by side",
@@ -110,7 +110,7 @@ const copy = {
       <>
         Consentless Analytics.
         <br />
-        <em>Cada visita, sin banner.</em>
+        <em>Visitas contadas, sin banner.</em>
       </>
     ),
     productBody:
@@ -128,8 +128,8 @@ const copy = {
       ],
       [
         "03",
-        "RGPD por arquitectura",
-        "Sin datos personales, sin identificador entre sitios, alojado en la UE en Dublín y con el DPA incluido. El cumplimiento es una propiedad del diseño, no una casilla.",
+        "Diseñada para el RGPD",
+        "Sin datos personales, sin identificador entre sitios, alojado en la UE en Dublín y con el DPA incluido. Va en el diseño, no en una casilla — es nuestra autoevaluación, no una certificación.",
       ],
     ],
     caseTag: "Medido en paralelo",

@@ -210,8 +210,8 @@ export default function MultiTouchAttributionPage() {
 
           <p>
             Sealmetrics provides last-click revenue attribution built on
-            complete session data. Because every visit is captured regardless of
-            consent status or browser restrictions, the attribution reflects
+            session data without consent gaps. Because visits are counted whether
+            or not the banner is accepted, the attribution reflects
             what actually happened — not what the cookie-accepting subset
             suggests might have happened.
           </p>

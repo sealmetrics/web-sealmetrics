@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Analítica para eCommerce — atribución completa | Sealmetrics",
     description:
-      "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
+      "Analítica sin consentimiento, diseñada para el RGPD, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
     type: "website",
     images: [ogImage("/es/for/ecommerce/")],
     locale: "es_ES",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Analítica para eCommerce — atribución completa | Sealmetrics",
-    description: "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
+    description: "Analítica sin consentimiento, diseñada para el RGPD, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
     images: [ogImage("/es/for/ecommerce/")],
   },
   alternates: {
@@ -44,7 +44,7 @@ const seoFaqs = [
   {
     question: "¿Qué es analítica sin cookies para eCommerce?",
     answer:
-      "La analítica sin cookies para eCommerce captura cada visita, add-to-cart, checkout y compra sin usar cookies, localStorage ni fingerprinting. Evita la pérdida del 40–60% de tráfico UE causada por banners de consentimiento y cuadra los datos de backend de Shopify, WooCommerce o Magento con la atribución de marketing.",
+      "La analítica sin cookies para eCommerce captura visitas, add-to-carts, checkouts y compras sin usar cookies, localStorage ni fingerprinting. Evita la pérdida del 40–60% de tráfico UE causada por banners de consentimiento y cuadra los datos de backend de Shopify, WooCommerce o Magento con la atribución de marketing.",
   },
   {
     question: "¿Por qué importa la analítica sin cookies para eCommerce DTC en Europa?",
@@ -89,8 +89,8 @@ export default function Page() {
         label="Analítica sin cookies para eCommerce"
         answer={
           <>
-            La <strong>analítica sin cookies para eCommerce</strong> captura cada
-            visita, add-to-cart y compra sin cookies del navegador, banners de
+            La <strong>analítica sin cookies para eCommerce</strong> captura
+            visitas, add-to-carts y compras sin cookies del navegador, banners de
             consentimiento ni gaps por ad-blockers — y cuadra esos números con
             tu backend de Shopify, WooCommerce o Magento. Sealmetrics es una
             implementación first-party, alojada en UE, construida específicamente
