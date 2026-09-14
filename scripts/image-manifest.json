@@ -103,12 +103,12 @@
     },
     "public/og-image.avif": {
       "source": "public/og-image.png",
-      "sourceHash": "8f785a9ee062eb96a40bcf162d3bbd865cd4c3c9097811c88f54acc4dd4e7aec",
+      "sourceHash": "a2dd7df84bd29b324e206a3acf68356325cf6bde8f88c77360445d684874c7c4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og-image.webp": {
       "source": "public/og-image.png",
-      "sourceHash": "8f785a9ee062eb96a40bcf162d3bbd865cd4c3c9097811c88f54acc4dd4e7aec",
+      "sourceHash": "a2dd7df84bd29b324e206a3acf68356325cf6bde8f88c77360445d684874c7c4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/about.avif": {
@@ -1483,12 +1483,12 @@
     },
     "public/og/product.avif": {
       "source": "public/og/product.png",
-      "sourceHash": "75bc7085f3b9cde96c7581e550dc9f384fff4921e7fb9d650aa8561d335c0ad3",
+      "sourceHash": "c53f6ad64ee212229d40cb3da88f34f646e4c9ab30c94768306366589d4517b9",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/product.webp": {
       "source": "public/og/product.png",
-      "sourceHash": "75bc7085f3b9cde96c7581e550dc9f384fff4921e7fb9d650aa8561d335c0ad3",
+      "sourceHash": "c53f6ad64ee212229d40cb3da88f34f646e4c9ab30c94768306366589d4517b9",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/reg-gap-analysis.avif": {
@@ -1513,12 +1513,12 @@
     },
     "public/og/security.avif": {
       "source": "public/og/security.png",
-      "sourceHash": "60368f843ce0442fdcc569e65e1ddc0c4cf7f2c7d0866c41b248962c75d078ad",
+      "sourceHash": "87d7032f9a876eeb5c9e955360b57a71192a08de483e0946a214df08fb590afa",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/security.webp": {
       "source": "public/og/security.png",
-      "sourceHash": "60368f843ce0442fdcc569e65e1ddc0c4cf7f2c7d0866c41b248962c75d078ad",
+      "sourceHash": "87d7032f9a876eeb5c9e955360b57a71192a08de483e0946a214df08fb590afa",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/sla.avif": {
@@ -1553,12 +1553,12 @@
     },
     "public/og/use-cases.avif": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "c8f56a3a09af6ea3222cf236dbc3fef7cd6fb0abc3534ee308ed82d5edd1d855",
+      "sourceHash": "42ec5517d0130091c2dc72764cf7a457b98fc035d0f8a3f9868e39f6adfb1cc0",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases.webp": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "c8f56a3a09af6ea3222cf236dbc3fef7cd6fb0abc3534ee308ed82d5edd1d855",
+      "sourceHash": "42ec5517d0130091c2dc72764cf7a457b98fc035d0f8a3f9868e39f6adfb1cc0",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/conversion-tracking.avif": {

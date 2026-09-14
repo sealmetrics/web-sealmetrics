@@ -169,15 +169,15 @@ function parseGlossaryTerms() {
 const HUB_OVERRIDES = {
   vs: { eyebrow: "Comparisons", title: "Sealmetrics compared with the enterprise analytics you already run" },
   for: { eyebrow: "By industry", title: "Complete measurement, by the kind of business you run" },
-  "use-cases": { eyebrow: "Use cases", title: "What teams actually do with 100% of their data" },
+  "use-cases": { eyebrow: "Use cases", title: "What teams do with data without consent gaps" },
   platforms: { eyebrow: "Platforms", title: "Install on the eCommerce platform you already use" },
   integrations: { eyebrow: "Integrations", title: "Plugs into the stack you already run" },
   glossary: { eyebrow: "Glossary", title: "The vocabulary of cookieless, consentless measurement" },
   "case-studies": { eyebrow: "Case studies", title: "Named European teams, inspectable figures" },
-  product: { eyebrow: "Product", title: "Enterprise analytics that measures 100% of your traffic" },
+  product: { eyebrow: "Product", title: "Enterprise analytics that doesn’t depend on consent" },
   "how-it-works": { eyebrow: "How it works", title: "No cookies, no consent banner, no blind spot" },
   pricing: { eyebrow: "Pricing", title: "Enterprise analytics at a fraction of GA360 and Adobe" },
-  security: { eyebrow: "Security", title: "GDPR by architecture, EU-hosted in Dublin" },
+  security: { eyebrow: "Security", title: "Designed for GDPR, EU-hosted in Dublin" },
   open: { eyebrow: "Open", title: "How Sealmetrics works, written down in public" },
   blog: { eyebrow: "Blog", title: "Measurement, attribution and privacy for eCommerce" },
 };
@@ -513,11 +513,11 @@ let adopted = 0;
     outFile: out,
     node: ogSiteTemplate({
       eyebrow: "eCommerce analytics",
-      title: "See 100% of your sales — the revenue GA4 can’t.",
+      title: "See the sales consent hides — the revenue GA4 can’t.",
       blurb:
-        "Measure every visit and every sale — no cookies, no consent banner, no 40–60% blind spot.",
+        "No cookies, no consent banner, no 40–60% blind spot.",
       stats: [
-        { value: "100%", label: "Data capture" },
+        { value: "0", label: "Consent loss" },
         { value: "0", label: "Cookies used" },
         { value: "EU", label: "Data residency" },
       ],
