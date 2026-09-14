@@ -288,9 +288,13 @@ Aplica las correcciones de §5.3 y todas las apariciones de las mismas incongrue
 - D8: cifra medida (Incapto 29%) delante; 13% presentado como modelo del peor escenario
 
 **Pendiente, fuera de este PR**
-1. **Barrido D8 en el resto del sitio**: el 13% sigue como hecho en capítulos de `/open`, `/vs-ga4`, tablas de `best-enterprise-analytics-platforms` y `ga4-alternatives-enterprise` (que además dan a GA360 un 30–35% frente al 13% de GA4, siendo la misma etiqueta con el mismo consentimiento) y en la home
+1. ~~**Barrido D8 en el resto del sitio**~~ — hecho en #190: el 13% sigue como hecho en capítulos de `/open`, `/vs-ga4`, tablas de `best-enterprise-analytics-platforms` y `ga4-alternatives-enterprise` (que además dan a GA360 un 30–35% frente al 13% de GA4, siendo la misma etiqueta con el mismo consentimiento) y en la home
 2. **`dateModified` de pilares, plataformas y use-cases no se ha subido**: `date-modified-not-visible` exige mostrar "Updated" y esas plantillas no lo renderizan. Los blogs sí se han subido (lo muestra `<PostByline>`)
 3. **Confirmar con Rafa** los claims comerciales de `/for/agencies`: acuerdos de reseller con margen, white-label, onboarding en 15 minutos
 4. **Rangos sin fuente en `VerticalsData.tsx`**: +30–70% (CMO), +40% (SaaS), +50–80% (media), 4–6 h/semana
 5. **Docs**: `first-party` habla de registro A y otras páginas de CNAME; `adblocker-bypass` dice "captures 100%" y "no ad blocker flags this", más fuerte que la propia página de first-party
 6. T5 (FAQ → `<FaqSection>`), T9 (ES que faltan) y `/es/complete-data` sin Quick answer: siguen en Fase 3
+
+**Pendiente tras #190**
+- El rango "40–60% de rechazo de consentimiento" sigue usándose como cifra típica; la doc de ad blockers dice 15–60% según sector
+- Los claims de posicionamiento "captura el 100%" se mantienen, aunque el caso Incapto dice expresamente que no afirma el 100%; decidir si se matizan
