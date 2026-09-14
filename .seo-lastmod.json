@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "d2cb14f059a171a2",
+    "hash": "4d457f070c2175d3",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "5eb135d5d6f3439d",
+    "hash": "563475ccc406df0c",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -1217,6 +1217,14 @@
   },
   "/es/blog/ga4-vs-piwik-pro-vs-sealmetrics/": {
     "hash": "12cac1300e30ec72",
+    "date": "2026-09-14"
+  },
+  "/blog/server-side-tracking-gdpr/": {
+    "hash": "a207c44c4a1af217",
+    "date": "2026-09-14"
+  },
+  "/es/blog/server-side-tracking-gdpr/": {
+    "hash": "4df559703f41c032",
     "date": "2026-09-14"
   }
 }

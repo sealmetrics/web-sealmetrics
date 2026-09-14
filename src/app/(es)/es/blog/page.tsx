@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "server-side-tracking-gdpr": {
+    title: "Server-side tracking y RGPD: qué cambia y qué no",
+    description: "El server-side cambia dónde se procesan los datos, no si necesitas consentimiento o base legal. Qué dicen ePrivacy, el RGPD y la CNIL, y qué sí puede cambiar.",
+    category: "Regulación",
+    readTime: "10 min",
+  },
   "ga4-vs-piwik-pro-vs-sealmetrics": {
     title: "GA4 vs Piwik PRO vs Sealmetrics: cuál encaja en un equipo de marketing europeo",
     description: "Tres arquitecturas, no tres versiones de una herramienta. Precio, identificadores, qué pasa sin consentimiento, atribución, retención y dónde gana cada una.",

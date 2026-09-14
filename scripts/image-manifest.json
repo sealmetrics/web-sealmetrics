@@ -681,6 +681,16 @@
       "sourceHash": "9fecf1e54261ba1c2be745b0d3aa9ef5fa0484b9f46e4021df2199e5c1619f75",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/server-side-tracking-gdpr.avif": {
+      "source": "public/og/blog/server-side-tracking-gdpr.png",
+      "sourceHash": "b4740e00d370f799abc7d29569f7e14a034e4c54b99d8564768be70142a99581",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/server-side-tracking-gdpr.webp": {
+      "source": "public/og/blog/server-side-tracking-gdpr.png",
+      "sourceHash": "b4740e00d370f799abc7d29569f7e14a034e4c54b99d8564768be70142a99581",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/the-prompt-is-born-clean.avif": {
       "source": "public/og/blog/the-prompt-is-born-clean.png",
       "sourceHash": "7c6f17e1a17c3d2c5b269157987e1a746f19053f92a45c51c495ba1f36e10ba9",

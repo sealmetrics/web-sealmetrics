@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "server-side-tracking-gdpr",
+    title: "Server-Side Tracking and GDPR: What It Changes, and What It Does Not",
+    description:
+      "Server-side tracking moves where data is processed, not whether you need consent or a legal basis. What ePrivacy, GDPR and the CNIL say, and what it changes.",
+    date: "2026-09-14",
+    category: "Regulation",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["gdpr-eprivacy-analytics-legal-assessment", "consent-mode-measured-vs-modelled", "gdpr-analytics-without-consent"],
+  },
+  {
     slug: "ga4-vs-piwik-pro-vs-sealmetrics",
     title: "GA4 vs Piwik PRO vs Sealmetrics: Which One Fits an EU Marketing Team",
     description:
