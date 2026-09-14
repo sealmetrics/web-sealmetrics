@@ -145,6 +145,15 @@ export default function Page() {
             <Link href="/how-it-works" className="text-brand">
               how it works
             </Link>
+            . Two problems sit upstream of these jobs and have their own pages:
+            when GA4 does not reflect what really happened, start with{" "}
+            <Link href="/complete-data" className="text-brand">
+              complete data
+            </Link>
+            ; when you have to prove the setup to a DPO, start with{" "}
+            <Link href="/gdpr-analytics" className="text-brand">
+              GDPR analytics
+            </Link>
             . If you are still deciding whether the data gap is real on your own
             traffic, the{" "}
             <Link href="/data-loss-calculator" className="text-brand">

@@ -55,10 +55,14 @@ const copy = {
     problemTitle: <>Four systems can agree on the meeting.<br /><em>They still disagree on the number.</em></>,
     problemBody:
       "GA4, ad platforms, your agency report and the CRM can each be internally consistent while measuring a different slice of reality. The cost appears when budget decisions depend on a baseline nobody can reconcile.",
+    // Each problem links to the landing written for it (Phase 2 of
+    // CONTENT-PLAN-PROBLEM-POSITIONING.md): the buyer enters through the
+    // problem, the product page is where the four meet.
     problems: [
-      ["The Meta paradox", "The pixel reports 340 conversions. The CRM records 180. Both teams defend their own collection boundary."],
-      ["The Direct bucket", "Consent-shaped visits lose acquisition context, so productive campaigns can reappear as Direct or none."],
-      ["The reconciliation loop", "Marketing, finance and the agency spend another 90 minutes aligning totals instead of moving budget."],
+      ["The Direct bucket", "Consent-shaped visits lose acquisition context, so productive campaigns can reappear as Direct or none.", "When GA4 does not reflect reality", "/complete-data/"],
+      ["The Meta paradox", "The pixel reports 340 conversions. The CRM records 180. Both teams defend their own collection boundary.", "Which campaigns actually sell", "/use-cases/revenue-attribution/"],
+      ["The reconciliation loop", "Marketing, finance and the agency spend another 90 minutes aligning totals instead of moving budget.", "One number for marketing and finance", "/use-cases/single-source-of-truth/"],
+      ["The compliance question", "The DPO asks what the tag collects, where it goes and for how long. A banner is not an answer anyone can check.", "Evidence for your DPO", "/gdpr-analytics/"],
     ],
     definitionTag: "What Sealmetrics is",
     definitionLead: "One platform for complete-data analytics.",
@@ -157,9 +161,10 @@ const copy = {
     problemBody:
       "GA4, las plataformas publicitarias, el informe de agencia y el CRM pueden ser coherentes internamente y medir porciones distintas de la realidad. El coste aparece cuando el presupuesto depende de una base que nadie consigue conciliar.",
     problems: [
-      ["La paradoja de Meta", "El píxel informa de 340 conversiones. El CRM registra 180. Cada equipo defiende su propio límite de captura."],
-      ["El cubo Direct", "Las visitas condicionadas por consentimiento pierden contexto de adquisición y campañas productivas reaparecen como Direct o none."],
-      ["El bucle de conciliación", "Marketing, finanzas y agencia gastan otros 90 minutos alineando totales en vez de mover presupuesto."],
+      ["El cubo Direct", "Las visitas condicionadas por consentimiento pierden contexto de adquisición y campañas productivas reaparecen como Direct o none.", "Cuando GA4 no refleja la realidad", "/es/complete-data/"],
+      ["La paradoja de Meta", "El píxel informa de 340 conversiones. El CRM registra 180. Cada equipo defiende su propio límite de captura.", "Qué campañas venden de verdad", "/es/use-cases/revenue-attribution/"],
+      ["El bucle de conciliación", "Marketing, finanzas y agencia gastan otros 90 minutos alineando totales en vez de mover presupuesto.", "Una cifra para marketing y finanzas", "/es/use-cases/single-source-of-truth/"],
+      ["La pregunta de cumplimiento", "El DPO pregunta qué recoge la etiqueta, adónde va y cuánto se guarda. Un banner no es una respuesta que se pueda comprobar.", "La evidencia para tu DPO", "/es/gdpr-analytics/"],
     ],
     definitionTag: "Qué es Sealmetrics",
     definitionLead: "Una plataforma para analítica con datos completos.",
@@ -284,8 +289,13 @@ export function ProductSignal({ locale }: { locale: Locale }) {
           <p>{t.problemBody}</p>
         </div>
         <div className="sig-product-problem-grid">
-          {t.problems.map(([title, body], index) => (
-            <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{body}</p></article>
+          {t.problems.map(([title, body, linkLabel, href], index) => (
+            <article key={title}>
+              <span>0{index + 1}</span>
+              <h3>{title}</h3>
+              <p>{body}</p>
+              <Link className="sig-product-problem-link" href={href}>{linkLabel} <span aria-hidden="true">→</span></Link>
+            </article>
           ))}
         </div>
       </section>
