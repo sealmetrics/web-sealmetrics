@@ -220,7 +220,7 @@
     "date": "2026-09-14"
   },
   "/open/how-we-price/": {
-    "hash": "6d97b7bfcf76afe6",
+    "hash": "9207d6f3a5cdbccc",
     "date": "2026-09-14"
   },
   "/open/why-we-exist/": {
@@ -232,8 +232,8 @@
     "date": "2026-09-14"
   },
   "/alternatives/adobe-analytics/": {
-    "hash": "be489095a828900a",
-    "date": "2026-08-27"
+    "hash": "c2677d18187a4bcd",
+    "date": "2026-09-14"
   },
   "/es/demo/": {
     "hash": "27357a404bbed96f",
@@ -600,7 +600,7 @@
     "date": "2026-09-14"
   },
   "/es/vs/piwik-pro/": {
-    "hash": "ea4c4d22b3703e2f",
+    "hash": "1049e7f1685369b3",
     "date": "2026-09-14"
   },
   "/es/vs/ga4/": {
@@ -608,7 +608,7 @@
     "date": "2026-08-07"
   },
   "/es/vs/matomo/": {
-    "hash": "18e11157388bdb7e",
+    "hash": "e84a7468e01f3f4c",
     "date": "2026-09-14"
   },
   "/es/demo/thank-you/": {
@@ -1036,7 +1036,7 @@
     "date": "2026-09-14"
   },
   "/vs/piwik-pro/": {
-    "hash": "50bcaee3df07e656",
+    "hash": "b026c0ce3b3f5c01",
     "date": "2026-09-14"
   },
   "/vs/ga4/": {
@@ -1044,7 +1044,7 @@
     "date": "2026-08-07"
   },
   "/vs/matomo/": {
-    "hash": "a2c0850c8ee42a02",
+    "hash": "85c4bece4caa7cbf",
     "date": "2026-09-14"
   },
   "/demo/thank-you/": {

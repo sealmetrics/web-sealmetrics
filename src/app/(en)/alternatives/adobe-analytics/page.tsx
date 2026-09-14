@@ -84,7 +84,8 @@ export default function Page() {
             most of it is quote-only: Adobe runs from around $50,000 to $200,000+
             a year plus implementation consulting, GA360 from about $50,000 and
             commonly $100–175K for mid-market volumes, Piwik PRO sells Business
-            from €35 a month and quotes Enterprise privately, Matomo and GA4 are
+            from €36 a month and Enterprise from €366 a month billed annually,
+            Matomo and GA4 are
             cheap or free.
             The second matters more and is easier to miss — every option except
             Sealmetrics collects data with cookies, so all of them lose the 40–60%
@@ -263,7 +264,7 @@ export default function Page() {
                   </tr>
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Piwik PRO</td>
-                    <td className="py-3 pr-4">Business from €35/mo, Enterprise quote-only</td>
+                    <td className="py-3 pr-4">Business from €36/mo, Enterprise from €366/mo billed annually</td>
                     <td className="py-3 pr-4">Yes</td>
                     <td className="py-3">Yes</td>
                   </tr>

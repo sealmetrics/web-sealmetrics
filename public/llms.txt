@@ -134,7 +134,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /vs-ga4 — Sealmetrics vs Google Analytics 4: free, ~13% EU data after consent rejection and ad blockers, and an official but read-only MCP server over that reduced dataset
 - /vs/ga360 — Sealmetrics vs Google Analytics 360: quote-based from around $50,000/yr and scaling with event volume, on the same cookie and consent architecture as free GA4
 - /vs/adobe-analytics — Sealmetrics vs Adobe Analytics: unpublished contracts from around $50,000/yr to $200,000+, a 3-6 month implementation and an Adobe-certified analyst, on consent-gated AppMeasurement collection
-- /vs/piwik-pro — Sealmetrics vs Piwik PRO: EU-hosted but cookie-based by default; the free Core plan is retired on 31 March 2026, Business starts at €35/mo and Enterprise is quote-only
+- /vs/piwik-pro — Sealmetrics vs Piwik PRO: EU-hosted but cookie-based by default; the free Core plan is retired on 31 March 2026, Business starts at €36/mo and Enterprise at €366/mo billed annually (pricing page, 14 Sep 2026)
 - /vs/matomo — Sealmetrics vs Matomo: Matomo can drop the consent banner in France under the CNIL criteria, but the consent-exempt configuration strips UTM and campaign parameters, disables visit-level reports and recommends turning eCommerce tracking off — and Germany's TDDDG §25 does not recognise it
 - /data-loss-calculator — Interactive calculator showing how much data you lose with cookie-based analytics
 
