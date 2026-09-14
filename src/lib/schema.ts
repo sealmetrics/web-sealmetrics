@@ -444,6 +444,7 @@ export function speakableWebPageSchema(props: {
   url: string;
   name: string;
   selectors?: string[];
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -451,6 +452,7 @@ export function speakableWebPageSchema(props: {
     name: props.name,
     url: pageHref(props.url),
     inLanguage: langOf(props.url),
+    ...(props.dateModified ? { dateModified: props.dateModified } : {}),
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: props.selectors ?? [
