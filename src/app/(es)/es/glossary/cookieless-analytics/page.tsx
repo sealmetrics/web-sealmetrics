@@ -10,10 +10,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "¿Qué es la analítica sin cookies? — Glosario Sealmetrics",
   description:
-    "Analítica web que captura datos de visitantes sin cookies, midiendo el 100% del tráfico sin depender del consentimiento ni de las restricciones del navegador.",
+    "Analítica web que captura datos de visitantes sin cookies, midiendo el tráfico sin depender del consentimiento ni de las restricciones del navegador.",
   openGraph: {
     title: "¿Qué es la analítica sin cookies?",
-    description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
+    description: "Analítica que mide el tráfico sin cookies, sin depender del consentimiento, sin per-user tracking.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/cookieless-analytics/",
     siteName: "Sealmetrics",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la analítica sin cookies?",
-    description: "Analítica que captura el 100% del tráfico sin cookies, sin consentimiento, sin per-user tracking.",
+    description: "Analítica que mide el tráfico sin cookies, sin depender del consentimiento, sin per-user tracking.",
     images: [ogImage("/es/glossary/cookieless-analytics/")],
   },
   alternates: {
@@ -48,7 +48,7 @@ export default function Page() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Analítica web que captura datos de visitantes sin cookies del navegador, midiendo el 100% del tráfico independientemente del estado de consentimiento o de las restricciones del navegador.
+              Analítica web que captura datos de visitantes sin cookies del navegador, midiendo el tráfico independientemente del estado de consentimiento o de las restricciones del navegador.
             </p>
           </div>
 
@@ -65,7 +65,7 @@ export default function Page() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué importa</h2>
           <p>
-            En la UE, la analítica basada en cookies captura aproximadamente el 13% del tráfico real debido al rechazo de consentimiento (55%), bloqueadores (40%) y restricciones de navegador. La analítica sin cookies elimina los tres vectores de pérdida, contando el 100% de las visitas reales de forma anónima.
+            En la UE, la analítica basada en cookies captura aproximadamente el 13% del tráfico real debido al rechazo de consentimiento (55%), bloqueadores (40%) y restricciones de navegador. La analítica sin cookies elimina los tres vectores de pérdida, contando las visitas reales de forma anónima y sin depender del consentimiento.
           </p>
           <p>
             No es una mejora marginal — es la diferencia entre decidir sobre un fragmento estadístico y decidir sobre totales agregados completos.
@@ -77,7 +77,7 @@ export default function Page() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="Esto es exactamente lo que hace Sealmetrics: contar el 100% de las visitas sin cookies. Míralo funcionando sobre tu propio tráfico." />
+        <CommercialModule locale="es" hook="Esto es exactamente lo que hace Sealmetrics: contar las visitas sin cookies y sin depender del consentimiento. Míralo funcionando sobre tu propio tráfico." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

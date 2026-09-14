@@ -44,7 +44,7 @@ const seoFaqs = [
   {
     question: "What is cookieless analytics for SaaS?",
     answer:
-      "Cookieless analytics for SaaS is a measurement approach for product-led growth companies that captures marketing-site and onboarding traffic without cookies, consent banners or personal identifiers. It attributes trial signups, activation events and trial-to-paid conversions on 100% of EU traffic.",
+      "Cookieless analytics for SaaS is a measurement approach for product-led growth companies that captures marketing-site and onboarding traffic without cookies, consent banners or personal identifiers. It attributes trial signups, activation events and trial-to-paid conversions on EU traffic without consent gaps.",
   },
   {
     question: "How does cookieless analytics track product-qualified leads (PQLs)?",
@@ -95,7 +95,7 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Trial-signup attribution on 100% of EU traffic (no consent gap, no per-user tracking).</>,
+          <>Trial-signup attribution on EU traffic without consent gaps (no per-user tracking).</>,
           <>Clean separation of anonymous marketing-site analytics from authenticated product analytics (Mixpanel, Amplitude).</>,
           <>Native BigQuery connector — or the full-resolution REST API — for joining aggregate channel data with your authenticated user tables.</>,
         ]}

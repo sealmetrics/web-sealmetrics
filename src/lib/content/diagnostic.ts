@@ -414,7 +414,7 @@ export function buildComparison(answers: QuizAnswers): ComparisonRow[] {
     {
       metric: "Conversion data",
       current: `Based on ${Math.round((1 - lossRate) * 100)}% of traffic`,
-      sealmetrics: "Based on 100% of traffic",
+      sealmetrics: "Not reduced by consent",
     },
     {
       metric: "ROAS reliability",

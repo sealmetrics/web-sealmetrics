@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: "demdex-analytics-cookies-guide",
     title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
-    description: "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",
+    description: "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to measure traffic cookieless, without consent loss.",
     date: "2026-09-04",
     category: "Data Quality",
     readTime: "7 min",
@@ -92,7 +92,7 @@ export const blogPosts: BlogPost[] = [
     slug: "self-service-analytics-for-marketing-teams",
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
-      "A marketing team gets a correct answer without opening a ticket. 100% of traffic measured without consent, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
+      "A marketing team gets a correct answer without opening a ticket. Traffic measured without consent loss, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
     dateModified: "2026-08-06",
     category: "AI & Analytics",
@@ -108,7 +108,7 @@ export const blogPosts: BlogPost[] = [
     slug: "best-web-analytics-tool",
     title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
     description:
-      "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — and how to test each one.",
+      "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, no consent gaps, API, MCP — and how to test each one.",
     date: "2026-08-06",
     dateModified: "2026-08-06",
     category: "Comparisons",
@@ -253,7 +253,7 @@ export const blogPosts: BlogPost[] = [
     slug: "consentless-analytics-for-dtc",
     title: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
     description:
-      "Consentless analytics captures 100% of DTC traffic without a cookie banner. How it works under GDPR/ePrivacy, and what European DTC teams get from it.",
+      "Consentless analytics measures DTC traffic without a cookie banner or consent loss. How it works under GDPR/ePrivacy, and what European DTC teams get from it.",
     date: "2026-04-24",
     dateModified: "2026-05-28",
     category: "eCommerce",

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 const TEAMS = [
   {
     name: "Engineering",
-    desc: "The tracking pixel, the ingestion pipeline and the dashboard. A small surface that measures 100% of traffic for 2,000+ customers — without a single cookie.",
+    desc: "The tracking pixel, the ingestion pipeline and the dashboard. A small surface that measures traffic for 2,000+ customers without depending on consent — or a single cookie.",
   },
   {
     name: "Product & Design",
@@ -156,8 +156,8 @@ export default function CareersPage() {
               just sits there as risk.
             </p>
             <p>
-              Sealmetrics measures 100% of website traffic without collecting
-              personal data — that is the whole product. Applying the opposite
+              Sealmetrics measures website traffic without depending on consent
+              or collecting personal data — that is the whole product. Applying the opposite
               logic to the people who want to build it with us would be
               incoherent. So the application is three optional link fields and
               a team selector. The links you share are the application,

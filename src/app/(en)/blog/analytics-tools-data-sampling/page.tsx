@@ -315,7 +315,7 @@ export default function DataSamplingComparedPage() {
             >
               cookieless first-party collection
             </Link>
-            , and full funnel analysis — all on 100% of your data.
+            , and full funnel analysis — all unsampled, with no consent-driven data loss.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -374,9 +374,9 @@ export default function DataSamplingComparedPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              Sealmetrics captures 100% of your data
+              Sealmetrics measures without consent gaps
             </Link>{" "}
-            without sampling, or{" "}
+            or sampling, or{" "}
             <Link
               href="/data-loss-calculator"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

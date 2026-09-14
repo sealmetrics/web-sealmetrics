@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const TEAMS = [
   {
     name: "Ingeniería",
-    desc: "El píxel de medición, el pipeline de ingesta y el dashboard. Una superficie pequeña que mide el 100% del tráfico de 2.000+ clientes — sin una sola cookie.",
+    desc: "El píxel de medición, el pipeline de ingesta y el dashboard. Una superficie pequeña que mide el tráfico de 2.000+ clientes sin depender del consentimiento — sin una sola cookie.",
   },
   {
     name: "Producto y Diseño",
@@ -160,8 +160,8 @@ export default function CareersPageEs() {
               ahí, como riesgo.
             </p>
             <p>
-              Sealmetrics mide el 100% del tráfico de una web sin recoger datos
-              personales — ese es todo el producto. Aplicar la lógica contraria
+              Sealmetrics mide el tráfico de una web sin depender del consentimiento
+              ni recoger datos personales — ese es todo el producto. Aplicar la lógica contraria
               a las personas que quieren construirlo con nosotros sería
               incoherente. Por eso la candidatura son tres campos de enlace
               opcionales y un selector de equipo. Los enlaces que compartes son

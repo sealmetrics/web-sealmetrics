@@ -80,7 +80,7 @@ export default function Page() {
           <p>El cumplimiento no se demuestra con una casilla marcada, sino con un expediente que alguien pueda leer. Las preguntas que se repiten en una revisión son cuatro: qué dato concreto sale del navegador, dónde se procesa y se almacena, quién más puede acceder a él, y durante cuánto tiempo se conserva. Una herramienta que no recoge direcciones IP, identificadores de dispositivo ni identificadores de usuario reduce las tres primeras a respuestas cortas, y una retención con TTL automático resuelve la cuarta sin depender de un proceso manual.</p>
           <p>Queda la capa de transferencias internacionales. Si el tratamiento ocurre íntegramente en la UE y no hay subencargados fuera del EEE, la evaluación de transferencia posterior a Schrems II deja de aplicar — no porque se haya documentado mejor, sino porque no hay transferencia que evaluar. Es la diferencia entre gestionar un riesgo y eliminarlo, y es la razón por la que la <Link href="/es/security" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">arquitectura</Link> pesa más que la lista de certificaciones.</p>
 
-        <CommercialModule locale="es" hook="Cumplimiento del RGPD por arquitectura, no por banner. Mira cómo Sealmetrics mide el 100% de las visitas sin tocar datos personales." />
+        <CommercialModule locale="es" hook="Diseñada para el RGPD desde la arquitectura (autoevaluación), no por banner. Mira cómo Sealmetrics mide las visitas sin depender del consentimiento ni tocar datos personales." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

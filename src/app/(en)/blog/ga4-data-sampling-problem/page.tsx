@@ -139,7 +139,7 @@ export default function GA4DataSamplingPage() {
           </div>
 
         <CommercialModule
-          hook="Hitting GA4's sampling thresholds? See your own reports unsampled — Sealmetrics runs on 100% of events at any volume."
+          hook="Hitting GA4's sampling thresholds? See your own reports unsampled — Sealmetrics processes every collected event at any volume."
         />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -72,7 +72,7 @@ export default function ReturnOnAdSpendPage() {
             The asymmetry is the problem. The denominator (spend) is always complete. The numerator (measured revenue) is complete only if the analytics tool observed every conversion. In the EU, cookie-based analytics does not come close: 40-60% of visitors reject consent, ad blockers remove more, and browser restrictions cut cookie lifetimes. The result is that a tool like GA4 typically sees around 13% of real EU traffic — and a ROAS computed on that fragment divides full spend by partial revenue.
           </p>
           <p>
-            The distortion is not evenly distributed either. Consent rejection and blocker usage vary by market, device and audience, so some campaigns lose more measured conversions than others. A prospecting campaign reaching privacy-conscious German desktop users can look far worse than a retargeting campaign reaching returning mobile buyers, even when their true returns are similar. Budget then flows toward the campaigns that are easiest to measure, not the ones that perform best. <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Complete data</Link> — <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link> computed on 100% of observed orders rather than the consenting minority — removes that bias from the numerator.
+            The distortion is not evenly distributed either. Consent rejection and blocker usage vary by market, device and audience, so some campaigns lose more measured conversions than others. A prospecting campaign reaching privacy-conscious German desktop users can look far worse than a retargeting campaign reaching returning mobile buyers, even when their true returns are similar. Budget then flows toward the campaigns that are easiest to measure, not the ones that perform best. <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Complete data</Link> — <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link> computed on observed orders without consent gaps rather than on the consenting minority — removes that bias from the numerator.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What ROAS does not tell you</h2>
@@ -81,7 +81,7 @@ export default function ReturnOnAdSpendPage() {
           </p>
         </div>
 
-        <CommercialModule hook="A ROAS computed on the ~13% of EU traffic GA4 sees is a guess with two decimal places. See yours calculated on 100% of orders." />
+        <CommercialModule hook="A ROAS computed on the ~13% of EU traffic GA4 sees is a guess with two decimal places. See yours calculated without consent gaps." />
 
         <RelatedGlossaryTerms slug="return-on-ad-spend" />
 

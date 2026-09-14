@@ -22,7 +22,7 @@ export function HeroV3Es() {
             anterior al reposicionamiento a datos completos: la home inglesa se
             movió y esta se quedó atrás. */}
         <h1 className="h-display mx-auto">
-          Ve el 100% de tus ventas — <em className="italic-accent">los ingresos que GA4 no ve.</em>
+          Ve las ventas que el consentimiento esconde — <em className="italic-accent">los ingresos que GA4 no ve.</em>
         </h1>
 
         <p
@@ -50,7 +50,7 @@ export function HeroV3Es() {
         </p>
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["100% del tráfico medido", "Sin cookies · sin banner", "RGPD por arquitectura", "Números que cuadran con Shopify"].map((b) => (
+          {["Sin pérdida por consentimiento", "Sin cookies · sin banner", "RGPD por arquitectura", "Números que cuadran con Shopify"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}

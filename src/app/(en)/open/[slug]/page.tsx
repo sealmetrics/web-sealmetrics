@@ -487,7 +487,7 @@ function ChapterOneBody() {
               Attribution should be honest
             </h3>
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
-              Last-click on 100% of events. Not because last-click is
+              Last-click on data without consent gaps. Not because last-click is
               sophisticated — it isn't. Because{" "}
               <em className="italic-accent">complete</em> last-click
               outperforms <em>modeled</em> multi-touch every time the budget
@@ -780,14 +780,14 @@ function ChapterNineBody() {
             it's an algorithm hallucinating about what the other 87% did.
           </p>
           <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-            We do last-click on 100% of events. It's an older model. It's a
+            We do last-click on data without consent gaps. It's an older model. It's a
             less impressive demo. It moves budget more correctly because it
             isn't making up the inputs.
           </p>
         </>
       ),
       instead:
-        "Last-click attribution on 100% of measured events, with channel-level revenue resolution.",
+        "Last-click attribution on measured events without consent gaps, with channel-level revenue resolution.",
     },
     {
       id: "no-sessions",
@@ -1078,7 +1078,7 @@ function ChapterThreeBody() {
       <p className="text-[1.25rem] leading-[1.6] text-ink-2 mb-8 first-letter:font-semibold first-letter:text-[2.4em] first-letter:float-left first-letter:mr-2 first-letter:leading-[1] first-letter:text-ink">
         "Complete data" is one of those phrases that sounds obvious until you
         try to define it. This chapter draws the line — what we mean when we
-        say Sealmetrics captures 100%, what GA4 means when it shows the
+        say Sealmetrics doesn't depend on consent, what GA4 means when it shows the
         dashboard you've been reading, and why the difference is a budget
         problem, not a vocabulary one.
       </p>
@@ -2107,7 +2107,7 @@ function ChapterElevenBody() {
     },
     {
       id: "last-click-attribution",
-      term: "Last-click attribution on 100%",
+      term: "Last-click attribution without consent gaps",
       plain:
         "Credit assigned to the final measurable channel before conversion, applied across the entire visitor population — not just the consenting fraction.",
       body: (
@@ -2449,7 +2449,7 @@ function ChapterElevenBody() {
       id: "method",
       label: "Method and measurement",
       intro:
-        "How we describe what we do and what we refuse to do. The vocabulary that defines complete data, last-click on 100%, and the things we say no to.",
+        "How we describe what we do and what we refuse to do. The vocabulary that defines complete data, last-click without consent gaps, and the things we say no to.",
       terms: method,
     },
     {
@@ -2607,7 +2607,7 @@ function ChapterElevenBody() {
    ============================================ */
 function ChapterSevenBody() {
   const includedAlways = [
-    "100% capture · no sampling, ever",
+    "No consent-driven data loss · no sampling, ever",
     "Last-click revenue attribution on the full population",
     "EU-hosted in Dublin · no US sub-processors on visitor data",
     "GDPR by architecture · DPA signed by default",
@@ -2678,7 +2678,7 @@ function ChapterSevenBody() {
     },
     {
       label: "Data captured",
-      us: "100% of events",
+      us: "Not reduced by consent",
       ga360: "~13% in EU after consent + ITP",
       adobe: "~13% in EU after consent + ITP",
       piwik: "100% of consenting users",

@@ -77,7 +77,7 @@ export default function AttributionModelPage() {
             Consider a customer who first discovers your brand through an organic search (blocked by an ad blocker), later clicks a display ad (tracked), and finally converts through a branded search (tracked). A last-touch model credits branded search. A data-driven model credits display. Neither knows the organic visit existed. The channel that actually introduced the customer gets zero credit &mdash; and zero budget in the next planning cycle.
           </p>
           <p>
-            <Link href="/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Multi-touch attribution</Link> needs more than complete data &mdash; it needs a persistent identifier linking the same visitor&rsquo;s touchpoints across sessions, which is exactly the cookie dependency that causes the data loss above. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> closes a different gap: it captures every touchpoint within a session without that identifier, which is why models built on it &mdash; like <Link href="/glossary/last-click-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click</Link> &mdash; run on 100% of sessions instead of a consent-biased subset.
+            <Link href="/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Multi-touch attribution</Link> needs more than complete data &mdash; it needs a persistent identifier linking the same visitor&rsquo;s touchpoints across sessions, which is exactly the cookie dependency that causes the data loss above. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> closes a different gap: it captures every touchpoint within a session without that identifier, which is why models built on it &mdash; like <Link href="/glossary/last-click-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click</Link> &mdash; run on data without consent gaps instead of a consent-biased subset.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Attribution model comparison</h2>
@@ -124,7 +124,7 @@ export default function AttributionModelPage() {
           </p>
         </div>
 
-        <CommercialModule hook="Sealmetrics runs one model — last-click on 100% of your traffic. See what a single, complete model tells you that blended data can't." />
+        <CommercialModule hook="Sealmetrics runs one model — last-click on your traffic, without consent gaps. See what a single, complete model tells you that blended data can't." />
 
         <RelatedGlossaryTerms slug="attribution-model" />
 

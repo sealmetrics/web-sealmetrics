@@ -322,7 +322,7 @@ export default function MeasuredScriptsPage() {
 
           <p>
             The script that measures your site performance is itself degrading
-            your site performance. A 1.1 KB script captures 100% of traffic
+            your site performance. A 1.1 KB script measures traffic without depending on consent
             through{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless first-party collection</Link>
             , complies with{" "}

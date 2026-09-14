@@ -22,7 +22,7 @@ const CONTENT: Record<
         href: "/vs-ga4/",
         label: "Sealmetrics vs GA4",
         blurb: "The free default, and the 60% of EU sessions it never sees.",
-        tag: "Req 2 · 100% of the data",
+        tag: "Req 2 · data without consent gaps",
       },
       {
         href: "/vs/ga360/",
@@ -65,7 +65,7 @@ const CONTENT: Record<
         href: "/es/vs-ga4/",
         label: "Sealmetrics vs GA4",
         blurb: "El estándar gratuito, y el 60% de sesiones UE que nunca ve.",
-        tag: "Req 2 · el 100% del dato",
+        tag: "Req 2 · dato sin huecos de consentimiento",
       },
       {
         href: "/es/vs/ga360/",

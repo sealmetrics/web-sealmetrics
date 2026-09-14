@@ -207,7 +207,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "+30–40%", label: "Traffic recovered", detail: "Consent-rejection gap closed. Real visitor count matches Shopify Analytics." },
           { n: "15–20%", label: "Closer to CRM", detail: "Attributed revenue within 15–20% of actual CRM bookings." },
           { n: "0", label: "Sampling", detail: "Black Friday traffic captured at full resolution — no estimates." },
-          { n: "100%", label: "Microconversions", detail: "Every add-to-cart, checkout start, form submit recorded." },
+          { n: "Consentless", label: "Microconversions", detail: "Add-to-cart, checkout start and form submits recorded without depending on consent." },
         ],
         quote: { text: "We've used Sealmetrics as 'OK, we believe this data.' It's now our single source of truth.", cite: "Founder & CEO · DTC brand" },
         faqs: [
@@ -235,7 +235,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "+30–40%", label: "Tráfico recuperado", detail: "Cerrado el gap de rechazo de consentimiento. Visitantes reales cuadran con Shopify Analytics." },
           { n: "15–20%", label: "Más cerca del CRM", detail: "Ingresos atribuidos dentro del 15–20% de las reservas reales." },
           { n: "0", label: "Muestreo", detail: "Tráfico Black Friday capturado a resolución completa — sin estimaciones." },
-          { n: "100%", label: "Microconversiones", detail: "Cada add-to-cart, inicio de checkout, envío de formulario registrado." },
+          { n: "Sin banner", label: "Microconversiones", detail: "Add-to-cart, inicio de checkout y envíos de formulario registrados sin depender del consentimiento." },
         ],
         quote: { text: "Hemos usado Sealmetrics como 'vale, nos creemos este dato.' Es nuestra fuente única de verdad.", cite: "Founder & CEO · marca DTC" },
         faqs: [
@@ -321,7 +321,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "+40%", label: "Signups observed", detail: "Consent rejection and ad blockers no longer a gap." },
-          { n: "100%", label: "Activation tracked", detail: "Every product event captured, no sampling at any scale." },
+          { n: "Unsampled", label: "Activation tracked", detail: "Product events captured without consent gaps, no sampling at any scale." },
           { n: "Split", label: "True PLG attribution", detail: "Product-led vs marketing-led revenue cleanly separated." },
           { n: "MCP", label: "Native AI access", detail: "LLM agents query your analytics for product insights." },
         ],
@@ -348,7 +348,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "+40%", label: "Signups observados", detail: "Consent rejection y ad blockers dejan de ser un gap." },
-          { n: "100%", label: "Activación tracked", detail: "Cada evento de producto capturado, sin muestreo a ninguna escala." },
+          { n: "Sin muestreo", label: "Activación tracked", detail: "Eventos de producto capturados sin huecos de consentimiento, sin muestreo a ninguna escala." },
           { n: "Split", label: "Atribución PLG real", detail: "Product-led vs marketing-led separados limpiamente." },
           { n: "MCP", label: "Acceso IA nativo", detail: "Agentes LLM consultan tu analítica para insights de producto." },
         ],
@@ -435,7 +435,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "+50–80%", label: "Audience recovered", detail: "Ad blocker readers now visible for the first time." },
-          { n: "100%", label: "Paywall funnel", detail: "Every read → hit → subscribe attributed to originating channel." },
+          { n: "Read → sub", label: "Paywall funnel", detail: "Read → hit → subscribe attributed to the originating channel, without consent gaps." },
           { n: "Email", label: "Newsletter attribution", detail: "Subscriptions attributed last-click to the newsletter session that produced them." },
           { n: "Real-time", label: "Yield optimization", detail: "Programmatic decisions on complete, not sampled, data." },
         ],
@@ -462,7 +462,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "+50–80%", label: "Audiencia recuperada", detail: "Lectores con ad blocker visibles por primera vez." },
-          { n: "100%", label: "Funnel paywall", detail: "Cada lectura → hit → suscripción atribuida al canal origen." },
+          { n: "Lectura → alta", label: "Funnel paywall", detail: "Lectura → hit → suscripción atribuida al canal origen, sin huecos de consentimiento." },
           { n: "Email", label: "Atribución newsletter", detail: "Suscripciones atribuidas a último clic a la sesión de newsletter que las produjo." },
           { n: "Tiempo real", label: "Optimización yield", detail: "Decisiones programáticas sobre datos completos, no muestreados." },
         ],

@@ -31,7 +31,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               premium incomplete data. Sealmetrics replaces the
               measurement layer for a published{" "}
               <strong>€10,788/year</strong> at Scale — a fraction of
-              any GA360 contract — captures 100% on aggregate and
+              any GA360 contract — measures in aggregate without depending on consent and
               keeps everything in Dublin.
             </>
           ),
@@ -64,7 +64,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes", us: "No · cookieless by design" },
-            { feature: "Consent required", them: "Yes · 40–60% reject in EU", us: "No · 100% captured" },
+            { feature: "Consent required", them: "Yes · 40–60% reject in EU", us: "No · not reduced by consent" },
             { feature: "Sampling", them: "Above thresholds", us: "Zero sampling" },
           ]},
           { category: "Infrastructure", block: "technical", rows: [
@@ -74,7 +74,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "AI & modern stack", block: "reporting", rows: [
             { feature: "MCP server", them: "Official server · experimental, read-only", us: "Native · managed · read and act" },
-            { feature: "What the agent can read", them: "Post-consent subset", us: "100% of events" },
+            { feature: "What the agent can read", them: "Post-consent subset", us: "Events without consent gaps" },
             { feature: "Report latency", them: "Realtime report is core · standard reports lag 24–48 h", us: "< 2 minutes · all plans" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
@@ -131,7 +131,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               datos premium incompletos. Sealmetrics reemplaza la capa
               de medición por <strong>10.788€/año</strong> publicados
               en Scale — una fracción de cualquier contrato GA360 —,
-              captura el 100% en agregado y mantiene todo en
+              mide en agregado sin depender del consentimiento y mantiene todo en
               Dublín.
             </>
           ),
@@ -164,7 +164,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí", us: "No · sin cookies por diseño" },
-            { feature: "Consentimiento", them: "Sí · 40–60% rechaza en UE", us: "No · 100% capturado" },
+            { feature: "Consentimiento", them: "Sí · 40–60% rechaza en UE", us: "No · sin pérdida por consentimiento" },
             { feature: "Muestreo", them: "Sobre umbrales", us: "Cero muestreo" },
           ]},
           { category: "Infraestructura", block: "technical", rows: [
@@ -174,7 +174,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "IA y stack moderno", block: "reporting", rows: [
             { feature: "MCP server", them: "Servidor oficial · experimental, solo lectura", us: "Nativo · gestionado · lee y actúa" },
-            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "100% de los eventos" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "Eventos sin huecos de consentimiento" },
             { feature: "Latencia de informes", them: "El informe Realtime es core · los estándar tardan 24–48 h", us: "< 2 minutos · todos los planes" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
@@ -278,7 +278,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Modern stack", block: "reporting", rows: [
             { feature: "MCP / AI-native", them: "Official MCP servers for Adobe Analytics and CJA", us: "Native · managed · all plans" },
-            { feature: "What the agent can read", them: "Post-consent subset", us: "100% of events" },
+            { feature: "What the agent can read", them: "Post-consent subset", us: "Events without consent gaps" },
             { feature: "Warehouse export", them: "Data Feeds / Data Warehouse · CJA for cross-channel", us: "Native BigQuery export · included in all plans" },
           ]},
           { category: "Where Adobe is the better choice", block: "commercial", rows: [
@@ -380,7 +380,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / IA nativa", them: "Servidores MCP oficiales para Adobe Analytics y CJA", us: "Nativo · gestionado · todos los planes" },
-            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "100% de los eventos" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento", us: "Eventos sin huecos de consentimiento" },
             { feature: "Export a warehouse", them: "Data Feeds / Data Warehouse · CJA para cross-canal", us: "Export BigQuery nativo · incluido en todos los planes" },
           ]},
           { category: "Dónde Adobe es la mejor opción", block: "commercial", rows: [
@@ -673,7 +673,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Default mode", them: "Cookies on · no banner only under a consent-exempt configuration (CNIL criteria); banner required in Germany", us: "Cookieless · nothing written to or read from the device" },
             { feature: "Cookieless mode available", them: "Yes — config_id recognises a visitor for ~30 min (24h max) by design", us: "Full functionality, always cookieless" },
             { feature: "ePrivacy Art. 5(3) exposure", them: "config_id derives from device and network characteristics · EDPB 2/2023 covers non-cookie techniques", us: "No storage, no device read · 5(3) not engaged" },
-            { feature: "EU traffic captured (typical)", them: "~60% running a consent banner (default setup)", us: "100% captured" },
+            { feature: "EU traffic captured (typical)", them: "~60% running a consent banner (default setup)", us: "Not reduced by consent" },
             { feature: "Report archiving at scale", them: "No sampling — but cron-driven archiving bottlenecks on self-host", us: "No archiving step · unsampled" },
           ]},
           { category: "Compliance", block: "technical", rows: [
@@ -689,7 +689,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Modern stack", block: "reporting", rows: [
             { feature: "Native MCP / AI agents", them: "Plugin (Cloud + On-Premise, since 2026)", us: "Native · no plugin · all plans" },
-            { feature: "What the agent can read", them: "Post-consent subset, or exempt data with UTMs stripped", us: "100% of events · campaigns intact" },
+            { feature: "What the agent can read", them: "Post-consent subset, or exempt data with UTMs stripped", us: "Events without consent gaps · campaigns intact" },
             { feature: "BigQuery / warehouse export", them: "Data Warehouse Connector · additional cost per tier", us: "Native · all plans · full resolution" },
             { feature: "Real-time latency", them: "Live visitor log is real-time · reports wait on cron archiving", us: "< 2 minutes · default" },
             { feature: "Ask-your-data AI assistant", them: "MCP plugin or premium add-on", us: "LENS AI on all plans (BYOK) · managed Private AI from Scale" },
@@ -795,7 +795,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Modo por defecto", them: "Cookies on · sin banner solo bajo configuración de exención (criterios CNIL); banner requerido en Alemania", us: "Sin cookies · no escribe ni lee nada del dispositivo" },
             { feature: "Modo cookieless disponible", them: "Sí — config_id reconoce al visitante ~30 min (24h máx) por diseño", us: "Funcionalidad completa, siempre sin cookies" },
             { feature: "Exposición al art. 5(3) de ePrivacy", them: "config_id deriva de características del dispositivo y la red · EDPB 2/2023 cubre técnicas sin cookie", us: "Sin almacenamiento ni lectura · 5(3) no se activa" },
-            { feature: "Tráfico UE capturado (típico)", them: "~60% con banner de consentimiento (configuración por defecto)", us: "100% capturado" },
+            { feature: "Tráfico UE capturado (típico)", them: "~60% con banner de consentimiento (configuración por defecto)", us: "Sin pérdida por consentimiento" },
             { feature: "Archivado de informes a escala", them: "Sin muestreo — pero el archivado por cron hace cuello de botella en self-host", us: "Sin paso de archivado · sin muestreo" },
           ]},
           { category: "Compliance", block: "technical", rows: [
@@ -811,7 +811,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / agentes IA nativos", them: "Plugin (Cloud + On-Premise, desde 2026)", us: "Nativo · sin plugin · todos los planes" },
-            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato exento sin UTMs", us: "100% de los eventos · campañas intactas" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato exento sin UTMs", us: "Eventos sin huecos de consentimiento · campañas intactas" },
             { feature: "Export BigQuery / warehouse", them: "Data Warehouse Connector · coste adicional por tier", us: "Nativo · todos los planes · resolución completa" },
             { feature: "Latencia tiempo real", them: "El log de visitas es en tiempo real · los informes esperan al archivado por cron", us: "< 2 minutos · por defecto" },
             { feature: "Asistente IA sobre tus datos", them: "Plugin MCP o add-on premium", us: "LENS AI en todos los planes (BYOK) · Private AI gestionada desde Scale" },
@@ -869,7 +869,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               and ad blockers. The serious alternative for an eCommerce
               over €10M revenue is a different category — complete
               capture, EU-hosted, zero consent scope, last-click
-              attribution on 100% of data.
+              attribution on data without consent gaps.
             </>
           ),
           bullets: [
@@ -906,7 +906,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Modern stack", block: "reporting", rows: [
             { feature: "MCP for AI agents", them: "Official server · experimental, read-only", us: "Native · managed · read and act" },
-            { feature: "What the agent can read", them: "Post-consent subset, modelled where consent is missing", us: "100% of events" },
+            { feature: "What the agent can read", them: "Post-consent subset, modelled where consent is missing", us: "Events without consent gaps" },
             { feature: "BigQuery export", them: "Yes · daily export cap on the free tier", us: "Full resolution · all plans" },
             { feature: "Report latency", them: "Realtime report is core · standard reports lag 24–48 h", us: "< 2 minutes" },
           ]},
@@ -958,8 +958,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               rechazo de consentimiento y ad-blockers. La alternativa
               seria para un eCommerce con más de 10M€ de ingresos es
               otra categoría — captura completa, alojada en UE, cero
-              scope de consentimiento, atribución last-click sobre el
-              100% de los datos.
+              scope de consentimiento, atribución last-click sobre
+              datos sin huecos de consentimiento.
             </>
           ),
           bullets: [
@@ -996,7 +996,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP para agentes IA", them: "Servidor oficial · experimental, solo lectura", us: "Nativo · gestionado · lee y actúa" },
-            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, modelado donde falta consentimiento", us: "100% de los eventos" },
+            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, modelado donde falta consentimiento", us: "Eventos sin huecos de consentimiento" },
             { feature: "Export BigQuery", them: "Sí · tope diario de export en el tier gratuito", us: "Resolución completa · todos los planes" },
             { feature: "Latencia de informes", them: "El informe Realtime es core · los estándar tardan 24–48 h", us: "< 2 minutos" },
           ]},

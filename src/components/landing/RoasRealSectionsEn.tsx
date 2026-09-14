@@ -133,7 +133,7 @@ export function RoasMath() {
             <span className="text-[17px] leading-[1.3] text-ink">
               Your real ROAS
               <small className="block mt-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-                100% of sales measured
+                No consent loss on sales
               </small>
             </span>
             <RevealBar pct={100} tone="us" delay={170} />
@@ -221,8 +221,8 @@ export function WhatWeDo() {
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             The pixel fires before the banner and measures{" "}
-            <strong className="text-ink font-semibold">100% of your sessions, sales and events</strong>. Real
-            data: we do not model and we do not sample, because there is no gap left to fill with statistics.
+            <strong className="text-ink font-semibold">your sessions, sales and events without depending on consent</strong>. Real
+            data: we do not model and we do not sample, because consent rejection leaves no gap to fill with statistics.
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             The shift in mindset is this: you stop analysing{" "}
@@ -419,8 +419,8 @@ const TRADE_NO = [
 ];
 
 const TRADE_YES = [
-  "100% of sessions, events and sales. With no banner in the way.",
-  "Channel, campaign, medium, keyword, content and referrer across that 100%.",
+  "Sessions, events and sales with no consent loss. With no banner in the way.",
+  "Channel, campaign, medium, keyword, content and referrer across that same data.",
   "The complete aggregate funnel: visit → product viewed → cart → checkout → purchase.",
   "Product-level data: size, colour, brand, category, price range, SKU.",
   "All in real time, to the second, Black Friday peak included.",
@@ -556,7 +556,7 @@ const SPECS = [
   {
     h: "Data truth",
     items: [
-      { v: "100% of traffic", l: "No consent, no cookies, no banner in the way." },
+      { v: "No consent loss", l: "No consent, no cookies, no banner in the way." },
       { v: "Zero modelling", l: "No modelling. No sampling. No estimates. If it is in the report, it happened." },
       { v: "+25% vs Adobe or GA4", l: "Measured in the field, 30 days dual-tagged on the same site." },
     ],
@@ -810,7 +810,7 @@ export function Implementation() {
 const USES = [
   {
     t: "You split spend on complete data",
-    d: "One client saw TikTok Ads as almost flat in GA4. With 100% of the data, the real sales appeared along with a discovery weighting far above what was reported. Spend moved accordingly.",
+    d: "One client saw TikTok Ads as almost flat in GA4. With data free of consent gaps, the real sales appeared along with a discovery weighting far above what was reported. Spend moved accordingly.",
   },
   {
     t: "You optimise campaigns by product",

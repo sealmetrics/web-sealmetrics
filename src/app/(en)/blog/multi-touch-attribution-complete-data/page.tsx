@@ -68,7 +68,7 @@ export default function MultiTouchAttributionPage() {
             <li>Multi-touch attribution models see only 13% of touchpoints in EU traffic — the remaining 87% are lost to consent rejection, ad blockers, and browser restrictions.</li>
             <li>Direct traffic is systematically inflated because it absorbs all untracked touchpoints, while top-of-funnel channels (organic, social, display) are undervalued because first touches are most likely to be lost.</li>
             <li>GA4 data-driven attribution uses ML on a biased 13% sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>
-            <li>When cookieless analytics captures 100% of traffic, every touchpoint in every journey is visible, and attribution models distribute credit based on actual behavior rather than estimates.</li>
+            <li>When cookieless analytics stops losing traffic to consent rejection, touchpoints hidden by the banner become visible, and attribution models distribute credit based on actual behavior rather than estimates.</li>
           </ul>
         </div>
 
@@ -169,7 +169,7 @@ export default function MultiTouchAttributionPage() {
             ))}
           </ul>
 
-          <CommercialModule hook="Last-click on 100% of data vs modelled multi-touch on a fraction — see the difference on your own channel mix." />
+          <CommercialModule hook="Last-click on data without consent gaps vs modelled multi-touch on a fraction — see the difference on your own channel mix." />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Google&rsquo;s data-driven attribution is not the answer
@@ -195,15 +195,15 @@ export default function MultiTouchAttributionPage() {
           </h2>
 
           <p>
-            When you capture 100% of traffic through{" "}
+            When you measure traffic without depending on consent through{" "}
             <Link
               href="/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               cookieless analytics
             </Link>
-            , attribution models work as designed. Every touchpoint in every
-            journey is visible. The model distributes credit based on actual
+            , attribution models work as designed. Touchpoints lost at the
+            banner become visible. The model distributes credit based on actual
             behavior, not on cookie-accepting behavior extrapolated to the full
             population.
           </p>

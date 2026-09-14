@@ -94,7 +94,7 @@ export function ProblemNarrativeV3Es() {
 /* FOUR PILLARS · ES */
 export function FourPillarsV3Es() {
   const pillars = [
-    { n: "01 · Captura", title: "Tracking sin consentimiento", p: "First-party, sin cookies, RGPD-safe. 100% del tráfico — no una fracción." },
+    { n: "01 · Captura", title: "Tracking sin consentimiento", p: "First-party, sin cookies, RGPD-safe. Tráfico sin pérdida por consentimiento — no una fracción." },
     { n: "02 · Atribuye", title: "Atribución de ingresos", p: "Cada euro enlazado a canal, campaña y creatividad. Last-click sobre datos completos." },
     { n: "03 · Entiende", title: "LENS AI", p: "Pregunta a tus datos y crea informes — en lenguaje natural." },
     { n: "04 · Activa", title: "API · MCP · BigQuery", p: "Envía datos reales a warehouses, agentes IA y BI — desde el día uno." },
@@ -215,7 +215,7 @@ export function FeatureAttributionV3Es() {
       reversed
       bgClass="bg-warm-50"
       title={<>Cada euro <em>tiene origen.</em></>}
-      lede="Atribución de ingresos last-click sobre el 100% de los eventos observados — incluidos los pageviews que GA4 pierde por cookies y consentimiento. Totales agregados por canal, campaña y creatividad. Sin modelado, sin muestreo, sin tracking por usuario."
+      lede="Atribución de ingresos last-click sobre los eventos observados sin depender del consentimiento — incluidos los pageviews que GA4 pierde por cookies y consentimiento. Totales agregados por canal, campaña y creatividad. Sin modelado, sin muestreo, sin tracking por usuario."
       bullets={[
         "Granularidad canal · campaña · ad set · creatividad",
         "Conteos de microconversión y totales de ingresos",
@@ -304,7 +304,7 @@ export function NineReportsV3Es() {
   const reports = [
     { n: "01", title: "Overview", p: "Totales de cabecera con la marca del último hit — sin identificadores." },
     { n: "02", title: "Evolución", p: "Métricas en el tiempo, periodo contra periodo." },
-    { n: "03", title: "Fuentes", p: "Totales por canal, campaña y referrer sobre el 100% del tráfico." },
+    { n: "03", title: "Fuentes", p: "Totales por canal, campaña y referrer sobre tráfico sin huecos de consentimiento." },
     { n: "04", title: "Páginas", p: "Pageviews y landing pages, con content grouping." },
     { n: "05", title: "Conversiones", p: "Conversiones, microconversiones e ingresos last-click por canal." },
     { n: "06", title: "Embudo", p: "Drop-off por paso sin umbrales de muestreo." },

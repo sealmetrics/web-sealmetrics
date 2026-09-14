@@ -54,7 +54,7 @@ const seoFaqs = [
   {
     question: "Can cookieless analytics measure subscription conversion?",
     answer:
-      "Yes, at channel-total level. Aggregate counts at each funnel step (article landings, paywall impressions, subscription events) are captured, and each subscription event is attributed last-click to the traffic source recorded on that pageview. Revenue flows back via REST API so subscription value can be attributed to acquisition channel on 100% of EU traffic. Note: this is aggregate channel attribution, not per-subscriber journey tracking.",
+      "Yes, at channel-total level. Aggregate counts at each funnel step (article landings, paywall impressions, subscription events) are captured, and each subscription event is attributed last-click to the traffic source recorded on that pageview. Revenue flows back via REST API so subscription value can be attributed to acquisition channel on EU traffic without consent gaps. Note: this is aggregate channel attribution, not per-subscriber journey tracking.",
   },
   {
     question: "Does cookieless analytics replace Chartbeat or Parse.ly?",

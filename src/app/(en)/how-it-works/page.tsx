@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "How Sealmetrics Works — First-party, Cookieless, EU-hosted",
     description:
-      "Three layers. One pipeline. How Sealmetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
+      "Three layers. One pipeline. How Sealmetrics counts your traffic anonymously, without depending on consent, cookies or user tracking.",
     type: "website",
     images: [ogImage("/how-it-works/")],
     url: "https://sealmetrics.com/how-it-works/",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "How Sealmetrics Works — First-party, Cookieless, EU-hosted",
-    description: "Three layers. One pipeline. How Sealmetrics counts 100% of your traffic anonymously, without cookies or user tracking.",
+    description: "Three layers. One pipeline. How Sealmetrics counts your traffic anonymously, without depending on consent, cookies or user tracking.",
     images: [ogImage("/how-it-works/")],
   },
   alternates: {

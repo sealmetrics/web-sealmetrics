@@ -28,7 +28,7 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     group: "measure",
     title: "Revenue attribution",
     kpis: [
-      { l: "Traffic observed", v: "100%", d: "▲ +30% vs GA" },
+      { l: "Traffic vs GA", v: "+30%", d: "▲ no consent loss" },
       { l: "Attribution delta", v: "+17%", d: "▲ closer to CRM" },
       { l: "Revenue recovered", v: "€342K", d: "▲ previously invisible", hl: true },
       { l: "Sources aligned", v: "4 / 4", d: "brand · finance · agencies" },
@@ -284,7 +284,7 @@ function ChartThreeLines() {
         <div className="hidden md:flex gap-3.5 text-[10px] text-ink-soft font-mono tracking-[0.04em]">
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-ink" />
-            Sealmetrics · 100%
+            Sealmetrics · no consent loss
           </span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-sm bg-brand" />
@@ -408,7 +408,7 @@ function ChartFunnel() {
     <>
       <div className="text-[12px] font-semibold mb-4">
         Funnel · 124,800 monthly visitors{" "}
-        <span className="text-ink-soft font-medium">· 100% observed</span>
+        <span className="text-ink-soft font-medium">· consent-independent</span>
       </div>
       <div className="flex-1 flex flex-col gap-2 justify-center">
         {steps.map((s) => (
@@ -443,7 +443,7 @@ function ChartRoasBars() {
     <>
       <div className="text-[12px] font-semibold mb-4">
         ROAS by channel{" "}
-        <span className="text-ink-soft font-medium">· attributed on 100% observed data</span>
+        <span className="text-ink-soft font-medium">· attributed without consent gaps</span>
       </div>
       <div className="flex-1 flex items-end gap-4 justify-around pt-6">
         {roas.map((r) => (

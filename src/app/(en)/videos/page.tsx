@@ -34,7 +34,7 @@ const videosForSchema = [
 export const metadata: Metadata = {
   title: "Videos — Sealmetrics",
   description:
-    "Watch product demos and step-by-step tutorials. See how Sealmetrics captures 100% of your traffic without cookies.",
+    "Watch product demos and step-by-step tutorials. See how Sealmetrics measures traffic without cookies or consent gaps.",
   openGraph: {
     title: "Videos — Sealmetrics",
     description:
@@ -109,7 +109,7 @@ export default function VideosPage() {
           <h2 className="headline-section mb-6">Where to start</h2>
           <p className="text-[1.05rem] leading-[1.8] text-text-body">
             If you are evaluating, watch the platform overview first: it shows
-            what the reports look like when 100% of traffic is counted rather
+            what the reports look like when traffic is counted without consent gaps rather
             than the roughly 13% GA4 sees in Europe, which is the difference
             most teams want to see before they believe the number. If you have
             already decided and want the tag live, the getting-started walkthrough

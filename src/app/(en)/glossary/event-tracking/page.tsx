@@ -96,11 +96,11 @@ export default function EventTrackingPage() {
             Server-side event tracking moves data collection to the server layer. Events are captured as HTTP requests process through your infrastructure, before the response reaches the browser. There is no client-side script to block, no cookie to restrict, and no consent dependency for privacy-compliant analytics.
           </p>
           <p>
-            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party</Link>, <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link> event tracking captures interactions across 100% of sessions &mdash; providing the complete behavioral dataset that metrics like <Link href="/glossary/bounce-rate" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">bounce rate</Link>, engagement rate, and conversion rate depend on.
+            <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party</Link>, <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link> event tracking captures interactions without consent gaps &mdash; providing the complete behavioral dataset that metrics like <Link href="/glossary/bounce-rate" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">bounce rate</Link>, engagement rate, and conversion rate depend on.
           </p>
         </div>
 
-        <CommercialModule hook="See your key events — signups, carts, checkouts — counted on 100% of visits, not just the consented ones." />
+        <CommercialModule hook="See your key events — signups, carts, checkouts — counted without consent gaps, not just on the consented visits." />
 
         <RelatedGlossaryTerms slug="event-tracking" />
 

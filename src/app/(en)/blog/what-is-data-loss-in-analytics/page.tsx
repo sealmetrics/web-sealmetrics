@@ -375,7 +375,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           <p>
             The result is not a marginal improvement. It is the difference
             between making decisions on 13% of your data and making decisions
-            on 100% of your data.{" "}
+            on data without consent gaps.{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

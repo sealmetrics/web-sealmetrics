@@ -44,7 +44,7 @@ const seoFaqs = [
   {
     question: "¿Qué es analítica sin cookies para SaaS?",
     answer:
-      "La analítica sin cookies para SaaS es un enfoque de medición para empresas PLG que captura tráfico de la web de marketing y del onboarding sin cookies, banners de consentimiento ni identificadores personales. Atribuye signups de trial, eventos de activación y conversiones trial-to-paid sobre el 100% del tráfico UE.",
+      "La analítica sin cookies para SaaS es un enfoque de medición para empresas PLG que captura tráfico de la web de marketing y del onboarding sin cookies, banners de consentimiento ni identificadores personales. Atribuye signups de trial, eventos de activación y conversiones trial-to-paid sobre el tráfico UE, sin huecos de consentimiento.",
   },
   {
     question: "¿Cómo trackea la analítica sin cookies los PQLs?",
@@ -96,7 +96,7 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Atribución de trial-signup sobre el 100% del tráfico UE (sin gap de consentimiento, sin tracking por usuario).</>,
+          <>Atribución de trial-signup sobre tráfico UE sin huecos de consentimiento (sin tracking por usuario).</>,
           <>Separación limpia entre analítica anónima de web de marketing y analítica autenticada de producto (Mixpanel, Amplitude).</>,
           <>Conector nativo a BigQuery — o la API REST a resolución completa — para unir datos agregados por canal con tus tablas autenticadas de usuarios.</>,
         ]}

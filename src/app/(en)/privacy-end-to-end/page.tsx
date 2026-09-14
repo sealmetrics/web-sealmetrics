@@ -37,7 +37,7 @@ const STEPS = [
   {
     n: "01",
     title: "Collection",
-    p: "An 846-byte pixel records anonymous events — no cookies, no fingerprinting, no personal data. There is nothing to consent to, so 100% of traffic is measured, legally.",
+    p: "An 846-byte pixel records anonymous events — no cookies, no fingerprinting, no personal data. There is nothing to consent to, so traffic is measured legally, without consent-driven loss.",
     tags: ["No cookies", "No personal data", "No consent banner"],
   },
   {

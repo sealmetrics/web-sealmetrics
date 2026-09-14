@@ -97,8 +97,8 @@ export function Footer({ locale = "en" }: { locale?: Locale }) {
           <div>
             <p className="text-[0.95rem] font-semibold text-warm-white tracking-[-0.01em]">
               {locale === "es"
-                ? "¿Listo para ver el 100% de tu tráfico?"
-                : "Ready to see 100% of your traffic?"}
+                ? "¿Listo para ver el tráfico que el consentimiento te esconde?"
+                : "Ready to see the traffic consent hides from you?"}
             </p>
             <p className="text-[0.78rem] text-warm-300 mt-1">
               {locale === "es"

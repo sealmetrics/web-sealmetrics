@@ -41,7 +41,7 @@ const useCases = [
     name: "Revenue attribution without cookies",
     job: "Attribute revenue",
     tagline:
-      "Last-click revenue attribution on 100% of conversions, anonymously at channel level. How it works without cookies, what it captures and what it doesn't.",
+      "Last-click revenue attribution without consent gaps, anonymously at channel level. How it works without cookies, what it captures and what it doesn't.",
   },
   {
     href: "/use-cases/conversion-tracking",

@@ -162,7 +162,7 @@ function IndustryCardEs({ tag, name, line, proof, scene }: { tag: string; name: 
 /* COMPARATOR · ES */
 export function ComparatorGA4Es() {
   const rows: { cap: string; ga: string; seal: string; icoGa: "no" | "partial"; icoSeal: "yes" }[] = [
-    { cap: "Método de medición", ga: "Basado en cookies · requiere consentimiento", seal: "Sin cookies · 100% capturado", icoGa: "partial", icoSeal: "yes" },
+    { cap: "Método de medición", ga: "Basado en cookies · requiere consentimiento", seal: "Sin cookies · sin pérdida por consentimiento", icoGa: "partial", icoSeal: "yes" },
     { cap: "Banner de consentimiento", ga: "Obligatorio en UE · ~40–60% lo rechazan", seal: "No requerido · sin penalización de rebote", icoGa: "no", icoSeal: "yes" },
     { cap: "Datos a escala", ga: "Muestreados y modelados sobre cierto umbral", seal: "Cero muestreo · cada evento observado", icoGa: "partial", icoSeal: "yes" },
     { cap: "Atribución", ga: "Sesgada hacia el ecosistema Google", seal: "Neutral · sin inventario publicitario", icoGa: "partial", icoSeal: "yes" },
@@ -239,7 +239,7 @@ export function HowItWorksV3Es() {
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             { n: "Paso 01", time: "15 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin banners de cookies, sin piruetas en tag manager." },
-            { n: "Paso 02", time: "Día 1", title: "Todo visible", p: "Tráfico completo desde la primera hora. Cada visitante, cada fuente, cada conversión — 100% observado." },
+            { n: "Paso 02", time: "Día 1", title: "Todo visible", p: "Tráfico completo desde la primera hora. Cada visitante, cada fuente, cada conversión — observado server-side, sin depender del consentimiento." },
             { n: "Paso 03", time: "Semana 1", title: "Escala lo que funciona", p: "Reubica presupuesto hacia los canales que realmente generan ingresos. Corta los que GA4 decía que funcionaban — pero no." },
           ].map((s) => (
             <div key={s.n} className="bg-white border border-warm-100 rounded-xl p-8 flex flex-col min-h-[260px]">

@@ -54,7 +54,7 @@ const seoFaqs = [
   {
     question: "¿Puede la analítica sin cookies medir conversión de suscripción?",
     answer:
-      "Sí, a nivel de totales por canal. Se capturan conteos agregados en cada paso del embudo (landings de artículo, impresiones de paywall, eventos de suscripción), y cada evento de suscripción se atribuye last-click a la fuente registrada en esa pageview. Los ingresos vuelven vía REST API para atribuir el valor de suscripción al canal de adquisición sobre el 100% del tráfico UE. Nota: es atribución agregada por canal, no tracking de journey por suscriptor.",
+      "Sí, a nivel de totales por canal. Se capturan conteos agregados en cada paso del embudo (landings de artículo, impresiones de paywall, eventos de suscripción), y cada evento de suscripción se atribuye last-click a la fuente registrada en esa pageview. Los ingresos vuelven vía REST API para atribuir el valor de suscripción al canal de adquisición sobre tráfico UE sin huecos de consentimiento. Nota: es atribución agregada por canal, no tracking de journey por suscriptor.",
   },
   {
     question: "¿La analítica sin cookies reemplaza Chartbeat o Parse.ly?",

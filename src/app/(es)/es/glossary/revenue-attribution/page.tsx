@@ -53,7 +53,7 @@ export default function Page() {
           </div>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click sobre datos completos</h2>
-          <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre el 100% de las conversiones observadas reconcilia con el CRM dentro del 15-20% — significativamente mejor que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
+          <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre las conversiones observadas, sin huecos de consentimiento, reconcilia con el CRM dentro del 15-20% — significativamente mejor que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
           <p>La razón: los modelos avanzados (linear, time-decay, position-based, data-driven) aplicados sobre una muestra sesgada producen un sesgo amplificado, no un dato refinado.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que Sealmetrics atribuye</h2>
@@ -73,13 +73,13 @@ export default function Page() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que no atribuye</h2>
-          <p>Sealmetrics no enlaza touchpoints de visitantes individuales entre sesiones — no hay un identificador persistente. Por eso no soporta <Link href="/es/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución multi-touch</Link>, ni journeys por usuario, ni reparto de crédito modelado entre touchpoints. El trade-off es deliberado: a cambio mide el 100% del tráfico, sin consentimiento ni dependencia de cookies.</p>
+          <p>Sealmetrics no enlaza touchpoints de visitantes individuales entre sesiones — no hay un identificador persistente. Por eso no soporta <Link href="/es/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución multi-touch</Link>, ni journeys por usuario, ni reparto de crédito modelado entre touchpoints. El trade-off es deliberado: a cambio mide el tráfico sin depender del consentimiento ni de cookies.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo se reconcilia con tu CRM</h2>
           <p>Los totales agregados por canal cuadran con los pedidos exportados de Shopify/WooCommerce/Magento o con las reservas de un PMS hotelero dentro del 15-20% — el rango residual procede de devoluciones, cancelaciones y pedidos que entran fuera del flujo web (call center, B2B, etc.). Es el grado de cuadre que tu CFO acepta como base para decisiones de presupuesto.</p>
         </div>
 
-        <CommercialModule locale="es" hook="Mira tus ingresos atribuidos last-click sobre el 100% de los pedidos, no sobre la fracción consentida." />
+        <CommercialModule locale="es" hook="Mira tus ingresos atribuidos last-click sin huecos de consentimiento, no sobre la fracción consentida." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

@@ -69,7 +69,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>La analítica basada en cookies falla a tres niveles estructurales: los navegadores bloquean las cookies de terceros por defecto, el consentimiento RGPD provoca ~55% de rechazos, y los ad blockers eliminan los scripts en otro 40%.</li>
             <li>La analítica cookieless reemplaza las cookies por recolección de datos first-party a través de tu propia infraestructura — sin servidor de terceros, sin scripts bloqueados, sin dependencia del consentimiento.</li>
-            <li>El tracking con cookies captura ~13% del tráfico UE; el tracking cookieless captura el 100% porque no hay nada que bloquear, rechazar ni que expire.</li>
+            <li>El tracking con cookies captura ~13% del tráfico UE; el tracking cookieless no pierde visitas por el consentimiento porque no hay nada que rechazar ni que expire.</li>
             <li>La exención de consentimiento es arquitectónica, no un workaround — no se recogen datos personales y no se almacenan cookies, en línea con las guías de la CNIL y del DSK alemán.</li>
           </ul>
         </div>
@@ -195,7 +195,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
                   {
                     aspect: "Tráfico capturado",
                     cookie: "~13% en UE",
-                    cookieless: "100%",
+                    cookieless: "Sin pérdida por consentimiento",
                   },
                 ].map((row) => (
                   <tr
@@ -248,7 +248,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
             La transición de analítica con cookies a analítica cookieless no es una
             mejora menor. Es un cambio fundamental en lo que puedes medir.
             Modelos de atribución que eran poco fiables sobre el 13% de los datos pasan a ser útiles
-            sobre el 100%. La optimización de campañas que se basaba en el
+            sobre dato sin huecos de consentimiento. La optimización de campañas que se basaba en el
             segmento que aceptaba cookies puede ahora reflejar el comportamiento real de los visitantes.
           </p>
 
@@ -275,7 +275,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Quieres ver la analítica cookieless sobre tu propio sitio en lugar de en un diagrama? En una demo la ves midiendo el 100% de tus visitas sin cookies ni banner."
+          hook="¿Quieres ver la analítica cookieless sobre tu propio sitio en lugar de en un diagrama? En una demo la ves midiendo tus visitas sin depender del consentimiento, sin cookies ni banner."
         />
 
         {/* Related */}

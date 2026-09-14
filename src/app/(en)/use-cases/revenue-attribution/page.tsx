@@ -20,11 +20,11 @@ const DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "Revenue attribution without cookies — EU eCommerce",
   description:
-    "Last-click revenue attribution on 100% of conversions, anonymously at channel level. How it works without cookies, what it captures and what it doesn't.",
+    "Last-click revenue attribution without consent gaps, anonymously at channel level. How it works without cookies, what it captures and what it doesn't.",
   openGraph: {
     title: "Revenue attribution without cookies",
     description:
-      "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
+      "Last-click attribution on data without consent gaps. The architecture, the trade-offs, and why CFOs accept it.",
     type: "article",
     images: [ogImage("/use-cases/revenue-attribution/")],
     url: "https://sealmetrics.com/use-cases/revenue-attribution/",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Revenue attribution without cookies",
-    description: "Last-click attribution on 100% of data. The architecture, the trade-offs, and why CFOs accept it.",
+    description: "Last-click attribution on data without consent gaps. The architecture, the trade-offs, and why CFOs accept it.",
     images: [ogImage("/use-cases/revenue-attribution/")],
   },
   alternates: {
@@ -54,8 +54,8 @@ const faqs = [
     a: "Sealmetrics does not measure view-through (impressions that did not produce a click). View-through requires linking ad-server impression logs to subsequent visits per user — which is the same identifier dependency as multi-touch. View-through measurement belongs in the ad platform (Meta, Google) or in a marketing-mix model (MMM) built on aggregate spend and revenue. Sealmetrics provides the aggregate revenue side; MMM tools provide the modelling.",
   },
   {
-    q: "How does last-click on 100% data differ from GA4's last-click?",
-    a: "GA4 applies last-click within its attribution windows on the data it actually captured — typically 13–40% of EU traffic after consent rejection, ad blockers and ITP. The credit GA4 assigns to channels is correct for that subset but biased toward channels that consent more. Sealmetrics applies last-click on 100% of observed conversions on the full population — same model, complete data underneath.",
+    q: "How does last-click without consent gaps differ from GA4's last-click?",
+    a: "GA4 applies last-click within its attribution windows on the data it actually captured — typically 13–40% of EU traffic after consent rejection, ad blockers and ITP. The credit GA4 assigns to channels is correct for that subset but biased toward channels that consent more. Sealmetrics applies last-click on observed conversions across the full population, without consent gaps — same model, complete data underneath.",
   },
   {
     q: "Can I get the attribution by campaign and creative, not just channel?",
@@ -90,7 +90,7 @@ export default function RevenueAttributionPage() {
       <JsonLd
         data={articleSchema({
           headline:
-            "Revenue attribution without cookies — last-click on 100% of data, anonymously, at channel level",
+            "Revenue attribution without cookies — last-click without consent gaps, anonymously, at channel level",
           description:
             "How last-click revenue attribution works without cookies, what the architecture captures, what it deliberately does not, and why CFOs accept the trade-off.",
           datePublished: DATE_PUBLISHED,
@@ -117,7 +117,7 @@ export default function RevenueAttributionPage() {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Revenue attribution.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              On 100% of data.
+              Without consent gaps.
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
@@ -138,8 +138,8 @@ export default function RevenueAttributionPage() {
             <strong> last-click attribution</strong> at the event
             level: each conversion is attributed to the channel
             observed on the page load where the conversion fires. The
-            model is applied to <strong>100% of observed
-            conversions</strong> — no consent gate, no ad-blocker
+            model is applied to <strong>observed
+            conversions without consent gaps</strong> — no consent gate, no ad-blocker
             drop-off, no cookie expiry. The trade-off is concrete: no
             multi-touch model, no per-visitor journey, no
             view-through. For media-mix decisions and CFO
@@ -149,7 +149,7 @@ export default function RevenueAttributionPage() {
           </>
         }
         bullets={[
-          <><strong>Last-click on 100%</strong> — model applied to the full population, not the consenting fraction.</>,
+          <><strong>Last-click without consent gaps</strong> — model applied to the full population, not the consenting fraction.</>,
           <><strong>Channel + campaign + creative</strong> — full UTM stack captured per conversion.</>,
           <><strong>order_id reconciliation</strong> — joins natively with Shopify / WooCommerce / PMS backends.</>,
           <><strong>Honest about limits</strong> — no multi-touch, no view-through, no per-visitor journeys.</>,
@@ -163,8 +163,8 @@ export default function RevenueAttributionPage() {
             The question a CMO defending media spend needs to answer is
             simple: <em>which channel produced the revenue this
             week, and by how much.</em> That question splits into
-            three concrete sub-questions, each of which last-click on
-            100% answers cleanly:
+            three concrete sub-questions, each of which last-click without
+            consent gaps answers cleanly:
           </p>
 
           <div className="mt-10 space-y-7">
@@ -332,7 +332,7 @@ export default function RevenueAttributionPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Pillar</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Complete data</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                The wider argument: incomplete data produces wrong decisions; what 100% changes.
+                The wider argument: incomplete data produces wrong decisions; what data without consent gaps changes.
               </p>
             </Link>
             <Link href="/cookieless-analytics" className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5">
@@ -378,8 +378,8 @@ export default function RevenueAttributionPage() {
 
       <FinalCtaSharedV3
         locale="en"
-        titleEn={<>See <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>your</em> attribution on 100% of data.</>}
-        titleEs={<>Ve <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tu</em> atribución sobre el 100% de los datos.</>}
+        titleEn={<>See <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>your</em> attribution without consent gaps.</>}
+        titleEs={<>Ve <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tu</em> atribución sin huecos de consentimiento.</>}
         ledeEn="Book 30 minutes with the founder. We run last-click on your traffic and reconcile against your CRM live — you see the channels that actually closed."
         ledeEs="Reserva 30 min con el founder. Corremos last-click sobre tu tráfico y conciliamos contra tu CRM en directo — ves los canales que de verdad cierran."
       />
