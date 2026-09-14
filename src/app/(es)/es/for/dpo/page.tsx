@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para DPOs" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para DPOs", url: "/es/for/dpo" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "DPOs", audienceType: "Data Protection Officer", description: "Sealmetrics — enterprise analytics for DPOs teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/dpo" })} /><VerticalPageV3 data={getVerticalData("dpo", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "DPOs", audienceType: "Data Protection Officer", description: "Sealmetrics — enterprise analytics for DPOs teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/es/for/dpo" })} /><VerticalPageV3 data={getVerticalData("dpo", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"

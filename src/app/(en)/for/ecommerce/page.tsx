@@ -77,7 +77,7 @@ export default function Page() {
           vertical: "eCommerce",
           audienceType: "DTC and retail eCommerce teams",
           description:
-            "Cookieless analytics for eCommerce: first-party measurement that reconciles with Shopify, WooCommerce and Magento backends without consent banners. GDPR-compliant by architecture.",
+            "Cookieless analytics for eCommerce: first-party measurement that reconciles with Shopify, WooCommerce and Magento backends without consent banners. Designed for GDPR from the architecture up (self-assessed).",
           url: "/for/ecommerce",
         })}
       />

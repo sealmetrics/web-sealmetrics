@@ -78,7 +78,7 @@ export default function Page() {
           vertical: "eCommerce",
           audienceType: "Equipos eCommerce DTC y retail en Europa",
           description:
-            "Analítica sin cookies para eCommerce: medición first-party que cuadra con backends de Shopify, WooCommerce y Magento sin banners de consentimiento. RGPD por arquitectura.",
+            "Analítica sin cookies para eCommerce: medición first-party que cuadra con backends de Shopify, WooCommerce y Magento sin banners de consentimiento. Diseñada para el RGPD desde la arquitectura (autoevaluación).",
           url: "/es/for/ecommerce",
         })}
       />
