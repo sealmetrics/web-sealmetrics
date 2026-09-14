@@ -93,7 +93,7 @@ export function AiAskDemo() {
 
 /* --- Block 3: 4-column feature grid ------------------------- */
 const ADVANTAGES = [
-  { k: "Complete data", d: "100% of your traffic measured without a consent banner — legally. No sampling, no modeled gaps.", href: "/complete-data" },
+  { k: "Complete data", d: "Your traffic measured without depending on a consent banner — legally. No sampling, no modeled gaps.", href: "/complete-data" },
   { k: "Real time", d: "Every dashboard computed live, Black Friday included. Not a visitor counter — every report.", href: "#" },
   { k: "Any property", d: "Store value, product, SKU, brand, size — anything — on any event. No property cap.", href: "#" },
   { k: "Private AI", d: "LENS runs on an EU open-source model. Your data never trains a third-party algorithm.", href: "#lens" },
@@ -132,9 +132,9 @@ export function UnfairAdvantageGrid() {
 const TABS = [
   {
     key: "Complete data",
-    head: "See 100% — not the consented slice.",
+    head: "See beyond the consented slice.",
     bullets: ["Cookieless pixel captures every visit", "No consent banner, GDPR by architecture", "Numbers that reconcile with Shopify"],
-    stat: "100%", statLabel: "of traffic observed",
+    stat: "0", statLabel: "visits lost to consent rejection",
   },
   {
     key: "Revenue attribution",

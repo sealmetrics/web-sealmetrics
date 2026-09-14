@@ -15,11 +15,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sealmetrics.com"),
   title: "Sealmetrics — Analítica Completa para eCommerce",
   description:
-    "Analítica web que captura el 100% de tu tráfico. Sin cookies, sin banners de consentimiento, sin pérdida de datos. Datos completos desde 499 EUR/mes.",
+    "Analítica web que no pierde visitas por el rechazo del consentimiento. Sin cookies, sin banners de consentimiento. Datos completos desde 499 EUR/mes.",
   openGraph: {
     title: "Sealmetrics — Analítica Completa para eCommerce",
     description:
-      "GA4 captura ~13% del tráfico europeo. Sealmetrics captura el 100% — sin cookies, sin muros de consentimiento, sin muestreo.",
+      "GA4 captura ~13% del tráfico europeo. Sealmetrics no depende del consentimiento — sin cookies, sin muros de consentimiento, sin muestreo.",
     url: "https://sealmetrics.com/es",
     siteName: "Sealmetrics",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Sealmetrics — Analítica Completa para eCommerce",
     description:
-      "GA4 captura ~13% del tráfico europeo. Sealmetrics captura el 100% — sin cookies, sin muros de consentimiento.",
+      "GA4 captura ~13% del tráfico europeo. Sealmetrics no depende del consentimiento — sin cookies, sin muros de consentimiento.",
     images: [ogImage("/es/")],
   },
   alternates: {

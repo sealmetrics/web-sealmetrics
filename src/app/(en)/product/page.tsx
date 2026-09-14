@@ -10,11 +10,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Product — Sealmetrics · Complete analytics, no compromises",
   description:
-    "Consentless tracking, last-click revenue attribution, LENS AI, SuperAPI and MCP server — all on 100% observed data. No sampling, no modelling.",
+    "Consentless tracking, last-click revenue attribution, LENS AI, SuperAPI and MCP server — all on observed data without consent gaps. No sampling, no modelling.",
   openGraph: {
     title: "Product — Sealmetrics · Complete analytics, no compromises",
     description:
-      "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
+      "A full analytics stack for eCommerce teams. Consentless, observed server-side, EU-hosted. LENS AI + SuperAPI + MCP native.",
     type: "website",
     images: [ogImage("/product/")],
     url: "https://sealmetrics.com/product/",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Product — Sealmetrics · Complete analytics, no compromises",
-    description: "A full analytics stack for eCommerce teams. Consentless, 100% observed, EU-hosted. LENS AI + SuperAPI + MCP native.",
+    description: "A full analytics stack for eCommerce teams. Consentless, observed server-side, EU-hosted. LENS AI + SuperAPI + MCP native.",
     images: [ogImage("/product/")],
   },
   alternates: {

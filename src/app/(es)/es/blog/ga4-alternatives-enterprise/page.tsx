@@ -61,9 +61,9 @@ const alternatives = [
     name: "Sealmetrics",
     url: "https://sealmetrics.com",
     pricing: "Desde 499 €/mes con facturación anual (5.988 €/año)",
-    dataCompleteness: "100% en UE",
+    dataCompleteness: "Sin pérdida por consentimiento",
     chooseIf:
-      "Necesitas captura del 100% del dato en la UE, atribución de revenue a último clic precisa y analítica enterprise sin precios de seis cifras.",
+      "Necesitas dato UE sin huecos de consentimiento, atribución de revenue a último clic precisa y analítica enterprise sin precios de seis cifras.",
   },
   {
     name: "Piwik PRO",
@@ -178,7 +178,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 Las alternativas enterprise se dividen en dos categorías: las
                 plataformas dependientes de cookies (GA360, Adobe, Piwik PRO) que
                 mejoran a GA4 pero aún pierden 40-60% del tráfico UE, y las
-                plataformas cookieless (Sealmetrics) que capturan el 100%.
+                plataformas cookieless (Sealmetrics) que no pierden tráfico por el consentimiento.
               </li>
               <li>
                 Amplitude y Mixpanel son herramientas de analítica de producto, no
@@ -189,7 +189,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               <li>
                 La brecha de coste total entre plataformas es de 25x o más. GA360
                 cuesta seis cifras al año por ~35% de captura de dato UE. Sealmetrics
-                cuesta {"€"}5.988/año por el 100% de captura. La comparación
+                cuesta {"€"}5.988/año y no pierde dato por consentimiento. La comparación
                 relevante es el coste por dato preciso.
               </li>
             </ul>
@@ -460,7 +460,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               >
                 analítica cookieless
               </Link>{" "}
-              para capturar el 100% del tráfico. No se colocan cookies. No se recoge
+              para medir el tráfico sin depender del consentimiento. No se colocan cookies. No se recoge
               dato personal. No se requiere banner de consentimiento.
             </p>
 
@@ -478,7 +478,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">100%</span>
+                  <span className="font-mono text-text-primary">Sin pérdida por consentimiento</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -881,7 +881,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Migrando de GA4 este trimestre? Compara tus números de GA4 con el 100% de captura de Sealmetrics sobre tu propio tráfico en una demo — 499 €/mes frente a los seis dígitos de GA360 o Adobe."
+            hook="¿Migrando de GA4 este trimestre? Compara tus números de GA4 con Sealmetrics, sin pérdida por consentimiento, sobre tu propio tráfico en una demo — 499 €/mes frente a los seis dígitos de GA360 o Adobe."
           />
 
           {/* Relacionados */}

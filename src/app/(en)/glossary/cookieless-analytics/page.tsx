@@ -12,10 +12,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "What Is Cookieless Analytics? — Sealmetrics Glossary",
   description:
-    "Cookieless analytics captures visitor data without browser cookies, enabling 100% traffic measurement. Learn how it works and why it matters.",
+    "Cookieless analytics captures visitor data without browser cookies, so measurement doesn't depend on consent. Learn how it works and why it matters.",
   openGraph: {
     title: "What Is Cookieless Analytics?",
-    description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
+    description: "Cookieless analytics captures visitor data without cookies, so measurement doesn't depend on consent.",
     type: "article",
     url: "https://sealmetrics.com/glossary/cookieless-analytics/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Cookieless Analytics?",
-    description: "Cookieless analytics captures visitor data without cookies, enabling 100% traffic measurement.",
+    description: "Cookieless analytics captures visitor data without cookies, so measurement doesn't depend on consent.",
     images: [ogImage("/glossary/cookieless-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics/", languages: getAlternates("/glossary/cookieless-analytics") },
@@ -49,7 +49,7 @@ export default function CookielessAnalyticsPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Web analytics that captures visitor data without using browser cookies, enabling 100% traffic measurement regardless of consent status or browser restrictions.
+              Web analytics that captures visitor data without using browser cookies, enabling traffic measurement regardless of consent status or browser restrictions.
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does cookieless analytics matter for EU eCommerce?</h2>
           <p>
-            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, counting 100% of real visits anonymously.
+            In the EU, cookie-based analytics capture approximately 13% of actual traffic due to consent rejection (55%), ad blockers (40%), and browser restrictions. Cookieless analytics eliminates all three loss vectors, counting real visits anonymously, without depending on consent.
           </p>
           <p>
             This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete aggregate totals.
@@ -78,7 +78,7 @@ export default function CookielessAnalyticsPage() {
           </p>
         </div>
 
-        <CommercialModule hook="This is what Sealmetrics does all day: cookieless counting of 100% of visits. See it running on your own traffic." />
+        <CommercialModule hook="This is what Sealmetrics does all day: cookieless counting of visits, without depending on consent. See it running on your own traffic." />
 
         <RelatedGlossaryTerms slug="cookieless-analytics" />
 
@@ -94,7 +94,7 @@ export default function CookielessAnalyticsPage() {
               Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
             </p>
             <p>
-              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. Sealmetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
+              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. Sealmetrics&rsquo; implementation measures inbound traffic without depending on consent, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
             </p>
           </QuickAnswer>
         </div>

@@ -62,11 +62,11 @@ export default function RevenueAttributionPage() {
           <p>Revenue attribution is uniquely sensitive to <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link>. If your analytics miss 87% of pageviews to consent rejection, ad blockers and browser restrictions, the remaining 13% is what the attribution model operates on — so the channel totals it produces are biased by whatever demographic survived the filter. The typical result: direct traffic is inflated, top-of-funnel channels are undervalued, and budget allocation follows the bias.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does Sealmetrics handle revenue attribution?</h2>
-          <p>Sealmetrics does <strong>last-click revenue attribution on 100% of observed events</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
+          <p>Sealmetrics does <strong>last-click revenue attribution on observed events, without consent gaps</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
 
           <p>Because every pageview is captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, last-click attribution reflects the full observed traffic — not the cookie-accepting minority.</p>
         </div>
-        <CommercialModule hook="See your revenue attributed last-click across 100% of orders — not the consented fraction." />
+        <CommercialModule hook="See your revenue attributed last-click without consent gaps — not on the consented fraction." />
 
         <RelatedGlossaryTerms slug="revenue-attribution" />
         <div className="mt-10 pt-6 border-t border-warm-100">

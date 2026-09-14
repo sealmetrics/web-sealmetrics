@@ -59,7 +59,7 @@ const stack = [
   {
     n: "01",
     label: "Complete data (the foundation)",
-    body: "Cookieless, first-party, 100% of traffic, never sampled. The input every answer inherits.",
+    body: "Cookieless, first-party, no consent loss, never sampled. The input every answer inherits.",
     accent: "brand",
   },
 ];
@@ -88,7 +88,7 @@ const comparison = [
   {
     aspect: "Attribution",
     naive: "Whatever the schema happens to encode",
-    mcp: "Last-click, aggregate, on 100% of traffic",
+    mcp: "Last-click, aggregate, without consent gaps",
   },
   {
     aspect: "Where the AI runs",
@@ -248,7 +248,7 @@ export default function Page() {
             </div>
 
             <CommercialModule
-              hook="Layers 01 and 02 are the foundation: 100% of events in a schema the model cannot misread. See LENS read your own traffic that way in a demo."
+              hook="Layers 01 and 02 are the foundation: consent-independent events in a schema the model cannot misread. See LENS read your own traffic that way in a demo."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">

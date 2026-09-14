@@ -16,11 +16,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-29";
 const PILLAR_DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "Datos completos — analítica que captura el 100% del tráfico",
+  title: "Datos completos — analítica sin pérdida por consentimiento",
   description:
-    "Datos completos: analítica web que captura el 100% del tráfico. Sin muestreo, sin consentimiento, sin modelado. Decisiones para CMOs y CFOs.",
+    "Datos completos: analítica web que mide el tráfico sin depender del consentimiento. Sin muestreo, sin modelado. Decisiones para CMOs y CFOs.",
   openGraph: {
-    title: "Datos completos — analítica que captura el 100% del tráfico",
+    title: "Datos completos — analítica sin pérdida por consentimiento",
     description:
       "Por qué la analítica incompleta produce decisiones equivocadas, qué significan los datos completos arquitectónicamente y los números que cambian.",
     type: "article",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Datos completos — analítica que captura el 100% del tráfico",
+    title: "Datos completos — analítica sin pérdida por consentimiento",
     description: "Por qué la analítica incompleta produce decisiones equivocadas, qué significan los datos completos arquitectónicamente y los números que cambian.",
     images: [ogImage("/es/complete-data/")],
   },
@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa «datos completos», exactamente?",
-    a: "Cada visitante contado. Cada conversión atribuida. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa 100% de pageviews capturados, 100% de eventos capturados, y atribución de ingresos last-click aplicada a la población completa — no al 13% que dio consentimiento.",
+    a: "Cada visitante contado. Cada conversión atribuida. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a la población completa — no al 13% que dio consentimiento.",
   },
   {
     q: "¿No lo está resolviendo ya el Consent Mode v2 de GA4?",
-    a: "Consent Mode es una capa de modelado. Cuando los visitantes rechazan cookies, Google estima lo que probablemente hicieron basándose en los que sí dieron consentimiento. Ese modelo es útil cuando necesitas un orden de magnitud; no es una medición. Para un CMO defendiendo €2M anuales de gasto en medios, la pregunta es si quieres tomar decisiones sobre un modelo del 87% que no puedes ver, o sobre el 100% real. Datos completos es la segunda respuesta.",
+    a: "Consent Mode es una capa de modelado. Cuando los visitantes rechazan cookies, Google estima lo que probablemente hicieron basándose en los que sí dieron consentimiento. Ese modelo es útil cuando necesitas un orden de magnitud; no es una medición. Para un CMO defendiendo €2M anuales de gasto en medios, la pregunta es si quieres tomar decisiones sobre un modelo del 87% que no puedes ver, o sobre lo que de verdad se midió, sin depender del consentimiento. Datos completos es la segunda respuesta.",
   },
   {
     q: "¿Qué cambia operacionalmente cuando hago el switch?",
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "¿«Datos completos» significa que Sealmetrics ignora la privacidad?",
-    a: "Lo contrario. Los datos completos son posibles porque la arquitectura es sin consentimiento por diseño — sin cookies, sin identificadores, sin datos personales. La privacidad es la restricción que obliga a que la medición sea agregada; la medición agregada es lo que hace lícita la captura del 100% sin diálogo de consentimiento. Son la misma decisión arquitectónica, vistas desde ángulos distintos.",
+    a: "Lo contrario. Los datos completos son posibles porque la arquitectura es sin consentimiento por diseño — sin cookies, sin identificadores, sin datos personales. La privacidad es la restricción que obliga a que la medición sea agregada; la medición agregada es lo que hace lícito medir sin diálogo de consentimiento. Son la misma decisión arquitectónica, vistas desde ángulos distintos.",
   },
   {
     q: "¿Dónde se almacenan estos datos?",
@@ -77,14 +77,14 @@ export default function CompleteDataPillarEs() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/es/complete-data",
-          name: "Datos completos — analítica que captura el 100% del tráfico",
+          name: "Datos completos — analítica sin pérdida por consentimiento",
         })}
       />
       <JsonLd
         data={articleSchema({
-          headline: "Datos completos — por qué la analítica incompleta produce decisiones equivocadas y qué requiere medir el 100%",
+          headline: "Datos completos — por qué la analítica incompleta produce decisiones equivocadas y qué requiere medir sin depender del consentimiento",
           description:
-            "El argumento de categoría para la analítica sin cookies, sin consentimiento y alojada en la UE que captura el 100% del tráfico — y las decisiones que cambia para CMOs y CFOs.",
+            "El argumento de categoría para la analítica sin cookies, sin consentimiento y alojada en la UE que no pierde visitas por el rechazo del consentimiento — y las decisiones que cambia para CMOs y CFOs.",
           datePublished: PILLAR_DATE_PUBLISHED,
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/es/complete-data",
@@ -129,7 +129,7 @@ export default function CompleteDataPillarEs() {
           </>
         }
         bullets={[
-          <><strong>100% de pageviews capturados</strong> — sin consentimiento, sin script-block, sin expiración.</>,
+          <><strong>Pageviews sin pérdida por consentimiento</strong> — sin script-block, sin expiración.</>,
           <><strong>Atribución de ingresos last-click</strong> aplicada a la población completa, no al 13% que dio consentimiento.</>,
           <><strong>Sin modelado</strong> — medición, no estimación.</>,
           <><strong>Sólo UE</strong> — procesamiento en Dublín, Irlanda.</>,
@@ -227,7 +227,7 @@ export default function CompleteDataPillarEs() {
               {
                 num: "02",
                 title: "Cada conversión atribuida",
-                body: "Atribución de ingresos last-click aplicada al 100% de las conversiones, no al 13% que dio consentimiento. El canal que de hecho generó la conversión recibe el crédito — por datos, no por modelo.",
+                body: "Atribución de ingresos last-click aplicada a las conversiones sin huecos de consentimiento, no solo al 13% que dio consentimiento. El canal que de hecho generó la conversión recibe el crédito — por datos, no por modelo.",
               },
               {
                 num: "03",

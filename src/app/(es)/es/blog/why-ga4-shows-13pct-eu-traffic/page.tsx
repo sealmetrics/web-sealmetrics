@@ -279,7 +279,7 @@ export default function WhyGA4Shows13PctPageEs() {
 
           <CommercialModule
             locale="es"
-            hook="¿Cuál de las tres capas se está comiendo tu tráfico? En una demo pones tus informes de GA4 al lado de una medición del 100% de tus visitas y ves el hueco exacto."
+            hook="¿Cuál de las tres capas se está comiendo tu tráfico? En una demo pones tus informes de GA4 al lado de una medición que no depende del consentimiento y ves el hueco exacto."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -335,8 +335,8 @@ export default function WhyGA4Shows13PctPageEs() {
             , server-side. Un script first-party ligero (menos de 1 KB) recoge
             eventos a través de tu propio dominio. No se setean cookies. No se
             hacen peticiones de terceros. Como el método de recolección no entra
-            en los requisitos de consentimiento de cookies, captura el 100% del
-            tráfico&mdash; incluido el 87% que GA4 pierde.
+            en los requisitos de consentimiento de cookies, no pierde visitas por
+            el consentimiento&mdash; la mayor de las capas que se comen el 87% en GA4.
           </p>
 
           <p>
@@ -385,7 +385,7 @@ export default function WhyGA4Shows13PctPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Tu GA4 también ve solo un ~13% del tráfico UE con precisión de campaña? Compara en una demo tus números con una medición del 100% de las visitas, sin banner y sin muestreo."
+          hook="¿Tu GA4 también ve solo un ~13% del tráfico UE con precisión de campaña? Compara en una demo tus números con una medición sin pérdida por consentimiento, sin banner y sin muestreo."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

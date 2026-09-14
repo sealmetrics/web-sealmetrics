@@ -18,7 +18,7 @@ const PILLAR_DATE_MODIFIED = "2026-05-28";
 export const metadata: Metadata = {
   title: "Cookieless analytics, explained — Sealmetrics",
   description:
-    "Cookieless analytics captures 100% of traffic with first-party server-side collection — no cookies, no consent banners, no sampling.",
+    "Cookieless analytics measures traffic without depending on consent, via first-party server-side collection — no cookies, no banners, no sampling.",
   openGraph: {
     title: "Cookieless analytics, explained",
     description:
@@ -143,7 +143,7 @@ export default function CookielessAnalyticsPillar() {
             events and conversions{" "}
             <strong>anonymously, on the server side</strong>, from your own
             domain — without cookies, fingerprinting or personal identifiers.
-            It captures 100% of traffic because there is nothing for browsers,
+            It doesn't lose visitors to consent rejection because there is nothing for browsers,
             consent banners or ad blockers to block, reject or expire. The
             trade-off is honest: you measure channels and conversions at
             aggregate scale, not individual people across sessions. For an
@@ -153,7 +153,7 @@ export default function CookielessAnalyticsPillar() {
         }
         bullets={[
           <>
-            <strong>Captures 100%</strong> of traffic — no consent gate, no
+            <strong>No consent-driven loss</strong> of traffic — no consent gate, no
             ad-blocker drop-off, no 7-day cookie expiry.
           </>,
           <>
@@ -305,7 +305,7 @@ export default function CookielessAnalyticsPillar() {
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Each conversion event is attributed to the traffic source
                 observed on the page load where it happened — last-click,
-                100% of the time, on 100% of data. Aggregates flow into
+                every time, on data without consent gaps. Aggregates flow into
                 dashboards, BigQuery, and an MCP server for AI agents. The
                 output is channel performance: which sources drove revenue
                 this week, and by how much.
@@ -352,7 +352,7 @@ export default function CookielessAnalyticsPillar() {
               </h3>
               <ul className="space-y-3 text-[15px] leading-[1.7] text-ink list-none pl-0">
                 {[
-                  "100% of pageviews, sessions and conversion events.",
+                  "Pageviews, sessions and conversion events — without consent gaps.",
                   "Channel, campaign, source and medium for every event.",
                   "Last-click revenue attribution at channel level.",
                   "Funnel step counts — how many visitors reached step 1, step 2, step 3.",
@@ -430,12 +430,12 @@ export default function CookielessAnalyticsPillar() {
               </thead>
               <tbody className="text-ink">
                 {[
-                  ["Traffic captured (EU)", "~13% after consent + ad-block + ITP", "100% — no consent, no script, no expiry"],
+                  ["Traffic captured (EU)", "~13% after consent + ad-block + ITP", "Not reduced by consent — no script, no expiry"],
                   ["Consent banner", "Required before any tracking", "Not required — no personal data"],
                   ["Ad-blocker impact", "Script stripped on ~40% of visits", "First-party request — not in rule lists"],
                   ["Cookie lifespan", "Safari ITP caps at 7 days", "No cookie — irrelevant"],
                   ["Returning-visitor ID", "Possible (when cookie survives)", "Not possible by design"],
-                  ["Attribution model", "Data-driven or last-click on 13%", "Last-click on 100% of data"],
+                  ["Attribution model", "Data-driven or last-click on 13%", "Last-click on data without consent gaps"],
                   ["Data residency", "US default (GA), EU optional (Adobe, Piwik)", "EU-only (Dublin)"],
                 ].map(([dim, cookie, server]) => (
                   <tr key={dim} className="border-b border-warm-100">

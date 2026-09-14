@@ -339,8 +339,8 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             Toda la data se procesa y almacena en infraestructura UE. No se
             recogen datos personales. No se crean perfiles individuales. El
             output es medición de audiencia agregada&mdash; pageviews, sesiones,
-            fuentes, eventos de conversión&mdash; con el 100% del tráfico
-            capturado porque no existe la barrera del consentimiento.
+            fuentes, eventos de conversión&mdash; sin perder tráfico
+            porque no existe la barrera del consentimiento.
           </p>
 
           <p>
@@ -352,7 +352,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           </p>
 
           <p>
-            El resultado: analítica enterprise con captura del 100% de los
+            El resultado: analítica enterprise sin huecos de consentimiento en los
             datos, cero complejidad de{" "}
             <Link
               href="/es/glossary/consent-management-platform"
@@ -380,7 +380,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Cuánto dato recuperarías midiendo sin banner? Entre el 40% y el 60% de tus visitantes rechaza el consentimiento — ve en una demo tus informes con el 100% de las visitas."
+          hook="¿Cuánto dato recuperarías midiendo sin banner? Entre el 40% y el 60% de tus visitantes rechaza el consentimiento — ve en una demo tus informes sin esa pérdida por consentimiento."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

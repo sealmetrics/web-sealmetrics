@@ -29,7 +29,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Tu ROAS real es mayor del que crees — Sealmetrics",
   description:
-    "Entre el 25% y el 45% de tus ventas nunca llegan a tu analítica. Mide el 100% sin cookies ni consentimiento y recupera el ROAS que ya estabas generando.",
+    "Entre el 25% y el 45% de tus ventas nunca llegan a tu analítica. Mide sin cookies ni pérdida por consentimiento y recupera el ROAS que ya estabas generando.",
   robots: { index: false, follow: true },
   openGraph: {
     title: "Tu ROAS real es mayor del que crees",

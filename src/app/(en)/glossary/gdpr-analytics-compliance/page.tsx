@@ -72,7 +72,7 @@ export default function GDPRCompliancePage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does cookieless analytics achieve compliance by architecture?</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> approaches compliance differently. By collecting no personal data and storing nothing on the visitor&rsquo;s device, the consent requirement under ePrivacy does not apply, and GDPR obligations are minimal. This is consistent with guidance from CNIL (France), DSK (Germany), and other EU data protection authorities on audience measurement exemptions.</p>
         </div>
-        <CommercialModule hook="GDPR compliance by architecture, not by banner. See how Sealmetrics measures 100% of visits without touching personal data." />
+        <CommercialModule hook="Designed for GDPR from the architecture up (self-assessed), not by banner. See how Sealmetrics measures visits without consent gaps or personal data." />
 
         <RelatedGlossaryTerms slug="gdpr-analytics-compliance" />
         <div className="mt-10 pt-6 border-t border-warm-100">

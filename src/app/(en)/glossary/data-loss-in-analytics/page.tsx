@@ -64,7 +64,7 @@ export default function DataLossPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What is the business impact of analytics data loss?</h2>
           <p>Data loss is not just a measurement problem. It directly affects <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link>, campaign optimization, and board reporting. When your analytics show 10,000 visitors but 70,000 actually visited, every decision built on that data is compromised.</p>
         </div>
-        <CommercialModule hook="Between 40–60% consent rejection and ad blockers, GA4 sees a fraction of your visits. Measure your own gap against a 100% count." />
+        <CommercialModule hook="Between 40–60% consent rejection and ad blockers, GA4 sees a fraction of your visits. Measure your own gap against a count that doesn't depend on consent." />
 
         <RelatedGlossaryTerms slug="data-loss-in-analytics" />
         <div className="mt-10 pt-6 border-t border-warm-100">

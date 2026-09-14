@@ -17,11 +17,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-05-28";
 
 export const metadata: Metadata = {
-  title: "Complete data — analytics that captures 100% of traffic",
+  title: "Complete data — analytics without consent-driven data loss",
   description:
-    "Complete data: web analytics that captures 100% of traffic. No sampling, no consent gate, no modelling. The decisions it changes for CMOs and CFOs.",
+    "Complete data: web analytics that doesn't lose visitors to consent rejection. No sampling, no modelling. The decisions it changes for CMOs and CFOs.",
   openGraph: {
-    title: "Complete data — analytics that captures 100% of traffic",
+    title: "Complete data — analytics without consent-driven data loss",
     description:
       "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
     type: "article",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Complete data — analytics that captures 100% of traffic",
+    title: "Complete data — analytics without consent-driven data loss",
     description: "Why incomplete analytics produces wrong investment decisions, what complete data means architecturally, and the numbers that change when you switch.",
     images: [ogImage("/complete-data/")],
   },
@@ -46,11 +46,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What does \"complete data\" actually mean?",
-    a: "Every visitor counted. Every conversion attributed. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means 100% pageview capture, 100% event capture, and last-click revenue attribution applied to the full population — not the 13% that consented.",
+    a: "Every visitor counted. Every conversion attributed. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means pageview and event capture that doesn't depend on consent, and last-click revenue attribution applied to every observed conversion — not the 13% that consented.",
   },
   {
     q: "Isn't GA4's Consent Mode v2 already solving this?",
-    a: "Consent Mode is a modelling layer. When visitors reject cookies, Google estimates what they probably did based on the visitors who did consent. That model is useful when you need a ballpark; it is not a measurement. For a CMO defending a €2M annual media spend, the question is whether you want decisions made on a model of the 87% you cannot see, or on the actual 100%. Complete data is the second answer.",
+    a: "Consent Mode is a modelling layer. When visitors reject cookies, Google estimates what they probably did based on the visitors who did consent. That model is useful when you need a ballpark; it is not a measurement. For a CMO defending a €2M annual media spend, the question is whether you want decisions made on a model of the 87% you cannot see, or on measured data that consent rejection doesn't erase. Complete data is the second answer.",
   },
   {
     q: "What changes operationally when I switch?",
@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "Does complete data mean Sealmetrics ignores privacy?",
-    a: "The opposite. Complete data is possible because the architecture is consentless by design — no cookies, no identifiers, no personal data. Privacy is the constraint that forces the measurement to be aggregate; aggregate measurement is what makes 100% capture lawful without a consent dialog. The two are the same architectural choice, viewed from different angles.",
+    a: "The opposite. Complete data is possible because the architecture is consentless by design — no cookies, no identifiers, no personal data. Privacy is the constraint that forces the measurement to be aggregate; aggregate measurement is what makes measuring without a consent dialog lawful. The two are the same architectural choice, viewed from different angles.",
   },
   {
     q: "Where is this data stored?",
@@ -82,15 +82,15 @@ export default function CompleteDataPillar() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/complete-data",
-          name: "Complete data — analytics that captures 100% of traffic",
+          name: "Complete data — analytics without consent-driven data loss",
         })}
       />
       <JsonLd
         data={articleSchema({
           headline:
-            "Complete data — why incomplete analytics produces wrong decisions, and what it takes to measure 100%",
+            "Complete data — why incomplete analytics produces wrong decisions, and what it takes to measure without consent gaps",
           description:
-            "The category-defining argument for cookieless, consentless, EU-hosted analytics that captures 100% of traffic — and the decisions it changes for CMOs and CFOs.",
+            "The category-defining argument for cookieless, consentless, EU-hosted analytics without consent-driven data loss — and the decisions it changes for CMOs and CFOs.",
           datePublished: PILLAR_DATE_PUBLISHED,
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/complete-data",
@@ -125,7 +125,7 @@ export default function CompleteDataPillar() {
             Decisions you can defend.
           </h1>
           <QuickAnswer>
-            {`Google Meridian MMM accuracy depends entirely on the completeness of the input data, and consent-based analytics tools like GA4 undermine that accuracy from the start. When EU visitors reject cookie consent, GA4 stops logging their sessions, creating gaps of 40–60% in observed traffic depending on banner design and audience. Since Meridian relies on historical marketing and conversion data to model channel effectiveness, feeding it incomplete GA4 exports means the algorithm trains on a biased subset of users—typically those more tolerant of tracking—skewing attribution and media-mix recommendations. Sealmetrics addresses this at the source: a consentless analytics architecture that captures 100% of EU site traffic without cookies or consent banners, remaining GDPR-compliant by design. Because no visitor is excluded pre-consent, the dataset feeding into MMM tools stays statistically representative of actual traffic and revenue, not just consenting users. Last-click revenue attribution on the complete dataset further ensures that conversion values entering any MMM model reflect real business outcomes rather than partial, consent-filtered approximations.`}
+            {`Google Meridian MMM accuracy depends entirely on the completeness of the input data, and consent-based analytics tools like GA4 undermine that accuracy from the start. When EU visitors reject cookie consent, GA4 stops logging their sessions, creating gaps of 40–60% in observed traffic depending on banner design and audience. Since Meridian relies on historical marketing and conversion data to model channel effectiveness, feeding it incomplete GA4 exports means the algorithm trains on a biased subset of users—typically those more tolerant of tracking—skewing attribution and media-mix recommendations. Sealmetrics addresses this at the source: a consentless analytics architecture that measures EU site traffic without cookies or consent banners, designed for GDPR from the architecture up (self-assessed). Because no visitor is excluded pre-consent, the dataset feeding into MMM tools stays statistically representative of actual traffic and revenue, not just consenting users. Last-click revenue attribution on the complete dataset further ensures that conversion values entering any MMM model reflect real business outcomes rather than partial, consent-filtered approximations.`}
           </QuickAnswer>
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
@@ -157,7 +157,7 @@ export default function CompleteDataPillar() {
         }
         bullets={[
           <>
-            <strong>100% pageview capture</strong> — no consent, no
+            <strong>Consent-independent pageview capture</strong> — no consent, no
             script-block, no expiry.
           </>,
           <>
@@ -281,7 +281,7 @@ export default function CompleteDataPillar() {
                 num: "02",
                 title: "Every conversion attributed",
                 body:
-                  "Last-click revenue attribution applied to 100% of conversions, not the 13% that consented. The channel that actually drove the conversion gets the credit — by data, not by model.",
+                  "Last-click revenue attribution applied to every observed conversion, not the 13% that consented. The channel that actually drove the conversion gets the credit — by data, not by model.",
               },
               {
                 num: "03",

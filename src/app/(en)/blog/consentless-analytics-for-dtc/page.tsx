@@ -12,11 +12,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
   description:
-    "Consentless analytics counts 100% of DTC traffic without a cookie banner — anonymously, at channel level. How it works, why it's compliant, what teams gain.",
+    "Consentless analytics counts DTC traffic with no banner and no consent loss — anonymously, by channel. How it works, why it's compliant, what teams gain.",
   openGraph: {
     title: "Consentless Analytics for DTC — 2026 Guide",
     description:
-      "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
+      "No consent banner required. No cookies. No user tracking. Aggregate channel totals without consent gaps.",
     type: "article",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
     url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Consentless Analytics for DTC — 2026 Guide",
-    description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
+    description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals without consent gaps.",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
   },
   alternates: {
@@ -54,7 +54,7 @@ const faqs = [
   {
     question: "Why does consentless analytics matter for DTC brands in Europe?",
     answer:
-      "DTC brands sell directly to consumers via paid media. Their budget decisions depend on attributing paid-channel spend to revenue. In the EU, cookie banners cause 40–60% of visitors to reject tracking — the ROAS numbers DTC teams optimise against are built on the minority who accepted. Consentless analytics restores aggregate channel totals on the full 100%.",
+      "DTC brands sell directly to consumers via paid media. Their budget decisions depend on attributing paid-channel spend to revenue. In the EU, cookie banners cause 40–60% of visitors to reject tracking — the ROAS numbers DTC teams optimise against are built on the minority who accepted. Consentless analytics restores aggregate channel totals without that consent gap.",
   },
   {
     question: "Is consentless analytics legal under GDPR?",
@@ -77,7 +77,7 @@ export default function Page() {
       <JsonLd
         data={articleSchema({
           headline: "Consentless Analytics for DTC — 2026 Guide",
-          description: "Consentless analytics counts 100% of DTC traffic anonymously at channel level — no banner, no tracking.",
+          description: "Consentless analytics counts DTC traffic anonymously at channel level — no banner, no consent loss, no tracking.",
           ...dates,
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",
@@ -93,7 +93,7 @@ export default function Page() {
               DTC
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
+              How DTC Brands Measure Paid-Media Revenue Without a Banner
             </h1>
             <PostByline
               {...dates}
@@ -149,13 +149,13 @@ export default function Page() {
               A typical European DTC stack running consentless analytics:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events on 100% of traffic, pre-banner, no identifier ever created.</li>
+              <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events without depending on consent, pre-banner, no identifier ever created.</li>
               <li><strong>Meta pixel + Google Ads pixel behind the banner.</strong> These still require consent because they use personal data for ad personalisation.</li>
               <li><strong>Klaviyo or CRM for email.</strong> Runs on explicit email-list opt-in, not tracking cookies.</li>
               <li><strong>BigQuery for aggregate marketing-mix modelling.</strong> Fed by consentless analytics at full resolution of channel totals.</li>
             </ul>
             <p>
-              The net effect: aggregate ROAS per channel is measured on 100% of traffic, not the 40% that accepted the banner. For a €20M DTC brand, the difference between &ldquo;channel ROAS on 40%&rdquo; and &ldquo;channel ROAS on 100%&rdquo; is often the difference between signing off on a €5M annual paid-media budget and defending it in a board meeting.
+              The net effect: aggregate ROAS per channel is measured without depending on consent, not on the 40% that accepted the banner. For a €20M DTC brand, the difference between &ldquo;channel ROAS on 40%&rdquo; and &ldquo;channel ROAS without consent gaps&rdquo; is often the difference between signing off on a €5M annual paid-media budget and defending it in a board meeting.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

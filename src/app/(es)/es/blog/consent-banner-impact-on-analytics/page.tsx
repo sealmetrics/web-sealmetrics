@@ -205,7 +205,7 @@ export default function ConsentBannerImpactPageEs() {
             >
               analítica cookieless
             </Link>{" "}
-            captura el 100% del tráfico independientemente del estado del banner — no
+            mide el tráfico sin depender del estado del banner — no
             porque salte el consentimiento, sino porque no recoge datos que lo requieran.
           </p>
 
@@ -230,7 +230,7 @@ export default function ConsentBannerImpactPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Cuánto tráfico te está borrando el banner — el 40%, el 60%? Ve en una demo cómo quedarían tus informes midiendo el 100% de las visitas sin pedir consentimiento."
+          hook="¿Cuánto tráfico te está borrando el banner — el 40%, el 60%? Ve en una demo cómo quedarían tus informes sin perder visitas por el rechazo del consentimiento."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

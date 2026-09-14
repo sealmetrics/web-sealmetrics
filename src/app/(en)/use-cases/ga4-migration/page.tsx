@@ -382,7 +382,7 @@ export default function Ga4MigrationPage() {
             >
               Sealmetrics vs Google Analytics 4
             </Link>
-            . For the architecture of how 100% capture is possible, see{" "}
+            . For the architecture of how consent-independent capture is possible, see{" "}
             <Link
               href="/cookieless-analytics"
               className="text-brand underline decoration-1 underline-offset-2"

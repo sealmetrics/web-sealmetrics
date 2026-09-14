@@ -16,11 +16,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
   description:
-    "Cookieless analytics for eCommerce: 100% traffic captured, last-click revenue attribution, no consent banner, EU-hosted in Dublin. From EUR499/mo.",
+    "Cookieless analytics for eCommerce: no consent-driven data loss, last-click revenue attribution, no consent banner, EU-hosted in Dublin. From EUR499/mo.",
   openGraph: {
     title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
     description:
-      "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
+      "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
     type: "website",
     images: [ogImage("/for/ecommerce/")],
     url: "https://sealmetrics.com/for/ecommerce/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
-    description: "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Captures 100% of EU traffic and reconciles with your Shopify/Magento CRM.",
+    description: "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
     images: [ogImage("/for/ecommerce/")],
   },
   alternates: {

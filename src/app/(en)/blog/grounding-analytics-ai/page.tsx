@@ -424,7 +424,7 @@ export default function GroundingAnalyticsAiPage() {
           </div>
 
           <CommercialModule
-            hook="A grounded assistant is only as good as the data underneath — LENS queries 100% of your traffic. Test it on the question your team argued about last week."
+            hook="A grounded assistant is only as good as the data underneath — LENS queries data without consent gaps. Test it on the question your team argued about last week."
           />
 
           <FaqSection items={FAQ} locale="en" />

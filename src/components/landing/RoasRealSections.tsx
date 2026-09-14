@@ -132,7 +132,7 @@ export function RoasMath() {
             <span className="text-[17px] leading-[1.3] text-ink">
               Tu ROAS real
               <small className="block mt-1.5 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-                100% de las ventas medidas
+                Ventas sin pérdida por consentimiento
               </small>
             </span>
             <RevealBar pct={100} tone="us" delay={170} />
@@ -220,8 +220,8 @@ export function WhatWeDo() {
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             El píxel se dispara antes del banner y mide{" "}
-            <strong className="text-ink font-semibold">el 100% de tus sesiones, ventas y eventos</strong>. Dato
-            real: no modelamos ni muestreamos, porque no hay ningún hueco que rellenar con estadística.
+            <strong className="text-ink font-semibold">tus sesiones, ventas y eventos sin depender del consentimiento</strong>. Dato
+            real: no modelamos ni muestreamos, porque el rechazo del consentimiento no deja huecos que rellenar con estadística.
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             El cambio de mentalidad es este: dejas de analizar{" "}
@@ -418,8 +418,8 @@ const TRADE_NO = [
 ];
 
 const TRADE_YES = [
-  "El 100% de sesiones, eventos y ventas. Sin banner de por medio.",
-  "Canal, campaña, medium, keyword, content y referrer sobre ese 100%.",
+  "Sesiones, eventos y ventas sin pérdida por consentimiento. Sin banner de por medio.",
+  "Canal, campaña, medium, keyword, content y referrer sobre ese mismo dato.",
   "Embudo agregado completo: visita → producto visto → carrito → checkout → compra.",
   "Dato a nivel de producto: talla, color, marca, categoría, rango de precio, SKU.",
   "Todo en tiempo real, al segundo, incluido el pico de Black Friday.",
@@ -555,7 +555,7 @@ const SPECS = [
   {
     h: "Verdad del dato",
     items: [
-      { v: "100% del tráfico", l: "Sin consentimiento, sin cookies, sin banner de por medio." },
+      { v: "Sin pérdida por consentimiento", l: "Sin consentimiento, sin cookies, sin banner de por medio." },
       { v: "Cero modelado", l: "No modeling. No sampling. No estimaciones. Si está en el informe, pasó." },
       { v: "+25% vs Adobe o GA4", l: "Medido en campo, 30 días de doble etiqueta sobre el mismo sitio." },
     ],
@@ -810,7 +810,7 @@ export function Implementation() {
 const USES = [
   {
     t: "Repartes inversión con el dato completo",
-    d: "Un cliente veía TikTok Ads casi plano en GA4. Con el 100% del dato aparecieron las ventas reales y un peso en descubrimiento muy superior al reportado. La inversión se movió en consecuencia.",
+    d: "Un cliente veía TikTok Ads casi plano en GA4. Con el dato sin huecos de consentimiento aparecieron las ventas reales y un peso en descubrimiento muy superior al reportado. La inversión se movió en consecuencia.",
   },
   {
     t: "Optimizas campañas por producto",

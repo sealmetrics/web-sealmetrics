@@ -14,7 +14,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Cookieless Analytics",
     shortDefinition:
-      "Web analytics that captures visitor data without using browser cookies, enabling 100% traffic measurement regardless of consent status or browser restrictions.",
+      "Web analytics that captures visitor data without using browser cookies, enabling traffic measurement that doesn't depend on consent status or cookie restrictions.",
     category: "Technology",
     related: ["first-party-data-collection", "server-side-tracking", "gdpr-analytics-compliance", "consent-management-platform", "data-loss-in-analytics"],
   },
@@ -86,7 +86,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Revenue Attribution",
     shortDefinition:
-      "Connecting revenue events (purchases, subscriptions) to the marketing channels that drove them. Sealmetrics uses last-click on 100% of observed events — no per-user journey tracking, no multi-touch models.",
+      "Connecting revenue events (purchases, subscriptions) to the marketing channels that drove them. Sealmetrics uses last-click on observed events without consent gaps — no per-user journey tracking, no multi-touch models.",
     category: "Attribution",
     related: ["attribution-model", "multi-touch-attribution", "event-tracking", "data-loss-in-analytics"],
   },
@@ -167,7 +167,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Last-Click Attribution",
     shortDefinition:
-      "An attribution model where 100% of the conversion credit goes to the final marketing touchpoint observed before the conversion event. Sealmetrics applies last-click on 100% of data — aggregate, anonymous, at channel level.",
+      "An attribution model where 100% of the conversion credit goes to the final marketing touchpoint observed before the conversion event. Sealmetrics applies last-click on data without consent gaps — aggregate, anonymous, at channel level.",
     category: "Attribution",
     related: ["attribution-model", "revenue-attribution", "attribution-window", "multi-touch-attribution"],
   },

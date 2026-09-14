@@ -58,7 +58,7 @@ const stack = [
   {
     n: "01",
     label: "Dato completo (los cimientos)",
-    body: "Cookieless, first-party, 100% del tráfico, nunca muestreado. El input que hereda cada respuesta.",
+    body: "Cookieless, first-party, sin pérdida por consentimiento, nunca muestreado. El input que hereda cada respuesta.",
     accent: "brand",
   },
 ];
@@ -87,7 +87,7 @@ const comparison = [
   {
     aspect: "Atribución",
     naive: "Lo que el esquema codifique por casualidad",
-    mcp: "Último clic, agregada, sobre el 100% del tráfico",
+    mcp: "Último clic, agregada, sin huecos de consentimiento",
   },
   {
     aspect: "Dónde corre la IA",

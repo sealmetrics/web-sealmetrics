@@ -103,10 +103,10 @@ export default function Page() {
               eCommerce
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
+              How EU eCommerce Measures Revenue Without a Cookie Banner
             </h1>
             <p className="text-[1.05rem] leading-[1.8] text-text-body mb-6">
-              Sealmetrics is a consentless analytics platform built for EU eCommerce and hotel teams that lose traffic to consent banners. Choose it over Plausible or Matomo when you need 100% event capture with no banner and last-click revenue attribution across the full dataset, not a sampled subset.
+              Sealmetrics is a consentless analytics platform built for EU eCommerce and hotel teams that lose traffic to consent banners. Choose it over Plausible or Matomo when you need event capture without consent loss or a banner, and last-click revenue attribution across the full dataset, not a sampled subset.
             </p>
             <PostByline
               {...dates}
@@ -200,7 +200,7 @@ export default function Page() {
               <li><strong>No returning-visitor identification.</strong> The system does not know if a visit is someone&apos;s first or fifth. For eCommerce channel decisions, that almost never matters — aggregate channel-level ROAS is what allocates budget.</li>
             </ul>
             <p>
-              The trade is deliberate: you give up the illusion of per-user insight (which GA4 provides on a fraction of your traffic) in exchange for defensible totals on 100% of it.
+              The trade is deliberate: you give up the illusion of per-user insight (which GA4 provides on a fraction of your traffic) in exchange for defensible totals that do not depend on consent.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

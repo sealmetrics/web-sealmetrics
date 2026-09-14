@@ -68,13 +68,13 @@ const alternatives = [
     name: "Sealmetrics",
     url: "https://sealmetrics.com",
     pricing: "From \u20ac499/mo billed annually (\u20ac5,988/yr)",
-    dataCompleteness: "100% in EU",
+    dataCompleteness: "Not reduced by consent",
     euCompliance:
       "GDPR compliant by design — no PII collected, no cookies, no consent required, EU-only data residency",
     ecommerceFeatures:
       "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
     chooseIf:
-      "You need 100% data capture in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
+      "You need no consent-driven data loss in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
   },
   {
     name: "Piwik PRO",
@@ -179,7 +179,7 @@ export default function GA4AlternativesEnterprisePage() {
               7 GA4 Alternatives for eCommerce Teams in 2026
             </h1>
             <QuickAnswer>
-              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that captures 100% of site traffic without cookies or consent banners, remaining GDPR-compliant by architecture rather than by configuration. Unlike GA4, which loses 40–60% of visitor data when users reject consent banners under GDPR, Sealmetrics measures every eligible event and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and complete funnel visibility from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a compliant, complete, and revenue-focused alternative built specifically for the European regulatory environment.`}
+              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that measures site traffic without cookies or consent banners and is designed for GDPR from the architecture up (self-assessed), not by configuration. Unlike GA4, which loses 40–60% of visitor data when users reject consent banners under GDPR, Sealmetrics measures every eligible event and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and complete funnel visibility from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a compliant, complete, and revenue-focused alternative built specifically for the European regulatory environment.`}
             </QuickAnswer>
             <PostByline
               {...dates}
@@ -204,7 +204,8 @@ export default function GA4AlternativesEnterprisePage() {
                 Enterprise alternatives split into two categories:
                 cookie-dependent platforms (GA360, Adobe, Piwik PRO) that
                 improve on GA4 but still lose 40-60% of EU traffic, and
-                cookieless platforms (Sealmetrics) that capture 100%.
+                cookieless platforms (Sealmetrics) that do not lose traffic to consent
+                rejection.
               </li>
               <li>
                 Amplitude and Mixpanel are product analytics tools, not web
@@ -215,7 +216,7 @@ export default function GA4AlternativesEnterprisePage() {
               <li>
                 The total cost gap between platforms spans 25x or more. GA360
                 costs six figures a year for ~35% EU data capture. Sealmetrics costs
-                {"\u20ac"}5,988/yr for 100% data capture. The relevant comparison
+                {"\u20ac"}5,988/yr with no consent-driven data loss. The relevant comparison
                 is cost per accurate data point.
               </li>
             </ul>
@@ -479,7 +480,7 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 cookieless analytics
               </Link>{" "}
-              to capture 100% of traffic. No cookies are set. No personal data is
+              to measure traffic without depending on consent. No cookies are set. No personal data is
               collected. No consent banner is required.
             </p>
 
@@ -497,7 +498,7 @@ export default function GA4AlternativesEnterprisePage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">100%</span>
+                  <span className="text-text-primary">Not reduced by consent</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">

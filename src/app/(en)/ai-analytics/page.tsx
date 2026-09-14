@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is AI analytics?",
-    a: "AI analytics is the ability to query your web and revenue data in plain language and get an answer directly — no SQL, no dashboard building, no analyst in the queue. A large language model like Claude or ChatGPT reads your analytics through a connector and returns the number, the diagnosis, or the next action. The catch is that the answer is only as trustworthy as the data underneath: point an LLM at incomplete, cookie-based analytics and it will produce confident, well-formatted, wrong answers. Sealmetrics is AI analytics built on complete cookieless data, so the answers are grounded in 100% of your traffic.",
+    a: "AI analytics is the ability to query your web and revenue data in plain language and get an answer directly — no SQL, no dashboard building, no analyst in the queue. A large language model like Claude or ChatGPT reads your analytics through a connector and returns the number, the diagnosis, or the next action. The catch is that the answer is only as trustworthy as the data underneath: point an LLM at incomplete, cookie-based analytics and it will produce confident, well-formatted, wrong answers. Sealmetrics is AI analytics built on complete cookieless data, so the answers aren't missing the visitors who reject consent.",
   },
   {
     q: "Is there a GDPR-compliant AI analytics tool?",
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "How is this different from putting ChatGPT on top of GA4?",
-    a: "Two differences, both structural. First, the data: GA4 is cookie-based and consent-gated, so in the EU it typically captures a fraction of real traffic — an LLM reasoning over it is confident and wrong. Sealmetrics captures 100% cookielessly. Second, the interface: an open warehouse forces the model to guess which of hundreds of fields means 'revenue,' which produces plausible but false numbers. The Sealmetrics MCP exposes named tools with one canonical definition each, so the model cannot misread the schema. Complete data plus a constrained surface removes both failure modes.",
+    a: "Two differences, both structural. First, the data: GA4 is cookie-based and consent-gated, so in the EU it typically captures a fraction of real traffic — an LLM reasoning over it is confident and wrong. Sealmetrics measures cookielessly, without depending on consent. Second, the interface: an open warehouse forces the model to guess which of hundreds of fields means 'revenue,' which produces plausible but false numbers. The Sealmetrics MCP exposes named tools with one canonical definition each, so the model cannot misread the schema. Complete data plus a constrained surface removes both failure modes.",
   },
   {
     q: "Does AI analytics require cookies or personal data?",
@@ -82,9 +82,9 @@ const pillars = [
   {
     eyebrow: "The foundation",
     title: "Complete data",
-    body: "AI is only as good as its input. Cookieless, first-party, 100% of traffic, never sampled — so every answer describes the whole of your traffic, not the fraction that accepted a banner.",
-    metric: "100%",
-    metricLabel: "of traffic, never modeled",
+    body: "AI is only as good as its input. Cookieless, first-party, no consent-driven data loss, never sampled — so every answer describes your traffic, not just the fraction that accepted a banner.",
+    metric: "0",
+    metricLabel: "visitors lost to consent, never modeled",
   },
   {
     eyebrow: "The interface",
@@ -119,18 +119,18 @@ const pillars = [
     title: "Answers you can trace",
     body: "Every answer resolves to a named tool over an explicit period in your timezone, and attribution is last-click at the event level — so you can always see which metric produced the number.",
     metric: "Last-click",
-    metricLabel: "on 100% of traffic",
+    metricLabel: "without consent gaps",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; generic: string; native: string }> = [
-  { feature: "Data foundation", generic: "Cookie-based, consent-gated (partial)", native: "Cookieless, 100% captured" },
+  { feature: "Data foundation", generic: "Cookie-based, consent-gated (partial)", native: "Cookieless, no consent loss" },
   { feature: "How the AI reads it", generic: "Raw SQL against unseen tables", native: "Semantic MCP — named tools" },
   { feature: "Wrong-but-plausible answers", generic: "High — a staging column looks real", native: "Structurally constrained" },
   { feature: "Personal data exposure", generic: "Possible — raw rows carry PII", native: "None — 0 PII by construction" },
   { feature: "Where inference runs", generic: "Warehouse creds to a US model", native: "Private AI in the EU, or your key" },
   { feature: "Data residency", generic: "Mostly US", native: "EU — Dublin + Paris" },
-  { feature: "Attribution", generic: "Whatever the schema encodes", native: "Last-click on 100% of traffic" },
+  { feature: "Attribution", generic: "Whatever the schema encodes", native: "Last-click on data without consent gaps" },
   { feature: "Time to first answer", generic: "Build pipelines + dashboards", native: "Connect MCP, ask in words" },
 ];
 
@@ -220,14 +220,14 @@ export default function AiAnalyticsPage() {
         answer={
           <>
             AI analytics is only as trustworthy as the data beneath it. Sealmetrics pairs{" "}
-            <strong>100% cookieless data</strong> with a <strong>semantic MCP</strong> and{" "}
+            <strong>cookieless data with no consent gaps</strong> with a <strong>semantic MCP</strong> and{" "}
             <strong>private AI hosted in the EU</strong> (LENS AI), so an LLM answers your revenue
             questions from complete data it cannot misread — with zero personal data in play.
           </>
         }
         bullets={[
           <>Generic AI on GA4: partial data, PII risk, US inference, plausible-but-wrong answers.</>,
-          <>Sealmetrics: complete data, 0 PII, EU private AI, last-click attribution on 100% of traffic.</>,
+          <>Sealmetrics: complete data, 0 PII, EU private AI, last-click attribution without consent gaps.</>,
           <>Connect Claude, ChatGPT, Cursor or Claude Code via MCP — or bring your own model key.</>,
         ]}
       />

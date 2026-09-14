@@ -71,7 +71,7 @@ export default function Page() {
           <p>Cuando la analítica capta sólo el 13% del tráfico real, los modelos de atribución, ROAS, CPA y customer lifetime value se calculan sobre una muestra estadística — no sobre el dato. Las decisiones de reasignación de presupuesto basadas en esa muestra suelen estar sesgadas hacia los canales con mayor probabilidad de aceptar cookies, no hacia los que más ingresos generan en realidad.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo cerrar la brecha</h2>
-          <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sobre el 100% del tráfico — no una muestra, no una estimación.</p>
+          <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sin huecos de consentimiento — no una muestra, no una estimación.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La cuarta pérdida: la fuente de tráfico</h2>
           <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De ese 40–45% que sí acepta el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. El efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta, frente al 13% que se cita para la visibilidad total.</p>
@@ -82,7 +82,7 @@ export default function Page() {
           <p>Si quieres una primera aproximación antes de tocar nada, la <Link href="/es/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">calculadora de pérdida de datos</Link> parte de tus visitas e ingresos mensuales y devuelve el importe que tu configuración actual está ocultando cada mes. Es una estimación, y está pensada para decidir si merece la pena hacer la comparación seria contra backend — no para sustituirla.</p>
         </div>
 
-        <CommercialModule locale="es" hook="Entre el 40–60% de rechazo de consentimiento y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo del 100%." />
+        <CommercialModule locale="es" hook="Entre el 40–60% de rechazo de consentimiento y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo que no depende del consentimiento." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

@@ -40,7 +40,7 @@ export default function WhatIsCookielessTrackingPage() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "What Is Cookieless Tracking?" }]} />
-      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it captures 100% of traffic.", ...dates, url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "What Is Cookieless Tracking? A Complete Guide for 2026", description: "How cookieless tracking works and why it does not depend on consent.", ...dates, url: "/blog/what-is-cookieless-tracking", category: "Technology", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "What Is Cookieless Tracking?", url: "/blog/what-is-cookieless-tracking" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -66,10 +66,10 @@ export default function WhatIsCookielessTrackingPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
-            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
+            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>
             <li>GDPR compliance is architectural: no cookies stored, no PII collected, no cross-site tracking — consistent with CNIL and German DSK guidance for consent-free analytics.</li>
-            <li>Every downstream analytics function improves when input data goes from 13% to 100%: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
+            <li>Every downstream analytics function improves when input data goes from a consented 13% to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
           </ul>
         </div>
 
@@ -211,7 +211,7 @@ export default function WhatIsCookielessTrackingPage() {
                   {
                     aspect: "EU data capture rate",
                     cookie: "~13% of actual traffic",
-                    cookieless: "100% of actual traffic",
+                    cookieless: "Not reduced by consent",
                   },
                   {
                     aspect: "Privacy compliance",
@@ -237,7 +237,7 @@ export default function WhatIsCookielessTrackingPage() {
           </div>
 
           <p>
-            The 13% vs 100% gap is not an exaggeration. It is the documented
+            The 13% figure is not an exaggeration. It is the documented
             result of compounding losses: consent rejection removes 55%,
             ad blockers remove 40% of the remainder, browser restrictions
             remove another portion, and data sampling removes more. The{" "}
@@ -335,7 +335,7 @@ export default function WhatIsCookielessTrackingPage() {
             The practical impact of switching from cookie-based to cookieless
             tracking is not incremental &mdash; it is transformative. Every
             downstream analytics function improves when the input data goes
-            from 13% to 100%.
+            from 13% to measurement without consent gaps.
           </p>
 
           <ul className="space-y-2 pl-0 list-none">
@@ -364,7 +364,7 @@ export default function WhatIsCookielessTrackingPage() {
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how Sealmetrics captures 100% of traffic
+              See how Sealmetrics measures traffic without consent gaps
             </Link>{" "}
             or{" "}
             <Link

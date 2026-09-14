@@ -207,7 +207,7 @@ export default function Page() {
           </div>
 
           <CommercialModule
-            hook="Top-of-funnel is where PLG measurement breaks first. See trial signups attributed on 100% of traffic — last-click, no cookies, no consent gate."
+            hook="Top-of-funnel is where PLG measurement breaks first. See trial signups attributed without consent-driven data loss — last-click, no cookies, no consent gate."
           />
 
           <RelatedReading currentSlug="cookieless-analytics-for-saas" />

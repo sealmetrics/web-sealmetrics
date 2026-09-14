@@ -13,7 +13,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Analítica Web Moderna — Datos limpios para IA",
   description:
-    "Analítica web moderna frente a herramientas legacy: 100% de captura, sin sampling, agnóstica de canal, GDPR by design y lista para IA vía MCP.",
+    "Analítica web moderna vs. legacy: sin pérdida por consentimiento, sin sampling, agnóstica de canal, diseñada para el RGPD (autoevaluación) y lista para IA.",
   openGraph: {
     title: "Analítica Web Moderna — Datos limpios para IA",
     description:
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa exactamente \"analítica moderna\"?",
-    a: "La analítica moderna es la nueva generación de medición web: cookieless por arquitectura, captura el 100% de eventos en servidor sin banners de consentimiento, nunca samplea, nunca modela datos faltantes y expone datos limpios a nivel de evento a humanos y agentes IA mediante estándares como MCP. Sealmetrics es la implementación production-grade de ese enfoque.",
+    a: "La analítica moderna es la nueva generación de medición web: cookieless por arquitectura, mide eventos en servidor sin depender de banners de consentimiento, nunca samplea, nunca modela datos faltantes y expone datos limpios a nivel de evento a humanos y agentes IA mediante estándares como MCP. Sealmetrics es la implementación production-grade de ese enfoque.",
   },
   {
     q: "¿En qué se diferencia de herramientas cookieless como Plausible o Fathom?",
@@ -81,7 +81,7 @@ const faqs = [
 
 const pillars = [
   {
-    eyebrow: "100% de captura",
+    eyebrow: "Sin pérdida por consentimiento",
     title: "Datos limpios",
     body: "Cada visitante, cada evento. Ningún banner de consentimiento bloqueando la medición, ningún ad-blocker borrando tráfico, ningún bloqueador de JS limpiando datos. Conteo first-party en servidor que captura la verdad.",
     metric: "+40-60%",
@@ -105,8 +105,8 @@ const pillars = [
     eyebrow: "Sin sampling",
     title: "Resolución completa",
     body: "Cada evento aterriza en ClickHouse. Sin sampling Card-2, sin umbrales de \"alta cardinalidad\". Consulta la cola larga de SKUs, terms, países y microconversiones sin truncar.",
-    metric: "100%",
-    metricLabel: "de eventos consultables",
+    metric: "0%",
+    metricLabel: "de consultas muestreadas",
   },
   {
     eyebrow: "AI native",
@@ -127,7 +127,7 @@ const pillars = [
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
   { feature: "Cookies / fingerprinting", legacy: "Requerido", modern: "Ninguno" },
   { feature: "Banner de consentimiento", legacy: "Sí", modern: "No" },
-  { feature: "Tráfico UE capturado", legacy: "40-60%", modern: "100%" },
+  { feature: "Tráfico UE capturado", legacy: "40-60%", modern: "Sin pérdida por consentimiento" },
   { feature: "Sampling en queries pesadas", legacy: "Sí (Card-2 / umbrales)", modern: "No" },
   { feature: "Datos modelados / sintéticos", legacy: "Sí, % no revelado", modern: "Nunca" },
   { feature: "Modelo de atribución", legacy: "Data-driven (caja negra)", modern: "Last-click sobre eventos crudos" },
@@ -218,7 +218,7 @@ export default function ModernAnalyticsPageEs() {
         label="TL;DR"
         answer={
           <>
-            La analítica web moderna captura el <strong>100% del tráfico</strong> sin cookies, nunca
+            La analítica web moderna mide el tráfico <strong>sin depender del consentimiento</strong> ni de cookies, nunca
             samplea, nunca modela, y expone datos limpios a nivel de evento a agentes IA mediante el{" "}
             <strong>Model Context Protocol</strong>. Sealmetrics es esa plataforma — production-grade,
             hosted en UE y lista para la era post-cookie y first-AI.
@@ -226,7 +226,7 @@ export default function ModernAnalyticsPageEs() {
         }
         bullets={[
           <>Analítica legacy con cookies: 40-60% de pérdida de tráfico UE, huecos modelados, hosted en US.</>,
-          <>Analítica moderna: 100% de captura, last-click sobre datos crudos, hosted en UE, lista para agentes IA.</>,
+          <>Analítica moderna: sin pérdida por consentimiento, last-click sobre datos crudos, hosted en UE, lista para agentes IA.</>,
           <>Sin migración. Corre las dos durante 30 días. Decide con tus propios números.</>,
         ]}
       />
