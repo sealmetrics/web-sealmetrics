@@ -149,7 +149,7 @@ export default function RevenueAttributionPage() {
           </>
         }
         bullets={[
-          <><strong>Last-click without consent gaps</strong> — model applied to the full population, not the consenting fraction.</>,
+          <><strong>Last-click without consent gaps</strong> — model applied to visitors who accept and reject the banner alike, not just the consenting fraction.</>,
           <><strong>Channel + campaign + creative</strong> — full UTM stack captured per conversion.</>,
           <><strong>order_id reconciliation</strong> — joins natively with Shopify / WooCommerce / PMS backends.</>,
           <><strong>Honest about limits</strong> — no multi-touch, no view-through, no per-visitor journeys.</>,
@@ -246,9 +246,9 @@ export default function RevenueAttributionPage() {
                 observed on the page where it fired. No earlier
                 touchpoints need to be remembered. No identifier
                 needs to persist. The model is applied to every
-                observed conversion — full population — because every
-                conversion is observed (no cookie to expire, no
-                consent to reject). Definition on the{" "}
+                observed conversion, whether or not the visitor
+                accepted the banner, because there is no cookie to
+                expire and no consent to reject. Definition on the{" "}
                 <Link
                   href="/glossary/last-click-attribution"
                   className="text-brand underline decoration-1 underline-offset-2"
@@ -299,8 +299,7 @@ export default function RevenueAttributionPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Per-order in the warehouse</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Every order in the eCommerce backend appears in
-                Sealmetrics with the same{" "}
+                Orders tracked by Sealmetrics carry the same{" "}
                 <code className="font-mono text-[13px]">order_id</code>.
                 Finance joins both datasets in BigQuery on a single
                 key — no fuzzy matching, no probability scoring.

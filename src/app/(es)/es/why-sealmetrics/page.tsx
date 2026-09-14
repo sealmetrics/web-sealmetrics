@@ -717,7 +717,7 @@ function Mechanism() {
 
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8 border-t border-warm-100">
           <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-            {["RGPD por arquitectura", "ePrivacy", "Schrems II limpio", "Alojado en UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
+            {["Diseñada para el RGPD", "ePrivacy", "Schrems II limpio", "Alojado en UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
               <span key={b} className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                 {b}

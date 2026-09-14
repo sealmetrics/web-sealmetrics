@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "What about Google Consent Mode v2?",
-    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. The data you see in GA4 with Consent Mode is a model of the 87% you cannot measure. Cookieless analytics is a measurement layer — every visitor is counted, no model required. The two answer different questions.",
+    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. The data you see in GA4 with Consent Mode is a model of the 87% you cannot measure. Cookieless analytics is a measurement layer — visitors are counted whether or not they accept the banner, no model required. The two answer different questions.",
   },
   {
     q: "How fast is implementation?",
@@ -157,12 +157,12 @@ export default function CookielessAnalyticsPillar() {
             ad-blocker drop-off, no 7-day cookie expiry.
           </>,
           <>
-            <strong>GDPR-compliant by architecture</strong> — no cookies, no
+            <strong>Designed for GDPR from the architecture up</strong> (self-assessed) — no cookies, no
             PII, no cross-session identifiers. EU-only processing.
           </>,
           <>
             <strong>Last-click revenue attribution</strong> at channel and
-            campaign level, on every visitor.
+            campaign level, on visitors who accept and reject the banner alike.
           </>,
           <>
             <strong>What it doesn&apos;t do</strong> — identify returning

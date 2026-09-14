@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "Is there a GDPR-compliant AI analytics tool?",
-    a: "Yes. Sealmetrics is AI analytics that is GDPR-compliant by architecture: the measurement layer is cookieless and processes zero personal data, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. There is no consent banner and no personal data in play.",
+    a: "Sealmetrics is AI analytics designed for GDPR from the architecture up; this is our self-assessment, not a certification. The measurement layer is cookieless and processes zero personal data, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. There is no consent banner and no personal data in play.",
   },
   {
     q: "Can I connect ChatGPT or Claude to my analytics?",
@@ -418,7 +418,7 @@ export default function AiAnalyticsPage() {
             ))}
           </div>
           <p className="mt-10 text-[15px] leading-[1.6] text-ink-soft max-w-[720px]">
-            The compliance case rests on architecture, not a certificate — GDPR by design, ePrivacy-clean,
+            The compliance case rests on architecture, not a certificate — designed for GDPR (self-assessed), ePrivacy-clean,
             EU-hosted in Dublin, DPA included. For the full posture, see{" "}
             <Link href="/security" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
               security &amp; compliance

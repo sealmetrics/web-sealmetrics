@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     q: "Is this really compliant with GDPR and ePrivacy?",
-    a: "Yes. There is no personal data, no cookie, no localStorage, no fingerprinting. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
+    a: "It is designed to be; this is our self-assessment, not a certification. There is no personal data, no cookie, no localStorage, no fingerprinting. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
   },
   {
     q: "How do I switch from legacy analytics?",
@@ -84,7 +84,7 @@ const pillars = [
   {
     eyebrow: "No consent loss",
     title: "Clean data",
-    body: "Every visitor, every event. No consent banner gating measurement, no ad-blocker erasure, no JavaScript blockers wiping traffic. First-party server-side counting captures the truth.",
+    body: "Visitors and events counted whether or not the banner is accepted. No consent banner gating measurement, no ad-blocker erasure, no JavaScript blockers wiping traffic. First-party server-side counting captures the truth.",
     metric: "+40-60%",
     metricLabel: "more EU traffic vs cookie-based",
   },
@@ -117,8 +117,8 @@ const pillars = [
     metricLabel: "via MCP out of the box",
   },
   {
-    eyebrow: "Compliant",
-    title: "GDPR by design",
+    eyebrow: "Compliance",
+    title: "Designed for GDPR",
     body: "No cookies. No localStorage. No fingerprint. No personal data. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners required",

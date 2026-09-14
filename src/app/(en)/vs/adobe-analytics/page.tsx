@@ -65,7 +65,7 @@ export default function Page() {
         pages={[
         { href: "/vs-ga4", title: "vs Google Analytics 4", desc: "The free default — and its EU blind spot." },
         { href: "/vs/ga360", title: "vs Google Analytics 360", desc: "Enterprise data without the six-figure invoice." },
-        { href: "/vs/piwik-pro", title: "vs Piwik PRO", desc: "EU hosting plus complete capture." },
+        { href: "/vs/piwik-pro", title: "vs Piwik PRO", desc: "EU hosting, no consent-driven loss." },
         { href: "/alternatives/adobe-analytics", title: "Adobe Analytics alternatives", desc: "The wider field, before you renew." }
       ]}
       />
