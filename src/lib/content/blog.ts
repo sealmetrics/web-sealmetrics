@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "last-click-vs-modelled-attribution",
+    title: "Last-Click vs Modelled Attribution: What Each One Gets Right",
+    description:
+      "Data-driven attribution answers a better question on the paths it can see; last click a narrower one on every session. When to use each, and what to add.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["multi-touch-attribution-complete-data", "measure-roas-after-cookie-consent", "meta-ads-conversions-vs-crm"],
+  },
+  {
     slug: "consent-mode-measured-vs-modelled",
     title: "Consent Mode: What GA4 Measures and What It Models",
     description:

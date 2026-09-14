@@ -531,6 +531,16 @@
       "sourceHash": "e967c61ee6029ebf371f06698f8bdb31a79be32691bca6e07685d682e0e9a597",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/last-click-vs-modelled-attribution.avif": {
+      "source": "public/og/blog/last-click-vs-modelled-attribution.png",
+      "sourceHash": "288f74cd288bcbf42c729d9b5b386e541fb0ea3e11267bb79178e120fbc9cef3",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/last-click-vs-modelled-attribution.webp": {
+      "source": "public/og/blog/last-click-vs-modelled-attribution.png",
+      "sourceHash": "288f74cd288bcbf42c729d9b5b386e541fb0ea3e11267bb79178e120fbc9cef3",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/measure-roas-after-cookie-consent.avif": {
       "source": "public/og/blog/measure-roas-after-cookie-consent.png",
       "sourceHash": "dc7aae4087519dec988098d05bebef1441daae81e8f93da60a9c822c7b13047e",

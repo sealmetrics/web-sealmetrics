@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "last-click-vs-modelled-attribution": {
+    title: "Último clic frente a atribución modelada: en qué acierta cada una",
+    description: "La atribución basada en datos responde mejor pregunta en los recorridos que ve; el último clic, una más estrecha en cada sesión. Cuándo usar cada una.",
+    category: "Atribución",
+    readTime: "10 min",
+  },
   "consent-mode-measured-vs-modelled": {
     title: "Consent Mode: qué mide GA4 y qué modela",
     description: "Sin consentimiento, Consent Mode envía pings sin cookies y GA4 estima usuarios y sesiones por encima de un umbral. Qué es medido y qué es modelado.",

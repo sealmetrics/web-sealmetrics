@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "10719bbf59f9b4db",
+    "hash": "fd5cbe14abcad001",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "e98b2fd5c32b7ea5",
+    "hash": "8c2f083d536923e7",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -912,7 +912,7 @@
     "date": "2026-09-04"
   },
   "/blog/multi-touch-attribution-complete-data/": {
-    "hash": "631e6ae19151289a",
+    "hash": "488c390480301b38",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-lighthouse-scores/": {
@@ -1201,6 +1201,14 @@
   },
   "/es/blog/consent-mode-measured-vs-modelled/": {
     "hash": "ce0541a70a552885",
+    "date": "2026-09-14"
+  },
+  "/blog/last-click-vs-modelled-attribution/": {
+    "hash": "1f1ef7d543e56358",
+    "date": "2026-09-14"
+  },
+  "/es/blog/last-click-vs-modelled-attribution/": {
+    "hash": "5a0e95ae2909a979",
     "date": "2026-09-14"
   }
 }

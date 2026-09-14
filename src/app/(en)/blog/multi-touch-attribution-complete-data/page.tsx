@@ -173,7 +173,7 @@ export default function MultiTouchAttributionPage() {
             ))}
           </ul>
 
-          <CommercialModule hook="Last-click on 100% of data vs modelled multi-touch on a fraction — see the difference on your own channel mix." />
+          <CommercialModule hook="Last click on every session vs modelled multi-touch on the consenting fraction — see the difference on your own channel mix." />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Google&rsquo;s data-driven attribution is not the answer
@@ -195,41 +195,43 @@ export default function MultiTouchAttributionPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            Attribution on complete data
+            What complete data changes, and what it does not
           </h2>
 
           <p>
-            When you capture 100% of traffic through{" "}
+            Measuring every visit with{" "}
             <Link
               href="/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               cookieless analytics
-            </Link>
-            , attribution models work as designed. Every touchpoint in every
-            journey is visible. The model distributes credit based on actual
-            behavior, not on cookie-accepting behavior extrapolated to the full
-            population.
+            </Link>{" "}
+            does not rescue multi-touch attribution. A user-level model needs to
+            connect a person&rsquo;s visits across days, and that requires a
+            persistent identifier. Without one there is no journey to split credit
+            across, and Sealmetrics deliberately does not create one.
           </p>
 
           <p>
-            Sealmetrics provides last-click revenue attribution built on
-            complete session data. Because every visit is captured regardless of
-            consent status or browser restrictions, the attribution reflects
-            what actually happened — not what the cookie-accepting subset
-            suggests might have happened.
+            What complete data changes is the base the simpler model runs on.
+            Sealmetrics credits each conversion to the source of the session in
+            which it happens, by last click, and does it on every session rather
+            than on the fraction that accepted cookies. The channel totals are
+            measured rather than extrapolated, and they can be checked against
+            real orders.
           </p>
 
           <p>
-            The difference is particularly dramatic for top-of-funnel channels.
-            When first touches are no longer systematically lost, organic
-            search, social, and display campaigns receive accurate credit for
-            their contribution to revenue.{" "}
+            It does not give first touches the credit a multi-touch model would.
+            Organic search, social and display still receive credit only for the
+            sessions in which they close a conversion. When the question is how
+            much those channels contribute earlier on, the honest tools are
+            incrementality tests and marketing mix models, compared in{" "}
             <Link
-              href="/product"
+              href="/blog/last-click-vs-modelled-attribution"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how Sealmetrics handles attribution
+              last-click vs modelled attribution
             </Link>
             .
           </p>
