@@ -332,11 +332,28 @@ export default function WhyGA4Shows13PctPageEs() {
             >
               cookieless
             </Link>
-            , server-side. Un script first-party ligero (menos de 1 KB) recoge
-            eventos a través de tu propio dominio. No se setean cookies. No se
-            hacen peticiones de terceros. Como el método de recolección no entra
-            en los requisitos de consentimiento de cookies, captura el 100% del
-            tráfico&mdash; incluido el 87% que GA4 pierde.
+            , server-side. Un script ligero (menos de 1 KB), que puede servirse
+            desde un subdominio de tu propio dominio, recoge los eventos. No se
+            instalan cookies. Como nada se guarda ni se lee en el dispositivo del
+            visitante, el requisito de consentimiento de cookies no tiene a qué
+            aplicarse, y el tráfico que GA4 pierde por el banner se cuenta.
+          </p>
+
+          <p>
+            El 13% es un modelo: acumula las tasas medias de rechazo del banner,
+            ad-blockers y restricciones del navegador en un peor escenario
+            combinado. Una web real queda entre ese punto y la captura completa,
+            y la pérdida nunca es uniforme. Cuando Incapto midió GA4 y
+            Sealmetrics en paralelo sobre su tienda Shopify durante 48 días, GA4
+            no registró el{" "}<strong>29% de las visitas</strong> ni el 45% de
+            las páginas vistas, mientras Sealmetrics registraba el 96% de los
+            pedidos reales de la tienda. El{" "}
+            <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">
+              caso de Incapto
+            </Link>{" "}
+            muestra dónde se concentró la diferencia: en los canales que traen
+            gente nueva &mdash; social orgánico, afiliación, búsqueda orgánica y
+            campañas de pago &mdash;, no en directo.
           </p>
 
           <p>

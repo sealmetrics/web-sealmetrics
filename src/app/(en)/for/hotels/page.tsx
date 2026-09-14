@@ -18,7 +18,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Analytics for Hotels — Direct-Booking | Sealmetrics",
   description:
-    "Cookieless analytics for hotels: match direct-booking attribution to your PMS. Palladium recovered 35% of lost bookings; Dreamplace closed a 15–20% gap.",
+    "Cookieless analytics for hotels, checkable against the PMS. Palladium found 35% of GA4 bookings with no channel; Dreamplace attributes 15–20% more sales.",
   openGraph: {
     title: "Analytics for Hotels — Direct-Booking | Sealmetrics",
     description:
@@ -41,29 +41,6 @@ export const metadata: Metadata = {
     languages: getAlternates("/for/hotels"),
   },
 };
-
-const seoFaqs = [
-  {
-    question: "What is cookieless analytics for hotels?",
-    answer:
-      "Cookieless analytics for hotels counts booking-path events — meta-search landings, OTA referrals, booking confirmations — without cookies, consent banners or personal identifiers. Each booking is attributed last-click to the source on that page load, aggregate totals reconcile with the PMS (Mews, Cloudbeds, Opera), and no individual guest is tracked.",
-  },
-  {
-    question: "How does cookieless analytics help recover invisible hotel bookings?",
-    answer:
-      "On average 25% of direct bookings recorded in hotel PMS systems do not appear correctly attributed in GA4 because of consent rejection on mobile (Safari), ITP-induced cookie expiry and OTA path breaks. Cookieless analytics counts every pageview anonymously on the server, captures the traffic source on each booking pageview and aggregates bookings per channel — no per-guest tracking required.",
-  },
-  {
-    question: "Does Sealmetrics work across multiple hotel properties?",
-    answer:
-      "Yes. Portfolio rollups are included in every plan. Each property runs its own tracking and data consolidates at brand/group level — ideal for hotel chains with 5+ properties across multiple countries.",
-  },
-  {
-    question: "Can cookieless analytics integrate with a hotel PMS?",
-    answer:
-      "Yes. Native integrations with Mews, Cloudbeds and Opera; any other PMS or custom booking engine integrates via REST API. Booking revenue flows back automatically for true revenue-linked attribution.",
-  },
-];
 
 export default function Page() {
   return (
@@ -91,11 +68,11 @@ export default function Page() {
             <div>
               <span className="eyebrow mb-5">Featured hotel case studies</span>
               <h2 className="h-section mt-5">
-                Two hotel groups. <em>Same finding: half the data was missing.</em>
+                Two hotel groups. <em>Same finding: the channel picture was incomplete.</em>
               </h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Palladium Hotel Group and Dreamplace Hotels both ran Sealmetrics next to their existing stack. Both found a structural gap. Both started taking paid-media decisions on the recovered data — not on what each platform reports back to itself.
+              Palladium Hotel Group and Dreamplace Hotels both ran Sealmetrics next to their existing stack. Both found a structural gap — 40% of inbound traffic with no source at Palladium, roughly 30% more traffic than Google Analytics at Dreamplace. Both now take paid-media decisions on that complete view, not on what each platform reports back to itself.
             </p>
           </div>
 
@@ -192,7 +169,7 @@ export default function Page() {
               <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
                 {[
                   { n: "+30%", l: "More traffic vs Google Analytics" },
-                  { n: "15–20%", l: "Sales attribution gap closed (vs CRM)" },
+                  { n: "15–20%", l: "More sales attributed (vs previous tool)" },
                   { n: "Meta + Google", l: "First channels using Sealmetrics data to decide" },
                 ].map((s) => (
                   <li key={s.l}>
@@ -236,9 +213,9 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Recovers ~25% of CRM bookings typically invisible to GA4.</>,
+          <>Palladium Hotel Group: 35% of the bookings GA4 recorded had no channel.</>,
           <>Aggregate channel totals for meta-search (Google Hotel Ads, Trivago) without OTA black-box dependency.</>,
-          <>Native PMS integrations: Mews, Cloudbeds, Opera; REST API for any other stack.</>,
+          <>No PMS plugin needed: booking-engine conversions arrive as standard events, and the REST API and webhooks reconcile them against Mews, Cloudbeds, Opera or any other PMS.</>,
           <>No per-guest journey tracking — aggregate counts only, defensible under GDPR.</>,
         ]}
       />

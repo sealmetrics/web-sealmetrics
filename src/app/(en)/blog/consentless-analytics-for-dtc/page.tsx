@@ -59,7 +59,7 @@ const faqs = [
   {
     question: "Is consentless analytics legal under GDPR?",
     answer:
-      "When correctly implemented, yes. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the architecture meets GDPR by design. This is a question for a DPO to confirm against the specific implementation — Sealmetrics ships a DPA and TPSR package for this review.",
+      "It can be, when correctly implemented. GDPR regulates processing of personal data; if no personal data is collected and no identifier is stored or read on the device, the architecture avoids the obligations that attach to personal data. This is a question for a DPO to confirm against the specific implementation — Sealmetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "Can I use consentless analytics alongside advertising pixels?",
@@ -106,10 +106,10 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. Therefore no consent required under GDPR/ePrivacy.</li>
-              <li>For DTC brands, this closes the 40–60% consent-rejection gap that breaks aggregate channel ROAS in Europe.</li>
+              <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. That is the design that lets the analytics run without consent where your regulator&apos;s exemption criteria are met.</li>
+              <li>For DTC brands, this closes the consent-rejection gap that breaks aggregate channel ROAS in Europe — on Incapto&apos;s Shopify store, GA4 did not record 29% of visits.</li>
               <li>It works alongside advertising pixels (Meta, Google Ads) — pixels stay consent-gated, analytics is free.</li>
-              <li>Properly architected, aggregate channel revenue reconciles with Shopify/WooCommerce/Magento at within 15–20%.</li>
+              <li>Totals can be checked against the backend: in Incapto&apos;s 48-day parallel run on Shopify, Sealmetrics recorded 96% of real orders and 97% of revenue.</li>
               <li>The legal standing depends on implementation details; a DPA and TPSR package should accompany any enterprise deployment.</li>
             </ul>
           </div>
@@ -139,7 +139,7 @@ export default function Page() {
               The terms overlap but are not synonymous. Cookieless specifically means: no cookies used. Consentless is a stricter standard: no cookies, no localStorage, no IndexedDB, no sessionStorage, no fingerprinting, no persistent identifier of any kind that would trigger the <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ePrivacy storage-and-access rule</Link>.
             </p>
             <p>
-              Some &ldquo;cookieless&rdquo; analytics tools still use localStorage or device fingerprinting and technically still need consent. Fully consentless tools avoid all of them. Both are better than cookie-based, but only consentless is legally out of scope.
+              Some &ldquo;cookieless&rdquo; analytics tools still use localStorage or device fingerprinting and technically still need consent. Fully consentless tools avoid all of them. Both are better than cookie-based, but only an architecture that stores and reads nothing on the device takes the ePrivacy storage-and-access rule out of the picture; whether consent is needed at all then depends on your regulator&apos;s criteria.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -167,7 +167,7 @@ export default function Page() {
             <ol className="list-decimal pl-5 space-y-2">
               <li>Does the tool store anything on the device? (Must be no.)</li>
               <li>Does the tool read anything from the device beyond standard HTTP headers? (Must be no.)</li>
-              <li>Does the tool collect IP addresses, device IDs, session IDs or any identifier that could link pageviews together? (Must be no.)</li>
+              <li>Does the tool store IP addresses, device IDs or any identifier that links pageviews across sessions? (Must be no. A short-lived, in-memory session marker that expires after inactivity is a different thing — ask how it is derived and how long it lives.)</li>
               <li>Where is data processed and stored? (Should be EU for European DTC brands.)</li>
               <li>Is there a DPA signed with the vendor? (Should be yes — Sealmetrics ships one by default.)</li>
               <li>Is a TPSR (Third-Party Security Review) package available? (Should be yes for enterprise procurement.)</li>

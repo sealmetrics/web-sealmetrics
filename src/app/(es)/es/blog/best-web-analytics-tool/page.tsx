@@ -65,7 +65,7 @@ const requisitos = [
     id: "req-2",
     title: "El 100% del dato",
     bar: "Toda carga de página observada, independiente del consentimiento, no bloqueada, sin muestreo",
-    seal: "Sin cookies por arquitectura. Los clientes pasan de ~40% a ~100% observado, a un 15–20% de los pedidos del CRM",
+    seal: "Sin cookies por arquitectura. En una medición en paralelo de 48 días sobre Shopify, GA4 no vio el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales",
     score: 2,
   },
   {
@@ -507,8 +507,10 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 días y compara ambos contra el único sistema que no tiene brecha
                 de medición: tu CRM o tu base de pedidos. Cuenta los pedidos. La
                 distancia entre plataforma y CRM es la única métrica de
-                completitud que importa, y debería cerrarse a un 15–20%, no a un
-                50%. La{" "}
+                completitud que importa. En la única medición que hemos publicado
+                con su método completo, sobre la tienda Shopify de Incapto,
+                Sealmetrics registró el 96% de los pedidos reales y el 97% de la
+                facturación. La{" "}
                 <Link href="/es/data-loss-calculator" className={linkClass}>
                   calculadora de pérdida de datos
                 </Link>{" "}

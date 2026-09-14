@@ -48,12 +48,12 @@ export default function Page() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. Sealmetrics implementa atribución last-click sobre datos completos: la fuente observada en la pageview donde se dispara la conversión recibe el crédito; los totales se acumulan por canal.
+              La asignación de cada conversión — pedido, reserva, lead — a la fuente de tráfico que la generó. Sealmetrics implementa atribución last-click sobre datos completos: la conversión se asigna a la fuente de la sesión en la que ocurre; los totales se acumulan por canal.
             </p>
           </div>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Last-click sobre datos completos</h2>
-          <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre el 100% de las conversiones observadas reconcilia con el CRM dentro del 15-20% — significativamente mejor que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
+          <p>El modelo de atribución que importa no es el más sofisticado, sino el que se calcula sobre el dato más cercano a la realidad. Last-click sobre todas las conversiones registradas se puede contrastar con el backend: en la medición en paralelo de Incapto sobre Shopify, Sealmetrics registró el 96% de los pedidos reales y el 97% de la facturación. Eso es más útil que un modelo data-driven calculado sobre el fragmento de tráfico que aceptó cookies.</p>
           <p>La razón: los modelos avanzados (linear, time-decay, position-based, data-driven) aplicados sobre una muestra sesgada producen un sesgo amplificado, no un dato refinado.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Lo que Sealmetrics atribuye</h2>
@@ -76,7 +76,7 @@ export default function Page() {
           <p>Sealmetrics no enlaza touchpoints de visitantes individuales entre sesiones — no hay un identificador persistente. Por eso no soporta <Link href="/es/glossary/multi-touch-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución multi-touch</Link>, ni journeys por usuario, ni reparto de crédito modelado entre touchpoints. El trade-off es deliberado: a cambio mide el 100% del tráfico, sin consentimiento ni dependencia de cookies.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo se reconcilia con tu CRM</h2>
-          <p>Los totales agregados por canal cuadran con los pedidos exportados de Shopify/WooCommerce/Magento o con las reservas de un PMS hotelero dentro del 15-20% — el rango residual procede de devoluciones, cancelaciones y pedidos que entran fuera del flujo web (call center, B2B, etc.). Es el grado de cuadre que tu CFO acepta como base para decisiones de presupuesto.</p>
+          <p>Compara los totales con los pedidos exportados de Shopify, WooCommerce o Magento, o con las reservas de tu PMS, para el mismo periodo. En Incapto, Sealmetrics registró el 96% de los pedidos reales de la tienda online y el 97% de la facturación. Deja fuera los pedidos que no pasan por la web (call center, B2B, suscripciones) y ten en cuenta que Sealmetrics cuenta exactamente lo que se dispara: no deduplica ni valida pedidos, así que la conversión debe dispararse una vez por pedido confirmado.</p>
         </div>
 
         <CommercialModule locale="es" hook="Mira tus ingresos atribuidos last-click sobre el 100% de los pedidos, no sobre la fracción consentida." />

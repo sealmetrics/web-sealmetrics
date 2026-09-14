@@ -2333,12 +2333,13 @@ function ChapterElevenBody() {
       id: "first-party",
       term: "First-party measurement",
       plain:
-        "Events that flow through the customer's own domain rather than a third-party analytics endpoint. Survives ad blockers and cross-site cookie restrictions because there is no third-party request to block.",
+        "Events that flow through the customer's own domain rather than a third-party analytics endpoint. Far harder for ad blockers to catch, and unaffected by cross-site cookie restrictions, because there is no third-party request to match.",
       body: (
         <>
           Events flow through the customer's own domain, not a third-party
-          endpoint. Survives ad blockers and cross-site cookie restrictions
-          because there is no third-party request to block.
+          endpoint. Far harder for ad blockers to catch, and unaffected by
+          cross-site cookie restrictions, because there is no third-party
+          request to match.
         </>
       ),
       chapterHref: "/open/architecture-and-performance",

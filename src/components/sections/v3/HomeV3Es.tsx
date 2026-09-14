@@ -92,11 +92,11 @@ export function LogosStripEs() {
               canónicas: Dreamplace de su case study, Palladium del JSON-LD de
               la home (35% son reservas, no tráfico — el 40% es el de tráfico). */}
           <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
-            <b className="text-ink font-semibold">Dreamplace Hotels</b> recuperó un{" "}
-            <b className="text-ink font-semibold">+30% más de tráfico</b> frente a GA4 y cerró un
-            desfase del <b className="text-ink font-semibold">15–20%</b> en atribución de ventas
-            contra su CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recuperó
-            el <b className="text-ink font-semibold">35% de las reservas sin atribuir</b> y mejoró
+            <b className="text-ink font-semibold">Dreamplace Hotels</b> mide un{" "}
+            <b className="text-ink font-semibold">+30% más de tráfico</b> que GA y atribuye un{" "}
+            <b className="text-ink font-semibold">15–20% más de ventas</b>, conciliado
+            contra su CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> detectó
+            el <b className="text-ink font-semibold">35% de reservas de GA4 sin canal</b> y mejoró
             el CPS en Display un <b className="text-ink font-semibold">+165%</b>.
           </p>
         </div>
@@ -200,7 +200,7 @@ export function CompareSectionEs() {
                 100<span className="text-[0.5em] text-white/60 ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold mb-7 mt-1.5">
-                de eventos observados · 35% más reservas ahora atribuidas
+                de eventos observados · 35% de reservas de GA4 sin canal
               </div>
             </div>
             <p className="text-[17px] text-white/85 leading-[1.5] max-w-[40ch] relative">
@@ -328,23 +328,23 @@ export function FeaturedCaseEs() {
 
         <div className="grid md:grid-cols-2 gap-5 mt-7">
           <CaseCardEs
-            client="Cadena hotelera · España"
+            client="Dreamplace Hotels"
             sector="Hoteles · eCommerce"
             quote={<>Ya no es una herramienta que está al lado del proceso. Es <em className="italic-accent">la herramienta que nos da el dato real</em> — y con la que tomamos decisiones.</>}
-            cite="Head of eCommerce · Cadena hotelera"
+            cite="Eduardo Martin · Analítica y Campañas · Dreamplace Hotels"
             stats={[
               { n: "+30%", l: "Más tráfico registrado vs GA4 al cerrar el gap de consentimiento" },
-              { n: "15–20%", l: "Más cerca del CRM en atribución de venta" },
+              { n: "15–20%", l: "Más ventas atribuidas, conciliadas con el CRM" },
             ]}
           />
           <CaseCardEs
-            client="eCommerce DTC · Café"
-            sector="DTC eCommerce · España"
-            quote={<>Hemos usado Sealmetrics como <em className="italic-accent">&ldquo;vale, nos creemos este dato.&rdquo;</em> Es nuestra fuente única de verdad.</>}
-            cite="Founder & CEO · marca DTC"
+            client="Incapto"
+            sector="eCommerce · Café de especialidad"
+            quote={<>El Consent Mode nos dejaba un vacío estructural: sabíamos que había tráfico que no estábamos viendo, pero <em className="italic-accent">no teníamos forma de dimensionarlo.</em></>}
+            cite="Rosa Tomàs · Acquisition Manager B2C · Incapto"
             stats={[
-              { n: "30–40%", l: "Infra-reportado por GA4 antes de cambiar" },
-              { n: "30 días", l: "Test en paralelo hasta fuente única de verdad" },
+              { n: "29%", l: "De las visitas reales que GA4 no veía" },
+              { n: "96%", l: "De los pedidos reales de Shopify registrados" },
             ]}
           />
         </div>

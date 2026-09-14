@@ -18,7 +18,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Analítica para hoteles — venta directa | Sealmetrics",
   description:
-    "Analítica sin cookies para hoteles: cuadra reservas directas con tu PMS. Palladium recuperó el 35% de reservas sin atribuir; Dreamplace cerró un gap del 15-20%.",
+    "Analítica sin cookies para hoteles, contrastable con el PMS. Palladium: 35% de reservas de GA4 sin canal. Dreamplace: 15–20% más ventas atribuidas.",
   openGraph: {
     title: "Analítica para hoteles — venta directa | Sealmetrics",
     description:
@@ -41,29 +41,6 @@ export const metadata: Metadata = {
     languages: getAlternatesEs("/for/hotels"),
   },
 };
-
-const seoFaqs = [
-  {
-    question: "¿Qué es analítica sin cookies para hoteles?",
-    answer:
-      "La analítica sin cookies para hoteles cuenta los eventos del recorrido de reserva — landings de meta-search, referrals de OTAs, confirmaciones de booking — sin cookies, banners de consentimiento ni identificadores personales. Cada reserva se atribuye last-click a la fuente en esa pageview, los totales agregados cuadran con el PMS (Mews, Cloudbeds, Opera), y no se trackea a ningún huésped individual.",
-  },
-  {
-    question: "¿Cómo ayuda la analítica sin cookies a recuperar reservas invisibles?",
-    answer:
-      "De media, el 25% de las reservas directas registradas en el PMS no aparecen bien atribuidas en GA4 por rechazo de consentimiento en móvil (Safari), expiración de cookies por ITP y rupturas de ruta en OTAs. La analítica sin cookies cuenta cada pageview de forma anónima en servidor, captura la fuente de tráfico en cada pageview de reserva y agrega las reservas por canal — sin tracking por huésped.",
-  },
-  {
-    question: "¿Sealmetrics funciona con múltiples propiedades hoteleras?",
-    answer:
-      "Sí. La vista de portfolio está incluida en cada plan. Cada propiedad corre su propio tracking y los datos se consolidan a nivel de marca/grupo — ideal para cadenas con 5+ propiedades en varios países.",
-  },
-  {
-    question: "¿La analítica sin cookies integra con mi PMS?",
-    answer:
-      "Sí. Integraciones nativas con Mews, Cloudbeds y Opera; cualquier otro PMS o booking engine custom integra vía REST API. Los ingresos de reservas fluyen automáticamente para atribución real ligada a ingresos.",
-  },
-];
 
 export default function Page() {
   return (
@@ -94,11 +71,11 @@ export default function Page() {
             <div>
               <span className="eyebrow mb-5">Casos de estudio · hoteles</span>
               <h2 className="h-section mt-5">
-                Dos grupos hoteleros. <em>Mismo hallazgo: faltaba la mitad del dato.</em>
+                Dos grupos hoteleros. <em>Mismo hallazgo: la foto por canal estaba incompleta.</em>
               </h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Palladium Hotel Group y Dreamplace Hotels pasaron Sealmetrics junto a su stack actual. Los dos descubrieron un gap estructural. Los dos empezaron a tomar decisiones de paid media sobre el dato recuperado — no sobre lo que cada plataforma se reporta a sí misma.
+              Palladium Hotel Group y Dreamplace Hotels pasaron Sealmetrics junto a su stack actual. Los dos descubrieron un gap estructural: un 40% del tráfico entrante sin origen en Palladium y aproximadamente un 30% más de tráfico que Google Analytics en Dreamplace. Los dos toman ya las decisiones de paid media sobre esa foto completa, no sobre lo que cada plataforma se reporta a sí misma.
             </p>
           </div>
 
@@ -195,7 +172,7 @@ export default function Page() {
               <ul className="grid grid-cols-3 gap-4 pt-5 border-t border-warm-100">
                 {[
                   { n: "+30%", l: "Más tráfico vs Google Analytics" },
-                  { n: "15–20%", l: "Gap de atribución cerrado (vs CRM)" },
+                  { n: "15–20%", l: "Más ventas atribuidas (vs herramienta anterior)" },
                   { n: "Meta + Google", l: "Primeros canales decidiendo con Sealmetrics" },
                 ].map((s) => (
                   <li key={s.l}>
@@ -240,9 +217,9 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Recupera ~25% de reservas del CRM normalmente invisibles a GA4.</>,
+          <>Palladium Hotel Group: el 35% de las reservas que registraba GA4 no tenía canal.</>,
           <>Totales agregados por canal para meta-search (Google Hotel Ads, Trivago) sin dependencia de cajas negras de OTAs.</>,
-          <>Integraciones PMS nativas: Mews, Cloudbeds, Opera; REST API para cualquier otro stack.</>,
+          <>Sin plugin de PMS: las conversiones del motor de reservas llegan como eventos estándar, y la API REST y los webhooks permiten cuadrarlas con Mews, Cloudbeds, Opera o cualquier otro PMS.</>,
           <>Sin tracking de journey por huésped — solo conteos agregados, defendibles bajo RGPD.</>,
         ]}
       />

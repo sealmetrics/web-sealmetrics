@@ -337,12 +337,28 @@ export default function WhyGA4Shows13PctPage() {
             >
               cookieless
             </Link>
-            , server-side approach. A lightweight first-party script (under
-            1 KB) collects events through your own domain. No cookies are
-            set. No third-party requests are made. Because the data
-            collection method does not fall under cookie consent requirements,
-            it captures 100% of traffic &mdash; including the 87% that GA4
-            misses.
+            , server-side approach. A lightweight script (under 1 KB), which
+            can be served from a subdomain of your own domain, collects
+            events. No cookies are set. Because nothing is stored on or read
+            from the visitor&apos;s device, the cookie-consent requirement has
+            nothing to attach to, and the traffic GA4 loses to the banner is
+            counted.
+          </p>
+
+          <p>
+            The 13% is a model: it stacks average consent-rejection,
+            ad-blocker and browser rates into a compounded worst case. A real
+            site lands somewhere between that and full capture, and the loss
+            is never even. When Incapto ran GA4 and Sealmetrics side by side on
+            its Shopify store for 48 days, GA4 did not record{" "}
+            <strong>29% of visits</strong> and 45% of pageviews, while
+            Sealmetrics recorded 96% of the store&apos;s real orders. The{" "}
+            <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">
+              Incapto case study
+            </Link>{" "}
+            shows where the gap concentrated: in the channels that bring new
+            people in &mdash; organic social, affiliates, organic search and
+            paid campaigns &mdash; not in direct.
           </p>
 
           <p>

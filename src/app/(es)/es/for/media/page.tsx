@@ -40,29 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "¿Qué es analítica sin cookies para medios y editores?",
-    answer:
-      "La analítica sin cookies para editores captura lectorazgo, engagement y datos del funnel de suscripción sin cookies, localStorage ni fingerprinting. Sobrevive a los ad-blockers (que afectan al 50–70% de las audiencias de medios) y opera first-party desde el dominio del editor.",
-  },
-  {
-    question: "¿Cómo ayuda a los editores con alta presión de ad-blockers?",
-    answer:
-      "Las audiencias de medios tienen la mayor penetración de ad-blockers en la web abierta (50–70% en sitios de tecnología y noticias). La analítica sin cookies corre first-party desde el dominio del editor, así que los ad-blockers — que apuntan a endpoints de analítica de terceros como google-analytics.com — no la ven y no pueden bloquearla.",
-  },
-  {
-    question: "¿Puede la analítica sin cookies medir conversión de suscripción?",
-    answer:
-      "Sí, a nivel de totales por canal. Se capturan conteos agregados en cada paso del embudo (landings de artículo, impresiones de paywall, eventos de suscripción), y cada evento de suscripción se atribuye last-click a la fuente registrada en esa pageview. Los ingresos vuelven vía REST API para atribuir el valor de suscripción al canal de adquisición sobre el 100% del tráfico UE. Nota: es atribución agregada por canal, no tracking de journey por suscriptor.",
-  },
-  {
-    question: "¿La analítica sin cookies reemplaza Chartbeat o Parse.ly?",
-    answer:
-      "Categorías distintas. Chartbeat y Parse.ly son herramientas editoriales en tiempo real para redacciones. Sealmetrics cubre audiencia, atribución y funnels de suscripción. Muchos editores corren los dos: Chartbeat para la redacción, Sealmetrics para decisiones de marketing y suscripción.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -89,9 +66,9 @@ export default function Page() {
             La <strong>analítica sin cookies para medios y editores</strong>{" "}
             captura lectorazgo, funnels de suscripción y atribución de ingresos
             publicitarios sin cookies — crítico para sitios donde el 50–70% de
-            los visitantes usan ad-blockers. Sealmetrics opera como
-            infraestructura first-party en el dominio del propio editor,
-            invisible a los ad-blockers e independiente de la deprecation de
+            los visitantes usan ad-blockers. Servido desde un subdominio del
+            propio editor, Sealmetrics esquiva las listas third-party con las
+            que trabajan los ad-blockers y no depende de la retirada de las
             cookies de terceros.
           </>
         }

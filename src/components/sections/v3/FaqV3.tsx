@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "How accurate is cookieless tracking?",
-    a: "A Spanish hotel chain measured +30% more traffic vs GA and 15–20% more attributed sales — approaching their CRM reality. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — every data point observed.",
+    a: "Dreamplace Hotels measured +30% more traffic than GA and 15–20% more attributed sales, reconciled against their CRM. On Incapto's Shopify store, Sealmetrics recorded 96% of real orders while GA4 missed 29% of visits. Palladium Hotel Group discovered 40% of their traffic had no attribution in their previous stack and improved Cost-per-Search on Display by +165% after switching. No sampling, no modelling — every data point observed.",
   },
   {
     q: "Do I need to remove GA4?",

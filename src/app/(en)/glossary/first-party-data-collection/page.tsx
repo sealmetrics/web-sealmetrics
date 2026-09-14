@@ -52,7 +52,7 @@ export default function FirstPartyDataCollectionPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are invisible to ad blockers and not subject to third-party cookie restrictions.
+              Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are far less likely to be blocked by ad blockers and are not subject to third-party cookie restrictions.
             </p>
           </div>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">First-party vs. third-party</h2>

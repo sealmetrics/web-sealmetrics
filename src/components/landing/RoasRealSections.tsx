@@ -293,7 +293,7 @@ export function Proof() {
                   15–20%
                 </span>
                 <span className="block mt-2 text-[15px] leading-[1.4] text-ink-2 max-w-[34ch]">
-                  de desfase en atribución de ventas, cerrado contra su CRM
+                  más ventas atribuidas, conciliadas contra su CRM
                 </span>
               </div>
             </div>

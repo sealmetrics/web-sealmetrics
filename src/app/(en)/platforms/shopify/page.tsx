@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Shopify analytics without cookies — Sealmetrics integration",
-    description: "Shopify Plus one-click install, Shopify Standard theme snippet, dataLayer event coverage, and order reconciliation patterns.",
+    description: "The Sealmetrics Pixel app plus a theme app embed on any Shopify plan. Full eCommerce funnel coverage, purchases confirmed server-side via webhook.",
     images: [ogImage("/platforms/shopify/")],
   },
   alternates: {
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "How does it reconcile with Shopify Analytics?",
-    a: "Aggregate channel revenue reported by Sealmetrics typically lands within 15–20% of Shopify Analytics totals — the gap is shipping, discounts, taxes and gift-card credits handled differently between the two systems. Sealmetrics does not store the Shopify order ID externally, by design, so reconciliation is at the aggregate/channel level, not a row-by-row join.",
+    a: "At the aggregate level, against Shopify's own orders for the same period. In Incapto's 48-day parallel run on Shopify, Sealmetrics recorded 96% of real online-store orders and 97% of revenue. Leave out subscriptions, POS and manual admin orders, which have no web visit behind them. Sealmetrics does not store the Shopify order ID externally, by design, so the comparison is on totals and channels, not a row-by-row join.",
   },
   {
     q: "Does it replace Shopify's native analytics?",
@@ -98,7 +98,7 @@ export default function ShopifyPlatformPage() {
           headline:
             "Shopify analytics without cookies — install, events, and order reconciliation",
           description:
-            "Install Sealmetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full eCommerce funnel coverage, aggregate reconciliation within 15–20% of Shopify Analytics.",
+            "Install Sealmetrics on any Shopify plan via the Pixel app and a theme app embed. Cookieless capture, full eCommerce funnel coverage, aggregate reconciliation against Shopify's own orders.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/platforms/shopify",
@@ -129,8 +129,9 @@ export default function ShopifyPlatformPage() {
           >
             One app, one theme embed, any Shopify plan. Full
             eCommerce funnel coverage from pageview to order
-            confirmation. Aggregate channel revenue reconciled to
-            the Shopify backend within 15–20%.
+            confirmation. Checked against the store&rsquo;s own orders:
+            96% of real orders and 97% of revenue recorded in
+            Incapto&rsquo;s 48-day parallel run.
           </p>
         </div>
       </section>
@@ -142,15 +143,15 @@ export default function ShopifyPlatformPage() {
             Pixel app (OAuth, from your Sealmetrics dashboard) and a
             Theme App Extension you enable as an app embed — the
             same install on any Shopify plan, no Plus/Standard split.
-            The tag is cookieless and first-party (no consent banner
-            required for analytics) and covers the full funnel:
+            The tag is cookieless and first-party (designed so the
+            analytics needs no consent banner) and covers the full funnel:
             pageview, view_product, add_to_cart, initiate_checkout —
             with the purchase confirmed server-side via
             Shopify&rsquo;s orders/create webhook, not from the
-            browser. Aggregate channel revenue reconciles with
-            Shopify Analytics totals within 15–20% (the gap is
-            taxes, discounts and gift cards handled differently
-            between systems); Sealmetrics does not store the
+            browser. Aggregate orders and revenue can be checked
+            against Shopify&rsquo;s own totals — in Incapto&rsquo;s
+            48-day parallel run, Sealmetrics recorded 96% of real
+            online-store orders and 97% of revenue; Sealmetrics does not store the
             Shopify order ID externally, so reconciliation is at
             the aggregate level, not a row-by-row join.
           </>
@@ -158,7 +159,7 @@ export default function ShopifyPlatformPage() {
         bullets={[
           <><strong>One install path</strong> — Pixel app + theme app embed, every Shopify plan.</>,
           <><strong>Full funnel coverage</strong> from pageview to a server-confirmed purchase.</>,
-          <><strong>Aggregate reconciliation</strong> within 15–20% of Shopify Analytics totals.</>,
+          <><strong>Aggregate reconciliation</strong> — 96% of real orders and 97% of revenue in Incapto&rsquo;s parallel run.</>,
           <><strong>No banner</strong> required for the analytics layer — cookieless first-party server-side.</>,
         ]}
       />
@@ -269,12 +270,13 @@ export default function ShopifyPlatformPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Aggregate level</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Weekly and monthly aggregate revenue reported by
-                Sealmetrics typically lands within{" "}
-                <strong>15–20%</strong> of Shopify Analytics. The
-                residual gap is shipping discounts, taxes and
-                gift-card credits handled differently between the two
-                systems — not measurement error.
+                Compare Sealmetrics orders and revenue with Shopify&rsquo;s
+                Online Store orders for the same period. In{" "}
+                <Link href="/case-studies/incapto" className="text-brand underline decoration-1 underline-offset-2">Incapto&rsquo;s 48-day parallel run</Link>,
+                Sealmetrics recorded{" "}
+                <strong>96% of real orders and 97% of revenue</strong>.
+                Leave out subscriptions, POS and manual admin orders —
+                none of them has a web visit behind it.
               </p>
             </div>
 

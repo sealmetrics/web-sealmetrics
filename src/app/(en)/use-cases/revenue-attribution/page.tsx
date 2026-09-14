@@ -47,7 +47,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Why last-click and not multi-touch?",
-    a: "Multi-touch attribution requires linking pageview A and pageview B to the same individual across sessions. That linkage requires a per-user identifier — a cookie, a fingerprint, a stitched ID. The same identifier triggers ePrivacy Art. 5(3), GDPR consent and the 40–60% banner-rejection loss. Last-click on observed events does not need the identifier: each conversion is attributed to the channel observed on the page where it fired. The trade-off is honest — last-click does not measure earlier influence — and for media-mix decisions on a single channel at a time, last-click is usually the correct question anyway.",
+    a: "Multi-touch attribution requires linking pageview A and pageview B to the same individual across sessions. That linkage requires a per-user identifier — a cookie, a fingerprint, a stitched ID. The same identifier triggers ePrivacy Art. 5(3), GDPR consent and the 40–60% banner-rejection loss. Session-scoped last-click does not need the identifier: each conversion is attributed to the source of the session in which it fires. The trade-off is honest — last-click does not measure earlier influence — and for media-mix decisions on a single channel at a time, last-click is usually the correct question anyway.",
   },
   {
     q: "What about view-through attribution?",
@@ -55,19 +55,19 @@ const faqs = [
   },
   {
     q: "How does last-click on 100% data differ from GA4's last-click?",
-    a: "GA4 applies last-click within its attribution windows on the data it actually captured — typically 13–40% of EU traffic after consent rejection, ad blockers and ITP. The credit GA4 assigns to channels is correct for that subset but biased toward channels that consent more. Sealmetrics applies last-click on 100% of observed conversions on the full population — same model, complete data underneath.",
+    a: "GA4 applies last-click within its attribution windows, but only on the traffic it captured. In Incapto's measured case, GA4 did not record 29% of visits, and the loss was uneven: direct lost least, organic social and affiliates lost most. The credit GA4 assigns is therefore biased toward the channels that lose less to consent. Sealmetrics applies last-click, scoped to the session, to every conversion it records — a simpler model on a complete base.",
   },
   {
     q: "Can I get the attribution by campaign and creative, not just channel?",
-    a: "Yes. The full UTM stack is captured: source, medium, campaign, content, term. Aggregate revenue rolls up at any combination of those dimensions. The campaign-level totals reconcile with the platform-side spend exactly (within rounding) when you join the Sealmetrics dataset against Google Ads / Meta Ads cost data in BigQuery.",
+    a: "Yes. The full UTM stack is captured: source, medium, campaign, content, term. Aggregate revenue rolls up at any combination of those dimensions. For ROAS, join campaign-level revenue with Google Ads or Meta Ads cost data in BigQuery on the campaign value you tagged: the platform tells you what you spent, Sealmetrics tells you what came back.",
   },
   {
     q: "What if my conversion happens after multiple sessions?",
-    a: "The conversion is attributed to the channel observed on the page load where it fires. If the customer returned via direct after first arriving from Google CPC, the credit goes to direct — not to the original Google CPC visit. This is the explicit cost of not tracking individuals across sessions. It is also, for most channel-mix decisions, the more honest answer: the channel that closed the sale gets the credit. Earlier touchpoints belong in a marketing-mix model, not in last-click attribution.",
+    a: "The conversion is attributed to the source of the session in which it fires — the most recent entrance. A session closes after about two hours of inactivity, and there is no lookback window across sessions. If the customer returned via direct after first arriving from Google CPC, the credit goes to direct — not to the original Google CPC visit. This is the explicit cost of not tracking individuals across sessions. It is also, for most channel-mix decisions, the more honest answer: the channel that closed the sale gets the credit. Earlier touchpoints belong in a marketing-mix model, not in last-click attribution.",
   },
   {
     q: "How does this reconcile with CRM revenue?",
-    a: "Aggregate revenue reconciles within 15–20% of the CRM/backend totals once shipping, taxes, gift cards and refunds are normalised. Per-order reconciliation uses the same order_id from your eCommerce platform (Shopify, WooCommerce, Magento, PrestaShop). Finance can join the Sealmetrics dataset and the order-ledger dataset in BigQuery on order_id with no fuzzy matching.",
+    a: "Against the backend's own order total for the same period, not order by order. In Incapto's 48-day parallel run on Shopify, Sealmetrics recorded 96% of real online-store orders and 97% of revenue. Leave out orders with no web visit behind them — subscriptions, manual or in-store orders — and remember that Sealmetrics counts exactly what fires: it does not deduplicate or validate orders, so the conversion should fire once per confirmed order (on Shopify it comes from the orders/create webhook).",
   },
 ];
 
@@ -135,11 +135,10 @@ export default function RevenueAttributionPage() {
           <>
             Revenue attribution is the connection between a marketing
             channel and the revenue it generated. Sealmetrics applies
-            <strong> last-click attribution</strong> at the event
-            level: each conversion is attributed to the channel
-            observed on the page load where the conversion fires. The
-            model is applied to <strong>100% of observed
-            conversions</strong> — no consent gate, no ad-blocker
+            <strong> session-scoped last-click attribution</strong>:
+            each conversion is attributed to the source of the session
+            in which it fires. The model is applied to <strong>every
+            conversion recorded</strong> — no consent gate, no ad-blocker
             drop-off, no cookie expiry. The trade-off is concrete: no
             multi-touch model, no per-visitor journey, no
             view-through. For media-mix decisions and CFO
@@ -151,7 +150,7 @@ export default function RevenueAttributionPage() {
         bullets={[
           <><strong>Last-click on 100%</strong> — model applied to the full population, not the consenting fraction.</>,
           <><strong>Channel + campaign + creative</strong> — full UTM stack captured per conversion.</>,
-          <><strong>order_id reconciliation</strong> — joins natively with Shopify / WooCommerce / PMS backends.</>,
+          <><strong>Backend reconciliation</strong> — conversions and revenue checked against the order total in Shopify, WooCommerce or your PMS.</>,
           <><strong>Honest about limits</strong> — no multi-touch, no view-through, no per-visitor journeys.</>,
         ]}
       />
@@ -171,8 +170,8 @@ export default function RevenueAttributionPage() {
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">1. By channel — which source closed the sale</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                Every conversion is attributed to the channel observed
-                on the page where it fired. Direct, organic, paid
+                Every conversion is attributed to the source of the
+                session in which it fired. Direct, organic, paid
                 search, paid social, email, referral, display — the
                 channel that closed the sale gets the credit. Aggregate
                 weekly totals tell you which sources moved revenue
@@ -242,9 +241,9 @@ export default function RevenueAttributionPage() {
             <div>
               <h3 className="text-[17px] font-semibold text-ink mb-2">Last-click does not need the identifier</h3>
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
-                Last-click attributes the conversion to the channel
-                observed on the page where it fired. No earlier
-                touchpoints need to be remembered. No identifier
+                Last-click attributes the conversion to the source of
+                the session in which it fired. No earlier sessions
+                need to be remembered. No identifier
                 needs to persist. The model is applied to every
                 observed conversion — full population — because every
                 conversion is observed (no cookie to expire, no
@@ -265,11 +264,10 @@ export default function RevenueAttributionPage() {
                 The right home for multi-touch reasoning is a
                 marketing-mix model (MMM) built on aggregate spend and
                 aggregate revenue — no per-individual stitching
-                required. The Sealmetrics aggregate revenue dataset is
-                exactly what an MMM needs as the revenue side of the
-                equation. Many customers run the two together: MMM in
-                the warehouse for cross-channel influence, Sealmetrics
-                last-click as the measurement layer underneath.
+                required. The Sealmetrics aggregate revenue dataset can feed
+                the revenue side of that equation: MMM in the warehouse
+                for cross-channel influence, Sealmetrics last-click as
+                the measurement layer underneath.
               </p>
             </div>
           </div>
@@ -281,36 +279,38 @@ export default function RevenueAttributionPage() {
           <h2 className="h-section">The reconciliation a CFO accepts</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             A CFO will not accept a marketing number that does not
-            reconcile to the order ledger. Two reconciliation levels
-            that finance teams sign against:
+            reconcile to the order ledger. Two checks a finance team
+            can run itself:
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
-              <h3 className="text-[16px] font-semibold text-ink mb-3">Aggregate weekly / monthly</h3>
+              <h3 className="text-[16px] font-semibold text-ink mb-3">Against the order total</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Total Sealmetrics-attributed revenue lands within{" "}
-                <strong>15–20%</strong> of the eCommerce backend
-                (Shopify, WooCommerce, Magento). The residual gap is
-                shipping discounts, taxes and refunds handled
-                differently — not measurement error.
+                Compare with the backend&rsquo;s own orders for the same
+                period. In Incapto&rsquo;s 48-day parallel run on
+                Shopify, Sealmetrics recorded{" "}
+                <strong>96% of real orders and 97% of revenue</strong>.
+                Orders with no web visit behind them — subscriptions,
+                manual or in-store orders — stay out of the comparison.
               </p>
             </div>
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
-              <h3 className="text-[16px] font-semibold text-ink mb-3">Per-order in the warehouse</h3>
+              <h3 className="text-[16px] font-semibold text-ink mb-3">Then channel by channel</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Every order in the eCommerce backend appears in
-                Sealmetrics with the same{" "}
-                <code className="font-mono text-[13px]">order_id</code>.
-                Finance joins both datasets in BigQuery on a single
-                key — no fuzzy matching, no probability scoring.
+                Once the total reconciles, read the difference by
+                channel — that is where budget decisions change.
+                Sealmetrics counts exactly what fires and does not
+                deduplicate or validate orders, so fire the conversion
+                once per confirmed order; on Shopify it comes from the
+                orders/create webhook.
               </p>
             </div>
           </div>
 
           <blockquote className="mt-10 border-l-[3px] pl-6 py-1 italic" style={{ borderColor: "#2E5C8A", color: "#0E0E0C" }}>
             <p className="text-[18px] leading-[1.45] tracking-[-0.01em] font-medium">
-              &ldquo;The value is in optimising the budget and the investment. It&rsquo;s not just what extra you generate: it&rsquo;s that you&rsquo;re investing better, because you&rsquo;re shifting toward a channel or strategy you weren&rsquo;t seeing before.&rdquo;
+              &ldquo;The value is in optimising budget and investment. You shift toward a channel or strategy you were not seeing before.&rdquo;
             </p>
             <cite className="block mt-4 not-italic font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
               Eduardo Martin · Analytics &amp; Campaigns · Dreamplace Hotels

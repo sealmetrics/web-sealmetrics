@@ -94,7 +94,7 @@ export default function CookielessAnalyticsPage() {
               Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
             </p>
             <p>
-              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. Sealmetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and reconciles aggregate revenue with Shopify, WooCommerce or Magento backends within 15-20%.
+              For European eCommerce running cookie-based GA4, this typically closes a 60-87% data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention. Sealmetrics&rsquo; implementation captures 100% of inbound traffic, attributes each conversion last-click at channel level, and lets you check aggregate orders and revenue against the Shopify, WooCommerce or Magento backend — in Incapto&rsquo;s 48-day parallel run on Shopify, it recorded 96% of real orders and 97% of revenue.
             </p>
           </QuickAnswer>
         </div>

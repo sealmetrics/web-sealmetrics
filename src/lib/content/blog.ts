@@ -110,7 +110,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — and how to test each one.",
     date: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.rafa,
@@ -207,7 +207,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "How European eCommerce teams measure revenue, attribution and conversion without cookies or consent banners. Shopify, WooCommerce and Magento reconciliation patterns.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "eCommerce",
     readTime: "10 min",
     author: AUTHORS.rafa,
@@ -221,9 +221,9 @@ export const blogPosts: BlogPost[] = [
     slug: "cookieless-analytics-for-hotels",
     title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
     description:
-      "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns for Mews, Cloudbeds, Opera.",
+      "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns that work with any PMS.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "Hotels",
     readTime: "9 min",
     author: AUTHORS.rafa,
@@ -255,7 +255,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Consentless analytics captures 100% of DTC traffic without a cookie banner. How it works under GDPR/ePrivacy, and what European DTC teams get from it.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "eCommerce",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -309,8 +309,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
     date: "2026-03-06",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Data Quality",
     readTime: "8 min",
     author: AUTHORS.rafa,

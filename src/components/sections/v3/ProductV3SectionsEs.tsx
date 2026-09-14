@@ -428,7 +428,7 @@ export function ProductProofV3Es() {
       href: "/es/case-studies/dreamplace-hotels",
       stats: [
         { n: "+30%", l: "más tráfico medido frente a Google Analytics" },
-        { n: "15–20%", l: "de brecha de atribución de ventas contra el CRM, cerrada" },
+        { n: "15–20%", l: "más ventas atribuidas, conciliadas contra el CRM" },
       ],
       quote:
         "Ya no es una herramienta que está al lado del proceso. Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",

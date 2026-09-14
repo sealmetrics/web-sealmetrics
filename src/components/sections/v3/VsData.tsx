@@ -896,7 +896,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         comparison: [
           { category: "Data completeness", block: "technical", rows: [
             { feature: "Cookie-free capture", them: "Consent Mode v2 (modelled)", us: "Native · no modelling" },
-            { feature: "Ad blocker resilience", them: "Blocked (third-party script)", us: "First-party · invisible to blockers" },
+            { feature: "Ad blocker resilience", them: "Blocked (third-party script)", us: "First-party · far less likely to be blocked" },
             { feature: "Sampling at scale", them: "Yes", us: "Never" },
           ]},
           { category: "Compliance", block: "technical", rows: [
@@ -986,7 +986,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         comparison: [
           { category: "Completitud de datos", block: "technical", rows: [
             { feature: "Captura sin cookies", them: "Consent Mode v2 (modelado)", us: "Nativo · sin modelado" },
-            { feature: "Resistencia a ad blockers", them: "Bloqueado (script third-party)", us: "First-party · invisible a bloqueadores" },
+            { feature: "Resistencia a ad blockers", them: "Bloqueado (script third-party)", us: "First-party · muchas menos probabilidades de bloqueo" },
             { feature: "Muestreo a escala", them: "Sí", us: "Nunca" },
           ]},
           { category: "Compliance", block: "technical", rows: [

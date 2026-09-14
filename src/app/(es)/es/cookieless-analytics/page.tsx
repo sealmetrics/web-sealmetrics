@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿La analítica sin cookies es legal bajo RGPD?",
-    a: "Sí — y la vía legal es arquitectónica, no contractual. Como no se almacenan datos personales, identificadores ni cookies, el procesamiento queda fuera del ámbito material del RGPD y del requisito de consentimiento de ePrivacy. Los criterios de exención de la CNIL, la guía de la DSK alemana y la exención PECR del ICO británico describen la misma vía. Sealmetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
+    a: "Puede serlo, y la vía es arquitectónica, no contractual. Cuando no se almacenan datos personales ni identificadores y nada se guarda ni se lee en el dispositivo, no se activan las obligaciones del RGPD ligadas al dato personal y la regla de almacenamiento y acceso de ePrivacy no tiene a qué aplicarse. Que una implantación concreta quede exenta de consentimiento depende aun así de su configuración y de los criterios de cada autoridad: la CNIL, la DSK alemana y el ICO británico publican los suyos, y no son idénticos. Sealmetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
   },
   {
     q: "¿Qué precisión tiene comparada con GA4?",
-    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: 40–60% de visitantes rechazan el consentimiento, ~40% usan ad-blockers que eliminan el script, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección cookieless server-side no se ve afectada por ninguno. Grupos hoteleros que corren ambas han medido un 30–40% más de tráfico y un 15–20% más de ingresos atribuidos contra su propio CRM.",
+    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: 40–60% de visitantes rechazan el consentimiento, ~40% usan ad-blockers que eliminan el script, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección sin cookies evita las pérdidas por consentimiento y por expiración de cookies, y servida desde tu propio subdominio queda mucho menos expuesta a los ad-blockers. Casos medidos: Dreamplace Hotels ve aproximadamente un 30% más de tráfico que Google Analytics y atribuye un 15–20% más de ventas contra su CRM; en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales.",
   },
   {
     q: "¿Puedo correrla junto a Google Analytics 4?",
@@ -114,9 +114,10 @@ export default function CookielessAnalyticsPillarEs() {
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            En 2026, la analítica basada en cookies mide aproximadamente
-            el 13% del tráfico europeo. El otro 87% se rechaza, se bloquea
-            o se cae antes de que el tag dispare. Esta es una guía sobre
+            En 2026, la analítica basada en cookies pierde una parte grande y
+            desigual del tráfico europeo: en una tienda Shopify que medimos,
+            GA4 no registró el 29% de las visitas, y en el peor escenario
+            acumulado de nuestro modelo ve en torno al 13%. Esta es una guía sobre
             la alternativa — qué es la analítica sin cookies, qué cuenta,
             qué deliberadamente no, y dónde encaja junto al resto de tu stack.
           </p>
@@ -128,11 +129,13 @@ export default function CookielessAnalyticsPillarEs() {
           <>
             La analítica sin cookies es analítica web que captura
             páginas vistas, eventos y conversiones{" "}
-            <strong>anónimamente, en el lado servidor</strong>, desde tu
-            propio dominio — sin cookies, sin fingerprinting, sin
-            identificadores personales. Captura el 100% del tráfico
-            porque no hay nada que los navegadores, banners o ad-blockers
-            puedan bloquear, rechazar o expirar. El trade-off es honesto:
+            <strong>anónimamente, en el lado servidor</strong>, opcionalmente
+            desde un subdominio de tu propio dominio — sin cookies, sin
+            fingerprinting, sin identificadores personales. Captura el tráfico
+            que pierden las herramientas con cookies porque no hay cookie que
+            el navegador expire ni que el visitante rechace, y servida
+            first-party no hay dominio third-party que los ad-blockers
+            reconozcan. El trade-off es honesto:
             mides canales y conversiones en agregado, no a personas
             individuales entre sesiones. Para un negocio eCommerce o
             media que toma decisiones de inversión sobre mix de tráfico,
@@ -224,15 +227,18 @@ export default function CookielessAnalyticsPillarEs() {
           <ol className="mt-10 space-y-6 list-none pl-0">
             <li className="pl-12 relative">
               <span className="absolute left-0 top-0 font-mono text-[13px] font-semibold text-brand">01</span>
-              <h3 className="text-[18px] font-semibold text-ink mb-2">Pixel first-party en tu propio dominio</h3>
+              <h3 className="text-[18px] font-semibold text-ink mb-2">Pixel first-party en tu propio subdominio</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Un tag JavaScript pequeño (846 bytes en nuestro caso)
                 envía cada pageview a{" "}
                 <code className="font-mono text-[14px] bg-warm-100 px-1.5 py-0.5 rounded">pixel.tudominio.com</code>
-                {" "}— un CNAME bajo tu propio dominio, no un host third-party.
-                Como la petición sale desde el origen first-party, las
-                listas de ad-block no la matchean. Como no se instala ni
-                se lee cookie, no se requiere gate de consentimiento.
+                {" "}— un subdominio de tu propio dominio, no un host third-party,
+                una vez configurado el tracking first-party (la instalación
+                por defecto carga desde t.sealmetrics.com). Como la petición
+                sale desde el origen first-party, las listas de ad-block
+                tienen muchas menos probabilidades de reconocerla. Como no
+                se instala ni se lee cookie, no hay nada en el dispositivo
+                que un gate de consentimiento tenga que proteger.
               </p>
             </li>
 
@@ -254,9 +260,9 @@ export default function CookielessAnalyticsPillarEs() {
               <span className="absolute left-0 top-0 font-mono text-[13px] font-semibold text-brand">03</span>
               <h3 className="text-[18px] font-semibold text-ink mb-2">Atribución last-click y reporting agregado</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                Cada evento de conversión se atribuye a la fuente de
-                tráfico observada en la página donde ocurrió — last-click,
-                100% del tiempo, sobre el 100% de los datos. Los
+                Cada evento de conversión se atribuye a la fuente de la
+                sesión en la que ocurrió — last-click con ámbito de sesión,
+                sin ventana de atribución entre sesiones. Los
                 agregados fluyen a dashboards, a BigQuery, y a un MCP
                 server para agentes de IA. El output es rendimiento de
                 canal: qué fuentes generaron ingresos esta semana, y

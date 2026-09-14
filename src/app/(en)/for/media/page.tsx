@@ -40,29 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "What is cookieless analytics for media and publishers?",
-    answer:
-      "Cookieless analytics for publishers captures readership, engagement and subscription funnel data without cookies, localStorage or fingerprinting. It survives ad blockers (which affect 50–70% of media audiences) and operates first-party on the publisher's own domain.",
-  },
-  {
-    question: "How does cookieless analytics help publishers under heavy ad-blocker pressure?",
-    answer:
-      "Media audiences have the highest ad-blocker penetration on the open web (50–70% on tech and news sites). Cookieless analytics runs first-party from the publisher's domain, so ad blockers — which target third-party analytics endpoints like google-analytics.com — don't see it and can't block it.",
-  },
-  {
-    question: "Can cookieless analytics measure subscription conversion?",
-    answer:
-      "Yes, at channel-total level. Aggregate counts at each funnel step (article landings, paywall impressions, subscription events) are captured, and each subscription event is attributed last-click to the traffic source recorded on that pageview. Revenue flows back via REST API so subscription value can be attributed to acquisition channel on 100% of EU traffic. Note: this is aggregate channel attribution, not per-subscriber journey tracking.",
-  },
-  {
-    question: "Does cookieless analytics replace Chartbeat or Parse.ly?",
-    answer:
-      "Different categories. Chartbeat and Parse.ly are real-time editorial tools for newsrooms. Sealmetrics covers audience, attribution and subscription funnels. Many publishers run both: Chartbeat for the newsroom, Sealmetrics for marketing and subscription decisions.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -89,8 +66,8 @@ export default function Page() {
             <strong>Cookieless analytics for media and publishers</strong>{" "}
             captures readership, subscription funnels and ad-revenue attribution
             without cookies — critical for sites where 50–70% of visitors run
-            ad blockers. Sealmetrics operates as first-party infrastructure on
-            the publisher's own domain, invisible to ad blockers and
+            ad blockers. Served from a subdomain of the publisher's own domain, Sealmetrics
+            avoids the third-party blocklists ad blockers work from and is
             independent of third-party cookie deprecation.
           </>
         }

@@ -45,23 +45,23 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa «datos completos», exactamente?",
-    a: "Cada visitante contado. Cada conversión atribuida. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa 100% de pageviews capturados, 100% de eventos capturados, y atribución de ingresos last-click aplicada a la población completa — no al 13% que dio consentimiento.",
+    a: "Cada visitante contado. Cada conversión atribuida. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa 100% de pageviews capturados, 100% de eventos capturados, y atribución de ingresos last-click aplicada a la población completa — no solo a quienes dieron consentimiento.",
   },
   {
     q: "¿No lo está resolviendo ya el Consent Mode v2 de GA4?",
-    a: "Consent Mode es una capa de modelado. Cuando los visitantes rechazan cookies, Google estima lo que probablemente hicieron basándose en los que sí dieron consentimiento. Ese modelo es útil cuando necesitas un orden de magnitud; no es una medición. Para un CMO defendiendo €2M anuales de gasto en medios, la pregunta es si quieres tomar decisiones sobre un modelo del 87% que no puedes ver, o sobre el 100% real. Datos completos es la segunda respuesta.",
+    a: "Consent Mode es una capa de modelado. Cuando los visitantes rechazan cookies, Google estima lo que probablemente hicieron basándose en los que sí dieron consentimiento. Ese modelo es útil cuando necesitas un orden de magnitud; no es una medición. Para un CMO defendiendo €2M anuales de gasto en medios, la pregunta es si quieres tomar decisiones sobre un modelo del tráfico que no puedes ver —el 29% de las visitas en el caso medido de Incapto— o sobre el tráfico que llegó de verdad. Datos completos es la segunda respuesta.",
   },
   {
     q: "¿Qué cambia operacionalmente cuando hago el switch?",
-    a: "Tres cosas, inmediatamente. Primero, el mix de canales cambia — típicamente orgánico, email y directo ganan cuota a costa de paid (porque esos canales estaban menos afectados por el consentimiento, no porque fueran peores). Segundo, las ventanas de atribución se extienden — las conversiones recurrentes dejan de clasificarse mal como nuevas. Tercero, la conversación en el review de marketing cambia: dejas de debatir los datos y empiezas a debatir la decisión.",
+    a: "Tres cosas, inmediatamente. Primero, el mix de canales cambia, y no de forma uniforme: los canales que traen gente nueva desde un clic externo son los que más pierden por consentimiento. En Incapto, las campañas de pago pasaron del 50% del tráfico medido en GA4 al 62% en Sealmetrics, y directo parecía más grande en GA4 solo porque perdía menos. Segundo, el cajón sin origen se vacía: en Incapto, las visitas sin un origen utilizable bajaron del 14% en GA4 al 0,3%. Tercero, la conversación en el review de marketing cambia: dejas de debatir los datos y empiezas a debatir la decisión.",
   },
   {
     q: "¿Cómo sé si mis datos eran realmente incompletos?",
-    a: "Corre la calculadora de gap sobre tu tráfico real. Comparamos lo que GA4 reporta contra lo que tu CRM, los pedidos de Shopify o los registros del PMS muestran. El gap suele ser de 25–45% para marcas consumer B2C, 15–25% para B2B. Si el gap está por debajo del 10%, probablemente no necesitas cambiar. La mayoría de equipos descubren que el gap es mucho mayor de lo que asumían.",
+    a: "Corre la calculadora de gap sobre tu tráfico real. Comparamos lo que GA4 reporta contra lo que tu CRM, los pedidos de Shopify o los registros del PMS muestran. En nuestra muestra de clientes, GA4 registra entre un 25% y un 45% menos de tráfico en marcas consumer B2C; en el único caso publicado con su método completo, Incapto, GA4 no registró el 29% de las visitas. Si el gap está por debajo del 10%, probablemente no necesitas cambiar. La mayoría de equipos descubren que el gap es mucho mayor de lo que asumían.",
   },
   {
     q: "¿«Datos completos» significa que Sealmetrics ignora la privacidad?",
-    a: "Lo contrario. Los datos completos son posibles porque la arquitectura es sin consentimiento por diseño — sin cookies, sin identificadores, sin datos personales. La privacidad es la restricción que obliga a que la medición sea agregada; la medición agregada es lo que hace lícita la captura del 100% sin diálogo de consentimiento. Son la misma decisión arquitectónica, vistas desde ángulos distintos.",
+    a: "Lo contrario. Los datos completos son posibles porque la arquitectura es sin consentimiento por diseño — sin cookies, sin identificadores, sin datos personales. La privacidad es la restricción que obliga a que la medición sea agregada; la medición agregada es lo que permite que la analítica funcione sin diálogo de consentimiento cuando se cumplen los criterios de exención de tu autoridad. Son la misma decisión arquitectónica, vistas desde ángulos distintos.",
   },
   {
     q: "¿Dónde se almacenan estos datos?",
@@ -105,7 +105,9 @@ export default function CompleteDataPillarEs() {
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             La línea más cara de tu plan de medios es la decisión que
             tomaste sobre analítica incompleta. En Europa, esa decisión
-            se tomó sobre aproximadamente el 13% de tu tráfico real.
+            se tomó sobre una parte de tu tráfico real: el 71% de las
+            visitas en el caso medido de Incapto, y apenas el 13% en el
+            peor escenario acumulado de nuestro modelo.
             Este es el argumento para arreglarlo — y los números que
             cambian cuando lo haces.
           </p>
@@ -117,8 +119,9 @@ export default function CompleteDataPillarEs() {
           <>
             Los datos completos son analítica web donde el número en el
             dashboard equivale al número que ocurrió. Sin gate de
-            consentimiento perdiendo 40–60% de visitantes, sin
-            ad-blockers eliminando el script en otro 40%, sin ITP de
+            consentimiento que pierda a quienes rechazan el banner, sin
+            dominio de tracking third-party que los ad-blockers puedan
+            quitar cuando el tracker se sirve first-party, sin ITP de
             Safari truncando atribución a 7 días, sin modelo estadístico
             rellenando el hueco. Es el output de una decisión
             arquitectónica deliberada — sin cookies, sin consentimiento,
@@ -130,7 +133,7 @@ export default function CompleteDataPillarEs() {
         }
         bullets={[
           <><strong>100% de pageviews capturados</strong> — sin consentimiento, sin script-block, sin expiración.</>,
-          <><strong>Atribución de ingresos last-click</strong> aplicada a la población completa, no al 13% que dio consentimiento.</>,
+          <><strong>Atribución de ingresos last-click</strong> aplicada a la población completa, no solo a quienes dieron consentimiento.</>,
           <><strong>Sin modelado</strong> — medición, no estimación.</>,
           <><strong>Sólo UE</strong> — procesamiento en Dublín, Irlanda.</>,
         ]}
@@ -169,11 +172,11 @@ export default function CompleteDataPillarEs() {
                 Los resultados de tests A/B se inclinan hacia la
                 variante que sirvió a una audiencia más consenciente.
                 Los proyectos de CRO optimizan hacia la muestra
-                superviviente. Clientes de grupos hoteleros corriendo
-                ambas herramientas han medido +30% más reservas
-                atribuidas a directo — no porque directo mejorara, sino
-                porque directo era el canal que GA4 sistemáticamente
-                infra-contaba.
+                superviviente. En Incapto, Sealmetrics vio un 11% más de tráfico
+                directo que GA4, pero entre un 37% y un 52% más desde
+                campañas de pago: en GA4, directo parecía más
+                importante de lo que era, solo porque perdía menos por
+                el banner.
               </p>
             </div>
 
@@ -222,12 +225,12 @@ export default function CompleteDataPillarEs() {
               {
                 num: "01",
                 title: "Cada visitante contado",
-                body: "Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies. La recolección first-party server-side corre desde tu propio dominio — no hay script third-party que los navegadores o las listas de reglas puedan interceptar.",
+                body: "Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies. La recolección puede servirse desde un subdominio de tu propio dominio, así que no hay dominio de tracking third-party que los navegadores o las listas de reglas puedan interceptar.",
               },
               {
                 num: "02",
                 title: "Cada conversión atribuida",
-                body: "Atribución de ingresos last-click aplicada al 100% de las conversiones, no al 13% que dio consentimiento. El canal que de hecho generó la conversión recibe el crédito — por datos, no por modelo.",
+                body: "Atribución de ingresos last-click aplicada a cada conversión registrada, no solo a las que dieron consentimiento. El canal que de hecho generó la conversión recibe el crédito — por datos, no por modelo.",
               },
               {
                 num: "03",
@@ -265,11 +268,12 @@ export default function CompleteDataPillarEs() {
               <div>
                 <h3 className="text-[17px] font-semibold text-ink mb-2">Sin cookies — en ningún sitio</h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
-                  Sin la cookie, los ad-blockers no tienen nada que
-                  bloquear, los navegadores no tienen nada que expirar,
-                  y la ITP de Safari no tiene nada que truncar. La
-                  pérdida del 87% desaparece porque los vectores de
-                  pérdida ya no existen. Arquitectura completa en{" "}
+                  Sin la cookie, los navegadores no tienen nada que
+                  expirar y la ITP de Safari no tiene nada que truncar;
+                  servido desde tu propio subdominio, el tracker no da a
+                  las listas de ad-blockers ningún dominio third-party
+                  que reconocer. La pérdida que causan esos vectores
+                  desaparece con ellos. Arquitectura completa en{" "}
                   <Link href="/es/cookieless-analytics" className="text-brand underline decoration-1 underline-offset-2">
                     analítica sin cookies
                   </Link>
@@ -283,10 +287,11 @@ export default function CompleteDataPillarEs() {
               <div>
                 <h3 className="text-[17px] font-semibold text-ink mb-2">Sin identificadores personales — en ningún sitio</h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
-                  Sin identificadores, el ámbito material del RGPD no
-                  se activa y el banner de consentimiento deja de ser
-                  necesario. Sin banner, la pérdida del 40–60% por
-                  rechazo desaparece. Recorrido legal completo en{" "}
+                  Sin identificadores y sin nada guardado en el
+                  dispositivo, la analítica puede evaluarse frente a los
+                  criterios de exención de tu autoridad. Donde la
+                  exención aplica, el banner deja de condicionar la
+                  medición y la pérdida por rechazo desaparece. Recorrido legal completo en{" "}
                   <Link href="/es/consentless-analytics" className="text-brand underline decoration-1 underline-offset-2">
                     analítica sin consentimiento
                   </Link>
@@ -334,7 +339,7 @@ export default function CompleteDataPillarEs() {
               href="/es/blog/why-ga4-shows-13pct-eu-traffic"
               className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
             >
-              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">El número del 13%</span>
+              <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">El modelo del 13%</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Por qué GA4 te muestra el 13% de tu tráfico europeo</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
                 La aritmética de consentimiento + ad-block + Safari ITP, con tasas de rechazo por sector.

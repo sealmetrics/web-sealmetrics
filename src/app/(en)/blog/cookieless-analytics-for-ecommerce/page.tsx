@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "What is cookieless analytics for eCommerce?",
     answer:
-      "Cookieless analytics for eCommerce is a measurement approach that counts visits, add-to-carts, checkouts and purchases without cookies, localStorage or personal identifiers. Each conversion event is attributed last-click to the traffic source recorded on that page load — aggregate channel totals reconcile with the Shopify, WooCommerce or Magento backend, without any per-user tracking.",
+      "Cookieless analytics for eCommerce is a measurement approach that counts visits, add-to-carts, checkouts and purchases without cookies, localStorage or personal identifiers. Each conversion is attributed last-click to the source of the session in which it fires, and aggregate totals can be checked against the Shopify, WooCommerce or Magento order total — without any per-user tracking.",
   },
   {
     question: "Does cookieless analytics track individual customers across sessions?",
@@ -49,12 +49,12 @@ const faqs = [
   {
     question: "How does Sealmetrics attribute revenue without journeys?",
     answer:
-      "Attribution is last-click at the event level. When a conversion fires on a page, the traffic source observed on that page load gets the credit. Totals roll up by channel — for example, 42 conversions attributed to Google Ads this week. There is no multi-touch model and no stitching of previous visits.",
+      "Attribution is session-scoped last-click. A conversion is credited to the source of the session in which it fires — the most recent entrance — and a session closes after about two hours of inactivity. Totals roll up by channel — for example, 42 conversions attributed to Google Ads this week. There is no multi-touch model, no lookback window and no stitching of previous visits.",
   },
   {
     question: "Does cookieless analytics work with Shopify?",
     answer:
-      "Yes. One-click install on Shopify Plus and a theme snippet on Shopify Standard. Order events are captured as aggregate counts with channel metadata; totals reconcile with Shopify Analytics at the level of sessions, conversions and revenue.",
+      "Yes, on any Shopify plan: connect the Sealmetrics Pixel app and enable the theme app embed. The purchase is confirmed server-side through Shopify's orders/create webhook. In Incapto's 48-day parallel run on Shopify, Sealmetrics recorded 96% of real online-store orders and 97% of revenue.",
   },
   {
     question: "Will I need to migrate off GA4?",
@@ -106,7 +106,7 @@ export default function Page() {
               How EU eCommerce Captures 100% of Revenue Without a Cookie Banner
             </h1>
             <p className="text-[1.05rem] leading-[1.8] text-text-body mb-6">
-              Sealmetrics is a consentless analytics platform built for EU eCommerce and hotel teams that lose traffic to consent banners. Choose it over Plausible or Matomo when you need 100% event capture with no banner and last-click revenue attribution across the full dataset, not a sampled subset.
+              European eCommerce teams lose the visitors who reject the cookie banner, and with them the channel picture their budget depends on. Cookieless analytics counts visits and orders without storing anything on the device, attributes revenue last-click at channel level, and can be checked against the store's own orders: on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.
             </p>
             <PostByline
               {...dates}
@@ -119,10 +119,10 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>European eCommerce teams running GA4 see only 13–40% of real visits after consent rejection, ad blockers and Safari restrictions.</li>
+              <li>Consent rejection, ad blockers and Safari restrictions compound. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits or 45% of pageviews; our model&apos;s compounded worst case leaves GA4 with about 13%.</li>
               <li>Cookieless analytics counts events anonymously — no cookies, no identifiers, no per-user tracking — and attributes each conversion last-click at channel level.</li>
               <li>Because no information is stored on or read from the device, the analytics avoids personal-data collection by architecture — DPOs typically conclude no consent banner is required after reviewing the DPA and TPSR package.</li>
-              <li>Typical outcome: aggregate attributed revenue reconciles to within 15–20% of the Shopify/WooCommerce/Magento backend.</li>
+              <li>The check that matters is against the backend: in Incapto&apos;s parallel run, Sealmetrics recorded 96% of real Shopify orders and 97% of revenue.</li>
               <li>Run side-by-side with GA4 for 30 days to compare; no migration needed.</li>
             </ul>
           </div>
@@ -142,16 +142,16 @@ export default function Page() {
               Your eCommerce analytics loses events in three sequential stages. The cascade is multiplicative — each layer compounds the one before.
             </p>
             <p>
-              <strong>Layer 1 — Consent rejection (40–60%).</strong> The average EU visitor rejects the cookie banner. On mobile, rejection rates climb higher. If they reject, GA4 never writes its cookie, so the pageview is never measured. For a DTC brand running Facebook ads into a Shopify store, this is where most of the invisible conversions live.
+              <strong>Layer 1 — Consent rejection (typically 40–60%).</strong> The average EU visitor rejects the cookie banner. On mobile, rejection rates climb higher. If they reject, GA4 never writes its cookie, so the pageview is never measured. For a DTC brand running Facebook ads into a Shopify store, this is where most of the invisible conversions live.
             </p>
             <p>
-              <strong>Layer 2 — Ad blockers (~25%).</strong> uBlock Origin, AdBlock Plus, Brave Shield and Firefox Enhanced Tracking Protection block requests to google-analytics.com. Your GA4 tag never fires. Add-to-cart events never arrive. Add this on top of consent rejection and you have compound loss.
+              <strong>Layer 2 — Ad blockers (around 40% of what is left).</strong> uBlock Origin, AdBlock Plus, Brave Shield and Firefox Enhanced Tracking Protection block requests to google-analytics.com. Your GA4 tag never fires. Add-to-cart events never arrive. Add this on top of consent rejection and you have compound loss.
             </p>
             <p>
               <strong>Layer 3 — Browser restrictions (Safari ITP, Firefox ETP).</strong> Even visitors who accept cookies don&apos;t keep them long. Apple&apos;s <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Intelligent Tracking Prevention</Link> expires first-party cookies after 7 days (or 24 hours if set via script). Cookie-based tools lose the original source and a later email-driven conversion shows up as &ldquo;direct&rdquo;.
             </p>
             <p>
-              The practical result: 100 real visits become 40–60 counted after consent, 30–45 after ad blockers, and roughly 13 with correct first-source attribution. <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Read the math here</Link>.
+              In our model&apos;s compounded worst case, 100 real visits become about 45 after consent, 27 after ad blockers and 13 after browser restrictions. <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Read the math here</Link>. A measured store is less extreme but just as uneven: running both tools on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&apos;s Shopify store</Link> for 48 days, GA4 did not record 29% of visits, and paid campaigns lost three to five times more than direct traffic.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -161,16 +161,16 @@ export default function Page() {
               Cookieless analytics for eCommerce replaces the three-layer loss cascade with a different architecture. It is important to state what this architecture does <em>not</em> do: it does not identify individual visitors, it does not stitch pageviews into per-user journeys, and it does not build behavioral profiles. It counts events. That&apos;s all.
             </p>
             <p>
-              <strong>1. First-party event collection.</strong> A small tracking script runs on your own domain, not a third-party endpoint. Ad blockers can&apos;t target it because it has no third-party signature — it is your domain serving its own traffic. Each pageview logs anonymous metadata: referrer, UTM parameters, landing page, country, device class.
+              <strong>1. First-party event collection.</strong> A small tracking script, which you can serve from a subdomain of your own domain instead of a third-party endpoint. Ad blockers work mostly from lists of known third-party tracking domains, so a first-party request is far less likely to be blocked. Each pageview logs anonymous metadata: referrer, UTM parameters, landing page, country, device class.
             </p>
             <p>
               <strong>2. Aggregate, anonymous counts.</strong> Events are aggregated on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign and landing page. At no point is a pageview linked to a specific person or device. There is no cross-session identifier and no &ldquo;returning user&rdquo; concept.
             </p>
             <p>
-              <strong>3. Last-click attribution at the event level.</strong> When a conversion fires on a page, the traffic source visible on that page load gets the credit. If the visitor saw Google Ads three days earlier, that earlier visit contributed to the Google Ads channel total; it is not stitched onto the later conversion. Each event stands on its own. Channel totals are what rolls up.
+              <strong>3. Session-scoped last-click attribution.</strong> A conversion is credited to the source of the session in which it fires; the session closes after about two hours of inactivity. If the visitor came from Google Ads three days earlier, that visit counted towards the Google Ads channel total; it is not stitched onto the later conversion. Sessions stand on their own. Channel totals are what rolls up.
             </p>
             <p>
-              <strong>4. No cookies, no consent required.</strong> Because nothing is stored on or read from the visitor&apos;s device, the analytics falls outside the storage-and-access provisions of the ePrivacy Directive. No banner required. The 40–60% consent-rejection gap disappears because there is nothing to reject.
+              <strong>4. No cookies, nothing to consent to on the device.</strong> Because nothing is stored on or read from the visitor&apos;s device, the storage-and-access rule of the ePrivacy Directive has nothing to attach to. Whether your deployment is consent-exempt still depends on your configuration and your regulator&apos;s criteria; where it is, the consent-rejection gap disappears because there is nothing to reject.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -180,7 +180,7 @@ export default function Page() {
               The practical effects on a typical Shopify or Magento team are:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Channel totals reconcile.</strong> Revenue attributed to each channel lands within 15–20% of the Shopify backend, not 50–70% off.</li>
+              <li><strong>Totals reconcile with the backend.</strong> In Incapto&apos;s 48-day parallel run, Sealmetrics recorded 96% of real Shopify orders and 97% of revenue — so the channel split built on top of it can be trusted.</li>
               <li><strong>No Black Friday sampling.</strong> Cookieless analytics does not sample at volume thresholds, so peak-day decisions are made on real counts.</li>
               <li><strong>Microconversions visible.</strong> Every add-to-cart, checkout start and form submission is counted, not dropped at volume thresholds.</li>
               <li><strong>CFO-defensible numbers.</strong> Because the architecture is provable (no PII, no identifiers) and aggregate revenue reconciles with the backend, finance can sign off on the channel mix without a three-hour meeting.</li>

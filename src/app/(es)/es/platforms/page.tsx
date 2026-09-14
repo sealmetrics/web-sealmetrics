@@ -24,15 +24,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Plataformas — Sealmetrics",
-    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
+    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
     images: [ogImage("/es/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/platforms/", languages: getAlternatesEs("/platforms") },
 };
 
 const platforms = [
-  { name: "Shopify", time: "5 min", desc: "Instalación en un click en Shopify Plus. Snippet theme.liquid para Shopify Standard. Datos de orden fluyen automáticamente." },
-  { name: "Magento", time: "15 min", desc: "Módulo Magento 2 nativo vía Composer. Funciona en Adobe Commerce y Magento Open Source." },
+  { name: "Shopify", time: "5 min", desc: "App Pixel más app embed del tema, en cualquier plan de Shopify. Compras confirmadas en servidor por webhook." },
+  { name: "Magento", time: "15 min", desc: "Módulo nativo para Magento 2.4+ instalado en app/code. Funciona en Adobe Commerce y Magento Open Source." },
   { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita)." },
   { name: "PrestaShop", time: "15 min", desc: "Módulo PrestaShop 1.7 & 8.x. Tracking de conversiones y funnel completo out-of-the-box." },
   { name: "OpenCart", time: "15 min", desc: "Extensión para tiendas OpenCart 3.x y 4.x. Eventos de conversión e ingresos desde el primer día." },
@@ -67,14 +67,15 @@ export default function Page() {
             propio; también WordPress, Drupal y Joomla, y Webflow, Wix y
             Squarespace. Los stacks headless y a medida — Next.js, Nuxt, Astro,
             Remix, SvelteKit — usan el script estándar más la API de eventos.
-            Cada instalación lleva menos de 30 minutos, y en Shopify Plus es un
-            clic y unos cinco; los datos de pedido fluyen después sin configurar
+            Cada instalación lleva menos de 30 minutos, y en Shopify, con
+            cualquier plan, unos cinco; los datos de pedido fluyen después sin configurar
             eventos a mano. El tracker es lo bastante pequeño como para no
             contar: menos de 5 KB comprimido, unas 132 veces más pequeño que GA4
             según la medición de agosto de 2026. Lo que la instalación no incluye
             nunca es un banner de consentimiento, una cookie ni un identificador
-            escrito en el dispositivo — no hay nada en la página que un
-            bloqueador pueda encontrar.
+            escrito en el dispositivo — y, servido desde tu propio subdominio,
+            nada en la página coincide con las listas third-party de los
+            bloqueadores.
           </SignalAnswer>
         </div>
       </section>

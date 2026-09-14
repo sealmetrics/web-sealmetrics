@@ -65,7 +65,7 @@ const requirements = [
     id: "req-2",
     title: "100% of the data",
     bar: "Every page load observed, consent-independent, not blocklisted, no sampling",
-    seal: "Cookieless by architecture. Customers go from ~40% to ~100% observed, closing to within 15–20% of CRM orders",
+    seal: "Cookieless by architecture. In a 48-day parallel run on Shopify, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders",
     score: 2,
   },
   {
@@ -505,7 +505,7 @@ export default function BestWebAnalyticsToolPage() {
                 days and compare both against the one system that has no
                 measurement gap: your CRM or order database. Count the orders.
                 The gap between platform and CRM is the only completeness metric
-                that matters, and it should close to within 15–20%, not 50%. The{" "}
+                that matters. In the one run we have published with its full method, on Incapto's Shopify store, Sealmetrics recorded 96% of real orders and 97% of revenue. The{" "}
                 <Link href="/data-loss-calculator" className={linkClass}>
                   data loss calculator
                 </Link>{" "}

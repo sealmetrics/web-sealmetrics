@@ -46,23 +46,23 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What does \"complete data\" actually mean?",
-    a: "Every visitor counted. Every conversion attributed. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means 100% pageview capture, 100% event capture, and last-click revenue attribution applied to the full population — not the 13% that consented.",
+    a: "Every visitor counted. Every conversion attributed. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means 100% pageview capture, 100% event capture, and last-click revenue attribution applied to the full population — not just the visitors who consented.",
   },
   {
     q: "Isn't GA4's Consent Mode v2 already solving this?",
-    a: "Consent Mode is a modelling layer. When visitors reject cookies, Google estimates what they probably did based on the visitors who did consent. That model is useful when you need a ballpark; it is not a measurement. For a CMO defending a €2M annual media spend, the question is whether you want decisions made on a model of the 87% you cannot see, or on the actual 100%. Complete data is the second answer.",
+    a: "Consent Mode is a modelling layer. When visitors reject cookies, Google estimates what they probably did based on the visitors who did consent. That model is useful when you need a ballpark; it is not a measurement. For a CMO defending a €2M annual media spend, the question is whether you want decisions made on a model of the traffic you cannot see — 29% of visits in Incapto's measured case — or on the traffic that actually arrived. Complete data is the second answer.",
   },
   {
     q: "What changes operationally when I switch?",
-    a: "Three things, immediately. First, channel mix shifts — typically organic, email and direct gain share at the expense of paid (because those channels were less consent-affected, not because they were doing worse). Second, attribution windows extend — repeat conversions stop being misclassified as new ones. Third, the conversation in the marketing review changes: you stop debating the data and start debating the decision.",
+    a: "Three things, immediately. First, channel mix shifts, and not evenly: the channels that bring new people in from an external click lose the most to consent. At Incapto, paid campaigns went from 50% of measured traffic in GA4 to 62% in Sealmetrics, and direct looked bigger in GA4 only because it lost less. Second, the no-origin bucket shrinks — at Incapto, visits with no usable origin fell from 14% in GA4 to 0.3%. Third, the conversation in the marketing review changes: you stop debating the data and start debating the decision.",
   },
   {
     q: "How do I know my data was actually incomplete?",
-    a: "Run the gap calculator on your real traffic. We compare what GA4 reports against what your CRM, Shopify orders, or PMS records show. The gap is usually 25–45% for B2C consumer brands, 15–25% for B2B. If the gap is below 10%, you probably do not need to switch. Most teams discover the gap is much larger than they assumed.",
+    a: "Run the gap calculator on your real traffic. We compare what GA4 reports against what your CRM, Shopify orders, or PMS records show. In our client sample GA4 records 25–45% less traffic for B2C consumer brands; in the one case published with its full method, Incapto, GA4 did not record 29% of visits. If the gap is below 10%, you probably do not need to switch. Most teams discover the gap is much larger than they assumed.",
   },
   {
     q: "Does complete data mean Sealmetrics ignores privacy?",
-    a: "The opposite. Complete data is possible because the architecture is consentless by design — no cookies, no identifiers, no personal data. Privacy is the constraint that forces the measurement to be aggregate; aggregate measurement is what makes 100% capture lawful without a consent dialog. The two are the same architectural choice, viewed from different angles.",
+    a: "The opposite. Complete data is possible because the architecture is consentless by design — no cookies, no identifiers, no personal data. Privacy is the constraint that forces the measurement to be aggregate; aggregate measurement is what lets the analytics run without a consent dialog where your regulator's exemption criteria are met. The two are the same architectural choice, viewed from different angles.",
   },
   {
     q: "Where is this data stored?",
@@ -125,7 +125,7 @@ export default function CompleteDataPillar() {
             Decisions you can defend.
           </h1>
           <QuickAnswer>
-            {`Google Meridian MMM accuracy depends entirely on the completeness of the input data, and consent-based analytics tools like GA4 undermine that accuracy from the start. When EU visitors reject cookie consent, GA4 stops logging their sessions, creating gaps of 40–60% in observed traffic depending on banner design and audience. Since Meridian relies on historical marketing and conversion data to model channel effectiveness, feeding it incomplete GA4 exports means the algorithm trains on a biased subset of users—typically those more tolerant of tracking—skewing attribution and media-mix recommendations. Sealmetrics addresses this at the source: a consentless analytics architecture that captures 100% of EU site traffic without cookies or consent banners, remaining GDPR-compliant by design. Because no visitor is excluded pre-consent, the dataset feeding into MMM tools stays statistically representative of actual traffic and revenue, not just consenting users. Last-click revenue attribution on the complete dataset further ensures that conversion values entering any MMM model reflect real business outcomes rather than partial, consent-filtered approximations.`}
+            {`Complete data is analytics whose totals you can check against something that really happened — orders, bookings, revenue — instead of a model filling the gaps. Consent-based tools such as GA4 lose the visitors who reject the banner, and the loss is uneven by channel. Measured on a real store, the gap is large: with GA4 and Sealmetrics running side by side on Incapto's Shopify store for 48 days, GA4 did not record 29% of visits or 45% of pageviews, while Sealmetrics recorded 96% of the real orders. Sealmetrics gets there by design — no cookies, no personal data, no consent gate on the analytics — and attributes revenue last-click on everything it counts.`}
           </QuickAnswer>
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]"
@@ -133,8 +133,10 @@ export default function CompleteDataPillar() {
           >
             The single most expensive line item in your media plan is the
             decision you made on incomplete analytics. In Europe, that
-            decision was made on roughly 13% of your real traffic. This is
-            the argument for fixing that — and the numbers that change
+            decision was made on a fraction of your real traffic — 71% of
+            visits in Incapto's measured case, and as little as 13% in the
+            compounded worst case of our model. This is the argument for
+            fixing that — and the numbers that change
             when you do.
           </p>
         </div>
@@ -145,9 +147,10 @@ export default function CompleteDataPillar() {
           <>
             Complete data is web analytics where the number in the
             dashboard equals the number that happened. No consent gate
-            losing 40–60% of visitors, no ad blockers stripping the
-            script on another 40%, no Safari ITP truncating attribution
-            at 7 days, no statistical model filling the gap. It is the
+            losing the visitors who reject the banner, no third-party
+            tracking domain for ad blockers to strip once the tracker is
+            served first-party, no Safari ITP truncating attribution at
+            7 days, no statistical model filling the gap. It is the
             output of a deliberate architectural choice — cookieless,
             consentless, first-party, EU-only — that swaps individual
             tracking for full-population measurement. For an eCommerce
@@ -162,7 +165,7 @@ export default function CompleteDataPillar() {
           </>,
           <>
             <strong>Last-click revenue attribution</strong> applied to
-            the full population, not the consenting 13%.
+            the full population, not only the visitors who consented.
           </>,
           <>
             <strong>No modelling</strong> — measurement, not estimation.
@@ -211,10 +214,10 @@ export default function CompleteDataPillar() {
                 A/B test results lean toward whichever variant served a
                 more consenting audience. Conversion-rate optimisation
                 projects optimise toward the survivor sample.
-                Hotel-group customers running both tools have measured
-                +30% more attributed bookings on direct traffic — not
-                because direct improved, but because direct is the
-                channel GA4 was systematically under-counting.
+                At Incapto, Sealmetrics saw 11% more direct traffic than
+                GA4 but 37–52% more from paid campaigns — so in GA4,
+                direct looked more important than it was, simply
+                because it lost less to the banner.
               </p>
             </div>
 
@@ -275,13 +278,13 @@ export default function CompleteDataPillar() {
                 num: "01",
                 title: "Every visitor counted",
                 body:
-                  "No consent gate, no ad-blocker drop-off, no cookie expiry. First-party server-side collection runs from your own domain — there is no third-party script for browsers or rule lists to intercept.",
+                  "No consent gate, no ad-blocker drop-off, no cookie expiry. Collection can be served from a subdomain of your own domain, so there is no third-party tracking domain for browsers or rule lists to intercept.",
               },
               {
                 num: "02",
                 title: "Every conversion attributed",
                 body:
-                  "Last-click revenue attribution applied to 100% of conversions, not the 13% that consented. The channel that actually drove the conversion gets the credit — by data, not by model.",
+                  "Last-click revenue attribution applied to every conversion recorded, not only the ones that consented. The channel that actually drove the conversion gets the credit — by data, not by model.",
               },
               {
                 num: "03",
@@ -335,10 +338,11 @@ export default function CompleteDataPillar() {
                   No cookies — anywhere
                 </h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
-                  Without the cookie, ad blockers have nothing to
-                  block, browsers have nothing to expire, and Safari
-                  ITP has nothing to truncate. The 87% loss disappears
-                  because the loss vectors no longer exist. Full
+                  Without the cookie, browsers have nothing to expire and
+                  Safari ITP has nothing to truncate; served from your
+                  own subdomain, the tracker gives ad-blocker lists no
+                  third-party domain to match. The loss those vectors
+                  cause goes with them. Full
                   architecture at{" "}
                   <Link
                     href="/cookieless-analytics"
@@ -360,10 +364,11 @@ export default function CompleteDataPillar() {
                   No personal identifiers — anywhere
                 </h3>
                 <p className="text-[15px] leading-[1.7] text-ink-soft">
-                  Without identifiers, GDPR&apos;s material scope does
-                  not engage and the consent banner stops being
-                  required. Without the banner, the 40–60% rejection
-                  loss disappears. Full legal walk-through at{" "}
+                  Without identifiers and with nothing stored on the
+                  device, the analytics can be assessed against your
+                  regulator&apos;s criteria for a consent exemption.
+                  Where it applies, the banner no longer gates
+                  measurement and the rejection loss disappears. Full legal walk-through at{" "}
                   <Link
                     href="/consentless-analytics"
                     className="text-brand underline decoration-1 underline-offset-2"
@@ -431,8 +436,8 @@ export default function CompleteDataPillar() {
                 tag: "CFO",
                 title: "Marketing numbers that reconcile to the P&L",
                 body:
-                  "Same data residency, same EU-only processing, same audit trail. The reconciliation gap with marketing typically closes from 30–40% to under 5%.",
-                href: "/for/cmo",
+                  "Same data residency, same EU-only processing, same audit trail — and a total you can check against recorded orders: 96% of Incapto's real Shopify orders and 97% of revenue.",
+                href: "/use-cases/revenue-attribution",
               },
               {
                 tag: "eCommerce manager",
@@ -479,7 +484,7 @@ export default function CompleteDataPillar() {
             {[
               {
                 href: "/blog/why-ga4-shows-13pct-eu-traffic",
-                tag: "The 13% number",
+                tag: "The 13% model",
                 title: "Why GA4 shows you 13% of your EU traffic",
                 lede: "The arithmetic of consent + ad-block + Safari ITP, with sector-level rejection rates.",
               },

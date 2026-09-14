@@ -112,7 +112,7 @@ const copy = {
     ],
     dreamStats: [
       ["+30%", "more traffic measured than Google Analytics"],
-      ["15–20%", "sales-attribution gap against the CRM, closed"],
+      ["15–20%", "more sales attributed, reconciled against the CRM"],
     ],
     palladiumQuote: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There is no black box.",
     dreamQuote: "It is the tool that gives us the real data — and the one we make decisions with.",
@@ -213,7 +213,7 @@ const copy = {
     ],
     dreamStats: [
       ["+30%", "más tráfico medido que Google Analytics"],
-      ["15–20%", "de brecha de atribución contra el CRM, cerrada"],
+      ["15–20%", "más ventas atribuidas, conciliadas contra el CRM"],
     ],
     palladiumQuote: "Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
     dreamQuote: "Es la herramienta que nos da el dato real — y con la que tomamos decisiones.",

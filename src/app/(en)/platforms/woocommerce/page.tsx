@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "WooCommerce analytics without cookies — Sealmetrics plugin",
-    description: "WordPress plugin install, WooCommerce hook coverage, and the order_id reconciliation pattern for finance teams.",
+    description: "WordPress plugin install, WooCommerce hook coverage, and the aggregate order reconciliation pattern for finance teams.",
     images: [ogImage("/platforms/woocommerce/")],
   },
   alternates: {
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Does the plugin slow down my WooCommerce site?",
-    a: "The plugin loads a single 846-byte script asynchronously in the page head. Server-side, it adds a small amount of work on the woocommerce_thankyou hook (a single async HTTP POST). Typical LCP impact is below 50ms — measurably smaller than the GA4 + GTM stack it usually replaces. Documented on the cookieless analytics pillar.",
+    a: "The plugin loads a single 846-byte script asynchronously in the page head. Server-side, it adds a small amount of work on the woocommerce_thankyou hook (a single async HTTP POST). On the wire the tracker is roughly 132× lighter than GA4, so its footprint is a small fraction of the GA4 + GTM stack it usually replaces.",
   },
   {
     q: "Will I need to change my consent banner setup?",
@@ -168,8 +168,9 @@ export default function WooCommercePlatformPage() {
             <li>Go to Settings → Sealmetrics and paste your Account ID (from the Sealmetrics dashboard).</li>
             <li>
               Optionally set a custom pixel domain under your own
-              domain for first-party tracking — this keeps the
-              request invisible to ad blockers.
+              domain for first-party tracking — ad blockers work
+              from third-party lists, so the request is far less
+              likely to be blocked.
             </li>
             <li>Save. The plugin starts ingesting on the next pageview. Verify in the Sealmetrics debugger.</li>
           </ol>
@@ -236,10 +237,13 @@ export default function WooCommercePlatformPage() {
             <div className="border border-warm-100 rounded-2xl p-6 bg-warm-white">
               <h3 className="text-[16px] font-semibold text-ink mb-3">Aggregate level</h3>
               <p className="text-[14.5px] leading-[1.65] text-ink-soft">
-                Weekly and monthly aggregate revenue lands within{" "}
-                <strong>15–20%</strong> of WooCommerce reports. The
-                residual gap is shipping, taxes, gift cards and
-                refunds handled differently between the two systems.
+                Compare Sealmetrics orders and revenue with the
+                WooCommerce order report for the same period, leaving
+                out orders with no web visit behind them. The one
+                parallel run we have published, on Shopify, recorded{" "}
+                <strong>96% of real orders and 97% of revenue</strong>;
+                a residual gap can come from the confirmation hook not
+                firing, or from refunds counted differently.
               </p>
             </div>
 
@@ -291,7 +295,7 @@ export default function WooCommercePlatformPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Platform</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Sealmetrics for Shopify</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                Equivalent install pattern for stores on Shopify or Shopify Plus.
+                Equivalent install pattern for stores on any Shopify plan.
               </p>
             </Link>
             <Link

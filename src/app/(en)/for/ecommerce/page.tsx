@@ -40,29 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "What is cookieless analytics for eCommerce?",
-    answer:
-      "Cookieless analytics for eCommerce is a measurement approach that captures every visitor, add-to-cart, checkout and purchase without using browser cookies, localStorage or fingerprinting. This avoids the 40–60% EU traffic loss caused by consent banners and matches Shopify, WooCommerce or Magento backend data with marketing attribution.",
-  },
-  {
-    question: "Why does cookieless analytics matter for DTC eCommerce in Europe?",
-    answer:
-      "European DTC brands lose between 40% and 60% of traffic to cookie consent rejection, plus another ~25% to ad blockers. The result is that GA4 and Meta Pixel show 13–40% of real traffic. Cookieless analytics eliminates those gaps by operating as first-party server-side infrastructure on the merchant's own domain.",
-  },
-  {
-    question: "Does cookieless analytics for eCommerce require a consent banner?",
-    answer:
-      "No. Because no cookies, localStorage or personal identifiers are used, no consent is required under GDPR or ePrivacy for the analytics itself. You can still display a banner for advertising pixels; Sealmetrics operates independently of it.",
-  },
-  {
-    question: "Can cookieless analytics replace GA4 for an eCommerce team?",
-    answer:
-      "Yes for revenue decisions; usually not for Google Ads conversion import. Most eCommerce teams run Sealmetrics alongside GA4 for 30 days to compare, then make decisions on Sealmetrics data and keep GA4 as a Google Ads conduit.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -97,9 +74,9 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Captures the 40–60% of EU visitors GA4 loses to consent rejection.</>,
-          <>Reconciles to within 15–20% of your actual CRM revenue — defensible in a board meeting.</>,
-          <>Works natively with Shopify Plus, WooCommerce, Magento 2, PrestaShop and OpenCart.</>,
+          <>Counts the visits consent-based analytics loses: at Incapto, GA4 did not record 29% of visits over 48 days on Shopify.</>,
+          <>Checkable against your backend: Sealmetrics recorded 96% of Incapto's real online-store orders and 97% of revenue.</>,
+          <>Native modules for Shopify (any plan), WooCommerce, Magento 2, PrestaShop and OpenCart.</>,
         ]}
       />
 

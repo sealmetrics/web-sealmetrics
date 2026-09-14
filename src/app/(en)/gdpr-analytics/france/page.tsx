@@ -53,7 +53,7 @@ const criteria = [
     n: "02",
     title: "No cross-site tracking",
     cnil: "The tool must not enable tracking the visitor across other websites.",
-    us: "First-party server-side. The pixel runs on your own domain. No third-party cookie, no cross-site identifier.",
+    us: "First-party server-side. The pixel can be served from a subdomain of your own domain. No third-party cookie, no cross-site identifier.",
   },
   {
     n: "03",

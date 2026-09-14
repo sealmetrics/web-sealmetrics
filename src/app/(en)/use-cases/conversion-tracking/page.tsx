@@ -166,14 +166,13 @@ export default function ConversionTrackingPage() {
                 The number the CFO sees. Aggregate, anonymous, no
                 cookie, no identifier, no consent banner. Captures
                 100% of observed conversions on the full population.
-                Reconciles with the eCommerce backend on{" "}
-                <code className="font-mono text-[13px]">order_id</code>.
+                Reconciles with the eCommerce backend&rsquo;s order total.
               </p>
               <ul className="mt-4 space-y-2 text-[14.5px] leading-[1.7] text-ink-soft list-none pl-0">
                 {[
                   "Sealmetrics (this is the layer the page describes)",
                   "First-party server-side from pixel.yourdomain.com",
-                  "Outside ePrivacy / GDPR consent scope",
+                  "Designed to need no consent under ePrivacy / GDPR",
                 ].map((s) => (
                   <li key={s} className="flex gap-3"><span className="text-brand" aria-hidden>—</span><span>{s}</span></li>
                 ))}
@@ -227,9 +226,8 @@ export default function ConversionTrackingPage() {
                 Native coverage on Shopify, WooCommerce, Magento,
                 PrestaShop, OpenCart.
                 <code className="font-mono text-[13px]">order_placed</code>{" "}
-                fires server-side on the order-confirmation hook with
-                revenue, currency, line items and{" "}
-                <code className="font-mono text-[13px]">order_id</code>.
+                fires on the order-confirmation hook with revenue,
+                currency and line items.
                 See the per-platform setup on{" "}
                 <Link href="/platforms/shopify" className="text-brand underline decoration-1 underline-offset-2">/platforms/shopify</Link>{" "}
                 and{" "}

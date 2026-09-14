@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cookieless Analytics for Hotels — 2026 Guide",
     description:
-      "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
+      "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, checked against the PMS total — whichever PMS you run.",
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-hotels/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-hotels/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cookieless Analytics for Hotels — 2026 Guide",
-    description: "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, reconciles with Mews, Cloudbeds and Opera totals.",
+    description: "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, checked against the PMS total — whichever PMS you run.",
     images: [ogImage("/blog/cookieless-analytics-for-hotels/")],
   },
   alternates: {
@@ -39,7 +39,7 @@ const faqs = [
   {
     question: "What is cookieless analytics for hotels?",
     answer:
-      "Cookieless analytics for hotels is a measurement approach that counts booking-path events — direct-site landings, meta-search referrals, booking confirmations — without cookies, consent banners or personal identifiers. Each booking is attributed last-click to the source recorded on that page load, and aggregate totals reconcile with the PMS (Mews, Cloudbeds, Opera).",
+      "Cookieless analytics for hotels is a measurement approach that counts booking-path events — direct-site landings, meta-search referrals, booking confirmations — without cookies, consent banners or personal identifiers. Each booking is attributed last-click to the source of the session in which it happens, and aggregate totals can be checked against the PMS.",
   },
   {
     question: "Does cookieless analytics track individual guests across sessions?",
@@ -49,12 +49,12 @@ const faqs = [
   {
     question: "How much of hotel booking attribution is lost to GA4?",
     answer:
-      "On average, 25% of direct bookings recorded in hotel PMS systems are not correctly attributed in GA4 due to consent rejection on mobile Safari, ITP-induced cookie expiry and OTA path breaks. For mobile-heavy booking flows, the gap can climb to 35%.",
+      "It varies by site, so measure yours against the PMS. For reference: at Palladium Hotel Group, 35% of the bookings GA4 recorded could not be assigned to a channel and 40% of inbound traffic had no source or medium; Dreamplace Hotels measures roughly 30% more traffic with Sealmetrics than with Google Analytics.",
   },
   {
     question: "Does cookieless analytics work with Mews, Cloudbeds or Opera?",
     answer:
-      "Yes. Sealmetrics ships native integrations with Mews, Cloudbeds and Opera. Any other PMS or custom booking engine integrates via REST API. Booking revenue flows back automatically so conversion counts can be multiplied by ADR for channel revenue totals.",
+      "Yes, through standard events and the API — there is no PMS-specific plugin. Booking-engine confirmations are sent as conversion events with their value, and the REST API and webhooks let you reconcile them against Mews, Cloudbeds, Opera or any other PMS.",
   },
   {
     question: "Can hotel groups roll up totals across multiple properties?",
@@ -102,20 +102,20 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>hotel groups running GA4 typically miss 25% of direct bookings their PMS records.</li>
-              <li>The gap comes from mobile Safari consent rejection, ITP-induced cookie expiry and OTA referral breaks.</li>
-              <li>Cookieless analytics counts booking events anonymously — no cookies, no personal identifiers, no per-guest journey — and attributes each booking last-click to the source on that page load.</li>
-              <li>Aggregate channel totals reconcile with the PMS (Mews, Cloudbeds, Opera) at the level of confirmed bookings and revenue.</li>
+              <li>Hotel groups running GA4 lose the channel behind a large share of direct bookings: at Palladium Hotel Group, 35% of the bookings GA4 recorded had no channel.</li>
+              <li>The gap comes from consent rejection on mobile, ITP-induced cookie expiry and the jump to an external booking engine or payment gateway.</li>
+              <li>Cookieless analytics counts booking events anonymously — no cookies, no personal identifiers, no per-guest journey — and attributes each booking last-click to the source of the session in which it happens.</li>
+              <li>Aggregate bookings and revenue by channel can be checked against the PMS total — Mews, Cloudbeds, Opera or any other — through standard conversion events and the API.</li>
               <li>Multi-property portfolio rollups are standard: brand, sub-brand and individual property totals in one dashboard.</li>
             </ul>
           </div>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              Hotel revenue directors live with a specific version of the analytics problem. The PMS closes 240 reservations this week. GA4 reports 180. The missing 60 are attributed to &ldquo;direct&rdquo; — not because they were direct, but because the cookies that would have preserved the source were rejected, expired or blocked before the booking fired. On mobile Safari, with ITP, with consent rejection, with OTA referrals that land via meta-search — every one of these is a bug in the measurement architecture, not the marketing.
+              Hotel revenue directors live with a specific version of the analytics problem. The PMS knows exactly how many reservations came through the direct channel. The analytics cannot say where a large share of them came from. At <Link href="/case-studies/palladium-hotel-group" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Palladium Hotel Group</Link>, 40% of inbound traffic had no source or medium in the previous stack, and 35% of the bookings GA4 recorded could not be assigned to the channel that generated them. Consent rejection on mobile, ITP and the jump to an external booking engine each break the path — a bug in the measurement architecture, not the marketing.
             </p>
             <p>
-              The 25% gap is real money. For a hotel group doing €15M in direct bookings, it is €3.75M of revenue that marketing drove but cannot defend in the budget meeting. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all. The architectural argument and trade-offs live on the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this piece focuses on the hotel-specific reconciliation patterns.
+              That gap is budget you cannot defend. At <Link href="/case-studies/dreamplace-hotels" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Dreamplace Hotels</Link>, Sealmetrics measures roughly 30% more traffic than Google Analytics and attributes 15–20% more sales than the previous tool — a difference large enough to change which channel gets the next euro. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all. The architectural argument and trade-offs live on the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this piece focuses on the hotel-specific reconciliation patterns.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -131,7 +131,7 @@ export default function Page() {
               <strong>2. Meta-search and OTA referral paths.</strong> A visit lands on the direct booking site from Google Hotel Ads. Later a separate visit converts. GA4 sees two disconnected pageviews with different cookie states (or no cookies at all). Your OTA commission report sees &ldquo;Booking&rdquo; or &ldquo;Expedia&rdquo; — also fragments. None of them reconcile to the PMS.
             </p>
             <p>
-              <strong>3. Long decision windows.</strong> Travel bookings have 14–30 day consideration cycles. Cookie-based attribution windows are shorter than the decision process. By the time the booking happens, the original source pageview has been lost to ITP, cookie rejection or browser restart.
+              <strong>3. Long decision windows.</strong> Travel bookings have 14–30 day consideration cycles. Cookie-based attribution windows are shorter than the decision process. By the time the booking happens, the original source pageview has been lost to ITP, cookie rejection or browser restart. Cookieless analytics does not fix this by remembering the first visit — it credits the session that books — but it does see that session, whether or not the guest accepted a banner.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -145,18 +145,20 @@ export default function Page() {
               <li>It does not stitch pageviews into per-guest journeys.</li>
               <li>It does not recognise a returning guest.</li>
               <li>It does not know that the meta-search landing and the later booking came from the same person.</li>
+              <li>It does not credit an earlier visit: a booking goes to the source of the session in which it happens.</li>
             </ul>
             <p>
               What it does instead:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Counts landings per source (meta-search, OTA referral, direct, paid search, organic).</li>
-              <li>Counts booking events per source using last-click on the booking pageview.</li>
-              <li>Multiplies booking counts by the PMS-reported ADR to produce aggregate channel revenue.</li>
+              <li>Counts booking events per source, credited to the session in which the booking happens.</li>
+              <li>Sums the booking value sent with each conversion event into aggregate channel revenue.</li>
+              <li>Keeps the original source when the guest returns from a booking engine or payment gateway registered as a passthrough referrer.</li>
               <li>Rolls up totals across properties for portfolio reporting.</li>
             </ul>
             <p>
-              The trade is deliberate: the system gives up the fiction of a &ldquo;full guest journey&rdquo; (which GA4 provides on only a fraction of bookings anyway) in exchange for channel totals that match the PMS on 100% of them.
+              The trade is deliberate: the system gives up the fiction of a &ldquo;full guest journey&rdquo; (which GA4 provides on only a fraction of bookings anyway) in exchange for channel totals measured on every session, whether or not the guest accepted a banner.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -166,10 +168,10 @@ export default function Page() {
               The practical outputs for a typical hotel group:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Aggregate bookings by channel that match the PMS.</strong> The 25% gap closes because there is no cookie for Safari to expire or for the visitor to reject.</li>
+              <li><strong>Aggregate bookings by channel you can check against the PMS.</strong> The consent gap closes because there is no cookie for Safari to expire or for the visitor to reject.</li>
               <li><strong>Meta-search landing counts.</strong> Google Hotel Ads, Trivago, Kayak landings on the direct site are counted at the landing pageview, regardless of whether that specific visitor eventually books.</li>
               <li><strong>Portfolio rollups.</strong> Brand, sub-brand, individual property — all aggregate totals in one dashboard, without manually reconciling 12 separate GA4 properties.</li>
-              <li><strong>Paid-media ROI against real bookings.</strong> When channel-attributed revenue matches the PMS, paid-media ROAS becomes a calculable number.</li>
+              <li><strong>Paid-media ROI against real bookings.</strong> When channel-attributed revenue reconciles with the PMS total, paid-media ROAS becomes a number you can defend.</li>
             </ul>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -180,20 +182,20 @@ export default function Page() {
             </p>
             <ol className="list-decimal pl-5 space-y-2">
               <li>Install first-party tracking on the direct booking site and supporting marketing pages.</li>
-              <li>Connect PMS via native integration (Mews, Cloudbeds, Opera) or REST API.</li>
-              <li>Map booking revenue events: reservation confirmed, revenue realised, cancellation.</li>
+              <li>Send booking-engine confirmations as conversion events with their value. There is no PMS plugin: the event contract and the REST API work with Mews, Cloudbeds, Opera or any other stack.</li>
+              <li>Register the booking engine and payment gateway domains as passthrough referrers, so returns keep their original source.</li>
               <li>For multi-property groups, tag properties with brand/sub-brand/property IDs.</li>
               <li>Review week one: compare aggregate bookings per channel against the PMS, identify the channel gaps that previously existed.</li>
             </ol>
             <p>
-              Typical result at week four: aggregate channel revenue within 5–10% of PMS totals (from a previous gap of 25–35%).
+              What to expect: Dreamplace Hotels uses the CRM total as the reconciliation point and treats the remaining gap as a quality signal. On that basis Sealmetrics attributes 15–20% more sales than their previous tool, and the reconciled view is what moved their Meta and Google budget.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               The consent-banner UX bonus
             </h2>
             <p>
-              A second-order benefit: hotel sites running cookieless analytics often don&apos;t need a cookie banner for the analytics itself. If advertising pixels are moved to a post-click opt-in (or removed), the banner becomes optional. Mobile bounce rate typically drops 5–8% when the banner is removed from the first-interaction path.
+              A second-order benefit: where the deployment meets the regulator&apos;s exemption criteria, hotel sites running cookieless analytics may not need a cookie banner for the analytics itself. If advertising pixels are moved to a post-click opt-in (or removed), the banner can leave the first-interaction path on mobile — assess that with your DPO, because each pixel keeps its own consent requirement.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

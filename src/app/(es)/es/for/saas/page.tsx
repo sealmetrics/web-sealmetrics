@@ -40,29 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "¿Qué es analítica sin cookies para SaaS?",
-    answer:
-      "La analítica sin cookies para SaaS es un enfoque de medición para empresas PLG que captura tráfico de la web de marketing y del onboarding sin cookies, banners de consentimiento ni identificadores personales. Atribuye signups de trial, eventos de activación y conversiones trial-to-paid sobre el 100% del tráfico UE.",
-  },
-  {
-    question: "¿Cómo trackea la analítica sin cookies los PQLs?",
-    answer:
-      "Sealmetrics cuenta visitas a la web de marketing y signups de trial de forma anónima con metadatos de canal; los eventos in-product llegan vía REST API una vez que el usuario está autenticado. Las definiciones de PQL se montan en el warehouse uniendo la atribución agregada de marketing con tu tabla autenticada de usuarios. Sealmetrics no trackea el journey del visitante en la web de marketing — el join a datos a nivel de usuario ocurre tras el signup, dentro de tu base de datos de producto.",
-  },
-  {
-    question: "¿Funciona para funnels self-serve SaaS?",
-    answer:
-      "Sí. Los funnels self-serve están especialmente expuestos a la pérdida de datos por rechazo de consentimiento porque los visitantes UE a menudo navegan la web de marketing, se van, y vuelven por email o directo — todas rutas que se rompen bajo atribución con cookies de terceros. El tracking first-party sin cookies restaura ese journey.",
-  },
-  {
-    question: "¿Los equipos SaaS pueden reemplazar Mixpanel o Amplitude con analítica sin cookies?",
-    answer:
-      "Parcialmente. Sealmetrics gestiona la atribución de web de marketing, conversión landing-to-trial y atribución de ingresos — todo como totales agregados por canal, sin tracking por usuario. Para analítica profunda de evento in-product dentro de la app autenticada (cohortes de retención, adopción de features, journeys a nivel de usuario), la mayoría de equipos SaaS mantienen Mixpanel o Amplitude y usan Sealmetrics para la capa anónima marketing-to-signup.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -90,7 +67,7 @@ export default function Page() {
             visitas de la web de marketing y los eventos de trial-signup sin
             banners de consentimiento, cookies ni interferencia de ad-blockers —
             de forma anónima, a nivel de canal. Sealmetrics atribuye cada evento
-            de trial-signup last-click a la fuente registrada en esa pageview
+            de trial-signup last-click a la fuente de la sesión en la que ocurre
             y exporta los totales por canal a BigQuery para unirlos con los
             datos de producto para reporting PLG.
           </>

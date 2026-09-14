@@ -729,7 +729,7 @@ export function ProductProofV3() {
       href: "/case-studies/dreamplace-hotels",
       stats: [
         { n: "+30%", l: "more traffic measured vs Google Analytics" },
-        { n: "15–20%", l: "sales attribution gap against the CRM, closed" },
+        { n: "15–20%", l: "more sales attributed, reconciled against the CRM" },
       ],
       quote:
         "It's no longer a tool that sits next to the process. It's the tool that gives us the real data — and the one we make decisions with.",

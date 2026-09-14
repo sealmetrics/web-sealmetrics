@@ -32,7 +32,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "First-Party Data Collection",
     shortDefinition:
-      "Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are invisible to ad blockers and not subject to third-party cookie restrictions.",
+      "Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are far less likely to be blocked by ad blockers and are not subject to third-party cookie restrictions.",
     category: "Technology",
     related: ["cookieless-analytics", "server-side-tracking", "ad-blocker-analytics-impact", "analytics-data-residency", "intelligent-tracking-prevention"],
   },

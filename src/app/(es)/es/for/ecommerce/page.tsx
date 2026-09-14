@@ -40,29 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const seoFaqs = [
-  {
-    question: "¿Qué es analítica sin cookies para eCommerce?",
-    answer:
-      "La analítica sin cookies para eCommerce captura cada visita, add-to-cart, checkout y compra sin usar cookies, localStorage ni fingerprinting. Evita la pérdida del 40–60% de tráfico UE causada por banners de consentimiento y cuadra los datos de backend de Shopify, WooCommerce o Magento con la atribución de marketing.",
-  },
-  {
-    question: "¿Por qué importa la analítica sin cookies para eCommerce DTC en Europa?",
-    answer:
-      "Las marcas DTC europeas pierden entre el 40% y 60% del tráfico por rechazo de cookies, más ~25% por ad-blockers. El resultado: GA4 y el pixel de Meta muestran el 13–40% del tráfico real. La analítica sin cookies elimina esos gaps operando como infraestructura first-party server-side en el dominio del propio merchant.",
-  },
-  {
-    question: "¿La analítica sin cookies para eCommerce necesita banner de consentimiento?",
-    answer:
-      "No. Como no se usan cookies, localStorage ni identificadores personales, no se requiere consentimiento bajo RGPD ni ePrivacy para la analítica. Puedes mantener el banner para pixels publicitarios; Sealmetrics opera de forma independiente.",
-  },
-  {
-    question: "¿Puede la analítica sin cookies reemplazar GA4 para un equipo eCommerce?",
-    answer:
-      "Sí para decisiones de ingresos; normalmente no para import de conversiones a Google Ads. La mayoría de equipos eCommerce corren Sealmetrics junto a GA4 durante 30 días para comparar, luego toman decisiones con Sealmetrics y mantienen GA4 como conducto a Google Ads.",
-  },
-];
-
 export default function Page() {
   return (
     <>
@@ -98,9 +75,9 @@ export default function Page() {
           </>
         }
         bullets={[
-          <>Captura el 40–60% de visitantes UE que GA4 pierde por rechazo de consentimiento.</>,
-          <>Cuadra dentro del 15–20% de tus ingresos reales del CRM — defendible ante el comité.</>,
-          <>Funciona nativamente con Shopify Plus, WooCommerce, Magento 2, PrestaShop y OpenCart.</>,
+          <>Cuenta las visitas que pierde la analítica con consentimiento: en Incapto, GA4 no registró el 29% de las visitas en 48 días sobre Shopify.</>,
+          <>Contrastable con tu backend: Sealmetrics registró el 96% de los pedidos reales de la tienda online de Incapto y el 97% de la facturación.</>,
+          <>Módulos nativos para Shopify (cualquier plan), WooCommerce, Magento 2, PrestaShop y OpenCart.</>,
         ]}
       />
 
