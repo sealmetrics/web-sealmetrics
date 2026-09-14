@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 const platforms = [
   { name: "Shopify", time: "5 min", desc: "App Pixel más app embed del tema, en cualquier plan de Shopify. Compras confirmadas en servidor por webhook.", href: "/es/platforms/shopify" },
-  { name: "Magento", time: "15 min", desc: "Módulo nativo para Magento 2.4+ instalado en app/code. Funciona en Adobe Commerce y Magento Open Source." },
+  { name: "Magento", time: "15 min", desc: "Módulo para Magento 2.4+ instalado en app/code, Adobe Commerce incluido. Todo el funnel por vista de tienda y moneda.", href: "/es/platforms/magento" },
   { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita).", href: "/es/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "Módulo PrestaShop 1.7 & 8.x. Tracking de conversiones y funnel completo out-of-the-box." },
   { name: "OpenCart", time: "15 min", desc: "Extensión para tiendas OpenCart 3.x y 4.x. Eventos de conversión e ingresos desde el primer día." },

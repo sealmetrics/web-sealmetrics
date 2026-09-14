@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 const platforms = [
   { name: "Shopify", time: "5 min", desc: "Pixel app plus theme app embed, on any Shopify plan. Purchases confirmed server-side by webhook.", href: "/platforms/shopify" },
-  { name: "Magento", time: "15 min", desc: "Native Magento 2.4+ module installed in app/code. Works on Adobe Commerce and Magento Open Source." },
+  { name: "Magento", time: "15 min", desc: "Magento 2.4+ module installed in app/code, including Adobe Commerce. Full funnel per store view and currency.", href: "/platforms/magento" },
   { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
   { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 3.x and 4.x stores. Conversion and revenue events out of the box." },

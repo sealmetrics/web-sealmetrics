@@ -127,6 +127,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 
 ## Platform integrations (install + dataLayer patterns)
 - /platforms/shopify — Cookieless analytics for Shopify: Pixel app + theme app embed on any plan, five events (purchase from the orders/create webhook), install and reconciliation steps, and the Incapto measurement (96% of real orders recorded, GA4 missed 29% of visits); limits: totals-only reconciliation, custom carts, no webhook backfill
+- /platforms/magento — Cookieless analytics for Magento 2.4+, including Adobe Commerce: module downloaded from the dashboard and installed in app/code, five funnel events (view_item, add_to_cart via customer-data events, begin_checkout, purchase on the success page) with content groups from layout handles and configurable options, multi-store with per-store currency; install steps and limits (needs the success page, customised or headless storefronts need checking, totals-only reconciliation). No published Magento case yet
 - /platforms/woocommerce — Cookieless analytics for WooCommerce: WordPress plugin downloaded from the dashboard, five funnel events with content groups, brands and variation attributes, purchase sent from the order confirmation page with duplicate prevention; install steps and limits (needs the confirmation page, background renewals not tracked, totals-only reconciliation). No published WooCommerce case yet
 
 ## Use cases (task-level pages)
@@ -344,6 +345,7 @@ About / extras (ES):
 - /es/integrations — Integraciones
 - /es/platforms — Plataformas
 - /es/platforms/shopify — Analítica sin cookies para Shopify: app Pixel y app embed del tema, compras por webhook, instalación y conciliación paso a paso, y la medición de Incapto (96% de pedidos reales registrados; GA4 no vio el 29% de las visitas)
+- /es/platforms/magento — Analítica sin cookies para Magento 2.4+ y Adobe Commerce: módulo en app/code, cinco eventos de funnel con grupos de contenido y opciones de configurables, varias tiendas y monedas; instalación paso a paso y límites
 - /es/platforms/woocommerce — Analítica sin cookies para WooCommerce: plugin de WordPress, cinco eventos de funnel con grupos de contenido, marcas y variaciones, compra enviada desde la página de confirmación sin duplicados; instalación paso a paso y límites
 - /es/authors/rafa-jimenez — Autor: Rafa Jiménez
 

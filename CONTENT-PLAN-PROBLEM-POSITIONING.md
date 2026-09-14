@@ -343,3 +343,16 @@ Observado de paso: la documentación lista una integración con BigCommerce que 
 | 7 | `/blog/server-side-tracking-gdpr` (EN+ES) | **Hecha** — tono condicional de #186. Directrices 2/2023 del EDPB leídas en el PDF (párr. 10 con Planet49, 33 sobre JavaScript, 50-51 píxeles y URL, 54-55 IP, 56 aplicabilidad ≠ consentimiento); introducción de server-side tagging de Google; condiciones de la CNIL de 2022 para un proxy de GA; qué guarda Sealmetrics según `what-we-track`. No se afirma que Sealmetrics quede fuera del 5(3): la exención depende de cada autoridad. Nota para revisar aparte: la doc `security-privacy/what-we-track` dice de forma categórica que el 5(3) "no se aplica" y que el RGPD no aplica al dataset, más tajante que el tono de la web tras #186 y que la lectura del EDPB sobre JavaScript. Prompt 20 en §9b |
 
 Corrección de paso: el post DTC de #203 decía que GA4 registraba "un 37–52% menos" de tráfico de pago; el caso dice que Sealmetrics registró un 37–52% **más**. Corregido en la rama de #203.
+
+---
+
+## 10. Fase 5 · Integraciones
+
+| # | Pieza | Estado |
+|---|---|---|
+| 1 | `/platforms/magento` (EN+ES) | **Hecha** — plantilla v4, contrastada con `integrations/ecommerce/magento`: módulo en app/code con bin/magento, ajustes en Tiendas → Configuración, cinco eventos (add_to_cart vía customer-data), grupos de contenido por layout handle, opciones de configurables, varias vistas de tienda y moneda, troubleshooting. No se afirma lo que la doc no dice: deduplicación al recargar (solo documentada en WooCommerce), Hyvä/PWA Studio ni "Magento Open Source" (la tarjeta del hub lo decía; corregida). Sin caso Magento: la prueba lo dice. Prompt 21 en §9b |
+| 2 | `/integrations/bigquery` | Pendiente |
+| 3 | `/integrations/google-ads` | Pendiente |
+| 4 | `/integrations/meta-ads` | Pendiente |
+
+Observado: la documentación también tiene integración con PrestaShop, que el hub `/platforms` lista sin página propia (igual que OpenCart).

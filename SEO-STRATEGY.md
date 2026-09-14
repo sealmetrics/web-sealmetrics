@@ -329,6 +329,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 18 | 5 | last-click vs data-driven attribution / último clic frente a atribución basada en datos | `/blog/last-click-vs-modelled-attribution` (EN+ES) + `/blog/multi-touch-attribution-complete-data` | shipped 14 Sep |
 | 19 | 3 | GA4 vs Piwik PRO vs Sealmetrics / GA4 o Piwik PRO | `/blog/ga4-vs-piwik-pro-vs-sealmetrics` (EN+ES) + `/vs-ga4` + `/vs/piwik-pro` | shipped 14 Sep |
 | 20 | 2 | is server-side tracking GDPR compliant / server-side tracking y RGPD | `/blog/server-side-tracking-gdpr` (EN+ES) + `/glossary/server-side-tracking` | shipped 14 Sep |
+| 21 | 5 | cookieless analytics for Magento / analítica sin cookies para Magento | `/platforms/magento` (EN+ES) | shipped 14 Sep |
 
 ### Method (monthly, first week)
 

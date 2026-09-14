@@ -36,7 +36,7 @@
     "date": "2026-04-25"
   },
   "/platforms/": {
-    "hash": "b017f6f96b725fa2",
+    "hash": "dc9c8e9a2cced472",
     "date": "2026-09-14"
   },
   "/free-audit/": {
@@ -248,7 +248,7 @@
     "date": "2026-09-14"
   },
   "/es/platforms/": {
-    "hash": "791cd83213ee3432",
+    "hash": "1b600be2bb0e3107",
     "date": "2026-09-14"
   },
   "/es/security/": {
@@ -1225,6 +1225,14 @@
   },
   "/es/blog/server-side-tracking-gdpr/": {
     "hash": "4df559703f41c032",
+    "date": "2026-09-14"
+  },
+  "/es/platforms/magento/": {
+    "hash": "3584b385cceaa61c",
+    "date": "2026-09-14"
+  },
+  "/platforms/magento/": {
+    "hash": "b0cecf566d7f4e71",
     "date": "2026-09-14"
   }
 }

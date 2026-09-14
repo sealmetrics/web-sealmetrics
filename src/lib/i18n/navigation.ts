@@ -32,6 +32,7 @@ const translatedPaths = new Set([
   "/use-cases/revenue-attribution",
   "/platforms/shopify",
   "/platforms/woocommerce",
+  "/platforms/magento",
   "/gdpr-analytics/spain",
   "/cookieless-analytics",
   "/vs/ga360",
