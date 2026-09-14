@@ -347,6 +347,10 @@ function validatePayload(type, payload) {
     const languageOmitted =
       language === undefined || language === null || language === "";
     if (!languageOmitted && language !== "en" && language !== "es") return false;
+    // The separate, optional consent to occasional emails. Absent means no: the
+    // report itself never depends on it, and n8n must only subscribe on `true`.
+    const consent = payload.marketing_consent;
+    if (consent !== undefined && typeof consent !== "boolean") return false;
     return (
       optionalText(payload.sector, 120) &&
       optionalText(payload.category, 120) &&

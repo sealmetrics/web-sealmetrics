@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> September
-            13, 2026 ·{" "}
+            14, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -220,13 +220,15 @@ export default function PrivacyPage() {
             <p>
               Visitor analytics data is processed and stored exclusively in EU
               data centers, with no sub-processors outside the EU in that data
-              path. The sole transfer outside the European Economic Area is
-              service email to the account&rsquo;s own users (verifications,
+              path. In the analytics platform, the sole transfer outside the
+              European Economic Area is service email to the account&rsquo;s own users (verifications,
               alerts, reports) via Resend, Inc. (USA), covered by Standard
               Contractual Clauses and its EU-US Data Privacy Framework
               certification. It involves no visitor data. The full
               sub-processor list is Annex 3 of the{" "}
-              <a href="/dpa/" className="underline">DPA</a>.
+              <a href="/dpa/" className="underline">DPA</a>. The AI brand
+              monitoring report requested on sealmetrics.com has its own
+              recipients, listed in <a href="#brand-report" className="underline">section 9</a>.
             </p>
           </div>
 
@@ -273,9 +275,80 @@ export default function PrivacyPage() {
             </p>
           </div>
 
+          <div id="brand-report">
+            <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
+              9. AI brand monitoring report
+            </h2>
+            <p className="mb-3">
+              The form at{" "}
+              <a href="/ai-brand-monitoring/" className="underline">
+                /ai-brand-monitoring
+              </a>{" "}
+              asks fifteen AI models six questions about a company and emails
+              the answers to whoever requested them.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Data processed.</strong>{" "}
+              Your work email, the brand you ask about, and optionally its
+              sector and competitors. The form does not ask for your name. The
+              report is about organisations; it is not run on individuals.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Purposes and legal basis.</strong>{" "}
+              (a) Generating the report and emailing it to you, because you
+              asked for it (Article 6(1)(b) GDPR). (b) Keeping a record of the
+              request, to prevent abuse of a free service and to answer any
+              question about it (Article 6(1)(f)). (c) Sending you occasional
+              reports and product news, only if you tick the separate, optional
+              box on the form (Article 6(1)(a) GDPR and Article 21 of Spain&rsquo;s
+              LSSI). Not ticking it does not affect the report, and you can
+              withdraw that consent at any time through the unsubscribe link in
+              any email or by writing to privacy@sealmetrics.com.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Recipients.</strong>
+            </p>
+            <ul className="space-y-1 pl-5 list-none">
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Cloudflare, Inc. runs the anti-bot check (Turnstile) and the
+                relay that receives the form.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Enroutia, the model routing platform that generates the report,
+                receives the brand, sector and competitors, and a random
+                reference in place of your email. It never receives your email:
+                the link between that reference and your address stays in our
+                own automation system, and is deleted as soon as the report is
+                delivered, or after 72 hours at most.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                The AI models that answer the questions receive the brand,
+                sector and competitors only, never your email. Three of them
+                (GPT-5.6 from OpenAI, and Claude Sonnet 5 and Claude Opus 5 from
+                Anthropic) are served from the United States.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Resend, Inc. (USA) delivers the report and, if you consented,
+                the occasional emails, covered by Standard Contractual Clauses
+                and its EU-US Data Privacy Framework certification.
+              </li>
+            </ul>
+            <p className="mt-3">
+              <strong className="text-text-primary">Retention.</strong> The
+              request record is kept for up to 24 months, like any other form
+              submission. The link between the report reference and your email
+              is deleted on delivery, or after 72 hours at most. If you consented to occasional emails, your address
+              stays on that list until you unsubscribe or withdraw consent.
+            </p>
+          </div>
+
           <div id="google-user-data">
             <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-              9. Looker Studio connector and Google user data
+              10. Looker Studio connector and Google user data
             </h2>
             <p className="mb-3">
               The Sealmetrics connector for Looker Studio is a Google Apps
@@ -355,7 +428,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-              10. Contact
+              11. Contact
             </h2>
             <p>
               For privacy-related questions or to exercise your rights, contact
