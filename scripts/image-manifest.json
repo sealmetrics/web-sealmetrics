@@ -1653,22 +1653,22 @@
     },
     "public/og/vs/piwik-pro.avif": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "af43835c916857384ca73df57144f940c7cede613370aa9f560b5407234a067c",
+      "sourceHash": "9f1e9e9d8a459e94e7b4aa8f4d7e746e48606dee750780a9036b541c0221b46f",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/piwik-pro.webp": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "af43835c916857384ca73df57144f940c7cede613370aa9f560b5407234a067c",
+      "sourceHash": "9f1e9e9d8a459e94e7b4aa8f4d7e746e48606dee750780a9036b541c0221b46f",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/why-sealmetrics.avif": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "b2242201bf1bd00edfafd87f4bce8285271c91708c371cf02bebb0793375da3c",
+      "sourceHash": "7a53d8de842174ade7f335693e1d5d789491d289a10e2979e69175714c34a9b3",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/why-sealmetrics.webp": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "b2242201bf1bd00edfafd87f4bce8285271c91708c371cf02bebb0793375da3c",
+      "sourceHash": "7a53d8de842174ade7f335693e1d5d789491d289a10e2979e69175714c34a9b3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/videos/getting-started.avif": {

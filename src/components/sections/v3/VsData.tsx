@@ -417,29 +417,29 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         competitor: "Piwik PRO",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
         techReportLabel: "Read the full technical report (script weight, measured) →",
-        hook: "Piwik PRO offers EU-hosted analytics but is still cookie-based by default. The free Core plan is being retired on 31 March 2026, Business starts at €35/month and Enterprise is quote-only. The architecture is closer to GA4 than you'd expect — just hosted on European servers.",
+        hook: "Piwik PRO offers a configurable privacy spectrum: visitor cookies, a 30-minute session hash, or neither. Sealmetrics uses a fixed aggregate model without browser identifiers. The useful comparison is what each configuration can report.",
         eyebrow: "vs Piwik PRO",
-        h1: <>EU hosting is the <em>beginning</em>, not the finish line.</>,
-        lede: "Piwik PRO runs in Europe — that's good. But it still uses cookies, requires consent, and loses the same EU traffic GA4 loses. Sealmetrics solves the root problem: the architecture, not just the hosting.",
+        h1: <>Two privacy architectures. <em>Different trade-offs.</em></>,
+        lede: "Piwik PRO is a broad suite that lets teams configure identifiers, consent and anonymous collection. Sealmetrics takes a narrower aggregate path: no browser identifiers and last-click campaign and revenue reporting. Compare configuration, reporting depth and governance — not hosting alone.",
         tldr: {
           answer: (
             <>
-              Piwik PRO is the most credible EU-hosted commercial
-              analytics — German data residency, enterprise contracts,
-              GDPR-aware product. But the architecture is closer to GA4
-              than the marketing suggests: cookies on by default,
-              consent banner required, the consentless mode is a
-              configuration with caveats per jurisdiction. Sealmetrics
-              is consentless by design — no cookie, no identifier, no
-              configuration. EU hosting solves data residency; complete
-              capture requires removing the cookie itself. Sealmetrics
-              does both.
+              Piwik PRO combines analytics, consent management, Tag
+              Manager and activation features. It can use visitor
+              cookies, a 30-minute session hash, or no identifier at all.
+              Piwik PRO documents a clear trade-off: with both identifiers
+              disabled, each event becomes a new session and traffic-source
+              and channel-attribution reports are unavailable. Sealmetrics
+              uses an aggregate, identifier-free model and focuses on
+              last-click campaign and revenue reporting. The choice is
+              between a configurable suite and a narrower operating model,
+              not compliant versus non-compliant analytics.
             </>
           ),
           bullets: [
-            <>Piwik PRO: EU-hosted, but cookie + consent architecture loses the same 40–60% of traffic.</>,
-            <>Sealmetrics: cookieless and consentless by design, 100% capture, EU-only.</>,
-            <>If hosting was the only concern Piwik PRO would suffice; in 2026, the cookie is the bottleneck.</>,
+            <>Piwik PRO: configurable identifiers, consent tooling and broader product scope.</>,
+            <>Sealmetrics: aggregate collection without browser identifiers, hosted in Dublin.</>,
+            <>Validate the legal basis and reporting trade-offs for your actual implementation.</>,
           ],
         },
         caseStudy: {
@@ -452,30 +452,30 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Read the full Dreamplace case study",
         },
         gapStats: [
-          { n: "Free plan ends", label: "Core retired 31 Mar 2026", detail: "Existing Core users must move to Business (from €35/mo) or Enterprise." },
-          { n: "Quote-only", label: "Enterprise pricing", detail: "No published Enterprise rate — every deal is negotiated individually." },
-          { n: "Cookie-based", label: "Same consent dependency", detail: "40–60% EU traffic still lost to rejection under a banner." },
-          { n: "By configuration", label: "Consentless mode is a setting", detail: "Compliance depends on holding the configuration, and on the jurisdiction reading it." },
+          { n: "3 modes", label: "Identifier choices", detail: "Visitor cookies, a 30-minute session hash, or neither." },
+          { n: "7 models", label: "Attribution with identifiers", detail: "Piwik PRO lists seven attribution models in its richest identifier mode." },
+          { n: "1 event", label: "Privacy-maximized sessions", detail: "With cookies and the session hash off, each event is treated as a new session." },
+          { n: "Dublin", label: "Sealmetrics hosting", detail: "Sealmetrics processes analytics data in Ireland using a fixed aggregate model." },
         ],
         comparison: [
-          { category: "Pricing", block: "commercial", rows: [
-            { feature: "Entry plan", them: "Business from €35/mo · free Core retired 31 Mar 2026", us: "€499/mo from Growth" },
-            { feature: "Enterprise pricing", them: "Quote-only · negotiated per deal, no published rate", us: "Published pricing at every tier" },
-            { feature: "Implementation support", them: "Enterprise-only", us: "Founder-led on all plans" },
+          { category: "Operating model", block: "commercial", rows: [
+            { feature: "Product scope", them: "Analytics + consent management + Tag Manager + activation", us: "Aggregate analytics focused on campaign and revenue decisions" },
+            { feature: "Privacy posture", them: "Configurable per site and jurisdiction", us: "Fixed identifier-free collection model" },
+            { feature: "Implementation decision", them: "Choose identifiers, consent behavior and hosting", us: "Define observed events and reporting needs" },
           ]},
           { category: "Data capture", block: "technical", rows: [
-            { feature: "Cookies", them: "Yes · opt-in required", us: "None" },
-            { feature: "Consent banner needed", them: "Yes", us: "No · GDPR by architecture" },
-            { feature: "EU traffic captured", them: "60% typical with banner", us: "100% captured" },
+            { feature: "Visitor cookies", them: "Optional", us: "Not used" },
+            { feature: "Session hash", them: "Optional · 30-minute lifetime", us: "Not used" },
+            { feature: "Consent handling", them: "Built-in or third-party; behavior depends on configuration", us: "No browser identifiers; legal assessment still depends on purpose and implementation" },
           ]},
           { category: "Infrastructure", block: "technical", rows: [
-            { feature: "Data residency", them: "EU (Germany options)", us: "EU (Dublin)" },
-            { feature: "Schrems II", them: "Clean", us: "Clean" },
+            { feature: "Data residency", them: "Multiple public and private cloud locations, including EU options", us: "Dublin, Ireland" },
+            { feature: "Deployment flexibility", them: "Public cloud and private cloud options", us: "Managed EU-hosted service" },
           ]},
-          { category: "Modern stack", block: "reporting", rows: [
-            { feature: "MCP / AI integration", them: "Official MCP, beta since May 2026 · Analytics, CDP and Tag Manager", us: "Native · managed · all plans" },
-            { feature: "What the agent can read", them: "Post-consent subset, or consentless data with visitor-level reports off", us: "100% of events" },
-            { feature: "BigQuery export", them: "Enterprise add-on", us: "Included from Growth" },
+          { category: "Attribution and reporting", block: "reporting", rows: [
+            { feature: "With visitor cookies + session hash", them: "Seven listed attribution models and visitor continuity", us: "Not applicable — no visitor identifiers" },
+            { feature: "With session hash only", them: "Session recognition and last-click attribution", us: "Last-click on observed aggregate events" },
+            { feature: "With neither identifier", them: "Each event is a new session; no traffic-source or channel-attribution report", us: "Campaign and revenue reporting remains part of the aggregate model" },
           ]},
           { category: "Tracker performance (measured)", block: "technical", rows: [
             { feature: "Script weight on the wire (gzip)", them: "~26 KB · ppms.js", us: "1.1 KB · ~24× lighter" },
@@ -483,7 +483,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Where Piwik PRO is the better choice", block: "commercial", rows: [
             { feature: "Product scope", them: "Analytics + CDP + Tag Manager in one contract", us: "Analytics only — pair with Segment or Rudderstack for CDP" },
-            { feature: "Visitor-level analysis", them: "Available when you accept the consent banner", us: "Not offered — aggregate event measurement by design" },
+            { feature: "Visitor-level analysis", them: "Available when identifiers are enabled and the implementation has a legal basis", us: "Not offered — aggregate event measurement by design" },
             { feature: "Regulated-sector track record", them: "HIPAA options, public-sector deployments", us: "EU-hosted · DPA and TPSR · no sector certification" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -492,47 +492,46 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
             { feature: "Prebuilt reports", them: "Full classic reporting UI · mature", us: "Decision-ready defaults · channels, funnels, pages" },
-            { feature: "Reporting in consentless mode", them: "Consentless mode drops visitor-level reports", us: "Full reporting · always cookieless" },
+            { feature: "Reporting without identifiers", them: "Documented loss of session continuity, traffic sources and channel attribution", us: "Aggregate reporting without visitor-level profiles" },
             { feature: "Custom analysis", them: "Segments + custom reports", us: "Segments + property breakdowns · BigQuery for deep dives" },
           ]},
         ],
         faqs: [
-          { q: "Piwik PRO is also EU-hosted. Why is Sealmetrics different?", a: "EU hosting solves data residency. It doesn't solve consent. Piwik PRO is cookie-based by default and, run that way, loses the same 40–60% of EU visitors to rejection. It does offer a consentless mode, but that is a configuration you have to hold, that drops visitor-level reporting, and whose standing varies by jurisdiction — France's CNIL criteria read it differently from Germany's TDDDG §25. Sealmetrics writes nothing to the visitor's device and reads nothing from it, so there is no configuration to maintain and no carve-out to defend." },
-          { q: "Isn't Piwik PRO's consent-aware tracking enough?", a: "It depends on your risk appetite. Piwik PRO has a 'consentless tracking' mode, but it relies on interpreting RGPD/ePrivacy carve-outs that vary per jurisdiction (CNIL treats it differently from BfDI). Sealmetrics writes nothing to the visitor's device and reads nothing from it, so ePrivacy Article 5(3) is not engaged and there is no carve-out left to interpret." },
-          { q: "What about their Customer Data Platform features?", a: "Piwik PRO bundles CDP features in higher tiers. If you need a CDP, pair Sealmetrics with Segment/Rudderstack (more mature, better pricing). For pure analytics, Sealmetrics is complete data at a fraction of Piwik PRO's enterprise cost." },
-          { q: "Can I migrate from Piwik PRO?", a: "Yes. Run both 30 days. If your Piwik PRO runs a consent banner, compare traffic volumes first — Sealmetrics typically shows 30–70% more, and the gap is your rejection rate. If it runs consentless, volumes will be closer, so compare visitor-level and attribution reporting instead, because that is what the consentless configuration gives up. Most teams decide within the first 14 days." },
+          { q: "Piwik PRO is also privacy-focused. Why is Sealmetrics different?", a: "Piwik PRO gives administrators a spectrum of modes: visitor cookies, a 30-minute session hash, or no identifiers. Sealmetrics uses one aggregate, identifier-free model. Piwik PRO offers more configuration and broader product scope; Sealmetrics removes that configuration choice and focuses on campaign and revenue reporting." },
+          { q: "Can Piwik PRO work without consent?", a: "Piwik PRO documents anonymous configurations, including one with visitor cookies and session hashes disabled. It also says this reduces precision, treats every event as a new session and removes traffic-source and channel-attribution reporting. Whether a consent-free implementation is lawful depends on its purpose, fields, settings and jurisdiction; review it with your privacy team." },
+          { q: "What about Piwik PRO's activation features?", a: "That broader scope is a real Piwik PRO advantage. Choose it if you want analytics, consent management, Tag Manager and activation capabilities under one vendor. Sealmetrics is narrower: aggregate measurement and decision workflows for marketing teams." },
+          { q: "Can I evaluate both products safely?", a: "Yes. Run both side by side using the Piwik PRO privacy configuration you would actually deploy. Compare observed events, session and attribution availability, campaign and revenue reports, governance work and support. Do not infer the result from vendor-wide capture percentages." },
         ],
-        ctaTitle: <>EU hosting <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>plus complete capture.</em></>,
-        ctaLede: "30 minutes. We run your site through Sealmetrics and Piwik PRO simultaneously. You see how much of your EU traffic Piwik PRO's banner still loses.",
+        ctaTitle: <>Compare the configuration <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>you would actually run.</em></>,
+        ctaLede: "Run Sealmetrics and Piwik PRO side by side. Compare observed events, attribution, reporting depth and governance under the same traffic.",
       },
       es: {
         competitor: "Piwik PRO",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report#matomo-and-piwik-pro",
         techReportLabel: "Lee el informe técnico completo (peso del script, medido) →",
-        hook: "Piwik PRO ofrece analítica alojada en UE pero sigue siendo basada en cookies por defecto. El plan Core gratuito se retira el 31 de marzo de 2026, Business arranca en 35€/mes y Enterprise va solo por presupuesto. La arquitectura está más cerca de GA4 de lo que parece — solo alojada en servidores europeos.",
+        hook: "Piwik PRO ofrece varias configuraciones de privacidad: cookies de visitante, un hash de sesión de 30 minutos o ninguno. Sealmetrics utiliza un modelo agregado fijo sin identificadores del navegador. La comparación útil es qué puede reportar cada configuración.",
         eyebrow: "vs Piwik PRO",
-        h1: <>El hosting UE es el <em>principio</em>, no la meta.</>,
-        lede: "Piwik PRO corre en Europa — eso está bien. Pero sigue usando cookies, requiere consentimiento y pierde el mismo tráfico UE que GA4. Sealmetrics resuelve el problema de raíz: la arquitectura, no solo el hosting.",
+        h1: <>Dos arquitecturas de privacidad. <em>Distintos compromisos.</em></>,
+        lede: "Piwik PRO es una suite amplia que permite configurar identificadores, consentimiento y recogida anónima. Sealmetrics sigue un camino agregado más estrecho: sin identificadores del navegador y con reporting last-click de campañas e ingresos. Compara configuración, profundidad y gobierno — no solo el hosting.",
         tldr: {
           answer: (
             <>
-              Piwik PRO es la analítica comercial alojada en UE más
-              creíble — residencia de datos en Alemania, contratos
-              enterprise, producto consciente del RGPD. Pero la
-              arquitectura está más cerca de GA4 de lo que sugiere el
-              marketing: cookies activadas por defecto, banner de
-              consentimiento requerido, el modo sin consentimiento es
-              una configuración con matices por jurisdicción.
-              Sealmetrics es sin consentimiento por diseño — sin
-              cookie, sin identificador, sin configuración. El hosting
-              UE resuelve la residencia; la captura completa requiere
-              quitar la cookie. Sealmetrics hace ambos.
+              Piwik PRO combina analítica, gestión de consentimiento,
+              Tag Manager y activación. Puede usar cookies de visitante,
+              un hash de sesión de 30 minutos o ningún identificador.
+              Piwik PRO documenta el compromiso: con ambos identificadores
+              desactivados, cada evento se convierte en una sesión nueva
+              y desaparecen los informes de fuente y atribución de canal.
+              Sealmetrics usa un modelo agregado sin identificadores y se
+              centra en reporting last-click de campañas e ingresos. La
+              elección es entre una suite configurable y un modelo más
+              estrecho, no entre analítica conforme y no conforme.
             </>
           ),
           bullets: [
-            <>Piwik PRO: alojado en UE, pero la arquitectura cookie + consentimiento sigue perdiendo el 40–60%.</>,
-            <>Sealmetrics: sin cookies y sin consentimiento por diseño, 100% de captura, sólo UE.</>,
-            <>Si solo importara el hosting Piwik PRO bastaría; en 2026, la cookie es el cuello de botella.</>,
+            <>Piwik PRO: identificadores configurables, gestión de consentimiento y mayor alcance.</>,
+            <>Sealmetrics: recogida agregada sin identificadores del navegador, alojada en Dublín.</>,
+            <>Valida la base legal y los límites del reporting de tu implementación real.</>,
           ],
         },
         caseStudy: {
@@ -545,30 +544,30 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Leer el case study completo de Dreamplace",
         },
         gapStats: [
-          { n: "Se acaba el free", label: "Core retirado 31 mar 2026", detail: "Los usuarios de Core deben pasar a Business (desde 35€/mes) o Enterprise." },
-          { n: "Por presupuesto", label: "Precio Enterprise", detail: "Sin tarifa Enterprise publicada — cada acuerdo se negocia individualmente." },
-          { n: "Con cookies", label: "Misma dependencia", detail: "40–60% tráfico UE sigue perdido por rechazo con banner." },
-          { n: "Por configuración", label: "El modo sin consentimiento es un ajuste", detail: "El cumplimiento depende de sostener la configuración, y de cómo la lea cada jurisdicción." },
+          { n: "3 modos", label: "Opciones de identificador", detail: "Cookies, hash de sesión de 30 minutos o ninguno." },
+          { n: "7 modelos", label: "Atribución con identificadores", detail: "Piwik PRO enumera siete modelos en su configuración con más identificadores." },
+          { n: "1 evento", label: "Sesiones con máxima privacidad", detail: "Sin cookies ni hash, cada evento se trata como una sesión nueva." },
+          { n: "Dublín", label: "Hosting Sealmetrics", detail: "Sealmetrics procesa el dato en Irlanda con un modelo agregado fijo." },
         ],
         comparison: [
-          { category: "Precio", block: "commercial", rows: [
-            { feature: "Plan de entrada", them: "Business desde 35€/mes · Core gratuito retirado el 31 mar 2026", us: "€499/mes desde Growth" },
-            { feature: "Precio Enterprise", them: "Solo por presupuesto · negociado por acuerdo, sin tarifa publicada", us: "Precio publicado en todos los tiers" },
-            { feature: "Soporte implementación", them: "Solo Enterprise", us: "Liderado por founder en todos los planes" },
+          { category: "Modelo operativo", block: "commercial", rows: [
+            { feature: "Alcance", them: "Analítica + consentimiento + Tag Manager + activación", us: "Analítica agregada para decisiones de campañas e ingresos" },
+            { feature: "Privacidad", them: "Configurable por sitio y jurisdicción", us: "Recogida fija sin identificadores" },
+            { feature: "Decisión de implementación", them: "Elegir identificadores, consentimiento y hosting", us: "Definir eventos observados y reporting" },
           ]},
           { category: "Captura de datos", block: "technical", rows: [
-            { feature: "Cookies", them: "Sí · opt-in requerido", us: "Ninguna" },
-            { feature: "Banner consentimiento", them: "Sí por defecto · sin banner solo en modo sin consentimiento", us: "No · no escribe ni lee nada del dispositivo" },
-            { feature: "Tráfico UE capturado", them: "60% típico con banner", us: "100% capturado" },
+            { feature: "Cookies de visitante", them: "Opcionales", us: "No se usan" },
+            { feature: "Hash de sesión", them: "Opcional · duración de 30 minutos", us: "No se usa" },
+            { feature: "Consentimiento", them: "Integrado o externo; depende de la configuración", us: "Sin identificadores del navegador; la valoración legal depende de finalidad e implementación" },
           ]},
           { category: "Infraestructura", block: "technical", rows: [
-            { feature: "Residencia", them: "UE (opciones Alemania)", us: "UE (Dublín)" },
-            { feature: "Schrems II", them: "Limpio", us: "Limpio" },
+            { feature: "Residencia", them: "Varias ubicaciones públicas y privadas, incluidas opciones UE", us: "Dublín, Irlanda" },
+            { feature: "Flexibilidad de despliegue", them: "Cloud pública y privada", us: "Servicio gestionado alojado en la UE" },
           ]},
-          { category: "Stack moderno", block: "reporting", rows: [
-            { feature: "MCP / integración IA", them: "MCP oficial, beta desde mayo 2026 · Analytics, CDP y Tag Manager", us: "Nativo · gestionado · todos los planes" },
-            { feature: "Qué puede leer el agente", them: "Subconjunto post-consentimiento, o dato sin consentimiento con los informes de visitante apagados", us: "100% de los eventos" },
-            { feature: "Export BigQuery", them: "Add-on enterprise", us: "Incluido desde Growth" },
+          { category: "Atribución y reporting", block: "reporting", rows: [
+            { feature: "Con cookies + hash", them: "Siete modelos enumerados y continuidad de visitante", us: "No aplica — no hay identificadores de visitante" },
+            { feature: "Solo con hash", them: "Reconocimiento de sesión y atribución last-click", us: "Last-click sobre eventos agregados observados" },
+            { feature: "Sin identificadores", them: "Cada evento es una sesión; sin informes de fuente ni atribución de canal", us: "El reporting agregado de campañas e ingresos forma parte del modelo" },
           ]},
           { category: "Rendimiento del tracker (medido)", block: "technical", rows: [
             { feature: "Peso del script en red (gzip)", them: "~26 KB · ppms.js", us: "1,1 KB · ~24× más ligero" },
@@ -576,7 +575,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Dónde Piwik PRO es la mejor opción", block: "commercial", rows: [
             { feature: "Alcance de producto", them: "Analytics + CDP + Tag Manager en un contrato", us: "Solo analítica — combina con Segment o Rudderstack para CDP" },
-            { feature: "Análisis a nivel de visitante", them: "Disponible si aceptas el banner de consentimiento", us: "No se ofrece — medición agregada de eventos por diseño" },
+            { feature: "Análisis a nivel de visitante", them: "Disponible con identificadores y una base legal para la implementación", us: "No se ofrece — medición agregada por diseño" },
             { feature: "Trayectoria en sectores regulados", them: "Opciones HIPAA, despliegues en sector público", us: "Alojado en UE · DPA y TPSR · sin certificación sectorial" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
@@ -585,18 +584,18 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
             { feature: "Informes listos", them: "UI de reporting clásica completa · madura", us: "Listos por defecto · canales, funnels, páginas" },
-            { feature: "Reporting en modo consentless", them: "El modo consentless pierde informes a nivel visitante", us: "Reporting completo · siempre sin cookies" },
+            { feature: "Reporting sin identificadores", them: "Pérdida documentada de continuidad, fuentes y atribución de canal", us: "Reporting agregado sin perfiles de visitante" },
             { feature: "Análisis custom", them: "Segmentos + informes custom", us: "Segmentos + breakdowns por propiedad · BigQuery para deep dives" },
           ]},
         ],
         faqs: [
-          { q: "Piwik PRO también está alojado en UE. ¿Por qué es distinto Sealmetrics?", a: "El hosting UE resuelve la residencia. No resuelve el consentimiento. Piwik PRO es basado en cookies por defecto y, funcionando así, pierde el mismo 40–60% de visitantes UE por rechazo. Sí ofrece un modo sin consentimiento, pero es una configuración que tienes que sostener, que renuncia al reporting a nivel de visitante, y cuyo encaje varía por jurisdicción — los criterios de la CNIL francesa lo leen distinto que el §25 de la TDDDG alemana. Sealmetrics no escribe nada en el dispositivo del visitante ni lee nada de él, así que no hay configuración que mantener ni excepción que defender." },
-          { q: "¿No basta con su tracking consent-aware?", a: "Depende de tu apetito de riesgo. Piwik PRO tiene un modo 'consentless tracking', pero depende de interpretar excepciones RGPD/ePrivacy que varían por jurisdicción (CNIL lo trata distinto a BfDI). Sealmetrics no escribe nada en el dispositivo del visitante ni lee nada de él, así que el artículo 5(3) de ePrivacy no llega a activarse y no queda excepción que interpretar." },
-          { q: "¿Y sus features de Customer Data Platform?", a: "Piwik PRO empaqueta features CDP en tiers altos. Si necesitas un CDP, combina Sealmetrics con Segment/Rudderstack (más maduros, mejor precio). Para analítica pura, Sealmetrics es dato completo a una fracción del coste enterprise de Piwik PRO." },
-          { q: "¿Puedo migrar desde Piwik PRO?", a: "Sí. Corre ambos 30 días. Si tu Piwik PRO lleva banner de consentimiento, compara primero los volúmenes de tráfico — Sealmetrics típicamente muestra 30–70% más, y la diferencia es tu tasa de rechazo. Si va en modo sin consentimiento, los volúmenes estarán más cerca, así que compara el reporting a nivel de visitante y la atribución, que es a lo que renuncia esa configuración. La mayoría de equipos decide en los primeros 14 días." },
+          { q: "Piwik PRO también se centra en privacidad. ¿Qué cambia?", a: "Piwik PRO ofrece un espectro: cookies, hash de sesión de 30 minutos o ningún identificador. Sealmetrics usa un solo modelo agregado sin identificadores. Piwik PRO aporta más configuración y alcance; Sealmetrics elimina esa decisión y se centra en reporting de campañas e ingresos." },
+          { q: "¿Puede Piwik PRO funcionar sin consentimiento?", a: "Piwik PRO documenta configuraciones anónimas, incluida una sin cookies ni hash. También indica que reduce la precisión, trata cada evento como sesión nueva y elimina los informes de fuente y atribución de canal. Que la implementación pueda operar sin consentimiento depende de su finalidad, campos, ajustes y jurisdicción; revísalo con tu equipo de privacidad." },
+          { q: "¿Y las funciones de activación de Piwik PRO?", a: "Ese alcance es una ventaja real de Piwik PRO. Elígelo si quieres analítica, consentimiento, Tag Manager y activación con un proveedor. Sealmetrics es más estrecho: medición agregada y flujos de decisión para marketing." },
+          { q: "¿Puedo evaluar ambos productos con seguridad?", a: "Sí. Ejecútalos en paralelo con la configuración de privacidad de Piwik PRO que usarías de verdad. Compara eventos observados, sesiones y atribución disponibles, reporting, trabajo de gobierno y soporte. No deduzcas el resultado de porcentajes globales de captura." },
         ],
-        ctaTitle: <>Hosting UE <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>más captura completa.</em></>,
-        ctaLede: "30 min. Pasamos tu web por Sealmetrics y Piwik PRO simultáneamente. Ves cuánto tráfico UE sigue perdiendo el banner de Piwik PRO.",
+        ctaTitle: <>Compara la configuración <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>que usarías de verdad.</em></>,
+        ctaLede: "Ejecuta Sealmetrics y Piwik PRO en paralelo. Compara eventos, atribución, reporting y gobierno sobre el mismo tráfico.",
       },
     },
     matomo: {

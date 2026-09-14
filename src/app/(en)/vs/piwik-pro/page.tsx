@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -12,11 +13,11 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Sealmetrics vs Piwik PRO — EU hosting plus complete capture",
-  description: "Piwik PRO is EU-hosted but still cookie-based. Sealmetrics solves the root architecture, not just the hosting.",
+  title: "Sealmetrics vs Piwik PRO — privacy modes compared",
+  description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
   openGraph: {
-    title: "Sealmetrics vs Piwik PRO — EU hosting plus complete capture",
-    description: "Piwik PRO is EU-hosted but still cookie-based. Sealmetrics solves the root architecture, not just the hosting.",
+    title: "Sealmetrics vs Piwik PRO — privacy modes compared",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
     type: "website",
     images: [ogImage("/vs/piwik-pro/")],
     url: "https://sealmetrics.com/vs/piwik-pro/",
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sealmetrics vs Piwik PRO — EU hosting plus complete capture",
-    description: "Piwik PRO is EU-hosted but still cookie-based. Sealmetrics solves the root architecture, not just the hosting.",
+    title: "Sealmetrics vs Piwik PRO — privacy modes compared",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
     images: [ogImage("/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro/", languages: getAlternates("/vs/piwik-pro") },
@@ -40,23 +41,23 @@ export default function Page() {
       <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/vs/piwik-pro" }])} />
       <JsonLd data={comparisonPageSchema({
         name: "Sealmetrics vs Piwik PRO",
-        description: "Side-by-side comparison: Sealmetrics versus Piwik PRO on architecture (cookie-based vs cookieless), EU hosting, consent dependency and AI readiness.",
+        description: "Side-by-side comparison of Sealmetrics and Piwik PRO across identifiers, consent modes, attribution, EU hosting and reporting trade-offs.",
         url: "/vs/piwik-pro",
         competitor: competitor("piwik-pro"),
         datePublished: "2026-04-15",
-        dateModified: "2026-08-27",
+        dateModified: "2026-09-14",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         criteria: [
-          "Cookie vs cookieless collection architecture",
-          "Consent banner requirement",
-          "EU traffic captured (with banner vs without)",
-          "Data residency and Schrems II posture",
-          "Pricing for enterprise eCommerce",
-          "What an AI agent can read (full dataset vs post-consent subset)",
-          "BigQuery / warehouse export",
+          "Identifier and cookie configuration",
+          "Consent and anonymous collection modes",
+          "Reporting trade-offs without visitor identifiers",
+          "Hosting locations and deployment models",
+          "Product scope and operating model",
+          "Attribution under each identifier mode",
+          "Measured tracker performance",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-08-27" />
+      <VsComparisonV3 data={getVsData("piwik-pro", "en")} dateModified="2026-09-14" />
       <RelatedPagesV3
         locale="en"
         eyebrow="Other comparisons"
@@ -73,10 +74,25 @@ export default function Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              Sealmetrics vs Piwik PRO: Piwik PRO is an EU-based enterprise analytics platform with strong privacy governance, but it is still cookie-based by default — so it depends on a consent banner and loses the traffic that rejects it. Sealmetrics is cookieless by design: it captures 100% of inbound traffic without a consent banner and attributes each conversion last-click on observed events, EU-hosted in Dublin, from &euro;499/month billed annually.
+              Sealmetrics is cookieless, aggregate web analytics for EU teams that need
+              campaign and revenue reporting without browser identifiers. Piwik PRO is a
+              broader analytics suite with consent management, flexible hosting and up to
+              seven attribution models when identifiers are enabled. Its own{" "}
+              <Link href="https://help.piwik.pro/support/privacy/collect-data-in-a-privacy-friendly-way/">
+                privacy documentation
+              </Link>{" "}
+              says teams can disable visitor cookies and the 30-minute session hash; in
+              that configuration, however, precision falls, every event becomes a new
+              session, and traffic-source and channel-attribution reports are unavailable.
+              That is a reporting trade-off, not a universal quality verdict.
             </p>
             <p>
-              Both are GDPR-focused and EU-hosted, so the real decision is measurement completeness. In consent mode, Piwik PRO measures only the consented share — typically 40&ndash;60% of EU traffic — while Sealmetrics measures the full 100% because it stores zero personal data and needs no consent. For teams that already chose Piwik PRO for compliance, Sealmetrics closes the remaining data-loss gap without adding cookie-banner dependency.
+              Choose Piwik PRO when you need visitor-level analysis, its activation suite or
+              deployment flexibility. Evaluate Sealmetrics when the priority is EU-hosted
+              aggregate measurement in Dublin with last-click campaign and revenue
+              reporting, without maintaining an identifier mode. Your implementation,
+              purpose and jurisdiction still determine the legal basis; neither vendor
+              choice alone guarantees GDPR compliance.
             </p>
           </QuickAnswer>
         </div>

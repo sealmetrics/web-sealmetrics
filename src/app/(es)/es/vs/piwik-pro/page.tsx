@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -12,11 +13,11 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Sealmetrics vs Piwik PRO — Hosting UE más captura completa",
-  description: "Piwik PRO está alojado en UE pero sigue con cookies. Sealmetrics resuelve la arquitectura de raíz, no solo el hosting.",
+  title: "Sealmetrics vs Piwik PRO — modos de privacidad",
+  description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
   openGraph: {
-    title: "Sealmetrics vs Piwik PRO — Hosting UE más captura completa",
-    description: "Piwik PRO está alojado en UE pero sigue con cookies. Sealmetrics resuelve la arquitectura de raíz, no solo el hosting.",
+    title: "Sealmetrics vs Piwik PRO — modos de privacidad",
+    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
     type: "website",
     images: [ogImage("/es/vs/piwik-pro/")],
     url: "https://sealmetrics.com/es/vs/piwik-pro/",
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sealmetrics vs Piwik PRO — Hosting UE más captura completa",
-    description: "Piwik PRO está alojado en UE pero sigue con cookies. Sealmetrics resuelve la arquitectura de raíz, no solo el hosting.",
+    title: "Sealmetrics vs Piwik PRO — modos de privacidad",
+    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
     images: [ogImage("/es/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/piwik-pro/", languages: getAlternatesEs("/vs/piwik-pro") },
@@ -40,23 +41,23 @@ export default function Page() {
       <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/es/vs/piwik-pro" }])} />
       <JsonLd data={comparisonPageSchema({
         name: "Sealmetrics vs Piwik PRO",
-        description: "Comparativa lado a lado: Sealmetrics vs Piwik PRO en arquitectura, hosting UE y dependencia de consentimiento.",
+        description: "Comparativa de Sealmetrics y Piwik PRO en identificadores, consentimiento, atribución, hosting UE y límites del reporting anónimo.",
         url: "/es/vs/piwik-pro",
         competitor: competitor("piwik-pro"),
         datePublished: "2026-04-15",
-        dateModified: "2026-08-27",
+        dateModified: "2026-09-14",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
         criteria: [
-          "Cookies vs arquitectura sin cookies",
-          "Banner de consentimiento requerido",
-          "Tráfico UE capturado (con banner vs sin banner)",
-          "Residencia y postura Schrems II",
-          "Pricing para eCommerce enterprise",
-          "Qué puede leer un agente IA (dataset completo vs subconjunto post-consentimiento)",
-          "Export BigQuery / warehouse",
+          "Configuración de identificadores y cookies",
+          "Modos de consentimiento y recogida anónima",
+          "Límites del reporting sin identificadores de visitante",
+          "Ubicaciones de hosting y modelos de despliegue",
+          "Alcance de producto y modelo operativo",
+          "Atribución según el modo de identificadores",
+          "Rendimiento medido del tracker",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("piwik-pro", "es")} dateModified="2026-08-27" />
+      <VsComparisonV3 data={getVsData("piwik-pro", "es")} dateModified="2026-09-14" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"
@@ -74,10 +75,25 @@ export default function Page() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              Sealmetrics vs Piwik PRO: Piwik PRO es una plataforma de analítica enterprise con sede en la UE y una governance de privacidad sólida, pero sigue siendo basada en cookies por defecto — así que depende de un banner de consentimiento y pierde el tráfico que lo rechaza. Sealmetrics es cookieless por diseño: mide el 100% del tráfico entrante sin banner y atribuye cada conversión last-click sobre eventos observados, alojada en la UE (Dublín), desde 499€/mes con facturación anual.
+              Sealmetrics es analítica web agregada y sin cookies para equipos europeos que
+              necesitan reporting de campañas e ingresos sin identificadores del navegador.
+              Piwik PRO es una suite más amplia, con gestión de consentimiento, hosting
+              flexible y hasta siete modelos de atribución cuando se activan identificadores.
+              Su propia{" "}
+              <Link href="https://help.piwik.pro/support/privacy/collect-data-in-a-privacy-friendly-way/">
+                documentación de privacidad
+              </Link>{" "}
+              permite desactivar las cookies de visitante y el hash de sesión de 30 minutos;
+              en esa configuración baja la precisión, cada evento se convierte en una sesión
+              nueva y desaparecen los informes de fuente de tráfico y atribución de canal.
             </p>
             <p>
-              Ambas son GDPR-first y alojadas en la UE, así que la decisión real es la completitud de la medición. En modo consentimiento, Piwik PRO mide solo la parte consentida — típicamente el 40–60% del tráfico UE — mientras Sealmetrics mide el 100% completo porque no almacena datos personales y no necesita consentimiento. Para equipos que ya eligieron Piwik PRO por compliance, Sealmetrics cierra el gap de pérdida de dato restante sin añadir dependencia de banner de cookies.
+              Elige Piwik PRO si necesitas análisis por visitante, su suite de activación o
+              flexibilidad de despliegue. Evalúa Sealmetrics si priorizas medición agregada
+              alojada en Dublín y atribución last-click de campañas e ingresos sin mantener
+              un modo de identificadores. La finalidad, la implementación y la jurisdicción
+              determinan la base legal; elegir un proveedor no garantiza por sí solo el
+              cumplimiento del RGPD.
             </p>
           </QuickAnswer>
         </div>

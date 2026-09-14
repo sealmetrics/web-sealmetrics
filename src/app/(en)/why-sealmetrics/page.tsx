@@ -17,13 +17,13 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Why Sealmetrics — measure 100% of traffic and sales",
+  title: "Why Sealmetrics — aggregate analytics without IDs",
   description:
-    "Consent banners hide 40–60% of EU visits. Sealmetrics measures 100% of traffic and sales, attributes last-click on complete data, and sets up in 5 minutes.",
+    "Aggregate campaign and revenue reporting without cookies or personal identifiers, with EU-hosted processing and supervised analytics workflows.",
   openGraph: {
-    title: "Why Sealmetrics — measure 100% of traffic and sales",
+    title: "Why Sealmetrics — aggregate analytics without IDs",
     description:
-      "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
+      "Measure observed campaign and revenue events without browser identifiers, with EU-hosted processing and clear reporting boundaries.",
     type: "website",
     images: [ogImage("/why-sealmetrics/")],
     url: "https://sealmetrics.com/why-sealmetrics/",
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Why Sealmetrics — measure 100% of traffic and sales",
-    description: "The consent banner hides your visitors, tracking prevention erases your conversions, and the ROAS you defend is built on the fraction that survived. Here's the fix.",
+    title: "Why Sealmetrics — aggregate analytics without IDs",
+    description: "Measure observed campaign and revenue events without browser identifiers, with EU-hosted processing and clear reporting boundaries.",
     images: [ogImage("/why-sealmetrics/")],
   },
   alternates: {
@@ -73,14 +73,14 @@ function Hero() {
           className="text-ink-soft mt-7 mx-auto max-w-[52ch] leading-[1.55]"
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
-          Sealmetrics measures 100% of your traffic and sales — no cookies, no consent
-          wall — and puts your ROAS back on solid ground.
+          Sealmetrics measures observed traffic and sales without cookies or browser
+          identifiers, then applies last-click attribution to those aggregate events.
         </p>
 
         <DualCTA locale="en" className="justify-center mt-8" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted · Dublin"].map((b) => (
+          {["Privacy-led architecture", "No browser identifiers", "EU processing", "EU-hosted · Dublin"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -112,7 +112,7 @@ function WhereDataDies() {
     },
     {
       label: "After the consent wall",
-      note: "40–60% never click accept",
+      note: "illustrative 45% non-consent rate",
       width: 55,
       value: "≈55%",
       valueClass: "text-red-alert",
@@ -248,10 +248,11 @@ function ChannelDistortion() {
         <div className="max-w-[54ch] mb-12">
           <span className="eyebrow mb-5">The shape of the loss</span>
           <h2 className="h-section mt-5">
-            The missing 40–60% <em>isn&apos;t lost evenly.</em>
+            Consent loss <em>isn&apos;t distributed evenly.</em>
           </h2>
           <p className="text-[17px] leading-[1.6] text-ink-soft mt-6">
-            If you lost half your conversions at random, you&apos;d see a smaller picture
+            This illustrative funnel uses a 45% non-consent rate. Your actual rate must be
+            measured on your own site. If you lost conversions at random, you&apos;d see a smaller picture
             with the same proportions — and decide the same way. But cookie rejection rates
             vary by channel: paid social on mobile rejects far more than a brand search on
             desktop. GA4 doesn&apos;t give you a smaller picture.{" "}
@@ -301,10 +302,10 @@ function ChannelDistortion() {
           <article className="bg-white border border-brand/30 rounded-2xl p-7">
             <div className="flex items-center gap-3 mb-6">
               <span className="font-mono text-[11px] uppercase tracking-[0.1em] text-ink-soft font-semibold">
-                Reality — 100% measured
+                Observed data — no consent gate
               </span>
               <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.06em] rounded-full px-2.5 py-1 bg-brand-soft/40 text-brand">
-                Complete
+                Aggregate
               </span>
             </div>
             <div className="grid gap-3.5">
@@ -406,16 +407,16 @@ function CfoObjection() {
             </p>
             <p className="text-[16.5px] leading-[1.6] text-ink-2">
               Today, the distorted picture pushes you to cut the channels whose buyers
-              reject cookies and fund the ones that only look strong. With 100% measured —
-              and{" "}
+              reject cookies and fund the ones that only look strong. With
+              consent-independent aggregate events and{" "}
               <Link href="/glossary/last-click-attribution" className="text-brand no-underline border-b border-brand/30 hover:border-brand">
                 last-click attribution
               </Link>{" "}
-              on the complete dataset — that silent self-sabotage disappears.
+              on the observed dataset — that silent self-sabotage is easier to detect.
             </p>
             <p className="text-[16.5px] leading-[1.6] text-ink-2">
               And at the next budget cut: if you can only prove half your return, you get
-              cut. With the full return attributed,{" "}
+              cut. With more observed return attributed,{" "}
               <strong className="font-semibold text-ink">marketing defends it — or grows it.</strong>
             </p>
             <p
@@ -460,12 +461,12 @@ function FiveOutcomes() {
         </div>
 
         <div className="grid md:grid-cols-6 gap-4">
-          {/* 01 · Measure 100% */}
+          {/* 01 · Measure without a consent gate */}
           <article className="md:col-span-3 bg-white border border-warm-100 rounded-2xl p-7 flex flex-col gap-5">
             <div>
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand">01</span>
               <h3 className="text-[20px] font-semibold text-ink leading-[1.25] mt-2">
-                Measure 100% of traffic and sales
+                Measure without a consent gate
               </h3>
             </div>
             <div className="grid gap-2.5">
@@ -473,20 +474,22 @@ function FiveOutcomes() {
               <MiniBar label="Sealmetrics" pct={100} color="var(--color-brand)" textColor="text-brand" />
             </div>
             <p className="text-[14px] leading-[1.55] text-ink-soft mt-auto">
-              No consent gate, so nothing to reject.{" "}
+              No browser identifier or consent gate in the analytics layer. Coverage still
+              depends on correct implementation, network delivery and blockers.{" "}
               <Link href="/complete-data" className="text-brand no-underline border-b border-brand/30 hover:border-brand">
                 Complete data
               </Link>
-              , observed — not modelled.
+              , observed — not modelled. The bars illustrate consent gating, not a guaranteed
+              capture rate.
             </p>
           </article>
 
-          {/* 02 · Attribute 100% */}
+          {/* 02 · Attribute observed sales */}
           <article className="md:col-span-3 bg-white border border-warm-100 rounded-2xl p-7 flex flex-col gap-5">
             <div>
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand">02</span>
               <h3 className="text-[20px] font-semibold text-ink leading-[1.25] mt-2">
-                Attribute 100% of your sales
+                Attribute observed sales
               </h3>
             </div>
             <div className="grid gap-2.5 font-mono text-[12.5px]">
@@ -514,7 +517,7 @@ function FiveOutcomes() {
               <Link href="/glossary/last-click-attribution" className="text-brand no-underline border-b border-brand/30 hover:border-brand">
                 Last-click
               </Link>{" "}
-              on all the data — &ldquo;direct&rdquo; stops being a landfill.
+              on observed events — &ldquo;direct&rdquo; stops being a landfill.
             </p>
           </article>
 
@@ -682,8 +685,8 @@ function CmoOutcomes() {
 function Mechanism() {
   const steps = [
     { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
-    { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
-    { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
+    { n: "02", t: "Aggregate events", d: "The product is designed around hits and commercial properties, not personal profiles." },
+    { n: "03", t: "No browser identifier", d: "Coverage still depends on implementation and delivery; the privacy model does not depend on a visitor profile." },
   ];
 
   return (
@@ -692,7 +695,7 @@ function Mechanism() {
         <div className="max-w-[52ch] mb-12">
           <span className="eyebrow mb-5">The obvious question</span>
           <h2 className="h-section mt-5">
-            &ldquo;Measure 100%, legally?&rdquo; <em>Here&apos;s how.</em>
+            How does measurement work <em>without browser identifiers?</em>
           </h2>
         </div>
 
@@ -809,9 +812,9 @@ function ProofSlab() {
    ============================================ */
 function ComparisonAnchor() {
   const rows: { label: string; ga4: string; ga360: string; adobe: string; seal: string }[] = [
-    { label: "EU traffic captured", ga4: "As low as 13%", ga360: "Consent-gated + sampled", adobe: "Consent-gated", seal: "100%" },
-    { label: "Attribution", ga4: "Modelled", ga360: "Modelled + sampled", adobe: "Consented data only", seal: "Last-click on 100% of data" },
-    { label: "EU compliance", ga4: "Schrems II review", ga360: "Schrems II review", adobe: "US transfer review", seal: "By architecture · Dublin" },
+    { label: "EU traffic collection", ga4: "Consent-gated", ga360: "Consent-gated", adobe: "Consent-gated", seal: "No browser identifier or consent gate in the analytics layer" },
+    { label: "Attribution", ga4: "Modelled", ga360: "Modelled + sampled", adobe: "Consented data only", seal: "Last-click on observed aggregate events" },
+    { label: "EU compliance", ga4: "Schrems II review", ga360: "Schrems II review", adobe: "US transfer review", seal: "Privacy-led architecture · Dublin" },
     { label: "Your data & AI", ga4: "Google ecosystem", ga360: "Google ecosystem", adobe: "Adobe ecosystem", seal: "Private AI or BYOK" },
     { label: "Setup", ga4: "Tag plan + CMP", ga360: "Months", adobe: "Months", seal: "5 minutes" },
     { label: "Cost", ga4: "Free", ga360: "~$50–175K/yr", adobe: "~$50–200K/yr", seal: "From €499/mo" },
@@ -978,7 +981,8 @@ export default function WhySealmetricsPage() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/why-sealmetrics",
-          name: "Why Sealmetrics — measure 100% of traffic and sales",
+          name: "Why Sealmetrics — aggregate analytics without identifiers",
+          dateModified: "2026-09-14",
         })}
       />
       <JsonLd
@@ -1060,28 +1064,30 @@ export default function WhySealmetricsPage() {
         <div className="max-w-[1100px] mx-auto px-5 sm:px-8">
           <QuickAnswer>
             <p>
-              Why Sealmetrics: in Europe, consent banners and tracking prevention hide 40–60%
-              of visits from conventional analytics, and audits show up to 35% of recorded
-              conversions cannot be assigned to the channel that generated them — so
-              dashboard ROAS is computed on a fraction of reality. The loss is not random:
-              cookie rejection rates vary by channel, so consented data is not just
-              incomplete but skewed — channels whose buyers reject more cookies look weaker
-              than they are. Sealmetrics is consentless,
-              cookieless analytics that measures 100% of traffic and sales, applies
-              last-click attribution to the complete dataset, and adds funnels, SKU-level
-              analytics and breakdowns by product property (size, colour, model).
+              Sealmetrics is cookieless, aggregate analytics for EU online retail and marketing
+              teams that need campaign and revenue reporting without personal identifiers.
+              Plausible is a lightweight, open-source analytics product. Its{" "}
+              <Link href="https://plausible.io/privacy-focused-web-analytics">
+                privacy documentation
+              </Link>{" "}
+              describes aggregate measurement without persistent identifiers and a 2.5 KB
+              gzipped script; its{" "}
+              <Link href="https://plausible.io/docs/ecommerce-revenue-tracking">
+                product documentation
+              </Link>{" "}
+              also covers custom events, funnels, user journeys and online retail revenue
+              attribution. Plausible therefore should not be reduced to a pageview counter,
+              and privacy alone is not a useful dividing line.
             </p>
             <p>
-              It is GDPR-compliant by architecture — no cookies, no identifiers, no personal
-              data — hosted exclusively in Dublin, Ireland. The AI layer runs as LENS private
-              AI (open-weight gpt-oss-120b model hosted by Scaleway in Paris) or with your own
-              Anthropic, OpenAI or Gemini key, and your data never trains third-party models.
-              Setup is one script tag or automatic via the Sealmetrics MCP, in about 5
-              minutes, running side-by-side with GA4. Palladium Hotel Group's audit found 40%
-              of traffic unattributed before switching and a +165% Display Cost-per-Search
-              improvement after. Pricing starts at a published €499/month — against
-              quote-based contracts that start around $50,000/year for both GA360 and
-              Adobe Analytics, and run well past six figures at volume.
+              Choose Plausible for a simple, transparent dashboard, open-source code and
+              low-overhead traffic and goal reporting. Evaluate Sealmetrics for an enterprise
+              operating model centred on campaign and revenue decisions, EU-hosted processing
+              in Dublin and supervised analytics workflows. Neither product records every
+              interaction or guarantees complete traffic: blockers, implementation errors,
+              offline journeys and legal requirements can affect measurement. Compare the
+              products on observable events, the reports your team needs, governance, support
+              and total operating effort.
             </p>
           </QuickAnswer>
         </div>
