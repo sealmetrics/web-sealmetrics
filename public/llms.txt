@@ -179,7 +179,7 @@ Open is our public transparency hub: numbered chapters on how we run the company
 
 ## Industry-specific pages
 - /for/ecommerce — Analytics for ecommerce: revenue attribution, funnel analysis, complete conversion tracking
-- /for/hotels — Analytics for hospitality: booking funnels, seasonal patterns, direct-channel attribution
+- /for/hotels — Analytics for hotels: keeping the source through booking engines and payment gateways (passthrough referrers), booking properties, portfolio of properties, limits (OTA bookings are out of reach). Palladium 35% of GA4 bookings with no channel, Dreamplace 15–20% more sales attributed
 - /for/agencies — Analytics for marketing agencies: multi-client reporting, white-label dashboards
 - /for/saas — Analytics for SaaS: trial conversion, feature adoption, retention measurement
 - /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
@@ -317,7 +317,7 @@ Role-specific (ES):
 
 Industry-specific (ES):
 - /es/for/ecommerce — Para eCommerce
-- /es/for/hotels — Para Hoteles y Turismo
+- /es/for/hotels — Analítica para hoteles: venta directa, motor de reservas y pasarelas de pago, límites
 - /es/for/saas — Para SaaS
 - /es/for/agencies — Para Agencias
 - /es/for/media — Para Medios y Editores

@@ -933,12 +933,12 @@
     },
     "public/og/for/hotels.avif": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
+      "sourceHash": "53efd8f67c8ec6ed539948c324632e33d54b8b178da287ba60f459a67aecb0b7",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/hotels.webp": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
+      "sourceHash": "53efd8f67c8ec6ed539948c324632e33d54b8b178da287ba60f459a67aecb0b7",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/media.avif": {
