@@ -351,7 +351,7 @@ Corrección de paso: el post DTC de #203 decía que GA4 registraba "un 37–52% 
 | # | Pieza | Estado |
 |---|---|---|
 | 1 | `/platforms/magento` (EN+ES) | **Hecha** — plantilla v4, contrastada con `integrations/ecommerce/magento`: módulo en app/code con bin/magento, ajustes en Tiendas → Configuración, cinco eventos (add_to_cart vía customer-data), grupos de contenido por layout handle, opciones de configurables, varias vistas de tienda y moneda, troubleshooting. No se afirma lo que la doc no dice: deduplicación al recargar (solo documentada en WooCommerce), Hyvä/PWA Studio ni "Magento Open Source" (la tarjeta del hub lo decía; corregida). Sin caso Magento: la prueba lo dice. Prompt 21 en §9b |
-| 2 | `/integrations/bigquery` | Pendiente |
+| 2 | `/integrations/bigquery` (EN+ES) | **Hecha** — contrastada con `platform/settings/integrations/bigquery`: cuenta de servicio y roles, subida de clave, ubicación UE/EE. UU., frecuencia y backfill, siete tipos de datos y sus tablas, columnas de las dos tablas documentadas, cuatro consultas SQL copiadas tal cual, retraso de 1-2 h, borrar la integración no borra datos. Comparación con la exportación de GA4 (1M eventos/día; sin dato modelado) con la ayuda de Google. No se repiten los precios de GCP de la doc (pueden estar desfasados). La plantilla gana un bloque opcional `examples` con código. El hub `/integrations` enlaza ahora BigQuery, Shopify, WooCommerce y Magento. Aviso: `/pricing` lista BigQuery en el plan gratuito Agentic y la doc dice Growth, Scale y Enterprise; la página sigue a la doc. Prompt 22 en §9b |
 | 3 | `/integrations/google-ads` | Pendiente |
 | 4 | `/integrations/meta-ads` | Pendiente |
 

@@ -42,6 +42,7 @@
 .sig-problem-divergence,
 .sig-problem-costs,
 .sig-problem-method,
+.sig-problem-examples,
 .sig-problem-roles,
 .sig-problem-proof,
 .sig-problem-limits,
@@ -248,6 +249,7 @@
 /* ---------- Section shells ---------- */
 .sig-problem-divergence,
 .sig-problem-method,
+.sig-problem-examples,
 .sig-problem-limits {
   padding-block: clamp(92px, 10vw, 156px);
   border-bottom: 1px solid var(--rule);
@@ -404,6 +406,48 @@
   color: var(--muted);
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* ---------- Examples (code) ---------- */
+.sig-problem-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+}
+.sig-problem-example-grid article {
+  min-width: 0;
+  padding: 24px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-problem-example-grid h3 {
+  font-size: 20px;
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.sig-problem-example-grid p {
+  margin-top: 10px !important;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sig-problem-example-grid pre {
+  margin: 18px 0 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: var(--ink);
+  color: var(--white);
+  font: 500 12.5px/1.6 var(--font-mono), monospace;
+  white-space: pre;
+}
+
+@media (max-width: 1100px) {
+  .sig-problem-example-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ---------- Roles ---------- */
@@ -623,6 +667,7 @@
   .sig-problem-divergence,
   .sig-problem-costs,
   .sig-problem-method,
+  .sig-problem-examples,
   .sig-problem-roles,
   .sig-problem-proof,
   .sig-problem-limits,

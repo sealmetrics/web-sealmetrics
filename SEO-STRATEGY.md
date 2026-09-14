@@ -330,6 +330,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 19 | 3 | GA4 vs Piwik PRO vs Sealmetrics / GA4 o Piwik PRO | `/blog/ga4-vs-piwik-pro-vs-sealmetrics` (EN+ES) + `/vs-ga4` + `/vs/piwik-pro` | shipped 14 Sep |
 | 20 | 2 | is server-side tracking GDPR compliant / server-side tracking y RGPD | `/blog/server-side-tracking-gdpr` (EN+ES) + `/glossary/server-side-tracking` | shipped 14 Sep |
 | 21 | 5 | cookieless analytics for Magento / analítica sin cookies para Magento | `/platforms/magento` (EN+ES) | shipped 14 Sep |
+| 22 | 4 | export analytics to BigQuery without GA4 / exportar analítica a BigQuery | `/integrations/bigquery` (EN+ES) | shipped 14 Sep |
 
 ### Method (monthly, first week)
 

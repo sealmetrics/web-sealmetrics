@@ -1391,6 +1391,16 @@
       "sourceHash": "21de7c753fdf6a64c84e4e4f4610d86a2d9b828456699b23ae08eb1e3df60baa",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/integrations/bigquery.avif": {
+      "source": "public/og/integrations/bigquery.png",
+      "sourceHash": "c67d36bed4b2864925cc684b27c2823142f0fa5352d06e2e163a8e89b4a43ec0",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/bigquery.webp": {
+      "source": "public/og/integrations/bigquery.png",
+      "sourceHash": "c67d36bed4b2864925cc684b27c2823142f0fa5352d06e2e163a8e89b4a43ec0",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/modern-analytics.avif": {
       "source": "public/og/modern-analytics.png",
       "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",

@@ -64,6 +64,18 @@ export type ProblemLandingContent = {
     steps: { name: string; text: string }[];
   };
 
+  /**
+   * Optional worked examples rendered after the method, for integration pages
+   * whose most citable content is code (SQL, API calls). Code is shown as
+   * written; keep it identical to the vendor documentation it comes from.
+   */
+  examples?: {
+    tag: string;
+    title: ReactNode;
+    body: ReactNode;
+    items: { name: string; description: string; code: string }[];
+  };
+
   roles: {
     tag: string;
     title: ReactNode;

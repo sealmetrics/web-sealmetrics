@@ -124,8 +124,8 @@
     "date": "2026-09-07"
   },
   "/integrations/": {
-    "hash": "e716b80baad50215",
-    "date": "2026-09-10"
+    "hash": "ed994d4efb61c6ac",
+    "date": "2026-09-14"
   },
   "/use-cases/": {
     "hash": "ceff55253f9a9b75",
@@ -308,8 +308,8 @@
     "date": "2026-09-07"
   },
   "/es/integrations/": {
-    "hash": "628fcc8fb5b3b9d4",
-    "date": "2026-09-04"
+    "hash": "09b56f539a7260ff",
+    "date": "2026-09-14"
   },
   "/es/audit/": {
     "hash": "ca9addd1243c6d2c",
@@ -1233,6 +1233,14 @@
   },
   "/platforms/magento/": {
     "hash": "b0cecf566d7f4e71",
+    "date": "2026-09-14"
+  },
+  "/es/integrations/bigquery/": {
+    "hash": "1155f65cc0dc2063",
+    "date": "2026-09-14"
+  },
+  "/integrations/bigquery/": {
+    "hash": "32c0e835e39215ef",
     "date": "2026-09-14"
   }
 }

@@ -40,6 +40,14 @@ const groups = [
   { title: "Datos e IA", items: ["Conector BigQuery", "Data Studio", "MCP server", "Paquete agéntico Claude y Codex", "API REST", "Webhooks"] },
 ];
 
+// Items with their own page link to it; the rest stay plain.
+const itemLinks: Record<string, string> = {
+  "Shopify": "/es/platforms/shopify",
+  "WooCommerce": "/es/platforms/woocommerce",
+  "Magento 2": "/es/platforms/magento",
+  "Conector BigQuery": "/es/integrations/bigquery",
+};
+
 export default function Page() {
   return (
     <>
@@ -64,7 +72,8 @@ export default function Page() {
             contenedor y de etiqueta de Google Tag Manager para equipos que
             despliegan todo por GTM. Cualquier framework fuera de esa lista
             funciona con un solo script. Del lado del consumo, ese mismo dato
-            agregado sale por API REST, webhooks, conector de BigQuery, Data
+            agregado sale por API REST, webhooks,{" "}
+            <Link href="/es/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">conector de BigQuery</Link>, Data
             Studio y un servidor MCP que permite a Claude, ChatGPT, Cursor o
             Codex consultarlo en lenguaje natural. Nada de esto pide una cookie
             ni un identificador de visitante, así que añadir Sealmetrics no añade
@@ -83,7 +92,9 @@ export default function Page() {
                   {g.items.map((i) => (
                     <li key={i} className="flex items-center gap-2.5 text-[14px] text-ink-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      {i}
+                      {itemLinks[i] ? (
+                        <Link href={itemLinks[i]} className="text-ink-2 no-underline border-b border-warm-200 hover:border-ink">{i}</Link>
+                      ) : i}
                     </li>
                   ))}
                 </ul>

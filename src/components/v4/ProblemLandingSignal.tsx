@@ -98,6 +98,21 @@ export function ProblemLandingSignal({ content: t }: { content: ProblemLandingCo
         </ol>
       </section>
 
+      {t.examples && (
+        <section className="sig-problem-examples" id="examples">
+          <div className="sig-problem-section-head"><div><p className="sig-problem-tag">{t.examples.tag}</p><h2>{t.examples.title}</h2></div><p>{t.examples.body}</p></div>
+          <div className="sig-problem-example-grid">
+            {t.examples.items.map((item) => (
+              <article key={item.name}>
+                <h3>{item.name}</h3>
+                <p>{item.description}</p>
+                <pre><code>{item.code}</code></pre>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="sig-problem-roles">
         <div className="sig-problem-section-head"><div><p className="sig-problem-tag">{t.roles.tag}</p><h2>{t.roles.title}</h2></div><p>{t.roles.body}</p></div>
         <div className="sig-problem-role-grid">
