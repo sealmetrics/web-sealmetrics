@@ -20,12 +20,12 @@
     "date": "2026-08-27"
   },
   "/searchmetrics-vs-sealmetrics/": {
-    "hash": "4cc0283045805efd",
-    "date": "2026-09-07"
+    "hash": "d4fab8623c2e8ef4",
+    "date": "2026-09-14"
   },
   "/privacy-end-to-end/": {
-    "hash": "0d8e11975b338af1",
-    "date": "2026-08-09"
+    "hash": "f1b1e33ce86d28cc",
+    "date": "2026-09-14"
   },
   "/why-sealmetrics/": {
     "hash": "54fd0df0d43f0f12",
@@ -60,16 +60,16 @@
     "date": "2026-09-04"
   },
   "/ai-analytics/": {
-    "hash": "245c66b195ac67a6",
-    "date": "2026-09-10"
+    "hash": "ada2793171ad8ea8",
+    "date": "2026-09-14"
   },
   "/data-loss-calculator/": {
-    "hash": "c19bd0b49e623073",
-    "date": "2026-08-13"
+    "hash": "a880e3572e339905",
+    "date": "2026-09-14"
   },
   "/reg-gap-analysis/": {
-    "hash": "8b0c95380cdac2d5",
-    "date": "2026-08-07"
+    "hash": "6d7f73461cda9735",
+    "date": "2026-09-14"
   },
   "/features/": {
     "hash": "a0ee14ed28e9170a",
@@ -120,20 +120,20 @@
     "date": "2026-09-02"
   },
   "/careers/": {
-    "hash": "d8e451f74d69a4a6",
-    "date": "2026-09-07"
+    "hash": "c4f9aa15a0e4dabf",
+    "date": "2026-09-14"
   },
   "/integrations/": {
     "hash": "e716b80baad50215",
     "date": "2026-09-10"
   },
   "/use-cases/": {
-    "hash": "bf60f1e2fc514758",
-    "date": "2026-08-09"
+    "hash": "60f2cc1daee1247d",
+    "date": "2026-09-14"
   },
   "/videos/": {
-    "hash": "f9fb415d12b68ad3",
-    "date": "2026-08-18"
+    "hash": "b9d0204976ee1b74",
+    "date": "2026-09-14"
   },
   "/audit/": {
     "hash": "b1a1dc2b8112a077",
@@ -156,16 +156,16 @@
     "date": "2026-08-10"
   },
   "/complete-data/": {
-    "hash": "7e8100c6e46dadca",
-    "date": "2026-09-04"
+    "hash": "b4c204c5971cdfa9",
+    "date": "2026-09-14"
   },
   "/vs-ga4/": {
     "hash": "0de897be48602cfc",
     "date": "2026-09-14"
   },
   "/modern-analytics/": {
-    "hash": "13c22968c418a4e5",
-    "date": "2026-09-04"
+    "hash": "b2fb34fc172df09d",
+    "date": "2026-09-14"
   },
   "/es/": {
     "hash": "c99bea4d23fc395f",
@@ -192,8 +192,8 @@
     "date": "2026-08-13"
   },
   "/cookieless-analytics/": {
-    "hash": "bf9de4f9be2fd8ae",
-    "date": "2026-08-07"
+    "hash": "4a221e1aabc58229",
+    "date": "2026-09-14"
   },
   "/open/what-we-wont-do/": {
     "hash": "4e118295c8c8d87d",
@@ -772,24 +772,24 @@
     "date": "2026-08-07"
   },
   "/for/saas/": {
-    "hash": "9be08dcf517512a5",
-    "date": "2026-08-09"
+    "hash": "97bbb1e2d5835aac",
+    "date": "2026-09-14"
   },
   "/for/media/": {
     "hash": "5c9d67f6cc863edc",
     "date": "2026-08-07"
   },
   "/use-cases/ga4-migration/": {
-    "hash": "79b3f50ef4a09e9b",
-    "date": "2026-08-09"
+    "hash": "f079f495ba687d6c",
+    "date": "2026-09-14"
   },
   "/use-cases/revenue-attribution/": {
-    "hash": "87677eea9cf76c03",
-    "date": "2026-08-09"
+    "hash": "f581fe6622abd860",
+    "date": "2026-09-14"
   },
   "/use-cases/conversion-tracking/": {
-    "hash": "6185569552e53cd7",
-    "date": "2026-08-09"
+    "hash": "76cb7ad85be1942a",
+    "date": "2026-09-14"
   },
   "/case-studies/european-hotel-group/": {
     "hash": "2d24dd0fa1fc0d62",
@@ -1004,8 +1004,8 @@
     "date": "2026-09-04"
   },
   "/gdpr-analytics/france/": {
-    "hash": "fd3a5819783618b4",
-    "date": "2026-09-04"
+    "hash": "75b8e57792f1cafe",
+    "date": "2026-09-14"
   },
   "/gdpr-analytics/spain/": {
     "hash": "e4805c6e88c3d60b",
@@ -1028,12 +1028,12 @@
     "date": "2026-09-04"
   },
   "/vs/ga360/": {
-    "hash": "31bd84a669a44e9a",
-    "date": "2026-08-27"
+    "hash": "2180e0ac6a3d3f32",
+    "date": "2026-09-14"
   },
   "/vs/adobe-analytics/": {
-    "hash": "b92f3fed40926301",
-    "date": "2026-08-27"
+    "hash": "69473b518c2788b1",
+    "date": "2026-09-14"
   },
   "/vs/piwik-pro/": {
     "hash": "50bcaee3df07e656",
@@ -1044,8 +1044,8 @@
     "date": "2026-08-07"
   },
   "/vs/matomo/": {
-    "hash": "27328d8ca82a7b30",
-    "date": "2026-08-27"
+    "hash": "e3f7d8d9787ba06d",
+    "date": "2026-09-14"
   },
   "/demo/thank-you/": {
     "hash": "6cbff94eb9382a9c",
@@ -1124,8 +1124,8 @@
     "date": "2026-09-08"
   },
   "/docs/mcp/": {
-    "hash": "f2e60aaae2b05608",
-    "date": "2026-09-12"
+    "hash": "a8007bcdd7acec2b",
+    "date": "2026-09-14"
   },
   "/es/mide-la-realidad/": {
     "hash": "9ef60e4399ac2695",
