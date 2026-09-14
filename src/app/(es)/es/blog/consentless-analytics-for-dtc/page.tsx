@@ -149,8 +149,8 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
               quienes lo aceptan se vuelve a perder por ad-blockers e ITP. La pérdida,
               además, no es pareja: en la{" "}
               <Link href="/es/case-studies/incapto" className={link}>tienda Shopify de Incapto</Link>,
-              GA4 registró entre un 37% y un 52% menos tráfico de campañas de pago que
-              Sealmetrics, frente a un 11% menos de tráfico directo.
+              Sealmetrics registró entre un 37% y un 52% más tráfico de campañas de pago
+              que GA4, frente a un 11% más de tráfico directo.
             </p>
             <p>
               &ldquo;Sin consentimiento&rdquo; —consentless, en el sector— es el
