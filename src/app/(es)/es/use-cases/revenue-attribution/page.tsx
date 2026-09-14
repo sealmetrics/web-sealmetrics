@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { REVENUE_ATTRIBUTION_MODIFIED, REVENUE_ATTRIBUTION_PUBLISHED, revenueAttributionEn as content } from "@/lib/content/problem-landings/revenue-attribution";
+import { REVENUE_ATTRIBUTION_MODIFIED, revenueAttributionEs as content } from "@/lib/content/problem-landings/revenue-attribution";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
-const URL = "/use-cases/revenue-attribution";
-const TITLE = "Revenue Attribution Without Cookies: Which Campaigns Sell";
+/** The Spanish page is new; the English one was published on 2026-05-29. */
+const PUBLISHED_ES = "2026-09-14";
+const URL = "/es/use-cases/revenue-attribution";
+const TITLE = "Atribución de ingresos sin cookies: qué campañas venden";
 const DESCRIPTION =
-  "See which channel, campaign and creative sold, including visitors who reject cookies. How it works, how to set it up, the limits, and measured cases.";
+  "Qué canal, campaña y creatividad vendieron, incluidos quienes rechazan las cookies. Cómo funciona, cómo configurarlo, sus límites y casos medidos.";
 const SOCIAL =
-  "Ad platforms grade their own ads and GA4 misses visitors who reject cookies. Attribute revenue to campaign and creative on every session instead.";
+  "Las plataformas evalúan sus propios anuncios y GA4 pierde a quien rechaza las cookies. Atribuye ingresos a campaña y creatividad en cada sesión.";
 
 export const metadata: Metadata = {
   // Literal on purpose: generate-og-images.mjs reads the card title from it.
-  title: "Revenue Attribution Without Cookies: Which Campaigns Sell",
+  title: "Atribución de ingresos sin cookies: qué campañas venden",
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     images: [ogImage(`${URL}/`)],
     url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
-    locale: "en_US",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,24 +39,24 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://sealmetrics.com${URL}/`,
-    languages: getAlternates("/use-cases/revenue-attribution"),
+    languages: getAlternatesEs("/use-cases/revenue-attribution"),
   },
 };
 
-export default function RevenueAttributionPage() {
+export default function RevenueAttributionPageEs() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Use cases", url: "/use-cases" }, { name: "Revenue attribution", url: URL }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Atribución de ingresos", url: URL }])} />
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "Your campaigns are judged on the visitors who clicked accept: revenue attribution without cookies",
+          headline: "Tus campañas se juzgan con quien aceptó las cookies: atribución de ingresos sin cookies",
           description: DESCRIPTION,
-          datePublished: REVENUE_ATTRIBUTION_PUBLISHED,
+          datePublished: PUBLISHED_ES,
           dateModified: REVENUE_ATTRIBUTION_MODIFIED,
           url: URL,
           category: "Attribution",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />

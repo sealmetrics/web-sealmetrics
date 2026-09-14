@@ -1583,12 +1583,12 @@
     },
     "public/og/use-cases/revenue-attribution.avif": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
+      "sourceHash": "3574277cdb3c744c8af8f8031b4a00b58d29a743947593221709e728af483706",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases/revenue-attribution.webp": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
+      "sourceHash": "3574277cdb3c744c8af8f8031b4a00b58d29a743947593221709e728af483706",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/single-source-of-truth.avif": {

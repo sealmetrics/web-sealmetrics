@@ -314,7 +314,7 @@ export const singleSourceOfTruthEs: ProblemLandingContent = {
       { role: "CMO / Marketing", need: "Defender el presupuesto con una cifra que finanzas no discute.", how: "Ingresos por canal sobre cada sesión, conciliados con los pedidos antes de llegar al comité.", link: { label: "Analítica para CMOs", href: "/es/for/cmo/" } },
       { role: "Agencia", need: "Enseñar resultados sobre una cifra que el cliente no tiene que creerse a ciegas.", how: "El equipo de la agencia puede ser miembro de la organización de cada cliente y cambiar entre ellas. La plataforma sigue optimizando pujas; el resultado se juzga en la capa neutral.", link: { label: "Analítica para agencias", href: "/es/for/agencies/" } },
       { role: "Analítica / BI", need: "Trabajar con dato a resolución completa, no con un export muestreado.", how: "El conector de BigQuery, la API REST y un servidor MCP leen el mismo dataset que muestra el dashboard.", link: { label: "Integraciones", href: "/es/integrations/" } },
-      { role: "CFO / Finanzas", need: "Atar los ingresos de marketing a la contabilidad.", how: "Conciliación agregada contra el total de pedidos, procesamiento solo en la UE (Dublín) y DPA firmado. No sustituye al reconocimiento de ingresos.", link: { label: "Datos completos", href: "/es/complete-data/" } },
+      { role: "CFO / Finanzas", need: "Atar los ingresos de marketing a la contabilidad.", how: "Conciliación agregada contra el total de pedidos, procesamiento solo en la UE (Dublín) y DPA firmado. No sustituye al reconocimiento de ingresos.", link: { label: "Atribución de ingresos", href: "/es/use-cases/revenue-attribution/" } },
     ],
   },
 

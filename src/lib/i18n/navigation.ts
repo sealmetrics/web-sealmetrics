@@ -29,6 +29,7 @@ const translatedPaths = new Set([
   "/consentless-analytics",
   "/gdpr-analytics",
   "/use-cases/single-source-of-truth",
+  "/use-cases/revenue-attribution",
   "/gdpr-analytics/spain",
   "/cookieless-analytics",
   "/vs/ga360",

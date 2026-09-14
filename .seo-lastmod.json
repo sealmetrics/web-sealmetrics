@@ -784,7 +784,7 @@
     "date": "2026-09-14"
   },
   "/use-cases/revenue-attribution/": {
-    "hash": "e6a4f002d4cc9406",
+    "hash": "7b4a5cb8bd79d968",
     "date": "2026-09-14"
   },
   "/use-cases/conversion-tracking/": {
@@ -1140,11 +1140,15 @@
     "date": "2026-09-13"
   },
   "/es/use-cases/single-source-of-truth/": {
-    "hash": "952c8e8fe42397a9",
+    "hash": "3780bc54dc99cfb7",
     "date": "2026-09-14"
   },
   "/use-cases/single-source-of-truth/": {
     "hash": "3f74321a022cfad1",
+    "date": "2026-09-14"
+  },
+  "/es/use-cases/revenue-attribution/": {
+    "hash": "974213dec05091ac",
     "date": "2026-09-14"
   }
 }
