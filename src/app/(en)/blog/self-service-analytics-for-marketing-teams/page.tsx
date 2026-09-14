@@ -219,15 +219,15 @@ export default function Page() {
             </p>
             <p>
               Completeness is where consent-based analytics breaks. In the EU, cookie-based tools
-              only measure the share of visitors who accept the banner. Sealmetrics measures every
-              visit and every sale with{" "}
+              only measure the share of visitors who accept the banner. Sealmetrics measures visits
+              and sales whether or not the banner is accepted, with{" "}
               <Link
                 href="/glossary/cookieless-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 cookieless, first-party measurement
-              </Link>{" "}
-              and without consent, which removes the 40–60% blind spot that consent-gated setups
+              </Link>
+              , which removes the 40–60% blind spot that consent-gated setups
               carry.
             </p>
             <p>

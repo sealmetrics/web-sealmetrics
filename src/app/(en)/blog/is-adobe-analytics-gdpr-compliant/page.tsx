@@ -275,7 +275,7 @@ export default function Page() {
           </div>
 
           <CommercialModule
-            hook="If the expensive part is making Adobe compliant, the alternative is an architecture that starts compliant: no cookies, no consent dependency, EU-hosted. Compare the two costs."
+            hook="If the expensive part is making Adobe compliant, the alternative is an architecture designed for compliance from the start: no cookies, no consent dependency, EU-hosted. Compare the two costs."
           />
 
           <RelatedReading currentSlug="is-adobe-analytics-gdpr-compliant" />

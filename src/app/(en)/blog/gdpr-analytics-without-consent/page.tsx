@@ -331,7 +331,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How Sealmetrics achieves consent-free compliance
+            How Sealmetrics is designed to run without consent
           </h2>
 
           <p>
@@ -358,7 +358,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </p>
 
           <p>
-            All data is processed and stored in EU-based infrastructure.
+            All visitor data is processed and stored in EU-based infrastructure.
             No personal data is collected. No individual profiles are
             created. The output is aggregate audience measurement &mdash;
             page views, sessions, traffic sources, conversion events
@@ -367,7 +367,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </p>
 
           <p>
-            This architecture satisfies the CNIL exemption criteria, the
+            This architecture is designed to meet the CNIL exemption criteria, the
             ePrivacy Article 5(3) requirements, and the GDPR legitimate
             interest basis simultaneously. Sealmetrics is anonymous,
             cookieless, and designed for GDPR from the architecture up

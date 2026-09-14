@@ -70,7 +70,7 @@ export default function GA4DataSamplingPage() {
             <li>GA4 applies data sampling in Exploration reports when data exceeds internal thresholds — the free version has lower thresholds than GA360.</li>
             <li>Sampled data can reverse campaign performance rankings: Campaign A with 342 real conversions could be estimated at 310 while Campaign B with 298 shows as 320.</li>
             <li>Before sampling even begins, GA4 has already lost ~87% of EU traffic to consent rejection, ad blockers, and browser restrictions — you are making decisions based on an estimate of a fraction.</li>
-            <li>Cookieless analytics captures every session without sampling — when you see 72,847 visitors, that is 72,847 actual sessions, not a projection.</li>
+            <li>Cookieless analytics counts sessions without consent loss or sampling — when you see 72,847 visitors, that is 72,847 actual sessions, not a projection.</li>
           </ul>
         </div>
 
@@ -177,9 +177,9 @@ export default function GA4DataSamplingPage() {
               Cookieless analytics
             </Link>{" "}
             platforms like Sealmetrics take a fundamentally different approach.
-            By collecting data through first-party cookieless methods, every
-            session is captured regardless of consent banner status, ad blocker
-            usage, or browser restrictions. And because the data volume is
+            By collecting data through first-party cookieless methods, sessions
+            are counted whether or not the consent banner is accepted, without the
+            third-party signatures that ad blockers and browser restrictions target. And because the data volume is
             managed at the infrastructure level, there is no need for statistical
             sampling.
           </p>

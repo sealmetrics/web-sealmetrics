@@ -70,7 +70,7 @@ const alternatives = [
     pricing: "From \u20ac499/mo billed annually (\u20ac5,988/yr)",
     dataCompleteness: "Not reduced by consent",
     euCompliance:
-      "GDPR compliant by design — no PII collected, no cookies, no consent required, EU-only data residency",
+      "Designed for GDPR (self-assessed) — no PII collected, no cookies, no consent required, EU-only visitor data residency",
     ecommerceFeatures:
       "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
     chooseIf:
@@ -179,7 +179,7 @@ export default function GA4AlternativesEnterprisePage() {
               7 GA4 Alternatives for eCommerce Teams in 2026
             </h1>
             <QuickAnswer>
-              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that measures site traffic without cookies or consent banners and is designed for GDPR from the architecture up (self-assessed), not by configuration. Unlike GA4, which loses 40–60% of visitor data when users reject consent banners under GDPR, Sealmetrics measures every eligible event and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and complete funnel visibility from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a compliant, complete, and revenue-focused alternative built specifically for the European regulatory environment.`}
+              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that measures site traffic without cookies or consent banners and is designed for GDPR from the architecture up (self-assessed), not by configuration. Unlike GA4, which loses 40–60% of visitor data when users reject consent banners under GDPR, Sealmetrics measures events whether or not the banner is accepted and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and funnel visibility without consent gaps from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a revenue-focused alternative that is designed for GDPR (self-assessed), not reduced by consent, and built specifically for the European regulatory environment.`}
             </QuickAnswer>
             <PostByline
               {...dates}
@@ -505,7 +505,7 @@ export default function GA4AlternativesEnterprisePage() {
                     EU Compliance:
                   </span>{" "}
                   <span className="text-text-primary">
-                    By design — no PII, EU-only
+                    Designed for GDPR (self-assessed) — no PII, EU-only
                   </span>
                 </div>
                 <div>
@@ -525,7 +525,7 @@ export default function GA4AlternativesEnterprisePage() {
               legacy enterprise pricing. Last-click revenue attribution is built
               on complete data — not estimates from a consented fraction. LENS AI answers
               analytics questions in plain language, grounded in your complete data. Agent analytics
-              separates AI bot traffic from human visitors. Data is processed and
+              separates AI bot traffic from human visitors. Visitor data is processed and
               stored exclusively in the EU.
             </p>
 

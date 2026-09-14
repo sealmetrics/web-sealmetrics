@@ -594,14 +594,14 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           </p>
 
           <p>
-            Sealmetrics captures every visit through{" "}
+            Sealmetrics counts visits whether or not the banner is accepted, through{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               cookieless first-party collection
             </Link>{" "}
-            — no cookies, no consent banners, no data loss. Read more about
+            — no cookies, no consent banners, no consent-driven data loss. Read more about
             how we handle{" "}
             <Link
               href="/security"
