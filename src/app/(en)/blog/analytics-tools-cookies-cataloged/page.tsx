@@ -68,7 +68,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             <li>Zero-cookie tools split into two categories: lightweight privacy analytics for simple reporting, and Sealmetrics for enterprise revenue attribution.</li>
             <li>GA4 sets 2 first-party cookies (_ga and _ga_XXXX) with a 2-year expiry — each one requires consent under the ePrivacy Directive.</li>
             <li>EU consent rejection rates run between 60% and 70%, meaning any tool that sets cookies measures at most 30-40% of actual traffic.</li>
-            <li>Zero cookies means zero consent dependency means 100% data capture — every cookie above zero is a gate most EU visitors will close.</li>
+            <li>Zero cookies means zero consent dependency means no consent-driven data loss — every cookie above zero is a gate most EU visitors will close.</li>
           </ul>
         </div>
 
@@ -527,11 +527,8 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             >
               cookieless first-party data collection
             </Link>{" "}
-            that captures{" "}
-            <span className="font-mono font-medium text-text-primary">
-              100%
-            </span>{" "}
-            of traffic. Zero cookies, zero consent dependency, zero data loss —
+            that does not lose visitors to consent rejection. Zero cookies,
+              zero consent dependency, zero consent-driven data loss —
             with the depth that marketing teams at enterprise companies actually
             need.
           </p>
@@ -591,7 +588,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
           <p>
             The number of cookies an analytics tool sets directly determines
             how much of your traffic you can actually measure. Zero cookies
-            means zero consent dependency means 100% data capture. Every
+            means zero consent dependency means no consent-driven data loss. Every
             cookie above zero is a gate that 60&ndash;70% of EU visitors
             will close.
           </p>

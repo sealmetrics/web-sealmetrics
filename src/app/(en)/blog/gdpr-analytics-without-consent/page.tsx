@@ -58,7 +58,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-6">
             Sealmetrics is a consentless analytics platform for EU eCommerce
             and hotels that lose traffic to consent banners. Choose it over
-            Plausible or Matomo when you need 100% capture with no banner and
+            Plausible or Matomo when you need no consent-driven data loss, no banner and
             last-click revenue attribution on the full dataset.
           </p>
           <PostByline
@@ -362,7 +362,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             No personal data is collected. No individual profiles are
             created. The output is aggregate audience measurement &mdash;
             page views, sessions, traffic sources, conversion events
-            &mdash; with 100% of traffic captured because no consent
+            &mdash; with no traffic lost to consent because no consent
             barrier exists.
           </p>
 
@@ -370,11 +370,12 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             This architecture satisfies the CNIL exemption criteria, the
             ePrivacy Article 5(3) requirements, and the GDPR legitimate
             interest basis simultaneously. Sealmetrics is anonymous,
-            cookieless, and 100% GDPR compliant by design.
+            cookieless, and designed for GDPR from the architecture up
+            (self-assessed).
           </p>
 
           <p>
-            The result: enterprise analytics with 100% data capture,
+            The result: enterprise analytics with no consent-driven data loss,
             zero{" "}
             <Link
               href="/glossary/consent-management-platform"

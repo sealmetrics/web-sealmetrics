@@ -230,7 +230,7 @@ export default function ConsentBannerImpactPage() {
             >
               Cookieless analytics
             </Link>{" "}
-            captures 100% of traffic regardless of consent banner status — not
+            measures traffic regardless of consent banner status — not
             because it bypasses consent, but because it does not collect data
             that requires consent.
           </p>

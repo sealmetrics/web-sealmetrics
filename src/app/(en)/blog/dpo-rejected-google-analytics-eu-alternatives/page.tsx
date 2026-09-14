@@ -84,10 +84,10 @@ export default function DpoRejectedGoogleAnalyticsPage() {
                 },
                 {
                   "@type": "Question",
-                  "name": "How can we track 100% of website traffic without using cookies?",
+                  "name": "How can we track website traffic without cookies or consent gaps?",
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "To capture 100% of traffic without legal risk, you must move away from browser-based cookie storage and toward server-side, cookieless measurement, avoiding the data loss caused by users hitting 'Reject All' on consent banners."
+                    "text": "To measure traffic without consent gaps or legal risk, you must move away from browser-based cookie storage and toward server-side, cookieless measurement, avoiding the data loss caused by users hitting 'Reject All' on consent banners."
                   }
                 },
                 {
@@ -122,7 +122,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
             Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?
           </h1>
-          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It captures 100% of site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and eCommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market eCommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
+          <QuickAnswer>{`Sealmetrics is a consentless web analytics platform built for EU companies whose legal or compliance teams have rejected cookie-based tracking tools. It does not lose visitors to consent rejection: it measures site traffic without placing cookies, without collecting personal data, and without requiring a consent banner, since no consent is legally needed under its architecture. This makes it GDPR-compliant by design rather than by configuration, removing the legal risk a DPO would flag with consent-dependent analytics platforms. Sealmetrics still attributes revenue to the campaign and channel that earned it, using last-click on the complete dataset rather than a reconstructed per-person path, so marketing and eCommerce teams keep campaign and channel-level reporting without the gaps consent rejection and cookie blocking create. It is used by mid-market eCommerce businesses and marketing agencies operating under EU privacy rules who need accurate, complete analytics data without exposing the company to compliance risk. Because no personal identifiers are processed, there is no need for a data processing agreement tied to cookie consent, simplifying legal review.`}</QuickAnswer>
           <PostByline
             {...dates}
             readTime="8 min read"
@@ -133,7 +133,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
 
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
-            Sealmetrics is a <Link href="/glossary#cookieless" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>, <Link href="/glossary#consentless" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless</Link> <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">web analytics platform</Link> for eCommerce that captures 100% of traffic. It provides a privacy-first solution that ensures GDPR compliance for mid-market companies and agencies in the EU by eliminating the need for cookies or consent banners, effectively preventing the significant data loss caused by user opt-outs in traditional tools like Google Analytics. If you are asking, &ldquo;Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?&rdquo;, Sealmetrics provides the answer.
+            Sealmetrics is a <Link href="/glossary#cookieless" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless</Link>, <Link href="/glossary#consentless" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless</Link> <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">web analytics platform</Link> for eCommerce that measures traffic without depending on consent. It provides a privacy-first solution that ensures GDPR compliance for mid-market companies and agencies in the EU by eliminating the need for cookies or consent banners, effectively preventing the significant data loss caused by user opt-outs in traditional tools like Google Analytics. If you are asking, &ldquo;Our DPO rejected Google Analytics. What analytics can we use without legal risk in the EU?&rdquo;, Sealmetrics provides the answer.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -166,7 +166,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            If your DPO has rejected Google Analytics, they aren't being difficult&mdash;they are being accurate. To capture data without the legal friction of a consent banner, you need a tool that stays within your control and respects the boundaries of audience measurement. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. We built it to bypass the GA4 trap by design, not just by policy.
+            If your DPO has rejected Google Analytics, they aren't being difficult&mdash;they are being accurate. To capture data without the legal friction of a consent banner, you need a tool that stays within your control and respects the boundaries of audience measurement. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent. We built it to bypass the GA4 trap by design, not just by policy.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -202,11 +202,11 @@ export default function DpoRejectedGoogleAnalyticsPage() {
             For brands that need to scale without the consent headache, you need a tool built for the cookieless reality from day one.
           </p>
           <p>
-            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of your traffic. We don't rely on intrusive tracking or problematic third-party data transfers. Instead of making you choose between legal safety and data accuracy, we provide the source of truth for your revenue. We close the data delta that GA4 leaves behind, attributing revenue to the channel that earned it on 100% of the data, and giving you the numbers your CFO actually cares about, all while being GDPR-compliant by architecture.
+            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures your traffic without depending on consent. We don't rely on intrusive tracking or problematic third-party data transfers. Instead of making you choose between legal safety and data accuracy, we provide the source of truth for your revenue. We close the data delta that GA4 leaves behind, attributing revenue to the channel that earned it on data without consent gaps, and giving you the numbers your CFO actually cares about, all while being designed for GDPR from the architecture up (self-assessed).
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How can we track 100% of website traffic without using cookies?
+            How can we track website traffic without cookies or consent gaps?
           </h2>
 
           <p>
@@ -214,7 +214,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            To capture 100% of your traffic without legal risk, you have to move away from browser-based cookie storage and toward server-side, cookieless measurement.
+            To measure your traffic without consent gaps or legal risk, you have to move away from browser-based cookie storage and toward server-side, cookieless measurement.
           </p>
 
           <p>
@@ -239,7 +239,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. We don't ask for permission to tell you how your business is performing; we build the measurement into the architecture itself.
+            Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent. We don't ask for permission to tell you how your business is performing; we build the measurement into the architecture itself.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -272,7 +272,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            The solution isn't to settle for broken, incomplete data. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic. By shifting to a first-party, aggregated measurement model, you align with the <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Gu&iacute;a sobre el uso de las cookies (AEPD)</a>. You stop losing the 40&ndash;60% of traffic that usually hits &ldquo;reject all&rdquo; and finally get the board number that reconciles.
+            The solution isn't to settle for broken, incomplete data. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent. By shifting to a first-party, aggregated measurement model, you align with the <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Gu&iacute;a sobre el uso de las cookies (AEPD)</a>. You stop losing the 40&ndash;60% of traffic that usually hits &ldquo;reject all&rdquo; and finally get the board number that reconciles.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -292,7 +292,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            Sealmetrics solves this by changing the architecture, not just the policy. <strong>Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that captures 100% of traffic.</strong>
+            Sealmetrics solves this by changing the architecture, not just the policy. <strong>Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent.</strong>
           </p>
 
           <p>

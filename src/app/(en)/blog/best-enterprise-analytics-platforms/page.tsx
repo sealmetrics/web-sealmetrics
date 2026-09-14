@@ -72,9 +72,9 @@ const platforms = [
     name: "Sealmetrics",
     url: "https://sealmetrics.com",
     pricing: "From \u20ac5,988/yr",
-    euDataCapture: "100%",
+    euDataCapture: "Not reduced by consent",
     strengths:
-      "Cookieless architecture captures 100% of traffic without consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI answers analytics questions in plain language, grounded in your complete data. Last-click revenue attribution built on complete data. Agent analytics tracks AI bot traffic separately.",
+      "Cookieless architecture measures traffic without depending on consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI answers analytics questions in plain language, grounded in your complete data. Last-click revenue attribution built on complete data. Agent analytics tracks AI bot traffic separately.",
     limitations:
       "Smaller ecosystem than Google or Adobe. No native Google Ads integration (data export available). Newer platform with a growing feature set. Best suited for EU-focused operations.",
     bestFor: "EU eCommerce teams that need complete data, GDPR compliance by design, and enterprise analytics without enterprise pricing.",
@@ -194,7 +194,8 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 Enterprise analytics in 2026 splits into two categories:
                 cookie-dependent platforms (GA4, GA360, Adobe, Piwik PRO,
                 Amplitude, Mixpanel) that lose 40-60% of EU traffic, and
-                cookieless platforms (Sealmetrics) that capture 100%.
+                cookieless platforms (Sealmetrics) that do not lose traffic to consent
+                rejection.
               </li>
               <li>
                 GA360 and Adobe Analytics remain the incumbents for organizations
@@ -503,7 +504,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               >
                 cookieless analytics
               </Link>{" "}
-              to capture 100% of traffic. No cookies are set. No personal data
+              to measure traffic without depending on consent. No cookies are set. No personal data
               is collected. No consent banner is required.
             </p>
 
@@ -529,7 +530,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               <strong className="font-semibold text-text-primary">
                 Choose Sealmetrics if:
               </strong>{" "}
-              You operate in the EU, need 100% data capture, want GDPR
+              You operate in the EU, need no consent-driven data loss, want GDPR
               compliance built into the architecture, and prefer enterprise
               analytics at a fraction of GA360 or Adobe pricing.
             </p>
@@ -757,7 +758,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               consultants, ongoing maintenance, and the implicit cost of
               decisions made on incomplete data. A six-figure platform that captures
               35% of EU traffic may cost more per accurate data point than a
-              {"\u20ac"}6K platform that captures 100%.
+              {"\u20ac"}6K platform that does not lose traffic to consent rejection.
             </p>
           </div>
 

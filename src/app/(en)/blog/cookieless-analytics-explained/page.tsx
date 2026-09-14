@@ -69,7 +69,7 @@ export default function CookielessAnalyticsExplainedPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~55% rejection, and ad blockers strip scripts from another 40%.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
-            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
+            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
           </ul>
         </div>
@@ -196,7 +196,7 @@ export default function CookielessAnalyticsExplainedPage() {
                   {
                     aspect: "Traffic captured",
                     cookie: "~13% in EU",
-                    cookieless: "100%",
+                    cookieless: "Not reduced by consent",
                   },
                 ].map((row) => (
                   <tr
@@ -250,7 +250,7 @@ export default function CookielessAnalyticsExplainedPage() {
             The transition from cookie-based to cookieless analytics is not a
             minor upgrade. It is a fundamental change in what you can measure.
             Attribution models that were unreliable on 13% of data become useful
-            on 100%. Campaign optimization that was based on the
+            without consent gaps. Campaign optimization that was based on the
             cookie-accepting segment can now reflect actual visitor behavior.
           </p>
 

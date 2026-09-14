@@ -470,7 +470,7 @@ export default function LighthouseScoresPage() {
           </p>
 
           <p>
-            Sealmetrics captures 100% of traffic through{" "}
+            Sealmetrics measures traffic without depending on consent through{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

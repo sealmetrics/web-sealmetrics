@@ -27,7 +27,7 @@ import {
 
 export const metadata: Metadata = {
   title: "The Best Web Analytics Tool: 12 Requirements",
-  description: "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of data, API, MCP — and how to test each.",
+  description: "Not a vendor list. The 12 requirements a web analytics platform must meet — pixel weight, real time, consent-independent data, API, MCP — and how to test each.",
   openGraph: {
     title: "The Best Web Analytics Tool: 12 Requirements That Decide It",
     description:
@@ -63,9 +63,9 @@ const requirements = [
   {
     n: 2,
     id: "req-2",
-    title: "100% of the data",
+    title: "Consent-independent data",
     bar: "Every page load observed, consent-independent, not blocklisted, no sampling",
-    seal: "Cookieless by architecture. Customers go from ~40% to ~100% observed, closing to within 15–20% of CRM orders",
+    seal: "Cookieless by architecture. Customers go from ~40% observed to no consent-driven loss, closing to within 15–20% of CRM orders",
     score: 2,
   },
   {
@@ -121,7 +121,7 @@ const requirements = [
     id: "req-9",
     title: "Honest attribution",
     bar: "Model stated plainly, applied consistently, observed and modelled never blended",
-    seal: "Last-click at channel level over 100% of conversions. No modelled conversions. No multi-touch, permanently",
+    seal: "Last-click at channel level over conversions without consent gaps. No modelled conversions. No multi-touch, permanently",
     score: 2,
   },
   {
@@ -154,7 +154,7 @@ const faqs = [
   {
     question: "What is the most important requirement in a web analytics tool?",
     answer:
-      "Data completeness. A platform that observes 100% of page loads without depending on consent is the prerequisite for every other requirement: perfect real-time dashboards over 40% of reality are a faster route to a wrong decision, not a better one. Score completeness first, and if a platform fails it, stop evaluating.",
+      "Data completeness. A platform that observes page loads without depending on consent is the prerequisite for every other requirement: perfect real-time dashboards over 40% of reality are a faster route to a wrong decision, not a better one. Score completeness first, and if a platform fails it, stop evaluating.",
   },
   {
     question: "How light should an analytics pixel be?",
@@ -174,7 +174,7 @@ const faqs = [
   {
     question: "Is last-click attribution worse than multi-touch?",
     answer:
-      "Not when the alternative is a sophisticated model applied to partial data. Last-click over 100% of conversions is a defensible instrument. A multi-touch model over the 40% of sessions that accepted cookies is a story about a sample wearing the clothes of a measurement. What matters is that the platform states its model and never blends observed and modelled figures in the same number.",
+      "Not when the alternative is a sophisticated model applied to partial data. Last-click over conversions without consent gaps is a defensible instrument. A multi-touch model over the 40% of sessions that accepted cookies is a story about a sample wearing the clothes of a measurement. What matters is that the platform states its model and never blends observed and modelled figures in the same number.",
   },
 ];
 
@@ -199,7 +199,7 @@ export default function BestWebAnalyticsToolPage() {
         data={articleSchema({
           headline: "The Best Web Analytics Tool: 12 Requirements That Decide It",
           description:
-            "The 12 technical requirements a web analytics platform must meet — pixel weight, real time, 100% of the data, API, MCP — each with the failure it prevents and a test you can run.",
+            "The 12 technical requirements a web analytics platform must meet — pixel weight, real time, consent-independent data, API, MCP — each with the failure it prevents and a test you can run.",
           ...dates,
           url: "/blog/best-web-analytics-tool",
           category: "Comparisons",
@@ -262,7 +262,8 @@ export default function BestWebAnalyticsToolPage() {
                 scope.
               </li>
               <li>
-                Requirement 2 — 100% of the data — is not one of twelve. Fail it
+                Requirement 2 — consent-independent data — is not one of
+                twelve. Fail it
                 and the other eleven are decoration.
               </li>
               <li>
@@ -405,7 +406,7 @@ export default function BestWebAnalyticsToolPage() {
             </TestBox>
 
             <ReqHeading n={2} id="req-2">
-              100% of the data
+              Consent-independent data
             </ReqHeading>
 
             <div className="space-y-4">
@@ -485,7 +486,7 @@ export default function BestWebAnalyticsToolPage() {
               </p>
               <Chip tone="req">The requirement</Chip>
               <p>
-                The platform must observe 100% of page loads without depending
+                The platform must observe page loads without depending
                 on the visitor accepting anything, and without being classified
                 as a tracker by blocklists. That is only achievable if it stores
                 no personal data — because if it did, consent would be legally
@@ -860,8 +861,7 @@ export default function BestWebAnalyticsToolPage() {
             <div className="my-8 rounded-[14px] border-l-2 border-quote bg-warm-white p-6">
               <p className="text-[1.02rem] leading-[1.75] text-text-body">
                 A stated, simple, complete model beats a sophisticated model
-                applied to partial data — every time. Last-click over 100% of
-                conversions is a defensible instrument. A{" "}
+                applied to partial data — every time. Last-click over conversions without consent gaps is a defensible instrument. A{" "}
                 <Link
                   href="/glossary/multi-touch-attribution"
                   className={linkClass}

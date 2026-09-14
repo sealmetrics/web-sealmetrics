@@ -390,8 +390,7 @@ export default function AnalyticsHttpRequestsPage() {
 
           <p>
             Your analytics tool should measure your site, not slow it down.
-            Two requests totaling 1.3 KB to one first-party domain captures
-            100% of traffic through{" "}
+            Two requests totaling 1.3 KB to one first-party domain measures traffic without depending on consent through{" "}
             <Link
               href="/how-it-works"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

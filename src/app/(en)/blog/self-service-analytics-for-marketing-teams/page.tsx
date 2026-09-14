@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
-      "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+      "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
-    description: "Three moves: measure 100% of traffic without consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+    description: "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
   },
   alternates: {
@@ -40,7 +40,7 @@ const preconditions = [
   {
     aspect: "Share of EU traffic measured",
     them: "Consented visitors only",
-    us: "100% of human traffic",
+    us: "Not reduced by consent",
   },
   {
     aspect: "Metric definitions",
@@ -142,7 +142,7 @@ const FAQ = [
   {
     question: "How is this different from asking GA4's AI features?",
     answer:
-      "The difference is the input, not the model. GA4 answers from consented traffic only. Sealmetrics answers from 100% of human traffic, which is why its numbers reconcile with Shopify and the CRM instead of sitting 40-60% below them.",
+      "The difference is the input, not the model. GA4 answers from consented traffic only. Sealmetrics answers from human traffic measured without consent gaps, which is why its numbers reconcile with Shopify and the CRM instead of sitting 40-60% below them.",
   },
 ];
 
@@ -199,7 +199,7 @@ export default function Page() {
               <p className="text-[1rem] leading-[1.75] text-text-body">
                 Self-service analytics means a marketing team gets a correct answer to a business
                 question without opening a ticket for the data team. At Sealmetrics it works in
-                three moves: the platform measures 100% of traffic without cookies or consent, it
+                three moves: the platform measures traffic without cookies or consent, it
                 exposes that data to an AI agent as 47 named, read-only tools instead of raw SQL,
                 and the customer chooses whether that agent runs on their own model key (BYOK) or on
                 an isolated private instance.
@@ -582,7 +582,7 @@ export default function Page() {
           </div>
 
           <CommercialModule
-            hook="Self-service only works when the data underneath is complete. See LENS answer marketing questions on 100% of your traffic, not a consented sample."
+            hook="Self-service only works when the data underneath is complete. See LENS answer marketing questions on traffic measured without consent, not a consented sample."
           />
 
           <RelatedReading currentSlug="self-service-analytics-for-marketing-teams" />
