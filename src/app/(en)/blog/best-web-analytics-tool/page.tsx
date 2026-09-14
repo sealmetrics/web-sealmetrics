@@ -437,12 +437,17 @@ export default function BestWebAnalyticsToolPage() {
                 audiences, higher in some verticals. Tag failure: around 5% on
                 mobile, and it grows on slow networks. Multiply the survivors
                 and you are reporting on a fraction — while your CFO reads it as
-                the whole. It is the arithmetic behind{" "}
+                the whole. Stacked as a worst case, it is the arithmetic behind{" "}
                 <Link
                   href="/blog/why-ga4-shows-13pct-eu-traffic"
                   className={linkClass}
                 >
-                  GA4 showing 13% of EU traffic
+                  GA4 showing as little as 13% of EU traffic
+                </Link>
+                . Measured on a real Shopify store over 48 days, the gap was
+                smaller but still decisive:{" "}
+                <Link href="/case-studies/incapto" className={linkClass}>
+                  GA4 did not record 29% of visits
                 </Link>
                 .
               </p>

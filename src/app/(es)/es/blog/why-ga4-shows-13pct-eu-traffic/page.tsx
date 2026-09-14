@@ -9,13 +9,13 @@ import { articleSchema, breadcrumbSchema } from "@/lib/schema";
 import { CommercialModule } from "@/components/ui/CommercialModule";
 
 export const metadata: Metadata = {
-  title: "Por qué GA4 muestra el 13% de tu tráfico UE",
+  title: "Por qué GA4 puede ver solo el 13% de tu tráfico UE",
   description:
-    "GA4 pierde dato por rechazo de consentimiento, ad blockers y restricciones de navegador. El resultado: ~13% del tráfico real UE. Aquí están las cuentas.",
+    "Consentimiento, ad blockers y navegador se suman: en el peor escenario GA4 ve ~13% del tráfico UE. En una tienda real medida, perdió el 29% de las visitas.",
   openGraph: {
-    title: "Por qué GA4 muestra el 13% de tu tráfico UE",
+    title: "Por qué GA4 puede ver solo el 13% de tu tráfico UE",
     description:
-      "GA4 pierde tráfico UE en tres niveles estructurales. Aquí está la cascada que te deja con el 13%.",
+      "GA4 pierde tráfico UE en tres niveles. La cascada del peor escenario deja ~13%; una tienda Shopify medida 48 días perdió el 29% de las visitas.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/why-ga4-shows-13pct-eu-traffic/",
     siteName: "Sealmetrics",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Por qué GA4 muestra el 13% de tu tráfico UE",
-    description: "GA4 pierde tráfico UE en tres niveles estructurales. Aquí está la cascada que te deja con el 13%.",
+    title: "Por qué GA4 puede ver solo el 13% de tu tráfico UE",
+    description: "GA4 pierde tráfico UE en tres niveles. La cascada del peor escenario deja ~13%; una tienda Shopify medida 48 días perdió el 29% de las visitas.",
     images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
   },
   alternates: {
@@ -40,9 +40,9 @@ export default function WhyGA4Shows13PctPageEs() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Por qué GA4 muestra el 13% de tu tráfico UE" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Por qué GA4 muestra el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales, dejando ~13% del tráfico real UE.", ...dates, url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Por qué GA4 muestra el 13% de tu tráfico UE", url: "/es/blog/why-ga4-shows-13pct-eu-traffic" }])} />
+      <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Por qué GA4 puede ver solo el 13% de tu tráfico UE" }]} locale="es" />
+      <JsonLd data={articleSchema({ headline: "Por qué GA4 puede ver solo el 13% de tu tráfico UE", description: "GA4 pierde dato en tres niveles estructurales; en el peor escenario del modelo, deja ~13% del tráfico real UE.", ...dates, url: "/es/blog/why-ga4-shows-13pct-eu-traffic", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Por qué GA4 puede ver solo el 13% de tu tráfico UE", url: "/es/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
@@ -51,7 +51,7 @@ export default function WhyGA4Shows13PctPageEs() {
             Calidad del dato
           </span>
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-            Por qué GA4 muestra el 13% de tu tráfico UE
+            Por qué GA4 puede ver solo el 13% de tu tráfico UE
           </h1>
           <PostByline
               {...dates}
@@ -67,9 +67,9 @@ export default function WhyGA4Shows13PctPageEs() {
             Conclusiones clave
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>GA4 captura aproximadamente el 13% del tráfico real UE tras tres capas de pérdida: rechazo de consentimiento (55%), ad blockers (40%) y restricciones de navegador.</li>
-            <li>Incluso entre el 45% que acepta cookies, el 65% lo hace en la segunda página vista — después del landing donde se captura la fuente del tráfico. Solo ~16% de los visitantes tiene atribución correcta.</li>
-            <li>La cascada es multiplicativa: 100 visitantes reales se quedan en ~45 tras el consentimiento, ~27 tras ad blockers y ~13 tras restricciones del navegador como ITP de Safari.</li>
+            <li>En un modelo de peor escenario acumulado, GA4 puede quedarse en el 13% del tráfico real UE tras tres capas de pérdida: rechazo de consentimiento (55%), ad blockers (40%) y restricciones de navegador. En una tienda Shopify real medida durante 48 días, GA4 no registró el 29% de las visitas.</li>
+            <li>Incluso entre el 45% que acepta cookies, el 65% lo hace en la segunda página vista — después del landing donde se captura la fuente del tráfico. En el modelo, solo ~16% de los visitantes tiene atribución correcta.</li>
+            <li>La cascada del modelo es multiplicativa: 100 visitantes reales se quedan en ~45 tras el consentimiento, ~27 tras ad blockers y ~13 tras restricciones del navegador como ITP de Safari.</li>
             <li>Google Consent Mode v2 modela el dato faltante pero no puede recuperar lo que nunca se recogió — estima, no mide.</li>
             <li>La analítica cookieless evita las tres capas operando sin cookies, sin peticiones de terceros y sin dependencia del consentimiento.</li>
           </ul>
@@ -79,7 +79,9 @@ export default function WhyGA4Shows13PctPageEs() {
           <p>
             Abre GA4 ahora y mira las sesiones de ayer. El número en pantalla no
             está mal exactamente. Es data real de visitantes reales. El problema es
-            lo que deja fuera: aproximadamente el 87% de las personas que realmente
+            lo que deja fuera. En una tienda Shopify real medida durante 48 días,
+            fue el 29% de las visitas; en el peor escenario acumulado que modela
+            este artículo, puede llegar al 87% de las personas que realmente
             visitaron tu sitio.
           </p>
 
@@ -107,8 +109,9 @@ export default function WhyGA4Shows13PctPageEs() {
           </p>
 
           <p>
-            Empieza con 100 visitantes reales llegando a tu sitio. Para cuando
-            GA4 los procesa, te quedan aproximadamente 13. Aquí está cómo
+            Empieza con 100 visitantes reales llegando a tu sitio. En el peor
+            escenario, con cada capa golpeando a su tasa media UE, para cuando
+            GA4 los procesa te quedan aproximadamente 13. Aquí está cómo
             funciona cada capa.
           </p>
 
@@ -241,13 +244,13 @@ export default function WhyGA4Shows13PctPageEs() {
             Esto no elimina visitantes de tu cuenta del todo, pero distorsiona los
             datos de sesión, infla las métricas de nuevo usuario y destruye la
             atribución multi-sesión. Combinado con los visitantes ya perdidos por
-            consentimiento y ad blockers, el dato preciso restante baja de 27 a
-            aproximadamente 13 de cada 100 visitantes reales.
+            consentimiento y ad blockers, el dato preciso que queda en el modelo
+            baja de 27 a aproximadamente 13 de cada 100 visitantes reales.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-8">
             <p className="text-[0.85rem] font-medium text-text-primary mb-4 uppercase tracking-[0.06em]">
-              La cascada
+              La cascada (modelo de peor escenario)
             </p>
             <div className="space-y-3 font-mono text-[0.9rem]">
               <div className="flex justify-between">
@@ -272,8 +275,9 @@ export default function WhyGA4Shows13PctPageEs() {
               </div>
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Cifras aproximadas basadas en medias UE. Las tasas reales varían por
-              mercado, audiencia y diseño del banner.
+              Peor escenario acumulado a partir de tasas medias UE, no una media
+              medida. Las tasas reales varían por mercado, audiencia y diseño del
+              banner.
             </p>
           </div>
 
@@ -395,14 +399,14 @@ export default function WhyGA4Shows13PctPageEs() {
               comparativa detallada entre Sealmetrics y GA4
             </Link>{" "}
             cubre precio, propiedad del dato y compliance además de
-            completitud. La cifra del 13% es el punto de partida, pero no es
-            la única diferencia.
+            completitud. La completitud del dato es el punto de partida, pero no
+            es la única diferencia.
           </p>
         </div>
 
         <CommercialModule
           locale="es"
-          hook="¿Tu GA4 también ve solo un ~13% del tráfico UE con precisión de campaña? Compara en una demo tus números con una medición del 100% de las visitas, sin banner y sin muestreo."
+          hook="El 13% es nuestro peor escenario, no tu número. Compara en una demo tus informes de GA4 con la medición de Sealmetrics sobre tu propio tráfico, sin banner y sin muestreo."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

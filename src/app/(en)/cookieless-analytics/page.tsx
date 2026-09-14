@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "What about Google Consent Mode v2?",
-    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. The data you see in GA4 with Consent Mode is a model of the 87% you cannot measure. Cookieless analytics is a measurement layer — every visitor is counted, no model required. The two answer different questions.",
+    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. Part of what you see in GA4 with Consent Mode is a model of the traffic you cannot measure. Cookieless analytics is a measurement layer — every visitor is counted, no model required. The two answer different questions.",
   },
   {
     q: "How fast is implementation?",
@@ -235,7 +235,8 @@ export default function CookielessAnalyticsPillar() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            Stack those losses and you are typically left with around{" "}
+            Stack those losses at their EU average rates and the compounded
+            worst case leaves you with around{" "}
             <Link
               href="/blog/why-ga4-shows-13pct-eu-traffic"
               className="text-brand underline decoration-1 underline-offset-2"
@@ -436,12 +437,12 @@ export default function CookielessAnalyticsPillar() {
               </thead>
               <tbody className="text-ink">
                 {[
-                  ["Traffic captured (EU)", "~13% after consent + ad-block + ITP", "100% — no consent, no script, no expiry"],
+                  ["Traffic captured (EU)", "Consent-dependent — lost to consent, ad-block and ITP (GA4 missed 29% of visits on a measured store)", "100% — no consent, no script, no expiry"],
                   ["Consent banner", "Required before any tracking", "Not required — no personal data"],
                   ["Ad-blocker impact", "Script stripped on ~40% of visits", "First-party request — not in rule lists"],
                   ["Cookie lifespan", "Safari ITP caps at 7 days", "No cookie — irrelevant"],
                   ["Returning-visitor ID", "Possible (when cookie survives)", "Not possible by design"],
-                  ["Attribution model", "Data-driven or last-click on 13%", "Last-click on 100% of data"],
+                  ["Attribution model", "Data-driven or last-click on consented traffic", "Last-click on 100% of data"],
                   ["Data residency", "US default (GA), EU optional (Adobe, Piwik)", "EU-only (Dublin)"],
                 ].map(([dim, cookie, server]) => (
                   <tr key={dim} className="border-b border-warm-100">

@@ -67,7 +67,7 @@ export default function ConsentModeV2Page() {
             <p>When a visitor rejects cookies, Consent Mode v2 prevents the analytics cookie from being written but still fires a &ldquo;cookieless ping&rdquo; — a request that records the event without any identifier. Google then aggregates the cookieless pings across many properties and uses a machine-learning model trained on the consenting visitors to estimate what the rejecting visitors probably did: how many sessions, how many conversions, by channel. The estimates appear in GA4 and Google Ads as if they were measured.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Modelled, not measured</h2>
-            <p>This is the important distinction. Consent Mode v2 fills the gap; it does not close it. The number you see in GA4 with Consent Mode enabled is the consenting 13–40% of EU visitors plus a statistical estimate of the rest. The estimate is useful when you need a ballpark — directionally correct for cross-channel comparisons in stable markets — and unreliable when you need exact reconciliation against CRM revenue, when a new channel mix breaks the training assumptions, or when you are auditing for compliance and the data subject asks &ldquo;was my visit measured?&rdquo;.</p>
+            <p>This is the important distinction. Consent Mode v2 fills the gap; it does not close it. The number you see in GA4 with Consent Mode enabled is the share of EU visitors who consented and were not blocked plus a statistical estimate of the rest. The estimate is useful when you need a ballpark — directionally correct for cross-channel comparisons in stable markets — and unreliable when you need exact reconciliation against CRM revenue, when a new channel mix breaks the training assumptions, or when you are auditing for compliance and the data subject asks &ldquo;was my visit measured?&rdquo;.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">When measurement is the right answer</h2>
             <p>For board-level revenue decisions, for CFO reconciliation, for the cost-of-customer calculations a serious finance team will defend — modelling is the wrong layer. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> measures every visitor on the same anonymous-aggregate basis, with no model in between. See the architectural argument on the <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">complete data pillar</Link>.</p>
@@ -77,7 +77,7 @@ export default function ConsentModeV2Page() {
           <RelatedGlossaryTerms slug="consent-mode-v2" />
           <div className="mt-10 pt-6 border-t border-warm-100">
             <p className="text-[0.85rem] text-text-tertiary">
-              Learn more: <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why GA4 Shows 13% of EU Traffic</Link>
+              Learn more: <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why GA4 Can Show as Little as 13% of Your EU Traffic</Link>
             </p>
           </div>
 

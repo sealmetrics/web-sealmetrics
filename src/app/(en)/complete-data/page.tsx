@@ -485,7 +485,7 @@ export default function CompleteDataPillar() {
               {
                 href: "/blog/why-ga4-shows-13pct-eu-traffic",
                 tag: "The 13% model",
-                title: "Why GA4 shows you 13% of your EU traffic",
+                title: "Why GA4 can show as little as 13% of your EU traffic",
                 lede: "The arithmetic of consent + ad-block + Safari ITP, with sector-level rejection rates.",
               },
               {

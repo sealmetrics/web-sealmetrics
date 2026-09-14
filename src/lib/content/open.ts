@@ -48,7 +48,7 @@ export const openChapters: OpenChapter[] = [
     part: 1,
     eyebrow: "Manifesto",
     summary:
-      "Most enterprise eCommerce companies in Europe optimize advertising investment on top of 13% of their traffic. This is what happens when that gets normalized.",
+      "Most enterprise eCommerce companies in Europe optimize ad spend on the traffic that agreed to be measured. This is what happens when that gets normalized.",
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-27",
@@ -68,7 +68,7 @@ export const openChapters: OpenChapter[] = [
     part: 1,
     eyebrow: "Audience",
     summary:
-      "Every company knows more than half of their analytics data is missing. We build for the operators who refuse to keep making decisions on top of it — regardless of sector, country, or revenue band.",
+      "Every company knows a large share of its analytics data is missing. We build for the operators who refuse to keep making decisions on top of it — regardless of sector, country, or revenue band.",
     readMinutes: 6,
     status: "ready",
     datePublished: "2026-05-28",
@@ -88,7 +88,7 @@ export const openChapters: OpenChapter[] = [
     part: 2,
     eyebrow: "Definition",
     summary:
-      "The technical difference between what GA4 measures (≈13% in the EU) and what you need to defend a number to your CFO.",
+      "The technical difference between what GA4 measures (on one real store, 29% of visits went unrecorded) and what you need to defend a number to your CFO.",
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-28",

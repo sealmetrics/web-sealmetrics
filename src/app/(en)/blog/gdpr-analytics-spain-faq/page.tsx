@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Is Google Analytics 4 legal in Spain?",
     answer:
-      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: 40-60% of visitors reject the banner, and after ad blockers and browser restrictions GA4 ends up showing roughly 13% of real EU traffic. Legal with consent, yes; complete, no.",
+      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: 40-60% of visitors reject the banner, and after ad blockers and browser restrictions GA4 can fall to about 13% of real EU traffic in the compounded worst case. On a real Shopify store measured over 48 days, GA4 with Consent Mode did not record 29% of visits. Legal with consent, yes; complete, no.",
   },
   {
     question: "Which GDPR-compliant analytics can a small business use?",
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "How much traffic do I lose if my analytics depends on a banner?",
     answer:
-      "Between 35% and 55% of EU visitors reject the banner, ad blockers affect over 40% of users, and browsers restrict cookies — the combined effect leaves GA4 showing roughly 13% of real EU traffic. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
+      "Between 35% and 55% of EU visitors reject the banner, ad blockers affect over 40% of users, and browsers restrict cookies. Stacked as a worst case, those losses can leave GA4 showing about 13% of real EU traffic. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits and 45% of pageviews, with the heaviest losses on organic social, affiliate and organic search. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
   },
 ];
 

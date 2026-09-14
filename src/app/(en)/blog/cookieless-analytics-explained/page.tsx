@@ -69,7 +69,7 @@ export default function CookielessAnalyticsExplainedPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~55% rejection, and ad blockers strip scripts from another 40%.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
-            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
+            <li>Cookie-based tracking can fall to about 13% of EU traffic in the compounded worst case, and on a real Shopify store measured over 48 days GA4 did not record 29% of visits; cookieless tracking captures 100% because there is nothing to block, reject, or expire.</li>
             <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
           </ul>
         </div>
@@ -119,9 +119,13 @@ export default function CookielessAnalyticsExplainedPage() {
           </ul>
 
           <p>
-            The cumulative effect is dramatic. A typical European eCommerce site
-            loses approximately 87% of its visitor data before any analytics
-            processing occurs. The{" "}
+            The cumulative effect is large. In the compounded worst case, a
+            European eCommerce site can lose up to 87% of its visitor data
+            before any analytics processing occurs. The measured gap is smaller
+            but still material: on a real Shopify store tracked side by side for
+            48 days,{" "}
+            <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
+            . The{" "}
             <Link
               href="/data-loss-calculator"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -195,7 +199,7 @@ export default function CookielessAnalyticsExplainedPage() {
                   },
                   {
                     aspect: "Traffic captured",
-                    cookie: "~13% in EU",
+                    cookie: "Consent-dependent",
                     cookieless: "100%",
                   },
                 ].map((row) => (
@@ -249,8 +253,8 @@ export default function CookielessAnalyticsExplainedPage() {
           <p>
             The transition from cookie-based to cookieless analytics is not a
             minor upgrade. It is a fundamental change in what you can measure.
-            Attribution models that were unreliable on 13% of data become useful
-            on 100%. Campaign optimization that was based on the
+            Attribution models that were unreliable on the consenting fraction
+            of traffic become useful on 100%. Campaign optimization that was based on the
             cookie-accepting segment can now reflect actual visitor behavior.
           </p>
 

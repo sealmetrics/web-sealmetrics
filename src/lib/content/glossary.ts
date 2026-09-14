@@ -77,7 +77,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Data Loss in Analytics",
     shortDefinition:
-      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Typically 70-87% in the EU.",
+      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Measured at 29% of visits on a real Shopify store; up to 87% in the EU worst-case model.",
     category: "Data Quality",
     related: ["ad-blocker-analytics-impact", "consent-management-platform", "intelligent-tracking-prevention", "data-sampling", "cookieless-analytics"],
   },

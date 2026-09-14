@@ -434,13 +434,18 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 en torno al 25% en audiencias técnicas, más en algunos sectores.
                 Fallo de etiqueta: alrededor del 5% en móvil, y crece en redes
                 lentas. Multiplica los supervivientes y estás reportando sobre
-                una fracción — mientras tu CFO lo lee como si fuera el total. Es
-                la aritmética detrás de{" "}
+                una fracción — mientras tu CFO lo lee como si fuera el total.
+                Sumadas en el peor escenario, es la aritmética por la que{" "}
                 <Link
                   href="/es/blog/why-ga4-shows-13pct-eu-traffic"
                   className={linkClass}
                 >
-                  que GA4 muestre el 13% del tráfico UE
+                  GA4 puede ver solo el 13% del tráfico UE
+                </Link>
+                . Medida en una tienda Shopify real durante 48 días, la brecha
+                fue menor pero igual de decisiva:{" "}
+                <Link href="/es/case-studies/incapto" className={linkClass}>
+                  GA4 no registró el 29% de las visitas
                 </Link>
                 .
               </p>

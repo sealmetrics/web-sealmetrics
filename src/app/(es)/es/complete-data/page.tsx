@@ -340,7 +340,7 @@ export default function CompleteDataPillarEs() {
               className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
             >
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">El modelo del 13%</span>
-              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Por qué GA4 te muestra el 13% de tu tráfico europeo</h3>
+              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Por qué GA4 puede ver solo el 13% de tu tráfico UE</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
                 La aritmética de consentimiento + ad-block + Safari ITP, con tasas de rechazo por sector.
               </p>

@@ -77,7 +77,7 @@ export default function BounceRatePage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why bounce rate is unreliable on incomplete data</h2>
           <p>
-            Bounce rate is a ratio metric &mdash; it requires both the numerator (single-page sessions) and the denominator (total sessions) to be accurate. When <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analytics data loss</Link> removes 40&ndash;87% of sessions from the dataset, the remaining sample is biased. Visitors who accept cookies and do not use ad blockers are not representative of the full audience.
+            Bounce rate is a ratio metric &mdash; it requires both the numerator (single-page sessions) and the denominator (total sessions) to be accurate. When <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analytics data loss</Link> removes sessions from the dataset &mdash; 29% of visits on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store measured over 48 days</Link>, up to 87% in the compounded worst-case model &mdash; the remaining sample is biased. Visitors who accept cookies and do not use ad blockers are not representative of the full audience.
           </p>
           <p>
             Consider: tech-savvy visitors who use ad blockers also tend to navigate more efficiently, browse fewer pages, and convert at different rates. When these visitors are invisible to your analytics, your bounce rate reflects only the behavior of the less technically sophisticated segment of your audience. Decisions made on this distorted metric &mdash; redesigning landing pages, reallocating ad spend, changing content strategy &mdash; may be solving a problem that does not exist for your actual audience.
@@ -87,7 +87,7 @@ export default function BounceRatePage() {
           </p>
         </div>
 
-        <CommercialModule hook="A bounce rate computed on the ~13% of traffic that consents skews hard. See yours measured across every visit." />
+        <CommercialModule hook="A bounce rate computed on the fraction of traffic that consents skews hard. See yours measured across every visit." />
 
         <RelatedGlossaryTerms slug="bounce-rate" />
 

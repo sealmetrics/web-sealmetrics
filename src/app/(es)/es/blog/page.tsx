@@ -87,8 +87,8 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     readTime: "7 min",
   },
   "why-ga4-shows-13pct-eu-traffic": {
-    title: "Por qué GA4 muestra el 13% de tu tráfico UE",
-    description: "GA4 pierde dato en tres niveles: rechazo de consentimiento, ad blockers y restricciones de navegador. Aquí están las cuentas.",
+    title: "Por qué GA4 puede ver solo el 13% de tu tráfico UE",
+    description: "GA4 pierde dato en tres niveles: rechazo de consentimiento, ad blockers y restricciones de navegador. En el peor caso se quedan en un 13%. Las cuentas.",
     category: "Calidad del dato",
     readTime: "8 min",
   },

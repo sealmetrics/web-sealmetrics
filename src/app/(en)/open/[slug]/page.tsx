@@ -379,7 +379,8 @@ function ChapterOneBody() {
     <div className="prose-open">
       <p className="text-[1.25rem] leading-[1.6] text-ink-2 mb-8 first-letter:font-semibold first-letter:text-[2.4em] first-letter:float-left first-letter:mr-2 first-letter:leading-[1] first-letter:text-ink">
         Most enterprise eCommerce companies in Europe optimize their
-        advertising investment on top of 13% of their traffic. This chapter
+        advertising investment on top of the share of their traffic that
+        agreed to be measured. This chapter
         is about what happens when that number stops being a measurement
         problem and becomes a decision problem.
       </p>
@@ -401,15 +402,23 @@ function ChapterOneBody() {
         The problem we see
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        Not 13% of some edge case. Thirteen percent of total — after GA4
-        consent banners are rejected, ad blockers strip events, and Intelligent
+        Consent banners get rejected, ad blockers strip events, and Intelligent
         Tracking Prevention purges cross-site cookies on Safari and Firefox.
-        Across our tests on European enterprise sites, that number holds with
-        small variance.
+        Stack all three at full strength and GA4 can fall to about 13% of real
+        traffic. That is the worst case, not the average. The measured gap is
+        smaller and still large: on{" "}
+        <Link
+          href="/case-studies/incapto"
+          className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
+        >
+          a Shopify store we measured side by side for 48 days
+        </Link>
+        , GA4 did not record 29% of visits or 45% of pageviews.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        Thirteen percent is what reaches the dashboard. Decisions are made
-        anyway — because the dashboard is the only thing on the table.
+        Whatever the gap on your site, the dashboard does not show it.
+        Decisions are made anyway — because the dashboard is the only thing on
+        the table.
       </p>
 
       <blockquote
@@ -436,8 +445,8 @@ function ChapterOneBody() {
         It isn't. It's a confident extrapolation from a biased sample.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        A 10M€ eCommerce running on 13% data is not allocating 87% of its
-        budget against ghosts. It is allocating{" "}
+        A 10M€ eCommerce running on partial data is not allocating a slice of
+        its budget against ghosts. It is allocating{" "}
         <em className="italic-accent">100%</em> of its budget on a phantom of
         the truth. Every bid, every audience, every retargeting list is a
         guess dressed as a measurement.
@@ -445,7 +454,10 @@ function ChapterOneBody() {
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         The cost compounds. Budgets shift toward channels that{" "}
         <em>appear</em> to convert — because those channels are measured
-        better, not because they perform better. The campaigns that actually
+        better, not because they perform better. On that same store,
+        Sealmetrics saw 11% more direct traffic than GA4 and 62% more organic
+        search: the channels that bring new people in are the ones that go
+        missing. The campaigns that actually
         drove revenue go unmeasured and unfunded. Over twelve months, the
         marketing plan rewrites itself around what GA4 can see, not around
         what your customers actually do.
@@ -766,16 +778,17 @@ function ChapterNineBody() {
             The problem is the input. Multi-touch attribution requires
             per-user, cross-session, cross-device journey reconstruction. In
             Europe, after consent rejection, ITP, and ad blockers, the
-            population you can actually stitch together is roughly the same{" "}
+            population you can actually stitch together is the same consented,
+            unblocked fraction that GA4 sees —{" "}
             <Link
               href="/open/what-complete-data-means"
               className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
             >
-              13%
-            </Link>{" "}
-            that GA4 sees. Multi-touch on 13% is multi-touch on a biased
-            sample of consenting Chrome users. The output isn't measurement —
-            it's an algorithm hallucinating about what the other 87% did.
+              about 13% in the compounded worst case
+            </Link>
+            . Multi-touch on that fraction is multi-touch on a biased sample
+            of consenting Chrome users. The output isn't measurement — it's an
+            algorithm hallucinating about what everyone else did.
           </p>
           <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
             We do last-click on 100% of events. It's an older model. It's a
@@ -1094,9 +1107,10 @@ function ChapterThreeBody() {
         Where the 13% comes from
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        The 13% figure is not a slogan. It is the output of a three-stage
-        cascade that every analytics tool relying on client-side cookies pays
-        in full.
+        The 13% figure is not a slogan, and it is not a measurement either.
+        It is a model: the three-stage cascade that every analytics tool
+        relying on client-side cookies is exposed to, with every stage
+        hitting at once.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         Start with 100 real EU visitors arriving at your site. Each stage
@@ -1148,10 +1162,31 @@ function ChapterThreeBody() {
         apply.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        The 13% is not a worst-case scenario or an edge case. It is the
-        median outcome for European eCommerce sites with proper CMP
-        implementations. You can verify the math on your own traffic using
-        our{" "}
+        So read the 13% as the compounded worst case, not as the typical
+        result. Here is what a real store showed. Incapto, a specialty coffee
+        brand on Shopify, ran GA4 with Consent Mode and Sealmetrics side by
+        side for 48 days. GA4 did not record 29% of visits or 45% of
+        pageviews. Sealmetrics, reconciled against Shopify&apos;s own orders,
+        recorded 96% of real orders and 97% of revenue. The method and the
+        full figures are in{" "}
+        <Link
+          href="/case-studies/incapto"
+          className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
+        >
+          the case study
+        </Link>
+        .
+      </p>
+      <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
+        The more useful finding is where the gap sat. Against GA4, Sealmetrics
+        saw 11% more direct traffic, 62% more organic search, 73% more
+        affiliate and 133% more organic social. The channels that bring new
+        people in lose the most; direct loses the least, so in GA4 it looks
+        more important than it is. That is a budget problem before it is a
+        measurement one.
+      </p>
+      <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
+        You can run the model with your own inputs using our{" "}
         <Link
           href="/data-loss-calculator"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
@@ -1162,8 +1197,10 @@ function ChapterThreeBody() {
       </p>
 
       <p className="text-[0.85rem] text-text-tertiary mb-10 italic">
-        Cascade percentages from Sealmetrics measurement studies of EU
-        enterprise CMPs. Methodology in our{" "}
+        Cascade percentages are EU average rates used as model inputs.
+        The compounded 13% is a worst-case model, not a
+        measured average; the Incapto figures are measured. Methodology in
+        our{" "}
         <Link
           href="/blog/why-ga4-shows-13pct-eu-traffic"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
@@ -1181,8 +1218,8 @@ function ChapterThreeBody() {
         Sampling vs complete measurement
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        The 13% is what reaches the dashboard. The dashboard, in turn,
-        samples it.
+        What reaches the dashboard is already partial. The dashboard, in
+        turn, samples it.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         GA4 applies sampling when a query exceeds certain thresholds — by
@@ -1417,14 +1454,16 @@ function ChapterSixBody() {
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         The default route in analytics is consent — the user agrees to be
         tracked, the cookie fires, the data is processed. This is what GA4
-        requires. It is also what fails: 55% of EU users reject consent (see{" "}
+        requires. It is also what fails: on average, around 55% of EU users
+        reject consent (see{" "}
         <Link
           href="/open/what-complete-data-means"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
         >
           chapter 03
         </Link>
-        ), and the measurable population narrows to roughly 13% of real
+        ). Stack ad blockers and browser restrictions on top, and in the
+        worst case the measurable population falls to about 13% of real
         traffic.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
@@ -1676,22 +1715,22 @@ function ChapterSixBody() {
 function ChapterTwoBody() {
   const numbers = [
     {
-      figure: "50%+",
-      label: "of analytics data is silently lost",
+      figure: "29%",
+      label: "of visits never reached GA4",
       detail:
-        "Consent rejection, ad blockers, browser restrictions, and modelling gaps combine to push the measured share well below what the dashboard suggests.",
+        "Measured, not modelled: 48 days of GA4 and Sealmetrics side by side on Incapto\u2019s Shopify store. The gap left no trace inside GA4 — nothing in the dashboard flagged it.",
     },
     {
-      figure: "30%",
-      label: "of sales never reach the report",
+      figure: "45%",
+      label: "of pageviews never reached GA4",
       detail:
-        "Transactions complete on devices, sessions, or paths the tag-based collector does not see. They show up in the ERP. They do not show up next to the channel that drove them.",
+        "The missing visits were not ordinary visits: they browsed twice as deep as the ones GA4 recorded. The sales still show up in the order system. They do not show up next to the channel that drove them.",
     },
     {
-      figure: "70%",
-      label: "of visible sales are misattributed",
+      figure: "14%",
+      label: "of recorded visits had no usable origin",
       detail:
-        "Last-click on partial data assigns credit to whichever channel happened to be measurable when the conversion fired — usually direct, branded search, or whichever platform self-reports most aggressively.",
+        "Even the traffic GA4 did see arrived without a channel anyone could decide on — against 0.3% in Sealmetrics. Credit drifts to whatever was measurable: usually direct, branded search, or whichever platform self-reports most aggressively.",
     },
   ];
 
@@ -1756,10 +1795,10 @@ function ChapterTwoBody() {
     <div className="prose-open">
       <p className="text-[1.25rem] leading-[1.6] text-ink-2 mb-8 first-letter:font-semibold first-letter:text-[2.4em] first-letter:float-left first-letter:mr-2 first-letter:leading-[1] first-letter:text-ink">
         Every company running digital marketing already knows the problem.
-        More than half of their analytics data is missing. Around 30% of
-        sales never reach the dashboard. Of the 70% that do, channel
-        attribution is wrong in ways that cannot be untangled after the
-        fact.
+        A large share of their analytics data is missing — on one store
+        measured side by side for 48 days, 29% of visits never reached GA4.
+        What does reach the dashboard carries a channel mix that is wrong
+        in ways that cannot be untangled after the fact.
       </p>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-14">
@@ -2123,13 +2162,13 @@ function ChapterElevenBody() {
       id: "multi-touch-attribution",
       term: "Multi-touch attribution",
       plain:
-        "Distributing conversion credit across the channels a user touched. Requires per-user, cross-session reconstruction, which in Europe is possible for roughly 13% of visitors.",
+        "Distributing conversion credit across the channels a user touched. Requires per-user, cross-session reconstruction, which in Europe is possible only for visitors who consented and are not blocked — about 13% in the worst case.",
       body: (
         <>
           Distributing credit across the channels involved in a conversion
           path. Requires per-user, cross-session journey reconstruction. In
-          Europe that journey is reconstructable for roughly 13% of
-          visitors. We do not do this.
+          Europe that journey is reconstructable only for visitors who
+          consented and are not blocked. We do not do this.
         </>
       ),
       chapterHref: "/open/what-we-wont-do",
@@ -2235,7 +2274,7 @@ function ChapterElevenBody() {
       id: "consent-rejection-rate",
       term: "Consent rejection rate",
       plain:
-        "Share of visitors who refuse the consent banner. EU enterprise average is approximately 55%. The first stage of the cascade that brings GA4 measurement down to roughly 13% of real traffic.",
+        "Share of visitors who refuse the consent banner. EU enterprise average is approximately 55%. The first stage of the worst-case cascade that can bring GA4 measurement down to about 13% of real traffic.",
       body: (
         <>
           Share of visitors who refuse the CMP banner — reject-all clicks,
@@ -2349,7 +2388,7 @@ function ChapterElevenBody() {
       id: "itp",
       term: "Intelligent Tracking Prevention (ITP)",
       plain:
-        "Safari's mechanism for limiting cross-site tracking. Expires or blocks cookies that depend on cross-site context. One of the three layers in the cascade that brings GA4 measurement to roughly 13%.",
+        "Safari's mechanism for limiting cross-site tracking. Expires or blocks cookies that depend on cross-site context. One of the three layers in the worst-case cascade that can bring GA4 measurement down to about 13%.",
       body: (
         <>
           Safari's mechanism for limiting cross-site tracking. Expires or
@@ -2382,12 +2421,19 @@ function ChapterElevenBody() {
       id: "the-13-percent",
       term: "The 13%",
       plain:
-        "The canonical estimate of GA4 measurement coverage in the EU after consent rejection, ad blockers, and browser restrictions. The end of a multiplicative cascade that starts at 100 real visitors and arrives at roughly 13 measurable ones.",
+        "Our worst-case model of GA4 measurement coverage in the EU after consent rejection, ad blockers, and browser restrictions. A multiplicative cascade that starts at 100 real visitors and arrives at roughly 13 measurable ones. A compounded worst case, not an average: on one real Shopify store measured for 48 days, GA4 did not record 29% of visits.",
       body: (
         <>
-          The canonical estimate of GA4 measurement coverage in the EU
-          after consent rejection (~55%), ad blockers (~40% of the
-          remainder), and browser restrictions. The end of the cascade.
+          Our worst-case model of GA4 measurement coverage in the EU after
+          consent rejection (~55%), ad blockers (~40% of the remainder), and
+          browser restrictions. The end of the cascade — not an average. On{" "}
+          <Link
+            href="/case-studies/incapto"
+            className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
+          >
+            a real Shopify store measured for 48 days
+          </Link>
+          , GA4 did not record 29% of visits.
         </>
       ),
       chapterHref: "/open/what-complete-data-means",
@@ -2678,9 +2724,9 @@ function ChapterSevenBody() {
     {
       label: "Data captured",
       us: "100% of events",
-      ga360: "~13% in EU after consent + ITP",
-      adobe: "~13% in EU after consent + ITP",
-      piwik: "100% of consenting users",
+      ga360: "Consent-dependent",
+      adobe: "Consent-dependent",
+      piwik: "Consent-dependent (default config)",
     },
     {
       label: "Sampling",

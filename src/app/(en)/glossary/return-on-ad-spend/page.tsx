@@ -69,7 +69,7 @@ export default function ReturnOnAdSpendPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why incomplete data understates ROAS</h2>
           <p>
-            The asymmetry is the problem. The denominator (spend) is always complete. The numerator (measured revenue) is complete only if the analytics tool observed every conversion. In the EU, cookie-based analytics does not come close: 40-60% of visitors reject consent, ad blockers remove more, and browser restrictions cut cookie lifetimes. The result is that a tool like GA4 typically sees around 13% of real EU traffic — and a ROAS computed on that fragment divides full spend by partial revenue.
+            The asymmetry is the problem. The denominator (spend) is always complete. The numerator (measured revenue) is complete only if the analytics tool observed every conversion. In the EU, cookie-based analytics does not come close: 40-60% of visitors reject consent, ad blockers remove more, and browser restrictions cut cookie lifetimes. In the compounded worst case, a tool like GA4 sees as little as 13% of real EU traffic; on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store measured over 48 days</Link>, GA4 did not record 29% of visits. Either way, a ROAS computed on that fragment divides full spend by partial revenue.
           </p>
           <p>
             The distortion is not evenly distributed either. Consent rejection and blocker usage vary by market, device and audience, so some campaigns lose more measured conversions than others. A prospecting campaign reaching privacy-conscious German desktop users can look far worse than a retargeting campaign reaching returning mobile buyers, even when their true returns are similar. Budget then flows toward the campaigns that are easiest to measure, not the ones that perform best. <Link href="/complete-data" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Complete data</Link> — <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">revenue attribution</Link> computed on 100% of observed orders rather than the consenting minority — removes that bias from the numerator.
@@ -81,13 +81,13 @@ export default function ReturnOnAdSpendPage() {
           </p>
         </div>
 
-        <CommercialModule hook="A ROAS computed on the ~13% of EU traffic GA4 sees is a guess with two decimal places. See yours calculated on 100% of orders." />
+        <CommercialModule hook="A ROAS computed on the fraction of EU traffic that consents is a guess with two decimal places. See yours calculated on 100% of orders." />
 
         <RelatedGlossaryTerms slug="return-on-ad-spend" />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why GA4 Shows Only 13% of Your EU Traffic</Link> &middot; <Link href="/complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Complete Data</Link>
+            Learn more: <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why GA4 Can Show as Little as 13% of Your EU Traffic</Link> &middot; <Link href="/complete-data" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Complete Data</Link>
           </p>
         </div>
       </div>

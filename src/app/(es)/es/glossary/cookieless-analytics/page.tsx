@@ -65,7 +65,7 @@ export default function Page() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué importa</h2>
           <p>
-            En la UE, la analítica basada en cookies captura aproximadamente el 13% del tráfico real debido al rechazo de consentimiento (55%), bloqueadores (40%) y restricciones de navegador. La analítica sin cookies elimina los tres vectores de pérdida, contando el 100% de las visitas reales de forma anónima.
+            En la UE, la analítica basada en cookies pierde tráfico por el rechazo de consentimiento (55%), los bloqueadores (40%) y las restricciones de navegador. En el peor escenario acumulado se queda en torno al 13% del tráfico real; en una <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tienda Shopify real medida durante 48 días</Link>, GA4 no registró el 29% de las visitas. La analítica sin cookies elimina los tres vectores de pérdida, contando el 100% de las visitas reales de forma anónima.
           </p>
           <p>
             No es una mejora marginal — es la diferencia entre decidir sobre un fragmento estadístico y decidir sobre totales agregados completos.

@@ -137,7 +137,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 
 ## Comparisons (enterprise analytics tier)
 - /vs — All vendor comparisons
-- /vs-ga4 — Sealmetrics vs Google Analytics 4: free, ~13% EU data after consent rejection and ad blockers, and an official but read-only MCP server over that reduced dataset
+- /vs-ga4 — Sealmetrics vs Google Analytics 4: free but consent-dependent (29% of visits unrecorded in a measured Shopify case; about 13% in the worst-case model), and an official but read-only MCP server over that reduced dataset
 - /vs/ga360 — Sealmetrics vs Google Analytics 360: quote-based from around $50,000/yr and scaling with event volume, on the same cookie and consent architecture as free GA4
 - /vs/adobe-analytics — Sealmetrics vs Adobe Analytics: unpublished contracts from around $50,000/yr to $200,000+, a 3-6 month implementation and an Adobe-certified analyst, on consent-gated AppMeasurement collection
 - /vs/piwik-pro — Sealmetrics vs Piwik PRO: EU-hosted but cookie-based by default; the free Core plan is retired on 31 March 2026, Business starts at €35/mo and Enterprise is quote-only
@@ -155,9 +155,9 @@ The free Agentic tier covers 1M human events a month and takes no card.
 Open is our public transparency hub: numbered chapters on how we run the company, the product, and our compliance posture. EN-only. The chapters below are the ones actually published — remaining chapters are still in draft and are deliberately not listed.
 
 - /open — Index of the transparency hub, organized in four parts: Why, How we measure, How we operate, Where we go
-- /open/why-we-exist — Chapter 1 (Manifesto): why European eCommerce ends up optimizing ad spend on top of 13% of its traffic, and what breaks when that gets normalized
+- /open/why-we-exist — Chapter 1 (Manifesto): why European eCommerce ends up optimizing ad spend on partial, consent-shaped traffic, and what breaks when that gets normalized
 - /open/who-we-build-for — Chapter 2 (Audience): the operator we build for, the personas who push the change internally, and when we are not a fit
-- /open/what-complete-data-means — Chapter 3 (Definition): where the 13% comes from, sampling vs complete measurement, modeling vs measuring, and where Sealmetrics sits
+- /open/what-complete-data-means — Chapter 3 (Definition): the 13% worst-case model versus the measured gap, sampling vs complete measurement, modeling vs measuring, and where Sealmetrics sits
 - /open/architecture-and-performance — Chapter 5 (Infrastructure): where the pixel runs, the latency and client footprint it adds, how it scales, and what we don't measure
 - /open/gdpr-by-architecture — Chapter 6 (Compliance): how we meet GDPR, ePrivacy and Schrems II without creative legal interpretations — and what we explicitly do not claim
 - /open/how-we-price — Chapter 7 (Commercial): we charge for human events, not bots or AI agents; one architecture across plans; honest comparison against the enterprise tier we replace
@@ -225,7 +225,7 @@ Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/cookieless-analytics-for-saas — PLG Analytics Without Consent Banners: Trial-to-Paid Measurement in 2026
 - /blog/consentless-analytics-for-dtc — How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
 - /blog/best-enterprise-analytics-platforms — 8 Best Enterprise Analytics Platforms in 2026 (editorial ranking)
-- /blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Shows 13% of Your EU Traffic (the math behind the data loss cascade)
+- /blog/why-ga4-shows-13pct-eu-traffic — Why GA4 Can Show as Little as 13% of Your EU Traffic (the worst-case math behind the data loss cascade, and what a measured store showed)
 - /blog/analytics-tools-cookies-cataloged — Every Cookie Set by Every Major Analytics Tool, Cataloged
 - /blog/analytics-tools-external-domains — Your Analytics Tool Contacts 7 Domains. Here Is Why That Matters
 - /blog/analytics-tools-data-sampling — Data Sampling Thresholds Compared: When Your Analytics Starts Guessing
@@ -365,7 +365,7 @@ Blog (ES):
 - /es/blog/ga4-alternatives-enterprise — 7 alternativas a GA4 para equipos de eCommerce en 2026
 - /es/blog/self-service-analytics-lens-ai — Analítica self-service con LENS AI
 - /es/blog/gdpr-analytics-without-consent — Analítica conforme con RGPD sin banners de consentimiento
-- /es/blog/why-ga4-shows-13pct-eu-traffic — Por qué GA4 muestra el 13% de tu tráfico UE
+- /es/blog/why-ga4-shows-13pct-eu-traffic — Por qué GA4 puede ver solo el 13% de tu tráfico UE (el peor escenario del modelo y lo que mostró una tienda medida)
 - /es/blog/cookieless-analytics-explained — Analítica cookieless explicada: cómo medir sin cookies
 - /es/blog/consent-banner-impact-on-analytics — Cómo los banners de consentimiento destruyen tus datos
 - /es/blog/ga4-data-sampling-problem — Muestreo de datos en GA4: por qué tus números están mal

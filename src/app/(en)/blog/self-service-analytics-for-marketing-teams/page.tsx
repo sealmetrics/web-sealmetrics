@@ -232,15 +232,23 @@ export default function Page() {
             </p>
             <p>
               This is not a reporting detail. An agent that reads a partial dataset does not say
-              &ldquo;I only have 13% of your traffic.&rdquo; It answers confidently with the 13% it
+              &ldquo;I only see part of your traffic.&rdquo; It answers confidently with the part it
               has. The output is well formatted, precise-looking and wrong. Bad data plus a good
-              model produces false precision faster than a spreadsheet ever could — and the
-              arithmetic of how that 13% happens is worked through in{" "}
+              model produces false precision faster than a spreadsheet ever could. The gap is
+              measurable: on a real Shopify store tracked side by side for 48 days,{" "}
+              <Link
+                href="/case-studies/incapto"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                GA4 did not record 29% of visits
+              </Link>
+              , and the worst-case arithmetic, in which the visible share can fall to about 13%, is
+              worked through in{" "}
               <Link
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                why GA4 ends up showing a sliver of EU traffic
+                why GA4 can end up showing a sliver of EU traffic
               </Link>
               .
             </p>

@@ -11,13 +11,13 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { QuickAnswer } from "@/components/ui/QuickAnswer";
 
 export const metadata: Metadata = {
-  title: "Why GA4 Shows 13% of Your EU Traffic",
+  title: "Why GA4 Can Show as Little as 13% of Your EU Traffic",
   description:
-    "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
+    "Consent rejection, ad blockers and browser limits compound: in the worst case GA4 sees about 13% of EU traffic. A measured store lost 29% of visits.",
   openGraph: {
-    title: "Why GA4 Shows 13% of Your EU Traffic",
+    title: "Why GA4 Can Show as Little as 13% of Your EU Traffic",
     description:
-      "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
+      "GA4 loses EU traffic at three levels. The worst-case cascade leaves about 13%; a real Shopify store measured for 48 days lost 29% of visits.",
     type: "article",
     url: "https://sealmetrics.com/blog/why-ga4-shows-13pct-eu-traffic/",
     siteName: "Sealmetrics",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Why GA4 Shows 13% of Your EU Traffic",
-    description: "GA4 loses EU traffic at three structural levels. Here is the cascade that leaves you with 13%.",
+    title: "Why GA4 Can Show as Little as 13% of Your EU Traffic",
+    description: "GA4 loses EU traffic at three levels. The worst-case cascade leaves about 13%; a real Shopify store measured for 48 days lost 29% of visits.",
     images: ["https://sealmetrics.com/og/blog/why-ga4-shows-13pct-eu-traffic.png"],
   },
   alternates: {
@@ -42,9 +42,9 @@ export default function WhyGA4Shows13PctPage() {
 
   return (
     <>
-      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Shows 13% of Your EU Traffic" }]} />
-      <JsonLd data={articleSchema({ headline: "Why GA4 Shows 13% of Your EU Traffic", description: "GA4 loses data at three structural levels, leaving roughly 13% of real EU traffic.", ...dates, url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
-      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Shows 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
+      <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Why GA4 Can Show as Little as 13% of Your EU Traffic" }]} />
+      <JsonLd data={articleSchema({ headline: "Why GA4 Can Show as Little as 13% of Your EU Traffic", description: "GA4 loses data at three structural levels; compounded, the worst-case model leaves about 13% of real EU traffic.", ...dates, url: "/blog/why-ga4-shows-13pct-eu-traffic", category: "Data Quality", author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Why GA4 Can Show as Little as 13% of Your EU Traffic", url: "/blog/why-ga4-shows-13pct-eu-traffic" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
 
@@ -53,7 +53,7 @@ export default function WhyGA4Shows13PctPage() {
             Data Quality
           </span>
           <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-            Why GA4 Shows 13% of Your EU Traffic
+            Why GA4 Can Show as Little as 13% of Your EU Traffic
           </h1>
           <QuickAnswer>{`Sealmetrics is a consentless web analytics platform that solves GA4's post-consent data loss by capturing 100% of EU site traffic without cookies or consent banners. GA4 typically loses 40–60% of visitor data once a consent management platform (CMP) is active, because tracking only fires after opt-in, and EU consent rates average just 30–50% depending on industry and banner design. This gap distorts conversion rates, channel attribution, and campaign ROI reporting. Sealmetrics eliminates the problem architecturally: it never sets cookies or processes personal data, so no consent banner is legally required under GDPR, and every visitor is measured regardless of consent choice. Unlike Matomo, which still relies on cookies by default, Sealmetrics uses server-side, non-personal data collection and attributes revenue on last click, back to the campaign and keyword that earned it. For mid-market eCommerce brands and agencies losing visibility into half their traffic, this means accurate reporting without legal risk, banner friction, or reliance on sampled or modeled data to fill gaps GA4 leaves behind.`}</QuickAnswer>
           <PostByline
@@ -69,9 +69,9 @@ export default function WhyGA4Shows13PctPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>GA4 captures approximately 13% of real EU traffic after three layers of data loss: consent rejection (55%), ad blockers (40%), and browser restrictions.</li>
-            <li>Even among the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. Only ~16% of visitors have correct attribution.</li>
-            <li>The cascade is multiplicative: 100 real visitors become ~45 after consent, ~27 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>
+            <li>In a compounded worst-case model, GA4 can see as little as 13% of real EU traffic after three layers of data loss: consent rejection (55%), ad blockers (40%), and browser restrictions. On a real Shopify store measured over 48 days, GA4 did not record 29% of visits.</li>
+            <li>Even among the 45% who accept cookies, 65% accept on the second page view — after the landing page where the traffic source is captured. In the model, only ~16% of visitors have correct attribution.</li>
+            <li>The model&rsquo;s cascade is multiplicative: 100 real visitors become ~45 after consent, ~27 after ad blockers, and ~13 after browser restrictions like Safari ITP.</li>
             <li>Google Consent Mode v2 models missing data but cannot recover what was never collected — it estimates, not measures.</li>
             <li>Cookieless analytics avoids all three layers by operating without cookies, third-party requests, or consent dependency.</li>
           </ul>
@@ -81,8 +81,10 @@ export default function WhyGA4Shows13PctPage() {
           <p>
             Open GA4 right now and look at yesterday&rsquo;s sessions. The
             number on your screen is not wrong, exactly. It is real data from
-            real visitors. The problem is what it leaves out: roughly 87% of
-            the people who actually visited your site.
+            real visitors. The problem is what it leaves out. On a real Shopify
+            store measured for 48 days, that was 29% of visits; in the
+            compounded worst case this post models, it can reach 87% of the
+            people who actually visited your site.
           </p>
 
           <p>
@@ -113,8 +115,9 @@ export default function WhyGA4Shows13PctPage() {
           </p>
 
           <p>
-            Start with 100 real visitors arriving at your site. By the time
-            GA4 has processed them, you are left with approximately 13. Here
+            Start with 100 real visitors arriving at your site. In the worst
+            case, where every layer hits at its EU average rate, by the time
+            GA4 has processed them you are left with approximately 13. Here
             is how each layer works.
           </p>
 
@@ -250,13 +253,13 @@ export default function WhyGA4Shows13PctPage() {
             This does not eliminate visitors from your count entirely, but it
             distorts session data, inflates new-user metrics, and destroys
             multi-session attribution. Combined with the visitors already lost
-            to consent and ad blockers, the remaining accurate data drops from
-            27 to roughly 13 out of every 100 actual visitors.
+            to consent and ad blockers, the model&rsquo;s remaining accurate
+            data drops from 27 to roughly 13 out of every 100 actual visitors.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-8">
             <p className="text-[0.85rem] font-medium text-text-primary mb-4 uppercase tracking-[0.06em]">
-              The cascade
+              The cascade (worst-case model)
             </p>
             <div className="space-y-3 font-mono text-[0.9rem]">
               <div className="flex justify-between">
@@ -281,8 +284,9 @@ export default function WhyGA4Shows13PctPage() {
               </div>
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Approximate figures based on EU averages. Actual rates vary by
-              market, audience, and consent banner design.
+              A compounded worst case built from EU average rates, not a
+              measured average. Actual rates vary by market, audience, and
+              consent banner design.
             </p>
           </div>
 
@@ -401,13 +405,13 @@ export default function WhyGA4Shows13PctPage() {
               detailed comparison between Sealmetrics and GA4
             </Link>{" "}
             covers pricing, data ownership, and compliance alongside data
-            completeness. The 13% figure is the starting point, but it is
+            completeness. Data completeness is the starting point, but it is
             not the only difference.
           </p>
         </div>
 
         <CommercialModule
-          hook="13% is the EU average, not your number. Measure yours — side by side with GA4, on your own traffic."
+          hook="13% is our worst-case model, not your number. Measure yours — side by side with GA4, on your own traffic."
         />
 
         {/* Related */}

@@ -10,10 +10,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "¿Qué es la pérdida de datos en analítica? — Glosario",
   description:
-    "La pérdida de datos en analítica es la brecha entre tráfico real y tráfico medido por las herramientas con cookies. En la UE alcanza típicamente el 60-87%.",
+    "La pérdida de datos en analítica es la brecha entre tráfico real y medido con cookies: 29% de visitas en una tienda medida, hasta 87% en el peor escenario.",
   openGraph: {
     title: "¿Qué es la pérdida de datos en analítica?",
-    description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
+    description: "Brecha entre tráfico real y tráfico observable con cookies: 29% de las visitas en una tienda medida, hasta 87% en el peor escenario UE.",
     type: "article",
     url: "https://sealmetrics.com/es/glossary/data-loss-in-analytics/",
     siteName: "Sealmetrics",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la pérdida de datos en analítica?",
-    description: "Brecha entre tráfico real y tráfico observable por herramientas con cookies. En la UE: 60-87%.",
+    description: "Brecha entre tráfico real y tráfico observable con cookies: 29% de las visitas en una tienda medida, hasta 87% en el peor escenario UE.",
     images: [ogImage("/es/glossary/data-loss-in-analytics/")],
   },
   alternates: {
@@ -48,7 +48,7 @@ export default function Page() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              La diferencia entre el tráfico que realmente recibe un sitio y el tráfico que las herramientas con cookies son capaces de observar. En tráfico UE, esta brecha ronda típicamente el 60-87% por la combinación de rechazo de consentimiento, bloqueadores de anuncios y restricciones de navegador.
+              La diferencia entre el tráfico que realmente recibe un sitio y el tráfico que las herramientas con cookies son capaces de observar. En una tienda Shopify real medida durante 48 días fue del 29% de las visitas; en tráfico UE puede llegar al 87% en el peor escenario, cuando se acumulan rechazo de consentimiento, bloqueadores de anuncios y restricciones de navegador.
             </p>
           </div>
 
@@ -57,8 +57,8 @@ export default function Page() {
           <ul className="space-y-2 pl-0 list-none">
             {[
               "Rechazo de consentimiento — 40-60% del tráfico UE rechaza el banner de cookies y nunca aparece en GA4",
-              "Bloqueadores de anuncios — ~25% adicional bloquea el script analytics-google.com aunque acepte el banner",
-              "Restricciones de navegador — Safari ITP y Firefox ETP recortan sesiones a 7 días, fragmentando los journeys del 35% restante",
+              "Bloqueadores de anuncios — en torno al 40% de quienes aceptan el banner bloquea igualmente el script de Google Analytics",
+              "Restricciones de navegador — Safari ITP y Firefox ETP recortan sesiones a 7 días, acortando la vida de las cookies de quienes quedan",
             ].map((item) => (
               <li key={item} className="flex items-start gap-3 text-[0.95rem]">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -68,13 +68,13 @@ export default function Page() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">El impacto en decisiones</h2>
-          <p>Cuando la analítica capta sólo el 13% del tráfico real, los modelos de atribución, ROAS, CPA y customer lifetime value se calculan sobre una muestra estadística — no sobre el dato. Las decisiones de reasignación de presupuesto basadas en esa muestra suelen estar sesgadas hacia los canales con mayor probabilidad de aceptar cookies, no hacia los que más ingresos generan en realidad.</p>
+          <p>Cuando la analítica deja fuera parte del tráfico real &mdash;el 29% de las visitas en la <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">medición en paralelo de Incapto</Link>, hasta el 87% en el peor escenario acumulado&mdash;, los modelos de atribución, ROAS, CPA y customer lifetime value se calculan sobre una muestra estadística — no sobre el dato. Las decisiones de reasignación de presupuesto basadas en esa muestra suelen estar sesgadas hacia los canales con mayor probabilidad de aceptar cookies, no hacia los que más ingresos generan en realidad.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo cerrar la brecha</h2>
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sobre el 100% del tráfico — no una muestra, no una estimación.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La cuarta pérdida: la fuente de tráfico</h2>
-          <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De ese 40–45% que sí acepta el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. El efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta, frente al 13% que se cita para la visibilidad total.</p>
+          <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De ese 40–45% que sí acepta el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. En el modelo de peor escenario, el efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta. En la medición real de Incapto, el 14% de las visitas de GA4 llegaba sin un origen utilizable, frente al 0,3% en Sealmetrics.</p>
           <p>La consecuencia práctica es que el número de sesiones y el número de conversiones atribuidas se degradan a ritmos distintos. Un informe puede parecer razonable en volumen y estar completamente equivocado en reparto: el tráfico directo se hincha con lo que en realidad era campaña, y el canal de pago aparece infrafinanciado en su propio panel. Cuando alguien dice que su ROAS no cuadra con el backend, esta suele ser la razón, no un error de etiquetado.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo medir tu propia brecha</h2>

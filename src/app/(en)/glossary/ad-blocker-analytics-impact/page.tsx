@@ -72,7 +72,8 @@ export default function AdBlockerAnalyticsImpactPage() {
           <p>
             &mdash; 40% of visitors blocked by ad blockers<br />
             &mdash; 55% of visitors reject cookies via consent banners<br />
-            &mdash; Net result: cookie-based analytics captures roughly 13% of actual traffic
+            &mdash; Net result in the compounded worst case: cookie-based analytics captures roughly 13% of actual traffic<br />
+            &mdash; Measured on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store over 48 days</Link>: GA4 did not record 29% of visits
           </p>
           <p>
             This is not a rounding error. It means marketing teams making budget decisions on a fragment of their real data &mdash; a problem that compounds across every report, every attribution model, and every ROI calculation.

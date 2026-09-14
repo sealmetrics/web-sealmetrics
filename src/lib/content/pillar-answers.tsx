@@ -29,9 +29,10 @@ export const productAnswer: Record<Locale, ReactNode> = {
       Sealmetrics is a cookieless, consentless web analytics platform for
       eCommerce. It measures every eligible visit without cookies, identifiers
       or a consent banner, so the reported total is the whole population rather
-      than the share that accepted tracking — in the EU, GA4 typically reports
-      around 13% of real traffic once sampling, consent rejection and ad
-      blockers are counted. Revenue is attributed on last click across that
+      than the share that accepted tracking — on a real Shopify store measured
+      over 48 days, GA4 did not record 29% of visits, and once sampling,
+      consent rejection and ad blockers compound in the EU worst case it can
+      fall to about 13%. Revenue is attributed on last click across that
       complete dataset, under one declared model your team can name and defend.
       Four layers run on the same defined inputs: collection, attribution, nine
       reporting surfaces, and activation through the REST API, the MCP server
@@ -45,9 +46,10 @@ export const productAnswer: Record<Locale, ReactNode> = {
       Sealmetrics es una plataforma de analítica web cookieless y sin
       consentimiento para eCommerce. Mide cada visita elegible sin cookies, sin
       identificadores y sin banner, así que el total que reporta es la población
-      entera y no la parte que aceptó ser medida — en la UE, GA4 suele reportar
-      en torno al 13% del tráfico real una vez descontados el muestreo, el
-      rechazo de consentimiento y los bloqueadores. Los ingresos se atribuyen a
+      entera y no la parte que aceptó ser medida — en una tienda Shopify real
+      medida durante 48 días, GA4 no registró el 29% de las visitas, y en el
+      peor escenario de la UE, sumando muestreo, rechazo de consentimiento y
+      bloqueadores, puede quedarse en torno al 13%. Los ingresos se atribuyen a
       último clic sobre ese dato completo, bajo un modelo declarado que tu
       equipo puede nombrar y defender. Cuatro capas trabajan sobre las mismas
       entradas definidas: recogida, atribución, nueve superficies de reporting y
@@ -187,9 +189,10 @@ export const homeAnswer: ReactNode = (
     eCommerce companies in the EU and UK. It records pageviews, events and
     conversions without setting a cookie, storing an identifier or asking for
     consent, so the number it reports is the whole audience rather than the
-    fraction that accepted tracking — in the EU, GA4 typically sees around 13%
-    of real traffic once sampling, consent rejection and ad blockers are
-    counted. Revenue is attributed on last click across that complete dataset,
+    fraction that accepted tracking — on a real Shopify store measured over 48
+    days, GA4 did not record 29% of visits, and in the compounded EU worst case
+    of sampling, consent rejection and ad blockers it can fall to about 13%.
+    Revenue is attributed on last click across that complete dataset,
     and collection is first-party and server-side, processed and stored in
     Dublin only. It is built to be checked rather than believed: run it beside
     your current analytics and compare both totals against the revenue your

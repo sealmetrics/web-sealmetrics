@@ -94,7 +94,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "A marketing team gets a correct answer without opening a ticket. 100% of traffic measured without consent, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-09-14",
     category: "AI & Analytics",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -158,7 +158,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow, and what does LSSI non-compliance cost? Direct answers, one per question.",
     date: "2026-07-07",
-    dateModified: "2026-07-07",
+    dateModified: "2026-09-14",
     category: "Regulation",
     readTime: "5 min",
     author: AUTHORS.rafa,
@@ -271,7 +271,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, Sealmetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
     date: "2026-03-16",
-    dateModified: "2026-08-27",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.sealmetrics,
@@ -305,9 +305,9 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "why-ga4-shows-13pct-eu-traffic",
-    title: "Why GA4 Shows 13% of Your EU Traffic",
+    title: "Why GA4 Can Show as Little as 13% of Your EU Traffic",
     description:
-      "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
+      "Consent rejection, ad blockers and browser limits compound: in the worst case GA4 sees about 13% of EU traffic. A measured store lost 29% of visits.",
     date: "2026-03-06",
     dateModified: "2026-09-14",
     dateModifiedEs: "2026-09-14",
@@ -412,8 +412,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "GA4 applies data sampling when traffic exceeds certain thresholds. Here is how it works, why it matters, and what you can do about it.",
     date: "2026-02-15",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -426,7 +426,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "The European Commission proposed the biggest change to EU data law since GDPR. Cookie consent moves to GDPR, and first-party analytics may not require consent.",
     date: "2026-02-12",
-    dateModified: "2026-09-04",
+    dateModified: "2026-09-14",
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
@@ -463,8 +463,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "Cookies are disappearing. Learn how cookieless analytics works, why it captures more data, and what it means for GDPR compliance.",
     date: "2026-02-08",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -499,9 +499,9 @@ export const blogPosts: BlogPost[] = [
     slug: "multi-touch-attribution-complete-data",
     title: "Why Multi-Touch Attribution Fails Without Complete Data",
     description:
-      "Your attribution model is only as good as the data feeding it. When 87% of touchpoints are missing, every attribution conclusion is wrong.",
+      "Your attribution model is only as good as the data feeding it. When a large, uneven share of touchpoints is missing, attribution conclusions tilt.",
     date: "2026-01-10",
-    dateModified: "2026-05-04",
+    dateModified: "2026-09-14",
     category: "Attribution",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -514,7 +514,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Cookieless tracking captures visitor behavior without browser cookies. Learn how it works, why it matters for GDPR compliance, and how it compares to traditional analytics.",
     date: "2026-03-02",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -527,7 +527,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Analytics data loss is the gap between real traffic and reported traffic. Learn the four causes, quantify the impact, and understand how to eliminate it.",
     date: "2026-03-02",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -539,7 +539,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Compare 7 GA4 alternatives for eCommerce: pricing, data capture rates, EU compliance, and eCommerce features. From GA360 to cookieless platforms.",
     date: "2026-03-02",
-    dateModified: "2026-08-27",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "10 min",
     author: AUTHORS.rafa,

@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "¿Y el Consent Mode v2 de Google?",
-    a: "Consent Mode es una capa de modelado: cuando los visitantes rechazan cookies, Google estima los datos que faltan estadísticamente. Sigue siendo basado en cookies. Los datos que ves en GA4 con Consent Mode son un modelo del 87% que no puedes medir. La analítica sin cookies es una capa de medición — cada visitante se cuenta, sin modelo. Responden preguntas distintas.",
+    a: "Consent Mode es una capa de modelado: cuando los visitantes rechazan cookies, Google estima los datos que faltan estadísticamente. Sigue siendo basado en cookies. Parte de lo que ves en GA4 con Consent Mode es un modelo del tráfico que no puedes medir. La analítica sin cookies es una capa de medición — cada visitante se cuenta, sin modelo. Responden preguntas distintas.",
   },
   {
     q: "¿Cuánto tarda la implementación?",
@@ -203,7 +203,8 @@ export default function CookielessAnalyticsPillarEs() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            Suma esas pérdidas y normalmente te quedas con cerca del{" "}
+            Suma esas pérdidas a sus tasas medias en la UE y, en el peor
+            escenario acumulado, te quedas con cerca del{" "}
             <Link href="/es/blog/why-ga4-shows-13pct-eu-traffic" className="text-brand underline decoration-1 underline-offset-2">
               13% del tráfico europeo visible
             </Link>{" "}

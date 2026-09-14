@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sealmetrics — Analítica Completa para eCommerce",
     description:
-      "GA4 captura ~13% del tráfico europeo. Sealmetrics captura el 100% — sin cookies, sin muros de consentimiento, sin muestreo.",
+      "GA4 no registró el 29% de las visitas en una tienda Shopify medida. Sealmetrics mide sin cookies, sin muros de consentimiento y sin muestreo.",
     url: "https://sealmetrics.com/es",
     siteName: "Sealmetrics",
     type: "website",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Sealmetrics — Analítica Completa para eCommerce",
     description:
-      "GA4 captura ~13% del tráfico europeo. Sealmetrics captura el 100% — sin cookies, sin muros de consentimiento.",
+      "GA4 no registró el 29% de las visitas en una tienda Shopify medida. Sealmetrics mide sin cookies y sin muros de consentimiento.",
     images: [ogImage("/es/")],
   },
   alternates: {
