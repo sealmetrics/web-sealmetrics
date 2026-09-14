@@ -196,16 +196,16 @@
     "date": "2026-08-07"
   },
   "/open/what-we-wont-do/": {
-    "hash": "4e118295c8c8d87d",
-    "date": "2026-08-14"
+    "hash": "2768c7ef63ea28c6",
+    "date": "2026-09-14"
   },
   "/open/architecture-and-performance/": {
     "hash": "7dcf8f395c2e6f77",
     "date": "2026-09-14"
   },
   "/open/glossary/": {
-    "hash": "fb537a1f7a88323f",
-    "date": "2026-08-14"
+    "hash": "160470323cba9aa3",
+    "date": "2026-09-14"
   },
   "/open/who-we-build-for/": {
     "hash": "fe834281c690f563",
@@ -216,16 +216,16 @@
     "date": "2026-08-14"
   },
   "/open/what-complete-data-means/": {
-    "hash": "5c1a04ab8c9627f7",
-    "date": "2026-08-14"
+    "hash": "e62f45c34945f4ca",
+    "date": "2026-09-14"
   },
   "/open/how-we-price/": {
-    "hash": "e4a99726f50c46d3",
+    "hash": "4d07995780a3b76d",
     "date": "2026-09-14"
   },
   "/open/why-we-exist/": {
-    "hash": "8eaf03061abb1547",
-    "date": "2026-08-14"
+    "hash": "eae21c4b1d6a4389",
+    "date": "2026-09-14"
   },
   "/alternatives/google-analytics/": {
     "hash": "3b6f666f9b833bf1",
@@ -372,32 +372,32 @@
     "date": "2026-08-09"
   },
   "/es/glossary/data-loss-in-analytics/": {
-    "hash": "3799a6c72aa70e3b",
-    "date": "2026-08-18"
+    "hash": "3352ffa005b2c579",
+    "date": "2026-09-14"
   },
   "/es/glossary/gdpr-analytics-compliance/": {
-    "hash": "abeba8e5cbd75830",
-    "date": "2026-08-18"
+    "hash": "87d823cd6ece8316",
+    "date": "2026-09-14"
   },
   "/es/glossary/intelligent-tracking-prevention/": {
     "hash": "beb2b2642f39973d",
     "date": "2026-08-09"
   },
   "/es/glossary/event-tracking/": {
-    "hash": "2159572e2d9eb4bd",
-    "date": "2026-08-09"
+    "hash": "e62cdc441ec43957",
+    "date": "2026-09-14"
   },
   "/es/glossary/attribution-model/": {
-    "hash": "60b10669b7835df3",
-    "date": "2026-08-09"
+    "hash": "609ae6952023b8f3",
+    "date": "2026-09-14"
   },
   "/es/glossary/multi-touch-attribution/": {
-    "hash": "853ad86cae47e810",
-    "date": "2026-08-09"
+    "hash": "4675bef5b98168ee",
+    "date": "2026-09-14"
   },
   "/es/glossary/revenue-attribution/": {
-    "hash": "e2ae07ae40f07f3e",
-    "date": "2026-08-09"
+    "hash": "f4d66edb65c37fc4",
+    "date": "2026-09-14"
   },
   "/es/glossary/first-party-data-collection/": {
     "hash": "5ef549c023a39e38",
@@ -408,12 +408,12 @@
     "date": "2026-08-09"
   },
   "/es/glossary/ad-blocker-analytics-impact/": {
-    "hash": "52412c9282d40ccf",
-    "date": "2026-08-09"
+    "hash": "0c7fd21a9701059d",
+    "date": "2026-09-14"
   },
   "/es/glossary/cookieless-analytics/": {
-    "hash": "38f1914830c1a975",
-    "date": "2026-08-09"
+    "hash": "1b8e3c9c48d229ff",
+    "date": "2026-09-14"
   },
   "/es/glossary/data-sampling/": {
     "hash": "0314af87a713e106",
@@ -648,52 +648,52 @@
     "date": "2026-08-09"
   },
   "/glossary/customer-lifetime-value/": {
-    "hash": "30689a0776fcfff0",
-    "date": "2026-08-09"
+    "hash": "60cab3ffc0690220",
+    "date": "2026-09-14"
   },
   "/glossary/bounce-rate/": {
-    "hash": "66d75d10770e5899",
-    "date": "2026-08-09"
+    "hash": "69a2b781cc3d9cc9",
+    "date": "2026-09-14"
   },
   "/glossary/data-loss-in-analytics/": {
-    "hash": "6d20ec87092100f2",
-    "date": "2026-08-09"
+    "hash": "c744d6c2f77b8863",
+    "date": "2026-09-14"
   },
   "/glossary/last-click-attribution/": {
-    "hash": "f1da9dd11eaad052",
-    "date": "2026-08-09"
+    "hash": "e9f2f42163d2c0b9",
+    "date": "2026-09-14"
   },
   "/glossary/cohort/": {
-    "hash": "45ce6325a73e6ef0",
-    "date": "2026-08-09"
+    "hash": "a8380f845221f621",
+    "date": "2026-09-14"
   },
   "/glossary/gdpr-analytics-compliance/": {
-    "hash": "18c3a0b3c785a57b",
-    "date": "2026-08-09"
+    "hash": "cd5b5945c3ba2df4",
+    "date": "2026-09-14"
   },
   "/glossary/return-on-ad-spend/": {
-    "hash": "6256b5e37b262e9c",
-    "date": "2026-08-09"
+    "hash": "8df1cdb4ae35673c",
+    "date": "2026-09-14"
   },
   "/glossary/intelligent-tracking-prevention/": {
     "hash": "93dd50e3ba38ef89",
     "date": "2026-08-09"
   },
   "/glossary/event-tracking/": {
-    "hash": "7b2129e30e0684be",
-    "date": "2026-08-09"
+    "hash": "f1fc456ddfacbf36",
+    "date": "2026-09-14"
   },
   "/glossary/attribution-model/": {
-    "hash": "e19fa73ffa97aad6",
-    "date": "2026-08-09"
+    "hash": "e24ffd03737b1137",
+    "date": "2026-09-14"
   },
   "/glossary/multi-touch-attribution/": {
-    "hash": "9802fe816a24df8f",
-    "date": "2026-08-09"
+    "hash": "54a28432f8a66375",
+    "date": "2026-09-14"
   },
   "/glossary/revenue-attribution/": {
-    "hash": "981355bc164b500f",
-    "date": "2026-08-09"
+    "hash": "60fde19e3f75e67e",
+    "date": "2026-09-14"
   },
   "/glossary/first-party-data-collection/": {
     "hash": "065c22b03ac8b0f6",
@@ -704,32 +704,32 @@
     "date": "2026-08-09"
   },
   "/glossary/ad-blocker-analytics-impact/": {
-    "hash": "cd8fa23174da93e2",
-    "date": "2026-08-09"
+    "hash": "dcb3d1fb0f98ee02",
+    "date": "2026-09-14"
   },
   "/glossary/funnel/": {
-    "hash": "e503dcffd89c4415",
-    "date": "2026-08-09"
+    "hash": "a9aaad95977925dd",
+    "date": "2026-09-14"
   },
   "/glossary/utm-parameters/": {
-    "hash": "7364f62e903ecae2",
-    "date": "2026-08-09"
+    "hash": "da0165cbd773ab5b",
+    "date": "2026-09-14"
   },
   "/glossary/legitimate-interest-analytics/": {
     "hash": "b150d802a2f1e3d8",
     "date": "2026-08-09"
   },
   "/glossary/attribution-window/": {
-    "hash": "649767d44584e9b0",
-    "date": "2026-08-09"
+    "hash": "50615cba6f6c9f79",
+    "date": "2026-09-14"
   },
   "/glossary/eprivacy-directive/": {
     "hash": "974ebc81737f63fd",
     "date": "2026-08-09"
   },
   "/glossary/cookieless-analytics/": {
-    "hash": "d903420daff15e55",
-    "date": "2026-08-09"
+    "hash": "82e1f24cc284979f",
+    "date": "2026-09-14"
   },
   "/glossary/data-sampling/": {
     "hash": "1f6868d98b37d0b2",
