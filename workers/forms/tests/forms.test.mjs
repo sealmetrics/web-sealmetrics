@@ -256,6 +256,7 @@ test("a brand report needs neither name nor website", async () => {
           country: "Spain",
           competitors: "Alpha, Beta, Gamma",
           language: "es",
+          marketing_consent: true,
         },
       }),
       { ...baseEnv, N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report" },
@@ -299,6 +300,8 @@ test("rejects brand reports that fail their own field rules", async () => {
     ["a language outside en/es", { email: "cmo@example.com", brand: "Example", language: "fr" }],
     ["a sector over 120 characters", { email: "cmo@example.com", brand: "Example", sector: "S".repeat(121) }],
     ["a competitors list over 200 characters", { email: "cmo@example.com", brand: "Example", competitors: "C".repeat(201) }],
+    // Consent must be an explicit boolean. A string "false" is truthy downstream.
+    ["a marketing consent that is not a boolean", { email: "cmo@example.com", brand: "Example", marketing_consent: "false" }],
   ];
 
   try {

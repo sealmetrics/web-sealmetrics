@@ -35,6 +35,11 @@ export const brandMonitoringFaq = {
         "Nothing. It runs on Enroutia, the model routing platform behind it, and the inference is paid for by Sealmetrics. There is no card, no trial and no account to open.",
     },
     {
+      question: "What happens to the email address I give you?",
+      answer:
+        "It is used to send you the report, and it is kept as a record of the request for up to 24 months. It is added to a mailing list only if you tick the box for occasional emails, and you can unsubscribe from any of them in one click. The AI models never see it: they receive the brand, the sector and the competitors, nothing else. To access or erase what we hold, write to privacy@sealmetrics.com.",
+    },
+    {
       question: "Can I ask about a company that is not mine?",
       answer:
         "Yes for a company, a product or a competitor. No for a person: the report is about organisations, and asking fifteen models what they believe about a named individual is a different problem with a different answer.",
@@ -65,6 +70,11 @@ export const brandMonitoringFaq = {
       question: "¿Qué cuesta el informe?",
       answer:
         "Nada. Corre sobre Enroutia, la plataforma de enrutado de modelos que hay detrás, y la inferencia la paga Sealmetrics. No hay tarjeta, ni prueba gratuita, ni cuenta que abrir.",
+    },
+    {
+      question: "¿Qué hacéis con el correo que os doy?",
+      answer:
+        "Enviarte el informe, y guardarlo como registro de la solicitud durante un máximo de 24 meses. Sólo entra en una lista de correo si marcas la casilla de envíos ocasionales, y de cualquiera de ellos te das de baja en un clic. Los modelos de IA nunca lo ven: reciben la marca, el sector y los competidores, nada más. Para acceder a lo que guardamos o borrarlo, escribe a privacy@sealmetrics.com.",
     },
     {
       question: "¿Puedo preguntar por una empresa que no es la mía?",

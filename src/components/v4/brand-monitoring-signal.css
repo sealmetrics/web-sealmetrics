@@ -230,13 +230,64 @@
   font-size: 14px;
   line-height: 1.45;
 }
-.sig-brand-privacy {
-  max-width: 46ch;
+.sig-brand-consent {
+  margin-top: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 72ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+  cursor: pointer;
+}
+.sig-brand-consent input {
+  flex: none;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  border-radius: 0;
+  accent-color: var(--ink);
+}
+.sig-brand-consent input:focus-visible {
+  outline: 2px solid var(--acid-ink);
+  outline-offset: 2px;
+}
+/* ── First-layer data protection notice ──────────────────────────────── */
+.sig-brand-notice {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
   font-size: 12px;
   line-height: 1.5;
   color: var(--muted);
 }
-.sig-brand-privacy a {
+.sig-brand-notice-title {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.sig-brand-notice dl {
+  display: grid;
+  gap: 6px;
+}
+.sig-brand-notice dl > div {
+  display: grid;
+  grid-template-columns: 13ch minmax(0, 1fr);
+  gap: 12px;
+}
+.sig-brand-notice dt {
+  color: var(--ink);
+  font-weight: 600;
+}
+.sig-brand-notice p:last-child {
+  margin-top: 10px;
+}
+.sig-brand-notice a {
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 2px;
 }
@@ -461,5 +512,9 @@
   }
   .sig-brand-submit {
     width: 100%;
+  }
+  .sig-brand-notice dl > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
   }
 }

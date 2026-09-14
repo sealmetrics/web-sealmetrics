@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              13 de septiembre de 2026 ·{" "}
+              14 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -233,8 +233,9 @@ export default function PrivacyPageEs() {
               <p>
                 Los datos de analítica de visitantes se procesan y almacenan
                 exclusivamente en centros de datos de la UE, sin subencargados
-                fuera de la UE en esa ruta de datos. La única transferencia
-                fuera del Espacio Económico Europeo es el email de servicio a
+                fuera de la UE en esa ruta de datos. En la plataforma de
+                analítica, la única transferencia fuera del Espacio Económico
+                Europeo es el email de servicio a
                 los propios usuarios de la cuenta (verificaciones, alertas,
                 informes) a través de Resend, Inc. (EE.UU.), amparada en
                 Cláusulas Contractuales Estándar y su certificación EU-US Data
@@ -242,6 +243,12 @@ export default function PrivacyPageEs() {
                 lista completa de subencargados es el Anexo 3 del{" "}
                 <a href="/es/dpa/" className="underline">
                   DPA
+                </a>
+                . El informe de monitorización de marca en IA que se pide en
+                sealmetrics.com tiene sus propios destinatarios, detallados en
+                el{" "}
+                <a href="#informe-de-marca" className="underline">
+                  apartado 9
                 </a>
                 .
               </p>
@@ -293,9 +300,80 @@ export default function PrivacyPageEs() {
               </p>
             </div>
 
+            <div id="informe-de-marca">
+              <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
+                9. Informe de monitorización de marca en IA
+              </h2>
+              <p className="mb-3">
+                El formulario de{" "}
+                <a href="/es/ai-brand-monitoring/" className="underline">
+                  /es/ai-brand-monitoring
+                </a>{" "}
+                hace seis preguntas sobre una empresa a quince modelos de IA y
+                envía las respuestas por correo a quien lo pide.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Datos tratados.</strong>{" "}
+                Tu correo de empresa, la marca por la que preguntas y, si los
+                indicas, su sector y sus competidores. El formulario no pide tu
+                nombre. El informe es de organizaciones; no se hace sobre
+                personas.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Finalidades y base jurídica.</strong>{" "}
+                (a) Generar el informe y enviártelo por correo, porque lo has
+                pedido (art. 6.1.b RGPD). (b) Conservar un registro de la
+                solicitud, para evitar el abuso de un servicio gratuito y
+                atender cualquier consulta sobre ella (art. 6.1.f). (c)
+                Enviarte de vez en cuando informes y novedades, sólo si marcas
+                la casilla separada y opcional del formulario (art. 6.1.a RGPD
+                y art. 21 de la LSSI). No marcarla no afecta al informe, y
+                puedes retirar ese consentimiento cuando quieras desde el enlace
+                de baja de cualquier correo o escribiendo a
+                privacy@sealmetrics.com.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Destinatarios.</strong>
+              </p>
+              <ul className="space-y-1 pl-5 list-none">
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Cloudflare, Inc. hace la comprobación antibots (Turnstile) y
+                  opera el relé que recibe el formulario.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Enroutia, la plataforma de enrutado de modelos que genera el
+                  informe, recibe la solicitud, incluido tu correo, para poder
+                  entregarte el informe terminado.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Los modelos de IA que contestan reciben sólo la marca, el
+                  sector y los competidores, nunca tu correo. Tres de ellos
+                  (GPT-5.6, de OpenAI, y Claude Sonnet 5 y Claude Opus 5, de
+                  Anthropic) se sirven desde Estados Unidos.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Resend, Inc. (EE. UU.) entrega el informe y, si lo has
+                  consentido, los correos ocasionales, con cláusulas
+                  contractuales tipo y su certificación EU-US Data Privacy
+                  Framework.
+                </li>
+              </ul>
+              <p className="mt-3">
+                <strong className="text-text-primary">Conservación.</strong> El
+                registro de la solicitud se conserva un máximo de 24 meses,
+                como cualquier otro envío de formulario. Si consentiste los
+                correos ocasionales, tu dirección permanece en esa lista hasta
+                que te des de baja o retires el consentimiento.
+              </p>
+            </div>
+
             <div id="datos-de-google">
               <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-                9. Conector de Looker Studio y datos de usuario de Google
+                10. Conector de Looker Studio y datos de usuario de Google
               </h2>
               <p className="mb-3">
                 El conector de Sealmetrics para Looker Studio es un Google Apps
@@ -377,7 +455,7 @@ export default function PrivacyPageEs() {
 
             <div>
               <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-                10. Contacto
+                11. Contacto
               </h2>
               <p>
                 Para cualquier consulta sobre privacidad o para ejercer tus

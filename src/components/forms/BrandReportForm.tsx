@@ -275,9 +275,31 @@ const copy = {
     errorEmail: "That address does not look valid.",
     errorPersonal: "Use your company address, not a personal one.",
     errorGeneric: "We could not request it right now. Try again in a moment.",
-    privacy:
-      "We use your address to send this report and, occasionally, others like it. Unsubscribe in one click.",
-    privacyLink: "Privacy",
+    marketing:
+      "Also send me Sealmetrics' occasional reports and product news. Optional: unsubscribe in one click, and the report arrives either way.",
+    notice: {
+      title: "Data protection, the short version",
+      rows: [
+        ["Controller", "Sealmetrics S.L."],
+        [
+          "Purpose",
+          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too.",
+        ],
+        [
+          "Legal basis",
+          "Your request for the report (art. 6.1.b GDPR). For the occasional emails, your consent (art. 6.1.a), which you can withdraw at any time.",
+        ],
+        [
+          "Recipients",
+          "Enroutia generates the report and Resend (USA, Standard Contractual Clauses) delivers it. Cloudflare runs the anti-bot check. The AI models receive the brand, sector and competitors you enter, never your email.",
+        ],
+        [
+          "Your rights",
+          "Access, rectification, erasure, objection and portability, at privacy@sealmetrics.com.",
+        ],
+      ],
+      more: "Full privacy policy",
+    },
   },
   es: {
     brand: "Marca o empresa",
@@ -297,9 +319,31 @@ const copy = {
     errorEmail: "Ese correo no parece válido.",
     errorPersonal: "Usa el correo de tu empresa, no uno personal.",
     errorGeneric: "Ahora mismo no hemos podido pedirlo. Prueba en un momento.",
-    privacy:
-      "Usamos tu correo para enviarte este informe y, de vez en cuando, otros como él. Te das de baja en un clic.",
-    privacyLink: "Privacidad",
+    marketing:
+      "Enviadme también, de vez en cuando, informes y novedades de Sealmetrics. Es opcional: te das de baja en un clic, y el informe te llega igual.",
+    notice: {
+      title: "Protección de datos, lo básico",
+      rows: [
+        ["Responsable", "Sealmetrics S.L."],
+        [
+          "Finalidad",
+          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics.",
+        ],
+        [
+          "Legitimación",
+          "Tu solicitud del informe (art. 6.1.b RGPD). Para los correos ocasionales, tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras.",
+        ],
+        [
+          "Destinatarios",
+          "Enroutia genera el informe y Resend (EE. UU., cláusulas contractuales tipo) lo entrega. Cloudflare hace la comprobación antibots. Los modelos de IA reciben la marca, el sector y los competidores que escribas, nunca tu correo.",
+        ],
+        [
+          "Derechos",
+          "Acceso, rectificación, supresión, oposición y portabilidad, en privacy@sealmetrics.com.",
+        ],
+      ],
+      more: "Política de privacidad completa",
+    },
   },
 } as const;
 
@@ -311,6 +355,10 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
   const [email, setEmail] = useState("");
   const [sector, setSector] = useState("");
   const [competitors, setCompetitors] = useState("");
+  // Unticked by default and never required: the report is the service asked for,
+  // the newsletter is a separate consent (GDPR art. 7.2, LSSI art. 21). Bundling
+  // the two into one submit is what this box exists to undo.
+  const [marketingConsent, setMarketingConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
@@ -350,14 +398,16 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
           country: locale === "es" ? "España" : "Europe",
           competitors: competitors.trim(),
           language: locale,
+          marketing_consent: marketingConsent,
         },
         { companyFax, turnstileToken: turnstileToken ?? "" },
       );
       // Fired on the submission the relay accepted, not on the thank-you page:
       // what is being counted is the request itself, and a static confirmation
       // URL can be reloaded, bookmarked or reached with the back button. The
-      // email never reaches the pixel — `PII_KEYS` strips it in `sanitize()`.
-      pushEvent({ event: "lead_brand_report", email: cleanEmail });
+      // email is not passed at all: `sanitize()` would strip it, but data the
+      // pixel never needed should not depend on a filter to stay out of it.
+      pushEvent({ event: "lead_brand_report" });
       // `status` stays "submitting" so the button remains disabled while the
       // client-side navigation runs.
       router.push(`${prefix}/ai-brand-monitoring/thank-you/`);
@@ -442,6 +492,16 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
         />
       </div>
 
+      <label className="sig-brand-consent">
+        <input
+          type="checkbox"
+          name="marketing_consent"
+          checked={marketingConsent}
+          onChange={(event) => setMarketingConsent(event.target.checked)}
+        />
+        <span>{t.marketing}</span>
+      </label>
+
       <div className="sig-brand-foot">
         <div className="sig-brand-foot-left">
           <LeadTurnstile
@@ -449,9 +509,6 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
             resetKey={turnstileResetKey}
             locale={locale}
           />
-          <p className="sig-brand-privacy">
-            {t.privacy} <a href={`${prefix}/privacy/`}>{t.privacyLink}</a>
-          </p>
         </div>
         <button
           type="submit"
@@ -467,6 +524,26 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
           {message}
         </p>
       ) : null}
+
+      {/* First layer of the information GDPR art. 13 requires at the point of
+          collection, in the AEPD's layered format. The second layer is the
+          brand-report section of the privacy policy, which the link targets. */}
+      <div className="sig-brand-notice">
+        <p className="sig-brand-notice-title">{t.notice.title}</p>
+        <dl>
+          {t.notice.rows.map(([term, detail]) => (
+            <div key={term}>
+              <dt>{term}</dt>
+              <dd>{detail}</dd>
+            </div>
+          ))}
+        </dl>
+        <p>
+          <a href={`${prefix}/privacy/#${locale === "es" ? "informe-de-marca" : "brand-report"}`}>
+            {t.notice.more}
+          </a>
+        </p>
+      </div>
     </form>
   );
 }
