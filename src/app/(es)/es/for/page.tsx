@@ -42,8 +42,8 @@ const industries = [
   { slug: "agencies", name: "Agencias", tagline: "Deja de ser el medio entre disputas de atribución con clientes." },
   { slug: "media", name: "Medios y publishers", tagline: "Analítica que sobrevive ad-blockers. 50%+ audiencia invisible a GA." },
   { slug: "finance", name: "Finanzas y banca", tagline: "Compliance grado bancario. Review en una reunión." },
-  { slug: "healthcare", name: "Salud", tagline: "Cero exposición de dato sanitario. Trackea portales sin riesgo." },
-  { slug: "education", name: "Educación", tagline: "Desde K-12 a universidades. COPPA-safe al no recopilar dato personal." },
+  { slug: "healthcare", name: "Salud", tagline: "Sin datos personales de pacientes en la analítica. Portales medidos en agregado." },
+  { slug: "education", name: "Educación", tagline: "Desde K-12 a universidades. Sin datos personales de estudiantes." },
 ];
 
 export default function Page() {
