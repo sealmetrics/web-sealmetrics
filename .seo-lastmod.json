@@ -168,8 +168,8 @@
     "date": "2026-09-04"
   },
   "/es/": {
-    "hash": "c99bea4d23fc395f",
-    "date": "2026-08-27"
+    "hash": "32c37a31cfc5bc66",
+    "date": "2026-09-14"
   },
   "/pricing-plans/": {
     "hash": "7137e66e17a37086",
@@ -256,16 +256,16 @@
     "date": "2026-09-04"
   },
   "/es/ai-analytics/": {
-    "hash": "2445aa5905845d98",
-    "date": "2026-09-04"
+    "hash": "0673ebb90064727a",
+    "date": "2026-09-14"
   },
   "/es/data-loss-calculator/": {
     "hash": "7ff8abde450ef7c7",
     "date": "2026-08-07"
   },
   "/es/reg-gap-analysis/": {
-    "hash": "9557682f67f50580",
-    "date": "2026-08-07"
+    "hash": "8d2faff0cd993951",
+    "date": "2026-09-14"
   },
   "/es/terms/": {
     "hash": "4802903bcca144e7",
@@ -304,8 +304,8 @@
     "date": "2026-09-02"
   },
   "/es/careers/": {
-    "hash": "103ff378c33ad6b0",
-    "date": "2026-09-07"
+    "hash": "c119d680b57a59c4",
+    "date": "2026-09-14"
   },
   "/es/integrations/": {
     "hash": "628fcc8fb5b3b9d4",
@@ -332,16 +332,16 @@
     "date": "2026-08-10"
   },
   "/es/complete-data/": {
-    "hash": "0dd4bdc6ed28b322",
-    "date": "2026-08-07"
+    "hash": "c26676ec8369b7fa",
+    "date": "2026-09-14"
   },
   "/es/vs-ga4/": {
     "hash": "35a2dcbe2f008230",
     "date": "2026-09-14"
   },
   "/es/modern-analytics/": {
-    "hash": "ab0d39a5964b3add",
-    "date": "2026-09-04"
+    "hash": "a0bcac842c4f5a81",
+    "date": "2026-09-14"
   },
   "/es/pricing/": {
     "hash": "83ca80cd031e7f98",
@@ -356,8 +356,8 @@
     "date": "2026-08-13"
   },
   "/es/cookieless-analytics/": {
-    "hash": "5151978bfe03f25c",
-    "date": "2026-08-07"
+    "hash": "fad9dbe503f24b63",
+    "date": "2026-09-14"
   },
   "/es/alternatives/google-analytics/": {
     "hash": "36639724334f7041",
@@ -456,8 +456,8 @@
     "date": "2026-08-07"
   },
   "/es/for/saas/": {
-    "hash": "cb397eab1f76de66",
-    "date": "2026-08-09"
+    "hash": "018ae554f92f79ab",
+    "date": "2026-09-14"
   },
   "/es/for/media/": {
     "hash": "10b87703c3371f13",
@@ -592,12 +592,12 @@
     "date": "2026-08-07"
   },
   "/es/vs/ga360/": {
-    "hash": "5b9b6bbcccf04d19",
-    "date": "2026-08-27"
+    "hash": "e25d96340293b183",
+    "date": "2026-09-14"
   },
   "/es/vs/adobe-analytics/": {
-    "hash": "fd0da6135192acc3",
-    "date": "2026-08-27"
+    "hash": "f5699857cd34b84a",
+    "date": "2026-09-14"
   },
   "/es/vs/piwik-pro/": {
     "hash": "ea4c4d22b3703e2f",
@@ -608,8 +608,8 @@
     "date": "2026-08-07"
   },
   "/es/vs/matomo/": {
-    "hash": "b656218a3c570e14",
-    "date": "2026-08-27"
+    "hash": "d359b226cafb652b",
+    "date": "2026-09-14"
   },
   "/es/demo/thank-you/": {
     "hash": "80badfd9c1866777",
