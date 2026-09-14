@@ -44,7 +44,7 @@
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "dce557687aa6ff49",
+    "hash": "08c866f256228a75",
     "date": "2026-09-14"
   },
   "/real-roas/": {
@@ -1064,7 +1064,7 @@
     "date": "2026-08-31"
   },
   "/es/privacy/": {
-    "hash": "12ac87ff8254cc8d",
+    "hash": "8b10eeeb93fa7379",
     "date": "2026-09-14"
   },
   "/es/sla/": {
@@ -1108,11 +1108,11 @@
     "date": "2026-09-04"
   },
   "/ai-brand-monitoring/": {
-    "hash": "6ea39e82edbc6520",
+    "hash": "930116a82a6996d8",
     "date": "2026-09-14"
   },
   "/es/ai-brand-monitoring/": {
-    "hash": "86c8a57be2c686a0",
+    "hash": "6bd487cc787a8798",
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/thank-you/": {

@@ -291,7 +291,7 @@ const copy = {
         ],
         [
           "Recipients",
-          "Enroutia generates the report and Resend (USA, Standard Contractual Clauses) delivers it. Cloudflare runs the anti-bot check. The AI models receive the brand, sector and competitors you enter, never your email.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email.",
         ],
         [
           "Your rights",
@@ -335,7 +335,7 @@ const copy = {
         ],
         [
           "Destinatarios",
-          "Enroutia genera el informe y Resend (EE. UU., cláusulas contractuales tipo) lo entrega. Cloudflare hace la comprobación antibots. Los modelos de IA reciben la marca, el sector y los competidores que escribas, nunca tu correo.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo.",
         ],
         [
           "Derechos",

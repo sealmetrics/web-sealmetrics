@@ -317,8 +317,11 @@ export default function PrivacyPage() {
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
                 Enroutia, the model routing platform that generates the report,
-                receives the request, including your email so the finished
-                report can be delivered to you.
+                receives the brand, sector and competitors, and a random
+                reference in place of your email. It never receives your email:
+                the link between that reference and your address stays in our
+                own automation system, and is deleted as soon as the report is
+                delivered, or after 72 hours at most.
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -337,7 +340,8 @@ export default function PrivacyPage() {
             <p className="mt-3">
               <strong className="text-text-primary">Retention.</strong> The
               request record is kept for up to 24 months, like any other form
-              submission. If you consented to occasional emails, your address
+              submission. The link between the report reference and your email
+              is deleted on delivery, or after 72 hours at most. If you consented to occasional emails, your address
               stays on that list until you unsubscribe or withdraw consent.
             </p>
           </div>

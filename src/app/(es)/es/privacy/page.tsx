@@ -344,8 +344,11 @@ export default function PrivacyPageEs() {
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
                   Enroutia, la plataforma de enrutado de modelos que genera el
-                  informe, recibe la solicitud, incluido tu correo, para poder
-                  entregarte el informe terminado.
+                  informe, recibe la marca, el sector y los competidores, y una
+                  referencia aleatoria en lugar de tu correo. Nunca recibe tu
+                  correo: la relación entre esa referencia y tu dirección se
+                  queda en nuestro propio sistema de automatización y se borra
+                  en cuanto se entrega el informe, o a las 72 horas como máximo.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -365,7 +368,9 @@ export default function PrivacyPageEs() {
               <p className="mt-3">
                 <strong className="text-text-primary">Conservación.</strong> El
                 registro de la solicitud se conserva un máximo de 24 meses,
-                como cualquier otro envío de formulario. Si consentiste los
+                como cualquier otro envío de formulario. La relación entre la
+                referencia del informe y tu correo se borra al entregarlo, o a
+                las 72 horas como máximo. Si consentiste los
                 correos ocasionales, tu dirección permanece en esa lista hasta
                 que te des de baja o retires el consentimiento.
               </p>
