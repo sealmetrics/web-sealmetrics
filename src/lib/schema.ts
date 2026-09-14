@@ -80,7 +80,7 @@ export function organizationSchema() {
           height: 32,
         },
         description:
-          "Complete analytics for eCommerce: captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
+          "The source of truth for revenue in European eCommerce: measures traffic without depending on consent, powers revenue decisions with LENS AI, and is designed for GDPR from the architecture up (self-assessed). Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.",
         foundingDate: "2024-03-22",
         // References the canonical Person node emitted by the author page.
         // It used to restate him as "Rafa Jimenez" (no accent) pointing at
@@ -229,8 +229,8 @@ export function verticalSoftwareApplicationSchema(props: {
     inLanguage: langOf(props.url),
     featureList: [
       `Cookieless analytics for ${props.vertical}`,
-      "100% traffic capture (no consent gap)",
-      "GDPR-compliant by architecture",
+      "Traffic measurement without consent loss",
+      "Designed for GDPR from the architecture up (self-assessed)",
       "Last-click revenue attribution on complete data",
       "EU-hosted in Dublin, Ireland",
     ],
@@ -250,22 +250,22 @@ export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
     inLanguage: locale,
     description:
       locale === "es"
-        ? "Analítica enterprise para eCommerce. Captura el 100% del tráfico, sostiene decisiones de inversión con LENS AI y cumple el RGPD por arquitectura. Alternativa a GA360 y Adobe Analytics."
-        : "Enterprise analytics for eCommerce. Captures 100% of traffic, powers revenue decisions with LENS AI, and is GDPR-compliant by architecture. Alternative to GA360 and Adobe Analytics.",
+        ? "La fuente de verdad del revenue para eCommerce europeo. Mide el tráfico sin depender del consentimiento, sostiene decisiones de inversión con LENS AI y está diseñada para el RGPD desde la arquitectura (autoevaluación). Alternativa a GA360 y Adobe Analytics."
+        : "The source of truth for revenue in European eCommerce. Measures traffic without depending on consent, powers revenue decisions with LENS AI, and is designed for GDPR from the architecture up (self-assessed). Alternative to GA360 and Adobe Analytics.",
     featureList:
       locale === "es"
         ? [
             "Medición cookieless (sin banner de consentimiento)",
-            "Captura del 100% del tráfico",
-            "Cumplimiento RGPD/ePrivacy por diseño",
+            "Medición sin pérdida por consentimiento",
+            "Diseñada para RGPD/ePrivacy (autoevaluación)",
             "Atribución de ingresos a último clic",
             "LENS AI — pregunta a tus datos en lenguaje natural",
             "Analítica de agentes de IA",
           ]
         : [
       "Cookieless tracking (no consent banner required)",
-      "100% traffic data capture",
-      "GDPR/ePrivacy compliant by design",
+      "Traffic measurement without consent loss",
+      "Designed for GDPR/ePrivacy (self-assessed)",
       "Revenue attribution",
       "LENS AI — ask your data in plain language",
       "AI Agent Analytics",
@@ -543,8 +543,8 @@ export function pricingSchema(
     // tree is the kind of inconsistency an engine notices while triangulating.
     description:
       locale === "es"
-        ? "Analítica web cookieless que captura el 100% del dato y cumple el RGPD por arquitectura. Alternativa enterprise a GA360 y Adobe Analytics."
-        : "Cookieless web analytics with 100% data capture, GDPR-compliant by architecture. Enterprise alternative to GA360 and Adobe Analytics.",
+        ? "Analítica web cookieless que mide sin depender del consentimiento y está diseñada para el RGPD desde la arquitectura (autoevaluación). Alternativa enterprise a GA360 y Adobe Analytics."
+        : "Cookieless web analytics that measures without depending on consent, designed for GDPR from the architecture up (self-assessed). Enterprise alternative to GA360 and Adobe Analytics.",
     inLanguage: locale,
     image: `${SITE_URL}/logos/logo-sealmetrics-negro.png`,
     brand: { "@type": "Brand", name: ORG_NAME },

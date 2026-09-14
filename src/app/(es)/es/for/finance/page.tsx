@@ -39,7 +39,7 @@ export default function Page() {
     <>
       <Breadcrumbs items={[{ label: "Para finanzas" }]} locale="es" />
       <JsonLd data={breadcrumbSchema([{ name: "Para finanzas", url: "/es/for/finance" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banca, seguros y wealth management", description: "Sealmetrics — enterprise analytics for finance teams in the EU. 100% data capture, GDPR-compliant by architecture, last-click revenue attribution.", url: "/es/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "es")} />
+      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banca, seguros y wealth management", description: "Sealmetrics — enterprise analytics for finance teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/es/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "es")} />
       <RelatedPagesV3
         locale="es"
         eyebrow="Explora también"
