@@ -808,11 +808,11 @@
     "date": "2026-09-14"
   },
   "/blog/self-service-analytics-for-marketing-teams/": {
-    "hash": "2730a823a27a5407",
+    "hash": "6173fc9cffc38712",
     "date": "2026-09-14"
   },
   "/blog/what-is-data-loss-in-analytics/": {
-    "hash": "d76eb3041ea10812",
+    "hash": "968de80cd17ebc37",
     "date": "2026-09-14"
   },
   "/blog/the-prompt-is-born-clean/": {
@@ -824,11 +824,11 @@
     "date": "2026-09-14"
   },
   "/blog/is-adobe-analytics-gdpr-compliant/": {
-    "hash": "265d0b8a1b7cf677",
-    "date": "2026-09-04"
+    "hash": "3fb73ceda0462b46",
+    "date": "2026-09-14"
   },
   "/blog/we-measured-every-analytics-script/": {
-    "hash": "fd0d4de91634d667",
+    "hash": "93018c41e3a3b4c9",
     "date": "2026-09-14"
   },
   "/blog/best-llm-for-data-analytics/": {
@@ -836,7 +836,7 @@
     "date": "2026-09-04"
   },
   "/blog/why-ga4-shows-13pct-eu-traffic/": {
-    "hash": "f7e242e8218cf01f",
+    "hash": "6adde64252f0a80d",
     "date": "2026-09-14"
   },
   "/blog/eu-ai-act-for-marketers/": {
@@ -844,7 +844,7 @@
     "date": "2026-09-04"
   },
   "/blog/analytics-tools-cookies-cataloged/": {
-    "hash": "ac1dc09d113bb927",
+    "hash": "7e63fd331f7c4ff3",
     "date": "2026-09-14"
   },
   "/blog/residency-is-not-sovereignty/": {
@@ -876,7 +876,7 @@
     "date": "2026-09-04"
   },
   "/blog/ga4-alternatives-enterprise/": {
-    "hash": "6ef9e09d59273d5f",
+    "hash": "ad3d06019eb806cf",
     "date": "2026-09-14"
   },
   "/blog/our-ai-got-it-wrong-in-production/": {
@@ -884,7 +884,7 @@
     "date": "2026-09-04"
   },
   "/blog/best-web-analytics-tool/": {
-    "hash": "ce03dcdfa665fb7d",
+    "hash": "d77f85a1c583f9c9",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-http-requests/": {
@@ -900,11 +900,11 @@
     "date": "2026-09-14"
   },
   "/blog/cookieless-analytics-for-hotels/": {
-    "hash": "e1da1ac17f65ef10",
-    "date": "2026-09-04"
+    "hash": "1221fa51ee287a9e",
+    "date": "2026-09-14"
   },
   "/blog/ga4-data-sampling-problem/": {
-    "hash": "1dd9a8a635ab4bbb",
+    "hash": "50a958ff4f66525e",
     "date": "2026-09-14"
   },
   "/blog/grounding-analytics-ai/": {
@@ -912,24 +912,24 @@
     "date": "2026-09-14"
   },
   "/blog/multi-touch-attribution-complete-data/": {
-    "hash": "ce0748d1d827f935",
+    "hash": "a6163dd2f85eafd0",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-lighthouse-scores/": {
-    "hash": "569fd79c5492807f",
+    "hash": "e07beeff60816abb",
     "date": "2026-09-14"
   },
   "/blog/self-service-analytics-lens-ai/": {
-    "hash": "ef6f8d875524d109",
+    "hash": "442024331a678ef7",
     "date": "2026-09-14"
   },
   "/blog/gdpr-eprivacy-analytics-legal-assessment/": {
-    "hash": "c1d00172add4b932",
+    "hash": "0ddc970b73fa4f5b",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-ad-blocker-test/": {
-    "hash": "d4198bbc5f4eac0d",
-    "date": "2026-09-04"
+    "hash": "0ec252fbe351c1ad",
+    "date": "2026-09-14"
   },
   "/blog/how-we-benchmark-our-own-ai/": {
     "hash": "8b53b4b51a2b7b0c",
@@ -956,7 +956,7 @@
     "date": "2026-09-04"
   },
   "/blog/gdpr-analytics-spain-faq/": {
-    "hash": "bda8f7b23cacf82e",
+    "hash": "63c9af024b6ec985",
     "date": "2026-09-14"
   },
   "/blog/three-questions-to-ask-seal-ai/": {
@@ -968,7 +968,7 @@
     "date": "2026-09-04"
   },
   "/blog/gdpr-analytics-without-consent/": {
-    "hash": "8ff1ca2374a834cf",
+    "hash": "252c6292bed4cc88",
     "date": "2026-09-14"
   },
   "/blog/eu-digital-omnibus-marketer-guide-2026/": {
@@ -988,11 +988,11 @@
     "date": "2026-09-04"
   },
   "/blog/cookieless-analytics-for-ecommerce/": {
-    "hash": "cfbd35b9a81c6110",
+    "hash": "4a4b7a0232a0c05a",
     "date": "2026-09-14"
   },
   "/blog/consentless-analytics-for-dtc/": {
-    "hash": "c41ff73e5eb66721",
+    "hash": "937f0306e5f4402a",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-external-domains/": {
@@ -1052,8 +1052,8 @@
     "date": "2026-08-09"
   },
   "/blog/is-matomo-gdpr-compliant/": {
-    "hash": "25b770768abd3cd8",
-    "date": "2026-08-26"
+    "hash": "2a95e836b17fdda3",
+    "date": "2026-09-14"
   },
   "/es/blog/is-matomo-gdpr-compliant/": {
     "hash": "d00a21709d449ba2",
@@ -1100,11 +1100,11 @@
     "date": "2026-09-02"
   },
   "/blog/dpo-rejected-google-analytics-eu-alternatives/": {
-    "hash": "1cc60d0e7d6e7b97",
+    "hash": "342c7f92b4fa6039",
     "date": "2026-09-14"
   },
   "/blog/demdex-analytics-cookies-guide/": {
-    "hash": "bae04f21b30750b2",
+    "hash": "b57d0dfc43780684",
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/": {
