@@ -1,23 +1,25 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { SHOPIFY_MODIFIED, SHOPIFY_PUBLISHED, shopifyEn as content } from "@/lib/content/problem-landings/shopify";
+import { SHOPIFY_MODIFIED, shopifyEs as content } from "@/lib/content/problem-landings/shopify";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
-const URL = "/platforms/shopify";
-const TITLE = "Shopify Analytics Without Cookies — Sealmetrics";
+/** The Spanish page is new; the English one was published on 2026-05-29. */
+const PUBLISHED_ES = "2026-09-14";
+const URL = "/es/platforms/shopify";
+const TITLE = "Analítica para Shopify sin cookies — Sealmetrics";
 const DESCRIPTION =
-  "Cookieless Shopify analytics: a Pixel app and theme embed, purchases confirmed by webhook, and a 48-day test that recorded 96% of real orders.";
+  "Analítica sin cookies para Shopify: app Pixel y embed del tema, compras confirmadas por webhook y una prueba de 48 días con el 96% de pedidos reales.";
 const SOCIAL =
-  "On Incapto's Shopify store, GA4 missed 29% of visits. Install Sealmetrics on any plan and see the channels behind every Shopify order.";
+  "En la tienda Shopify de Incapto, GA4 no vio el 29% de las visitas. Instala Sealmetrics en cualquier plan y ve los canales detrás de cada pedido.";
 
 export const metadata: Metadata = {
   // Literal on purpose: generate-og-images.mjs reads the card title from it.
-  title: "Shopify Analytics Without Cookies — Sealmetrics",
+  title: "Analítica para Shopify sin cookies — Sealmetrics",
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     images: [ogImage(`${URL}/`)],
     url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
-    locale: "en_US",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
@@ -37,24 +39,24 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://sealmetrics.com${URL}/`,
-    languages: getAlternates("/platforms/shopify"),
+    languages: getAlternatesEs("/platforms/shopify"),
   },
 };
 
-export default function ShopifyPlatformPage() {
+export default function ShopifyPlatformPageEs() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Platforms", url: "/platforms" }, { name: "Shopify", url: URL }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Plataformas", url: "/es/platforms" }, { name: "Shopify", url: URL }])} />
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "Shopify analytics without cookies: install, events, reconciliation and the Incapto measurement",
+          headline: "Analítica para Shopify sin cookies: instalación, eventos, conciliación y la medición de Incapto",
           description: DESCRIPTION,
-          datePublished: SHOPIFY_PUBLISHED,
+          datePublished: PUBLISHED_ES,
           dateModified: SHOPIFY_MODIFIED,
           url: URL,
           category: "Integration",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />

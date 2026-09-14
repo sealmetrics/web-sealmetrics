@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SignalAnswer } from "@/components/v4/SignalAnswer";
 import "@/components/v4/signal-answer.css";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 };
 
 const platforms = [
-  { name: "Shopify", time: "5 min", desc: "App Pixel más app embed del tema, en cualquier plan de Shopify. Compras confirmadas en servidor por webhook." },
+  { name: "Shopify", time: "5 min", desc: "App Pixel más app embed del tema, en cualquier plan de Shopify. Compras confirmadas en servidor por webhook.", href: "/es/platforms/shopify" },
   { name: "Magento", time: "15 min", desc: "Módulo nativo para Magento 2.4+ instalado en app/code. Funciona en Adobe Commerce y Magento Open Source." },
   { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita)." },
   { name: "PrestaShop", time: "15 min", desc: "Módulo PrestaShop 1.7 & 8.x. Tracking de conversiones y funnel completo out-of-the-box." },
@@ -92,15 +93,30 @@ export default function Page() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {platforms.map((p) => (
-              <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{p.name}</h3>
-                  <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
-                </div>
-                <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
-              </article>
-            ))}
+            {platforms.map((p) => {
+              const card = (
+                <>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] group-hover:text-brand transition-colors">{p.name}</h3>
+                    <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
+                  </div>
+                  <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
+                </>
+              );
+              return "href" in p && p.href ? (
+                <Link
+                  key={p.name}
+                  href={p.href as string}
+                  className="group bg-white border border-warm-100 rounded-xl p-6 flex flex-col no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
+                >
+                  {card}
+                </Link>
+              ) : (
+                <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
+                  {card}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

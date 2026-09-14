@@ -1024,7 +1024,7 @@
     "date": "2026-09-14"
   },
   "/platforms/shopify/": {
-    "hash": "b2e7ef03a8638a18",
+    "hash": "4047e4004f86cae3",
     "date": "2026-09-14"
   },
   "/vs/ga360/": {
@@ -1149,6 +1149,10 @@
   },
   "/es/use-cases/revenue-attribution/": {
     "hash": "974213dec05091ac",
+    "date": "2026-09-14"
+  },
+  "/es/platforms/shopify/": {
+    "hash": "9a34bedc98b2be7d",
     "date": "2026-09-14"
   }
 }

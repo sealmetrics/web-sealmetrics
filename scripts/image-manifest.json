@@ -1433,12 +1433,12 @@
     },
     "public/og/platforms/shopify.avif": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
+      "sourceHash": "5e89b12b31df2063b1089abecfd410b6e4dc769f1bd7b4f8fe3ac175d93d52ef",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/shopify.webp": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
+      "sourceHash": "5e89b12b31df2063b1089abecfd410b6e4dc769f1bd7b4f8fe3ac175d93d52ef",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms/woocommerce.avif": {

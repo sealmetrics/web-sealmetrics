@@ -126,7 +126,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
 
 ## Platform integrations (install + dataLayer patterns)
-- /platforms/shopify — Cookieless analytics for Shopify; install + Order Webhook reconciliation
+- /platforms/shopify — Cookieless analytics for Shopify: Pixel app + theme app embed on any plan, five events (purchase from the orders/create webhook), install and reconciliation steps, and the Incapto measurement (96% of real orders recorded, GA4 missed 29% of visits); limits: totals-only reconciliation, custom carts, no webhook backfill
 - /platforms/woocommerce — Cookieless analytics for WooCommerce; plugin install + aggregate order reconciliation
 
 ## Use cases (task-level pages)
@@ -336,6 +336,7 @@ About / extras (ES):
 - /es/data-loss-calculator — Calculadora de pérdida de datos
 - /es/integrations — Integraciones
 - /es/platforms — Plataformas
+- /es/platforms/shopify — Analítica sin cookies para Shopify: app Pixel y app embed del tema, compras por webhook, instalación y conciliación paso a paso, y la medición de Incapto (96% de pedidos reales registrados; GA4 no vio el 29% de las visitas)
 - /es/authors/rafa-jimenez — Autor: Rafa Jiménez
 
 Compliance by country (ES):

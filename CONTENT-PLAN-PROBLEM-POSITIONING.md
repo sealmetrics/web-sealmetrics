@@ -312,3 +312,17 @@ Aplica las correcciones de §5.3 y todas las apariciones de las mismas incongrue
 | Entrada "Por problema" en navegación, `/product` y `/use-cases` | Header · `/product` · `/use-cases` | **Hecha** — primer grupo de Soluciones (en columnas), cuatro tarjetas enlazadas en `/product`, frase contextual en `/use-cases` |
 
 La plantilla fija el orden de toda landing de problema: dolor → respuesta rápida → por qué ocurre (tabla) → coste → método (`HowTo`) → roles → prueba con casos → límites → FAQ visible (`FAQPage`) → CTA.
+
+---
+
+## 8. Fase 3 · Mejoras rápidas con datos propios
+
+| Pieza | Estado |
+|---|---|
+| `/platforms/shopify` + Incapto, y crear `/es/platforms/shopify` | **Hecha** — plantilla v4, datos contrastados con la doc de Shopify (evento `begin_checkout`, webhook sin backfill, Managed Pricing); fuera la afirmación sin fuente sobre tipos de cambio del BCE |
+| `/platforms/woocommerce` + ES | Pendiente |
+| `/for/hotels` a la barra de 1.800 palabras + blog hoteles ES | Pendiente |
+| `/for/agencies` | Pendiente — necesita confirmar reseller con margen, white-label y onboarding en 15 min |
+| `/blog/cookieless-analytics-for-ecommerce` y `/blog/consentless-analytics-for-dtc` en ES | Pendiente |
+
+Observado de paso: la documentación lista una integración con BigCommerce que el hub `/platforms` no muestra.
