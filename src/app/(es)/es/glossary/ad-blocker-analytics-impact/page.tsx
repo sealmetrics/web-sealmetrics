@@ -71,7 +71,7 @@ export default function AdBlockerAnalyticsImpactEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">First-party frente a terceros</h2>
           <p>
-            Los bloqueadores apuntan a scripts de terceros. La <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link> funciona distinto: el endpoint de medición vive en tu propio dominio, lo que lo hace indistinguible del resto de la funcionalidad del sitio. Combinada con <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, captura el 100% de la actividad con independencia del bloqueador.
+            Los bloqueadores apuntan a scripts de terceros. La <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link> funciona distinto: el endpoint de medición vive en tu propio dominio, lo que lo hace indistinguible del resto de la funcionalidad del sitio. Combinada con <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, mide la actividad sin depender del consentimiento ni del bloqueador.
           </p>
         </div>
 

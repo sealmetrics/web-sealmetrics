@@ -74,7 +74,7 @@ export default function CohortPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What Sealmetrics does and does not do</h2>
           <p>
-            Sealmetrics does not build per-user cohorts, deliberately. Its architecture is anonymous, aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on 100% of traffic: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; Sealmetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, Sealmetrics is the wrong tool for that job, and it is designed to be.
+            Sealmetrics does not build per-user cohorts, deliberately. Its architecture is anonymous, aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on traffic measured without depending on consent: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; Sealmetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, Sealmetrics is the wrong tool for that job, and it is designed to be.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What cohort analysis does not tell you</h2>
@@ -83,7 +83,7 @@ export default function CohortPage() {
           </p>
         </div>
 
-        <CommercialModule hook="We don't do per-user cohorts — deliberately. See what aggregate trends on 100% of traffic catch that a consented sample misses." />
+        <CommercialModule hook="We don't do per-user cohorts — deliberately. See what aggregate trends without consent gaps catch that a consented sample misses." />
 
         <RelatedGlossaryTerms slug="cohort" />
 

@@ -83,7 +83,7 @@ export default function BounceRatePage() {
             Consider: tech-savvy visitors who use ad blockers also tend to navigate more efficiently, browse fewer pages, and convert at different rates. When these visitors are invisible to your analytics, your bounce rate reflects only the behavior of the less technically sophisticated segment of your audience. Decisions made on this distorted metric &mdash; redesigning landing pages, reallocating ad spend, changing content strategy &mdash; may be solving a problem that does not exist for your actual audience.
           </p>
           <p>
-            Complete data collection, through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, ensures bounce rate is calculated across 100% of sessions &mdash; not an unrepresentative fraction.
+            Complete data collection, through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, ensures bounce rate is calculated on sessions without consent gaps &mdash; not an unrepresentative fraction.
           </p>
         </div>
 

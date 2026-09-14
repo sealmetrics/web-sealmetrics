@@ -75,7 +75,7 @@ export default function EventTrackingEsPage() {
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="Mira tus eventos clave — registros, carritos, checkouts — contados sobre el 100% de las visitas, no solo las consentidas." />
+        <CommercialModule locale="es" hook="Mira tus eventos clave — registros, carritos, checkouts — contados sin huecos de consentimiento, no solo en las visitas consentidas." />
 
         <RelatedGlossaryTerms slug="event-tracking" locale="es" />
 

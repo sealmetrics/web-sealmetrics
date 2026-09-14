@@ -58,7 +58,7 @@ export default function FunnelPage() {
 
           <QuickAnswer>
             <p>
-              A funnel is an ordered sequence of steps a visitor moves through on the way to a conversion, with a count at each step and a drop-off rate between steps. A typical eCommerce funnel runs product page → add to cart → checkout → purchase: if 10,000 sessions reach the product page and 400 end in purchase, the funnel shows exactly which transitions lost the other 9,600. Its diagnostic value depends entirely on coverage. In the EU, cookie-based analytics observes only the visitors who accepted the consent banner — 40-60% reject it before ad blockers remove more — so the funnel describes the consenting minority, whose behaviour differs by market and device from the customers you actually lost. A funnel counted on 100% of sessions, step by step in aggregate, describes your buyers instead of a biased sample.
+              A funnel is an ordered sequence of steps a visitor moves through on the way to a conversion, with a count at each step and a drop-off rate between steps. A typical eCommerce funnel runs product page → add to cart → checkout → purchase: if 10,000 sessions reach the product page and 400 end in purchase, the funnel shows exactly which transitions lost the other 9,600. Its diagnostic value depends entirely on coverage. In the EU, cookie-based analytics observes only the visitors who accepted the consent banner — 40-60% reject it before ad blockers remove more — so the funnel describes the consenting minority, whose behaviour differs by market and device from the customers you actually lost. A funnel counted without consent gaps, step by step in aggregate, describes your buyers instead of a biased sample.
             </p>
           </QuickAnswer>
 
@@ -67,7 +67,7 @@ export default function FunnelPage() {
             Each funnel step is a countable event — a pageview of a URL, or an explicit action recorded through <Link href="/glossary/event-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">event tracking</Link>, like add-to-cart or begin-checkout. The report counts how much traffic reached each step within a period and computes the transition rate between consecutive steps. Reading it is subtraction: a healthy product-to-cart rate followed by a collapse at checkout points at the checkout, not at marketing. That precision is the whole appeal — a single conversion rate says you have a problem, a funnel says where.
           </p>
           <p>
-            Funnels can be counted in two ways. Aggregate step counts compare totals at each stage over a period. Per-user path analysis instead follows identified individuals across sessions to establish that the same person completed each step in order. The second requires a persistent per-visitor identifier — which is exactly what consent rules gate. Sealmetrics measures funnels the first way: each step is an anonymous aggregate count on 100% of traffic, with no individual followed through the sequence.
+            Funnels can be counted in two ways. Aggregate step counts compare totals at each stage over a period. Per-user path analysis instead follows identified individuals across sessions to establish that the same person completed each step in order. The second requires a persistent per-visitor identifier — which is exactly what consent rules gate. Sealmetrics measures funnels the first way: each step is an anonymous aggregate count on traffic measured without depending on consent, with no individual followed through the sequence.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why incomplete data bends the funnel</h2>
@@ -81,7 +81,7 @@ export default function FunnelPage() {
           </p>
         </div>
 
-        <CommercialModule hook="A funnel built on the consenting minority tells you where they drop off — not where your customers do. Count every step on 100% of sessions." />
+        <CommercialModule hook="A funnel built on the consenting minority tells you where they drop off — not where your customers do. Count every step without consent gaps." />
 
         <RelatedGlossaryTerms slug="funnel" />
 

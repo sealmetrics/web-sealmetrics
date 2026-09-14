@@ -74,7 +74,7 @@ export default function CustomerLifetimeValuePage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Where analytics data still distorts LTV decisions</h2>
           <p>
-            The operative question behind LTV is LTV by acquisition channel: which sources bring customers who reorder, so acquisition budget can follow them. The lifetime margin comes from order data, but the channel label comes from analytics — and if that analytics only observed the consenting minority, the join is biased before it starts. Orders whose acquisition source went unmeasured land in a misleading &ldquo;direct&rdquo; bucket, and channel-level LTV inherits the distortion. <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Revenue attribution</Link> on 100% of orders — last-click, at channel level, no consent dependency — gives the LTV model an acquisition input that reflects all customers, not the measurable ones.
+            The operative question behind LTV is LTV by acquisition channel: which sources bring customers who reorder, so acquisition budget can follow them. The lifetime margin comes from order data, but the channel label comes from analytics — and if that analytics only observed the consenting minority, the join is biased before it starts. Orders whose acquisition source went unmeasured land in a misleading &ldquo;direct&rdquo; bucket, and channel-level LTV inherits the distortion. <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Revenue attribution</Link> without consent gaps — last-click, at channel level — gives the LTV model an acquisition input that reflects all customers, not the measurable ones.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What LTV does not tell you</h2>
@@ -83,7 +83,7 @@ export default function CustomerLifetimeValuePage() {
           </p>
         </div>
 
-        <CommercialModule hook="LTV by channel is only as good as the channel data under it. Feed the model acquisition sources from 100% of orders, not the consenting minority." />
+        <CommercialModule hook="LTV by channel is only as good as the channel data under it. Feed the model acquisition sources without consent gaps, not the consenting minority." />
 
         <RelatedGlossaryTerms slug="customer-lifetime-value" />
 
