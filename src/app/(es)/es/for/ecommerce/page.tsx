@@ -16,11 +16,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Analítica para eCommerce — atribución completa | Sealmetrics",
   description:
-    "Analítica sin cookies para eCommerce: 100% del tráfico capturado, atribución last-click, sin banner y alojado en Dublín. Desde 499 EUR/mes.",
+    "Analítica sin cookies para eCommerce: sin pérdida por consentimiento, atribución last-click, sin banner y alojado en Dublín. Desde 499 EUR/mes.",
   openGraph: {
     title: "Analítica para eCommerce — atribución completa | Sealmetrics",
     description:
-      "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Captura el 100% del tráfico UE y cuadra con tu CRM de Shopify/Magento.",
+      "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
     type: "website",
     images: [ogImage("/es/for/ecommerce/")],
     locale: "es_ES",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Analítica para eCommerce — atribución completa | Sealmetrics",
-    description: "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Captura el 100% del tráfico UE y cuadra con tu CRM de Shopify/Magento.",
+    description: "Analítica sin consentimiento, RGPD por arquitectura, construida para eCommerce DTC y retail europeos. Sin huecos de consentimiento y cuadra con tu CRM de Shopify/Magento.",
     images: [ogImage("/es/for/ecommerce/")],
   },
   alternates: {

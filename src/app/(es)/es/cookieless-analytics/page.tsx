@@ -18,7 +18,7 @@ const PILLAR_DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "Analítica sin cookies, explicada — Sealmetrics",
   description:
-    "Analítica sin cookies que captura el 100% del tráfico con recolección first-party server-side. Sin cookies, sin banners de consentimiento, sin muestreo.",
+    "Analítica sin cookies con recolección first-party server-side: mide el tráfico sin depender del consentimiento. Sin banners, sin muestreo.",
   openGraph: {
     title: "Analítica sin cookies, explicada",
     description:
@@ -130,8 +130,8 @@ export default function CookielessAnalyticsPillarEs() {
             páginas vistas, eventos y conversiones{" "}
             <strong>anónimamente, en el lado servidor</strong>, desde tu
             propio dominio — sin cookies, sin fingerprinting, sin
-            identificadores personales. Captura el 100% del tráfico
-            porque no hay nada que los navegadores, banners o ad-blockers
+            identificadores personales. No pierde visitas por el rechazo
+            del consentimiento porque no hay nada que los navegadores, banners o ad-blockers
             puedan bloquear, rechazar o expirar. El trade-off es honesto:
             mides canales y conversiones en agregado, no a personas
             individuales entre sesiones. Para un negocio eCommerce o
@@ -140,7 +140,7 @@ export default function CookielessAnalyticsPillarEs() {
           </>
         }
         bullets={[
-          <><strong>Captura el 100%</strong> del tráfico — sin gate de consentimiento, sin caída por ad-blocker, sin expiración de cookies a 7 días.</>,
+          <><strong>No pierde visitas</strong> por el rechazo del consentimiento — sin caída por ad-blocker, sin expiración de cookies a 7 días.</>,
           <><strong>Cumple RGPD por arquitectura</strong> — sin cookies, sin datos personales, sin identificadores entre sesiones. Procesamiento sólo en la UE.</>,
           <><strong>Atribución de ingresos last-click</strong> a nivel de canal y campaña, sobre todos los visitantes.</>,
           <><strong>Lo que no hace</strong> — identificar visitantes recurrentes, seguir individuos entre sesiones o construir perfiles por usuario. Si lo necesitas, usa un CDP.</>,
@@ -256,7 +256,7 @@ export default function CookielessAnalyticsPillarEs() {
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Cada evento de conversión se atribuye a la fuente de
                 tráfico observada en la página donde ocurrió — last-click,
-                100% del tiempo, sobre el 100% de los datos. Los
+                siempre, sobre datos sin huecos de consentimiento. Los
                 agregados fluyen a dashboards, a BigQuery, y a un MCP
                 server para agentes de IA. El output es rendimiento de
                 canal: qué fuentes generaron ingresos esta semana, y
@@ -294,7 +294,7 @@ export default function CookielessAnalyticsPillarEs() {
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-4">Lo que captura</h3>
               <ul className="space-y-3 text-[15px] leading-[1.7] text-ink list-none pl-0">
                 {[
-                  "100% de pageviews, sesiones y eventos de conversión.",
+                  "Pageviews, sesiones y eventos de conversión, sin pérdida por consentimiento.",
                   "Canal, campaña, source y medium para cada evento.",
                   "Atribución last-click de ingresos a nivel de canal.",
                   "Conteos de pasos de embudo — cuántos visitantes llegaron al paso 1, paso 2, paso 3.",

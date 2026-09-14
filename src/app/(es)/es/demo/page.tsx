@@ -21,7 +21,7 @@ const DEMO_PROOF = [
 export const metadata: Metadata = {
   title: "Pide una demo — Sealmetrics",
   description:
-    "Walkthrough de 30 minutos personalizado. Ve cómo luce el 100% de tu tráfico sobre tu propia web.",
+    "Walkthrough de 30 minutos personalizado. Ve cómo luce tu tráfico, medido sin depender del consentimiento, sobre tu propia web.",
   openGraph: {
     title: "Pide una demo — Sealmetrics",
     description: "30 min con el founder. Ve tu gap de datos en directo.",

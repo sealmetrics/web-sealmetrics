@@ -54,7 +54,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué es la analítica con IA?",
-    a: "La analítica con IA es la capacidad de consultar tu dato web y de revenue en lenguaje natural y obtener una respuesta directa — sin SQL, sin construir dashboards, sin abrir un ticket a un analista. Un modelo de lenguaje como Claude o ChatGPT lee tu analítica a través de un conector y devuelve el número, el diagnóstico o la siguiente acción. La trampa es que la respuesta solo es tan fiable como el dato de debajo: apunta un LLM a una analítica incompleta y basada en cookies y producirá respuestas seguras, bien formateadas y falsas. Sealmetrics es analítica con IA construida sobre dato cookieless completo, así que las respuestas se apoyan en el 100% de tu tráfico.",
+    a: "La analítica con IA es la capacidad de consultar tu dato web y de revenue en lenguaje natural y obtener una respuesta directa — sin SQL, sin construir dashboards, sin abrir un ticket a un analista. Un modelo de lenguaje como Claude o ChatGPT lee tu analítica a través de un conector y devuelve el número, el diagnóstico o la siguiente acción. La trampa es que la respuesta solo es tan fiable como el dato de debajo: apunta un LLM a una analítica incompleta y basada en cookies y producirá respuestas seguras, bien formateadas y falsas. Sealmetrics es analítica con IA construida sobre dato cookieless sin huecos de consentimiento, así que las respuestas no dependen de quién aceptó el banner.",
   },
   {
     q: "¿Existe una herramienta de analítica con IA conforme con el RGPD?",
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     q: "¿En qué se diferencia esto de poner ChatGPT encima de GA4?",
-    a: "Dos diferencias, ambas estructurales. Primero, el dato: GA4 se basa en cookies y depende del consentimiento, así que en la UE suele capturar una fracción del tráfico real — un LLM que razona sobre él es seguro y falso. Sealmetrics captura el 100% sin cookies. Segundo, la interfaz: un warehouse abierto obliga al modelo a adivinar cuál de cientos de campos significa «revenue», lo que produce números plausibles pero falsos. El MCP de Sealmetrics expone herramientas con nombre y una definición canónica cada una, así que el modelo no puede malinterpretar el esquema. El dato completo más una superficie acotada eliminan ambos modos de fallo.",
+    a: "Dos diferencias, ambas estructurales. Primero, el dato: GA4 se basa en cookies y depende del consentimiento, así que en la UE suele capturar una fracción del tráfico real — un LLM que razona sobre él es seguro y falso. Sealmetrics mide el tráfico sin cookies y sin depender del consentimiento. Segundo, la interfaz: un warehouse abierto obliga al modelo a adivinar cuál de cientos de campos significa «revenue», lo que produce números plausibles pero falsos. El MCP de Sealmetrics expone herramientas con nombre y una definición canónica cada una, así que el modelo no puede malinterpretar el esquema. El dato completo más una superficie acotada eliminan ambos modos de fallo.",
   },
   {
     q: "¿La analítica con IA necesita cookies o dato personal?",
@@ -82,9 +82,9 @@ const pillars = [
   {
     eyebrow: "Los cimientos",
     title: "Dato completo",
-    body: "La IA vale lo que vale su input. Cookieless, first-party, 100% del tráfico, nunca muestreado — así cada respuesta describe la totalidad de tu tráfico, no la fracción que aceptó un banner.",
-    metric: "100%",
-    metricLabel: "del tráfico, nunca modelado",
+    body: "La IA vale lo que vale su input. Cookieless, first-party, sin huecos de consentimiento, nunca muestreado — así cada respuesta describe tu tráfico, no solo la fracción que aceptó un banner.",
+    metric: "0 huecos",
+    metricLabel: "de consentimiento, nunca modelado",
   },
   {
     eyebrow: "La interfaz",
@@ -119,18 +119,18 @@ const pillars = [
     title: "Respuestas que puedes rastrear",
     body: "Cada respuesta se resuelve a una herramienta con nombre sobre un periodo explícito en tu zona horaria, y la atribución es a último clic a nivel de evento — así siempre puedes ver qué métrica produjo el número.",
     metric: "Último clic",
-    metricLabel: "sobre el 100% del tráfico",
+    metricLabel: "sin huecos de consentimiento",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; generic: string; native: string }> = [
-  { feature: "Base de dato", generic: "Basada en cookies, con consentimiento (parcial)", native: "Cookieless, 100% capturado" },
+  { feature: "Base de dato", generic: "Basada en cookies, con consentimiento (parcial)", native: "Cookieless, sin pérdida por consentimiento" },
   { feature: "Cómo lo lee la IA", generic: "SQL en bruto contra tablas no vistas", native: "MCP semántico — herramientas con nombre" },
   { feature: "Respuestas plausibles pero falsas", generic: "Alto — una columna de staging parece real", native: "Acotado por estructura" },
   { feature: "Exposición de dato personal", generic: "Posible — las filas en bruto llevan PII", native: "Ninguna — 0 PII por construcción" },
   { feature: "Dónde corre la inferencia", generic: "Credenciales del warehouse a un modelo de EE. UU.", native: "IA privada en la UE, o tu clave" },
   { feature: "Ubicación del dato", generic: "Mayormente EE. UU.", native: "UE — Dublín + París" },
-  { feature: "Atribución", generic: "Lo que el esquema codifique", native: "Último clic sobre el 100% del tráfico" },
+  { feature: "Atribución", generic: "Lo que el esquema codifique", native: "Último clic sin huecos de consentimiento" },
   { feature: "Tiempo a la primera respuesta", generic: "Construir pipelines + dashboards", native: "Conecta el MCP, pregunta en palabras" },
 ];
 
@@ -221,14 +221,14 @@ export default function AiAnalyticsEsPage() {
         answer={
           <>
             La analítica con IA solo es tan fiable como el dato de debajo. Sealmetrics combina{" "}
-            <strong>dato cookieless al 100%</strong> con un <strong>MCP semántico</strong> e{" "}
+            <strong>dato cookieless sin huecos de consentimiento</strong> con un <strong>MCP semántico</strong> e{" "}
             <strong>IA privada alojada en la UE</strong> (LENS AI), así un LLM responde tus preguntas de
             revenue desde dato completo que no puede malinterpretar — con cero dato personal en juego.
           </>
         }
         bullets={[
           <>IA genérica sobre GA4: dato parcial, riesgo de PII, inferencia en EE. UU., respuestas plausibles pero falsas.</>,
-          <>Sealmetrics: dato completo, 0 PII, IA privada UE, atribución a último clic sobre el 100% del tráfico.</>,
+          <>Sealmetrics: dato completo, 0 PII, IA privada UE, atribución a último clic sin huecos de consentimiento.</>,
           <>Conecta Claude, ChatGPT, Cursor o Claude Code vía MCP — o trae tu propia clave de modelo.</>,
         ]}
       />
