@@ -150,8 +150,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "0", label: "Personal data collected", detail: "No cookies, no localStorage, no fingerprinting, no identifiers." },
           { n: "0", label: "Consent required", detail: "No cookies or identifiers. No banner modification needed." },
-          { n: "Dublin", label: "Single EU region", detail: "Data never leaves the EU. Schrems II clean." },
-          { n: "0", label: "Sub-processors outside EU", detail: "No SCCs, no TIAs, no cross-border assessments." },
+          { n: "Dublin", label: "Single EU region", detail: "Visitor data never leaves the EU. Schrems II clean for visitor data." },
+          { n: "0", label: "Non-EU sub-processors on visitor data", detail: "The only non-EU sub-processor, Resend (US), sends account emails under SCCs + DPF and never receives visitor data." },
         ],
         faqs: [
           { q: "How is Sealmetrics GDPR-compliant by architecture?", a: "Sealmetrics avoids personal-data collection by design — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals, with EU-hosted processing in Dublin and DPA/TPSR documentation available for procurement review." },
@@ -177,8 +177,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "0", label: "Dato personal", detail: "Sin cookies, localStorage, fingerprinting, identificadores." },
           { n: "0", label: "Consentimiento", detail: "Fuera del scope RGPD. Sin modificar banner." },
-          { n: "Dublín", label: "Región UE única", detail: "Los datos nunca salen de UE. Schrems II limpio." },
-          { n: "0", label: "Sub-procesadores fuera UE", detail: "Sin SCCs, sin TIAs, sin evaluaciones transfronterizas." },
+          { n: "Dublín", label: "Región UE única", detail: "El dato de visitante nunca sale de la UE. Schrems II limpio para ese dato." },
+          { n: "0", label: "Sub-procesadores fuera UE con dato de visitante", detail: "El único sub-procesador fuera de la UE, Resend (EE. UU.), envía emails de cuenta con CCT + DPF y nunca recibe dato de visitante." },
         ],
         faqs: [
           { q: "¿Cómo cumple Sealmetrics RGPD por arquitectura?", a: "RGPD aplica al tratamiento de datos personales. Sealmetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esta arquitectura es la base del cumplimiento — DPA, TPSR y diagramas disponibles para tu DPO." },

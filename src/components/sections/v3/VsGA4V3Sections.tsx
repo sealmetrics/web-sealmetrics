@@ -315,7 +315,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       rows: [
         { feature: "Data residency", ga4: "US · Google infra", seal: "EU · Dublin, Ireland" },
         { feature: "Schrems II exposure", ga4: "Yes · ongoing challenge", seal: "Clean" },
-        { feature: "Sub-processors outside EU", ga4: "Yes", seal: "None" },
+        { feature: "Sub-processors outside EU (visitor data)", ga4: "Yes", seal: "None" },
       ],
     },
     {
@@ -394,7 +394,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       rows: [
         { feature: "Residencia de datos", ga4: "US · infra Google", seal: "UE · Dublín, Irlanda" },
         { feature: "Exposición Schrems II", ga4: "Sí · challenge regulatorio", seal: "Limpio" },
-        { feature: "Sub-procesadores fuera UE", ga4: "Sí", seal: "Ninguno" },
+        { feature: "Sub-procesadores fuera UE (dato de visitante)", ga4: "Sí", seal: "Ninguno" },
       ],
     },
     {
