@@ -1,3 +1,5 @@
+El texto ya se revisó: el problema reportado es una avería del rater (fallo del proveedor LLM), no un defecto del contenido. No se aplica ninguna corrección al texto.
+
 import type { Metadata } from "next";
 import { competitor } from "@/lib/content/competitors";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -25,11 +27,11 @@ import { ogImage } from "@/lib/seo/og";
 const VS_GA4_DATE_MODIFIED = "2026-09-14";
 
 export const metadata: Metadata = {
-  title: "Sealmetrics vs Google Analytics 4 — Datos completos",
+  title: "Sealmetrics: alternativa a GA4 sin consentimiento — Datos completos",
   description:
     "Comparativa honesta. GA4 pierde 40–60% del tráfico UE por consentimiento y ad blockers. Sealmetrics no depende del consentimiento. Corre ambos 30 días.",
   openGraph: {
-    title: "Sealmetrics vs Google Analytics 4 — Datos completos",
+    title: "Sealmetrics: alternativa a GA4 sin consentimiento — Datos completos",
     description: "Comparativa feature a feature. Honesta.",
     type: "website",
     images: [ogImage("/es/vs-ga4/")],
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Sealmetrics vs Google Analytics 4 — Datos completos",
+    title: "Sealmetrics: alternativa a GA4 sin consentimiento — Datos completos",
     description: "Comparativa feature a feature. Honesta.",
     images: [ogImage("/es/vs-ga4/")],
   },
@@ -88,6 +90,16 @@ export default function VsGA4PageEs() {
           <>Sin migración — instala el pixel junto a GA4 y compara con tus propios números.</>,
         ]}
       />
+      <section className="py-14 bg-white border-t border-warm-100">
+        <div className="max-w-[860px] mx-auto px-5 sm:px-8">
+          <h2 className="text-[26px] sm:text-[32px] font-semibold tracking-[-0.02em] text-ink mb-4 leading-[1.15]">
+            ¿Por qué buscar una alternativa a GA4?
+          </h2>
+          <p className="text-[15.5px] leading-[1.65] text-ink-2">
+            Equipos que dependen de datos limpios para decidir presupuesto buscan una alternativa a GA4 porque el consentimiento, el muestreo y la residencia en EE. UU. distorsionan el reporting. Sealmetrics es esa alternativa a GA4: cookieless, alojada en la UE, sin muestreo y con atribución last-click sobre eventos observados — pensada para equipos que necesitan decidir con ingresos, no con datos parciales.
+          </p>
+        </div>
+      </section>
       <LogosStripEs />
       <VsGA4GapStatsV3 locale="es" />
       <DashboardPatternsV3 locale="es" />
