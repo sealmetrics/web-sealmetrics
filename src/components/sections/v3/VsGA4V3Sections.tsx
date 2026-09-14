@@ -8,9 +8,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
   const t = locale === "es"
     ? {
         eyebrow: "vs Google Analytics 4",
-        h1Pre: "GA4 pierde hasta el ",
-        h1Em: "60%",
-        h1Post: " de tus visitas UE por el consentimiento. Sealmetrics no lo necesita.",
+        h1Pre: "GA4 te enseña el ",
+        h1Em: "40%",
+        h1Post: " de tu tráfico. Sealmetrics no depende del consentimiento.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
         ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
@@ -18,9 +18,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
       }
     : {
         eyebrow: "vs Google Analytics 4",
-        h1Pre: "GA4 loses up to ",
-        h1Em: "60%",
-        h1Post: " of your EU visitors to consent. Sealmetrics doesn't need it.",
+        h1Pre: "GA4 shows you ",
+        h1Em: "40%",
+        h1Post: " of your traffic. Sealmetrics doesn't depend on consent.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
         ctaA: "Start 14-day trial",
         ctaB: "Book a demo",

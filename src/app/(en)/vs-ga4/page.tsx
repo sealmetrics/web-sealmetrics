@@ -27,7 +27,7 @@ const VS_GA4_DATE_MODIFIED = "2026-09-14";
 export const metadata: Metadata = {
   title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",
   description:
-    "Honest comparison. GA4 loses 15–60% of EU visitor data to consent, plus ad blockers. Sealmetrics doesn't need consent. Run both for 30 days.",
+    "Honest comparison. GA4 loses 40–60% of EU traffic to consent and ad blockers. Sealmetrics doesn't depend on consent. Run both for 30 days.",
   openGraph: {
     title: "Sealmetrics vs Google Analytics 4 — Complete data, no spin",
     description: "Feature-by-feature comparison. Honest.",
@@ -65,7 +65,7 @@ export default function VsGA4Page() {
     <>
       <Breadcrumbs items={[{ label: "vs Google Analytics 4" }]} />
       <JsonLd data={breadcrumbSchema([{ name: "vs Google Analytics 4", url: "/vs-ga4" }])} />
-      <JsonLd data={comparisonPageSchema({ name: "Sealmetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: Sealmetrics versus GA4 on EU data completeness (15-60% consent gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: competitor("google-analytics-4"), datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "What an AI agent can read (full dataset vs post-consent subset)", "Time to first decision-ready report"] })} />
+      <JsonLd data={comparisonPageSchema({ name: "Sealmetrics vs Google Analytics 4 (GA4)", description: "Honest side-by-side: Sealmetrics versus GA4 on EU data completeness (40-60% gap), consent dependency, attribution, AI readiness and decision-grade reliability.", url: "/vs-ga4", competitor: competitor("google-analytics-4"), datePublished: "2026-04-15", dateModified: VS_GA4_DATE_MODIFIED, author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" }, criteria: ["EU traffic captured (with consent banner vs without)", "Consent banner dependency", "Cookie-based vs cookieless architecture", "Data sampling thresholds in standard reports", "Last-click attribution on observed events", "Data residency and Schrems II posture", "Pricing for enterprise eCommerce", "What an AI agent can read (full dataset vs post-consent subset)", "Time to first decision-ready report"] })} />
       <JsonLd data={quotationSchema({
         text: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
         spokenBy: "Toni Andújar",
@@ -79,7 +79,7 @@ export default function VsGA4Page() {
       </div>
       <TldrBlock
         answer={
-          <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. Sealmetrics is an EU-hosted cookieless analytics platform that measures inbound traffic without a consent banner and attributes each conversion last-click on observed events. The substantive difference is data completeness: GA4 typically loses <strong>15–60% of EU visitor data</strong> to consent, depending on sector, brand strength and traffic mix, and ad blockers and Safari&rsquo;s Intelligent Tracking Prevention erode more; Sealmetrics does not depend on consent, so that loss does not apply. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on Sealmetrics. Pricing starts at €499/month annually.</>
+          <>GA4 is Google&rsquo;s free analytics product, hosted in the United States, that requires a cookie consent banner across the EU and uses statistical modelling for unconsented traffic. Sealmetrics is an EU-hosted cookieless analytics platform that measures inbound traffic without a consent banner and attributes each conversion last-click on observed events. The substantive difference is data completeness: GA4 typically reports <strong>13–40% of real EU traffic</strong> after consent rejection (40–60%), ad blockers (~25%) and Safari&rsquo;s Intelligent Tracking Prevention; Sealmetrics does not depend on consent, so that loss does not apply. Most teams run both for 30 days side-by-side, compare against their CRM, then keep GA4 as a Google Ads conversion conduit while making revenue and budget decisions on Sealmetrics. Pricing starts at €499/month annually.</>
         }
         bullets={[
           <>GA4: consent-gated, sampled, US-hosted, Google-owned — best for Google Ads conduit.</>,
@@ -95,7 +95,7 @@ export default function VsGA4Page() {
               Sealmetrics vs Google Analytics 4 (GA4): GA4 is Google&rsquo;s free analytics platform — US-hosted, cookie-based, sampled at scale, and dependent on a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that measures inbound traffic without consent dependency and attributes each conversion last-click on observed events, from &euro;499/month billed annually.
             </p>
             <p>
-              For European eCommerce the gap is structural: GA4 loses 15&ndash;60% of EU visitor data to consent rejection and reconstructs part of it with statistical modelling, while Safari&rsquo;s ITP and ad blockers erode more. Sealmetrics measures the same traffic with a lightweight first-party pixel — no cookies, no sampling, no Schrems II review — so the revenue in the report matches Shopify. Most teams run both side by side for 30 days, reconcile against their CRM, then move revenue decisions to Sealmetrics while keeping GA4 as a Google Ads conduit.
+              For European eCommerce the gap is structural: GA4 loses 40&ndash;60% of EU traffic to consent rejection and reconstructs part of it with statistical modelling, while Safari&rsquo;s ITP and ad blockers erode more. Sealmetrics measures the same traffic with a lightweight first-party pixel — no cookies, no sampling, no Schrems II review — so the revenue in the report matches Shopify. Most teams run both side by side for 30 days, reconcile against their CRM, then move revenue decisions to Sealmetrics while keeping GA4 as a Google Ads conduit.
             </p>
           </QuickAnswer>
         </div>
