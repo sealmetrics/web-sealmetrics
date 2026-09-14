@@ -486,8 +486,8 @@ export default function GA4GoogleAdsSeparationPage() {
                   Analítica web: Sealmetrics
                 </strong>{" "}
                 &mdash; mide el tráfico sin depender del consentimiento: sin cookies, sin banners de
-                consentimiento, sin transferencias de datos a terceros. Datos
-                completos para decisiones de negocio.
+                consentimiento, sin transferencias de datos de visitantes a terceros.
+                Datos sin huecos de consentimiento para decisiones de negocio.
               </li>
               <li className="text-text-secondary">
                 &mdash;{" "}
@@ -503,8 +503,8 @@ export default function GA4GoogleAdsSeparationPage() {
               Con esta configuración, eliminas la dependencia de GA4, reduces la
               superficie de riesgo legal a un unico tag con un propósito
               específico (conversión de campanyass), y obtienes datos de analítica
-              completos que GA4 nunca podrá darte por su dependencia de cookies y
-              consentimiento.
+              sin huecos de consentimiento que GA4 nunca podrá darte por su
+              dependencia de cookies y consentimiento.
             </p>
 
             <p>
@@ -516,7 +516,7 @@ export default function GA4GoogleAdsSeparationPage() {
                 ver cómo funciona Sealmetrics
               </Link>{" "}
               y entender por qué no necesita cookies ni banners de consentimiento
-              para capturar datos completos de tráfico.
+              para medir el tráfico sin perder visitas por el rechazo del consentimiento.
             </p>
           </div>
 

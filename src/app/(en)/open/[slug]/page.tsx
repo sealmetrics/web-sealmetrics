@@ -475,8 +475,8 @@ function ChapterOneBody() {
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
               Captured server-side, before ad blockers see the request and
               before consent banners are decided. Aggregate, anonymous, never
-              personal. The full population, not a sample of the consenting
-              majority.
+              personal. Visitors who reject the banner as well as those who
+              accept it, not a sample of the consenting majority.
             </p>
           </div>
           <div className="p-7">
@@ -510,8 +510,8 @@ function ChapterOneBody() {
             </h3>
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
               No cookies, no localStorage, no fingerprinting. Hosted in
-              Dublin. GDPR and ePrivacy compliant by design — not by legal
-              interpretation. The legal grounding lives at{" "}
+              Dublin. Designed for GDPR and ePrivacy from the architecture up
+              (self-assessed) — not by legal interpretation. The legal grounding lives at{" "}
               <Link
                 href="/security"
                 className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
@@ -1259,7 +1259,7 @@ function ChapterThreeBody() {
           from <em>measured</em> is a step further from a decision being
           defensible. Wherever the phrase "complete data" appears in Open, it
           means: measured server-side, before any of the three losses fires,
-          on the full population.
+          on visitors who accept and reject the banner alike.
         </p>
       </div>
 
@@ -1367,8 +1367,8 @@ function ChapterSixBody() {
     { req: "Cookie consent banner", ga4: "Required", us: "Not required" },
     { req: "Cookie / localStorage", ga4: "Required", us: "Never set" },
     { req: "Personal-data DPA", ga4: "Self-service", us: "Signed by default" },
-    { req: "US transfer SCCs", ga4: "Required", us: "N/A — no transfer" },
-    { req: "Transfer Impact Assessment", ga4: "Required", us: "N/A — no transfer" },
+    { req: "US transfer SCCs", ga4: "Required", us: "N/A — no visitor-data transfer" },
+    { req: "Transfer Impact Assessment", ga4: "Required", us: "N/A — no visitor-data transfer" },
     { req: "ePrivacy Art. 5(3) basis", ga4: "Through consent", us: "By architecture" },
     { req: "AEPD self-assessment", ga4: "Fails", us: "Passes" },
   ];
@@ -1383,12 +1383,13 @@ function ChapterSixBody() {
       </p>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        We took the opposite route. The product was designed so that GDPR
-        compliance is{" "}
+        We took the opposite route. The product was designed for GDPR from
+        the architecture up, so the approach is{" "}
         <span className="italic-accent">structural</span> — there is no
         personal data to disclose, no cookie to consent to, no cross-border
-        transfer to justify. Compliance is the architecture, not an overlay
-        on top of it.
+        transfer of visitor data to justify. The compliance work lives in the
+        architecture, not in an overlay on top of it. That is our own
+        assessment, not a certification.
       </p>
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-14">
@@ -1409,7 +1410,7 @@ function ChapterSixBody() {
         id="gdpr-architecture"
         className="font-sans text-[1.85rem] sm:text-[2.15rem] font-semibold text-ink mt-14 mb-5 leading-[1.1] tracking-[-0.025em] scroll-mt-24"
       >
-        GDPR by architecture, not by permission
+        Designed for GDPR from the architecture up, not by permission
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         GDPR distinguishes six lawful bases for processing personal data:
@@ -1546,7 +1547,7 @@ function ChapterSixBody() {
         same grounds.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        Sealmetrics avoids this entirely. All data processing — pixel
+        Sealmetrics avoids this entirely. All visitor-data processing — pixel
         ingestion, validation, attribution, storage — runs in owned
         infrastructure in{" "}
         <strong className="font-semibold text-ink">Dublin, Ireland</strong>.
@@ -1563,7 +1564,7 @@ function ChapterSixBody() {
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         The corresponding TIA is not a defensive document we write to
-        justify a decision. There is no transfer to assess.
+        justify a decision. There is no visitor-data transfer to assess.
       </p>
 
       {/* Comparison table */}
@@ -1617,7 +1618,7 @@ function ChapterSixBody() {
         signed before any data flows. We are the data processor; you are the
         controller. The DPA covers scope of processing, the lawful basis
         (legitimate interest, where applicable), categories of data, the
-        sub-processor list (zero outside the EEA), technical and
+        sub-processor list (zero outside the EEA on visitor data), technical and
         organisational measures, data-subject rights handling, and breach
         notification timelines.
       </p>
@@ -2098,8 +2099,8 @@ function ChapterElevenBody() {
       body: (
         <>
           Measured. Not sampled, not modelled, not filled in by a regression
-          when consent is rejected. Every visitor, every event, captured
-          before the cascade fires.
+          when consent is rejected. Visitors who reject the banner counted
+          alongside those who accept it, captured before the cascade fires.
         </>
       ),
       chapterHref: "/open/what-complete-data-means",
@@ -2109,12 +2110,12 @@ function ChapterElevenBody() {
       id: "last-click-attribution",
       term: "Last-click attribution without consent gaps",
       plain:
-        "Credit assigned to the final measurable channel before conversion, applied across the entire visitor population — not just the consenting fraction.",
+        "Credit assigned to the final measurable channel before conversion, applied to visitors who accept and reject the banner alike — not just the consenting fraction.",
       body: (
         <>
           Credit assigned to the final measurable channel before conversion,
-          applied across the entire population — not the consenting
-          fraction. The model is simple by design; what is not simple is
+          applied to visitors who accept and reject the banner alike — not
+          the consenting fraction. The model is simple by design; what is not simple is
           feeding it complete data.
         </>
       ),
@@ -2191,13 +2192,13 @@ function ChapterElevenBody() {
       id: "gdpr-by-architecture",
       term: "GDPR by architecture",
       plain:
-        "Compliance produced by what the data model never collects, rather than by what a consent UX manages to obtain. The product cannot be configured to handle personal data because no field for it exists.",
+        "An approach to GDPR designed into what the data model never collects, rather than into what a consent UX manages to obtain. The product cannot be configured to handle personal data because no field for it exists. Self-assessed, not certified.",
       body: (
         <>
-          Compliance produced by what the data model never collects, rather
-          than by what a consent UX manages to obtain. The product cannot
-          be configured to handle personal data because no field for it
-          exists.
+          An approach to GDPR designed into what the data model never
+          collects, rather than into what a consent UX manages to obtain.
+          The product cannot be configured to handle personal data because
+          no field for it exists. Self-assessed, not certified.
         </>
       ),
       chapterHref: "/open/gdpr-by-architecture",
@@ -2608,9 +2609,9 @@ function ChapterElevenBody() {
 function ChapterSevenBody() {
   const includedAlways = [
     "No consent-driven data loss · no sampling, ever",
-    "Last-click revenue attribution on the full population",
+    "Last-click revenue attribution without consent gaps",
     "EU-hosted in Dublin · no US sub-processors on visitor data",
-    "GDPR by architecture · DPA signed by default",
+    "Designed for GDPR · DPA signed by default",
     "MCP server + BigQuery export + full API",
     "Unlimited sites and users",
     "AI agent traffic tracked · free, on every plan",
@@ -2631,7 +2632,7 @@ function ChapterSevenBody() {
       annual: "€499",
       monthly: "€599",
       events: "5M",
-      desc: "The starting point for teams replacing GA4 with full data.",
+      desc: "The starting point for teams replacing GA4 with consent-independent data.",
       highlights: [
         "5M human events / month",
         "LENS AI · bring your own key",

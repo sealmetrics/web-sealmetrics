@@ -87,7 +87,7 @@ export default function BounceRatePage() {
           </p>
         </div>
 
-        <CommercialModule hook="A bounce rate computed on the ~13% of traffic that consents skews hard. See yours measured across every visit." />
+        <CommercialModule hook="A bounce rate computed on the ~13% of traffic that consents skews hard. See yours measured without the consent gap." />
 
         <RelatedGlossaryTerms slug="bounce-rate" />
 

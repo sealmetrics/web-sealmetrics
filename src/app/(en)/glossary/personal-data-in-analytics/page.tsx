@@ -215,7 +215,7 @@ export default function PersonalDataInAnalyticsPage() {
               <Link href="/glossary/last-click-attribution" className={linkCls}>
                 last-click
               </Link>{" "}
-              across the whole dataset rather than the consenting fraction of it.
+              without consent gaps rather than on the consenting fraction.
             </p>
             <p>
               This is the architecture behind{" "}
