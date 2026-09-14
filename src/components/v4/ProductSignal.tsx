@@ -64,9 +64,9 @@ const copy = {
     definitionLead: "One platform for complete-data analytics.",
     definitionBefore: "Sealmetrics is a ",
     cookieless: "cookieless, consentless web analytics platform",
-    definitionMiddle: " for eCommerce that captures 100% of traffic and attributes revenue using ",
+    definitionMiddle: " for eCommerce that measures traffic without depending on consent and attributes revenue using ",
     lastClick: "last-click on the full dataset",
-    definitionAfter: ". GDPR-compliant by architecture, hosted exclusively in the EU.",
+    definitionAfter: ". Designed for GDPR from the architecture up (self-assessed), hosted exclusively in the EU.",
     definitionCaveat:
       "The useful claim is not “more data” in isolation. It is a reported total you can compare with backend revenue, under an attribution model your team can name.",
     definitionAction: "Book a measurement walkthrough",
@@ -165,9 +165,9 @@ const copy = {
     definitionLead: "Una plataforma para analítica con datos completos.",
     definitionBefore: "Sealmetrics es una ",
     cookieless: "plataforma de analítica web sin cookies ni consentimiento",
-    definitionMiddle: " para eCommerce que captura el 100% del tráfico y atribuye ingresos mediante ",
+    definitionMiddle: " para eCommerce que mide el tráfico sin depender del consentimiento y atribuye ingresos mediante ",
     lastClick: "last-click sobre el conjunto de datos completo",
-    definitionAfter: ". Cumple RGPD por arquitectura y está alojada exclusivamente en la UE.",
+    definitionAfter: ". Diseñada para el RGPD desde la arquitectura (autoevaluación) y alojada exclusivamente en la UE.",
     definitionCaveat:
       "La afirmación útil no es “más datos” de forma aislada. Es un total que puedes comparar con los ingresos del backend, bajo un modelo de atribución que tu equipo sabe nombrar.",
     definitionAction: "Reserva una revisión de medición",

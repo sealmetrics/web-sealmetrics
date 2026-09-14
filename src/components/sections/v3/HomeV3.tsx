@@ -563,7 +563,7 @@ const STEPS_COPY = {
     titles: ["Paste our 846 bytes script", "See real data", "Unlock your real ROAs"],
     bodies: [
       "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
-      "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. 100% of traffic, GDPR-compliant.",
+      "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. No consent-driven data loss, GDPR-compliant.",
       "See the 40-60% GA4 hides from you. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
     ],
     primaryCta: "Start 14-day trial",
@@ -579,7 +579,7 @@ const STEPS_COPY = {
     titles: ["Pega nuestro script de 846 bytes", "Ve datos reales", "Desbloquea tu ROAS real"],
     bodies: [
       "Activa nuestro módulo en tu CMS o pega el pixel vía Tag Manager. Sin ticket de ingeniería, sin deployment.",
-      "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. 100% del tráfico, RGPD-compliant.",
+      "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. Sin pérdida por consentimiento, RGPD-compliant.",
       "Ve el 40-60% que GA4 te oculta. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
     ],
     primaryCta: "Prueba de 14 días",
@@ -802,7 +802,7 @@ const PRICING_COPY = {
   en: {
     eyebrow: "Pricing",
     headline: <>Start measuring <em>reality.</em></>,
-    lede: "Annual billing — two months free vs monthly. Self-serve on Growth and Scale. Enterprise is custom-quoted. Every plan includes the same data architecture: 100% capture, last-click attribution, EU-hosted in Dublin.",
+    lede: "Annual billing — two months free vs monthly. Self-serve on Growth and Scale. Enterprise is custom-quoted. Every plan includes the same data architecture: no consent-driven data loss, last-click attribution, EU-hosted in Dublin.",
     mostPopular: "Most popular",
     perMo: "/mo",
     twoMonthsFree: "2 mo free",
@@ -827,7 +827,7 @@ const PRICING_COPY = {
   es: {
     eyebrow: "Precios",
     headline: <>Empieza a medir la <em>realidad.</em></>,
-    lede: "Facturación anual — dos meses gratis frente a mensual. Self-serve en Growth y Scale. Enterprise se cotiza a medida. Todos los planes incluyen la misma arquitectura: 100% de captura, atribución last-click, alojado en Dublín.",
+    lede: "Facturación anual — dos meses gratis frente a mensual. Self-serve en Growth y Scale. Enterprise se cotiza a medida. Todos los planes incluyen la misma arquitectura: sin pérdida por consentimiento, atribución last-click, alojado en Dublín.",
     mostPopular: "El más popular",
     perMo: "/mes",
     twoMonthsFree: "2 meses gratis",

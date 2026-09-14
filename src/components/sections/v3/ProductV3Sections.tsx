@@ -116,7 +116,7 @@ export function FourPillarsV3() {
     {
       n: "01 · Capture",
       title: "Consentless tracking",
-      p: "First-party, cookieless, GDPR-safe. 100% of traffic — not a fraction.",
+      p: "First-party, cookieless, GDPR-safe. Traffic without consent loss — not a fraction.",
     },
     {
       n: "02 · Attribute",
@@ -397,7 +397,7 @@ export function FeatureAttributionV3() {
           Every euro <em>gets a source.</em>
         </>
       }
-      lede="Last-click revenue attribution on 100% of observed events — including the pageviews GA4 loses to cookies and consent. Aggregate channel, campaign and creative totals. No modelling, no sampling, no per-user tracking."
+      lede="Last-click revenue attribution on observed events, without consent gaps — including the pageviews GA4 loses to cookies and consent. Aggregate channel, campaign and creative totals. No modelling, no sampling, no per-user tracking."
       bullets={[
         "Channel · campaign · ad set · creative granularity",
         "Microconversion counts & revenue totals",
@@ -540,7 +540,7 @@ export function NineReportsV3() {
   const reports = [
     { n: "01", title: "Overview", p: "Headline totals with the last-hit timestamp — no identifiers anywhere." },
     { n: "02", title: "Evolution", p: "Metrics over time, period against period." },
-    { n: "03", title: "Sources", p: "Channel, campaign and referrer totals on 100% of traffic." },
+    { n: "03", title: "Sources", p: "Channel, campaign and referrer totals on traffic without consent gaps." },
     { n: "04", title: "Pages", p: "Pageviews and landing pages, with content grouping." },
     { n: "05", title: "Conversions", p: "Conversions, microconversions and last-click revenue by channel." },
     { n: "06", title: "Funnel", p: "Step-level drop-off with no sampling thresholds." },

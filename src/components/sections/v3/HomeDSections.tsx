@@ -24,7 +24,7 @@ export function HeroD() {
         </div>
 
         <h1 className="h-display mx-auto">
-          See 100% of your sales — <em className="italic-accent">the revenue GA4 can&rsquo;t.</em>
+          See the sales consent hides — <em className="italic-accent">the revenue GA4 can&rsquo;t.</em>
         </h1>
 
         <p
@@ -39,7 +39,7 @@ export function HeroD() {
         <DualCTA locale="en" className="justify-center mt-7" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["100% of traffic measured", "No cookies · no consent banner", "GDPR by architecture", "Numbers that match Shopify"].map((b) => (
+          {["No consent-driven data loss", "No cookies · no consent banner", "GDPR by architecture", "Numbers that match Shopify"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -69,7 +69,7 @@ export function ConsentlessAnalytics() {
             <Link href="/consentless-analytics" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               Consentless analytics
             </Link>{" "}
-            measures 100% of your sales without a consent banner — legally.{" "}
+            measures your sales without depending on a consent banner — legally.{" "}
             <Link href="/security" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               GDPR by architecture
             </Link>
@@ -107,7 +107,7 @@ export function ConsentlessAnalytics() {
             <div className="flex items-baseline justify-between gap-4">
               <span className="text-[14px] text-ink leading-[1.4] font-medium">
                 Real ROAS<br />
-                <span className="text-[12px] text-brand font-mono">100% of sales measured</span>
+                <span className="text-[12px] text-brand font-mono">No consent loss on sales</span>
               </span>
               <span className="font-mono text-[40px] font-semibold text-brand tracking-[-0.03em]">4.1×</span>
             </div>
@@ -246,7 +246,7 @@ export function GrowthRiskCost() {
             <Link href="/ai-analytics" className="text-white font-medium border-b border-white/30 hover:border-white">
               LENS
             </Link>{" "}
-            reads 100% of your data and answers in plain language — the three questions that
+            reads your data without consent gaps and answers in plain language — the three questions that
             actually move the number. Ask it, or let it surface the answer before you think to ask.
           </p>
         </div>
@@ -350,7 +350,7 @@ export function QuoteBlock() {
 
 /* --- CFO objection + legal mechanism (condensed from /why-sealmetrics) ---
    The homepage stacked benefits but never rebutted an objection or explained
-   why 100% capture is legal — the two moves that close a skeptical CMO/CFO.
+   why consentless capture is legal — the two moves that close a skeptical CMO/CFO.
    The full argument lives on /why-sealmetrics; this is the short form. */
 export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
   const t =
@@ -369,12 +369,12 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           p2em2: "menos presupuesto.",
           readMore: "Lee el argumento completo →",
           whyHref: "/es/why-sealmetrics",
-          h2a: "¿Medir el 100%, legalmente?",
+          h2a: "¿Medir sin consentimiento, legalmente?",
           h2em: "Así es cómo.",
           steps: [
             { n: "01", t: "Sin cookies", d: "Sin identificadores, sin fingerprints. Eventos agregados — hits, no personas." },
             { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
-            { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Capturar el 100% y la privacidad son el mismo diseño." },
+            { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Medir sin pérdida por consentimiento y la privacidad son el mismo diseño." },
           ],
           badges: ["RGPD por arquitectura", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
         }
@@ -392,12 +392,12 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           p2em2: "less budget.",
           readMore: "Read the full argument →",
           whyHref: "/why-sealmetrics",
-          h2a: "\u201cMeasure 100%, legally?\u201d",
+          h2a: "\u201cMeasure without consent, legally?\u201d",
           h2em: "Here's how.",
           steps: [
             { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
             { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
-            { n: "03", t: "Nothing to consent to", d: "No profile to object to. 100% capture and privacy are the same design." },
+            { n: "03", t: "Nothing to consent to", d: "No profile to object to. Consent-independent measurement and privacy are the same design." },
           ],
           badges: ["GDPR by architecture", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
         };

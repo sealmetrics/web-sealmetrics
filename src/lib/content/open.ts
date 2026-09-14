@@ -107,7 +107,7 @@ export const openChapters: OpenChapter[] = [
     part: 2,
     eyebrow: "Method",
     summary:
-      "No cookies, no fingerprinting, no localStorage. 60+ server-side validation rules and last-click attribution over 100% of events.",
+      "No cookies, no fingerprinting, no localStorage. 60+ server-side validation rules and last-click attribution over events without consent gaps.",
     readMinutes: 10,
     status: "draft",
     datePublished: "2026-05-27",
@@ -115,7 +115,7 @@ export const openChapters: OpenChapter[] = [
     toc: [
       { id: "what-it-captures", label: "What the pixel captures" },
       { id: "server-validation", label: "Server-side validation · 60+ rules" },
-      { id: "last-click-attribution", label: "Last-click attribution on 100%" },
+      { id: "last-click-attribution", label: "Last-click attribution without consent gaps" },
       { id: "what-it-doesnt-capture", label: "What it doesn't capture by design" },
     ],
   },

@@ -5,7 +5,7 @@ import { HeroDashboard } from "@/components/sections/v3/HeroDashboard";
 /* ============================================================
    PREVIEW · "Power" home proposal sections
    Local design proposal — not linked from navigation, noindex.
-   Narrative: consentless 100% + real-time (BF) + any property
+   Narrative: consentless measurement + real-time (BF) + any property
    + LENS AI (BYOK / Private AI / dedicated) = category of one.
    ============================================================ */
 
@@ -36,7 +36,7 @@ export function HeroPower({ variant = "a" }: { variant?: "a" | "b" }) {
               className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
               style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
             >
-              100% of your traffic measured without consent banners — legally. Every dashboard
+              Your traffic measured without depending on consent — legally. Every dashboard
               computed in real time, Black Friday included. Any property on any event. And LENS AI
               on top: your own keys, or a private AI that never lets your data leave Europe.
             </p>
@@ -52,7 +52,7 @@ export function HeroPower({ variant = "a" }: { variant?: "a" | "b" }) {
             >
               Ask revenue questions in plain language. LENS runs on an open-source model hosted in
               the EU — your numbers never train third-party algorithms, never touch a US cloud,
-              never get shared with anyone. Underneath: 100% consentless measurement, in real time.
+              never get shared with anyone. Underneath: consent-independent measurement, in real time.
             </p>
           </>
         )}
@@ -66,7 +66,7 @@ export function HeroPower({ variant = "a" }: { variant?: "a" | "b" }) {
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
           {[
-            "100% consentless measurement",
+            "Consent-independent measurement",
             "Real-time dashboards",
             "Any property, any event",
             "AI on EU infrastructure",
@@ -99,7 +99,7 @@ const MATRIX_COLS = ["Sealmetrics", "GA4", "Adobe Analytics", "Piwik PRO", "Ampl
 
 const MATRIX_ROWS: { capability: string; cells: Cell[] }[] = [
   {
-    capability: "Measures 100% of traffic without a consent banner",
+    capability: "Measures traffic without depending on a consent banner",
     cells: [
       y("Yes — by architecture"),
       n("No — consent-gated, gaps modeled"),
@@ -325,8 +325,8 @@ export function RealTimePower() {
             ))}
           </div>
           <div className="mt-8 pt-6 border-t border-warm-100 text-[13px] leading-[1.5] text-ink-soft">
-            Not a sample. Not an estimate. Every dashboard, computed on 100% of events as they
-            arrive.
+            Not a sample. Not an estimate. Every dashboard, computed on every recorded event as it
+            arrives.
           </div>
         </div>
       </div>
@@ -498,7 +498,7 @@ export function LensTriadSlab() {
               </li>
               <li className="flex gap-3">
                 <span className="font-semibold shrink-0" style={{ color: "#E8B84B" }}>—</span>
-                Separates paid, organic and returning-buyer behavior on 100% of orders
+                Separates paid, organic and returning-buyer behavior on orders without consent gaps
               </li>
               <li className="flex gap-3">
                 <span className="font-semibold shrink-0" style={{ color: "#E8B84B" }}>—</span>
