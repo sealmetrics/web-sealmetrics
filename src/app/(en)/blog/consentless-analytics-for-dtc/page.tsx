@@ -4,7 +4,9 @@ import { PostByline } from "@/components/ui/PostByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, speakableWebPageSchema } from "@/lib/schema";
+import { getAlternates } from "@/lib/i18n/navigation";
+import { FaqSection } from "@/components/ui/FaqSection";
 import { RelatedReading } from "@/components/ui/RelatedReading";
 import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
@@ -12,11 +14,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
   description:
-    "Consentless analytics counts 100% of DTC traffic without a cookie banner — anonymously, at channel level. How it works, why it's compliant, what teams gain.",
+    "Consentless analytics measures DTC traffic without waiting for the cookie banner — anonymously, at channel level. How it works and what teams gain.",
   openGraph: {
     title: "Consentless Analytics for DTC — 2026 Guide",
     description:
-      "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
+      "No cookies. No user tracking. Aggregate channel totals measured on every visit, not only on the ones that accepted the banner.",
     type: "article",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
     url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
@@ -27,11 +29,12 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Consentless Analytics for DTC — 2026 Guide",
-    description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals on 100% of traffic.",
+    description: "No cookies. No user tracking. Aggregate channel totals measured on every visit, not only on the ones that accepted the banner.",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
   },
   alternates: {
     canonical: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
+    languages: getAlternates("/blog/consentless-analytics-for-dtc"),
   },
 };
 
@@ -39,12 +42,12 @@ const faqs = [
   {
     question: "What is consentless analytics?",
     answer:
-      "Consentless analytics is web measurement that requires no user consent because it stores no information on the visitor's device, reads no information from it, and collects no personal identifiers. No cookies, no localStorage, no fingerprinting, no per-user tracking. It counts events anonymously and attributes each conversion last-click at channel level. Because the ePrivacy Directive's consent requirement attaches to storage and access of device information, analytics without either falls outside it.",
+      "Consentless analytics is web measurement that requires no user consent because it stores no information on the visitor's device, reads no information from it, and collects no personal identifiers. No cookies, no localStorage, no fingerprinting, no per-user tracking. It counts events anonymously and attributes each conversion last-click at channel level. Because the ePrivacy Directive's consent requirement attaches to storage and access of device information, analytics without either falls outside that rule; whether consent is needed at all then depends on your national authority's criteria.",
   },
   {
     question: "Is consentless the same as cookieless?",
     answer:
-      "Closely related but not identical. Cookieless specifically means no cookies. Consentless is broader: no cookies AND no localStorage AND no fingerprinting AND no personal identifiers — so consent is not legally required. All consentless analytics is cookieless; not all cookieless analytics is fully consentless.",
+      "Closely related but not identical. Cookieless specifically means no cookies. Consentless is broader: no cookies AND no localStorage AND no fingerprinting AND no personal identifiers — so the storage-and-access rule has nothing to attach to. All consentless analytics is cookieless; not all cookieless analytics is fully consentless.",
   },
   {
     question: "Does consentless analytics track individual visitors?",
@@ -54,7 +57,7 @@ const faqs = [
   {
     question: "Why does consentless analytics matter for DTC brands in Europe?",
     answer:
-      "DTC brands sell directly to consumers via paid media. Their budget decisions depend on attributing paid-channel spend to revenue. In the EU, cookie banners cause 40–60% of visitors to reject tracking — the ROAS numbers DTC teams optimise against are built on the minority who accepted. Consentless analytics restores aggregate channel totals on the full 100%.",
+      "DTC brands sell directly to consumers via paid media. Their budget decisions depend on attributing paid-channel spend to revenue. In the EU, the visitors who reject the cookie banner disappear from consent-gated analytics, so the ROAS numbers DTC teams optimise against are built on the ones who accepted. On Incapto's Shopify store, GA4 put paid campaigns at 50% of traffic; measured on every visit they were 62%.",
   },
   {
     question: "Is consentless analytics legal under GDPR?",
@@ -77,7 +80,7 @@ export default function Page() {
       <JsonLd
         data={articleSchema({
           headline: "Consentless Analytics for DTC — 2026 Guide",
-          description: "Consentless analytics counts 100% of DTC traffic anonymously at channel level — no banner, no tracking.",
+          description: "Consentless analytics measures DTC traffic anonymously at channel level, without waiting for the banner and without tracking anyone.",
           ...dates,
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",
@@ -85,6 +88,8 @@ export default function Page() {
         })}
       />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/blog" }, { name: "Consentless Analytics for DTC", url: "/blog/consentless-analytics-for-dtc" }])} />
+      <JsonLd data={faqPageSchema(faqs, "/blog/consentless-analytics-for-dtc")} />
+      <JsonLd data={speakableWebPageSchema({ url: "/blog/consentless-analytics-for-dtc", name: "How DTC Brands Measure Paid-Media Revenue Without Waiting for the Banner", selectors: [".key-takeaways"] })} />
 
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -93,7 +98,7 @@ export default function Page() {
               DTC
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              How DTC Brands Measure 100% of Paid-Media Revenue Without a Banner
+              How DTC Brands Measure Paid-Media Revenue Without Waiting for the Banner
             </h1>
             <PostByline
               {...dates}
@@ -103,7 +108,7 @@ export default function Page() {
             />
           </header>
 
-          <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <div className="key-takeaways mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. That is the design that lets the analytics run without consent where your regulator&apos;s exemption criteria are met.</li>
@@ -116,10 +121,10 @@ export default function Page() {
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              For European DTC brands, the measurement problem is specific: paid media is the growth engine, and paid-media ROAS is measured against conversions the system actually observes. In the EU, 40–60% of visitors never become observable because they reject the cookie banner. The remaining 40–60% has channel attribution that is only partially trustworthy due to ad blockers and ITP.
+              For European DTC brands, the measurement problem is specific: paid media is the growth engine, and paid-media ROAS is measured against conversions the system actually observes. Visitors who reject the cookie banner never become observable to consent-gated analytics, and the ones who accept are partly lost again to ad blockers and ITP. The loss is not even: on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&apos;s Shopify store</Link>, GA4 recorded 37–52% less paid-campaign traffic than Sealmetrics, against 11% less direct traffic.
             </p>
             <p>
-              &ldquo;Consentless&rdquo; is the legal term for the fix. It means the analytics architecture is designed so that it does not trigger the consent requirement in the first place. Not &ldquo;we ask for consent and respect the answer&rdquo; — that is still consent-gated. Consentless means consent is not required, because no information is stored on or read from the device and no personal identifier ever exists. The full legal walk-through with country-by-country authority guidance lives on the <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics pillar</Link>; the architecture sits on <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>.
+              &ldquo;Consentless&rdquo; is the industry term for the fix. It means the analytics architecture is designed so that it does not trigger the consent requirement in the first place. Not &ldquo;we ask for consent and respect the answer&rdquo; — that is still consent-gated. Consentless means consent is not required, because no information is stored on or read from the device and no personal identifier ever exists. The full legal walk-through with country-by-country authority guidance lives on the <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics pillar</Link>; the architecture sits on <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -136,7 +141,7 @@ export default function Page() {
               How consentless is different from cookieless
             </h2>
             <p>
-              The terms overlap but are not synonymous. Cookieless specifically means: no cookies used. Consentless is a stricter standard: no cookies, no localStorage, no IndexedDB, no sessionStorage, no fingerprinting, no persistent identifier of any kind that would trigger the <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ePrivacy storage-and-access rule</Link>.
+              The terms overlap but are not synonymous. Cookieless specifically means: no cookies used. Consentless is a stricter standard: no cookies, no localStorage, no IndexedDB, no sessionStorage, no fingerprinting, no persistent identifier of any kind that would trigger the <Link href="/glossary/eprivacy-directive" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ePrivacy storage-and-access rule</Link>.
             </p>
             <p>
               Some &ldquo;cookieless&rdquo; analytics tools still use localStorage or device fingerprinting and technically still need consent. Fully consentless tools avoid all of them. Both are better than cookie-based, but only an architecture that stores and reads nothing on the device takes the ePrivacy storage-and-access rule out of the picture; whether consent is needed at all then depends on your regulator&apos;s criteria.
@@ -149,13 +154,13 @@ export default function Page() {
               A typical European DTC stack running consentless analytics:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events on 100% of traffic, pre-banner, no identifier ever created.</li>
-              <li><strong>Meta pixel + Google Ads pixel behind the banner.</strong> These still require consent because they use personal data for ad personalisation.</li>
-              <li><strong>Klaviyo or CRM for email.</strong> Runs on explicit email-list opt-in, not tracking cookies.</li>
-              <li><strong>BigQuery for aggregate marketing-mix modelling.</strong> Fed by consentless analytics at full resolution of channel totals.</li>
+              <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events on every visit that loads the page, before and regardless of the banner, with no identifier ever created.</li>
+              <li><strong>Meta pixel + Google Ads pixel behind the banner.</strong> These still require consent because they use personal data for ad personalisation. Sealmetrics does not send conversions to ad platforms, so bidding keeps running on the pixels.</li>
+              <li><strong>Email platform or CRM.</strong> Runs on explicit list opt-in; any onsite tracking it adds has its own consent requirement.</li>
+              <li><strong>BigQuery for aggregate marketing-mix modelling.</strong> Fed with channel totals by the BigQuery connector, available from the Growth plan.</li>
             </ul>
             <p>
-              The net effect: aggregate ROAS per channel is measured on 100% of traffic, not the 40% that accepted the banner. For a €20M DTC brand, the difference between &ldquo;channel ROAS on 40%&rdquo; and &ldquo;channel ROAS on 100%&rdquo; is often the difference between signing off on a €5M annual paid-media budget and defending it in a board meeting.
+              The net effect: aggregate ROAS per channel is measured on every visit, not only on the ones that accepted the banner. At Incapto, that moved paid campaigns from 50% of traffic in GA4 to 62% measured on every visit — the kind of difference that decides whether a paid-media budget is signed off or defended.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -188,19 +193,10 @@ export default function Page() {
               Think of consentless analytics as replacing GA4 for aggregate top-of-funnel channel attribution, not as replacing the rest of the MarTech stack.
             </p>
 
-            <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-              Questions DTC teams ask
-            </h2>
-            {faqs.map((f) => (
-              <div key={f.question} className="mt-6">
-                <h3 className="font-serif text-[1.15rem] font-medium text-text-primary mb-2">{f.question}</h3>
-                <p className="text-[0.95rem]">{f.answer}</p>
-              </div>
-            ))}
           </div>
 
           <CommercialModule
-            hook="Consentless means the banner stops deciding what your dashboard sees. Measure your DTC funnel on every visit, including the 40–60% who reject the banner."
+            hook="Consentless means the banner stops deciding what your dashboard sees. Measure your DTC funnel on every visit, including the visitors who reject the banner."
           />
 
           <RelatedReading currentSlug="consentless-analytics-for-dtc" />
@@ -224,6 +220,8 @@ export default function Page() {
               </li>
             </ul>
           </section>
+
+          <FaqSection items={faqs} heading="Questions DTC teams ask" />
         </div>
       </article>
     </>

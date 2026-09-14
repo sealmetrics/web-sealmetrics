@@ -68,6 +68,18 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "cookieless-analytics-for-ecommerce": {
+    title: "Cómo mide el eCommerce europeo sus ingresos sin esperar al banner de cookies",
+    description: "Cómo mide un eCommerce europeo visitas, pedidos e ingresos por canal sin cookies ni seguimiento de usuarios, y cómo lo contrasta con Shopify, WooCommerce o Magento.",
+    category: "eCommerce",
+    readTime: "10 min",
+  },
+  "consentless-analytics-for-dtc": {
+    title: "Cómo miden las marcas DTC los ingresos de paid media sin esperar al banner",
+    description: "Qué es la analítica sin consentimiento, en qué se diferencia de la analítica sin cookies, cómo convive con los píxeles publicitarios y qué revisa un DPO.",
+    category: "eCommerce",
+    readTime: "7 min",
+  },
   "cookieless-analytics-for-hotels": {
     title: "Cómo cuadran los grupos hoteleros la venta directa con el PMS en 2026",
     description: "Cómo mide un grupo hotelero la venta directa por canal sin cookies, sin seguir a huéspedes y sin perder el origen en el motor de reservas, y cómo la contrasta con el PMS.",

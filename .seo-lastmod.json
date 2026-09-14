@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "a5abbda4b78f6628",
+    "hash": "b65535e8fc2db27e",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "74efeda92332586e",
+    "hash": "ca9326e584eee8a0",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -988,11 +988,11 @@
     "date": "2026-09-04"
   },
   "/blog/cookieless-analytics-for-ecommerce/": {
-    "hash": "2fe57bdcca9df646",
+    "hash": "780f467e45cab31d",
     "date": "2026-09-14"
   },
   "/blog/consentless-analytics-for-dtc/": {
-    "hash": "15bbf3fced3f4781",
+    "hash": "bf834a9762e51020",
     "date": "2026-09-14"
   },
   "/blog/analytics-tools-external-domains/": {
@@ -1161,6 +1161,14 @@
   },
   "/es/blog/cookieless-analytics-for-hotels/": {
     "hash": "9f3ca9d6a0da1c93",
+    "date": "2026-09-14"
+  },
+  "/es/blog/consentless-analytics-for-dtc/": {
+    "hash": "3adc563af66eb014",
+    "date": "2026-09-14"
+  },
+  "/es/blog/cookieless-analytics-for-ecommerce/": {
+    "hash": "35211ff3008ffa03",
     "date": "2026-09-14"
   }
 }
