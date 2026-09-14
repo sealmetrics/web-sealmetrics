@@ -240,7 +240,7 @@ export default function Page() {
 
           <ul className="mt-8 space-y-3 text-[16px] leading-[1.7] text-ink-soft list-none pl-0">
             {[
-              "Limpio frente a Schrems II — tratamiento en Dublín, sin subencargados en EE.UU.",
+              "Limpio frente a Schrems II para el dato de visitante — tratado en Dublín; el único subencargado en EE. UU., Resend, envía emails de cuenta con CCT + DPF.",
               "DPA firmado bajo el art. 28 del RGPD, disponible precumplimentado para contrafirma.",
               "Paquete TPSR con flujos de datos, conservación, cifrado y control de accesos.",
               "Postura ENS / ISO documentada (no estamos certificados en ISO 27001 ni SOC 2 a día de hoy — la hoja de ruta y los controles que sí operamos están documentados por completo).",

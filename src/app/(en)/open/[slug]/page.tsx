@@ -600,8 +600,10 @@ function ChapterFiveBody() {
         All event processing runs in owned infrastructure in{" "}
         <strong className="font-semibold text-ink">Dublin, Ireland</strong> —
         European Union, no traffic transiting the United States, no
-        sub-processors outside the EEA. This includes pixel ingestion,
-        validation, attribution, and storage.
+        sub-processors outside the EEA in the visitor data path. This includes
+        pixel ingestion, validation, attribution, and storage. The only
+        non-EEA sub-processor in the service, Resend (US), sends account
+        emails under SCCs and the DPF and never receives visitor data.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
         The reason is operational before it is legal: a single region means a
@@ -614,7 +616,7 @@ function ChapterFiveBody() {
           {[
             { label: "Region", value: "Dublin, IE", sub: "EU-West" },
             { label: "Edge POPs", value: "12", sub: "Global CDN" },
-            { label: "Sub-processors outside EEA", value: "0", sub: "Schrems II clean" },
+            { label: "Non-EEA sub-processors on visitor data", value: "0", sub: "Resend (US) only for account emails" },
           ].map((m) => (
             <div key={m.label} className="p-7">
               <span className="block font-mono text-[0.68rem] uppercase tracking-[0.12em] text-text-tertiary mb-3">
@@ -2607,7 +2609,7 @@ function ChapterSevenBody() {
   const includedAlways = [
     "100% capture · no sampling, ever",
     "Last-click revenue attribution on the full population",
-    "EU-hosted in Dublin · zero US sub-processors",
+    "EU-hosted in Dublin · no US sub-processors on visitor data",
     "GDPR by architecture · DPA signed by default",
     "MCP server + BigQuery export + full API",
     "Unlimited sites and users",

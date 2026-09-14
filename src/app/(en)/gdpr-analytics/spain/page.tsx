@@ -215,7 +215,7 @@ export default function GdprAnalyticsSpainPage() {
 
           <ul className="mt-8 space-y-3 text-[16px] leading-[1.7] text-ink-soft list-none pl-0">
             {[
-              "Schrems II clean — processing in Dublin, no US sub-processors.",
+              "Schrems II clean for visitor data — processed in Dublin; the only US sub-processor, Resend, sends account emails under SCCs + DPF.",
               "Signed DPA under GDPR Art. 28, available pre-filled for counter-signature.",
               "TPSR package covering data flows, retention, encryption and access control.",
               "ENS / ISO posture documented (we are not currently ISO 27001 or SOC 2 certified — the roadmap and controls operated today are documented in full).",
