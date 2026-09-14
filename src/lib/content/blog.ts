@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "meta-ads-conversions-vs-crm",
+    title: "Meta Ads Conversions vs CRM: Why They Never Match, and How to Reconcile Them",
+    description:
+      "Meta counts the conversions its ads may have influenced; your CRM counts the ones that exist. Why the numbers differ, what each gap means, and a weekly method.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["measure-roas-after-cookie-consent", "why-ga4-shows-direct-none", "consentless-analytics-for-dtc"],
+  },
+  {
     slug: "measure-roas-after-cookie-consent",
     title: "How to Measure ROAS After Cookie Consent: A Seven-Step Method",
     description:

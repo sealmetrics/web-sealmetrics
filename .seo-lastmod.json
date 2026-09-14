@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "2638738a6fdf33e6",
+    "hash": "302b360a64b86c8f",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "c736364bfc315d47",
+    "hash": "7fa6e1716b5c934d",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -1185,6 +1185,14 @@
   },
   "/es/blog/measure-roas-after-cookie-consent/": {
     "hash": "038824bbd4246517",
+    "date": "2026-09-14"
+  },
+  "/blog/meta-ads-conversions-vs-crm/": {
+    "hash": "221764174a50c51f",
+    "date": "2026-09-14"
+  },
+  "/es/blog/meta-ads-conversions-vs-crm/": {
+    "hash": "627ee6d0f5fb65a3",
     "date": "2026-09-14"
   }
 }

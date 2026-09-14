@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "meta-ads-conversions-vs-crm": {
+    title: "Conversiones de Meta Ads frente al CRM: por qué nunca cuadran y cómo conciliarlas",
+    description: "Meta cuenta las conversiones en las que sus anuncios pudieron influir; tu CRM, las que existen. Por qué difieren, qué significa cada hueco y un método semanal.",
+    category: "Atribución",
+    readTime: "9 min",
+  },
   "measure-roas-after-cookie-consent": {
     title: "Cómo medir el ROAS después del consentimiento de cookies: un método en siete pasos",
     description: "El consentimiento empuja el ROAS en dos direcciones: la analítica se queda corta y las plataformas modelan y se atribuyen. Siete pasos hacia un ROAS fiable.",

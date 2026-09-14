@@ -541,6 +541,16 @@
       "sourceHash": "4085a0dda016606f4a8992534f4b327c67231fb4627e411afb84cbdee811413d",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/meta-ads-conversions-vs-crm.avif": {
+      "source": "public/og/blog/meta-ads-conversions-vs-crm.png",
+      "sourceHash": "88e6d120a250558806099f944f1abaafc448580bc2f5276e1408eb8bf2bf20c5",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/meta-ads-conversions-vs-crm.webp": {
+      "source": "public/og/blog/meta-ads-conversions-vs-crm.png",
+      "sourceHash": "88e6d120a250558806099f944f1abaafc448580bc2f5276e1408eb8bf2bf20c5",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/multi-touch-attribution-complete-data.avif": {
       "source": "public/og/blog/multi-touch-attribution-complete-data.png",
       "sourceHash": "be75327a7b424b11c880a5b5589d9716d8f8838a93c9e6b86593c6cbd2b942a5",
