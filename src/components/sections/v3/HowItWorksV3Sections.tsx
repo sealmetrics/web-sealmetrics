@@ -108,7 +108,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "03 · Store",
           title: "EU-hosted · Dublin, Ireland",
-          p: "Visitor data lives exclusively on EU infrastructure — no transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses. The single non-EEA transfer anywhere in the service is account-user service email via Resend (USA, SCCs + EU-US DPF), which touches no visitor data. GDPR-compliant by architecture, not by a legal layer bolted on afterwards.",
+          p: "Visitor data lives exclusively on EU infrastructure — no transfers of visitor data outside the EU and no third-country sub-processors in the visitor data path. The single non-EEA transfer anywhere in the service is account-user service email via Resend (USA, SCCs + EU-US DPF), which touches no visitor data. Designed for GDPR from the architecture up (our self-assessment), not by a legal layer bolted on afterwards.",
           bullet: [
             "Dublin, Ireland — Schrems II clean",
             "No third-country sub-processors in the visitor data path",
@@ -153,7 +153,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "03 · Almacena",
           title: "Alojado en UE · Dublín, Irlanda",
-          p: "El dato de visitante vive exclusivamente en infraestructura UE — sin transferencias fuera de UE, sin sub-procesadores en terceros países, sin dependencia de Cláusulas Contractuales Tipo. La única transferencia fuera del EEE en todo el servicio son los emails de servicio a usuarios de la cuenta vía Resend (EE. UU., CCT + EU-US DPF), que no tocan dato de visitante. RGPD por arquitectura, no por una capa legal añadida después.",
+          p: "El dato de visitante vive exclusivamente en infraestructura UE — sin transferencias de dato de visitante fuera de UE y sin sub-procesadores de terceros países en su ruta. La única transferencia fuera del EEE en todo el servicio son los emails de servicio a usuarios de la cuenta vía Resend (EE. UU., CCT + EU-US DPF), que no tocan dato de visitante. Diseñada para el RGPD desde la arquitectura (autoevaluación), no por una capa legal añadida después.",
           bullet: [
             "Dublín, Irlanda — Schrems II limpio",
             "Sin sub-procesadores en terceros países en la ruta del dato de visitante",
@@ -299,7 +299,7 @@ export function HowItWorksFaqV3({ locale = "en" as Locale }) {
     { q: "Is Sealmetrics affected by ad blockers?", a: "No. Sealmetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like those to google-analytics.com). Because Sealmetrics data flows through your domain, it is invisible to ad blockers." },
     { q: "How long does setup take?", a: "5 minutes. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up." },
     { q: "Do I need to modify my consent banner?", a: "No. Sealmetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), Sealmetrics operates independently of it." },
-    { q: "Where is data processed and stored?", a: "All data is processed and stored exclusively on EU servers in Dublin, Ireland. No data transfers outside the EU, no sub-processors in third countries, no reliance on Standard Contractual Clauses or other cross-border transfer mechanisms." },
+    { q: "Where is data processed and stored?", a: "Visitor analytics data is processed and stored exclusively on EU servers in Dublin, Ireland, with no transfer outside the EU and no third-country sub-processor in its path. The only non-EEA sub-processor in the whole service is Resend (USA), which sends service emails to account users under Standard Contractual Clauses and the EU-US DPF and never receives visitor data. The full list is Annex 3 of the DPA." },
     { q: "Does Sealmetrics use fingerprinting?", a: "No. Sealmetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
     { q: "What happens if I exceed my event limit?", a: "We never block your tracking. At 80% of your event limit you receive an email alert, at 100% a dashboard notification, and at 120% we contact you to discuss upgrading. No data is lost during any overage period." },
   ];
@@ -308,7 +308,7 @@ export function HowItWorksFaqV3({ locale = "en" as Locale }) {
     { q: "¿Afectan los bloqueadores de anuncios a Sealmetrics?", a: "No. Sealmetrics opera como infraestructura first-party en tu propio dominio. Los bloqueadores atacan peticiones de analítica de terceros (como las de google-analytics.com). Como los datos de Sealmetrics pasan por tu dominio, es invisible para los bloqueadores." },
     { q: "¿Cuánto tarda la instalación?", a: "5 minutos. Añade un script JavaScript a tu web — directamente en el HTML o vía Google Tag Manager. Sin configurar consent mode, sin integrar banner de cookies, sin variables de Tag Manager." },
     { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No. Sealmetrics no requiere consentimiento bajo RGPD o ePrivacy porque no usa cookies ni recopila datos personales. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), Sealmetrics opera independientemente." },
-    { q: "¿Dónde se procesan y almacenan los datos?", a: "Todos los datos se procesan y almacenan exclusivamente en servidores UE en Dublín, Irlanda. Sin transferencias fuera de UE, sin sub-procesadores en terceros países, sin dependencia de Cláusulas Contractuales Tipo." },
+    { q: "¿Dónde se procesan y almacenan los datos?", a: "El dato de analítica de visitantes se procesa y almacena exclusivamente en servidores UE en Dublín, Irlanda, sin transferencias fuera de la UE ni sub-procesadores de terceros países en su ruta. El único sub-procesador fuera del EEE en todo el servicio es Resend (EE. UU.), que envía los emails de servicio a usuarios de la cuenta con Cláusulas Contractuales Tipo y el EU-US DPF y nunca recibe dato de visitante. La lista completa es el Anexo 3 del DPA." },
     { q: "¿Usa Sealmetrics fingerprinting?", a: "No. Sealmetrics no usa fingerprinting de navegador, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de características del dispositivo. Es una decisión arquitectónica — el fingerprinting crea dato personal y requeriría consentimiento." },
     { q: "¿Qué pasa si supero mi límite de eventos?", a: "Nunca bloqueamos tu tracking. Al 80% del límite recibes un email, al 100% una notificación en dashboard, y al 120% te contactamos para hablar de upgrade. Ningún dato se pierde durante el exceso." },
   ];
