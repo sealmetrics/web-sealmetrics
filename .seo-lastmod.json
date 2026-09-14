@@ -128,8 +128,8 @@
     "date": "2026-09-10"
   },
   "/use-cases/": {
-    "hash": "bf60f1e2fc514758",
-    "date": "2026-08-09"
+    "hash": "ecf53532fc71ae06",
+    "date": "2026-09-14"
   },
   "/videos/": {
     "hash": "da26394525528eda",
@@ -1138,5 +1138,13 @@
   "/data-studio/": {
     "hash": "7dce6ebb2b7db255",
     "date": "2026-09-13"
+  },
+  "/es/use-cases/single-source-of-truth/": {
+    "hash": "952c8e8fe42397a9",
+    "date": "2026-09-14"
+  },
+  "/use-cases/single-source-of-truth/": {
+    "hash": "3f74321a022cfad1",
+    "date": "2026-09-14"
   }
 }

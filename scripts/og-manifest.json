@@ -59,7 +59,7 @@
   "public/og/blog/we-measured-every-analytics-script.png": "1ed7682e3fb3ba0ebfe87957c155ff3a",
   "public/og/blog/what-is-cookieless-tracking.png": "9266ae37f4ce9e9f390bd0cc8535a8e3",
   "public/og/blog/what-is-data-loss-in-analytics.png": "9e0e61434bfd292895bb6359ada6781e",
-  "public/og/blog/why-ga4-shows-13pct-eu-traffic.png": "cd901e9eb7871d53bdb564db75055d88",
+  "public/og/blog/why-ga4-shows-13pct-eu-traffic.png": "81100bdbfcd9c9208f90647eb7a30ec8",
   "public/og/careers.png": "ba8e9247ee18bad56123d0fa37b9258f",
   "public/og/case-studies.png": "2c8ee043335aab298fb9b41b487c57a7",
   "public/og/case-studies/dreamplace-hotels.png": "71661303bb8803a693290f7cfec02dbc",
@@ -148,12 +148,13 @@
   "public/og/use-cases/conversion-tracking.png": "07ab4a5e0032c7e68073e1373224336c",
   "public/og/use-cases/ga4-migration.png": "afa895fdadd915bf42428eded42ff3d0",
   "public/og/use-cases/revenue-attribution.png": "ec0bc213abcb50ca87820341c06150f4",
+  "public/og/use-cases/single-source-of-truth.png": "2e8f234f7bbf4573546a333e972c2c55",
   "public/og/videos.png": "2adcdab354b6720f6988fc3ef761e0a7",
   "public/og/vs-ga4.png": "d8142fcf83e2709d50bd7169da76bd1c",
   "public/og/vs.png": "b2a0cc79bc56e9ff2bdff603c3492a80",
   "public/og/vs/adobe-analytics.png": "9fecfd38d9db4d43fc5eecc12b073a67",
   "public/og/vs/ga360.png": "7366e1542441e5a83df75eb34ab2037c",
   "public/og/vs/matomo.png": "d6d130e6bc53435e0944d5201db23fe3",
-  "public/og/vs/piwik-pro.png": "d52e6eb55ec74ddf8cd1d83b443f6277",
-  "public/og/why-sealmetrics.png": "55bfe083b69fa033926baa5bc28af0ee"
+  "public/og/vs/piwik-pro.png": "be7f763a8a2c3a8c8290587c14ee2d66",
+  "public/og/why-sealmetrics.png": "a72fce43f1bf4c3bc67529df48049a8b"
 }

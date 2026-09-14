@@ -130,10 +130,11 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /platforms/woocommerce — Cookieless analytics for WooCommerce; plugin install + aggregate order reconciliation
 
 ## Use cases (task-level pages)
-- /use-cases — Hub: the three measurement jobs Sealmetrics is hired for, and the per-user analysis it deliberately does not do
+- /use-cases — Hub: the four measurement jobs Sealmetrics is hired for, and the per-user analysis it deliberately does not do
 - /use-cases/revenue-attribution — Last-click revenue attribution on 100% of data (replaces broken multi-touch under ITP/consent)
 - /use-cases/conversion-tracking — Conversion tracking without cookies for eCommerce
 - /use-cases/ga4-migration — Migrating from GA4: parallel run, dashboards, training, what changes for the team
+- /use-cases/single-source-of-truth — Why ad platforms, GA4, the order system and finance report different numbers; a five-step method to reconcile every team to one total checked against real orders (Palladium, Dreamplace, Incapto), and what it does not fix
 
 ## Comparisons (enterprise analytics tier)
 - /vs — All vendor comparisons
@@ -339,6 +340,7 @@ About / extras (ES):
 
 Compliance by country (ES):
 - /es/gdpr-analytics — Hub en castellano: por qué la transposición de ePrivacy hace nacional la pregunta del consentimiento, y qué reguladores publicaron criterios auditables. Francia y Alemania siguen solo en inglés
+- /es/use-cases/single-source-of-truth — Fuente única de verdad para marketing y finanzas: por qué plataformas de anuncios, GA4, el sistema de pedidos y la contabilidad dan cifras distintas, un método en cinco pasos para conciliarlas con los pedidos reales y lo que no resuelve
 - /es/gdpr-analytics/spain — Analítica y RGPD en España: guía de cookies de la AEPD de 2024, art. 22.2 de la LSSI-CE, las cuatro condiciones de la excepción, postura para sector público y qué cambiaría el Digital Omnibus
 
 Comparisons (ES):

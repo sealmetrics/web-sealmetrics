@@ -298,3 +298,17 @@ Aplica las correcciones de §5.3 y todas las apariciones de las mismas incongrue
 **Pendiente tras #190**
 - El rango "40–60% de rechazo de consentimiento" sigue usándose como cifra típica; la doc de ad blockers dice 15–60% según sector
 - Los claims de posicionamiento "captura el 100%" se mantienen, aunque el caso Incapto dice expresamente que no afirma el 100%; decidir si se matizan
+
+---
+
+## 7. Fase 2 · Landings de problema
+
+| Landing | URL | Estado |
+|---|---|---|
+| C · Marketing y Finanzas tienen números distintos | `/use-cases/single-source-of-truth` (EN+ES) | **Hecha** — plantilla v4 `ProblemLandingSignal`, contenido en `src/lib/content/problem-landings/` |
+| A · GA4 no refleja la realidad | `/complete-data` | Pendiente: portar a `ProblemLandingSignal` |
+| B · No sé qué campañas funcionan | `/use-cases/revenue-attribution` (+ crear ES) | Pendiente |
+| D · Tengo que demostrar cumplimiento | `/gdpr-analytics` | Pendiente |
+| Entrada "Por problema" en navegación, `/product` y `/use-cases` | — | Pendiente (cuando existan las cuatro) |
+
+La plantilla fija el orden de toda landing de problema: dolor → respuesta rápida → por qué ocurre (tabla) → coste → método (`HowTo`) → roles → prueba con casos → límites → FAQ visible (`FAQPage`) → CTA.
