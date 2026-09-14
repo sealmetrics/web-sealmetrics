@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const ES_TRANSLATIONS: Record<string, { title: string; description: string; category: string; readTime: string }> = {
   "best-web-analytics-tool": {
     title: "La mejor herramienta de analítica web: los 12 requisitos que de verdad deciden",
-    description: "No es una lista de proveedores. Los 12 requisitos técnicos que debe cumplir una plataforma — peso del píxel, tiempo real, 100% del dato, API, MCP — y cómo verificarlos.",
+    description: "No es una lista de proveedores. Los 12 requisitos que debe cumplir una plataforma — píxel, tiempo real, dato sin huecos de consentimiento, API, MCP — y cómo verificarlos.",
     category: "Comparativas",
     readTime: "12 min",
   },

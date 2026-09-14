@@ -27,7 +27,7 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "La mejor herramienta de analítica web: 12 requisitos",
-  description: "No es una lista de proveedores. Los 12 requisitos técnicos de una plataforma de analítica web — píxel, tiempo real, 100% del dato, API, MCP — y cómo probarlos.",
+  description: "No es una lista de proveedores. 12 requisitos de una analítica web — píxel, tiempo real, dato sin huecos de consentimiento, API, MCP — y cómo probarlos.",
   openGraph: {
     title: "La mejor herramienta de analítica web: los 12 requisitos",
     description:
@@ -63,9 +63,9 @@ const requisitos = [
   {
     n: 2,
     id: "req-2",
-    title: "El 100% del dato",
+    title: "Dato sin huecos de consentimiento",
     bar: "Toda carga de página observada, independiente del consentimiento, no bloqueada, sin muestreo",
-    seal: "Sin cookies por arquitectura. Los clientes pasan de ~40% a ~100% observado, a un 15–20% de los pedidos del CRM",
+    seal: "Sin cookies por arquitectura. Los clientes pasan de ~40% observado a no perder visitas por el consentimiento, a un 15–20% de los pedidos del CRM",
     score: 2,
   },
   {
@@ -121,7 +121,7 @@ const requisitos = [
     id: "req-9",
     title: "Atribución honesta",
     bar: "Modelo enunciado con claridad, aplicado de forma consistente, sin mezclar observado y modelado",
-    seal: "Last-click a nivel de canal sobre el 100% de las conversiones. Sin conversiones modeladas. Sin multi-touch, de forma permanente",
+    seal: "Last-click a nivel de canal sobre conversiones sin huecos de consentimiento. Sin conversiones modeladas. Sin multi-touch, de forma permanente",
     score: 2,
   },
   {
@@ -155,7 +155,7 @@ const faqs = [
     question:
       "¿Cuál es el requisito más importante en una herramienta de analítica web?",
     answer:
-      "La completitud del dato. Que la plataforma observe el 100% de las cargas de página sin depender del consentimiento es el prerrequisito de todos los demás requisitos: dashboards perfectos en tiempo real sobre el 40% de la realidad son una ruta más rápida a una decisión equivocada, no una mejor. Puntúa la completitud primero, y si una plataforma no la cumple, para ahí.",
+      "La completitud del dato. Que la plataforma no pierda cargas de página por el consentimiento es el prerrequisito de todos los demás requisitos: dashboards perfectos en tiempo real sobre el 40% de la realidad son una ruta más rápida a una decisión equivocada, no una mejor. Puntúa la completitud primero, y si una plataforma no la cumple, para ahí.",
   },
   {
     question: "¿Cuánto debe pesar un píxel de analítica?",
@@ -175,7 +175,7 @@ const faqs = [
   {
     question: "¿Es la atribución last-click peor que la multi-touch?",
     answer:
-      "No cuando la alternativa es un modelo sofisticado aplicado sobre dato parcial. Last-click sobre el 100% de las conversiones es un instrumento defendible. Un modelo multi-touch sobre el 40% de sesiones que aceptaron cookies es un relato sobre una muestra disfrazado de medición. Lo que importa es que la plataforma declare su modelo y nunca mezcle cifras observadas y modeladas en el mismo número.",
+      "No cuando la alternativa es un modelo sofisticado aplicado sobre dato parcial. Last-click sobre conversiones sin huecos de consentimiento es un instrumento defendible. Un modelo multi-touch sobre el 40% de sesiones que aceptaron cookies es un relato sobre una muestra disfrazado de medición. Lo que importa es que la plataforma declare su modelo y nunca mezcle cifras observadas y modeladas en el mismo número.",
   },
 ];
 
@@ -201,7 +201,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
           headline:
             "La mejor herramienta de analítica web: los 12 requisitos que de verdad deciden",
           description:
-            "Los 12 requisitos técnicos que debe cumplir una plataforma de analítica web — peso del píxel, tiempo real, 100% del dato, API, MCP — cada uno con el fallo que previene y una prueba.",
+            "Los 12 requisitos técnicos que debe cumplir una plataforma de analítica web — peso del píxel, tiempo real, dato sin huecos de consentimiento, API, MCP — cada uno con el fallo que previene y una prueba.",
           ...dates,
           url: "/es/blog/best-web-analytics-tool",
           category: "Comparativas",
@@ -265,7 +265,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 alcance.
               </li>
               <li>
-                El requisito 2 — el 100% del dato — no es uno de doce. Si falla,
+                El requisito 2 — el dato sin huecos de consentimiento — no es uno de doce. Si falla,
                 los otros once son decoración.
               </li>
               <li>
@@ -407,7 +407,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
             </TestBox>
 
             <ReqHeading n={2} id="req-2">
-              El 100% del dato
+              Dato sin huecos de consentimiento
             </ReqHeading>
 
             <div className="space-y-4">
@@ -484,8 +484,8 @@ export default function MejorHerramientaAnaliticaWebPage() {
               </p>
               <Chip tone="req">El requisito</Chip>
               <p>
-                La plataforma debe observar el 100% de las cargas de página sin
-                depender de que el visitante acepte nada, y sin que las listas
+                La plataforma no debe perder cargas de página porque el visitante
+                no acepte nada, ni porque las listas
                 de bloqueo la clasifiquen como tracker. Eso solo es posible si
                 no almacena datos personales — porque si los almacenara, el
                 consentimiento sería legalmente exigible y volverías al 40%.
@@ -877,7 +877,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
               <p className="text-[1.02rem] leading-[1.75] text-text-body">
                 Un modelo declarado, simple y completo gana a un modelo
                 sofisticado aplicado sobre dato parcial — siempre. Last-click
-                sobre el 100% de las conversiones es un instrumento defendible.
+                sobre conversiones sin huecos de consentimiento es un instrumento defendible.
                 Un{" "}
                 <Link
                   href="/es/glossary/multi-touch-attribution"
@@ -1219,7 +1219,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: 100% de captura, sin banner y last-click sobre todo el dato."
+            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: sin pérdida por consentimiento, sin banner y last-click sobre el dato completo."
           />
 
           <ComparisonLinks locale="es" />

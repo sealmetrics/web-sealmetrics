@@ -410,7 +410,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
 
           <CommercialModule
             locale="es"
-            hook="¿Cuánto tendrías que re-documentar si el Marco cae mañana? En una demo ves tu propia medición sobre una arquitectura a la que la sentencia le da igual — 100% de captura, todo en la UE."
+            hook="¿Cuánto tendrías que re-documentar si el Marco cae mañana? En una demo ves tu propia medición sobre una arquitectura a la que la sentencia le da igual — sin perder visitas por el consentimiento, todo en la UE."
           />
 
           <section className="mt-16 pt-10 border-t border-warm-100">

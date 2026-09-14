@@ -208,7 +208,7 @@ export default function GA4DataSamplingPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Tus informes de GA4 llevan el aviso de muestreo? Ve tus propios datos a resolución completa en una demo: Sealmetrics calcula sobre el 100% de los eventos, nunca sobre una muestra."
+          hook="¿Tus informes de GA4 llevan el aviso de muestreo? Ve tus propios datos a resolución completa en una demo: Sealmetrics calcula sobre todos los eventos registrados, nunca sobre una muestra."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

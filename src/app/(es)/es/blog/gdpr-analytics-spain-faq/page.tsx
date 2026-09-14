@@ -60,7 +60,7 @@ const faqs = [
   {
     question: "¿Puedo medir conversiones y campañas sin cookies?",
     answer:
-      "Sí. La medición cookieless cuenta eventos de forma anónima y agregada — visitas, conversiones, revenue por canal y campaña — sin almacenar nada en el dispositivo ni identificar al visitante. La atribución se calcula a último clic sobre el 100% del tráfico. Lo que no hace, por diseño: reconstruir el recorrido individual de un usuario ni atribución multi-touch, que requieren identificadores personales.",
+      "Sí. La medición cookieless cuenta eventos de forma anónima y agregada — visitas, conversiones, revenue por canal y campaña — sin almacenar nada en el dispositivo ni identificar al visitante. La atribución se calcula a último clic sobre tráfico sin huecos de consentimiento. Lo que no hace, por diseño: reconstruir el recorrido individual de un usuario ni atribución multi-touch, que requieren identificadores personales.",
   },
   {
     question: "¿Qué sanciones hay por usar cookies de analítica sin consentimiento en España?",
