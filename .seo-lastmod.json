@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "302b360a64b86c8f",
+    "hash": "10719bbf59f9b4db",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "7fa6e1716b5c934d",
+    "hash": "e98b2fd5c32b7ea5",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -1193,6 +1193,14 @@
   },
   "/es/blog/meta-ads-conversions-vs-crm/": {
     "hash": "627ee6d0f5fb65a3",
+    "date": "2026-09-14"
+  },
+  "/blog/consent-mode-measured-vs-modelled/": {
+    "hash": "94a383519806bf78",
+    "date": "2026-09-14"
+  },
+  "/es/blog/consent-mode-measured-vs-modelled/": {
+    "hash": "ce0541a70a552885",
     "date": "2026-09-14"
   }
 }

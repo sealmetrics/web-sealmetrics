@@ -325,6 +325,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 14 | 5 | why does GA4 show so much direct / none traffic / por qué GA4 muestra tanto tráfico directo | `/blog/why-ga4-shows-direct-none` (EN+ES) + `/complete-data` | shipped 14 Sep |
 | 15 | 2 | how to measure ROAS after cookie consent / cómo medir el ROAS con el consentimiento de cookies | `/blog/measure-roas-after-cookie-consent` (EN+ES) + `/use-cases/revenue-attribution` | shipped 14 Sep |
 | 16 | 5 | why don't Meta Ads conversions match my CRM / por qué no cuadran las conversiones de Meta Ads con el CRM | `/blog/meta-ads-conversions-vs-crm` (EN+ES) + `/use-cases/single-source-of-truth` | shipped 14 Sep |
+| 17 | 2 | what does GA4 consent mode model / qué modela Consent Mode en GA4 | `/blog/consent-mode-measured-vs-modelled` (EN+ES) + `/glossary/consent-mode-v2` | shipped 14 Sep |
 
 ### Method (monthly, first week)
 

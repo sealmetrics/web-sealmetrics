@@ -311,6 +311,16 @@
       "sourceHash": "c28189de9baddc524ebbe897baed5e14876fed4aee84ea3d872b287411b7f939",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/consent-mode-measured-vs-modelled.avif": {
+      "source": "public/og/blog/consent-mode-measured-vs-modelled.png",
+      "sourceHash": "3ae2375feea99af7c02ce87b844df8c306427049c7071b03ecca396f9fa470d2",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/consent-mode-measured-vs-modelled.webp": {
+      "source": "public/og/blog/consent-mode-measured-vs-modelled.png",
+      "sourceHash": "3ae2375feea99af7c02ce87b844df8c306427049c7071b03ecca396f9fa470d2",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/consentless-analytics-for-dtc.avif": {
       "source": "public/og/blog/consentless-analytics-for-dtc.png",
       "sourceHash": "c887f90a4991e1f30b586b77d84b8f680690813fad4aa2e03369530e3d2b8a19",

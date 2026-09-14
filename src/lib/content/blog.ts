@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "consent-mode-measured-vs-modelled",
+    title: "Consent Mode: What GA4 Measures and What It Models",
+    description:
+      "When consent is denied, Consent Mode sends cookieless pings and GA4 estimates users and sessions above a threshold. What is measured, what is modelled.",
+    date: "2026-09-14",
+    category: "Data Quality",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-direct-none", "consent-banner-impact-on-analytics", "measure-roas-after-cookie-consent"],
+  },
+  {
     slug: "meta-ads-conversions-vs-crm",
     title: "Meta Ads Conversions vs CRM: Why They Never Match, and How to Reconcile Them",
     description:
