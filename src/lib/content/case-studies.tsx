@@ -164,7 +164,7 @@ const incapto = {
         rows:[{name:"GA4",display:"14%",percent:100,tone:"warn"},{name:"Sealmetrics",display:"0.3%",percent:2.1,tone:"seal"}],
         body:<>In GA4 that is 14 of every 100 visits: nine assigned to no channel at all, and five more in residual channels that point at no actionable origin. In Sealmetrics it is 3 in every 1,000. <strong>These are visits that exist, but that you cannot decide anything with.</strong></> },
       { kind:"mix", number:"06", title:<>The result: <em>two different pictures of one business.</em></>, caption:"Where the traffic appears to come from · 28 Jul → 6 Aug 2026 · rounded",
-        note:"And this is the GA4 bar put back on the real scale: the same channels, but calculated over all the traffic that existed, not just the traffic GA4 managed to see.",
+        note:"And this is the GA4 bar put back on the real scale: the same channels, but calculated over the traffic Sealmetrics recorded, not just the traffic GA4 managed to see.",
         bars:[
           {name:"GA4",segments:[{key:"paid",percent:50,display:"50%"},{key:"direct",percent:18,display:"18%"},{key:"organic",percent:10,display:"10%"},{key:"other",percent:8,display:"8%"},{key:"unknown",percent:14,display:"14%"}]},
           {name:"Sealmetrics",segments:[{key:"paid",percent:62,display:"62%"},{key:"direct",percent:16,display:"16%"},{key:"organic",percent:13,display:"13%"},{key:"other",percent:9,display:"9%"},{key:"unknown",percent:0.3,display:""}]},
@@ -220,7 +220,7 @@ const incapto = {
         rows:[{name:"GA4",display:"14%",percent:100,tone:"warn"},{name:"Sealmetrics",display:"0,3%",percent:2.1,tone:"seal"}],
         body:<>En GA4 son 14 de cada 100: nueve sin asignar a ningún canal y otras cinco en canales residuales que no apuntan a ningún origen accionable. En Sealmetrics, 3 de cada 1.000. <strong>Son visitas que existen, pero con las que no se puede decidir nada.</strong></> },
       { kind:"mix", number:"06", title:<>Resultado: <em>dos fotos distintas del mismo negocio.</em></>, caption:"De dónde parece venir el tráfico · 28 jul → 6 ago 2026 · porcentajes redondeados",
-        note:"Y esta es la barra de GA4 puesta a la escala real: los mismos canales, pero calculados sobre todo el tráfico que existió, no sobre el que GA4 llegó a ver.",
+        note:"Y esta es la barra de GA4 puesta a la escala real: los mismos canales, pero calculados sobre el tráfico que registró Sealmetrics, no sobre el que GA4 llegó a ver.",
         bars:[
           {name:"GA4",segments:[{key:"paid",percent:50,display:"50%"},{key:"direct",percent:18,display:"18%"},{key:"organic",percent:10,display:"10%"},{key:"other",percent:8,display:"8%"},{key:"unknown",percent:14,display:"14%"}]},
           {name:"Sealmetrics",segments:[{key:"paid",percent:62,display:"62%"},{key:"direct",percent:16,display:"16%"},{key:"organic",percent:13,display:"13%"},{key:"other",percent:9,display:"9%"},{key:"unknown",percent:0.3,display:""}]},

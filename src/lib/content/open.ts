@@ -143,18 +143,18 @@ export const openChapters: OpenChapter[] = [
   {
     number: 6,
     slug: "gdpr-by-architecture",
-    title: "GDPR by architecture",
-    titleHtml: "GDPR by <em>architecture</em>",
+    title: "Designed for GDPR from the architecture up",
+    titleHtml: "Designed for GDPR <em>from the architecture up</em>",
     part: 3,
     eyebrow: "Compliance",
     summary:
-      "How we meet GDPR, ePrivacy, and Schrems II without resorting to creative legal interpretations — and what we explicitly do not claim.",
+      "How we design for GDPR, ePrivacy, and Schrems II without resorting to creative legal interpretations — a self-assessment, not a certification, and what we explicitly do not claim.",
     readMinutes: 10,
     status: "ready",
     datePublished: "2026-05-28",
     dateModified: "2026-05-28",
     toc: [
-      { id: "gdpr-architecture", label: "GDPR by architecture, not by permission" },
+      { id: "gdpr-architecture", label: "Designed for GDPR from the architecture up, not by permission" },
       { id: "eprivacy", label: "ePrivacy and the cookie question" },
       { id: "schrems-ii", label: "Schrems II and data transfers" },
       { id: "dpa-tpsr", label: "DPA and TPSR package" },

@@ -28,7 +28,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
           { k: "Sede", v: "España · Datos en Dublín, Irlanda" },
           { k: "Clientes", v: "2.000+ eCommerce europeos (hoteles, DTC, medios)" },
           { k: "Precio", v: "Desde 499€/mes con facturación anual" },
-          { k: "Compliance", v: "RGPD por arquitectura · ePrivacy · Schrems II limpio" },
+          { k: "Compliance", v: "Diseñada para el RGPD · ePrivacy · Schrems II limpio" },
           { k: "Diferencial", v: "Tráfico sin pérdida por consentimiento, sin cookies · MCP nativo para agentes IA" },
         ],
       }
@@ -47,7 +47,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
           { k: "Headquarters", v: "Spain · Data in Dublin, Ireland" },
           { k: "Customers", v: "2,000+ European eCommerce (hotels, DTC, media)" },
           { k: "Pricing", v: "From €499/month on annual billing" },
-          { k: "Compliance", v: "GDPR by architecture · ePrivacy · Schrems II clean" },
+          { k: "Compliance", v: "Designed for GDPR · ePrivacy · Schrems II clean" },
           { k: "Differentiator", v: "No consent-driven traffic loss, no cookies · native MCP for AI agents" },
         ],
       };

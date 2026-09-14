@@ -1136,7 +1136,7 @@ export default function BestWebAnalyticsToolPage() {
                   Requirement 11 — Sealmetrics is not ISO 27001 or SOC 2
                   certified. Everything else in that row is met: no personal
                   data, EU-hosted in Dublin, DPA in the standard contract, no
-                  supplementary transfer measures. But a certificate is an
+                  supplementary transfer measures on visitor data. But a certificate is an
                   audited state with a date on it, and we don&rsquo;t have one.
                   For procurement processes that gate on it, that is a hard stop,
                   and it should be said before the demo rather than discovered in

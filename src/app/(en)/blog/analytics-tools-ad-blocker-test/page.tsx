@@ -530,7 +530,7 @@ export default function AdBlockerTestPage() {
         </div>
 
         <CommercialModule
-          hook="Blocked scripts fail silently: no error, just missing visitors. See how first-party, cookieless collection survives every blocker on your site."
+          hook="Blocked scripts fail silently: no error, just missing visitors. See how first-party, cookieless collection held up against all five blockers we tested."
         />
 
         {/* Related */}

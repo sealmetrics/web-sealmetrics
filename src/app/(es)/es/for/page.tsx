@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const roles = [
   { slug: "cmo", name: "CMOs", tagline: "Defiende tu presupuesto con los números que tu CFO firma." },
   { slug: "cto", name: "CTOs e ingeniería", tagline: "Pixel de 846 bytes. Cero mantenimiento. Sin piruetas server-side GTM." },
-  { slug: "dpo", name: "DPOs y legal", tagline: "Analítica RGPD por arquitectura, no por capa de compliance." },
+  { slug: "dpo", name: "DPOs y legal", tagline: "Analítica diseñada para el RGPD desde la arquitectura, no por capa de compliance." },
 ];
 
 const industries = [

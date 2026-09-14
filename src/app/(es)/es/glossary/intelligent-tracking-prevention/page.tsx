@@ -64,11 +64,11 @@ export default function ItpEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué la medición first-party no se ve afectada</h2>
           <p>
-            La <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> no almacena cookies en el dispositivo del visitante, así que ITP y ETP no tienen efecto sobre la recolección. El enfoque <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party sin cookies</Link> captura las sesiones con independencia de las funciones de privacidad del navegador.
+            La <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> no almacena cookies en el dispositivo del visitante, así que ITP y ETP no tienen efecto sobre la recolección. El enfoque <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party sin cookies</Link> sigue capturando las sesiones aunque ITP y ETP restrinjan las cookies.
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="ITP no puede caducar lo que nunca se almacenó. Mira tu tráfico de Safari contado completo, sin cookies." />
+        <CommercialModule locale="es" hook="ITP no puede caducar lo que nunca se almacenó. Mira tu tráfico de Safari contado sin ninguna cookie que caduque." />
 
         <RelatedGlossaryTerms slug="intelligent-tracking-prevention" locale="es" />
 
@@ -84,7 +84,7 @@ export default function ItpEsPage() {
               Intelligent Tracking Prevention (ITP) es el sistema de privacidad de Safari, guiado por aprendizaje automático, que limita las cookies de analítica first-party a 7 días, descarta por completo las cookies de terceros y reduce la vida de la cookie a 24 horas cuando se fija por JavaScript en una página que llegó con un parámetro de seguimiento. Firefox incorpora una función equivalente llamada Enhanced Tracking Protection (ETP).
             </p>
             <p>
-              Para una analítica que depende de cookies para reconocer visitantes recurrentes o coser una atribución de varios días, ITP hace inviable medir con precisión el más del 20% del tráfico europeo que usa Safari. La recolección first-party server-side sin cookies no fija ninguna cookie, así que ITP y ETP no tienen ningún efecto: cada visita se cuenta sobre la misma base anónima y agregada, sea cual sea el navegador y hayan pasado los días que hayan pasado.
+              Para una analítica que depende de cookies para reconocer visitantes recurrentes o coser una atribución de varios días, ITP hace inviable medir con precisión el más del 20% del tráfico europeo que usa Safari. La recolección first-party server-side sin cookies no fija ninguna cookie, así que ITP y ETP no tienen ningún efecto: las visitas se cuentan sobre la misma base anónima y agregada, sea cual sea el navegador y hayan pasado los días que hayan pasado.
             </p>
           </QuickAnswer>
         </div>

@@ -340,7 +340,7 @@ export default function Page() {
             </p>
           </div>
 
-          <CommercialModule hook="If the compliant Matomo configuration is the one that stops recognising returning visitors, the trade is measurement for paperwork. See what full-coverage, banner-free measurement looks like on your own traffic." />
+          <CommercialModule hook="If the compliant Matomo configuration is the one that stops recognising returning visitors, the trade is measurement for paperwork. See what consent-independent, banner-free measurement looks like on your own traffic." />
 
           <RelatedReading currentSlug="is-matomo-gdpr-compliant" />
         </div>

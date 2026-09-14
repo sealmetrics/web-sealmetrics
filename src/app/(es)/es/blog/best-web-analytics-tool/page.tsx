@@ -64,8 +64,8 @@ const requisitos = [
     n: 2,
     id: "req-2",
     title: "Dato sin huecos de consentimiento",
-    bar: "Toda carga de página observada, independiente del consentimiento, no bloqueada, sin muestreo",
-    seal: "Sin cookies por arquitectura. Los clientes pasan de ~40% observado a no perder visitas por el consentimiento, a un 15–20% de los pedidos del CRM",
+    bar: "Cargas de página observadas sin depender del consentimiento, no bloqueadas, sin muestreo",
+    seal: "Sin cookies por arquitectura, sin pérdida de visitas por consentimiento. Los clientes pasan de observar ~40% a quedar a un 15–20% de los pedidos del CRM",
     score: 2,
   },
   {
@@ -1219,7 +1219,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: sin pérdida por consentimiento, sin banner y last-click sobre el dato completo."
+            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: sin pérdida por consentimiento, sin banner y con last-click sobre lo observado."
           />
 
           <ComparisonLinks locale="es" />

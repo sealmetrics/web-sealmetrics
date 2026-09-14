@@ -51,7 +51,7 @@ const seoFaqs = [
   {
     question: "¿Cómo ayuda la analítica sin cookies a recuperar reservas invisibles?",
     answer:
-      "De media, el 25% de las reservas directas registradas en el PMS no aparecen bien atribuidas en GA4 por rechazo de consentimiento en móvil (Safari), expiración de cookies por ITP y rupturas de ruta en OTAs. La analítica sin cookies cuenta cada pageview de forma anónima en servidor, captura la fuente de tráfico en cada pageview de reserva y agrega las reservas por canal — sin tracking por huésped.",
+      "De media, el 25% de las reservas directas registradas en el PMS no aparecen bien atribuidas en GA4 por rechazo de consentimiento en móvil (Safari), expiración de cookies por ITP y rupturas de ruta en OTAs. La analítica sin cookies cuenta las pageviews de forma anónima en servidor, sin consentimiento que rechazar, captura la fuente de tráfico en cada pageview de reserva y agrega las reservas por canal — sin tracking por huésped.",
   },
   {
     question: "¿Sealmetrics funciona con múltiples propiedades hoteleras?",
@@ -233,8 +233,9 @@ export default function Page() {
             La <strong>analítica sin cookies para hoteles</strong> permite a los
             grupos hoteleros cuadrar los totales agregados de reservas directas
             con el PMS sin cookies, banners de consentimiento ni gaps de
-            ad-blockers. Sealmetrics cuenta de forma anónima cada landing de
-            meta-search, cada visita móvil Safari y cada evento de reserva —
+            ad-blockers. Sealmetrics cuenta de forma anónima landings de
+            meta-search, visitas móviles de Safari y eventos de reserva, acepte o no
+            el visitante un banner —
             cada reserva atribuida last-click a nivel de canal y consolidada
             entre propiedades para reporting de ingresos de portfolio.
           </>

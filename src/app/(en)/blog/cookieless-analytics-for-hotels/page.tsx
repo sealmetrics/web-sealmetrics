@@ -156,7 +156,7 @@ export default function Page() {
               <li>Rolls up totals across properties for portfolio reporting.</li>
             </ul>
             <p>
-              The trade is deliberate: the system gives up the fiction of a &ldquo;full guest journey&rdquo; (which GA4 provides on only a fraction of bookings anyway) in exchange for channel totals that match the PMS on 100% of them.
+              The trade is deliberate: the system gives up the fiction of a &ldquo;full guest journey&rdquo; (which GA4 provides on only a fraction of bookings anyway) in exchange for channel totals that don&apos;t lose bookings to consent rejection.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -208,7 +208,7 @@ export default function Page() {
           </div>
 
           <CommercialModule
-            hook="Direct bookings are where the 40–60% consent gap hurts most. See your booking funnel measured on every visit — banner or no banner."
+            hook="Direct bookings are where the 40–60% consent gap hurts most. See your booking funnel measured whether or not the banner is accepted."
           />
 
           <RelatedReading currentSlug="cookieless-analytics-for-hotels" />

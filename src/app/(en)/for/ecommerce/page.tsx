@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
     description:
-      "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
+      "Consentless analytics designed for GDPR, built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
     type: "website",
     images: [ogImage("/for/ecommerce/")],
     url: "https://sealmetrics.com/for/ecommerce/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
-    description: "GDPR-compliant, consentless analytics built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
+    description: "Consentless analytics designed for GDPR, built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
     images: [ogImage("/for/ecommerce/")],
   },
   alternates: {
@@ -44,7 +44,7 @@ const seoFaqs = [
   {
     question: "What is cookieless analytics for eCommerce?",
     answer:
-      "Cookieless analytics for eCommerce is a measurement approach that captures every visitor, add-to-cart, checkout and purchase without using browser cookies, localStorage or fingerprinting. This avoids the 40–60% EU traffic loss caused by consent banners and matches Shopify, WooCommerce or Magento backend data with marketing attribution.",
+      "Cookieless analytics for eCommerce is a measurement approach that captures visits, add-to-carts, checkouts and purchases without using browser cookies, localStorage or fingerprinting. This avoids the 40–60% EU traffic loss caused by consent banners and matches Shopify, WooCommerce or Magento backend data with marketing attribution.",
   },
   {
     question: "Why does cookieless analytics matter for DTC eCommerce in Europe?",
@@ -89,7 +89,7 @@ export default function Page() {
         answer={
           <>
             <strong>Cookieless analytics for eCommerce</strong> means capturing
-            every visit, add-to-cart and purchase without browser cookies,
+            visits, add-to-carts and purchases without browser cookies,
             consent banners or ad-blocker gaps — and reconciling those numbers
             with your Shopify, WooCommerce or Magento backend. Sealmetrics is a
             first-party, EU-hosted implementation built specifically for DTC

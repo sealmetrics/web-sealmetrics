@@ -64,7 +64,7 @@ export default function RevenueAttributionPage() {
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How does Sealmetrics handle revenue attribution?</h2>
           <p>Sealmetrics does <strong>last-click revenue attribution on observed events, without consent gaps</strong>. When a conversion event fires, the traffic source recorded on that pageview is credited. Channel totals roll up by campaign, landing page and creative. There is no multi-touch model and no cross-session stitching — because there is no cookie, no personal identifier and no way to recognise a returning visitor. The trade-off is deliberate: aggregate channel totals that reconcile with your backend, in exchange for giving up per-user journey analysis.</p>
 
-          <p>Because every pageview is captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, last-click attribution reflects the full observed traffic — not the cookie-accepting minority.</p>
+          <p>Because pageviews are captured through <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> whether or not the banner is accepted, last-click attribution reflects observed traffic without consent gaps — not the cookie-accepting minority.</p>
         </div>
         <CommercialModule hook="See your revenue attributed last-click without consent gaps — not on the consented fraction." />
 

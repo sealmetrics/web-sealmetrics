@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
-    a: "Sí. No hay datos personales, ni cookies, ni localStorage, ni fingerprinting. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
+    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos personales, ni cookies, ni localStorage, ni fingerprinting. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
   },
   {
     q: "¿Cómo migro desde mi analítica actual?",
@@ -83,7 +83,7 @@ const pillars = [
   {
     eyebrow: "Sin pérdida por consentimiento",
     title: "Datos limpios",
-    body: "Cada visitante, cada evento. Ningún banner de consentimiento bloqueando la medición, ningún ad-blocker borrando tráfico, ningún bloqueador de JS limpiando datos. Conteo first-party en servidor que captura la verdad.",
+    body: "Visitantes y eventos contados acepten o no el banner. Ningún banner de consentimiento bloqueando la medición, ningún ad-blocker borrando tráfico, ningún bloqueador de JS limpiando datos. Conteo first-party en servidor que captura la verdad.",
     metric: "+40-60%",
     metricLabel: "más tráfico UE vs cookies",
   },
@@ -117,7 +117,7 @@ const pillars = [
   },
   {
     eyebrow: "Cumplimiento",
-    title: "GDPR by design",
+    title: "Diseñada para el RGPD",
     body: "Sin cookies. Sin localStorage. Sin fingerprint. Sin datos personales. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners requeridos",

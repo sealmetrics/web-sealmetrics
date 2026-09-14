@@ -51,7 +51,7 @@ const seoFaqs = [
   {
     question: "How does cookieless analytics help recover invisible hotel bookings?",
     answer:
-      "On average 25% of direct bookings recorded in hotel PMS systems do not appear correctly attributed in GA4 because of consent rejection on mobile (Safari), ITP-induced cookie expiry and OTA path breaks. Cookieless analytics counts every pageview anonymously on the server, captures the traffic source on each booking pageview and aggregates bookings per channel — no per-guest tracking required.",
+      "On average 25% of direct bookings recorded in hotel PMS systems do not appear correctly attributed in GA4 because of consent rejection on mobile (Safari), ITP-induced cookie expiry and OTA path breaks. Cookieless analytics counts pageviews anonymously on the server, with no consent to reject, captures the traffic source on each booking pageview and aggregates bookings per channel — no per-guest tracking required.",
   },
   {
     question: "Does Sealmetrics work across multiple hotel properties?",
@@ -229,9 +229,9 @@ export default function Page() {
           <>
             <strong>Cookieless analytics for hotels</strong> lets hotel groups
             reconcile aggregate direct-booking totals with the PMS without cookies,
-            consent banners or ad-blocker gaps. Sealmetrics counts every
-            meta-search landing, every mobile Safari visit and every booking event
-            anonymously — each booking attributed last-click at channel level and
+            consent banners or ad-blocker gaps. Sealmetrics counts
+            meta-search landings, mobile Safari visits and booking events
+            anonymously, whether or not the visitor accepts a banner — each booking attributed last-click at channel level and
             rolled up across properties for portfolio-level revenue reporting.
           </>
         }

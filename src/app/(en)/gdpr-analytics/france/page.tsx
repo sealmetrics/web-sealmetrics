@@ -352,8 +352,8 @@ export default function GdprAnalyticsFrancePage() {
               <h3 className="text-[17px] font-semibold text-ink mb-2">French traffic measured without consent loss</h3>
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
                 French rejection rates against standard banners run
-                50–60%. With no banner gate, every visitor is counted on
-                the same anonymous-aggregate basis — no Consent Mode
+                50–60%. With no banner gate, visitors who would reject a
+                banner are counted on the same anonymous-aggregate basis — no Consent Mode
                 modelling required to fill the gap.
               </p>
             </div>

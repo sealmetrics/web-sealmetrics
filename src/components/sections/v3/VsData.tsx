@@ -32,12 +32,12 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               measurement layer for a published{" "}
               <strong>€10,788/year</strong> at Scale — a fraction of
               any GA360 contract — measures in aggregate without depending on consent and
-              keeps everything in Dublin.
+              keeps visitor data in Dublin.
             </>
           ),
           bullets: [
             <>GA360: premium support &amp; sampling relief, same collection layer as free GA4.</>,
-            <>Sealmetrics: full capture, EU-only processing, published pricing against a quote-only contract.</>,
+            <>Sealmetrics: consent-independent capture, EU-only processing, published pricing against a quote-only contract.</>,
             <>Most teams keep GA360 only for Google Ads conversion import, run Sealmetrics for revenue decisions.</>,
           ],
         },
@@ -131,13 +131,13 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               datos premium incompletos. Sealmetrics reemplaza la capa
               de medición por <strong>10.788€/año</strong> publicados
               en Scale — una fracción de cualquier contrato GA360 —,
-              mide en agregado sin depender del consentimiento y mantiene todo en
+              mide en agregado sin depender del consentimiento y mantiene el dato de visitante en
               Dublín.
             </>
           ),
           bullets: [
             <>GA360: soporte premium y alivio de muestreo, misma capa de recolección que GA4 gratis.</>,
-            <>Sealmetrics: captura completa, procesamiento solo en UE, precio publicado frente a un contrato solo por presupuesto.</>,
+            <>Sealmetrics: captura sin pérdida por consentimiento, procesamiento solo en UE, precio publicado frente a un contrato solo por presupuesto.</>,
             <>La mayoría de equipos mantienen GA360 solo para el import de conversiones de Google Ads y deciden sobre Sealmetrics.</>,
           ],
         },
@@ -229,14 +229,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               Adobe-certified analyst on staff. Under all of it, the
               AppMeasurement collection layer is still cookie-based and
               consent-gated — the EU traffic gap is unchanged. Sealmetrics
-              replaces the measurement layer (complete capture, EU-only,
+              replaces the measurement layer (consent-independent capture, EU-only,
               from €499/mo) and lets Adobe do what it does best on
               complete data instead of incomplete.
             </>
           ),
           bullets: [
             <>Adobe: deep segmentation and CJA stitching for enterprise reporting.</>,
-            <>Sealmetrics: complete EU data capture, no consultants, decision-ready in week one.</>,
+            <>Sealmetrics: consent-independent EU data capture, no consultants, decision-ready in week one.</>,
             <>Run both — Adobe for analyst-driven deep dives, Sealmetrics for the board number that reconciles.</>,
           ],
         },
@@ -301,8 +301,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         faqs: [
           { q: "Adobe has far more features. Are you comparing apples to apples?", a: "For most eCommerce teams, Adobe Analytics' depth is unused. The 80% of features you need — channel attribution, funnel analysis, campaign reporting, BigQuery export — Sealmetrics covers with complete data and no specialists. If you genuinely need Adobe's segmentation depth, Customer Journey Analytics is where it happens; we'd recommend keeping it and adding Sealmetrics for complete data capture." },
-          { q: "Can Sealmetrics coexist with Adobe Experience Cloud?", a: "Yes. Sealmetrics operates independently. Many enterprise customers run both — Adobe for deep segmentation, Sealmetrics for complete data capture and the truth number shared across agencies and finance." },
-          { q: "What about Customer Journey Analytics?", a: "CJA is Adobe's newer tool for cross-channel stitching. It still depends on the same AppMeasurement collection layer — same consent rejection loss. Sealmetrics provides complete capture; your CJA does more interesting analytics on complete data instead of incomplete." },
+          { q: "Can Sealmetrics coexist with Adobe Experience Cloud?", a: "Yes. Sealmetrics operates independently. Many enterprise customers run both — Adobe for deep segmentation, Sealmetrics for consent-independent data capture and the truth number shared across agencies and finance." },
+          { q: "What about Customer Journey Analytics?", a: "CJA is Adobe's newer tool for cross-channel stitching. It still depends on the same AppMeasurement collection layer — same consent rejection loss. Sealmetrics provides consent-independent capture; your CJA does more interesting analytics on complete data instead of incomplete." },
           { q: "How much more traffic does Sealmetrics actually measure vs Adobe?", a: "In a 30-day parallel run on a European media site (June 2026), Sealmetrics measured +25% pageviews over Adobe Analytics — a stable ratio across the whole month, with Adobe firing without a consent gate. The gap comes from losses beyond consent: privacy filter lists blocking Adobe's collection endpoints, a pageview that fires ~3 seconds into the load (field-measured — any visit that bounces earlier never existed for Adobe), and an image-GET transport that is canceled when the visitor leaves. Where Adobe sits behind a consent banner, the gap grows further." },
           { q: "How hard is migration?", a: "No migration. Both tools run in parallel. Decide per use case where each serves best. Most teams move acquisition + attribution reporting to Sealmetrics and keep Adobe for enterprise segmentation and email orchestration." },
         ],
@@ -331,14 +331,14 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               de recolección AppMeasurement sigue siendo basada en
               cookies y dependiente de consentimiento — el gap UE no
               cambia. Sealmetrics reemplaza la capa de medición (captura
-              completa, sólo UE, desde €499/mes) y deja que Adobe haga
+              sin pérdida por consentimiento, sólo UE, desde €499/mes) y deja que Adobe haga
               lo que mejor hace sobre dato completo en lugar de
               incompleto.
             </>
           ),
           bullets: [
             <>Adobe: segmentación profunda y stitching CJA para reporting enterprise.</>,
-            <>Sealmetrics: captura UE completa, sin consultores, listo para decidir en semana uno.</>,
+            <>Sealmetrics: captura UE sin pérdida por consentimiento, sin consultores, listo para decidir en semana uno.</>,
             <>Corre ambos — Adobe para deep dives liderados por analista, Sealmetrics para el número del board que cuadra.</>,
           ],
         },
@@ -403,8 +403,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         faqs: [
           { q: "Adobe tiene muchas más features. ¿Comparación justa?", a: "Para la mayoría de equipos eCommerce, la profundidad de Adobe no se usa. El 80% de lo que necesitas — atribución canal, análisis funnel, reporting campaña, export BigQuery — Sealmetrics lo cubre con datos completos y sin especialistas. Si realmente necesitas la profundidad de segmentación de Adobe, Customer Journey Analytics es donde ocurre; recomendamos mantenerlo y añadir Sealmetrics para la captura completa." },
-          { q: "¿Puede coexistir con Adobe Experience Cloud?", a: "Sí. Sealmetrics opera independientemente. Muchos clientes enterprise corren ambos — Adobe para segmentación profunda, Sealmetrics para captura completa y el número verdad compartido con agencias y finanzas." },
-          { q: "¿Y Customer Journey Analytics?", a: "CJA es la herramienta más reciente de Adobe para stitching cross-canal. Sigue dependiendo de la misma capa AppMeasurement — misma pérdida por consentimiento. Sealmetrics aporta captura completa; tu CJA hace analítica más interesante sobre datos completos en lugar de incompletos." },
+          { q: "¿Puede coexistir con Adobe Experience Cloud?", a: "Sí. Sealmetrics opera independientemente. Muchos clientes enterprise corren ambos — Adobe para segmentación profunda, Sealmetrics para captura sin pérdida por consentimiento y el número verdad compartido con agencias y finanzas." },
+          { q: "¿Y Customer Journey Analytics?", a: "CJA es la herramienta más reciente de Adobe para stitching cross-canal. Sigue dependiendo de la misma capa AppMeasurement — misma pérdida por consentimiento. Sealmetrics aporta captura sin pérdida por consentimiento; tu CJA hace analítica más interesante sobre datos completos en lugar de incompletos." },
           { q: "¿Cuánto tráfico más mide realmente Sealmetrics vs Adobe?", a: "En 30 días corriendo en paralelo en un medio europeo (junio 2026), Sealmetrics midió un +25% de pageviews sobre Adobe Analytics — con ratio estable todo el mes y con Adobe disparando sin consent-gate. El gap viene de pérdidas más allá del consentimiento: listas de privacidad que bloquean los endpoints de recogida de Adobe, un pageview que dispara a ~3 segundos de la carga (medido en campo — toda visita que rebota antes nunca existió para Adobe) y un transporte image-GET que se cancela cuando el visitante se va. Donde Adobe va detrás de un banner de consentimiento, el gap crece aún más." },
           { q: "¿Qué tan difícil es migrar?", a: "Sin migración. Ambas corren en paralelo. Decides caso a caso dónde encaja cada una. La mayoría mueve reporting de adquisición + atribución a Sealmetrics y mantienen Adobe para segmentación enterprise y orquestación email." },
         ],
@@ -677,7 +677,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Report archiving at scale", them: "No sampling — but cron-driven archiving bottlenecks on self-host", us: "No archiving step · unsampled" },
           ]},
           { category: "Compliance", block: "technical", rows: [
-            { feature: "GDPR posture", them: "Compliant by configuration · must be maintained and evidenced", us: "Compliant by architecture · no configuration to audit" },
+            { feature: "GDPR posture", them: "Compliant by configuration · must be maintained and evidenced", us: "Designed for GDPR (self-assessed) · no configuration to audit" },
             { feature: "Data residency (Cloud)", them: "EU options · paid plans", us: "EU-only · Dublin · all plans" },
             { feature: "Schrems II", them: "Clean (Cloud EU)", us: "Clean" },
           ]},
@@ -799,7 +799,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Archivado de informes a escala", them: "Sin muestreo — pero el archivado por cron hace cuello de botella en self-host", us: "Sin paso de archivado · sin muestreo" },
           ]},
           { category: "Compliance", block: "technical", rows: [
-            { feature: "Postura RGPD", them: "Cumplimiento por configuración · hay que mantenerlo y demostrarlo", us: "Cumplimiento por arquitectura · sin configuración que auditar" },
+            { feature: "Postura RGPD", them: "Cumplimiento por configuración · hay que mantenerlo y demostrarlo", us: "Diseñada para el RGPD (autoevaluación) · sin configuración que auditar" },
             { feature: "Residencia (Cloud)", them: "Opciones UE · planes de pago", us: "Solo UE · Dublín · todos los planes" },
             { feature: "Schrems II", them: "Limpio (Cloud UE)", us: "Limpio" },
           ]},
@@ -867,7 +867,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               cookie-light tracking that still loses{" "}
               <strong>40–60% of EU traffic</strong> to consent rejection
               and ad blockers. The serious alternative for an eCommerce
-              over €10M revenue is a different category — complete
+              over €10M revenue is a different category — consent-independent
               capture, EU-hosted, zero consent scope, last-click
               attribution on data without consent gaps.
             </>
@@ -875,7 +875,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           bullets: [
             <>Plausible, Fathom, Umami: lightweight; fine for blogs and content sites.</>,
             <>Matomo, Piwik PRO: open-source / EU-hosted; cookie-based architecture, same gap.</>,
-            <>Sealmetrics: complete EU data capture, enterprise reliability, modern AI-native stack.</>,
+            <>Sealmetrics: consent-independent EU data capture, enterprise reliability, modern AI-native stack.</>,
           ],
         },
         caseStudy: {
@@ -900,7 +900,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Sampling at scale", them: "Yes", us: "Never" },
           ]},
           { category: "Compliance", block: "technical", rows: [
-            { feature: "GDPR posture", them: "Consent banner required", us: "GDPR by architecture" },
+            { feature: "GDPR posture", them: "Consent banner required", us: "Designed for GDPR" },
             { feature: "Schrems II", them: "Exposed", us: "Clean" },
             { feature: "Data residency", them: "US", us: "EU · Dublin" },
           ]},
@@ -957,7 +957,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               perdiendo <strong>40–60% del tráfico UE</strong> por
               rechazo de consentimiento y ad-blockers. La alternativa
               seria para un eCommerce con más de 10M€ de ingresos es
-              otra categoría — captura completa, alojada en UE, cero
+              otra categoría — captura sin pérdida por consentimiento, alojada en UE, cero
               scope de consentimiento, atribución last-click sobre
               datos sin huecos de consentimiento.
             </>
@@ -965,7 +965,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           bullets: [
             <>Plausible, Fathom, Umami: ligeros; bien para blogs y sites de contenido.</>,
             <>Matomo, Piwik PRO: open-source / alojados en UE; arquitectura con cookies, mismo gap.</>,
-            <>Sealmetrics: captura UE completa, fiabilidad enterprise, stack moderno AI-native.</>,
+            <>Sealmetrics: captura UE sin pérdida por consentimiento, fiabilidad enterprise, stack moderno AI-native.</>,
           ],
         },
         caseStudy: {
@@ -990,7 +990,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Muestreo a escala", them: "Sí", us: "Nunca" },
           ]},
           { category: "Compliance", block: "technical", rows: [
-            { feature: "Postura RGPD", them: "Banner de consentimiento requerido", us: "RGPD por arquitectura · sin dato personal persistido" },
+            { feature: "Postura RGPD", them: "Banner de consentimiento requerido", us: "Diseñada para el RGPD · sin dato personal persistido" },
             { feature: "Schrems II", them: "Expuesto", us: "Limpio" },
             { feature: "Residencia de datos", them: "US", us: "UE · Dublín" },
           ]},

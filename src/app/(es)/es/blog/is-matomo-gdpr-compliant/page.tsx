@@ -343,7 +343,7 @@ export default function Page() {
 
           <CommercialModule
             locale="es"
-            hook="Si la configuración conforme de Matomo es justo la que deja de reconocer visitantes recurrentes, el trato es medición a cambio de papeleo. Mira cómo se ve la medición completa y sin banner sobre tu propio tráfico."
+            hook="Si la configuración conforme de Matomo es justo la que deja de reconocer visitantes recurrentes, el trato es medición a cambio de papeleo. Mira cómo se ve la medición sin banner y sin pérdida por consentimiento sobre tu propio tráfico."
           />
 
           <div className="mt-16 pt-10 border-t border-warm-100">

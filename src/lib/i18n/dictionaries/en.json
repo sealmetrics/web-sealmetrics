@@ -16,7 +16,7 @@
     "forCtos": "For CTOs",
     "forCtosDesc": "One script, full compliance, zero maintenance",
     "forDpos": "For DPOs",
-    "forDposDesc": "GDPR compliant by architecture",
+    "forDposDesc": "Designed for GDPR",
     "ecommerce": "eCommerce",
     "ecommerceDesc": "Complete purchase attribution",
     "hotels": "Hotels & Travel",
@@ -28,7 +28,7 @@
     "media": "Media & Publishers",
     "mediaDesc": "True audience measurement",
     "finance": "Finance",
-    "financeDesc": "Compliant financial services analytics",
+    "financeDesc": "Financial services analytics, designed for GDPR",
     "healthcare": "Healthcare",
     "healthcareDesc": "Patient journey analytics, zero PII",
     "education": "Education",
@@ -66,7 +66,7 @@
     "aiBrandMonitoringDesc": "Free report: what fifteen AI models say about you"
   },
   "footer": {
-    "tagline": "Decision intelligence for eCommerce teams. Complete data, no cookies, full GDPR compliance by design.",
+    "tagline": "Decision intelligence for eCommerce teams. Complete data, no cookies, designed for GDPR.",
     "product": "Product",
     "platformOverview": "Platform Overview",
     "howItWorks": "How It Works",

@@ -72,7 +72,7 @@ export default function Page() {
         pages={[
         { href: "/es/vs-ga4", title: "vs Google Analytics 4", desc: "El default gratis — y su punto ciego UE." },
         { href: "/es/vs/adobe-analytics", title: "vs Adobe Analytics", desc: "Potencia enterprise, cero overhead." },
-        { href: "/es/vs/piwik-pro", title: "vs Piwik PRO", desc: "Hosting UE más captura completa." }
+        { href: "/es/vs/piwik-pro", title: "vs Piwik PRO", desc: "Hosting UE, sin pérdida por consentimiento." }
       ]}
       />
       <LogosStripEs />

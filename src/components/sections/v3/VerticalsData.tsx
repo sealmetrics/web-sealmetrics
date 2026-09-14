@@ -12,8 +12,8 @@ const faqMigration = {
   es: { q: "¿Tengo que reemplazar GA4?", a: "No. La mayoría de clientes corren Sealmetrics junto a GA4 los primeros 30 días y comparan con su propio CRM. Después la mayoría usa Sealmetrics como fuente de verdad y mantiene GA4 para las integraciones con Google Ads." },
 };
 const faqGDPR = {
-  en: { q: "Is this really GDPR-compliant without a consent banner?", a: "Yes. Cookieless by architecture — no cookies, no localStorage, no fingerprinting, no personal data. 100% EU-hosted in Dublin. Compliant with GDPR, ePrivacy and Schrems II by design." },
-  es: { q: "¿Es realmente RGPD sin banner de consentimiento?", a: "Sí. Sin cookies por arquitectura — sin cookies, sin localStorage, sin fingerprinting, sin datos personales. 100% alojado en UE en Dublín. Cumple RGPD, ePrivacy y Schrems II por diseño." },
+  en: { q: "Is this really GDPR-compliant without a consent banner?", a: "It is designed for it; this is our self-assessment, not a certification. Cookieless by architecture — no cookies, no localStorage, no fingerprinting, no personal data. 100% EU-hosted in Dublin. Designed for GDPR, ePrivacy and Schrems II from the architecture up." },
+  es: { q: "¿Es realmente RGPD sin banner de consentimiento?", a: "Está diseñada para ello; es nuestra autoevaluación, no una certificación. Sin cookies por arquitectura — sin cookies, sin localStorage, sin fingerprinting, sin datos personales. 100% alojado en UE en Dublín. Diseñada para el RGPD, ePrivacy y Schrems II desde la arquitectura." },
 };
 const faqSetup = {
   en: { q: "How long does setup take?", a: "5 minutes. Add one script tag to your site. Data flows from the first hour. Full calibration done together with our team during week 1." },
@@ -139,7 +139,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
     dpo: {
       en: {
         eyebrow: "For DPOs & legal",
-        h1: <>Analytics that are <em>GDPR-compliant by architecture.</em></>,
+        h1: <>Analytics <em>designed for GDPR from the architecture up.</em></>,
         lede: "Not \"GDPR-ready\". Not \"GDPR-configurable\". Cookieless by design. EU-hosted in Dublin. Zero personal data collection. No consent banner required — because there's nothing to consent to.",
         pains: [
           { title: "Consent Mode v2 doesn't solve Schrems II", desc: "Even consented data flows to US infrastructure. CNIL and other DPAs are still challenging GA. The legal exposure doesn't go away with a banner." },
@@ -154,10 +154,10 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "0", label: "Non-EU sub-processors on visitor data", detail: "The only non-EU sub-processor, Resend (US), sends account emails under SCCs + DPF and never receives visitor data." },
         ],
         faqs: [
-          { q: "How is Sealmetrics GDPR-compliant by architecture?", a: "Sealmetrics avoids personal-data collection by design — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals, with EU-hosted processing in Dublin and DPA/TPSR documentation available for procurement review." },
+          { q: "How is Sealmetrics designed for GDPR from the architecture up?", a: "It is our self-assessment, not a certification. Sealmetrics avoids personal-data collection by design — no cookies, no localStorage, no fingerprinting, no identifiers, no per-user profiling. Events are counted anonymously and aggregated into channel totals, with EU-hosted processing in Dublin and DPA/TPSR documentation available for procurement review." },
           { q: "Do I still need to mention Sealmetrics in my privacy policy?", a: "Best practice is yes — transparency is always good. But it's not legally required since we don't process personal data. We provide a ready-to-paste privacy policy paragraph you can use." },
-          { q: "Where is data hosted?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU in the visitor data path. All data processing and storage happens in Ireland end-to-end." },
-          { q: "What about Schrems II?", a: "Schrems II invalidated Privacy Shield and created compliance risk for EU-US data transfers. Sealmetrics has no data transfers outside the EU — Schrems II doesn't apply to our processing. Your legal team has one less framework to worry about." },
+          { q: "Where is data hosted?", a: "Dublin, Ireland. Single EU region. No failover to third countries. No sub-processors outside the EU in the visitor data path. All visitor data processing and storage happens in Ireland end-to-end." },
+          { q: "What about Schrems II?", a: "Schrems II invalidated Privacy Shield and created compliance risk for EU-US data transfers. Sealmetrics has no visitor data transfers outside the EU — Schrems II doesn't apply to our processing of visitor data. Your legal team has one less framework to worry about." },
           { q: "Do you sign a DPA?", a: "Yes. Standard DPA included with every plan. Enterprise plans include custom DPA negotiation if needed for specific regulated industries (healthcare, finance, public sector)." },
           { q: "What security documentation can you provide?", a: "DPA, security architecture diagrams and a pre-built vendor security questionnaire (TPSR package) covering infrastructure, data handling, incident response and access controls. All available under NDA during procurement review." },
         ],
@@ -166,7 +166,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       },
       es: {
         eyebrow: "Para DPOs y legal",
-        h1: <>Analítica <em>RGPD por arquitectura.</em></>,
+        h1: <>Analítica <em>diseñada para el RGPD desde la arquitectura.</em></>,
         lede: "No \"RGPD-ready\". No \"RGPD-configurable\". Sin cookies por diseño. Alojado en UE en Dublín. Cero recolección de datos personales. Sin banner de consentimiento — porque no hay nada que consentir.",
         pains: [
           { title: "Consent Mode v2 no resuelve Schrems II", desc: "Incluso los datos consentidos fluyen a infra US. CNIL y otros DPAs siguen challengeando GA. La exposición legal no desaparece con un banner." },
@@ -181,10 +181,10 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { n: "0", label: "Sub-procesadores fuera UE con dato de visitante", detail: "El único sub-procesador fuera de la UE, Resend (EE. UU.), envía emails de cuenta con CCT + DPF y nunca recibe dato de visitante." },
         ],
         faqs: [
-          { q: "¿Cómo cumple Sealmetrics RGPD por arquitectura?", a: "RGPD aplica al tratamiento de datos personales. Sealmetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esta arquitectura es la base del cumplimiento — DPA, TPSR y diagramas disponibles para tu DPO." },
+          { q: "¿Cómo está Sealmetrics diseñada para el RGPD desde la arquitectura?", a: "RGPD aplica al tratamiento de datos personales. Sealmetrics no trata datos personales — sin cookies, sin localStorage, sin fingerprinting, sin identificadores, sin perfilado por usuario. Los eventos se cuentan de forma anónima y se agregan en totales por canal. Nada en el modelo de datos puede identificar a una persona física. Esta arquitectura es la base de nuestra autoevaluación (no una certificación) — DPA, TPSR y diagramas disponibles para tu DPO." },
           { q: "¿Tengo que mencionar Sealmetrics en mi política de privacidad?", a: "Best practice sí — la transparencia es siempre recomendable. Pero no es legalmente obligatorio ya que no tratamos datos personales. Proporcionamos un párrafo listo para pegar en tu política." },
-          { q: "¿Dónde se alojan los datos?", a: "Dublín, Irlanda. Región UE única. Sin failover a terceros países. Sin sub-procesadores fuera de UE en la ruta del dato de visitante. Todo el procesamiento y almacenamiento ocurre en Irlanda, de extremo a extremo." },
-          { q: "¿Y Schrems II?", a: "Schrems II invalidó Privacy Shield y creó riesgo de compliance para transferencias UE-US. Sealmetrics no tiene transferencias fuera de UE — Schrems II no aplica. Tu equipo legal tiene un framework menos del que preocuparse." },
+          { q: "¿Dónde se alojan los datos?", a: "Dublín, Irlanda. Región UE única. Sin failover a terceros países. Sin sub-procesadores fuera de UE en la ruta del dato de visitante. Todo el procesamiento y almacenamiento del dato de visitante ocurre en Irlanda, de extremo a extremo." },
+          { q: "¿Y Schrems II?", a: "Schrems II invalidó Privacy Shield y creó riesgo de compliance para transferencias UE-US. Sealmetrics no transfiere dato de visitante fuera de UE — Schrems II no aplica a ese tratamiento. Tu equipo legal tiene un framework menos del que preocuparse." },
           { q: "¿Firmáis DPA?", a: "Sí. DPA estándar incluido en cada plan. El plan Enterprise permite negociación de DPA custom si lo necesitas para industrias reguladas específicas (salud, financiero, sector público)." },
           { q: "¿Qué documentación de seguridad proporcionáis?", a: "DPA, diagramas de arquitectura de seguridad y un cuestionario de seguridad vendor pre-construido (paquete TPSR) que cubre infraestructura, tratamiento de datos, respuesta ante incidentes y controles de acceso. Todo disponible bajo NDA durante procurement review." },
         ],
@@ -328,7 +328,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "Can I track complex product events — feature usage, API calls, activation metrics?", a: "Yes. Full event API lets you track any custom event with any payload. Activation, engagement, feature adoption — all first-class events in Sealmetrics, not bolted on as 'custom events' with limitations." },
           { q: "Does this work with my customer data platform?", a: "Through the API. Sealmetrics has no native CDP connector — you pull aggregate, channel-level data from the REST API or the BigQuery export and load it into your CDP or warehouse yourself. Your single-source-of-truth architecture stays intact; Sealmetrics adds the consent-free layer on top." },
-          { q: "What about our enterprise sales motion?", a: "First-party tracking captures technical buyers who run ad blockers — visits GA4 shows as \"direct\" or misses entirely. Sealmetrics gives you the complete, channel-level picture of traffic and conversions on your pricing page, aggregate and consent-free — not an account-by-account identity match. No more black-box enterprise attribution." },
+          { q: "What about our enterprise sales motion?", a: "First-party tracking captures technical buyers who run ad blockers — visits GA4 shows as \"direct\" or misses entirely. Sealmetrics gives you a consent-independent, channel-level picture of traffic and conversions on your pricing page, aggregate and consent-free — not an account-by-account identity match. No more black-box enterprise attribution." },
           faqMigration.en,
           faqSetup.en,
           faqGDPR.en,
@@ -355,7 +355,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         faqs: [
           { q: "¿Puedo trackear eventos de producto complejos — uso de features, llamadas API, métricas de activación?", a: "Sí. API completa de eventos permite trackear cualquier evento custom con cualquier payload. Activación, engagement, adopción de features — todos first-class en Sealmetrics, no añadidos como 'custom events' con limitaciones." },
           { q: "¿Funciona con mi customer data platform?", a: "Vía API. Sealmetrics no tiene conector nativo de CDP — extraes el dato agregado a nivel de canal desde la API REST o el export a BigQuery y lo cargas tú en tu CDP o warehouse. Tu arquitectura single-source-of-truth se mantiene; Sealmetrics añade la capa sin consentimiento encima." },
-          { q: "¿Y nuestra motion de ventas enterprise?", a: "El tracking first-party captura buyers técnicos que corren ad blockers — visitas que GA4 muestra como \"directo\" o directamente pierde. Sealmetrics te da la foto completa a nivel de canal del tráfico y conversiones en tu página de precios, agregada y sin consentimiento — no una identificación cuenta por cuenta. Fin de la atribución enterprise en caja negra." },
+          { q: "¿Y nuestra motion de ventas enterprise?", a: "El tracking first-party captura buyers técnicos que corren ad blockers — visitas que GA4 muestra como \"directo\" o directamente pierde. Sealmetrics te da una foto a nivel de canal, independiente del consentimiento, del tráfico y conversiones en tu página de precios, agregada y sin consentimiento — no una identificación cuenta por cuenta. Fin de la atribución enterprise en caja negra." },
           faqMigration.es,
           faqSetup.es,
           faqGDPR.es,
@@ -492,7 +492,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "1", label: "Meeting review", detail: "Architecture, DPA, Schrems II — one meeting, done." },
           { n: "Dublin", label: "EU-only infrastructure", detail: "No US transfers, no third-country sub-processors, ever." },
-          { n: "0", label: "Personal identifiers", detail: "No cookies, no identifiers, no fingerprinting. GDPR by architecture." },
+          { n: "0", label: "Personal identifiers", detail: "No cookies, no identifiers, no fingerprinting. Designed for GDPR (self-assessed)." },
           { n: "Full", label: "Audit trail built-in", detail: "Every data access logged. Regulator-ready audit trails on demand." },
         ],
         faqs: [
@@ -519,7 +519,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "1", label: "Reunión de review", detail: "Arquitectura, DPA, Schrems II — una reunión, hecho." },
           { n: "Dublín", label: "Infra solo UE", detail: "Sin transferencias US ni sub-procesadores en terceros países en la ruta del dato de visitante." },
-          { n: "0", label: "Datos personales", detail: "Sin cookies, sin identificadores, sin fingerprinting. RGPD por arquitectura." },
+          { n: "0", label: "Datos personales", detail: "Sin cookies, sin identificadores, sin fingerprinting. Diseñada para el RGPD (autoevaluación)." },
           { n: "Total", label: "Audit trail integrado", detail: "Cada acceso a datos logueado. Trails regulator-ready a demanda." },
         ],
         faqs: [
@@ -548,7 +548,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "0", label: "Personal data", detail: "Zero identifiers, zero cookies, zero fingerprinting." },
           { n: "Full", label: "Patient-facing tracking", detail: "Track appointment funnels, symptoms pages, portals — safely." },
-          { n: "Dublin", label: "EU healthcare hosting", detail: "Data never leaves EU. Compliant with national health data rules." },
+          { n: "Dublin", label: "EU healthcare hosting", detail: "Visitor data never leaves the EU. Designed for national health data rules (self-assessed)." },
           { n: "A/B safe", label: "Optimization enabled", detail: "A/B test any patient-facing flow without legal review." },
         ],
         faqs: [
@@ -575,7 +575,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         outcomes: [
           { n: "0", label: "Dato personal", detail: "Cero identificadores, cero cookies, cero fingerprinting." },
           { n: "Total", label: "Tracking patient-facing", detail: "Trackea funnels de cita, páginas de síntomas, portales — con seguridad." },
-          { n: "Dublín", label: "Hosting sanitario UE", detail: "Datos nunca salen de UE. Cumple reglas nacionales de dato sanitario." },
+          { n: "Dublín", label: "Hosting sanitario UE", detail: "El dato de visitante nunca sale de la UE. Diseñado para las reglas nacionales de dato sanitario (autoevaluación)." },
           { n: "A/B safe", label: "Optimización activada", detail: "A/B test de cualquier flujo patient-facing sin revisión legal." },
         ],
         faqs: [
@@ -603,7 +603,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "COPPA", label: "Safe by default", detail: "No personal data = COPPA doesn't apply. All ages tracked safely." },
-          { n: "EU", label: "Hosted in Dublin", detail: "GDPR + national education data rules: compliant automatically." },
+          { n: "EU", label: "Hosted in Dublin", detail: "Designed for GDPR and national education data rules (self-assessed)." },
           { n: "A/B", label: "Optimization unlocked", detail: "A/B test any student-facing flow without consent workflow." },
           { n: "0", label: "Parental consent", detail: "Nothing to consent to — no personal data collected." },
         ],
@@ -630,7 +630,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "COPPA", label: "Safe por defecto", detail: "Sin dato personal = COPPA no aplica. Todas las edades trackeadas seguro." },
-          { n: "UE", label: "Alojado en Dublín", detail: "RGPD + reglas nacionales de dato educativo: cumplido automáticamente." },
+          { n: "UE", label: "Alojado en Dublín", detail: "Diseñado para el RGPD y las reglas nacionales de dato educativo (autoevaluación)." },
           { n: "A/B", label: "Optimización desbloqueada", detail: "A/B test de cualquier flujo student-facing sin workflow de consentimiento." },
           { n: "0", label: "Consentimiento parental", detail: "Nada que consentir — sin dato personal recopilado." },
         ],

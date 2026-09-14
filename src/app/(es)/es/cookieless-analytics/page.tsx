@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "¿Y el Consent Mode v2 de Google?",
-    a: "Consent Mode es una capa de modelado: cuando los visitantes rechazan cookies, Google estima los datos que faltan estadísticamente. Sigue siendo basado en cookies. Los datos que ves en GA4 con Consent Mode son un modelo del 87% que no puedes medir. La analítica sin cookies es una capa de medición — cada visitante se cuenta, sin modelo. Responden preguntas distintas.",
+    a: "Consent Mode es una capa de modelado: cuando los visitantes rechazan cookies, Google estima los datos que faltan estadísticamente. Sigue siendo basado en cookies. Los datos que ves en GA4 con Consent Mode son un modelo del 87% que no puedes medir. La analítica sin cookies es una capa de medición — los visitantes se cuentan acepten o no el banner, sin modelo. Responden preguntas distintas.",
   },
   {
     q: "¿Cuánto tarda la implementación?",
@@ -141,8 +141,8 @@ export default function CookielessAnalyticsPillarEs() {
         }
         bullets={[
           <><strong>No pierde visitas</strong> por el rechazo del consentimiento — sin caída por ad-blocker, sin expiración de cookies a 7 días.</>,
-          <><strong>Cumple RGPD por arquitectura</strong> — sin cookies, sin datos personales, sin identificadores entre sesiones. Procesamiento sólo en la UE.</>,
-          <><strong>Atribución de ingresos last-click</strong> a nivel de canal y campaña, sobre todos los visitantes.</>,
+          <><strong>Diseñada para el RGPD desde la arquitectura</strong> (autoevaluación) — sin cookies, sin datos personales, sin identificadores entre sesiones. Procesamiento sólo en la UE.</>,
+          <><strong>Atribución de ingresos last-click</strong> a nivel de canal y campaña, sobre quienes aceptan y rechazan el banner por igual.</>,
           <><strong>Lo que no hace</strong> — identificar visitantes recurrentes, seguir individuos entre sesiones o construir perfiles por usuario. Si lo necesitas, usa un CDP.</>,
         ]}
       />

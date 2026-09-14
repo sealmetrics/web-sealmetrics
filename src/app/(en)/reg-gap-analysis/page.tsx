@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     q: "How does Sealmetrics close the common analytics compliance gaps?",
-    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), processes zero personal data as aggregate anonymous events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: GDPR by design, ePrivacy-clean, Schrems II-clean.",
+    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), processes zero personal data as aggregate anonymous events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: designed for GDPR (self-assessed), ePrivacy-clean, Schrems II-clean.",
   },
   {
     q: "Can analytics run without a consent banner after a gap analysis?",
@@ -273,7 +273,7 @@ export default function RegGapAnalysisPage() {
             </p>
             <div className="mt-8 rounded-xl border border-warm-200 bg-white p-6">
               <p className="text-[14px] leading-[1.6] text-ink-soft">
-                <strong className="text-ink">0 gaps</strong> — your measurement is compliant by architecture.{" "}
+                <strong className="text-ink">0 gaps</strong> — none of these six common gaps is open in your measurement.{" "}
                 <br />
                 <strong className="text-ink">1–2 gaps</strong> — configuration risk; worth a formal review.{" "}
                 <br />

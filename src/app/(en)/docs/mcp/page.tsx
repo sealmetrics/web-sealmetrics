@@ -314,7 +314,7 @@ export default function McpDocsPage() {
           <ul className="mt-8 space-y-3 text-[16px] leading-[1.65] text-ink-2 max-w-[70ch] list-none p-0">
             {[
               "Data is collected and stored in the European Union, in Dublin, Ireland.",
-              "GDPR compliant by architecture and aligned with the ePrivacy Directive; a Schrems II transfer problem cannot arise, because there is no transfer and no personal data.",
+              "Designed for GDPR from the architecture up (self-assessed) and aligned with the ePrivacy Directive; a Schrems II transfer problem cannot arise, because there is no transfer and no personal data.",
               "A DPA is included with every account, and the TPSR package is available for procurement review.",
               "The connector inherits those terms. It adds a reader, not a new collection.",
             ].map((line) => (

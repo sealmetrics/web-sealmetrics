@@ -150,7 +150,7 @@ export function RoasMath() {
               The budget you were about to cut was your best-converting channel.
             </p>
             <p className="mt-3 text-[15px] text-dark-text-secondary leading-[1.55] max-w-[60ch]">
-              Every conversion counted means the channels that work stop hiding inside &ldquo;direct&rdquo; and
+              Counting conversions without consent loss means the channels that work stop hiding inside &ldquo;direct&rdquo; and
               inside traffic that never consented.
             </p>
           </div>

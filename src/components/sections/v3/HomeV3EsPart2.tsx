@@ -73,7 +73,7 @@ export function IndustriesBuiltForEs() {
           <IndustryCardEs
             tag="Infraestructura"
             name={<>Alojado en UE <em className="italic-accent">por arquitectura</em></>}
-            line="Alojado en Dublín, Irlanda. Schrems II limpio. RGPD por arquitectura, no como capa de compliance."
+            line="Alojado en Dublín, Irlanda. Schrems II limpio. Diseñada para el RGPD desde la arquitectura (autoevaluación), no como capa de compliance."
             proof="Dublín · Irlanda · Schrems II limpio · RGPD"
             scene={
               <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
@@ -239,7 +239,7 @@ export function HowItWorksV3Es() {
         <div className="grid sm:grid-cols-3 gap-4">
           {[
             { n: "Paso 01", time: "15 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin banners de cookies, sin piruetas en tag manager." },
-            { n: "Paso 02", time: "Día 1", title: "Todo visible", p: "Tráfico completo desde la primera hora. Cada visitante, cada fuente, cada conversión — observado server-side, sin depender del consentimiento." },
+            { n: "Paso 02", time: "Día 1", title: "Datos visibles", p: "Tráfico desde la primera hora. Visitantes, fuentes y conversiones — observados server-side, sin depender del consentimiento." },
             { n: "Paso 03", time: "Semana 1", title: "Escala lo que funciona", p: "Reubica presupuesto hacia los canales que realmente generan ingresos. Corta los que GA4 decía que funcionaban — pero no." },
           ].map((s) => (
             <div key={s.n} className="bg-white border border-warm-100 rounded-xl p-8 flex flex-col min-h-[260px]">
@@ -266,7 +266,7 @@ export function CredentialsV3Es() {
             <h2 className="h-section mt-5">Hecho para los próximos <em>tres años</em> de privacidad europea.</h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Fundada en UE, alojada en UE, RGPD por arquitectura — no por una capa de compliance añadida después.
+            Fundada en UE, alojada en UE, diseñada para el RGPD desde la arquitectura (autoevaluación) — no por una capa de compliance añadida después.
           </p>
         </div>
 
@@ -305,7 +305,7 @@ export function CredentialsV3Es() {
           {[
             { n: <><em className="italic-accent">+5</em> años</>, l: "En producción · 2.000+ cuentas en hoteles, DTC y medios" },
             { n: <>99,<em className="italic-accent">99</em>%</>, l: "SLA de uptime · probado a escala de Black Friday" },
-            { n: <>UE-<em className="italic-accent">hosted</em></>, l: "Alojado en Dublín, Irlanda · Schrems II limpio · RGPD por arquitectura" },
+            { n: <>UE-<em className="italic-accent">hosted</em></>, l: "Alojado en Dublín, Irlanda · Schrems II limpio · Diseñada para el RGPD" },
             { n: <><em className="italic-accent">846</em> bytes</>, l: "Tamaño del pixel · unas 100× más ligero que el tag de GA4" },
           ].map((c, i) => (
             <div key={i} className="bg-white border border-warm-100 rounded-xl p-6">
@@ -316,7 +316,7 @@ export function CredentialsV3Es() {
         </div>
 
         <div className="flex flex-wrap gap-2.5 justify-center pt-8 border-t border-warm-100">
-          {["RGPD por arquitectura", "ePrivacy", "Schrems II", "Alojado UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
+          {["Diseñada para el RGPD", "ePrivacy", "Schrems II", "Alojado UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
             <span key={b} className="inline-flex items-center gap-2 px-4 py-2.5 bg-white border border-warm-100 rounded-lg font-mono text-[11.5px] font-bold uppercase tracking-[0.08em] text-ink">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />{b}
             </span>
