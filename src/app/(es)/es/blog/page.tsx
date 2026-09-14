@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "cookieless-analytics-for-hotels": {
+    title: "Cómo cuadran los grupos hoteleros la venta directa con el PMS en 2026",
+    description: "Cómo mide un grupo hotelero la venta directa por canal sin cookies, sin seguir a huéspedes y sin perder el origen en el motor de reservas, y cómo la contrasta con el PMS.",
+    category: "Hoteles",
+    readTime: "9 min",
+  },
   "cookieless-analytics-explained": {
     title: "Analítica cookieless explicada: cómo medir sin cookies",
     description: "Las cookies están desapareciendo. Cómo funciona la analítica cookieless, por qué captura más data y qué implica para RGPD.",

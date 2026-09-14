@@ -322,7 +322,7 @@ La plantilla fija el orden de toda landing de problema: dolor → respuesta ráp
 | `/platforms/shopify` + Incapto, y crear `/es/platforms/shopify` | **Hecha** — plantilla v4, datos contrastados con la doc de Shopify (evento `begin_checkout`, webhook sin backfill, Managed Pricing); fuera la afirmación sin fuente sobre tipos de cambio del BCE |
 | `/platforms/woocommerce` + ES | **Hecha** — contrastada con la doc: descarga desde el dashboard, compra enviada desde la página de confirmación (no en servidor); fuera WPML/Polylang, hooks concretos y detección de checkout por bloques, sin respaldo |
 | `/for/hotels` a la barra de 1.800 palabras (EN+ES) | **Hecha** — plantilla v4, ~2.200 palabras; recorrido de reserva contrastado con la doc (passthrough referrers por API y por cuenta, un dominio y sus subdominios por sitio, propiedades de conversión); fuera los "webhooks" de PMS, el "defendible bajo RGPD" categórico, el schema con "100%" y el "25% de reservas" sin fuente del hub `/for` |
-| `/es/blog/cookieless-analytics-for-hotels` | Pendiente |
+| `/es/blog/cookieless-analytics-for-hotels` | **Hecha** — ES nativo (~2.000 palabras) con FAQ visible y hreflang; el EN corregido a la vez: fuera los "webhooks", el 65–75% móvil y los ciclos de 14–30 días sin fuente, el "gap del 40–60%" y los rollups de portfolio sin respaldo; ITP descrito como en el glosario. Nuevo campo `dateEs` en `blog.ts` para que un ES publicado después no herede la fecha del EN |
 | `/for/agencies` | Pendiente — necesita confirmar reseller con margen, white-label y onboarding en 15 min |
 | `/blog/cookieless-analytics-for-ecommerce` y `/blog/consentless-analytics-for-dtc` en ES | Pendiente |
 

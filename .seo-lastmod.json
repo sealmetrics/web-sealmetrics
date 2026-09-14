@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "7d0468e8df4865ad",
+    "hash": "74efeda92332586e",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -424,7 +424,7 @@
     "date": "2026-09-14"
   },
   "/es/for/hotels/": {
-    "hash": "d713e0495cec8ffc",
+    "hash": "bb6fa927afc16023",
     "date": "2026-09-14"
   },
   "/es/for/healthcare/": {
@@ -900,7 +900,7 @@
     "date": "2026-09-04"
   },
   "/blog/cookieless-analytics-for-hotels/": {
-    "hash": "20bb89c6a25f4956",
+    "hash": "22aeed4c0b726bf7",
     "date": "2026-09-14"
   },
   "/blog/ga4-data-sampling-problem/": {
@@ -1157,6 +1157,10 @@
   },
   "/es/platforms/woocommerce/": {
     "hash": "8fddc15b709e7acc",
+    "date": "2026-09-14"
+  },
+  "/es/blog/cookieless-analytics-for-hotels/": {
+    "hash": "9f3ca9d6a0da1c93",
     "date": "2026-09-14"
   }
 }

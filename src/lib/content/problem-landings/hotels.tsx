@@ -331,8 +331,9 @@ export const hotelsEs: ProblemLandingContent = {
     body: (
       <>
         El trabajo está en el motor de reservas y en las pasarelas, no en la
-        etiqueta. El método de contraste con reservas reales es el mismo que en{" "}
-        <Link className={link} href="/es/use-cases/single-source-of-truth/">una sola cifra para marketing y finanzas</Link>.
+        etiqueta. La versión larga, con el patrón de conciliación con el PMS, está
+        en la guía de{" "}
+        <Link className={link} href="/es/blog/cookieless-analytics-for-hotels/">analítica sin cookies para hoteles</Link>.
       </>
     ),
     howToName: "Cómo configurar analítica sin cookies en la web de reservas de un hotel",

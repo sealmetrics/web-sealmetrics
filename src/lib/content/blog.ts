@@ -36,6 +36,12 @@ export interface BlogPost {
    * Falls back to `dateModified`.
    */
   dateModifiedEs?: string;
+  /**
+   * The Spanish page's own publication date, when the translation was
+   * published after the English original. Without it the Spanish Article would
+   * claim to exist since the English date. Falls back to `date`.
+   */
+  dateEs?: string;
   category: string;
   readTime: string;
   author?: BlogAuthor;
@@ -224,6 +230,8 @@ export const blogPosts: BlogPost[] = [
       "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns that work with any PMS.",
     date: "2026-04-24",
     dateModified: "2026-09-14",
+    dateEs: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Hotels",
     readTime: "9 min",
     author: AUTHORS.rafa,
@@ -798,5 +806,6 @@ export function postDates(
     throw new Error(`postDates: "${slug}" is not in blogPosts (src/lib/content/blog.ts)`);
   }
   const modified = locale === "es" ? post.dateModifiedEs ?? post.dateModified : post.dateModified;
-  return { datePublished: post.date, ...(modified ? { dateModified: modified } : {}) };
+  const published = locale === "es" ? post.dateEs ?? post.date : post.date;
+  return { datePublished: published, ...(modified ? { dateModified: modified } : {}) };
 }

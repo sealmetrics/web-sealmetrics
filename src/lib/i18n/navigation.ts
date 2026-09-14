@@ -49,6 +49,7 @@ const translatedPaths = new Set([
   "/blog/cookieless-analytics-explained",
   "/blog/consent-banner-impact-on-analytics",
   "/blog/ga4-data-sampling-problem",
+  "/blog/cookieless-analytics-for-hotels",
   "/blog/why-ga4-shows-13pct-eu-traffic",
   "/blog/gdpr-analytics-without-consent",
   "/blog/best-web-analytics-tool",
