@@ -711,6 +711,16 @@
       "sourceHash": "27cfa5d888c1070c2ef2c8c95abab5c063ac21d05132487ed30e829e10b3c70c",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/why-ga4-shows-direct-none.avif": {
+      "source": "public/og/blog/why-ga4-shows-direct-none.png",
+      "sourceHash": "2bbacfb2345169d5229b3bfbc867480b41f1e0078bb73f7f5d9b20d0a45d9ba3",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/why-ga4-shows-direct-none.webp": {
+      "source": "public/og/blog/why-ga4-shows-direct-none.png",
+      "sourceHash": "2bbacfb2345169d5229b3bfbc867480b41f1e0078bb73f7f5d9b20d0a45d9ba3",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/careers.avif": {
       "source": "public/og/careers.png",
       "sourceHash": "3c43e5148dd5bc012a708aa2d0864b21f8a2442589a80f8ed6b8fee5bdcb2f8c",

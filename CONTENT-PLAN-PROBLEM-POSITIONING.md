@@ -327,3 +327,19 @@ La plantilla fija el orden de toda landing de problema: dolor → respuesta ráp
 | `/blog/cookieless-analytics-for-ecommerce` y `/blog/consentless-analytics-for-dtc` en ES | **Hecha** — ES nativo con FAQ visible y hreflang; EN corregido a la vez: fuera los "100% of revenue/traffic" que contradecían el 96–97% de Incapto citado en el mismo post, los 40–60% sin fuente (ahora supuestos del modelo o dato medido de Incapto), ITP mal descrito, "legal term", las cuentas de €20M/€50M, "Klaviyo sin cookies" y los "30 días"; implantación contrastada con la doc (app de Shopify, plugin de WooCommerce, módulo Magento 2.4+) |
 
 Observado de paso: la documentación lista una integración con BigCommerce que el hub `/platforms` no muestra.
+
+---
+
+## 9. Fase 4 · SEO de problema
+
+| # | Pieza | Estado |
+|---|---|---|
+| 1 | `/blog/why-ga4-shows-direct-none` (EN+ES) | **Hecha** — reglas de Direct/Unassigned y ámbito de sesión contrastados con la ayuda de GA4 (answers 9756891, 11080067, 13504892, 14847402); seis causas, checklist de diagnóstico, qué no recupera un arreglo de etiqueta y cuándo Sealmetrics también da directo (doc de referrer loss y rejoined traffic). Datos: Incapto 14% vs 0,3%, Palladium 35%. Prompt 14 en `SEO-STRATEGY.md` §9b |
+| 2 | ROAS tras el consentimiento (guía con `HowTo`) | Pendiente |
+| 3 | Meta Ads conversions vs CRM | Pendiente |
+| 4 | Consent Mode: qué es medido y qué es modelado | Pendiente |
+| 5 | Last-click vs modelado | Pendiente |
+| 6 | GA4 vs Piwik PRO vs Sealmetrics | Pendiente |
+| 7 | Server-side tracking y RGPD | Pendiente |
+
+Corrección de paso: el post DTC de #203 decía que GA4 registraba "un 37–52% menos" de tráfico de pago; el caso dice que Sealmetrics registró un 37–52% **más**. Corregido en la rama de #203.

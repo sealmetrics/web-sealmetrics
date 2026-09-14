@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "why-ga4-shows-direct-none",
+    title: "Why GA4 Shows So Much (direct) / (none) Traffic, and What Fixes It",
+    description:
+      "(direct) / (none) in GA4 is a symptom, not a channel. The six causes, how to diagnose them in your own property, and what fixing the tag cannot recover.",
+    date: "2026-09-14",
+    category: "Data Quality",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-13pct-eu-traffic", "consent-banner-impact-on-analytics", "cookieless-analytics-for-ecommerce"],
+  },
+  {
     slug: "demdex-analytics-cookies-guide",
     title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
     description: "Understanding demdex analytics cookies: Why third-party cookie blocking is breaking Adobe Analytics and how to capture 100% of your traffic cookieless.",

@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "why-ga4-shows-direct-none": {
+    title: "Por qué GA4 muestra tanto tráfico (direct) / (none), y qué lo arregla",
+    description: "(direct) / (none) en GA4 es un síntoma, no un canal. Las seis causas, cómo diagnosticarlas en tu propiedad y lo que arreglar la etiqueta no puede recuperar.",
+    category: "Calidad del dato",
+    readTime: "9 min",
+  },
   "cookieless-analytics-for-ecommerce": {
     title: "Cómo mide el eCommerce europeo sus ingresos sin esperar al banner de cookies",
     description: "Cómo mide un eCommerce europeo visitas, pedidos e ingresos por canal sin cookies ni seguimiento de usuarios, y cómo lo contrasta con Shopify, WooCommerce o Magento.",
