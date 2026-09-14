@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "fd5cbe14abcad001",
+    "hash": "d2cb14f059a171a2",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "8c2f083d536923e7",
+    "hash": "5eb135d5d6f3439d",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -1209,6 +1209,14 @@
   },
   "/es/blog/last-click-vs-modelled-attribution/": {
     "hash": "5a0e95ae2909a979",
+    "date": "2026-09-14"
+  },
+  "/blog/ga4-vs-piwik-pro-vs-sealmetrics/": {
+    "hash": "a5b030dcd6bf6766",
+    "date": "2026-09-14"
+  },
+  "/es/blog/ga4-vs-piwik-pro-vs-sealmetrics/": {
+    "hash": "12cac1300e30ec72",
     "date": "2026-09-14"
   }
 }

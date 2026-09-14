@@ -461,6 +461,16 @@
       "sourceHash": "b9442d1dee8a0898f460ce9d9d20f1a797ae18f987e62378a1e216b1172401b7",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.avif": {
+      "source": "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.png",
+      "sourceHash": "4956244ec69a0ca4acde7ba095b27ee7a2905ddd48d509ad697aedbc59095c62",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.webp": {
+      "source": "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.png",
+      "sourceHash": "4956244ec69a0ca4acde7ba095b27ee7a2905ddd48d509ad697aedbc59095c62",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/gdpr-analytics-spain-faq.avif": {
       "source": "public/og/blog/gdpr-analytics-spain-faq.png",
       "sourceHash": "0a2c0f314da04c5c1a266817c0376527f616d4ad08c5fdda3765b9323b843b34",

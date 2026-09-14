@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "ga4-vs-piwik-pro-vs-sealmetrics": {
+    title: "GA4 vs Piwik PRO vs Sealmetrics: cuál encaja en un equipo de marketing europeo",
+    description: "Tres arquitecturas, no tres versiones de una herramienta. Precio, identificadores, qué pasa sin consentimiento, atribución, retención y dónde gana cada una.",
+    category: "Comparativas",
+    readTime: "11 min",
+  },
   "last-click-vs-modelled-attribution": {
     title: "Último clic frente a atribución modelada: en qué acierta cada una",
     description: "La atribución basada en datos responde mejor pregunta en los recorridos que ve; el último clic, una más estrecha en cada sesión. Cuándo usar cada una.",

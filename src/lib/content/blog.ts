@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "ga4-vs-piwik-pro-vs-sealmetrics",
+    title: "GA4 vs Piwik PRO vs Sealmetrics: Which One Fits an EU Marketing Team",
+    description:
+      "Three architectures, not three versions of one tool. Price, identifiers, behaviour without consent, attribution, retention and where each one wins.",
+    date: "2026-09-14",
+    category: "Comparisons",
+    readTime: "11 min",
+    author: AUTHORS.rafa,
+    related: ["ga4-alternatives-enterprise", "consent-mode-measured-vs-modelled", "last-click-vs-modelled-attribution"],
+  },
+  {
     slug: "last-click-vs-modelled-attribution",
     title: "Last-Click vs Modelled Attribution: What Each One Gets Right",
     description:
