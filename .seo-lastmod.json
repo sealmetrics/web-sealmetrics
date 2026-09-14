@@ -204,7 +204,7 @@
     "date": "2026-09-14"
   },
   "/open/glossary/": {
-    "hash": "160470323cba9aa3",
+    "hash": "d6f20f9c541b49d2",
     "date": "2026-09-14"
   },
   "/open/who-we-build-for/": {
@@ -212,19 +212,19 @@
     "date": "2026-08-14"
   },
   "/open/gdpr-by-architecture/": {
-    "hash": "aa467aa29263ad24",
-    "date": "2026-08-14"
+    "hash": "1e9d281d7f3142bd",
+    "date": "2026-09-14"
   },
   "/open/what-complete-data-means/": {
-    "hash": "e62f45c34945f4ca",
+    "hash": "a9ee7935e2ede268",
     "date": "2026-09-14"
   },
   "/open/how-we-price/": {
-    "hash": "4d07995780a3b76d",
+    "hash": "588bab7436302bcf",
     "date": "2026-09-14"
   },
   "/open/why-we-exist/": {
-    "hash": "eae21c4b1d6a4389",
+    "hash": "71a216d7e1a037a9",
     "date": "2026-09-14"
   },
   "/alternatives/google-analytics/": {
@@ -380,7 +380,7 @@
     "date": "2026-09-14"
   },
   "/es/glossary/intelligent-tracking-prevention/": {
-    "hash": "06bcf343101fface",
+    "hash": "e6711c0b4fda8d15",
     "date": "2026-09-14"
   },
   "/es/glossary/event-tracking/": {
@@ -396,7 +396,7 @@
     "date": "2026-09-14"
   },
   "/es/glossary/revenue-attribution/": {
-    "hash": "f4d66edb65c37fc4",
+    "hash": "00d6084696bf43f5",
     "date": "2026-09-14"
   },
   "/es/glossary/first-party-data-collection/": {
@@ -412,7 +412,7 @@
     "date": "2026-09-14"
   },
   "/es/glossary/cookieless-analytics/": {
-    "hash": "1b8e3c9c48d229ff",
+    "hash": "0945ddb1b23216e1",
     "date": "2026-09-14"
   },
   "/es/glossary/data-sampling/": {
@@ -524,11 +524,11 @@
     "date": "2026-09-04"
   },
   "/es/blog/ga4-google-ads-separation/": {
-    "hash": "392810943e45b159",
+    "hash": "635b2aa05c0a23d9",
     "date": "2026-09-14"
   },
   "/es/blog/best-web-analytics-tool/": {
-    "hash": "e178ae784ff0dbd4",
+    "hash": "7eab48db260456d3",
     "date": "2026-09-14"
   },
   "/es/blog/meet-seal-ai/": {
@@ -536,7 +536,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/ga4-data-sampling-problem/": {
-    "hash": "8d8a8187aef80424",
+    "hash": "a17da74f1c153faf",
     "date": "2026-09-14"
   },
   "/es/blog/grounding-analytics-ai/": {
@@ -548,7 +548,7 @@
     "date": "2026-09-14"
   },
   "/es/blog/gdpr-eprivacy-analytics-legal-assessment/": {
-    "hash": "697d0a9a211c254f",
+    "hash": "1ccd60ba8f9ea8d8",
     "date": "2026-09-14"
   },
   "/es/blog/how-we-benchmark-our-own-ai/": {
@@ -632,7 +632,7 @@
     "date": "2026-09-14"
   },
   "/glossary/consent-mode-v2/": {
-    "hash": "e6ebbf07fe205dd7",
+    "hash": "50cc7e188c5cb7a4",
     "date": "2026-09-14"
   },
   "/glossary/server-side-tracking/": {
@@ -644,7 +644,7 @@
     "date": "2026-09-14"
   },
   "/glossary/personal-data-in-analytics/": {
-    "hash": "b0e84912b678dc9a",
+    "hash": "9b72f94100430cb7",
     "date": "2026-09-14"
   },
   "/glossary/customer-lifetime-value/": {
@@ -652,7 +652,7 @@
     "date": "2026-09-14"
   },
   "/glossary/bounce-rate/": {
-    "hash": "69a2b781cc3d9cc9",
+    "hash": "2e878c396fef414d",
     "date": "2026-09-14"
   },
   "/glossary/data-loss-in-analytics/": {
@@ -676,7 +676,7 @@
     "date": "2026-09-14"
   },
   "/glossary/intelligent-tracking-prevention/": {
-    "hash": "de920a2746edfcf5",
+    "hash": "8e2ca0c3c86183b1",
     "date": "2026-09-14"
   },
   "/glossary/event-tracking/": {
@@ -684,7 +684,7 @@
     "date": "2026-09-14"
   },
   "/glossary/attribution-model/": {
-    "hash": "98773c4d1a060ab9",
+    "hash": "fba77169f847665d",
     "date": "2026-09-14"
   },
   "/glossary/multi-touch-attribution/": {
@@ -692,7 +692,7 @@
     "date": "2026-09-14"
   },
   "/glossary/revenue-attribution/": {
-    "hash": "60fde19e3f75e67e",
+    "hash": "11c4aa87e96b27a1",
     "date": "2026-09-14"
   },
   "/glossary/first-party-data-collection/": {
@@ -1056,8 +1056,8 @@
     "date": "2026-08-26"
   },
   "/es/blog/is-matomo-gdpr-compliant/": {
-    "hash": "d00a21709d449ba2",
-    "date": "2026-08-26"
+    "hash": "be04f435d343e42c",
+    "date": "2026-09-14"
   },
   "/es/changelog/": {
     "hash": "304b51a78f0edc4a",
