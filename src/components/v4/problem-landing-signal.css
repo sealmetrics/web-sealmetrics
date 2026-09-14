@@ -185,6 +185,17 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+.sig-problem-byline {
+  margin-top: 12px !important;
+  color: var(--muted);
+  font: 650 9px/1.7 var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sig-problem-byline a {
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+}
 .sig-problem-module {
   border: 1px solid var(--ink);
   background: var(--ink);

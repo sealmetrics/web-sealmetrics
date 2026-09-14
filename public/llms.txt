@@ -89,7 +89,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
   real-time guarantee.
 
 ## Pillars (start here)
-- /complete-data — Why incomplete analytics data leads to wrong investment decisions; the measured Incapto gap and the 13% worst-case model
+- /complete-data — Pillar for the problem "GA4 does not reflect reality": the four losses (consent, ad blockers, ITP, sampling), the measured Incapto gap (29% of visits, 45% of pageviews) versus the 13% worst-case model, a five-step method to measure your own gap, and what complete data does not mean
 - /cookieless-analytics — Definitive explainer: what cookieless analytics is, how it works, what it captures, what it doesn't
 - /consentless-analytics — Legal-grade explainer of analytics without consent under GDPR Art. 6(1)(f) and ePrivacy
 
@@ -289,7 +289,7 @@ Sealmetrics competes with GA360 ($150,000+/yr), Adobe Analytics ($100,000+/yr), 
 Sealmetrics is also available in Spanish. The Spanish surface mirrors the English site for core pages and persona/industry pages.
 
 Pillars (ES):
-- /es/complete-data — Datos completos: por qué la analítica incompleta produce decisiones equivocadas; el gap medido de Incapto y el modelo del 13% como peor escenario
+- /es/complete-data — Pilar del problema «GA4 no refleja la realidad»: las cuatro pérdidas, la brecha medida en Incapto (29% de visitas, 45% de páginas vistas) frente al modelo del 13% como peor escenario, un método en cinco pasos para medir la tuya y lo que datos completos no significa
 - /es/cookieless-analytics — Analítica sin cookies explicada: qué es, por qué fallan las cookies en 2026, qué se mide y qué no
 - /es/consentless-analytics — Analítica sin consentimiento: la vía legal a la medición sin banner bajo RGPD y ePrivacy, con la exención CNIL y sus límites
 

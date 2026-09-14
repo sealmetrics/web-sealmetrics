@@ -306,7 +306,7 @@ Aplica las correcciones de §5.3 y todas las apariciones de las mismas incongrue
 | Landing | URL | Estado |
 |---|---|---|
 | C · Marketing y Finanzas tienen números distintos | `/use-cases/single-source-of-truth` (EN+ES) | **Hecha** — plantilla v4 `ProblemLandingSignal`, contenido en `src/lib/content/problem-landings/` |
-| A · GA4 no refleja la realidad | `/complete-data` | Pendiente: portar a `ProblemLandingSignal` |
+| A · GA4 no refleja la realidad | `/complete-data` (EN+ES) | **Hecha** — portada a `ProblemLandingSignal`, firma visible con fecha de actualización |
 | B · No sé qué campañas funcionan | `/use-cases/revenue-attribution` (+ crear ES) | Pendiente |
 | D · Tengo que demostrar cumplimiento | `/gdpr-analytics` | Pendiente |
 | Entrada "Por problema" en navegación, `/product` y `/use-cases` | — | Pendiente (cuando existan las cuatro) |

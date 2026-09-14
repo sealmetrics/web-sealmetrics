@@ -703,12 +703,12 @@
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.avif": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
+      "sourceHash": "27cfa5d888c1070c2ef2c8c95abab5c063ac21d05132487ed30e829e10b3c70c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.webp": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
+      "sourceHash": "27cfa5d888c1070c2ef2c8c95abab5c063ac21d05132487ed30e829e10b3c70c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/careers.avif": {
@@ -773,12 +773,12 @@
     },
     "public/og/complete-data.avif": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
+      "sourceHash": "5e077ebcfa4899f808c6eb3c7103e326cf8fa5cd83b0cb107fe703c788e565ae",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/complete-data.webp": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
+      "sourceHash": "5e077ebcfa4899f808c6eb3c7103e326cf8fa5cd83b0cb107fe703c788e565ae",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/consentless-analytics.avif": {
@@ -1589,6 +1589,16 @@
     "public/og/use-cases/revenue-attribution.webp": {
       "source": "public/og/use-cases/revenue-attribution.png",
       "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/use-cases/single-source-of-truth.avif": {
+      "source": "public/og/use-cases/single-source-of-truth.png",
+      "sourceHash": "0952ac4c82011fc0fbad06d21b5ce04e9261c66a7e72c13169936f41549c73bb",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/use-cases/single-source-of-truth.webp": {
+      "source": "public/og/use-cases/single-source-of-truth.png",
+      "sourceHash": "0952ac4c82011fc0fbad06d21b5ce04e9261c66a7e72c13169936f41549c73bb",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/videos.avif": {

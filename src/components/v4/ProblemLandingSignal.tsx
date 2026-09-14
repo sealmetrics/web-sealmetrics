@@ -49,6 +49,12 @@ export function ProblemLandingSignal({ content: t }: { content: ProblemLandingCo
             <CtaLink className="sig-problem-text-link" href={t.heroSecondary.href}>{t.heroSecondary.label} <Arrow /></CtaLink>
           </div>
           <p className="sig-problem-micro">{t.heroMicro}</p>
+          {t.byline && (
+            <p className="sig-problem-byline">
+              {t.byline.byLabel} <Link href={t.byline.authorHref}>{t.byline.authorName}</Link> · {t.byline.updatedLabel}{" "}
+              <time dateTime={t.byline.date}>{t.byline.dateDisplay}</time>
+            </p>
+          )}
         </div>
         <aside className="sig-problem-module" aria-label={t.module.title}>
           <div className="sig-problem-module-top"><span>{t.module.title}</span><span>{t.module.status}</span></div>

@@ -23,6 +23,20 @@ export type ProblemLandingContent = {
   heroPrimary: { label: string; href: string };
   heroSecondary: { label: string; href: string };
   heroMicro: string;
+  /**
+   * Visible byline for pages whose schema is an Article. When `dateModified`
+   * differs from `datePublished`, `date-modified-not-visible` requires the date
+   * to be rendered in a `<time dateTime>`; this is where it lives.
+   */
+  byline?: {
+    byLabel: string;
+    authorName: string;
+    authorHref: string;
+    updatedLabel: string;
+    /** ISO day, identical to the schema's dateModified. */
+    date: string;
+    dateDisplay: string;
+  };
   module: { title: string; status: string; rows: [string, string][]; foot: string };
 
   answerLabel: string;
