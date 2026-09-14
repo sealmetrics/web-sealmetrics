@@ -51,6 +51,17 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "measure-roas-after-cookie-consent",
+    title: "How to Measure ROAS After Cookie Consent: A Seven-Step Method",
+    description:
+      "Consent pushes ROAS in two directions: analytics undercounts, ad platforms model and self-credit. A seven-step method to get a ROAS you can allocate budget on.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-direct-none", "consentless-analytics-for-dtc", "cookieless-analytics-for-ecommerce"],
+  },
+  {
     slug: "why-ga4-shows-direct-none",
     title: "Why GA4 Shows So Much (direct) / (none) Traffic, and What Fixes It",
     description:

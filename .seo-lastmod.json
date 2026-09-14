@@ -108,7 +108,7 @@
     "date": "2026-09-04"
   },
   "/blog/": {
-    "hash": "a8eb8f120974b9a3",
+    "hash": "2638738a6fdf33e6",
     "date": "2026-09-14"
   },
   "/growth/": {
@@ -296,7 +296,7 @@
     "date": "2026-09-04"
   },
   "/es/blog/": {
-    "hash": "410f38d766609bd0",
+    "hash": "c736364bfc315d47",
     "date": "2026-09-14"
   },
   "/es/case-studies/": {
@@ -1177,6 +1177,14 @@
   },
   "/es/blog/why-ga4-shows-direct-none/": {
     "hash": "04143f49790bc442",
+    "date": "2026-09-14"
+  },
+  "/blog/measure-roas-after-cookie-consent/": {
+    "hash": "477cb563eee83b60",
+    "date": "2026-09-14"
+  },
+  "/es/blog/measure-roas-after-cookie-consent/": {
+    "hash": "038824bbd4246517",
     "date": "2026-09-14"
   }
 }

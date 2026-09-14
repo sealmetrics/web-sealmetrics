@@ -68,6 +68,12 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "IA y Analítica",
     readTime: "10 min",
   },
+  "measure-roas-after-cookie-consent": {
+    title: "Cómo medir el ROAS después del consentimiento de cookies: un método en siete pasos",
+    description: "El consentimiento empuja el ROAS en dos direcciones: la analítica se queda corta y las plataformas modelan y se atribuyen. Siete pasos hacia un ROAS fiable.",
+    category: "Atribución",
+    readTime: "10 min",
+  },
   "why-ga4-shows-direct-none": {
     title: "Por qué GA4 muestra tanto tráfico (direct) / (none), y qué lo arregla",
     description: "(direct) / (none) en GA4 es un síntoma, no un canal. Las seis causas, cómo diagnosticarlas en tu propiedad y lo que arreglar la etiqueta no puede recuperar.",

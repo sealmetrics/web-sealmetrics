@@ -323,6 +323,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 12 | 5 | analytics compliance audit / análisis de brechas RGPD analítica | `/reg-gap-analysis` (EN+ES) | shipped 7 Jul |
 | 13 | 5 | analytics without consent for small business (ES focus — beat trustedshops.es) | `/blog/gdpr-analytics-spain-faq` (EN+ES) + `/es/reg-gap-analysis` | shipped 7 Jul |
 | 14 | 5 | why does GA4 show so much direct / none traffic / por qué GA4 muestra tanto tráfico directo | `/blog/why-ga4-shows-direct-none` (EN+ES) + `/complete-data` | shipped 14 Sep |
+| 15 | 2 | how to measure ROAS after cookie consent / cómo medir el ROAS con el consentimiento de cookies | `/blog/measure-roas-after-cookie-consent` (EN+ES) + `/use-cases/revenue-attribution` | shipped 14 Sep |
 
 ### Method (monthly, first week)
 

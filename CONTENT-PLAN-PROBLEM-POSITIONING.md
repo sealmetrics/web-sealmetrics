@@ -335,7 +335,7 @@ Observado de paso: la documentación lista una integración con BigCommerce que 
 | # | Pieza | Estado |
 |---|---|---|
 | 1 | `/blog/why-ga4-shows-direct-none` (EN+ES) | **Hecha** — reglas de Direct/Unassigned y ámbito de sesión contrastados con la ayuda de GA4 (answers 9756891, 11080067, 13504892, 14847402); seis causas, checklist de diagnóstico, qué no recupera un arreglo de etiqueta y cuándo Sealmetrics también da directo (doc de referrer loss y rejoined traffic). Datos: Incapto 14% vs 0,3%, Palladium 35%. Prompt 14 en `SEO-STRATEGY.md` §9b |
-| 2 | ROAS tras el consentimiento (guía con `HowTo`) | Pendiente |
+| 2 | `/blog/measure-roas-after-cookie-consent` (EN+ES) | **Hecha** — guía con `HowTo` visible (7 pasos) y FAQ; modelado de Consent Mode contrastado con la ayuda de Google Ads (answer 10548233, umbral de 700 clics/7 días); coste desde las plataformas e ingresos desde Sealmetrics según las docs de prompts de Google Ads y Meta (Sealmetrics no importa inversión); ejemplo numérico marcado como ilustrativo; límites del último clic y test de incrementalidad. Prompt 15 en §9b |
 | 3 | Meta Ads conversions vs CRM | Pendiente |
 | 4 | Consent Mode: qué es medido y qué es modelado | Pendiente |
 | 5 | Last-click vs modelado | Pendiente |
