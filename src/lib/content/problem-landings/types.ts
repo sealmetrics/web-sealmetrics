@@ -73,10 +73,12 @@ export type ProblemLandingContent = {
 
   proof: {
     tag: string;
-    quote: string;
-    cite: string;
-    citePerson: string;
-    citeRole: string;
+    /**
+     * Optional: only an approved, attributable client quote goes here. A page
+     * with no such quote (compliance has none) shows documents instead — never
+     * a paraphrase dressed as a quote.
+     */
+    quote?: { text: string; cite: string; person: string; role: string };
     body: string;
     figures: { value: string; label: string; client: string; href: string }[];
     readCase: string;

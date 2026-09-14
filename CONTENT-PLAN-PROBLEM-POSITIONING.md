@@ -308,7 +308,7 @@ Aplica las correcciones de §5.3 y todas las apariciones de las mismas incongrue
 | C · Marketing y Finanzas tienen números distintos | `/use-cases/single-source-of-truth` (EN+ES) | **Hecha** — plantilla v4 `ProblemLandingSignal`, contenido en `src/lib/content/problem-landings/` |
 | A · GA4 no refleja la realidad | `/complete-data` (EN+ES) | **Hecha** — portada a `ProblemLandingSignal`, firma visible con fecha de actualización |
 | B · No sé qué campañas funcionan | `/use-cases/revenue-attribution` (EN) + `/es/use-cases/revenue-attribution` (nueva) | **Hecha** — `ProblemLandingSignal`, configuración de UTM a ROAS verificada contra docs |
-| D · Tengo que demostrar cumplimiento | `/gdpr-analytics` | Pendiente |
+| D · Tengo que demostrar cumplimiento | `/gdpr-analytics` (EN+ES) | **Hecha** — `ProblemLandingSignal`, respuestas desde el DPA, tono de #186, sigue siendo el hub por país |
 | Entrada "Por problema" en navegación, `/product` y `/use-cases` | — | Pendiente (cuando existan las cuatro) |
 
 La plantilla fija el orden de toda landing de problema: dolor → respuesta rápida → por qué ocurre (tabla) → coste → método (`HowTo`) → roles → prueba con casos → límites → FAQ visible (`FAQPage`) → CTA.

@@ -150,10 +150,12 @@ export const completeDataEn: ProblemLandingContent = {
 
   proof: {
     tag: "Measured in practice",
-    quote: "Consent Mode left us with a structural blind spot: we knew there was traffic we were not seeing, but we had no way to size it.",
-    cite: "Rosa Tomàs · B2C Acquisition Manager · Incapto",
-    citePerson: "Rosa Tomàs",
-    citeRole: "B2C Acquisition Manager, Incapto",
+    quote: {
+      text: "Consent Mode left us with a structural blind spot: we knew there was traffic we were not seeing, but we had no way to size it.",
+      cite: "Rosa Tomàs · B2C Acquisition Manager · Incapto",
+      person: "Rosa Tomàs",
+      role: "B2C Acquisition Manager, Incapto",
+    },
     body: "Incapto knew exactly how many orders its Shopify store had taken. What it could not establish was how much of the traffic behind them reached GA4. Running both tools on the same days settled it — and the channels being under-credited were the ones bringing new customers in.",
     figures: [
       { value: "29%", label: "of real visits never reached GA4 over 48 days on Shopify", client: "Incapto", href: "/case-studies/incapto/" },
@@ -337,10 +339,12 @@ export const completeDataEs: ProblemLandingContent = {
 
   proof: {
     tag: "Medido en la práctica",
-    quote: "El Consent Mode nos dejaba un vacío estructural: sabíamos que había tráfico que no estábamos viendo, pero no teníamos forma de dimensionarlo.",
-    cite: "Rosa Tomàs · Acquisition Manager B2C · Incapto",
-    citePerson: "Rosa Tomàs",
-    citeRole: "Acquisition Manager B2C, Incapto",
+    quote: {
+      text: "El Consent Mode nos dejaba un vacío estructural: sabíamos que había tráfico que no estábamos viendo, pero no teníamos forma de dimensionarlo.",
+      cite: "Rosa Tomàs · Acquisition Manager B2C · Incapto",
+      person: "Rosa Tomàs",
+      role: "Acquisition Manager B2C, Incapto",
+    },
     body: "Incapto sabía exactamente cuántos pedidos había hecho su tienda Shopify. Lo que no podía saber era cuánto del tráfico que los generó llegaba a GA4. Medir con las dos herramientas los mismos días lo resolvió, y los canales infravalorados eran justo los que traían clientes nuevos.",
     figures: [
       { value: "29%", label: "de las visitas reales no llegó a GA4 en 48 días sobre Shopify", client: "Incapto", href: "/es/case-studies/incapto/" },

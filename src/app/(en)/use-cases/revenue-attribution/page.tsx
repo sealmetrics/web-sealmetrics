@@ -59,7 +59,7 @@ export default function RevenueAttributionPage() {
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />
       <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
-      <JsonLd data={quotationSchema({ text: content.proof.quote, spokenBy: content.proof.citePerson, spokenByRole: content.proof.citeRole, url: URL })} />
+      {content.proof.quote && <JsonLd data={quotationSchema({ text: content.proof.quote.text, spokenBy: content.proof.quote.person, spokenByRole: content.proof.quote.role, url: URL })} />}
       <ProblemLandingSignal content={content} />
     </>
   );

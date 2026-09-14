@@ -120,7 +120,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /growth — Practical systems for digital teams: measurement, attribution, privacy, and revenue decisions that growth teams can defend
 
 ## Compliance by country (DPO-ready pages)
-- /gdpr-analytics — Hub: why ePrivacy transposition makes the consent question national, and which regulators published auditable criteria. Also in Spanish at /es/gdpr-analytics
+- /gdpr-analytics — Problem landing "I have to demonstrate compliance": the five questions a DPO review asks and how Sealmetrics answers each from the DPA (device storage, personal data, location and sub-processors, retention, whose criteria); a five-step review checklist; hub for the CNIL, DSK, AEPD and UK PECR analyses; limits (not legal advice, no certification, attribution is a separate purpose). Consent exemption always depends on configuration and national authority
 - /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
 - /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
@@ -339,7 +339,7 @@ About / extras (ES):
 - /es/authors/rafa-jimenez — Autor: Rafa Jiménez
 
 Compliance by country (ES):
-- /es/gdpr-analytics — Hub en castellano: por qué la transposición de ePrivacy hace nacional la pregunta del consentimiento, y qué reguladores publicaron criterios auditables. Francia y Alemania siguen solo en inglés
+- /es/gdpr-analytics — Landing «tengo que demostrar cumplimiento»: las cinco preguntas de una revisión del DPO respondidas desde el DPA, una lista de revisión en cinco pasos y el acceso a los análisis de AEPD (en castellano), CNIL, DSK y PECR (en inglés); sin certificaciones declaradas y sin exención automática
 - /es/use-cases/revenue-attribution — Atribución de ingresos sin cookies: qué canal, campaña y creatividad vendieron en cada sesión, por qué no coinciden Meta, Google Ads, GA4 y el CRM, configuración en cinco pasos hasta el ROAS y lo que no mide
 - /es/use-cases/single-source-of-truth — Fuente única de verdad para marketing y finanzas: por qué plataformas de anuncios, GA4, el sistema de pedidos y la contabilidad dan cifras distintas, un método en cinco pasos para conciliarlas con los pedidos reales y lo que no resuelve
 - /es/gdpr-analytics/spain — Analítica y RGPD en España: guía de cookies de la AEPD de 2024, art. 22.2 de la LSSI-CE, las cuatro condiciones de la excepción, postura para sector público y qué cambiaría el Digital Omnibus

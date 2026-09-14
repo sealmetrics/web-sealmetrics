@@ -115,10 +115,12 @@ export function ProblemLandingSignal({ content: t }: { content: ProblemLandingCo
       <section className="sig-problem-proof">
         <div>
           <p className="sig-problem-tag sig-problem-tag-light">{t.proof.tag}</p>
-          <blockquote>
-            <p>&ldquo;{t.proof.quote}&rdquo;</p>
-            <cite>{t.proof.cite}</cite>
-          </blockquote>
+          {t.proof.quote && (
+            <blockquote>
+              <p>&ldquo;{t.proof.quote.text}&rdquo;</p>
+              <cite>{t.proof.quote.cite}</cite>
+            </blockquote>
+          )}
           <p className="sig-problem-proof-body">{t.proof.body}</p>
         </div>
         <div className="sig-problem-figures">

@@ -973,12 +973,12 @@
     },
     "public/og/gdpr-analytics.avif": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
+      "sourceHash": "5342af68950a325243faa6119b2f54b8532a33c9127e2b91371751bbf2a27a38",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics.webp": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
+      "sourceHash": "5342af68950a325243faa6119b2f54b8532a33c9127e2b91371751bbf2a27a38",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics/france.avif": {

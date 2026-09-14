@@ -143,10 +143,12 @@ export const singleSourceOfTruthEn: ProblemLandingContent = {
 
   proof: {
     tag: "Measured in practice",
-    quote: "Today every player is happy. The data is neutral, there's no black box, and everyone has accepted these numbers as the reference.",
-    cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
-    citePerson: "Toni Andújar",
-    citeRole: "Digital & Direct Sales Director, Palladium Hotel Group",
+    quote: {
+      text: "Today every player is happy. The data is neutral, there's no black box, and everyone has accepted these numbers as the reference.",
+      cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group",
+      person: "Toni Andújar",
+      role: "Digital & Direct Sales Director, Palladium Hotel Group",
+    },
     body: "Palladium Hotel Group moved the final discussion with its brand, departments and agencies onto one neutral measurement layer. Agencies still optimise their platforms; the decisions are checked in one place.",
     figures: [
       { value: "+165%", label: "Display Cost-per-Search after rebalancing on the neutral model", client: "Palladium Hotel Group", href: "/case-studies/palladium-hotel-group/" },
@@ -320,10 +322,12 @@ export const singleSourceOfTruthEs: ProblemLandingContent = {
 
   proof: {
     tag: "Medido en la práctica",
-    quote: "Hoy todos los players están contentos. Los datos son neutrales, no hay caja negra y todos han aceptado estos valores como la referencia.",
-    cite: "Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group",
-    citePerson: "Toni Andújar",
-    citeRole: "Director Digital y Venta Directa, Palladium Hotel Group",
+    quote: {
+      text: "Hoy todos los players están contentos. Los datos son neutrales, no hay caja negra y todos han aceptado estos valores como la referencia.",
+      cite: "Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group",
+      person: "Toni Andújar",
+      role: "Director Digital y Venta Directa, Palladium Hotel Group",
+    },
     body: "Palladium Hotel Group llevó la discusión final con su marca, departamentos y agencias a una única capa neutral de medición. Las agencias siguen optimizando sus plataformas; las decisiones se contrastan en un solo sitio.",
     figures: [
       { value: "+165%", label: "Coste por Búsqueda en Display tras reequilibrar sobre el modelo neutral", client: "Palladium Hotel Group", href: "/es/case-studies/palladium-hotel-group/" },

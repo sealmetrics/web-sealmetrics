@@ -159,10 +159,12 @@ export const revenueAttributionEn: ProblemLandingContent = {
 
   proof: {
     tag: "Measured in practice",
-    quote: "The value is in optimising budget and investment. You shift toward a channel or strategy you were not seeing before.",
-    cite: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
-    citePerson: "Eduardo Martin",
-    citeRole: "Analytics & Campaigns, Dreamplace Hotels",
+    quote: {
+      text: "The value is in optimising budget and investment. You shift toward a channel or strategy you were not seeing before.",
+      cite: "Eduardo Martin · Analytics & Campaigns · Dreamplace Hotels",
+      person: "Eduardo Martin",
+      role: "Analytics & Campaigns, Dreamplace Hotels",
+    },
     body: "Dreamplace Hotels runs Sealmetrics as an independent layer, compares attributed sales with its CRM total and uses the remaining gap as a quality signal. The difference is not a data-quality curiosity: it changes where the paid-media budget goes.",
     figures: [
       { value: "15–20%", label: "more sales attributed than with the previous tool, reconciled against the CRM", client: "Dreamplace Hotels", href: "/case-studies/dreamplace-hotels/" },
@@ -343,10 +345,12 @@ export const revenueAttributionEs: ProblemLandingContent = {
 
   proof: {
     tag: "Medido en la práctica",
-    quote: "El valor está en optimizar presupuesto e inversión. Derivas hacia un canal o estrategia que antes no estabas viendo.",
-    cite: "Eduardo Martin · Analítica y Campañas · Dreamplace Hotels",
-    citePerson: "Eduardo Martin",
-    citeRole: "Analítica y Campañas, Dreamplace Hotels",
+    quote: {
+      text: "El valor está en optimizar presupuesto e inversión. Derivas hacia un canal o estrategia que antes no estabas viendo.",
+      cite: "Eduardo Martin · Analítica y Campañas · Dreamplace Hotels",
+      person: "Eduardo Martin",
+      role: "Analítica y Campañas, Dreamplace Hotels",
+    },
     body: "Dreamplace Hotels ejecuta Sealmetrics como capa independiente, compara la venta atribuida con el total de su CRM y usa la diferencia que queda como señal de calidad. Esa diferencia no es una curiosidad de calidad del dato: cambia adónde va el presupuesto de paid media.",
     figures: [
       { value: "15–20%", label: "más ventas atribuidas que con la herramienta anterior, conciliadas con el CRM", client: "Dreamplace Hotels", href: "/es/case-studies/dreamplace-hotels/" },
