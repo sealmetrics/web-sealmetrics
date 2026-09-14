@@ -8,9 +8,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
   const t = locale === "es"
     ? {
         eyebrow: "vs Google Analytics 4",
-        h1Pre: "GA4 te enseña el ",
-        h1Em: "40%",
-        h1Post: " de tu tráfico. Sealmetrics te enseña el 100%.",
+        h1Pre: "GA4 pierde hasta el ",
+        h1Em: "60%",
+        h1Post: " de tus visitas UE por el consentimiento. Sealmetrics no lo necesita.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
         ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
@@ -18,9 +18,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
       }
     : {
         eyebrow: "vs Google Analytics 4",
-        h1Pre: "GA4 shows you ",
-        h1Em: "40%",
-        h1Post: " of your traffic. Sealmetrics shows 100%.",
+        h1Pre: "GA4 loses up to ",
+        h1Em: "60%",
+        h1Post: " of your EU visitors to consent. Sealmetrics doesn't need it.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
         ctaA: "Start 14-day trial",
         ctaB: "Book a demo",
@@ -143,7 +143,7 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
           {
             scenario: "Tráfico orgánico",
             ga: "Muestreado y filtrado por cookie. Las sesiones donde se rechazó el consent desaparecen del canal orgánico.",
-            seal: "100% observado, server-side, independiente del consent.",
+            seal: "Observado server-side, independiente del consent.",
             con: "Los canales orgánicos suelen ser 2–4× mayores que lo que reporta GA4. La inversión SEO que estás a punto de recortar puede ser tu mejor canal.",
           },
           {
@@ -184,7 +184,7 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
           {
             scenario: "Organic search traffic",
             ga: "Sampled and cookie-filtered. Sessions where consent was rejected are missing from the organic channel entirely.",
-            seal: "100% observed, server-side, consent-independent.",
+            seal: "Observed server-side, consent-independent.",
             con: "Organic channels are typically 2–4× bigger than GA4 reports. The SEO investment you're about to cut may be your best-performing channel.",
           },
           {
@@ -284,7 +284,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Data capture",
       block: "technical",
       rows: [
-        { feature: "Consent required", ga4: "Yes · 40–60% reject", seal: "No · 100% captured" },
+        { feature: "Consent required", ga4: "Yes · 40–60% reject", seal: "No · no consent loss" },
         { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "No · first-party" },
         { feature: "Cookies on visitor device", ga4: "Required", seal: "None" },
         { feature: "Sampling at scale", ga4: "Yes · above threshold", seal: "Never · full resolution" },
@@ -326,7 +326,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
         { feature: "Meta / TikTok Ads", ga4: "Via external sync", seal: "Native + BigQuery" },
         { feature: "BigQuery export", ga4: "Yes · daily export cap on the free tier", seal: "Yes · full resolution" },
         { feature: "MCP / AI agents", ga4: "Official server · experimental, read-only", seal: "Native · managed · read and act" },
-        { feature: "What the agent can read", ga4: "Post-consent subset, modelled where consent is missing", seal: "100% of events" },
+        { feature: "What the agent can read", ga4: "Post-consent subset, modelled where consent is missing", seal: "Every recorded event, no consent gap" },
       ],
     },
     {
@@ -363,7 +363,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Captura de datos",
       block: "technical",
       rows: [
-        { feature: "Consentimiento requerido", ga4: "Sí · 40–60% rechaza", seal: "No · 100% capturado" },
+        { feature: "Consentimiento requerido", ga4: "Sí · 40–60% rechaza", seal: "No · sin pérdida por consent" },
         { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "No · first-party" },
         { feature: "Cookies en el dispositivo", ga4: "Obligatorias", seal: "Ninguna" },
         { feature: "Muestreo a escala", ga4: "Sí · sobre cierto umbral", seal: "Nunca · resolución completa" },
@@ -405,7 +405,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
         { feature: "Meta / TikTok Ads", ga4: "Vía sync externo", seal: "Nativo + BigQuery" },
         { feature: "Export BigQuery", ga4: "Sí · tope diario de export en el tier gratuito", seal: "Sí · resolución completa" },
         { feature: "MCP / agentes IA", ga4: "Servidor oficial · experimental, solo lectura", seal: "Nativo · gestionado · lee y actúa" },
-        { feature: "Qué puede leer el agente", ga4: "Subconjunto post-consentimiento, modelado donde falta consentimiento", seal: "100% de los eventos" },
+        { feature: "Qué puede leer el agente", ga4: "Subconjunto post-consentimiento, modelado donde falta consentimiento", seal: "Todos los eventos registrados, sin hueco de consent" },
       ],
     },
     {
