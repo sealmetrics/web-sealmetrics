@@ -16,11 +16,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Sealmetrics — Consentless analytics for eCommerce",
   description:
-    "Consentless analytics for eCommerce. Measure 100% of your traffic — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
+    "Consentless analytics for eCommerce. Measure traffic without consent gaps — no cookies, no models. Recover the sales GA4 can't see. EU-hosted in Dublin.",
   openGraph: {
     title: "Sealmetrics — Consentless analytics for eCommerce",
     description:
-      "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
+      "Measure traffic without consent gaps. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     type: "website",
     images: [ogImage("/")],
     url: "https://sealmetrics.com/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics — Consentless analytics for eCommerce",
-    description: "Measure 100% of your traffic. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
+    description: "Measure traffic without consent gaps. No cookies. No models. Present board-ready numbers that match Shopify. EU-hosted in Dublin.",
     images: [ogImage("/")],
   },
   alternates: {

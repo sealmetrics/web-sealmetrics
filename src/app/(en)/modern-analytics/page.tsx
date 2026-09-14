@@ -14,7 +14,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
   description:
-    "Modern web analytics vs legacy cookie tools: 100% capture, no sampling, channel-agnostic, GDPR by design and ready for AI agents via MCP.",
+    "Modern web analytics vs legacy cookie tools: no consent-driven data loss, no sampling, designed for GDPR (self-assessed), AI-agent ready via MCP.",
   openGraph: {
     title: "Modern Web Analytics — Clean, Unmodeled, AI-Agent Ready",
     description:
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What does \"modern analytics\" mean exactly?",
-    a: "Modern analytics is the next generation of web measurement: cookieless by architecture, capturing 100% of events server-side without consent banners, never sampling, never modeling missing data, and exposing clean event-level data to humans and AI agents through standards like MCP. Sealmetrics is the production-grade implementation of that approach.",
+    a: "Modern analytics is the next generation of web measurement: cookieless by architecture, capturing events server-side without consent banners or consent-driven loss, never sampling, never modeling missing data, and exposing clean event-level data to humans and AI agents through standards like MCP. Sealmetrics is the production-grade implementation of that approach.",
   },
   {
     q: "How is this different from cookieless tools like Plausible or Fathom?",
@@ -82,7 +82,7 @@ const faqs = [
 
 const pillars = [
   {
-    eyebrow: "100% capture",
+    eyebrow: "No consent loss",
     title: "Clean data",
     body: "Every visitor, every event. No consent banner gating measurement, no ad-blocker erasure, no JavaScript blockers wiping traffic. First-party server-side counting captures the truth.",
     metric: "+40-60%",
@@ -106,8 +106,8 @@ const pillars = [
     eyebrow: "No sampling",
     title: "Full resolution",
     body: "Every event lands in ClickHouse. No card-2 sampling, no \"high cardinality\" thresholds. Query the long tail of SKUs, terms, countries, micro-conversions without truncation.",
-    metric: "100%",
-    metricLabel: "of events queryable",
+    metric: "0%",
+    metricLabel: "of queries sampled",
   },
   {
     eyebrow: "AI native",
@@ -128,7 +128,7 @@ const pillars = [
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
   { feature: "Cookies / fingerprinting", legacy: "Required", modern: "None" },
   { feature: "Consent banner needed", legacy: "Yes", modern: "No" },
-  { feature: "EU traffic captured", legacy: "40-60%", modern: "100%" },
+  { feature: "EU traffic captured", legacy: "40-60%", modern: "No consent loss" },
   { feature: "Sampling on heavy queries", legacy: "Yes (Card-2 / data thresholds)", modern: "No" },
   { feature: "Modeled / synthetic data", legacy: "Yes, undisclosed share", modern: "Never" },
   { feature: "Attribution model", legacy: "Data-driven (black box)", modern: "Last-click on raw events" },
@@ -218,7 +218,7 @@ export default function ModernAnalyticsPage() {
       <TldrBlock
         answer={
           <>
-            Modern web analytics captures <strong>100% of traffic</strong> without cookies, never
+            Modern web analytics measures <strong>traffic without consent gaps</strong> or cookies, never
             samples, never models, and exposes clean event-level data to AI agents via the{" "}
             <strong>Model Context Protocol</strong>. Sealmetrics is that platform — production-grade,
             EU-hosted, and ready for the post-cookie, AI-first era.
@@ -226,7 +226,7 @@ export default function ModernAnalyticsPage() {
         }
         bullets={[
           <>Legacy cookie-based analytics: 40-60% EU traffic loss, modeled gaps, US-hosted.</>,
-          <>Modern analytics: 100% capture, last-click on raw data, EU-hosted, AI-agent ready.</>,
+          <>Modern analytics: no consent-driven data loss, last-click on raw data, EU-hosted, AI-agent ready.</>,
           <>No migration. Run both for 30 days. Decide on your own numbers.</>,
         ]}
       />

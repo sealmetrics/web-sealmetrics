@@ -72,7 +72,7 @@ export default function SearchmetricsVsSealmetricsPage() {
             under its original name. Sealmetrics is a cookieless web analytics
             platform for eCommerce, founded in 2024 and hosted in Dublin, Ireland.
             It measures what visitors do on a site and attributes revenue using
-            last-click on 100% of traffic. It does not measure keyword rankings,
+            last-click on traffic without consent gaps. It does not measure keyword rankings,
             search visibility, or competitor SEO. If you are looking for
             Searchmetrics pricing or a replacement for its SEO tooling, Conductor
             is where that product went. If you arrived here because the two names
@@ -194,7 +194,7 @@ export default function SearchmetricsVsSealmetricsPage() {
               The consequence is coverage. A consent-dependent tool reports only
               the share of traffic that accepted the banner; in European eCommerce
               that is frequently a minority of real visits. Sealmetrics records
-              100% of traffic and 100% of revenue events, then attributes revenue
+              traffic and revenue events without depending on consent, then attributes revenue
               with{" "}
               <Link
                 href="/glossary/last-click-attribution"

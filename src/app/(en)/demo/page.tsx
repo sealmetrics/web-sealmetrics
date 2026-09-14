@@ -22,7 +22,7 @@ const DEMO_PROOF = [
 export const metadata: Metadata = {
   title: "Book a Demo — Sealmetrics",
   description:
-    "30-minute personalized walkthrough. See what 100% of your traffic looks like on your own site.",
+    "30-minute personalized walkthrough. See your traffic without consent gaps, on your own site.",
   openGraph: {
     title: "Book a Demo — Sealmetrics",
     description: "30-minute walkthrough with the founder. See your own data gap live.",

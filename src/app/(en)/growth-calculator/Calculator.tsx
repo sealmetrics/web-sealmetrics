@@ -592,7 +592,7 @@ export function Calculator() {
                 </div>
 
                 <p className="text-[0.8rem] text-text-secondary mt-5 leading-relaxed">
-                  With complete data, 100% of your sales would be attributable
+                  With data free of consent gaps, sales hidden by rejection become attributable
                   — revealing exactly which channels to scale.
                 </p>
               </div>
@@ -643,7 +643,7 @@ export function Calculator() {
                       </span>
                       <span className="font-mono text-green-muted font-medium">
                         {formatNumber(visitors)}
-                        <span className="ml-1.5">(100%)</span>
+                        <span className="ml-1.5">(no consent loss)</span>
                       </span>
                     </div>
                     <div className="h-6 bg-warm-100 rounded-[2px] overflow-hidden">
@@ -694,7 +694,7 @@ export function Calculator() {
                     <div className="w-1 bg-green-muted/40 rounded-full flex-shrink-0" />
                     <div>
                       <p className="text-[0.85rem] text-text-primary font-medium">
-                        Budget allocation could use 100% accurate data
+                        Budget allocation could use data without consent gaps
                       </p>
                       <p className="text-[0.8rem] text-text-secondary mt-0.5">
                         Only {formatNumber(correctlyAttributed)} of your{" "}

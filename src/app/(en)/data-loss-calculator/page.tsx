@@ -88,7 +88,7 @@ export default function Page() {
               concrete.
             </p>
             <p>
-              <Link href="/product">Sealmetrics</Link> measures 100% of the same traffic with a
+              <Link href="/product">Sealmetrics</Link> measures the same traffic with a
               lightweight first-party server-side pixel — no cookies, no consent dependency, no
               sampling — so revenue in the report matches Shopify. Enter your monthly visitors and
               revenue above to see the exact amount your current setup hides each month.

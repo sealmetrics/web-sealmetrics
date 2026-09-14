@@ -349,7 +349,7 @@ export default function GdprAnalyticsFrancePage() {
             </div>
 
             <div>
-              <h3 className="text-[17px] font-semibold text-ink mb-2">100% of French traffic measured</h3>
+              <h3 className="text-[17px] font-semibold text-ink mb-2">French traffic measured without consent loss</h3>
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
                 French rejection rates against standard banners run
                 50–60%. With no banner gate, every visitor is counted on

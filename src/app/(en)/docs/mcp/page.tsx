@@ -227,7 +227,7 @@ export default function McpDocsPage() {
               question to a canonical metric, so the model calls a documented contract instead of
               guessing at raw columns. Attribution is{" "}
               <Link href="/glossary/last-click-attribution">last non-direct click</Link>, measured on
-              100% of traffic rather than the consented fraction.
+              traffic without consent gaps rather than the consented fraction.
             </p>
             <ul className="mt-7 space-y-3 text-[16px] leading-[1.65] text-ink-2 list-none p-0">
               {canDo.map((line) => (
