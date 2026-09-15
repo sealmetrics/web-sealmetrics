@@ -380,6 +380,39 @@ Notas para la doc (otro repositorio): el catálogo `web-analytics-prompts` inclu
 
 ---
 
+## 14. Medición del reposicionamiento
+
+Todo lo de las fases 2 a 7 llegó a producción el 15 sep 2026 (merges de #236 a #252). La medición se hace por grupos con la misma fecha de salida, así que la revisión a 8 semanas es común: **10 nov 2026**.
+
+### 14.1 Línea base de Search Console (pendiente de exportar)
+
+No hay acceso a Search Console desde las sesiones de trabajo, así que la línea base se exporta a mano. Periodo: **18 ago–14 sep 2026** (los 28 días anteriores a la salida). Para cada URL de la tabla, en *Rendimiento → Páginas* filtrando por la URL: clics, impresiones, CTR y posición media, más las 5 consultas con más impresiones. Guardar el CSV en `.seo-audit/gsc/2026-09-baseline/` y rellenar las columnas.
+
+| Grupo | URL (EN · ES) | Consulta objetivo | Clics | Impr. | Pos. |
+|---|---|---|---:|---:|---:|
+| A | `/complete-data` · `/es/complete-data` | GA4 missing data / GA4 no refleja la realidad | — | — | — |
+| B | `/use-cases/revenue-attribution` · ES | campaign revenue attribution without cookies | — | — | — |
+| C | `/use-cases/single-source-of-truth` · ES | marketing and finance numbers don't match | — | — | — |
+| D | `/gdpr-analytics` · ES | GDPR compliant analytics tools / analítica RGPD | — | — | — |
+| Plataformas | `/platforms/shopify`, `/woocommerce`, `/magento` · ES | cookieless analytics for Shopify / WooCommerce / Magento | — | — | — |
+| Integraciones | `/integrations/bigquery`, `/google-ads`, `/meta-ads` · ES | export analytics to BigQuery without GA4 · Google Ads / Meta Ads revenue without GA4 | — | — | — |
+| Verticales | `/for/hotels`, `/for/agencies`, `/for/multi-brand-retailers`, `/for/ecommerce` · ES | analytics for hotels / agencies / multi-brand retail / eCommerce | — | — | — |
+| Blog (fase 4) | los 7 posts de §9 · ES | prompts 14–20 de §9b | — | — | — |
+| Producto | `/ai-analytics/prompts` · ES | MCP prompts for web analytics | — | — | — |
+
+Las páginas nuevas (Magento, BigQuery, Google Ads, Meta Ads, multimarca, prompts) no tienen línea base: su referencia es 0.
+
+### 14.2 Qué se mira el 10 nov 2026
+
+1. **Search Console**: clics, impresiones y posición de cada fila frente a la línea base, en los 28 días anteriores al 10 nov. Una página nueva cuenta como indexada si tiene impresiones.
+2. **Bing Webmaster Tools** (verificado el 15 sep): las mismas URLs. ChatGPT search y Copilot leen el índice de Bing. IndexNow **no está activo** mientras no exista el secreto `INDEXNOW_KEY` y `public/<clave>.txt`.
+3. **Cuota de voz**: la ejecución de geo-probe con 3 repeticiones del 3 oct y la del 3 nov, frente a la de referencia del 15 sep (1 repetición, fuera del log: Perplexity 23,4%, ChatGPT 2,1%, Gemini 2,1%, Claude 1,1%, nivel 1–2 9,8%, 9/27 prompts).
+4. **Negocio**: demos con origen orgánico y registros del plan Agentic en septiembre frente a octubre, desde Sealmetrics en sealmetrics.com (canal Organic Search y referrers de asistentes de IA).
+
+Regla del §4: una consulta que siga a 0 dos meses seguidos genera una acción de contenido en el plan del mes siguiente.
+
+---
+
 ## 11. Integración (15 sep 2026)
 
 Las 24 PRs apiladas (#189–#234) se integran en una sola rama, `claude/positioning-integrated`, sobre `main`, que había avanzado con 11 commits de calidad (#197, #199, #202, #204, #205, #216, #223, #224, #226, #231, #232). Conflictos resueltos una vez (120 bloques en 56 archivos) y barrido del contenido nuevo contra las reglas añadidas a CLAUDE.md el 14 sep: sin afirmaciones de cobertura total ("measured on every visit", "en cada visita", "captura completa" → "sin pérdida por consentimiento"), sin "GDPR by architecture" como hecho, Resend como subencargado fuera de la UE sin dato de visitante. Las PRs apiladas quedan sustituidas por la integrada.

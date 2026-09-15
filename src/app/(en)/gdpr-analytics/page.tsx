@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, faqPageSchema, howToSchema, itemListSchema, speakableWebPageSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, itemListSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { gdprAnalyticsEn as content } from "@/lib/content/problem-landings/gdpr-analytics";
+import { GDPR_ANALYTICS_MODIFIED, GDPR_ANALYTICS_PUBLISHED, gdprAnalyticsEn as content } from "@/lib/content/problem-landings/gdpr-analytics";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
@@ -52,6 +52,17 @@ export default function GdprAnalyticsHub() {
           description: "Analyses of how Sealmetrics is built against the published criteria of the CNIL, the DSK, the AEPD and the UK ICO.",
           url: URL,
           items: content.roles.items.map((item) => ({ name: item.link.label, url: `https://sealmetrics.com${item.link.href}` })),
+        })}
+      />
+      <JsonLd
+        data={articleSchema({
+          headline: TITLE,
+          description: DESCRIPTION,
+          datePublished: GDPR_ANALYTICS_PUBLISHED,
+          dateModified: GDPR_ANALYTICS_MODIFIED,
+          url: URL,
+          category: "Compliance",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />

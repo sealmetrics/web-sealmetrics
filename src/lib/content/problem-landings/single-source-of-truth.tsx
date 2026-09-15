@@ -19,6 +19,8 @@ import type { ProblemLandingContent } from "./types";
 
 const ROUTE = "/use-cases/single-source-of-truth";
 
+export const SSOT_PUBLISHED = "2026-09-14";
+
 const link = "sig-problem-inline";
 
 export const singleSourceOfTruthEn: ProblemLandingContent = {
@@ -35,6 +37,14 @@ export const singleSourceOfTruthEn: ProblemLandingContent = {
   heroPrimary: { label: "See the reconciliation method", href: "#method" },
   heroSecondary: { label: "Read the Palladium case", href: "/case-studies/palladium-hotel-group/" },
   heroMicro: "Checked against real orders · last click per session · no cookies · EU-hosted in Dublin",
+  byline: {
+    byLabel: "By",
+    authorName: "Rafa Jiménez",
+    authorHref: "/authors/rafa-jimenez/",
+    updatedLabel: "Published",
+    date: SSOT_PUBLISHED,
+    dateDisplay: "14 September 2026",
+  },
   module: {
     title: "Same week · four sources",
     status: "Four definitions",
@@ -213,6 +223,14 @@ export const singleSourceOfTruthEs: ProblemLandingContent = {
   heroPrimary: { label: "Ver el método de conciliación", href: "#method" },
   heroSecondary: { label: "Leer el caso Palladium", href: "/es/case-studies/palladium-hotel-group/" },
   heroMicro: "Contrastado con pedidos reales · último clic por sesión · sin cookies · alojado en Dublín",
+  byline: {
+    byLabel: "Por",
+    authorName: "Rafa Jiménez",
+    authorHref: "/es/authors/rafa-jimenez/",
+    updatedLabel: "Publicado",
+    date: SSOT_PUBLISHED,
+    dateDisplay: "14 de septiembre de 2026",
+  },
   module: {
     title: "Misma semana · cuatro fuentes",
     status: "Cuatro definiciones",
