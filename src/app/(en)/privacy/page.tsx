@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> September
-            14, 2026 ·{" "}
+            15, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -89,6 +89,24 @@ export default function PrivacyPage() {
             <p className="mt-3">
               We do not use cookies, tracking pixels, or third-party analytics
               tools on sealmetrics.com.
+            </p>
+            <p className="mt-3">
+              The same first-party Sealmetrics script also runs on the sign-up
+              flow of the platform at{" "}
+              <span className="text-text-primary font-medium">
+                my.sealmetrics.com
+              </span>{" "}
+              (account creation, plan selection, email verification and
+              organisation set-up) and nowhere else on the platform: once you
+              are signed in, nothing is measured. In that flow it records the
+              pages viewed and the steps completed (account created, plan
+              chosen, trial started, email verified), with the chosen plan and
+              billing interval as the only attributes. No email, name, company
+              or user or organisation identifier is ever sent to it. It works
+              exactly as described in section 3: no cookies, no local storage,
+              and an ephemeral session identifier that is not kept across
+              sessions. This is our own audience measurement, so it requires no
+              consent (see section 4).
             </p>
             <p className="mt-3">
               Signing in to the platform at{" "}
@@ -207,7 +225,11 @@ export default function PrivacyPage() {
             <p>
               For sealmetrics.com form submissions: consent (Article 6(1)(a)
               GDPR) and legitimate interest in responding to inquiries (Article
-              6(1)(f)). For analytics data on Client websites: legitimate
+              6(1)(f)). For our own analytics script on sealmetrics.com and on
+              the my.sealmetrics.com sign-up flow: our legitimate interest in
+              measuring the audience of our own site and the effectiveness of
+              our marketing (Article 6(1)(f)), as no personal data is processed.
+              For analytics data on Client websites: legitimate
               interest of the Client in understanding website usage (Article
               6(1)(f)), as no personal data is processed.
             </p>

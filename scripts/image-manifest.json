@@ -103,12 +103,12 @@
     },
     "public/og-image.avif": {
       "source": "public/og-image.png",
-      "sourceHash": "a2dd7df84bd29b324e206a3acf68356325cf6bde8f88c77360445d684874c7c4",
+      "sourceHash": "1035c30836d98a4556176feddc619111240ad4e00318946b3311330035e5d002",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og-image.webp": {
       "source": "public/og-image.png",
-      "sourceHash": "a2dd7df84bd29b324e206a3acf68356325cf6bde8f88c77360445d684874c7c4",
+      "sourceHash": "1035c30836d98a4556176feddc619111240ad4e00318946b3311330035e5d002",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/about.avif": {
@@ -773,12 +773,12 @@
     },
     "public/og/complete-data.avif": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
+      "sourceHash": "fe487b19c37b6d8d4322125ddaf0a688594e62a469a04f4c5dc96099269688a6",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/complete-data.webp": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "32ac168f62c62bd006864658f10a5fa8038cc93bac797f2ea9b61f5c93491e27",
+      "sourceHash": "fe487b19c37b6d8d4322125ddaf0a688594e62a469a04f4c5dc96099269688a6",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/consentless-analytics.avif": {
@@ -883,12 +883,12 @@
     },
     "public/og/for/dpo.avif": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "4812f2ad5143227dca89813d644034c9784e8321ae9f6c94cf4dfcde3bc44d98",
+      "sourceHash": "0b444309857a29d52fe9ff6445cb053c4ce19d0bf70a5efdf12e97e3ab673150",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/dpo.webp": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "4812f2ad5143227dca89813d644034c9784e8321ae9f6c94cf4dfcde3bc44d98",
+      "sourceHash": "0b444309857a29d52fe9ff6445cb053c4ce19d0bf70a5efdf12e97e3ab673150",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/ecommerce.avif": {
@@ -1353,12 +1353,12 @@
     },
     "public/og/open/gdpr-by-architecture.avif": {
       "source": "public/og/open/gdpr-by-architecture.png",
-      "sourceHash": "e20362816366a2e8f474e757f30a1a5f0fe0604e358540b342c17f40ee13d704",
+      "sourceHash": "cded3741f6fa97e8a311cda6a6caa7a022ffe5243d6586073c1542d3c3983280",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/open/gdpr-by-architecture.webp": {
       "source": "public/og/open/gdpr-by-architecture.png",
-      "sourceHash": "e20362816366a2e8f474e757f30a1a5f0fe0604e358540b342c17f40ee13d704",
+      "sourceHash": "cded3741f6fa97e8a311cda6a6caa7a022ffe5243d6586073c1542d3c3983280",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/open/glossary.avif": {
@@ -1483,12 +1483,12 @@
     },
     "public/og/product.avif": {
       "source": "public/og/product.png",
-      "sourceHash": "c53f6ad64ee212229d40cb3da88f34f646e4c9ab30c94768306366589d4517b9",
+      "sourceHash": "9f94ce826d6bda0818592ae39ad3bf858e23d6a04a690a53356e36622270a9b5",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/product.webp": {
       "source": "public/og/product.png",
-      "sourceHash": "c53f6ad64ee212229d40cb3da88f34f646e4c9ab30c94768306366589d4517b9",
+      "sourceHash": "9f94ce826d6bda0818592ae39ad3bf858e23d6a04a690a53356e36622270a9b5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/reg-gap-analysis.avif": {
@@ -1513,12 +1513,12 @@
     },
     "public/og/security.avif": {
       "source": "public/og/security.png",
-      "sourceHash": "87d7032f9a876eeb5c9e955360b57a71192a08de483e0946a214df08fb590afa",
+      "sourceHash": "4f965185b94891d064169d634e808713d67711a2432fba3e743fa368f474c0e4",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/security.webp": {
       "source": "public/og/security.png",
-      "sourceHash": "87d7032f9a876eeb5c9e955360b57a71192a08de483e0946a214df08fb590afa",
+      "sourceHash": "4f965185b94891d064169d634e808713d67711a2432fba3e743fa368f474c0e4",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/sla.avif": {
@@ -1553,12 +1553,12 @@
     },
     "public/og/use-cases.avif": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "42ec5517d0130091c2dc72764cf7a457b98fc035d0f8a3f9868e39f6adfb1cc0",
+      "sourceHash": "6356e1a817e656362c2389933c799b3dbbd0dde74fa2256606e8765eaf74c65b",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases.webp": {
       "source": "public/og/use-cases.png",
-      "sourceHash": "42ec5517d0130091c2dc72764cf7a457b98fc035d0f8a3f9868e39f6adfb1cc0",
+      "sourceHash": "6356e1a817e656362c2389933c799b3dbbd0dde74fa2256606e8765eaf74c65b",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/use-cases/conversion-tracking.avif": {
@@ -1653,22 +1653,22 @@
     },
     "public/og/vs/piwik-pro.avif": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "9f1e9e9d8a459e94e7b4aa8f4d7e746e48606dee750780a9036b541c0221b46f",
+      "sourceHash": "0dd0356bf2e0adaaf7175a4b9419917e31dfcc2ad5536eac2b6cc2f4dd53dd21",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/vs/piwik-pro.webp": {
       "source": "public/og/vs/piwik-pro.png",
-      "sourceHash": "9f1e9e9d8a459e94e7b4aa8f4d7e746e48606dee750780a9036b541c0221b46f",
+      "sourceHash": "0dd0356bf2e0adaaf7175a4b9419917e31dfcc2ad5536eac2b6cc2f4dd53dd21",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/why-sealmetrics.avif": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "7a53d8de842174ade7f335693e1d5d789491d289a10e2979e69175714c34a9b3",
+      "sourceHash": "19c51c2d78e8899eb47cbfd38ca2bd9f14f6068aa0028aead72688add51b50fc",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/why-sealmetrics.webp": {
       "source": "public/og/why-sealmetrics.png",
-      "sourceHash": "7a53d8de842174ade7f335693e1d5d789491d289a10e2979e69175714c34a9b3",
+      "sourceHash": "19c51c2d78e8899eb47cbfd38ca2bd9f14f6068aa0028aead72688add51b50fc",
       "signature": "webp:{\"quality\":78}"
     },
     "public/videos/getting-started.avif": {
