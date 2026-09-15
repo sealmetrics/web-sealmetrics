@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "What about my BigQuery export from GA4?",
-    a: "Keep it for historical reference. Sealmetrics ships native BigQuery export at full resolution (no sampling thresholds) from the Growth plan up. Most teams add the Sealmetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the Sealmetrics dataset as the source of truth going forward.",
+    a: "Keep it for historical reference. Sealmetrics ships native BigQuery export at full resolution (no sampling thresholds) on every plan, the free Agentic tier included. Most teams add the Sealmetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the Sealmetrics dataset as the source of truth going forward.",
   },
   {
     q: "How does the EU consent banner change?",

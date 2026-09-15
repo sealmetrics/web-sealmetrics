@@ -5,7 +5,9 @@ import type { ProblemLandingContent } from "./types";
  * /integrations/bigquery — Phase 5 of CONTENT-PLAN-PROBLEM-POSITIONING.md (new page).
  *
  * Connector facts come from docs.sealmetrics.com/platform/settings/integrations/bigquery
- * (checked 14 Sep 2026): included in Growth, Scale and Enterprise; GCP service
+ * (checked 14 Sep 2026); plan availability confirmed by the founder on 15 Sep 2026:
+ * included on every plan, the free Agentic tier included (the docs still say
+ * Growth, Scale or Enterprise and are out of date); GCP service
  * account with BigQuery Data Editor and BigQuery Job User; JSON key uploaded in
  * Site Config → Integrations → BigQuery with the project ID filled from it;
  * dataset name (default `sealmetrics`) created automatically; dataset location
@@ -83,7 +85,7 @@ export const bigqueryEn: ProblemLandingContent = {
     "Exporting GA4 to BigQuery moves the same consent-shaped data into a warehouse, with Consent Mode's modelled users left behind. The Sealmetrics connector writes traffic, conversions and revenue by channel, campaign and creative into your own BigQuery project, hourly or daily, as ready-to-query tables in an EU or US dataset you choose.",
   heroPrimary: { label: "See the setup", href: "#method" },
   heroSecondary: { label: "See the SQL", href: "#examples" },
-  heroMicro: "Growth, Scale and Enterprise · star schema · hourly or daily sync · your data, your retention",
+  heroMicro: "Every plan, free Agentic tier included · star schema · hourly or daily sync · your data, your retention",
   byline: {
     byLabel: "By",
     authorName: "Rafa Jiménez",
@@ -118,8 +120,8 @@ export const bigqueryEn: ProblemLandingContent = {
       country and device. Conversions include revenue and their custom properties
       as JSON. You can backfill history on the first run and later. The tables are
       aggregates without user identifiers, so they answer channel and revenue
-      questions, not user-level ones. The connector is included in the Growth,
-      Scale and Enterprise plans; Google bills storage and queries.
+      questions, not user-level ones. The connector is included on every plan,
+      the free Agentic tier among them; Google bills storage and queries.
     </p>
   ),
 
@@ -255,7 +257,7 @@ export const bigqueryEn: ProblemLandingContent = {
   faqTitle: <>Before you connect<br /><em>your project.</em></>,
   faq: [
     { question: "How do I export Sealmetrics data to BigQuery?", answer: "Create a Google Cloud service account with the BigQuery Data Editor and BigQuery Job User roles and download a JSON key. In Sealmetrics, open Site Config → Integrations → BigQuery, upload the key, choose the dataset name, location, sync frequency and data types, then set up the dataset and run Sync Now." },
-    { question: "Which Sealmetrics plans include the BigQuery connector?", answer: "The connector is included in the Growth, Scale and Enterprise plans at no extra charge from Sealmetrics. Google Cloud bills your project directly for BigQuery storage and queries." },
+    { question: "Which Sealmetrics plans include the BigQuery connector?", answer: "The connector is included on every Sealmetrics plan, from the free Agentic tier to Growth, Scale and Enterprise, at no extra charge from Sealmetrics. Google Cloud bills your project directly for BigQuery storage and queries." },
     { question: "What tables does the export create?", answer: "One table per data type you select: fact_traffic_daily, fact_traffic_hourly, fact_conversions, fact_microconversions, fact_pages, fact_landing_pages and dim_accounts. A dim_countries lookup table and a sync_metadata table are always created. Tables use a star schema, partitioned by date." },
     { question: "Does the export include raw events or user-level data?", answer: "No. The tables are aggregates by date, UTM source, medium, campaign, term and content, channel group, country, device, browser and OS, with no user identifiers. Conversions include their count, amount, revenue, landing page, click ID and custom properties as JSON." },
     { question: "How often does it sync, and can I load past data?", answer: "You choose hourly, daily or manual sync. On the first run you can backfill the last 30, 60 or 90 days, a custom number of days or a date range, and you can run larger historical loads later from the backfill card." },
@@ -286,7 +288,7 @@ export const bigqueryEs: ProblemLandingContent = {
     "Exportar GA4 a BigQuery lleva el mismo dato condicionado por el consentimiento a un data warehouse, sin los usuarios modelados de Consent Mode. El conector de Sealmetrics escribe tráfico, conversiones e ingresos por canal, campaña y creatividad en tu propio proyecto de BigQuery, cada hora o cada día, en tablas listas para consultar dentro de un dataset en la UE o en EE. UU., según elijas.",
   heroPrimary: { label: "Ver la configuración", href: "#method" },
   heroSecondary: { label: "Ver el SQL", href: "#examples" },
-  heroMicro: "Growth, Scale y Enterprise · esquema en estrella · sincronización horaria o diaria · tus datos, tu retención",
+  heroMicro: "Todos los planes, también el Agentic gratuito · esquema en estrella · sincronización horaria o diaria · tus datos, tu retención",
   byline: {
     byLabel: "Por",
     authorName: "Rafa Jiménez",
@@ -322,7 +324,7 @@ export const bigqueryEs: ProblemLandingContent = {
       ingresos y sus propiedades en JSON. Puedes cargar histórico en la primera
       sincronización y después. Son agregados sin identificadores de usuario:
       responden preguntas de canal e ingresos, no de usuario. El conector está
-      incluido en Growth, Scale y Enterprise; Google cobra almacenamiento y consultas.
+      incluido en todos los planes, también en el Agentic gratuito; Google cobra almacenamiento y consultas.
     </p>
   ),
 
@@ -458,7 +460,7 @@ export const bigqueryEs: ProblemLandingContent = {
   faqTitle: <>Antes de conectar<br /><em>tu proyecto.</em></>,
   faq: [
     { question: "¿Cómo exporto los datos de Sealmetrics a BigQuery?", answer: "Crea una cuenta de servicio de Google Cloud con los roles BigQuery Data Editor y BigQuery Job User y descarga una clave JSON. En Sealmetrics, abre Site Config → Integrations → BigQuery, sube la clave, elige el nombre del dataset, la ubicación, la frecuencia y los tipos de datos, crea el dataset y lanza Sync Now." },
-    { question: "¿Qué planes de Sealmetrics incluyen el conector de BigQuery?", answer: "El conector está incluido en los planes Growth, Scale y Enterprise sin coste adicional por parte de Sealmetrics. Google Cloud cobra directamente a tu proyecto el almacenamiento y las consultas de BigQuery." },
+    { question: "¿Qué planes de Sealmetrics incluyen el conector de BigQuery?", answer: "El conector está incluido en todos los planes de Sealmetrics, desde el Agentic gratuito hasta Growth, Scale y Enterprise, sin coste adicional por parte de Sealmetrics. Google Cloud cobra directamente a tu proyecto el almacenamiento y las consultas de BigQuery." },
     { question: "¿Qué tablas crea la exportación?", answer: "Una tabla por cada tipo de datos que selecciones: fact_traffic_daily, fact_traffic_hourly, fact_conversions, fact_microconversions, fact_pages, fact_landing_pages y dim_accounts. Siempre se crean además la tabla de consulta dim_countries y la tabla sync_metadata. Siguen un esquema en estrella, particionado por fecha." },
     { question: "¿La exportación incluye eventos en bruto o datos por usuario?", answer: "No. Las tablas son agregados por fecha, UTM source, medium, campaign, term y content, grupo de canal, país, dispositivo, navegador y sistema operativo, sin identificadores de usuario. Las conversiones incluyen número, importe, ingresos, página de llegada, click ID y propiedades en JSON." },
     { question: "¿Cada cuánto sincroniza y puedo cargar datos pasados?", answer: "Eliges sincronización horaria, diaria o manual. En la primera ejecución puedes cargar los últimos 30, 60 o 90 días, un número de días a medida o un rango de fechas, y más adelante puedes lanzar cargas históricas mayores desde la tarjeta de backfill." },

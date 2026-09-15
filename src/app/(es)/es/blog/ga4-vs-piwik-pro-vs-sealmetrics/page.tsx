@@ -94,7 +94,7 @@ const ROWS: [string, string, string, string][] = [
   ["Atribución", "Basada en datos, último clic en pago y orgánico, último clic en canales de pago de Google", "Varios modelos con cookies de visitante; último clic solo con el hash de sesión", "Solo último clic dentro de la sesión"],
   ["Retención", "2 o 14 meses para exploraciones y embudos; hasta 50 meses en 360", "25 meses en Business; flexible en Enterprise", "24 meses"],
   ["Alojamiento", "Infraestructura de Google", "Nube pública en Alemania, Países Bajos, EE. UU., Suecia, Hong Kong o Emiratos (UAE North); nube privada en Enterprise", "Dublín, Irlanda"],
-  ["Exportación de datos en bruto", "BigQuery: 1M de eventos al día en estándar, hasta 20.000 M en 360", "Acceso por API; revisa las opciones de exportación de tu plan", "Conector de BigQuery en Growth, Scale y Enterprise, cada hora o cada día"],
+  ["Exportación de datos en bruto", "BigQuery: 1M de eventos al día en estándar, hasta 20.000 M en 360", "Acceso por API; revisa las opciones de exportación de tu plan", "Conector de BigQuery en todos los planes, también el gratuito, cada hora o cada día"],
   ["Peso del tracker (gzip, medido el 27 ago 2026)", "~149 KB", "~26,8 KB", "~1,1 KB"],
   ["Servidor MCP para asistentes de IA", "Oficial, experimental y de solo lectura", "En beta, se ejecuta en local, consulta y configura", "Sí"],
 ];

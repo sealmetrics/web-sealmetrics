@@ -577,7 +577,7 @@ export default function CookielessAnalyticsPillar() {
               </h3>
               <p className="text-[15px] leading-[1.7] text-ink-soft">
                 Full-resolution event and conversion counts export to
-                BigQuery from the Growth plan up — no ETL, no sampling.
+                BigQuery on every plan, the free Agentic tier included — no ETL, no sampling.
                 Marketing-mix modelling, finance reconciliation and custom
                 attribution windows live in the warehouse.
               </p>

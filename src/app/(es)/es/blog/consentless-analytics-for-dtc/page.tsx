@@ -206,7 +206,7 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
               <li><strong>Shopify, WooCommerce o Magento con analítica sin consentimiento.</strong> La analítica cuenta eventos antes del banner e independientemente de lo que se elija en él, sin crear nunca un identificador. Los detalles de instalación están en <Link href="/es/platforms/shopify" className={link}>Sealmetrics para Shopify</Link>.</li>
               <li><strong>Píxeles de Meta y Google Ads detrás del banner.</strong> Siguen necesitando consentimiento, porque usan datos personales para personalizar anuncios. Sealmetrics no envía conversiones a las plataformas, así que las pujas siguen funcionando con esos píxeles.</li>
               <li><strong>Plataforma de email o CRM.</strong> Funciona con el alta explícita en la lista; el seguimiento en la web que añada tiene su propio requisito de consentimiento.</li>
-              <li><strong>BigQuery para modelos de marketing mix agregados.</strong> Alimentado con los totales por canal a través del conector de BigQuery, disponible desde el plan Growth.</li>
+              <li><strong>BigQuery para modelos de marketing mix agregados.</strong> Alimentado con los totales por canal a través del conector de BigQuery, incluido en todos los planes, también en el Agentic gratuito.</li>
             </ul>
             <p>
               El efecto neto es que el ROAS agregado por canal se mide sin depender del consentimiento,

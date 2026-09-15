@@ -122,7 +122,7 @@ const ROWS: [string, string, string, string][] = [
   ["Attribution", "Data-driven, paid and organic last click, Google paid channels last click", "Several models with visitor cookies; last click with the session hash only", "Session-scoped last click only"],
   ["Retention", "2 or 14 months for explorations and funnels; up to 50 months on 360", "25 months on Business; flexible on Enterprise", "24 months"],
   ["Hosting", "Google infrastructure", "Public cloud in Germany, the Netherlands, the US, Sweden, Hong Kong or UAE North; private cloud on Enterprise", "Dublin, Ireland"],
-  ["Raw data export", "BigQuery: 1M events/day on standard, up to 20B on 360", "API access; check the export options of your plan", "BigQuery connector on Growth, Scale and Enterprise, hourly or daily"],
+  ["Raw data export", "BigQuery: 1M events/day on standard, up to 20B on 360", "API access; check the export options of your plan", "BigQuery connector on every plan, free tier included, hourly or daily"],
   ["Tracker weight (gzip, measured 27 Aug 2026)", "~149 KB", "~26.8 KB", "~1.1 KB"],
   ["MCP server for AI assistants", "Official, experimental, read-only", "Beta, runs locally, queries and configures", "Yes"],
 ];

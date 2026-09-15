@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     question: "Can I export data to BigQuery or another warehouse?",
-    answer: "BigQuery has a native connector included from the Growth plan up — full resolution, no ETL, no sampling, no thresholds. For Snowflake, Databricks, Redshift or any other destination, pull the same full-resolution data through the REST API and load it yourself.",
+    answer: "BigQuery has a native connector included on every plan, the free Agentic tier among them — full resolution, no ETL, no sampling, no thresholds. For Snowflake, Databricks, Redshift or any other destination, pull the same full-resolution data through the REST API and load it yourself.",
   },
   {
     question: "What is the MCP server?",

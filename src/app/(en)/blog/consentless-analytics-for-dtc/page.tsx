@@ -157,7 +157,7 @@ export default function Page() {
               <li><strong>Shopify (or WooCommerce/Magento) + consentless analytics.</strong> Analytics counts events before and regardless of the banner, with no identifier ever created.</li>
               <li><strong>Meta pixel + Google Ads pixel behind the banner.</strong> These still require consent because they use personal data for ad personalisation. Sealmetrics does not send conversions to ad platforms, so bidding keeps running on the pixels.</li>
               <li><strong>Email platform or CRM.</strong> Runs on explicit list opt-in; any onsite tracking it adds has its own consent requirement.</li>
-              <li><strong>BigQuery for aggregate marketing-mix modelling.</strong> Fed with channel totals by the BigQuery connector, included in the Growth, Scale and Enterprise plans.</li>
+              <li><strong>BigQuery for aggregate marketing-mix modelling.</strong> Fed with channel totals by the BigQuery connector, included on every plan, the free Agentic tier among them.</li>
             </ul>
             <p>
               The net effect: aggregate ROAS per channel is measured without depending on consent, not only on the ones that accepted the banner. At Incapto, that moved paid campaigns from 50% of traffic in GA4 to 62% measured without consent loss — the kind of difference that decides whether a paid-media budget is signed off or defended.
