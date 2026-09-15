@@ -65,7 +65,7 @@ const requisitos = [
     id: "req-2",
     title: "Dato sin huecos de consentimiento",
     bar: "Cargas de página observadas sin depender del consentimiento, no bloqueadas, sin muestreo",
-    seal: "Sin cookies por arquitectura, sin pérdida de visitas por consentimiento. Los clientes pasan de observar ~40% a quedar a un 15–20% de los pedidos del CRM",
+    seal: "Sin cookies por arquitectura. En una medición en paralelo de 48 días sobre Shopify, GA4 no vio el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales",
     score: 2,
   },
   {
@@ -434,13 +434,18 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 en torno al 25% en audiencias técnicas, más en algunos sectores.
                 Fallo de etiqueta: alrededor del 5% en móvil, y crece en redes
                 lentas. Multiplica los supervivientes y estás reportando sobre
-                una fracción — mientras tu CFO lo lee como si fuera el total. Es
-                la aritmética detrás de{" "}
+                una fracción — mientras tu CFO lo lee como si fuera el total.
+                Sumadas en el peor escenario, es la aritmética por la que{" "}
                 <Link
                   href="/es/blog/why-ga4-shows-13pct-eu-traffic"
                   className={linkClass}
                 >
-                  que GA4 muestre el 13% del tráfico UE
+                  GA4 puede ver solo el 13% del tráfico UE
+                </Link>
+                . Medida en una tienda Shopify real durante 48 días, la brecha
+                fue menor pero igual de decisiva:{" "}
+                <Link href="/es/case-studies/incapto" className={linkClass}>
+                  GA4 no registró el 29% de las visitas
                 </Link>
                 .
               </p>
@@ -507,8 +512,10 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 días y compara ambos contra el único sistema que no tiene brecha
                 de medición: tu CRM o tu base de pedidos. Cuenta los pedidos. La
                 distancia entre plataforma y CRM es la única métrica de
-                completitud que importa, y debería cerrarse a un 15–20%, no a un
-                50%. La{" "}
+                completitud que importa. En la única medición que hemos publicado
+                con su método completo, sobre la tienda Shopify de Incapto,
+                Sealmetrics registró el 96% de los pedidos reales y el 97% de la
+                facturación. La{" "}
                 <Link href="/es/data-loss-calculator" className={linkClass}>
                   calculadora de pérdida de datos
                 </Link>{" "}

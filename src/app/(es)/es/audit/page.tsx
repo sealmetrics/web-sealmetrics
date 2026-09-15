@@ -85,9 +85,15 @@ export default function Page() {
             Qué recibes
           </h2>
           <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
-            En Europa, GA4 reporta en torno al 13% de los visitantes de un sitio,
-            y solo un 16% aproximadamente llega con la fuente de tráfico todavía
-            asociada. Cada decisión de inversión tomada sobre esa base se toma
+            En Europa, GA4 solo cuenta a los visitantes que aceptan el banner y
+            no lo bloquean. En una{" "}
+            <Link href="/es/case-studies/incapto" className="underline">
+              tienda Shopify real medida durante 48 días
+            </Link>
+            , no registró el 29% de las visitas; en nuestro modelo de peor
+            escenario acumulado se queda en torno al 13%, y solo un 16%
+            aproximadamente llega con la fuente de tráfico todavía asociada.
+            Cada decisión de inversión tomada sobre esa base se toma
             sobre una muestra que nadie eligió. La auditoría pone un número a tu
             versión concreta de ese gap antes de que instales nada.
           </p>

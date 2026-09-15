@@ -307,12 +307,14 @@
 
 .sig-product-problem-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--sig-ink);
   border-left: 1px solid var(--sig-ink);
 }
 
 .sig-product-problem-grid article {
+  display: flex;
+  flex-direction: column;
   min-height: 280px;
   padding: 28px;
   border-right: 1px solid var(--sig-ink);
@@ -329,6 +331,16 @@
   font-weight: 650;
   letter-spacing: 0.12em;
   text-transform: uppercase;
+}
+
+/* Pushed to the foot of the card so the four links line up across the row. */
+.sig-product-problem-link {
+  align-self: flex-start;
+  margin-top: auto;
+  padding-top: 22px;
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  font-weight: 720;
 }
 
 .sig-product-problem-grid h3 {
@@ -719,7 +731,8 @@
     max-width: 660px;
   }
 
-  .sig-product-layer-grid {
+  .sig-product-layer-grid,
+  .sig-product-problem-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }

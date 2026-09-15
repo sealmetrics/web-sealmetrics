@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Will my paid agency push back?",
-    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers are an estimated 13% of EU reality, optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the Sealmetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
+    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers leave out part of EU reality (GA4 did not record 29% of visits on a real Shopify store measured over 48 days), optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the Sealmetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
   },
   {
     q: "Can we migrate gradually or do we cut over?",

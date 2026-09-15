@@ -60,8 +60,20 @@ const groups = [
   { title: "Website builders", items: ["Webflow", "Wix", "Squarespace"] },
   { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
   { title: "Tag management", items: ["Google Tag Manager", "GTM container template", "GTM tag template"] },
+  { title: "Ad platforms (via UTMs)", items: ["Google Ads", "Meta Ads"] },
   { title: "Data & AI", items: ["BigQuery connector", "Data Studio", "MCP server", "Claude & Codex agentic package", "REST API", "Webhooks"] },
 ];
+
+// Items with their own page link to it; the rest stay plain.
+const itemLinks: Record<string, string> = {
+  "Shopify": "/platforms/shopify",
+  "WooCommerce": "/platforms/woocommerce",
+  "Magento 2": "/platforms/magento",
+  "BigQuery connector": "/integrations/bigquery",
+  "Google Ads": "/integrations/google-ads",
+  "Meta Ads": "/integrations/meta-ads",
+  "MCP server": "/docs/mcp",
+};
 
 export default function Page() {
   return (
@@ -87,7 +99,8 @@ export default function Page() {
             Google Tag Manager container and tag templates for teams that deploy
             everything through GTM. Any framework not on that list works from a
             single script tag. On the consumption side the same aggregate data
-            leaves through a REST API, webhooks, a BigQuery connector, Data
+            leaves through a REST API, webhooks, a{" "}
+            <Link href="/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">BigQuery connector</Link>, Data
             Studio, and an MCP server that lets Claude, ChatGPT, Cursor or Codex
             query it in plain language. None of it asks for a cookie or a visitor
             identifier, so adding Sealmetrics adds no consent obligation to a
@@ -106,7 +119,9 @@ export default function Page() {
                   {g.items.map((i) => (
                     <li key={i} className="flex items-center gap-2.5 text-[14px] text-ink-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
-                      {i}
+                      {itemLinks[i] ? (
+                        <Link href={itemLinks[i]} className="text-ink-2 no-underline border-b border-warm-200 hover:border-ink">{i}</Link>
+                      ) : i}
                     </li>
                   ))}
                 </ul>

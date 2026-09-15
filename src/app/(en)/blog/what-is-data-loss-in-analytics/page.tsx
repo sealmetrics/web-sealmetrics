@@ -11,11 +11,11 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "What Is Data Loss in Analytics? Causes, Impact, Solutions",
   description:
-    "Analytics data loss means your tools report a fraction of real traffic. Learn the 4 causes, how they compound to 87% loss, and how to eliminate the gap.",
+    "Analytics data loss means your tools report a fraction of real traffic. Learn the 4 causes, how they compound, and what the measured gap looks like.",
   openGraph: {
     title: "What Is Data Loss in Analytics?",
     description:
-      "The 4 causes of analytics data loss and how they compound to 87% missing traffic in the EU.",
+      "The 4 causes of analytics data loss, how they compound to 87% in a worst-case model, and the 29% gap measured on a real store.",
     type: "article",
     url: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Data Loss in Analytics?",
-    description: "The 4 causes of analytics data loss and how they compound to 87% missing traffic in the EU.",
+    description: "The 4 causes of analytics data loss, how they compound to 87% in a worst-case model, and the 29% gap measured on a real store.",
     images: ["https://sealmetrics.com/og/blog/what-is-data-loss-in-analytics.png"],
   },
   alternates: {
@@ -65,9 +65,9 @@ export default function WhatIsDataLossInAnalyticsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
+            <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — which in a compounded worst-case model leave about 13% of real traffic visible. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits.</li>
             <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
-            <li>Revenue attribution built on 13% of data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
+            <li>Revenue attribution built on partial data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
             <li>First-party cookieless collection addresses the main causes of data loss together: no consent dependency, far less ad-blocker exposure, no third-party cookie restrictions, no sampling.</li>
           </ul>
         </div>
@@ -75,10 +75,11 @@ export default function WhatIsDataLossInAnalyticsPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             Open your analytics dashboard. The number it shows for
-            yesterday&rsquo;s traffic is almost certainly wrong &mdash; not by
-            a small margin, but by a factor of 5x to 8x. Most analytics tools
-            report a fraction of real traffic, and the gap between reported
-            numbers and reality is growing every year.
+            yesterday&rsquo;s traffic is almost certainly too low. On a real
+            Shopify store measured side by side for 48 days,{" "}
+            <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits and 45% of pageviews</Link>
+            . Most analytics tools report a fraction of real traffic, and the
+            gap between reported numbers and reality is growing every year.
           </p>
 
           <p>
@@ -104,8 +105,8 @@ export default function WhatIsDataLossInAnalyticsPage() {
             </Link>{" "}
             is the gap between the number of visitors who actually arrive at
             your website and the number your analytics tool reports. A site
-            with 10,000 daily visitors might show 1,300 in Google Analytics
-            &mdash; not because 8,700 visitors did not exist, but because the
+            with 10,000 daily visitors might show 7,100 in Google Analytics
+            &mdash; not because 2,900 visitors did not exist, but because the
             measurement system failed to capture them.
           </p>
 
@@ -248,15 +249,16 @@ export default function WhatIsDataLossInAnalyticsPage() {
             </div>
             <div className="mt-5 pt-4 border-t border-warm-100 flex justify-between items-center">
               <span className="text-[0.9rem] text-text-primary font-medium">
-                Total data loss
+                Worst-case model loss
               </span>
               <span className="font-mono text-[1.1rem] font-medium text-red-alert">
                 87%
               </span>
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Approximate cascade based on European averages. Actual loss varies
-              by country, industry, and device mix. Calculate yours with the{" "}
+              Worst-case model: every layer takes a high-end estimate and they
+              compound. It is not an average. Actual loss varies by country,
+              industry, and device mix. Calculate yours with the{" "}
               <Link
                 href="/data-loss-calculator"
                 className="text-text-tertiary no-underline border-b border-warm-200 pb-0.5 hover:border-text-tertiary transition-colors"
@@ -268,10 +270,14 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </div>
 
           <p>
-            Out of 100 real visitors, your analytics platform reports 13. This
-            is not a worst-case scenario. It is the documented average for
-            European sites using cookie-based analytics with standard consent
-            banner configurations.
+            In this model, out of 100 real visitors, your analytics platform
+            reports 13. That is the compounded worst case, not the typical
+            result. The measured gap is smaller but still large, and it is
+            uneven: when GA4 with Consent Mode and Sealmetrics ran side by side
+            on the same store, GA4 missed 29% of visits overall, while
+            Sealmetrics saw 62% more organic search traffic and 133% more
+            organic social traffic than GA4. The channels that bring new people
+            in are the ones that lose the most.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -294,9 +300,11 @@ export default function WhatIsDataLossInAnalyticsPage() {
             >
               Revenue attribution
             </Link>{" "}
-            requires complete journey data. When 87% of visitors are invisible,
-            your attribution model only sees journeys from the 13% who accepted
-            cookies, were not blocked, and were not sampled. This biased
+            is only as good as the traffic it is computed on. When a large share of visitors is
+            invisible &mdash; 29% on one measured store, up to 87% in the
+            worst-case model &mdash; your attribution model only sees conversions
+            from the visitors who accepted cookies, were not blocked, and were
+            not sampled. This biased
             sample systematically over-credits channels that correlate with
             cookie acceptance and under-credits channels used by
             privacy-conscious visitors.
@@ -374,7 +382,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
 
           <p>
             The result is not a marginal improvement. It is the difference
-            between making decisions on 13% of your data and making decisions
+            between making decisions on the fraction of traffic that consented and making decisions
             on data without consent gaps.{" "}
             <Link
               href="/how-it-works"

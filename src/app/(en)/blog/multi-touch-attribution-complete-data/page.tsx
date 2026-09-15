@@ -11,11 +11,11 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "Multi-Touch Attribution Fails Without Complete Data",
   description:
-    "Your attribution model is only as good as the data feeding it. When 87% of touchpoints are missing, every attribution conclusion is wrong.",
+    "Your attribution model is only as good as the data feeding it. When a share of touchpoints is missing, and not at random, every conclusion skews.",
   openGraph: {
     title: "Why Multi-Touch Attribution Fails Without Complete Data",
     description:
-      "Attribution models built on 13% of data produce misleading results. Here is why complete data changes everything.",
+      "Attribution models built on partial data produce misleading results. Here is why complete data changes everything.",
     type: "article",
     url: "https://sealmetrics.com/blog/multi-touch-attribution-complete-data/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Why Multi-Touch Attribution Fails Without Complete Data",
-    description: "Attribution models built on 13% of data produce misleading results. Here is why complete data changes everything.",
+    description: "Attribution models built on partial data produce misleading results. Here is why complete data changes everything.",
     images: ["https://sealmetrics.com/og/blog/multi-touch-attribution-complete-data.png"],
   },
   alternates: {
@@ -65,10 +65,10 @@ export default function MultiTouchAttributionPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Multi-touch attribution models see only 13% of touchpoints in EU traffic — the remaining 87% are lost to consent rejection, ad blockers, and browser restrictions.</li>
+            <li>Multi-touch attribution models only see the touchpoints that survive consent rejection, ad blockers, and browser restrictions — on a real Shopify store measured over 48 days GA4 did not record 29% of visits, and in the compounded worst case up to 87% are lost.</li>
             <li>Direct traffic is systematically inflated because it absorbs all untracked touchpoints, while top-of-funnel channels (organic, social, display) are undervalued because first touches are most likely to be lost.</li>
-            <li>GA4 data-driven attribution uses ML on a biased 13% sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>
-            <li>When cookieless analytics stops losing traffic to consent rejection, touchpoints hidden by the banner become visible, and attribution models distribute credit based on actual behavior rather than estimates.</li>
+            <li>GA4 data-driven attribution uses ML on a biased sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>
+            <li>Complete data does not rescue multi-touch: without a persistent identifier there is no journey to split credit across. What it does is make last-click honest — credited whether or not the visitor accepted cookies, not only on the consenting fraction.</li>
           </ul>
         </div>
 
@@ -127,12 +127,11 @@ export default function MultiTouchAttributionPage() {
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            The 87% data gap
+            The data gap
           </h2>
 
           <p>
-            In the EU, based on internal aggregated estimates, traditional analytics capture approximately 13% of actual
-            traffic after{" "}
+            In the EU, traditional analytics lose part of actual traffic to{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -146,8 +145,13 @@ export default function MultiTouchAttributionPage() {
             >
               data sampling
             </Link>
-            . This means your attribution model is seeing 13% of touchpoints
-            and making conclusions about budget allocation.
+            . In the compounded worst case, only about 13% of visits survive.
+            Measured on a real Shopify store over 48 days,{" "}
+            <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
+            , and the loss was uneven: Sealmetrics saw 11% more direct traffic
+            than GA4, but 62% more organic search and 133% more organic social.
+            This means your attribution model is seeing a biased subset of
+            touchpoints and making conclusions about budget allocation.
           </p>
 
           <p>The consequences are predictable:</p>
@@ -169,7 +173,7 @@ export default function MultiTouchAttributionPage() {
             ))}
           </ul>
 
-          <CommercialModule hook="Last-click on data without consent gaps vs modelled multi-touch on a fraction — see the difference on your own channel mix." />
+          <CommercialModule hook="Last click without consent gaps vs modelled multi-touch on the consenting fraction — see the difference on your own channel mix." />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Google&rsquo;s data-driven attribution is not the answer
@@ -183,49 +187,51 @@ export default function MultiTouchAttributionPage() {
           </p>
 
           <p>
-            If 87% of touchpoints are missing, the ML model learns patterns from
-            a biased sample — the 13% of visitors who accepted cookies, did not
+            If a share of touchpoints is missing, the ML model learns patterns from
+            a biased sample — the visitors who accepted cookies, did not
             use ad blockers, and had persistent cookie storage. The model then
             extrapolates these patterns to the entire population. It is a
             sophisticated answer to the wrong question.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            Attribution on complete data
+            What complete data changes, and what it does not
           </h2>
 
           <p>
-            When you measure traffic without depending on consent through{" "}
+            Measuring traffic without depending on consent with{" "}
             <Link
               href="/glossary/cookieless-analytics"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               cookieless analytics
-            </Link>
-            , attribution models work as designed. Touchpoints lost at the
-            banner become visible. The model distributes credit based on actual
-            behavior, not on cookie-accepting behavior extrapolated to the full
-            population.
+            </Link>{" "}
+            does not rescue multi-touch attribution. A user-level model needs to
+            connect a person&rsquo;s visits across days, and that requires a
+            persistent identifier. Without one there is no journey to split credit
+            across, and Sealmetrics deliberately does not create one.
           </p>
 
           <p>
-            Sealmetrics provides last-click revenue attribution built on
-            session data without consent gaps. Because visits are counted whether
-            or not the banner is accepted, the attribution reflects
-            what actually happened — not what the cookie-accepting subset
-            suggests might have happened.
+            What complete data changes is the base the simpler model runs on.
+            Sealmetrics credits each conversion to the source of the session in
+            which it happens, by last click, whether or not the visitor accepted cookies, not only
+            on the fraction that did. The channel totals are
+            measured rather than extrapolated, and they can be checked against
+            real orders.
           </p>
 
           <p>
-            The difference is particularly dramatic for top-of-funnel channels.
-            When first touches are no longer systematically lost, organic
-            search, social, and display campaigns receive accurate credit for
-            their contribution to revenue.{" "}
+            It does not give first touches the credit a multi-touch model would.
+            Organic search, social and display still receive credit only for the
+            sessions in which they close a conversion. When the question is how
+            much those channels contribute earlier on, the honest tools are
+            incrementality tests and marketing mix models, compared in{" "}
             <Link
-              href="/product"
+              href="/blog/last-click-vs-modelled-attribution"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              See how Sealmetrics handles attribution
+              last-click vs modelled attribution
             </Link>
             .
           </p>

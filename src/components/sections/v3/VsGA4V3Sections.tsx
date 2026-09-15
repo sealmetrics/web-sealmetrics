@@ -285,7 +285,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "technical",
       rows: [
         { feature: "Consent required", ga4: "Yes · 40–60% reject", seal: "No · no consent loss" },
-        { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "No · first-party" },
+        { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "Far less · first-party subdomain" },
         { feature: "Cookies on visitor device", ga4: "Required", seal: "None" },
         { feature: "Sampling at scale", ga4: "Yes · above threshold", seal: "Never · full resolution" },
       ],
@@ -364,7 +364,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "technical",
       rows: [
         { feature: "Consentimiento requerido", ga4: "Sí · 40–60% rechaza", seal: "No · sin pérdida por consent" },
-        { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "No · first-party" },
+        { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "Mucho menos · subdominio first-party" },
         { feature: "Cookies en el dispositivo", ga4: "Obligatorias", seal: "Ninguna" },
         { feature: "Muestreo a escala", ga4: "Sí · sobre cierto umbral", seal: "Nunca · resolución completa" },
       ],

@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is cookieless analytics legal under GDPR?",
-    a: "Yes — and the legal route is architectural, not contractual. Because no personal data, identifier or cookie is stored, the processing sits outside the material scope of GDPR and the cookie-consent requirement of ePrivacy. The CNIL exemption criteria, the German DSK guidance and the UK ICO PECR exemption all describe this same path. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
+    a: "It can be, and the route is architectural rather than contractual. When no personal data or identifier is stored and nothing is stored on or read from the device, the GDPR obligations that attach to personal data are not triggered and the ePrivacy storage-and-access rule has nothing to attach to. Whether a given deployment is consent-exempt still depends on its configuration and on the national regulator's criteria — the CNIL, the German DSK and the UK ICO each publish their own, and they are not identical. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
-    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: 40–60% of visitors reject consent, ~40% use ad blockers that strip the script, and Safari/Firefox cap first-party cookies at 7 days. Cookieless server-side collection is unaffected by all three. Hotel groups running both have measured 30–40% more traffic and 15–20% more attributed revenue against their own CRM.",
+    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: 40–60% of visitors reject consent, ~40% use ad blockers that strip the script, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
   },
   {
     q: "Can I run it alongside Google Analytics 4?",
@@ -61,7 +61,7 @@ const faqs = [
   },
   {
     q: "What about Google Consent Mode v2?",
-    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. The data you see in GA4 with Consent Mode is a model of the 87% you cannot measure. Cookieless analytics is a measurement layer — visitors are counted whether or not they accept the banner, no model required. The two answer different questions.",
+    a: "Consent Mode is a modelling layer: when visitors reject cookies, Google estimates the missing data statistically. It is still cookie-based at heart. Part of what you see in GA4 with Consent Mode is a model of the traffic you cannot measure. Cookieless analytics is a measurement layer — visitors are counted whether or not they accept the banner, no model required. The two answer different questions.",
   },
   {
     q: "How fast is implementation?",
@@ -127,9 +127,10 @@ export default function CookielessAnalyticsPillar() {
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
-            In 2026, cookie-based analytics measures roughly 13% of European
-            traffic. The other 87% is rejected, blocked or capped before the
-            tag fires. This is a guide to the alternative — what cookieless
+            In 2026, cookie-based analytics misses a large and uneven share of
+            European traffic: on one Shopify store we measured, GA4 did not
+            record 29% of visits, and in the compounded worst case of our
+            model it sees about 13%. This is a guide to the alternative — what cookieless
             analytics is, what it counts, what it deliberately doesn&apos;t,
             and where it fits beside the rest of your stack.
           </p>
@@ -141,10 +142,12 @@ export default function CookielessAnalyticsPillar() {
           <>
             Cookieless analytics is web analytics that captures pageviews,
             events and conversions{" "}
-            <strong>anonymously, on the server side</strong>, from your own
-            domain — without cookies, fingerprinting or personal identifiers.
-            It doesn't lose visitors to consent rejection because there is no cookie for browsers to expire and no consent for a banner to reject, and
-            in first-party mode far less for ad blockers to block. The
+            <strong>anonymously, on the server side</strong>, optionally from
+            a subdomain of your own domain — without cookies, fingerprinting
+            or personal identifiers. It doesn&apos;t lose visitors to consent
+            rejection because there is no cookie for browsers to expire or for
+            visitors to reject, and served first-party it is far less exposed
+            to ad blockers. The
             trade-off is honest: you measure channels and conversions at
             aggregate scale, not individual people across sessions. For an
             eCommerce or media business making investment decisions on traffic
@@ -232,7 +235,8 @@ export default function CookielessAnalyticsPillar() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            Stack those losses and you are typically left with around{" "}
+            Stack those losses at their EU average rates and the compounded
+            worst case leaves you with around{" "}
             <Link
               href="/blog/why-ga4-shows-13pct-eu-traffic"
               className="text-brand underline decoration-1 underline-offset-2"
@@ -263,7 +267,7 @@ export default function CookielessAnalyticsPillar() {
                 01
               </span>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                First-party pixel on your own domain
+                First-party pixel on your own subdomain
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 A small JavaScript tag (846 bytes in our case) sends each
@@ -271,10 +275,13 @@ export default function CookielessAnalyticsPillar() {
                 <code className="font-mono text-[14px] bg-warm-100 px-1.5 py-0.5 rounded">
                   pixel.yourdomain.com
                 </code>
-                — a CNAME under your own domain, not a third-party host.
-                Because the request leaves the page from the first-party
-                origin, ad-block rule lists do not match it. Because no
-                cookie is set or read, no consent gate is required.
+                — a subdomain of your own domain, not a third-party host,
+                once first-party tracking is configured (the default
+                install loads from t.sealmetrics.com). Because the request
+                leaves the page from the first-party origin, ad-block rule
+                lists are far less likely to match it. Because no cookie is
+                set or read, there is nothing on the device for a consent
+                gate to protect.
               </p>
             </li>
 
@@ -303,9 +310,9 @@ export default function CookielessAnalyticsPillar() {
                 Last-click attribution and aggregate reporting
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                Each conversion event is attributed to the traffic source
-                observed on the page load where it happened — last-click,
-                every time, on data without consent gaps. Aggregates flow into
+                Each conversion event is attributed to the source of the
+                session in which it happened — last-click, scoped to the
+                session, with no lookback window across sessions. Aggregates flow into
                 dashboards, BigQuery, and an MCP server for AI agents. The
                 output is channel performance: which sources drove revenue
                 this week, and by how much.
@@ -430,12 +437,12 @@ export default function CookielessAnalyticsPillar() {
               </thead>
               <tbody className="text-ink">
                 {[
-                  ["Traffic captured (EU)", "~13% after consent + ad-block + ITP", "Not reduced by consent — no script, no expiry"],
+                  ["Traffic captured (EU)", "Consent-dependent — lost to consent, ad-block and ITP (GA4 missed 29% of visits on a measured store)", "Not reduced by consent — no script, no expiry"],
                   ["Consent banner", "Required before any tracking", "Not required — no personal data"],
                   ["Ad-blocker impact", "Script stripped on ~40% of visits", "First-party request — not in rule lists"],
                   ["Cookie lifespan", "Safari ITP caps at 7 days", "No cookie — irrelevant"],
                   ["Returning-visitor ID", "Possible (when cookie survives)", "Not possible by design"],
-                  ["Attribution model", "Data-driven or last-click on 13%", "Last-click on data without consent gaps"],
+                  ["Attribution model", "Data-driven or last-click on consented traffic", "Last-click on data without consent gaps"],
                   ["Data residency", "US default (GA), EU optional (Adobe, Piwik)", "EU-only (Dublin)"],
                 ].map(([dim, cookie, server]) => (
                   <tr key={dim} className="border-b border-warm-100">
@@ -490,7 +497,7 @@ export default function CookielessAnalyticsPillar() {
                 href: "/blog/cookieless-analytics-for-hotels",
                 tag: "Hotels",
                 title: "Cookieless analytics for hotels",
-                lede: "Direct-booking attribution. Meta-search revenue. PMS reconciliation for Mews, Cloudbeds, Opera.",
+                lede: "Direct-booking attribution. Meta-search revenue. Reconciliation against the PMS total, whichever PMS you run.",
               },
               {
                 href: "/blog/cookieless-analytics-for-saas",

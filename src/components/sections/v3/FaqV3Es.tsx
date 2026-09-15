@@ -14,7 +14,7 @@ const ITEMS = [
   },
   {
     q: "¿Qué tan preciso es el tracking sin cookies?",
-    a: "Una cadena hotelera española midió +30% más tráfico vs GA y 15–20% más venta atribuida — acercándose a la realidad del CRM. Palladium Hotel Group descubrió que el 40% de su tráfico no tenía atribución en su stack anterior y mejoró el Coste por Búsqueda en Display un +165% al cambiar. Sin muestreo, sin modelado — dato observado, no estimado.",
+    a: "Dreamplace Hotels midió un 30% más de tráfico que GA y un 15–20% más de venta atribuida, conciliada contra su CRM. En la tienda Shopify de Incapto, Sealmetrics registró el 96% de los pedidos reales mientras GA4 no veía el 29% de las visitas. Palladium Hotel Group descubrió que el 40% de su tráfico no tenía atribución en su stack anterior y mejoró el Coste por Búsqueda en Display un +165% al cambiar. Sin muestreo, sin modelado — dato observado, no estimado.",
   },
   {
     q: "¿Tengo que quitar GA4?",

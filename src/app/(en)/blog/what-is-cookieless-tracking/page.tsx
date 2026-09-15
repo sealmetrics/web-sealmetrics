@@ -66,10 +66,10 @@ export default function WhatIsCookielessTrackingPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
-            <li>Cookie-based tracking captures ~13% of EU traffic; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
+            <li>Cookie-based tracking can fall to about 13% of EU traffic in the compounded worst case, and on a real Shopify store measured over 48 days GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>
-            <li>GDPR compliance is architectural: no cookies stored, no PII collected, no cross-site tracking — consistent with CNIL and German DSK guidance for consent-free analytics.</li>
-            <li>Every downstream analytics function improves when input data goes from a consented 13% to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
+            <li>Privacy is designed into the architecture: no cookies stored, no PII collected, no cross-site tracking — built around CNIL and German DSK guidance for consent-free analytics, and assessed per deployment.</li>
+            <li>Every downstream analytics function improves when input data goes from the consenting fraction to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
           </ul>
         </div>
 
@@ -84,12 +84,14 @@ export default function WhatIsCookielessTrackingPage() {
           </p>
 
           <p>
-            The cascade is brutal: a typical European eCommerce site captures
-            approximately 13% of its actual traffic in cookie-based analytics.
-            The other 87% &mdash; real visitors, real sessions, real revenue
-            &mdash; disappears before a single report is generated. That is
-            not a margin of error. That is a measurement system that has
-            stopped working.
+            The cascade compounds: in the worst case, a European eCommerce site
+            running cookie-based analytics can see as little as 13% of its
+            actual traffic. The measured reality is less extreme but still
+            stark. On a real Shopify store tracked side by side for 48 days,{" "}
+            <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits and 45% of pageviews</Link>
+            {" "}&mdash; real visitors and real sessions that never reached a
+            report. That is not a margin of error. That is a measurement system
+            that has stopped working.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -210,7 +212,7 @@ export default function WhatIsCookielessTrackingPage() {
                   },
                   {
                     aspect: "EU data capture rate",
-                    cookie: "~13% of actual traffic",
+                    cookie: "Consent-dependent (GA4 missed 29% of visits on a measured store)",
                     cookieless: "Not reduced by consent",
                   },
                   {
@@ -237,10 +239,12 @@ export default function WhatIsCookielessTrackingPage() {
           </div>
 
           <p>
-            The 13% figure is not an exaggeration. It is the documented
-            result of compounding losses: consent rejection removes 55%,
-            ad blockers remove 40% of the remainder, browser restrictions
-            remove another portion, and data sampling removes more. The{" "}
+            The size of the gap depends on the site, because the losses
+            compound: consent rejection removes around 55%, ad blockers remove
+            40% of the remainder, browser restrictions remove another portion,
+            and data sampling removes more. Stacked as a worst case, that leaves
+            about 13% of real traffic; measured on a real store, GA4 missed 29%
+            of visits. The{" "}
             <Link
               href="/data-loss-calculator"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -335,7 +339,7 @@ export default function WhatIsCookielessTrackingPage() {
             The practical impact of switching from cookie-based to cookieless
             tracking is not incremental &mdash; it is transformative. Every
             downstream analytics function improves when the input data goes
-            from 13% to measurement without consent gaps.
+            from the fraction that consented to measurement without consent gaps.
           </p>
 
           <ul className="space-y-2 pl-0 list-none">

@@ -23,7 +23,7 @@ export function LogosStrip() {
             The <em className="italic-accent">single source of truth</em> eCommerce signs against
           </h2>
           <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[68ch]">
-            <b className="text-ink font-semibold">Dreamplace Hotels</b> recovered <b className="text-ink font-semibold">+30% more traffic</b> vs GA4 and closed a <b className="text-ink font-semibold">15–20% gap</b> in sales attribution against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> recovered <b className="text-ink font-semibold">35% of unattributed bookings</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
+            <b className="text-ink font-semibold">Dreamplace Hotels</b> measures <b className="text-ink font-semibold">+30% more traffic</b> than GA and attributes <b className="text-ink font-semibold">15–20% more sales</b>, reconciled against their CRM. <b className="text-ink font-semibold">Palladium Hotel Group</b> found <b className="text-ink font-semibold">35% of GA4 bookings without a channel</b> and improved Display CPS by <b className="text-ink font-semibold">+165%</b>.
           </p>
         </div>
         <ClientLogosGrid />
@@ -170,7 +170,7 @@ export function CompareSection() {
                 100<span className="text-[0.5em] text-white/60 ml-1 align-top relative top-[0.3em] font-normal">%</span>
               </div>
               <div className="font-mono text-[12px] uppercase tracking-[0.1em] text-white/60 font-semibold mb-7 mt-1.5">
-                of events observed · 35% more bookings now attributed
+                of events observed · 35% of GA4 bookings had no channel
               </div>
             </div>
             <p className="text-[17px] text-white/85 leading-[1.5] max-w-[40ch] relative">
@@ -288,7 +288,7 @@ const FEATURED_COPY = {
     lede: "Palladium Hotel Group rebuilt their measurement stack on Sealmetrics. One number every stakeholder — brand, agencies, departments — signs against.",
     metrics: [
       { n: "40%", l: "traffic that was invisible to GA4" },
-      { n: "35%", l: "bookings recovered & attributed" },
+      { n: "35%", l: "GA4 bookings without a channel" },
       { n: "+165%", l: "Display CPS improvement on DV360" },
     ],
     quote: "The data Sealmetrics delivers is agnostic, unbiased and neutral. There's no black box.",
@@ -304,7 +304,7 @@ const FEATURED_COPY = {
     lede: "Palladium Hotel Group reconstruyó su stack de medición sobre Sealmetrics. Un único número que cada stakeholder — marca, agencias, departamentos — firma como referencia.",
     metrics: [
       { n: "40%", l: "del tráfico era invisible para GA4" },
-      { n: "35%", l: "de reservas recuperadas y atribuidas" },
+      { n: "35%", l: "reservas de GA4 sin canal" },
       { n: "+165%", l: "mejora Display CPS en DV360" },
     ],
     quote: "Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.",
@@ -486,11 +486,11 @@ export function SocialProofBand() {
               className="text-ink font-medium leading-[1.35] tracking-[-0.015em]"
               style={{ fontSize: "clamp(20px, 2vw, 26px)" }}
             >
-              Recovered <em className="italic-accent">35% of bookings</em> with no attribution and improved Display CPC by <em className="italic-accent">+165%</em>. Same budget. Zero extra euros. Just the right data.
+              Found <em className="italic-accent">35% of GA4 bookings</em> with no channel and improved Display Cost-per-Search by <em className="italic-accent">+165%</em>. Same budget. Zero extra euros. Just the right data.
             </p>
             <div className="grid grid-cols-3 gap-4 mt-7 pt-6 border-t border-warm-100">
               {[
-                { n: "35%", l: "Bookings recovered" },
+                { n: "35%", l: "GA4 bookings without a channel" },
                 { n: "+165%", l: "Display CPC improvement" },
                 { n: "€0", l: "Extra spend" },
               ].map((s) => (
@@ -820,7 +820,7 @@ const PRICING_COPY = {
     enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "Private AI — exclusive, not shared", "99.9% SLA", "Dedicated account manager"],
     cta: "Start 14-day trial",
     enterpriseCta: "Talk to us",
-    quote: <>&ldquo;Recovered 35% of bookings without attribution.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
+    quote: <>&ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo; <span className="not-italic font-semibold text-ink">— Toni Andújar, Palladium Hotel Group</span></>,
     foot: <>For reference: <b className="text-ink font-semibold">GA360 is quote-based from around $50,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics from around $50,000</b>. Sealmetrics gives you enterprise-grade data without the enterprise contract.</>,
     demoHref: "/demo",
   },
@@ -845,7 +845,7 @@ const PRICING_COPY = {
     enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "Private AI — exclusiva, no compartida", "SLA 99,9%", "Account manager dedicado"],
     cta: "Prueba de 14 días",
     enterpriseCta: "Habla con nosotros",
-    quote: <>&ldquo;Recuperaron el 35% de las reservas sin atribución.&rdquo; <span className="not-italic font-semibold text-ink">— Palladium Hotel Group</span></>,
+    quote: <>&ldquo;Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.&rdquo; <span className="not-italic font-semibold text-ink">— Toni Andújar, Palladium Hotel Group</span></>,
     foot: <>De referencia: <b className="text-ink font-semibold">GA360 va por presupuesto desde unos 50.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics desde unos 50.000$</b>. Sealmetrics te da dato enterprise sin contrato enterprise.</>,
     demoHref: "/es/demo",
   },

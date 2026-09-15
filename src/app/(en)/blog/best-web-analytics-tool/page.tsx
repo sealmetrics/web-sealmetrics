@@ -65,7 +65,7 @@ const requirements = [
     id: "req-2",
     title: "Consent-independent data",
     bar: "Every page load observed, consent-independent, not blocklisted, no sampling",
-    seal: "Cookieless by architecture. Customers go from ~40% observed to no consent-driven loss, closing to within 15–20% of CRM orders",
+    seal: "Cookieless by architecture. In a 48-day parallel run on Shopify, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders",
     score: 2,
   },
   {
@@ -438,12 +438,17 @@ export default function BestWebAnalyticsToolPage() {
                 audiences, higher in some verticals. Tag failure: around 5% on
                 mobile, and it grows on slow networks. Multiply the survivors
                 and you are reporting on a fraction — while your CFO reads it as
-                the whole. It is the arithmetic behind{" "}
+                the whole. Stacked as a worst case, it is the arithmetic behind{" "}
                 <Link
                   href="/blog/why-ga4-shows-13pct-eu-traffic"
                   className={linkClass}
                 >
-                  GA4 showing 13% of EU traffic
+                  GA4 showing as little as 13% of EU traffic
+                </Link>
+                . Measured on a real Shopify store over 48 days, the gap was
+                smaller but still decisive:{" "}
+                <Link href="/case-studies/incapto" className={linkClass}>
+                  GA4 did not record 29% of visits
                 </Link>
                 .
               </p>
@@ -506,7 +511,7 @@ export default function BestWebAnalyticsToolPage() {
                 days and compare both against the one system that has no
                 measurement gap: your CRM or order database. Count the orders.
                 The gap between platform and CRM is the only completeness metric
-                that matters, and it should close to within 15–20%, not 50%. The{" "}
+                that matters. In the one run we have published with its full method, on Incapto's Shopify store, Sealmetrics recorded 96% of real orders and 97% of revenue. The{" "}
                 <Link href="/data-loss-calculator" className={linkClass}>
                   data loss calculator
                 </Link>{" "}

@@ -36,6 +36,12 @@ export interface BlogPost {
    * Falls back to `dateModified`.
    */
   dateModifiedEs?: string;
+  /**
+   * The Spanish page's own publication date, when the translation was
+   * published after the English original. Without it the Spanish Article would
+   * claim to exist since the English date. Falls back to `date`.
+   */
+  dateEs?: string;
   category: string;
   readTime: string;
   author?: BlogAuthor;
@@ -44,6 +50,83 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "server-side-tracking-gdpr",
+    title: "Server-Side Tracking and GDPR: What It Changes, and What It Does Not",
+    description:
+      "Server-side tracking moves where data is processed, not whether you need consent or a legal basis. What ePrivacy, GDPR and the CNIL say, and what it changes.",
+    date: "2026-09-14",
+    category: "Regulation",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["gdpr-eprivacy-analytics-legal-assessment", "consent-mode-measured-vs-modelled", "gdpr-analytics-without-consent"],
+  },
+  {
+    slug: "ga4-vs-piwik-pro-vs-sealmetrics",
+    title: "GA4 vs Piwik PRO vs Sealmetrics: Which One Fits an EU Marketing Team",
+    description:
+      "Three architectures, not three versions of one tool. Price, identifiers, behaviour without consent, attribution, retention and where each one wins.",
+    date: "2026-09-14",
+    category: "Comparisons",
+    readTime: "11 min",
+    author: AUTHORS.rafa,
+    related: ["ga4-alternatives-enterprise", "consent-mode-measured-vs-modelled", "last-click-vs-modelled-attribution"],
+  },
+  {
+    slug: "last-click-vs-modelled-attribution",
+    title: "Last-Click vs Modelled Attribution: What Each One Gets Right",
+    description:
+      "Data-driven attribution answers a better question on the paths it can see; last click a narrower one without consent. When to use each, and what to add.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["multi-touch-attribution-complete-data", "measure-roas-after-cookie-consent", "meta-ads-conversions-vs-crm"],
+  },
+  {
+    slug: "consent-mode-measured-vs-modelled",
+    title: "Consent Mode: What GA4 Measures and What It Models",
+    description:
+      "When consent is denied, Consent Mode sends cookieless pings and GA4 estimates users and sessions above a threshold. What is measured, what is modelled.",
+    date: "2026-09-14",
+    category: "Data Quality",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-direct-none", "consent-banner-impact-on-analytics", "measure-roas-after-cookie-consent"],
+  },
+  {
+    slug: "meta-ads-conversions-vs-crm",
+    title: "Meta Ads Conversions vs CRM: Why They Never Match, and How to Reconcile Them",
+    description:
+      "Meta counts the conversions its ads may have influenced; your CRM counts the ones that exist. Why the numbers differ, what each gap means, and a weekly method.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["measure-roas-after-cookie-consent", "why-ga4-shows-direct-none", "consentless-analytics-for-dtc"],
+  },
+  {
+    slug: "measure-roas-after-cookie-consent",
+    title: "How to Measure ROAS After Cookie Consent: A Seven-Step Method",
+    description:
+      "Consent pushes ROAS in two directions: analytics undercounts, ad platforms model and self-credit. A seven-step method to get a ROAS you can allocate budget on.",
+    date: "2026-09-14",
+    category: "Attribution",
+    readTime: "10 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-direct-none", "consentless-analytics-for-dtc", "cookieless-analytics-for-ecommerce"],
+  },
+  {
+    slug: "why-ga4-shows-direct-none",
+    title: "Why GA4 Shows So Much (direct) / (none) Traffic, and What Fixes It",
+    description:
+      "(direct) / (none) in GA4 is a symptom, not a channel. The six causes, how to diagnose them in your own property, and what fixing the tag cannot recover.",
+    date: "2026-09-14",
+    category: "Data Quality",
+    readTime: "9 min",
+    author: AUTHORS.rafa,
+    related: ["why-ga4-shows-13pct-eu-traffic", "consent-banner-impact-on-analytics", "cookieless-analytics-for-ecommerce"],
+  },
   {
     slug: "demdex-analytics-cookies-guide",
     title: "Demdex Analytics Cookies: Why They Are Being Blocked and How to Fix Data Loss",
@@ -94,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "A marketing team gets a correct answer without opening a ticket. Traffic measured without consent loss, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-09-14",
     category: "AI & Analytics",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -110,7 +193,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, no consent gaps, API, MCP — and how to test each one.",
     date: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.rafa,
@@ -158,7 +241,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Does a Spanish online store need a cookie banner for analytics? Is GA4 legal in Spain? What does the AEPD allow, and what does LSSI non-compliance cost? Direct answers, one per question.",
     date: "2026-07-07",
-    dateModified: "2026-07-07",
+    dateModified: "2026-09-14",
     category: "Regulation",
     readTime: "5 min",
     author: AUTHORS.rafa,
@@ -207,7 +290,9 @@ export const blogPosts: BlogPost[] = [
     description:
       "How European eCommerce teams measure revenue, attribution and conversion without cookies or consent banners. Shopify, WooCommerce and Magento reconciliation patterns.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
+    dateEs: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "eCommerce",
     readTime: "10 min",
     author: AUTHORS.rafa,
@@ -221,9 +306,11 @@ export const blogPosts: BlogPost[] = [
     slug: "cookieless-analytics-for-hotels",
     title: "Cookieless Analytics for Hotels: Direct-Booking Attribution in 2026",
     description:
-      "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns for Mews, Cloudbeds, Opera.",
+      "How hotel groups measure direct bookings, meta-search revenue and multi-property portfolios without cookies. PMS reconciliation patterns that work with any PMS.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
+    dateEs: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Hotels",
     readTime: "9 min",
     author: AUTHORS.rafa,
@@ -253,9 +340,11 @@ export const blogPosts: BlogPost[] = [
     slug: "consentless-analytics-for-dtc",
     title: "Consentless Analytics for DTC: What It Is and Why It Matters in 2026",
     description:
-      "Consentless analytics measures DTC traffic without a cookie banner or consent loss. How it works under GDPR/ePrivacy, and what European DTC teams get from it.",
+      "Consentless analytics measures DTC traffic without waiting for the cookie banner. How it works under GDPR and ePrivacy, and what European DTC teams get from it.",
     date: "2026-04-24",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
+    dateEs: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "eCommerce",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -271,7 +360,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, Sealmetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
     date: "2026-03-16",
-    dateModified: "2026-08-27",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.sealmetrics,
@@ -305,12 +394,12 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: "why-ga4-shows-13pct-eu-traffic",
-    title: "Why GA4 Shows 13% of Your EU Traffic",
+    title: "Why GA4 Can Show as Little as 13% of Your EU Traffic",
     description:
-      "GA4 loses data at three levels: consent rejection, ad blockers, and browser restrictions. The result is roughly 13% of real EU traffic. Here is the math.",
+      "Consent rejection, ad blockers and browser limits compound: in the worst case GA4 sees about 13% of EU traffic. A measured store lost 29% of visits.",
     date: "2026-03-06",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Data Quality",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -412,8 +501,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "GA4 applies data sampling when traffic exceeds certain thresholds. Here is how it works, why it matters, and what you can do about it.",
     date: "2026-02-15",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -426,7 +515,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "The European Commission proposed the biggest change to EU data law since GDPR. Cookie consent moves to GDPR, and first-party analytics may not require consent.",
     date: "2026-02-12",
-    dateModified: "2026-09-04",
+    dateModified: "2026-09-14",
     category: "Regulation",
     readTime: "2 min",
     author: AUTHORS.rafa,
@@ -463,8 +552,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "Cookies are disappearing. Learn how cookieless analytics works, why it captures more data, and what it means for GDPR compliance.",
     date: "2026-02-08",
-    dateModified: "2026-05-28",
-    dateModifiedEs: "2026-05-06",
+    dateModified: "2026-09-14",
+    dateModifiedEs: "2026-09-14",
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -499,9 +588,9 @@ export const blogPosts: BlogPost[] = [
     slug: "multi-touch-attribution-complete-data",
     title: "Why Multi-Touch Attribution Fails Without Complete Data",
     description:
-      "Your attribution model is only as good as the data feeding it. When 87% of touchpoints are missing, every attribution conclusion is wrong.",
+      "Your attribution model is only as good as the data feeding it. When a large, uneven share of touchpoints is missing, attribution conclusions tilt.",
     date: "2026-01-10",
-    dateModified: "2026-05-04",
+    dateModified: "2026-09-14",
     category: "Attribution",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -514,7 +603,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Cookieless tracking captures visitor behavior without browser cookies. Learn how it works, why it matters for GDPR compliance, and how it compares to traditional analytics.",
     date: "2026-03-02",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "Technology",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -527,7 +616,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Analytics data loss is the gap between real traffic and reported traffic. Learn the four causes, quantify the impact, and understand how to eliminate it.",
     date: "2026-03-02",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-14",
     category: "Data Quality",
     readTime: "7 min",
     author: AUTHORS.rafa,
@@ -539,7 +628,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Compare 7 GA4 alternatives for eCommerce: pricing, data capture rates, EU compliance, and eCommerce features. From GA360 to cookieless platforms.",
     date: "2026-03-02",
-    dateModified: "2026-08-27",
+    dateModified: "2026-09-14",
     category: "Comparisons",
     readTime: "10 min",
     author: AUTHORS.rafa,
@@ -798,5 +887,6 @@ export function postDates(
     throw new Error(`postDates: "${slug}" is not in blogPosts (src/lib/content/blog.ts)`);
   }
   const modified = locale === "es" ? post.dateModifiedEs ?? post.dateModified : post.dateModified;
-  return { datePublished: post.date, ...(modified ? { dateModified: modified } : {}) };
+  const published = locale === "es" ? post.dateEs ?? post.date : post.date;
+  return { datePublished: published, ...(modified ? { dateModified: modified } : {}) };
 }
