@@ -177,7 +177,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "A marketing team gets a correct answer without opening a ticket. Traffic measured without consent loss, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
-    dateModified: "2026-09-14",
+    dateModified: "2026-09-15",
     category: "AI & Analytics",
     readTime: "8 min",
     author: AUTHORS.rafa,
@@ -360,7 +360,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Ranked comparison of GA4, GA360, Adobe Analytics, Piwik PRO, Sealmetrics, Amplitude, Mixpanel, and Matomo for enterprise teams.",
     date: "2026-03-16",
-    dateModified: "2026-09-14",
+    dateModified: "2026-09-15",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.sealmetrics,
@@ -578,7 +578,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "GPT, Claude, Perplexity, and Google AI Overviews are sending traffic to your site. Traditional analytics cannot see it. Here is why it matters.",
     date: "2026-01-18",
-    dateModified: "2026-05-04",
+    dateModified: "2026-09-15",
     category: "AI & Analytics",
     readTime: "5 min",
     author: AUTHORS.rafa,
@@ -628,7 +628,8 @@ export const blogPosts: BlogPost[] = [
     description:
       "Compare 7 GA4 alternatives for eCommerce: pricing, data capture rates, EU compliance, and eCommerce features. From GA360 to cookieless platforms.",
     date: "2026-03-02",
-    dateModified: "2026-09-14",
+    dateModified: "2026-09-15",
+    dateModifiedEs: "2026-09-14",
     category: "Comparisons",
     readTime: "10 min",
     author: AUTHORS.rafa,

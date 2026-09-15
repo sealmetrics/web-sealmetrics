@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sealmetrics Pricing — Pay for humans, not bots",
     description:
-      "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
+      "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. 14-day trial.",
     type: "website",
     images: [ogImage("/pricing/")],
     url: "https://sealmetrics.com/pricing/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics Pricing — Pay for humans, not bots",
-    description: "Complete analytics from €499/mo. Every feature in every plan. AI agents free. 14-day trial.",
+    description: "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. 14-day trial.",
     images: [ogImage("/pricing/")],
   },
   alternates: {

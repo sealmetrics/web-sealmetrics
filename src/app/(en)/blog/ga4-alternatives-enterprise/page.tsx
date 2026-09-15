@@ -72,7 +72,7 @@ const alternatives = [
     euCompliance:
       "Designed for GDPR (self-assessed) — no PII collected, no cookies, no consent banner needed under the CNIL and AEPD criteria (self-assessed), EU-only visitor data residency",
     ecommerceFeatures:
-      "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
+      "Last-click revenue attribution on complete data, LENS AI natural-language querying, zero data sampling",
     chooseIf:
       "You need no consent-driven data loss in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
   },
@@ -516,7 +516,7 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Revenue attribution, LENS AI, agent analytics
+                    Revenue attribution, LENS AI, BigQuery export
                   </span>
                 </div>
               </div>
@@ -527,8 +527,7 @@ export default function GA4AlternativesEnterprisePage() {
               Sealmetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. Last-click revenue attribution is built
               on complete data — not estimates from a consented fraction. LENS AI answers
-              analytics questions in plain language, grounded in your complete data. Agent analytics
-              separates AI bot traffic from human visitors. Visitor data is processed and
+              analytics questions in plain language, grounded in your complete data. Visitor data is processed and
               stored exclusively in the EU.
             </p>
 
