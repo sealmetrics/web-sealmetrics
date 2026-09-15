@@ -792,7 +792,7 @@ function ProofSlab() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between pt-8 border-t border-white/10">
           <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/50">
-            Dreamplace Hotels · +30% tráfico vs GA · gap CRM del 15–20% cerrado
+            Dreamplace Hotels · +30% tráfico vs GA · 15–20% más ventas atribuidas
           </p>
           <Link
             href="/es/case-studies/palladium-hotel-group"

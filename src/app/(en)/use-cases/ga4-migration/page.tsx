@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "What about my BigQuery export from GA4?",
-    a: "Keep it for historical reference. Sealmetrics ships native BigQuery export at full resolution (no sampling thresholds) from the Growth plan up. Most teams add the Sealmetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the Sealmetrics dataset as the source of truth going forward.",
+    a: "Keep it for historical reference. Sealmetrics ships native BigQuery export at full resolution (no sampling thresholds) on every plan, the free Agentic tier included. Most teams add the Sealmetrics dataset alongside the GA4 dataset and join them in the warehouse — the GA4 dataset for pre-migration history, the Sealmetrics dataset as the source of truth going forward.",
   },
   {
     q: "How does the EU consent banner change?",
@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "Will my paid agency push back?",
-    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers are an estimated 13% of EU reality, optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the Sealmetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
+    a: "Some will. The honest framing: agencies optimise toward the numbers the platform reports. When those numbers leave out part of EU reality (GA4 did not record 29% of visits on a real Shopify store measured over 48 days), optimisation rewards channels that consent more, not channels that perform better. Once you and your agency see the Sealmetrics numbers alongside the CRM, the conversation moves from defending the GA4 dashboard to which channels actually drove the orders. Most agencies adapt; the ones that don't were defending the tool, not the result.",
   },
   {
     q: "Can we migrate gradually or do we cut over?",

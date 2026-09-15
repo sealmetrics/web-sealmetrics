@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Sealmetrics — Complete Analytics for eCommerce",
     description:
-      "GA4 captures ~13% of EU traffic. Sealmetrics doesn't depend on consent — no cookies, no consent walls, no sampling. Enterprise analytics from €499/mo.",
+      "GA4 did not record 29% of visits on a measured Shopify store. Sealmetrics counts without cookies, consent walls or sampling. From €499/mo.",
     url: "https://sealmetrics.com",
     siteName: "Sealmetrics",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     site: "@sealmetrics",
     title: "Sealmetrics — Complete Analytics for eCommerce",
     description:
-      "GA4 captures ~13% of EU traffic. Sealmetrics doesn't depend on consent — no cookies, no consent walls, no sampling.",
+      "GA4 did not record 29% of visits on a measured Shopify store. Sealmetrics counts without cookies, consent walls or sampling.",
     images: [ogImage("/")],
   },
   alternates: {

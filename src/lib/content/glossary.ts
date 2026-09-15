@@ -32,7 +32,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "First-Party Data Collection",
     shortDefinition:
-      "Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are not on the third-party lists ad blockers use and are not subject to third-party cookie restrictions.",
+      "Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are far less likely to be blocked by ad blockers and are not subject to third-party cookie restrictions.",
     category: "Technology",
     related: ["cookieless-analytics", "server-side-tracking", "ad-blocker-analytics-impact", "analytics-data-residency", "intelligent-tracking-prevention"],
   },
@@ -77,7 +77,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Data Loss in Analytics",
     shortDefinition:
-      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Typically 70-87% in the EU.",
+      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Measured at 29% of visits on a real Shopify store; up to 87% in the EU worst-case model.",
     category: "Data Quality",
     related: ["ad-blocker-analytics-impact", "consent-management-platform", "intelligent-tracking-prevention", "data-sampling", "cookieless-analytics"],
   },

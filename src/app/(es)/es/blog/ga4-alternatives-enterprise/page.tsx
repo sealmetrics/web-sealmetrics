@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
     description:
-      "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
+      "En una tienda medida, GA4 no registró el 29% de las visitas. Compara 7 alternativas por completitud del dato, precio y features.",
     type: "article",
     images: [ogImage("/es/blog/ga4-alternatives-enterprise/")],
     url: "https://sealmetrics.com/es/blog/ga4-alternatives-enterprise/",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "7 alternativas a GA4 para equipos de eCommerce en 2026",
-    description: "GA4 captura ~13% del tráfico UE. Compara 7 alternativas por completitud del dato, precio y features de eCommerce.",
+    description: "En una tienda medida, GA4 no registró el 29% de las visitas. Compara 7 alternativas por completitud del dato, precio y features.",
     images: [ogImage("/es/blog/ga4-alternatives-enterprise/")],
   },
   alternates: {
@@ -45,7 +45,7 @@ const alternatives = [
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
     pricing: "Por presupuesto, ~50–175K$+/año",
-    dataCompleteness: "~30-35% en UE",
+    dataCompleteness: "Depende del consentimiento",
     chooseIf:
       "Tienes un presupuesto de analítica de seis cifras, tu equipo vive en Data Studio y las tasas de consentimiento en tus mercados superan el 70%.",
   },
@@ -53,7 +53,7 @@ const alternatives = [
     name: "Adobe Analytics",
     url: "https://business.adobe.com/products/analytics/adobe-analytics.html",
     pricing: "$100.000+/año",
-    dataCompleteness: "~30% en UE",
+    dataCompleteness: "Depende del consentimiento",
     chooseIf:
       "Ya usas Adobe Experience Cloud y tienes analistas dedicados de Adobe que saben exprimir Analysis Workspace.",
   },
@@ -69,7 +69,7 @@ const alternatives = [
     name: "Piwik PRO",
     url: "https://piwikpro.com/",
     pricing: "Desde ~30.000 €/año",
-    dataCompleteness: "~35% en UE",
+    dataCompleteness: "Depende del consentimiento",
     chooseIf:
       "La soberanía del dato es innegociable, operas en administración pública o finanzas y la recogida basada en cookies es aceptable.",
   },
@@ -77,7 +77,7 @@ const alternatives = [
     name: "Matomo",
     url: "https://matomo.org/",
     pricing: "Gratis (self-hosted) / Desde 23 €/mes (cloud)",
-    dataCompleteness: "~40-60% (modo cookieless configurable)",
+    dataCompleteness: "Depende del consentimiento por defecto (modo cookieless configurable)",
     chooseIf:
       "Tienes capacidad de DevOps, quieres transparencia open-source y puedes asumir las contrapartidas del modo cookieless de Matomo.",
   },
@@ -169,10 +169,14 @@ export default function GA4AlternativesEnterpriseEsPage() {
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 captura aproximadamente el 13% del tráfico real de eCommerce
-                UE tras contar el rechazo de consentimiento (40-60%), los ad
-                blockers (40%+) y el muestreo de datos. La atribución de revenue
-                construida sobre ese dato es estructuralmente incompleta.
+                GA4 depende del consentimiento. Con el rechazo del banner
+                (40-60%), los ad blockers (40%+) y las restricciones de navegador
+                sumados en el peor escenario, puede quedarse en torno al 13% del
+                tráfico real de eCommerce UE. En una tienda Shopify real medida
+                durante 48 días,{" "}
+                <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no registró el 29% de las visitas</Link>
+                . La atribución de revenue construida sobre ese dato es
+                estructuralmente incompleta.
               </li>
               <li>
                 Las alternativas enterprise se dividen en dos categorías: las
@@ -188,7 +192,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               </li>
               <li>
                 La brecha de coste total entre plataformas es de 25x o más. GA360
-                cuesta seis cifras al año por ~35% de captura de dato UE. Sealmetrics
+                cuesta seis cifras al año y sigue dependiendo del consentimiento. Sealmetrics
                 cuesta {"€"}5.988/año y no pierde dato por consentimiento. La comparación
                 relevante es el coste por dato preciso.
               </li>
@@ -222,8 +226,8 @@ export default function GA4AlternativesEnterpriseEsPage() {
               >
                 muestreo de datos
               </Link>{" "}
-              y los ad blockers entren siquiera en escena, GA4 ya ha perdido de un
-              tercio a la mitad de tu tráfico. Para eCommerce, eso significa que la
+              y los ad blockers entren siquiera en escena, GA4 ya ha perdido a los
+              visitantes que rechazan el banner. Para eCommerce, eso significa que la
               atribución de revenue, las tasas de conversión y{" "}
               <Link
                 href="/es/glossary/data-loss-in-analytics"
@@ -314,7 +318,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~30-35%</span>
+                  <span className="font-mono text-text-primary">Depende del consentimiento</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -390,7 +394,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~30%</span>
+                  <span className="font-mono text-text-primary">Depende del consentimiento</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -574,7 +578,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     Captura UE:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~35%</span>
+                  <span className="font-mono text-text-primary">Depende del consentimiento</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -652,7 +656,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                     Captura UE:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    ~40-60%
+                    Depende del consentimiento por defecto
                   </span>
                 </div>
                 <div>
@@ -900,7 +904,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 href="/es/blog/why-ga4-shows-13pct-eu-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Por qué GA4 muestra el 13% de tu tráfico UE
+                Por qué GA4 puede ver solo el 13% de tu tráfico UE
               </Link>
               <Link
                 href="/es/blog/cookieless-analytics-explained"

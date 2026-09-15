@@ -311,6 +311,16 @@
       "sourceHash": "c28189de9baddc524ebbe897baed5e14876fed4aee84ea3d872b287411b7f939",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/consent-mode-measured-vs-modelled.avif": {
+      "source": "public/og/blog/consent-mode-measured-vs-modelled.png",
+      "sourceHash": "3ae2375feea99af7c02ce87b844df8c306427049c7071b03ecca396f9fa470d2",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/consent-mode-measured-vs-modelled.webp": {
+      "source": "public/og/blog/consent-mode-measured-vs-modelled.png",
+      "sourceHash": "3ae2375feea99af7c02ce87b844df8c306427049c7071b03ecca396f9fa470d2",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/consentless-analytics-for-dtc.avif": {
       "source": "public/og/blog/consentless-analytics-for-dtc.png",
       "sourceHash": "c887f90a4991e1f30b586b77d84b8f680690813fad4aa2e03369530e3d2b8a19",
@@ -451,6 +461,16 @@
       "sourceHash": "b9442d1dee8a0898f460ce9d9d20f1a797ae18f987e62378a1e216b1172401b7",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.avif": {
+      "source": "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.png",
+      "sourceHash": "4956244ec69a0ca4acde7ba095b27ee7a2905ddd48d509ad697aedbc59095c62",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.webp": {
+      "source": "public/og/blog/ga4-vs-piwik-pro-vs-sealmetrics.png",
+      "sourceHash": "4956244ec69a0ca4acde7ba095b27ee7a2905ddd48d509ad697aedbc59095c62",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/gdpr-analytics-spain-faq.avif": {
       "source": "public/og/blog/gdpr-analytics-spain-faq.png",
       "sourceHash": "0a2c0f314da04c5c1a266817c0376527f616d4ad08c5fdda3765b9323b843b34",
@@ -521,6 +541,26 @@
       "sourceHash": "e967c61ee6029ebf371f06698f8bdb31a79be32691bca6e07685d682e0e9a597",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/last-click-vs-modelled-attribution.avif": {
+      "source": "public/og/blog/last-click-vs-modelled-attribution.png",
+      "sourceHash": "288f74cd288bcbf42c729d9b5b386e541fb0ea3e11267bb79178e120fbc9cef3",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/last-click-vs-modelled-attribution.webp": {
+      "source": "public/og/blog/last-click-vs-modelled-attribution.png",
+      "sourceHash": "288f74cd288bcbf42c729d9b5b386e541fb0ea3e11267bb79178e120fbc9cef3",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/measure-roas-after-cookie-consent.avif": {
+      "source": "public/og/blog/measure-roas-after-cookie-consent.png",
+      "sourceHash": "dc7aae4087519dec988098d05bebef1441daae81e8f93da60a9c822c7b13047e",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/measure-roas-after-cookie-consent.webp": {
+      "source": "public/og/blog/measure-roas-after-cookie-consent.png",
+      "sourceHash": "dc7aae4087519dec988098d05bebef1441daae81e8f93da60a9c822c7b13047e",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/meet-seal-ai.avif": {
       "source": "public/og/blog/meet-seal-ai.png",
       "sourceHash": "4085a0dda016606f4a8992534f4b327c67231fb4627e411afb84cbdee811413d",
@@ -529,6 +569,16 @@
     "public/og/blog/meet-seal-ai.webp": {
       "source": "public/og/blog/meet-seal-ai.png",
       "sourceHash": "4085a0dda016606f4a8992534f4b327c67231fb4627e411afb84cbdee811413d",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/meta-ads-conversions-vs-crm.avif": {
+      "source": "public/og/blog/meta-ads-conversions-vs-crm.png",
+      "sourceHash": "88e6d120a250558806099f944f1abaafc448580bc2f5276e1408eb8bf2bf20c5",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/meta-ads-conversions-vs-crm.webp": {
+      "source": "public/og/blog/meta-ads-conversions-vs-crm.png",
+      "sourceHash": "88e6d120a250558806099f944f1abaafc448580bc2f5276e1408eb8bf2bf20c5",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/multi-touch-attribution-complete-data.avif": {
@@ -631,6 +681,16 @@
       "sourceHash": "9fecf1e54261ba1c2be745b0d3aa9ef5fa0484b9f46e4021df2199e5c1619f75",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/blog/server-side-tracking-gdpr.avif": {
+      "source": "public/og/blog/server-side-tracking-gdpr.png",
+      "sourceHash": "b4740e00d370f799abc7d29569f7e14a034e4c54b99d8564768be70142a99581",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/server-side-tracking-gdpr.webp": {
+      "source": "public/og/blog/server-side-tracking-gdpr.png",
+      "sourceHash": "b4740e00d370f799abc7d29569f7e14a034e4c54b99d8564768be70142a99581",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/blog/the-prompt-is-born-clean.avif": {
       "source": "public/og/blog/the-prompt-is-born-clean.png",
       "sourceHash": "7c6f17e1a17c3d2c5b269157987e1a746f19053f92a45c51c495ba1f36e10ba9",
@@ -703,12 +763,22 @@
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.avif": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
+      "sourceHash": "27cfa5d888c1070c2ef2c8c95abab5c063ac21d05132487ed30e829e10b3c70c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.webp": {
       "source": "public/og/blog/why-ga4-shows-13pct-eu-traffic.png",
-      "sourceHash": "aa1627d9ec4770bf28be3fa0189adfb363e43055edbea9e1ba0cb8cd410d8fc7",
+      "sourceHash": "27cfa5d888c1070c2ef2c8c95abab5c063ac21d05132487ed30e829e10b3c70c",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/why-ga4-shows-direct-none.avif": {
+      "source": "public/og/blog/why-ga4-shows-direct-none.png",
+      "sourceHash": "2bbacfb2345169d5229b3bfbc867480b41f1e0078bb73f7f5d9b20d0a45d9ba3",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/why-ga4-shows-direct-none.webp": {
+      "source": "public/og/blog/why-ga4-shows-direct-none.png",
+      "sourceHash": "2bbacfb2345169d5229b3bfbc867480b41f1e0078bb73f7f5d9b20d0a45d9ba3",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/careers.avif": {
@@ -773,12 +843,12 @@
     },
     "public/og/complete-data.avif": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "fe487b19c37b6d8d4322125ddaf0a688594e62a469a04f4c5dc96099269688a6",
+      "sourceHash": "5e077ebcfa4899f808c6eb3c7103e326cf8fa5cd83b0cb107fe703c788e565ae",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/complete-data.webp": {
       "source": "public/og/complete-data.png",
-      "sourceHash": "fe487b19c37b6d8d4322125ddaf0a688594e62a469a04f4c5dc96099269688a6",
+      "sourceHash": "5e077ebcfa4899f808c6eb3c7103e326cf8fa5cd83b0cb107fe703c788e565ae",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/consentless-analytics.avif": {
@@ -933,12 +1003,12 @@
     },
     "public/og/for/hotels.avif": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
+      "sourceHash": "53efd8f67c8ec6ed539948c324632e33d54b8b178da287ba60f459a67aecb0b7",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/hotels.webp": {
       "source": "public/og/for/hotels.png",
-      "sourceHash": "31a6d79e2603e7684a8c396bc004525a547005bb5dfb10e613be4f9b1582e6a1",
+      "sourceHash": "53efd8f67c8ec6ed539948c324632e33d54b8b178da287ba60f459a67aecb0b7",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/media.avif": {
@@ -973,12 +1043,12 @@
     },
     "public/og/gdpr-analytics.avif": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
+      "sourceHash": "5342af68950a325243faa6119b2f54b8532a33c9127e2b91371751bbf2a27a38",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/gdpr-analytics.webp": {
       "source": "public/og/gdpr-analytics.png",
-      "sourceHash": "ef61955078056cfbb1d92c7a3fcd24fb0858cb72e3d278a24ea3b6942fea91a5",
+      "sourceHash": "5342af68950a325243faa6119b2f54b8532a33c9127e2b91371751bbf2a27a38",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/gdpr-analytics/france.avif": {
@@ -1321,6 +1391,36 @@
       "sourceHash": "21de7c753fdf6a64c84e4e4f4610d86a2d9b828456699b23ae08eb1e3df60baa",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/integrations/bigquery.avif": {
+      "source": "public/og/integrations/bigquery.png",
+      "sourceHash": "c67d36bed4b2864925cc684b27c2823142f0fa5352d06e2e163a8e89b4a43ec0",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/bigquery.webp": {
+      "source": "public/og/integrations/bigquery.png",
+      "sourceHash": "c67d36bed4b2864925cc684b27c2823142f0fa5352d06e2e163a8e89b4a43ec0",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/integrations/google-ads.avif": {
+      "source": "public/og/integrations/google-ads.png",
+      "sourceHash": "2feb236e7c22e7f518220ae053c574e237fe2aca6bc37f928c63f12a897a1809",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/google-ads.webp": {
+      "source": "public/og/integrations/google-ads.png",
+      "sourceHash": "2feb236e7c22e7f518220ae053c574e237fe2aca6bc37f928c63f12a897a1809",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/integrations/meta-ads.avif": {
+      "source": "public/og/integrations/meta-ads.png",
+      "sourceHash": "b0add8feeddfd6a3e0654e6ecfc6a58021a42ec837adae1321727bad78751a50",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/meta-ads.webp": {
+      "source": "public/og/integrations/meta-ads.png",
+      "sourceHash": "b0add8feeddfd6a3e0654e6ecfc6a58021a42ec837adae1321727bad78751a50",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/modern-analytics.avif": {
       "source": "public/og/modern-analytics.png",
       "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",
@@ -1431,24 +1531,34 @@
       "sourceHash": "d41f1cb967b347e734cae1aa2fd8dc1ec25601d816404a25f0c2ff3656a35c2a",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/platforms/magento.avif": {
+      "source": "public/og/platforms/magento.png",
+      "sourceHash": "0cabfa4b775da1babcb9273860e44cec6994dce745cf484d603f32f70247c872",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/platforms/magento.webp": {
+      "source": "public/og/platforms/magento.png",
+      "sourceHash": "0cabfa4b775da1babcb9273860e44cec6994dce745cf484d603f32f70247c872",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/platforms/shopify.avif": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
+      "sourceHash": "5e89b12b31df2063b1089abecfd410b6e4dc769f1bd7b4f8fe3ac175d93d52ef",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/shopify.webp": {
       "source": "public/og/platforms/shopify.png",
-      "sourceHash": "96158457521df2d910858729d42be2fa34fe4d00d7c0b775dc7b7e1af86afaf5",
+      "sourceHash": "5e89b12b31df2063b1089abecfd410b6e4dc769f1bd7b4f8fe3ac175d93d52ef",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms/woocommerce.avif": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
+      "sourceHash": "9fd5dcfddb4692c2538b792e8091b27b7dd282336c27cce174914251bb28720a",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/platforms/woocommerce.webp": {
       "source": "public/og/platforms/woocommerce.png",
-      "sourceHash": "334aecb8cc5b8cf99c0ac1a6374b724a677f1999069a2f803471b072b2a32d0f",
+      "sourceHash": "9fd5dcfddb4692c2538b792e8091b27b7dd282336c27cce174914251bb28720a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/pricing.avif": {
@@ -1583,12 +1693,22 @@
     },
     "public/og/use-cases/revenue-attribution.avif": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
+      "sourceHash": "3574277cdb3c744c8af8f8031b4a00b58d29a743947593221709e728af483706",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/use-cases/revenue-attribution.webp": {
       "source": "public/og/use-cases/revenue-attribution.png",
-      "sourceHash": "cc2bca56e25c36c47e7dbea03d92f416ab017c0b1b0ea3b6e01bffd8ecdf1f16",
+      "sourceHash": "3574277cdb3c744c8af8f8031b4a00b58d29a743947593221709e728af483706",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/use-cases/single-source-of-truth.avif": {
+      "source": "public/og/use-cases/single-source-of-truth.png",
+      "sourceHash": "0952ac4c82011fc0fbad06d21b5ce04e9261c66a7e72c13169936f41549c73bb",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/use-cases/single-source-of-truth.webp": {
+      "source": "public/og/use-cases/single-source-of-truth.png",
+      "sourceHash": "0952ac4c82011fc0fbad06d21b5ce04e9261c66a7e72c13169936f41549c73bb",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/videos.avif": {

@@ -39,7 +39,7 @@ const platforms = [
     name: "Google Analytics 4 (GA4)",
     url: "https://marketingplatform.google.com/about/analytics/",
     pricing: "Free",
-    euDataCapture: "~13%",
+    euDataCapture: "Consent-dependent",
     strengths:
       "Deep Google Ads integration, massive community, free tier with enterprise-adjacent features. Familiar interface for teams already in the Google ecosystem.",
     limitations:
@@ -50,7 +50,7 @@ const platforms = [
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
     pricing: "Quote-based, ~$50K–175K+/yr",
-    euDataCapture: "~30-35%",
+    euDataCapture: "Consent-dependent",
     strengths:
       "Unsampled reports (quota-limited), native BigQuery export, dedicated account manager, guaranteed SLAs. The tightest Google Ads attribution pipeline available.",
     limitations:
@@ -61,7 +61,7 @@ const platforms = [
     name: "Adobe Analytics",
     url: "https://business.adobe.com/products/analytics/adobe-analytics.html",
     pricing: "Quote-based, ~$50K–200K+/yr",
-    euDataCapture: "~30%",
+    euDataCapture: "Consent-dependent",
     strengths:
       "Deepest segmentation in the market. Analysis Workspace is purpose-built for enterprise reporting. Strong cross-product integration within Adobe Experience Cloud. Configurable data sampling thresholds.",
     limitations:
@@ -83,7 +83,7 @@ const platforms = [
     name: "Piwik PRO",
     url: "https://piwikpro.com/",
     pricing: "From ~\u20ac30,000/yr (enterprise)",
-    euDataCapture: "~35%",
+    euDataCapture: "Consent-dependent",
     strengths:
       "EU-native platform built in Poland. Full data ownership with EU-only hosting. Bundled tag manager and consent manager. No data sampling. Strong in regulated sectors — government, finance, healthcare.",
     limitations:
@@ -94,7 +94,7 @@ const platforms = [
     name: "Matomo",
     url: "https://matomo.org/",
     pricing: "Free (self-hosted) / From \u20ac23/mo (cloud)",
-    euDataCapture: "~40-60% (configurable)",
+    euDataCapture: "Consent-dependent (cookieless mode configurable)",
     strengths:
       "Open-source with self-hosting option for full data control. Can be configured for cookieless mode (limited). Large plugin ecosystem. Lower cost of entry than other enterprise tools.",
     limitations:
@@ -362,17 +362,26 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               >
                 consent
               </Link>
-              . In the EU, where 40-60% of visitors reject cookies, GA4
-              typically captures roughly{" "}
+              . In the EU, where 40-60% of visitors reject cookies, GA4 can
+              fall to{" "}
               <Link
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                13% of actual traffic
+                about 13% of actual traffic
               </Link>{" "}
-              after accounting for consent rejection, ad blockers, and data
-              sampling. For enterprise teams making budget allocation decisions,
-              that margin of error is significant.
+              in the compounded worst case of consent rejection, ad blockers,
+              and browser restrictions. The measured gap is smaller but still
+              material: on a real Shopify store tracked side by side for 48
+              days,{" "}
+              <Link
+                href="/case-studies/incapto"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                GA4 did not record 29% of visits
+              </Link>
+              . For enterprise teams making budget allocation decisions, that
+              margin of error is significant.
             </p>
 
             <p>
@@ -756,9 +765,9 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               </strong>{" "}
               Total cost includes the platform fee, implementation, required
               consultants, ongoing maintenance, and the implicit cost of
-              decisions made on incomplete data. A six-figure platform that captures
-              35% of EU traffic may cost more per accurate data point than a
-              {"\u20ac"}6K platform that does not lose traffic to consent rejection.
+              decisions made on incomplete data. A six-figure platform that only
+              sees consenting EU visitors may cost more per accurate data point than a
+              {"€"}6K platform that does not lose traffic to consent rejection.
             </p>
           </div>
 
@@ -782,7 +791,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Shows 13% of Your EU Traffic
+                Why GA4 Can Show as Little as 13% of Your EU Traffic
               </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"

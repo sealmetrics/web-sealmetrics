@@ -71,7 +71,7 @@ export default function AttributionModelPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why attribution needs complete data</h2>
           <p>
-            Every attribution model &mdash; from the simplest last-touch to the most sophisticated data-driven &mdash; depends on seeing the full journey. When <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analytics data loss</Link> removes 40&ndash;87% of touchpoints, the model works on a fragment of reality.
+            Every attribution model &mdash; from the simplest last-touch to the most sophisticated data-driven &mdash; depends on seeing the full journey. When <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analytics data loss</Link> removes touchpoints &mdash; 29% of visits on a measured Shopify store, up to 87% in the compounded worst case &mdash; the model works on a fragment of reality.
           </p>
           <p>
             Consider a customer who first discovers your brand through an organic search (blocked by an ad blocker), later clicks a display ad (tracked), and finally converts through a branded search (tracked). A last-touch model credits branded search. A data-driven model credits display. Neither knows the organic visit existed. The channel that actually introduced the customer gets zero credit &mdash; and zero budget in the next planning cycle.

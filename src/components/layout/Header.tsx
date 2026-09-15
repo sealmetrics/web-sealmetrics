@@ -21,6 +21,13 @@ interface DropdownItem {
 interface DropdownGroup {
   title?: string;
   items: DropdownItem[];
+  /**
+   * Column for wide dropdowns. Solutions grew to 16 links once "By problem"
+   * joined it — about 1,090px tall as a single column, taller than a laptop
+   * viewport inside a fixed header that cannot scroll. Groups that set a
+   * column render side by side instead.
+   */
+  column?: number;
 }
 
 interface NavDropdown {
@@ -80,8 +87,23 @@ function getSolutionsDropdown(t: ReturnType<typeof getDictionary>["header"], loc
   return {
     label: t.solutions,
     groups: [
+      // First, because the site is positioned by the problem a buyer has, not
+      // by feature — CONTENT-PLAN-PROBLEM-POSITIONING.md, Phase 2. It lives in
+      // Solutions rather than the top bar: the desktop nav has no room for a
+      // sixth item at lg (see the note on the <nav> below).
+      {
+        title: t.byProblem,
+        column: 0,
+        items: [
+          { href: localizedHref("/complete-data", locale), label: t.problemGa4, desc: t.problemGa4Desc },
+          { href: localizedHref("/use-cases/revenue-attribution", locale), label: t.problemCampaigns, desc: t.problemCampaignsDesc },
+          { href: localizedHref("/use-cases/single-source-of-truth", locale), label: t.problemOneNumber, desc: t.problemOneNumberDesc },
+          { href: localizedHref("/gdpr-analytics", locale), label: t.problemCompliance, desc: t.problemComplianceDesc },
+        ],
+      },
       {
         title: t.byRole,
+        column: 1,
         items: [
           { href: localizedHref("/for/cmo", locale), label: t.forCmos, desc: t.forCmosDesc },
           { href: localizedHref("/for/cto", locale), label: t.forCtos, desc: t.forCtosDesc },
@@ -90,6 +112,7 @@ function getSolutionsDropdown(t: ReturnType<typeof getDictionary>["header"], loc
       },
       {
         title: t.byIndustry,
+        column: 2,
         items: [
           { href: localizedHref("/for/ecommerce", locale), label: t.ecommerce, desc: t.ecommerceDesc },
           { href: localizedHref("/for/hotels", locale), label: t.hotels, desc: t.hotelsDesc },
@@ -102,6 +125,7 @@ function getSolutionsDropdown(t: ReturnType<typeof getDictionary>["header"], loc
         ],
       },
       {
+        column: 1,
         items: [
           { href: localizedHref("/data-loss-calculator", locale), label: t.dataLossCalc, desc: t.dataLossCalcDesc },
         ],
@@ -149,6 +173,13 @@ function Dropdown({
   labelHref?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  const hasColumns = dropdown.groups.some((g) => g.column !== undefined);
+  const columns: DropdownGroup[][] = hasColumns
+    ? Array.from(
+        { length: Math.max(...dropdown.groups.map((g) => g.column ?? 0)) + 1 },
+        (_, i) => dropdown.groups.filter((g) => (g.column ?? 0) === i)
+      )
+    : [dropdown.groups];
 
   useEffect(() => {
     if (!isOpen) return;
@@ -214,33 +245,58 @@ function Dropdown({
           seven crawlable links: every dropdown destination existed only after
           a click no crawler performs. /privacy-end-to-end/ was reachable from
           nowhere else and had zero inbound links site-wide as a result. */}
-      <div className={isOpen ? "absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50" : "hidden"} aria-hidden={!isOpen}>
-          <div role="menu" className="bg-paper-white border border-signal-ink shadow-hard py-2 min-w-[260px]">
-            {dropdown.groups.map((group, gi) => (
-              <div key={gi}>
-                {gi > 0 && (
-                  <div className="my-1.5 mx-5 border-t border-warm-100" />
-                )}
-                {group.title && (
-                  <span className="block px-5 pt-2 pb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-text-tertiary">
-                    {group.title}
-                  </span>
-                )}
-                {group.items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    role="menuitem"
-                    onClick={onClose}
-                    className="block px-5 py-2 no-underline hover:bg-warm-50 transition-colors"
-                  >
-                    <span className="block text-[0.85rem] font-medium text-text-primary leading-snug">
-                      {item.label}
-                    </span>
-                    <span className="block text-[0.75rem] text-text-tertiary mt-0.5">
-                      {item.desc}
-                    </span>
-                  </Link>
+      {/* A column dropdown is wider than the space around its trigger, so it is
+          centred on the header rather than on the button (centred on "Solutions"
+          it overflowed a 1024px viewport by 18px). `fixed` resolves against the
+          header, not the viewport, because the header's backdrop-filter makes it
+          the containing block — so top-full sits right under the 76px bar. */}
+      <div
+        className={
+          !isOpen
+            ? "hidden"
+            : hasColumns
+              ? "fixed top-full left-1/2 -translate-x-1/2 pt-3 z-50"
+              : "absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
+        }
+        aria-hidden={!isOpen}
+      >
+          <div
+            role="menu"
+            className={
+              columns.length > 1
+                ? "bg-paper-white border border-signal-ink shadow-hard py-2 grid grid-flow-col auto-cols-[minmax(240px,1fr)] w-max max-w-[calc(100vw-32px)] divide-x divide-warm-100"
+                : "bg-paper-white border border-signal-ink shadow-hard py-2 min-w-[260px]"
+            }
+          >
+            {columns.map((groups, ci) => (
+              <div key={ci}>
+                {groups.map((group, gi) => (
+                  <div key={gi}>
+                    {gi > 0 && (
+                      <div className="my-1.5 mx-5 border-t border-warm-100" />
+                    )}
+                    {group.title && (
+                      <span className="block px-5 pt-2 pb-1 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-text-tertiary">
+                        {group.title}
+                      </span>
+                    )}
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        role="menuitem"
+                        onClick={onClose}
+                        className="block px-5 py-2 no-underline hover:bg-warm-50 transition-colors"
+                      >
+                        <span className="block text-[0.85rem] font-medium text-text-primary leading-snug">
+                          {item.label}
+                        </span>
+                        <span className="block text-[0.75rem] text-text-tertiary mt-0.5">
+                          {item.desc}
+                        </span>
+                      </Link>
+                    ))}
+                  </div>
                 ))}
               </div>
             ))}
@@ -438,18 +494,26 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
                 {t.solutions}
               </span>
               <div className="mt-2 flex flex-col gap-1 pl-3 border-l border-warm-100">
-                {solutionsDropdown.groups.map((group) =>
-                  group.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
-                  ))
-                )}
+                {/* Sixteen links read as one list without their group titles. */}
+                {solutionsDropdown.groups.map((group, gi) => (
+                  <div key={gi} className="flex flex-col gap-1">
+                    {group.title && (
+                      <span className="pt-2 text-[0.65rem] font-medium uppercase tracking-[0.08em] text-text-tertiary">
+                        {group.title}
+                      </span>
+                    )}
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="py-1.5 text-[0.9rem] text-text-secondary no-underline hover:text-text-primary"
+                        onClick={() => setMobileOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>
 

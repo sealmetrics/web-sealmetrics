@@ -294,7 +294,7 @@ export function Proof() {
                   15–20%
                 </span>
                 <span className="block mt-2 text-[15px] leading-[1.4] text-ink-2 max-w-[34ch]">
-                  gap in sales attribution, closed against their CRM
+                  more sales attributed, reconciled against their CRM
                 </span>
               </div>
             </div>

@@ -37,7 +37,7 @@ const roles = [
 
 const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "La analítica que cuadra con tu CRM de Shopify." },
-  { slug: "hotels", name: "Hoteles y travel", tagline: "Ve el 25% de reservas que tu PMS genera pero marketing no atribuye." },
+  { slug: "hotels", name: "Hoteles y travel", tagline: "Palladium detectó un 35% de reservas de GA4 sin canal. Mira las tuyas." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activación, upgrade — todo first-party, independiente del consentimiento." },
   { slug: "agencies", name: "Agencias", tagline: "Deja de ser el medio entre disputas de atribución con clientes." },
   { slug: "media", name: "Medios y publishers", tagline: "Analítica que resiste a los ad-blockers. 50%+ de audiencia invisible para GA." },
