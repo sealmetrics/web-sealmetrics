@@ -36,7 +36,7 @@
     "date": "2026-04-25"
   },
   "/platforms/": {
-    "hash": "935c7c76666d17e0",
+    "hash": "1769d9c5dfa6dbc9",
     "date": "2026-09-15"
   },
   "/free-audit/": {
@@ -248,7 +248,7 @@
     "date": "2026-09-15"
   },
   "/es/platforms/": {
-    "hash": "44c53fdfd3f73801",
+    "hash": "3e9c97ac15e3c2ec",
     "date": "2026-09-15"
   },
   "/es/security/": {
@@ -1273,6 +1273,22 @@
   },
   "/es/ai-analytics/prompts/": {
     "hash": "42f1c94e9525aff1",
+    "date": "2026-09-15"
+  },
+  "/es/platforms/opencart/": {
+    "hash": "4ebb00529274c36b",
+    "date": "2026-09-15"
+  },
+  "/es/platforms/prestashop/": {
+    "hash": "e5c9caab3857167a",
+    "date": "2026-09-15"
+  },
+  "/platforms/opencart/": {
+    "hash": "1e6d543a26dde311",
+    "date": "2026-09-15"
+  },
+  "/platforms/prestashop/": {
+    "hash": "5e379f4c4a57545f",
     "date": "2026-09-15"
   }
 }
