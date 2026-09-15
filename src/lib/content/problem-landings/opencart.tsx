@@ -231,7 +231,7 @@ export const opencartEn: ProblemLandingContent = {
   final: {
     tag: "OpenCart walkthrough",
     title: <>Install on your store.<br /><em>See the channels behind the orders.</em></>,
-    body: "Book 30 minutes with the founder. We install the extension on your OpenCart store, test the funnel and a purchase, and set up the comparison with your orders store by store.",
+    body: "Book 30 minutes: we walk through the extension setup on your OpenCart version, how to test the funnel and a purchase, and how to compare Sealmetrics with your orders store by store.",
     primary: { label: "Book an OpenCart walkthrough", href: "/demo/" },
     secondary: { label: "See pricing", href: "/pricing/" },
   },
@@ -419,7 +419,7 @@ export const opencartEs: ProblemLandingContent = {
   final: {
     tag: "Revisión en OpenCart",
     title: <>Instálalo en tu tienda.<br /><em>Ve los canales detrás de los pedidos.</em></>,
-    body: "Reserva 30 minutos con el founder. Instalamos la extensión en tu tienda OpenCart, probamos el funnel y una compra, y dejamos preparada la comparación con tus pedidos tienda a tienda.",
+    body: "Reserva 30 minutos: repasamos la instalación de la extensión en tu versión de OpenCart, cómo probar el funnel y una compra, y cómo comparar Sealmetrics con tus pedidos tienda a tienda.",
     primary: { label: "Reservar una revisión en OpenCart", href: "/es/demo/" },
     secondary: { label: "Ver precios", href: "/es/pricing/" },
   },
