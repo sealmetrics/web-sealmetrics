@@ -3,7 +3,7 @@
  * Measures Sealmetrics' share of voice in answer engines, monthly.
  *
  * WHY THIS EXISTS
- * `SEO-STRATEGY.md` §9b defines a 13-prompt tracking list and a scoring method,
+ * `SEO-STRATEGY.md` §9b defines a prompt tracking list and a scoring method,
  * and the July, August and September runs all logged Perplexity and ChatGPT as
  * "pending manual run" — three months with two thirds of the measurement never
  * taken. A programme nobody can measure is a programme nobody can steer.
@@ -30,7 +30,14 @@
  *     can be checked against what the engine actually said.
  *
  * KEYS (repo secrets, or the local environment)
- *   ANTHROPIC_API_KEY · OPENAI_API_KEY · PERPLEXITY_API_KEY
+ *   ANTHROPIC_API_KEY · OPENAI_API_KEY · PERPLEXITY_API_KEY · GEMINI_API_KEY
+ *
+ * GEMINI
+ *   Runs with the google_search grounding tool, the closest API equivalent of
+ *   AI Overviews and AI Mode. Grounding sources come back as Google redirect
+ *   URLs, so the cited host is read from each source's title (Google puts the
+ *   domain there) and the redirect is kept in the raw .json. GEMINI_MODEL
+ *   overrides the model when the default is retired.
  *
  * Run: node scripts/geo-probe.mjs [--out .seo-audit/geo-runs] [--runs 3] [--engines a,b]
  */
@@ -165,6 +172,47 @@ const ENGINES = {
     },
   },
 
+  gemini: {
+    label: "Google (Gemini + Search)",
+    key: () => process.env.GEMINI_API_KEY,
+    async ask(prompt, key) {
+      const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json", "x-goog-api-key": key },
+          body: JSON.stringify({
+            contents: [{ role: "user", parts: [{ text: prompt }] }],
+            tools: [{ google_search: {} }],
+          }),
+          signal: AbortSignal.timeout(180_000),
+        }
+      );
+      if (!res.ok) throw new Error(`HTTP ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      const data = await res.json();
+      const candidate = data.candidates?.[0] ?? {};
+      const text = (candidate.content?.parts ?? [])
+        .map((p) => p.text)
+        .filter(Boolean)
+        .join("\n");
+      const chunks = candidate.groundingMetadata?.groundingChunks ?? [];
+      // The uri is a vertexaisearch redirect; the title carries the source domain.
+      const citations = chunks
+        .map((c) => {
+          const title = c.web?.title?.trim();
+          return title && /^[a-z0-9.-]+\.[a-z]{2,}$/i.test(title) ? `https://${title}/` : c.web?.uri;
+        })
+        .filter(Boolean);
+      return {
+        text,
+        citations: [...new Set(citations)],
+        model,
+        grounding: chunks.map((c) => c.web ?? c),
+      };
+    },
+  },
+
   perplexity: {
     label: "Perplexity",
     key: () => process.env.PERPLEXITY_API_KEY,
@@ -228,7 +276,7 @@ for (const [id, e] of skipped) {
 if (!active.length) {
   console.error(
     "[geo-probe] no engine has a key, so there is nothing to measure. " +
-      "Set ANTHROPIC_API_KEY, OPENAI_API_KEY and/or PERPLEXITY_API_KEY. " +
+      "Set ANTHROPIC_API_KEY, OPENAI_API_KEY, PERPLEXITY_API_KEY and/or GEMINI_API_KEY. " +
       "Refusing to emit a report with fabricated scores."
   );
   process.exit(1);
@@ -291,6 +339,24 @@ const sov = (engineId) => {
 const won = (engineId) =>
   results.filter((r) => r.engine === engineId && r.kind === "sov" && r.score >= 1).length;
 
+/** §9b log: a prompt is won when any measured engine names Sealmetrics, in EN or ES. */
+const promptsWon = new Set(
+  results.filter((r) => r.kind === "sov" && r.score >= 1).map((r) => r.id.split("-")[0])
+).size;
+
+/** §9b log: SOV over tier 1 and 2 prompts, across every engine that was measured. */
+const tier12 = (() => {
+  const rows = results.filter((r) => r.kind === "sov" && r.tier <= 2 && r.score !== null);
+  if (!rows.length) return null;
+  return Math.round((rows.reduce((a, r) => a + r.score, 0) / (rows.length * 2)) * 1000) / 10;
+})();
+/** "not run" means no key; an engine that ran but never answered is "errors", not a score and not "not run". */
+const cell = (engineId) => {
+  if (!active.some(([id]) => id === engineId)) return "not run";
+  const v = sov(engineId);
+  return v === null ? "errors" : `${v}%`;
+};
+
 const lines = [];
 lines.push(`# GEO prompt-run — ${now.toLocaleString("en", { month: "long", year: "numeric", timeZone: "UTC" })}`);
 lines.push("");
@@ -312,7 +378,7 @@ lines.push("| Engine | SOV | Prompts named / scored |");
 lines.push("|---|---:|---|");
 for (const [id, engine] of active) {
   const scoredCount = results.filter((r) => r.engine === id && r.kind === "sov" && r.score !== null).length;
-  lines.push(`| ${engine.label} | ${sov(id) ?? "—"}% | ${won(id)} / ${scoredCount} |`);
+  lines.push(`| ${engine.label} | ${cell(id)} | ${won(id)} / ${scoredCount} |`);
 }
 lines.push("");
 lines.push("## 2. Per-prompt scores");
@@ -369,10 +435,8 @@ lines.push("");
 lines.push("```");
 lines.push(
   `| ${now.toLocaleString("en", { month: "short", year: "numeric", timeZone: "UTC" })} (run) | ` +
-    `${sov("perplexity") ?? "not run"}${sov("perplexity") === null ? "" : "%"} | ` +
-    `${sov("openai") ?? "not run"}${sov("openai") === null ? "" : "%"} | ` +
-    `${sov("anthropic") ?? "not run"}${sov("anthropic") === null ? "" : "%"} | ` +
-    `— | ${active.length ? won(active[0][0]) : 0}/${prompts.length} | ` +
+    `${cell("perplexity")} | ${cell("openai")} | ${cell("anthropic")} | ${cell("gemini")} | ` +
+    `${tier12 === null ? "—" : `${tier12}%`} | ${promptsWon}/${prompts.length} | ` +
     `Automated run via scripts/geo-probe.mjs. |`
 );
 lines.push("```");
