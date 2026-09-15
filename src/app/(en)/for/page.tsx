@@ -30,21 +30,21 @@ export const metadata: Metadata = {
 };
 
 const roles = [
-  { slug: "cmo", name: "CMOs", tagline: "Defend your budget with numbers your CFO signs against." },
-  { slug: "cto", name: "CTOs & engineering", tagline: "846-byte pixel. Zero maintenance. No server-side GTM gymnastics." },
-  { slug: "dpo", name: "DPOs & legal", tagline: "Analytics designed for GDPR from the architecture up, not by a compliance layer." },
+  { slug: "cmo", name: "CMOs", tagline: "Agree the total with finance, then argue the channel split." },
+  { slug: "cto", name: "CTOs & engineering", tagline: "A 1.1 KB script, no device storage, and the data behind an API." },
+  { slug: "dpo", name: "DPOs & legal", tagline: "The vendor review against the DPA: data, retention, sub-processors." },
 ];
 
 const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "Your store knows what sold. See which channels and products sold it." },
   { slug: "hotels", name: "Hotels & travel", tagline: "Palladium found 35% of GA4 bookings with no channel. See yours." },
-  { slug: "saas", name: "SaaS", tagline: "Trial, activation, upgrade — all first-party, all consent-independent." },
+  { slug: "saas", name: "SaaS", tagline: "Sign-ups and trials by channel, measured without consent loss." },
   { slug: "multi-brand-retailers", name: "Multi-brand retailers", tagline: "Every brand measured on one method, so the group can compare them." },
   { slug: "agencies", name: "Agencies", tagline: "One measured layer the client owns and your whole team can work in." },
-  { slug: "media", name: "Media & publishers", tagline: "Analytics that hold up against ad-blockers. 50%+ audiences invisible to GA." },
-  { slug: "finance", name: "Finance & banking", tagline: "Bank-grade compliance. 1-meeting vendor review." },
-  { slug: "healthcare", name: "Healthcare", tagline: "No patient personal data in analytics. Portals measured in aggregate." },
-  { slug: "education", name: "Education", tagline: "K-12 to universities. No student personal data collected." },
+  { slug: "media", name: "Media & publishers", tagline: "Readers counted without cookies, from a subdomain of your own." },
+  { slug: "finance", name: "Finance & banking", tagline: "Applications by channel, with the documents a vendor review asks for." },
+  { slug: "healthcare", name: "Healthcare", tagline: "Appointment requests by channel, in aggregate, without cookies." },
+  { slug: "education", name: "Education", tagline: "Enquiries and applications by channel, without identifiers." },
 ];
 
 export default function Page() {
