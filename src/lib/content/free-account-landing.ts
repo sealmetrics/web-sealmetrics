@@ -28,7 +28,7 @@ export const MCP_GUIDE = "https://docs.sealmetrics.com/integrations/mcp-server";
 /** Assistant onboarding, verified 15 Sep 2026. Claude Code and Codex install the
  *  seal-copilot plugin (tools + the 15 analysis skills); Claude web/desktop adds the
  *  MCP endpoint as a custom connector from Settings. Cursor is not supported yet. */
-export const CLAUDE_CODE_PLUGIN_PROMPT = "instala el plugin sealmetrics/seal-copilot";
+export const CLAUDE_CODE_PLUGIN_PROMPT = { en: "install the sealmetrics/seal-copilot plugin", es: "instala el plugin sealmetrics/seal-copilot" } as const;
 export const CLAUDE_CODE_PLUGIN_COMMANDS = ["/plugin marketplace add sealmetrics/seal-copilot", "/plugin install seal-copilot@sealmetrics"];
 export const CLAUDE_CODE_MCP_COMMAND = "/mcp";
 export const CLAUDE_CODE_INSTALL_PLUGIN = "/plugin install seal-install@sealmetrics";
@@ -37,9 +37,6 @@ export const CLAUDE_CODE_INSTALL_PLUGIN = "/plugin install seal-install@sealmetr
 export const CODEX_COMMANDS = ["codex plugin marketplace add sealmetrics/seal-copilot", "codex plugin add seal-copilot@sealmetrics", "codex mcp login sealmetrics"];
 /** Flip to true the day the Sealmetrics connector is published in the OpenAI directory. */
 export const CHATGPT_CONNECTOR_LIVE = false;
-/** The refund guarantee on the paid plan is a commercial commitment. It is written
- *  in both languages below and stays hidden until Rafa approves it. */
-export const PAID_GUARANTEE_APPROVED = true;
 export const REGISTER_URL = "https://my.sealmetrics.com/register";
 
 /** Commercial window of the Black Friday offer. Change here, nowhere else. */
@@ -83,7 +80,7 @@ export interface FreeAccountCopy {
   promo: { tag: string; start: string; end: string; body: string; terms: string[]; priceLine: string; cta: string; secondary: string; note: string; deadlineLabel: string; deadline: string; untilLabel: string; until: string; datesTag: string; dates: { date: string; label: string; body: string }[]; line: string };
   offer: { tag: string; start: string; end: string; body: string; included: string[]; price: string; allowance: string; priceLabel: string; eventNote: string; note: string; package: string;
     stackTag: string; stack: { item: string; detail: string; value: string }[]; totalLabel: string; totalNote: string;
-    reasonTag: string; reasonTitle: string; reasonBody: string; guaranteeTag: string; guaranteeTitle: string; guaranteeBody: string; paidGuaranteeTitle: string; paidGuaranteeBody: string };
+    reasonTag: string; reasonTitle: string; reasonBody: string; guaranteeTag: string; guaranteeTitle: string; guaranteeBody: string };
   method: { tag: string; start: string; end: string; source: string };
   steps: { tag: string; start: string; end: string; intro: string; items: [string, string][]; downloadLabel: string; codexLabel: string; codexNote: string;
     pathsTitle: string; paths: [string, string][]; promptLabel: string; prompt: string; copy: string; copied: string; copyError: string; otherAssistant: string; guide: string; verify: string };
@@ -100,9 +97,9 @@ const en: FreeAccountCopy = {
   description: "GA4 behind a consent banner missed 29% of visits at Incapto. Open a free Sealmetrics account, 1M events, no card, and compare on your site before Black Friday.",
   nav: { evidence: "The evidence", offer: "Black Friday", start: "Start free", onPage: "On this page" },
   cta: "Open my free account",
-  eyebrow: "The Black Friday Truth Test · 14 days · 1,000,000 events · €0",
+  eyebrow: "The Black Friday Truth Test · 1,000,000 events · €0",
   h1Start: "You pay for every click.", h1End: "You decide on half.",
-  lead: "Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 for 14 days, on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. Our clients found between a quarter and half of their traffic missing from GA4, and up to a third of their sales filed under no channel.",
+  lead: "Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. Our clients found between a quarter and half of their traffic missing from GA4, and up to a third of their sales filed under no channel.",
   stats: [
     { value: "+41%", label: "more visits than GA4 recorded", note: "Incapto · Shopify · 48 days" },
     { value: "+52%", label: "more paid-campaign traffic", note: "Incapto · top of a +37 to +52% range" },
@@ -145,32 +142,32 @@ const en: FreeAccountCopy = {
   },
   attribution: {
     tag: "02 / THE SALES YOU ALREADY MADE", start: "Every sale you record,", end: "filed under the channel that closed it.",
-    body: "Sealmetrics attributes each conversion to the traffic source observed on that page load, last click, on the complete dataset rather than on the visitors who accepted a banner. No Cross-network bucket that hides part of your paid spend, and no unknown-origin line you cannot decide on: at Incapto that line was 14% of visits in GA4 and 0.3% in Sealmetrics.",
+    body: "Sealmetrics attributes each conversion to the traffic source of the session in which it fires, last click, on the complete dataset rather than on the visitors who accepted a banner. No Cross-network bucket that hides part of your paid spend, and no unknown-origin line you cannot decide on: at Incapto that line was 14% of visits in GA4 and 0.3% in Sealmetrics.",
     items: [
       ["Revenue by channel, campaign and landing page", "The report that decides your media budget, calculated on the traffic that actually arrived."],
       ["The whole funnel, in aggregate counts", "Visit, product, cart, checkout, purchase: step counts by channel, so you see where each channel's buyers drop."],
-      ["Real time, Black Friday included", "Every report to the second, no sampling and no throttling at peak. You optimise at 10:01, not the next day."],
+      ["Fresh data, Black Friday included", "Hits usually reach your reports in under two minutes, with no sampling, and each day is complete before 6 AM. You adjust during the campaign, not the week after."],
     ],
     boundary: "Measurement is aggregate and anonymous: no visitor identifiers, no cross-device journeys, no multi-touch model. Last click on complete data, and a number you can reconcile against your orders.",
   },
   promo: {
     tag: "04 / THE DATES THAT MATTER", start: "Sign now.", end: "Run peak season on the Enterprise SLA.",
-    body: "Real time is not the offer, it is the product: every report, to the second, at peak. The offer is the guarantee behind it. Contract a Growth or Scale plan before Black Friday and your account carries the SLA we give Enterprise accounts through the whole Christmas campaign, at your plan's price.",
+    body: "Fresh, unsampled reports are not the offer, they are the product. The offer is the guarantee behind it. Contract a Growth or Scale plan before Black Friday and your account carries the SLA we give Enterprise accounts through the whole Christmas campaign, at your plan's price.",
     terms: [
       "Sign a Growth or Scale plan before 27 November 2026",
       "Enterprise SLA on your account until 6 January 2027",
       "99.9% availability commitment with service credits",
       "Priority support during the campaign",
-      "Real-time reports, no sampling, no throttling at peak",
+      "Hits in your reports usually within two minutes, no sampling",
       "Day complete before 6 AM, every day of the campaign",
     ],
-    priceLine: "Growth from €499/month · Scale from €899/month · billed annually · The first million events are on us on every plan",
+    priceLine: "Growth from €499/month · Scale from €899/month · billed annually · The first million events are on us with the Agentic account",
     cta: "See plans and sign", secondary: "Talk to us before signing",
-    note: "Applies to plans signed in that window and is honoured for the full campaign. Real time and peak behaviour are product capabilities on every plan, Agentic included; the SLA is the contractual layer on top.",
+    note: "Applies to plans signed in that window and is honoured for the full campaign. Report freshness and unsampled data are product capabilities on every plan, Agentic included; the SLA is the contractual layer on top.",
     deadlineLabel: "SIGN BEFORE", deadline: "27 NOV 2026", untilLabel: "ENTERPRISE SLA UNTIL", until: "6 JAN 2027",
     datesTag: "THREE DATES",
     dates: [
-      { date: "13 NOV 2026", label: "Install by", body: "Fourteen days of data before Black Friday. Install later and you compare on less." },
+      { date: "13 NOV 2026", label: "Install by", body: "Two weeks of your own data before Black Friday. Install later and you compare on less." },
       { date: "27 NOV 2026", label: "Sign by", body: "Black Friday. Last day to get the Enterprise SLA on a Growth or Scale plan." },
       { date: "6 JAN 2027", label: "SLA runs until", body: "The end of the Christmas campaign, every day of it covered." },
     ],
@@ -185,7 +182,7 @@ const en: FreeAccountCopy = {
     note: "Self-service, documentation support. Requires an MCP-capable assistant; its subscription is not included.",
     stackTag: "WHAT YOU GET, LINE BY LINE",
     stack: [
-      { item: "Complete cookieless measurement, 1,000,000 events", detail: "The same engine a Growth customer pays €499 a month for. Visits, conversions and revenue, with no consent gate in the way.", value: "€499/mo → €0" },
+      { item: "Cookieless measurement, 1,000,000 events in total", detail: "The same measurement engine as the paid plans, with one million events over the life of the account instead of Growth's five million a month. Visits, conversions and revenue, including the visitors who reject a banner.", value: "€0" },
       { item: "Revenue attribution by channel, campaign and landing page", detail: "Last click on the complete dataset. The report that decides your media budget.", value: "Included" },
       { item: "Installation done by your AI assistant", detail: "Claude creates the account, generates the pixels and can push them to GitHub or GTM. A developer's afternoon you do not spend.", value: "Included" },
       { item: "Bonus 1 · The Incapto reconciliation method", detail: "The four steps Incapto used to check both tools against the till. On this page, below.", value: "Bonus" },
@@ -193,13 +190,11 @@ const en: FreeAccountCopy = {
       { item: "Bonus 3 · MCP, API and BigQuery connector", detail: "Your data leaves whenever you want it to, into the tool you already use.", value: "Bonus" },
       { item: "Black Friday bonus · Enterprise SLA through Christmas", detail: "Sign a Growth or Scale plan before 27 November and your account carries the Enterprise SLA until 6 January, at your plan's price.", value: "If you sign" },
     ],
-    totalLabel: "YOUR PRICE", totalNote: "No card. Nothing to cancel. The only thing you spend is 14 days of data you were not collecting anyway.",
+    totalLabel: "YOUR PRICE", totalNote: "No card. Nothing to cancel. The only thing you spend is the few minutes the installation takes.",
     reasonTag: "WHY WE GIVE THE FIRST MILLION AWAY", reasonTitle: "Because the reconciliation sells better than we do.",
-    reasonBody: "Every client we have signed did the same thing first: measured in parallel and checked the numbers against their own orders. We would rather you see the gap on your site than read about it on ours. If there is no gap, you owe us nothing and you will have learnt that your analytics is fine.",
+    reasonBody: "Our published clients started the same way: Incapto checked Sealmetrics against its Shopify orders, Dreamplace against its CRM, Palladium against GA4. We would rather you see the gap on your site than read about it on ours. If there is no gap, you owe us nothing and you will have learnt that your analytics is fine.",
     guaranteeTag: "THE GUARANTEE", guaranteeTitle: "Your till is the guarantee.",
-    guaranteeBody: "Sealmetrics reconciles against orders your store actually took, not against our word. At Incapto that was 96% of orders and 97% of revenue. If after 14 days you do not see more traffic and more sales with a channel than in GA4, you have not paid a cent and there is nothing to cancel.",
-    paidGuaranteeTitle: "For the plan you sign before Black Friday",
-    paidGuaranteeBody: "If by 6 January Sealmetrics has not attributed more sales to a channel than your GA4 over the same days, we cancel the annual contract and refund the unused months.",
+    guaranteeBody: "Sealmetrics reconciles against orders your store actually took, not against our word. At Incapto that was 96% of orders and 97% of revenue. If you do not see more traffic and more sales with a channel than in GA4, you have not paid a cent and there is nothing to cancel.",
   },
   method: { tag: "BONUS 1 · THE INCAPTO METHOD", start: "Reconcile against the till,", end: "then read the difference.", source: "INCAPTO · SHOPIFY, GA4 AND SEALMETRICS · JUNE–AUGUST 2026" },
   steps: {
@@ -215,7 +210,7 @@ const en: FreeAccountCopy = {
     paths: [
       ["Push them to your site through GitHub", "If Claude has access to your repository, ask it to open the pull request with the pixels in place."],
       ["Add them to GTM through a GTM MCP", "If you run a Google Tag Manager MCP, ask Claude to create the tags and publish the container."],
-      ["Copy and paste into GTM yourself", "Create a Custom HTML tag on All Pages and do not attach the consent trigger: the pixel stores nothing on the device, so the banner does not apply to it."],
+      ["Copy and paste into GTM yourself", "Create a Custom HTML tag on All Pages. The pixel stores and reads nothing on the device; whether it can fire without your consent trigger depends on your configuration and your national authority's criteria, so confirm it with whoever owns privacy."],
     ],
     promptLabel: "COPY, ADD YOUR DOMAIN AND SEND TO CLAUDE",
     prompt: "Create my free Sealmetrics account for [your domain], provision the site, generate the tracking pixels for pageviews and purchases, and tell me how to install them.",
@@ -230,7 +225,7 @@ const en: FreeAccountCopy = {
     assistants: [
       { name: "Claude Code (terminal, desktop or IDE)", badge: "EASIEST · INSTALLS FROM THE CHAT",
         steps: [
-          { text: "Option A: paste this into the chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT] },
+          { text: "Option A: paste this into the chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT.en] },
           { text: "Option B: type these two commands into the text box.", code: CLAUDE_CODE_PLUGIN_COMMANDS },
           { text: "Either way, then type /mcp, choose “sealmetrics” and sign in with your Sealmetrics account in the browser. There is no token to copy. If it does not appear, restart Claude Code.", code: [CLAUDE_CODE_MCP_COMMAND] },
         ],
@@ -238,10 +233,12 @@ const en: FreeAccountCopy = {
           { text: "Install the plugin, not only the MCP URL: the plugin also brings the 15 analysis skills. With the URL alone you get the tools but not the methodology." },
           { text: "Optional, to install tracking on a site from scratch. It needs the SEALMETRICS_API_KEY environment variable.", code: [CLAUDE_CODE_INSTALL_PLUGIN] },
         ] },
-      { name: "Codex", badge: "SAME FLOW",
+      { name: "Codex", badge: "FROM THE PLUGIN README",
         steps: [
-          { text: "Paste this into the chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT] },
-          { text: "Or run these three commands.", code: CODEX_COMMANDS },
+          { text: "Run these three commands, taken from the seal-copilot README.", code: CODEX_COMMANDS },
+        ],
+        notes: [
+          { text: "This flow is documented by the plugin but we have not yet run it end to end on Codex. If a step fails, the Agentic package guide has the manual configuration." },
         ] },
       { name: "Claude web and Claude desktop (claude.ai, desktop app, Cowork)", badge: "FROM SETTINGS, NOT FROM THE CHAT",
         steps: [
@@ -267,23 +264,23 @@ const en: FreeAccountCopy = {
     paragraphs: [
       "If you have read this far and still have not opened the account, I know you are not going to buy Sealmetrics today. Fine. But I have to tell you: Sealmetrics is a cannon.",
       "Our pixel is 132 times lighter than GA4's and 155 times lighter than Adobe's. That is why it records visits the heavy scripts drop before they fire (on a European media site, 25% more pageviews than Adobe, with Adobe firing without a consent gate), why it records the sales that happen with no banner in the way, and why it assigns each one to the channel that closed it.",
-      "There is a free package. Try it. You lose nothing. Compare. One: tell Claude to install the MCP. Two: tell it to create your account. Three: tell it to generate your pixels. From there it is up to you: have it push them to your site through GitHub, have it add them to GTM if you run a GTM MCP, or copy and paste them into GTM yourself, without the consent-banner trigger.",
+      "There is a free package. Try it. You lose nothing. Compare. One: tell Claude to install the MCP. Two: tell it to create your account. Three: tell it to generate your pixels. From there it is up to you: have it push them to your site through GitHub, have it add them to GTM if you run a GTM MCP, or copy and paste them into GTM yourself and decide with your privacy lead whether the tag waits for the banner.",
     ],
     sign: "Rafa Jiménez", role: "Founder, Sealmetrics",
   },
   faqTitle: "Clear before you start.",
   faqs: [
     { question: "Is it really free, with no card?", answer: "Yes. We gift you the first million events: the Agentic account is free up to one million events in total over the life of the account, with no credit card and nothing to cancel. You need an MCP-capable assistant such as Claude; its subscription is separate." },
-    { question: "What is an event?", answer: "A recorded interaction on your site: a pageview, a click on something you track, an add-to-cart, a purchase. One visit generates several events. Only human events count: bot traffic is detected and does not consume your million. For a mid-sized store that is weeks of measurement, enough to reconcile against your orders and read the difference by channel." },
+    { question: "What is an event?", answer: "A recorded interaction on your site: a pageview, a click on something you track, an add-to-cart, a purchase. One visit generates several events. The allowance is counted in human events, the same unit as the paid plans. For a mid-sized store that is weeks of measurement, enough to reconcile against your orders and read the difference by channel." },
     { question: "Do I have to remove GA4 or Matomo?", answer: "No. Keep it and run Sealmetrics in parallel on the same site for the same days. Then reconcile both against the orders in your store or CRM. That reconciliation, not our word, is the comparison." },
-    { question: "Why does the pixel not need consent?", answer: "Because it writes nothing to and reads nothing from the device: no cookies, no local storage, no fingerprint. ePrivacy Article 5(3) is triggered by device storage, so there is nothing to consent to. Sealmetrics is designed for GDPR from the architecture up, self-assessed, not certified, with visitor data processed in Dublin and a DPA on every plan." },
-    { question: "What exactly is the Black Friday offer?", answer: "Contract a Growth or Scale plan before 27 November 2026 and your account carries the Enterprise SLA, 99.9% availability with service credits and priority support, until 6 January 2027, at your plan's price. Real-time reports with no sampling at peak are part of the product on every plan; the offer is the contractual guarantee on top." },
+    { question: "Does the pixel need consent?", answer: "It writes nothing to and reads nothing from the device: no cookies, no local storage, no fingerprint. ePrivacy Article 5(3) is about storing or accessing information on the device, which is why many deployments can run without a consent banner; whether yours can depends on its configuration and on your national authority's criteria. Sealmetrics is designed for GDPR from the architecture up, self-assessed, not certified, with visitor data processed in Dublin and a DPA on every plan." },
+    { question: "What exactly is the Black Friday offer?", answer: "Contract a Growth or Scale plan before 27 November 2026 and your account carries the Enterprise SLA, 99.9% availability with service credits and priority support, until 6 January 2027, at your plan's price. Fresh, unsampled reports are part of the product on every plan; the offer is the contractual guarantee on top." },
     { question: "What happens when I reach one million events?", answer: "You choose a plan. Growth starts at €499 a month billed annually with 5 million events a month. Nothing is charged without you choosing a plan, because there is no card on file." },
-    { question: "Does it work with Shopify, WooCommerce, Magento or GTM?", answer: "Yes. Shopify and WordPress take about 5 minutes, custom or headless builds up to 30. Through GTM, a Custom HTML tag on All Pages with no consent trigger. Claude can generate the code for your platform." },
-    { question: "Is this multi-touch attribution?", answer: "No, and it never will be. Sealmetrics is aggregate, anonymous measurement: it attributes each conversion last click to the source observed on that page load, on the complete dataset. No visitor identifiers, no cross-device journeys." },
+    { question: "Does it work with Shopify, WooCommerce, Magento or GTM?", answer: "Yes. Shopify and WordPress take about 5 minutes, custom or headless builds up to 30. Through GTM, a Custom HTML tag on All Pages; whether it fires without your consent trigger depends on your configuration and your national authority's criteria. Claude can generate the code for your platform." },
+    { question: "Is this multi-touch attribution?", answer: "No, and it never will be. Sealmetrics is aggregate, anonymous measurement: it attributes each conversion last click to the source of the session in which it fires, on the complete dataset. No visitor identifiers, no cross-device journeys." },
   ],
   final: {
-    tag: "THE NEXT COMPARISON IS YOURS", start: "Two weeks in parallel.", end: "One number to reconcile.",
+    tag: "THE NEXT COMPARISON IS YOURS", start: "Measure in parallel.", end: "One number to reconcile.",
     body: "Incapto, Dreamplace and Palladium ran the test. Open the free account today and you will have the comparison before Black Friday, and the Enterprise SLA through Christmas if you sign.",
     line: "Investing on the visitors who clicked Accept has a cost too.", demo: "Prefer to talk first? Book a demo",
   },
@@ -296,9 +293,9 @@ const es: FreeAccountCopy = {
   description: "GA4 tras el banner no vio el 29% de las visitas de Incapto. Abre tu cuenta gratis de Sealmetrics, 1M de eventos sin tarjeta, y compara antes del Black Friday.",
   nav: { evidence: "La prueba", offer: "Black Friday", start: "Empieza gratis", onPage: "En esta página" },
   cta: "Abrir mi cuenta gratis",
-  eyebrow: "La Prueba de la Verdad del Black Friday · 14 días · 1.000.000 de eventos · 0 €",
+  eyebrow: "La Prueba de la Verdad del Black Friday · 1.000.000 de eventos · 0 €",
   h1Start: "Pagas por todos los clics.", h1End: "Decides con la mitad.",
-  lead: "Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 durante 14 días, en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. Nuestros clientes encontraron entre un cuarto y la mitad de su tráfico fuera de GA4, y hasta un tercio de sus ventas sin canal.",
+  lead: "Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. Nuestros clientes encontraron entre un cuarto y la mitad de su tráfico fuera de GA4, y hasta un tercio de sus ventas sin canal.",
   stats: [
     { value: "+41%", label: "más visitas de las que registró GA4", note: "Incapto · Shopify · 48 días" },
     { value: "+52%", label: "más tráfico de campañas de pago", note: "Incapto · techo de un rango de +37 a +52%" },
@@ -341,32 +338,32 @@ const es: FreeAccountCopy = {
   },
   attribution: {
     tag: "02 / LAS VENTAS QUE YA HACES", start: "Cada venta que registras,", end: "asignada al canal que la cerró.",
-    body: "Sealmetrics atribuye cada conversión a la fuente de tráfico observada en esa carga de página, último clic, sobre el conjunto completo de datos y no sobre los visitantes que aceptaron un banner. Sin cajón Cross-network que esconda parte de tu inversión de pago y sin una línea de origen desconocido sobre la que no puedes decidir: en Incapto esa línea era el 14% de las visitas en GA4 y el 0,3% en Sealmetrics.",
+    body: "Sealmetrics atribuye cada conversión a la fuente de tráfico de la sesión en la que ocurre, último clic, sobre el conjunto completo de datos y no sobre los visitantes que aceptaron un banner. Sin cajón Cross-network que esconda parte de tu inversión de pago y sin una línea de origen desconocido sobre la que no puedes decidir: en Incapto esa línea era el 14% de las visitas en GA4 y el 0,3% en Sealmetrics.",
     items: [
       ["Ingresos por canal, campaña y landing", "El informe que decide tu presupuesto de medios, calculado sobre el tráfico que de verdad llegó."],
       ["Todo el embudo, en recuentos agregados", "Visita, producto, carrito, checkout, compra: recuentos por paso y por canal, para ver dónde se caen los compradores de cada canal."],
-      ["Tiempo real, Black Friday incluido", "Todos los informes al segundo, sin muestreo ni limitación en el pico. Optimizas a las 10:01, no al día siguiente."],
+      ["Dato fresco, Black Friday incluido", "Los hits suelen llegar a tus informes en menos de dos minutos, sin muestreo, y cada día está completo antes de las 6 de la mañana. Ajustas durante la campaña, no a la semana siguiente."],
     ],
     boundary: "La medición es agregada y anónima: sin identificadores de visitante, sin recorridos entre dispositivos, sin modelo multi-touch. Último clic sobre datos completos, y un número que puedes conciliar contra tus pedidos.",
   },
   promo: {
     tag: "04 / LAS FECHAS QUE MANDAN", start: "Contrata ahora.", end: "Pasa la campaña con el SLA de Enterprise.",
-    body: "El tiempo real no es la oferta, es el producto: todos los informes, al segundo, en el pico. La oferta es la garantía que hay detrás. Contrata un plan Growth o Scale antes del Black Friday y tu cuenta lleva el SLA que damos a las cuentas Enterprise durante toda la campaña de Navidad, al precio de tu plan.",
+    body: "Los informes frescos y sin muestreo no son la oferta, son el producto. La oferta es la garantía que hay detrás. Contrata un plan Growth o Scale antes del Black Friday y tu cuenta lleva el SLA que damos a las cuentas Enterprise durante toda la campaña de Navidad, al precio de tu plan.",
     terms: [
       "Contrata Growth o Scale antes del 27 de noviembre de 2026",
       "SLA de Enterprise en tu cuenta hasta el 6 de enero de 2027",
       "Compromiso de disponibilidad del 99,9% con créditos de servicio",
       "Soporte prioritario durante la campaña",
-      "Informes en tiempo real, sin muestreo ni limitación en el pico",
+      "Hits en tus informes normalmente en menos de dos minutos, sin muestreo",
       "Día completo antes de las 6 de la mañana, cada día de campaña",
     ],
-    priceLine: "Growth desde 499 €/mes · Scale desde 899 €/mes · facturación anual · El primer millón de eventos, regalado en todos los planes",
+    priceLine: "Growth desde 499 €/mes · Scale desde 899 €/mes · facturación anual · El primer millón de eventos, regalado con la cuenta Agentic",
     cta: "Ver planes y contratar", secondary: "Hablarlo antes de firmar",
-    note: "Aplica a planes contratados en esa ventana y se mantiene toda la campaña. El tiempo real y el comportamiento en pico son capacidades del producto en todos los planes, Agentic incluido; el SLA es la capa contractual que va encima.",
+    note: "Aplica a planes contratados en esa ventana y se mantiene toda la campaña. La frescura de los informes y el dato sin muestreo son capacidades del producto en todos los planes, Agentic incluido; el SLA es la capa contractual que va encima.",
     deadlineLabel: "CONTRATA ANTES DEL", deadline: "27 NOV 2026", untilLabel: "SLA DE ENTERPRISE HASTA EL", until: "6 ENE 2027",
     datesTag: "TRES FECHAS",
     dates: [
-      { date: "13 NOV 2026", label: "Instala antes del", body: "Catorce días de datos antes del Black Friday. Si instalas más tarde, comparas con menos." },
+      { date: "13 NOV 2026", label: "Instala antes del", body: "Dos semanas de datos propios antes del Black Friday. Si instalas más tarde, comparas con menos." },
       { date: "27 NOV 2026", label: "Contrata antes del", body: "Black Friday. Último día para llevar el SLA de Enterprise en un plan Growth o Scale." },
       { date: "6 ENE 2027", label: "El SLA dura hasta el", body: "El final de la campaña de Navidad, con todos sus días cubiertos." },
     ],
@@ -381,7 +378,7 @@ const es: FreeAccountCopy = {
     note: "Uso autónomo, soporte por documentación. Requiere un asistente compatible con MCP; su suscripción no está incluida.",
     stackTag: "LO QUE TE LLEVAS, LÍNEA A LÍNEA",
     stack: [
-      { item: "Medición completa sin cookies, 1.000.000 de eventos", detail: "El mismo motor que paga un cliente Growth a 499 € al mes. Visitas, conversiones e ingresos, sin puerta de consentimiento por medio.", value: "499 €/mes → 0 €" },
+      { item: "Medición sin cookies, 1.000.000 de eventos en total", detail: "El mismo motor de medición que los planes de pago, con un millón de eventos para toda la vida de la cuenta en lugar de los cinco millones al mes de Growth. Visitas, conversiones e ingresos, también de quien rechaza el banner.", value: "0 €" },
       { item: "Atribución de ingresos por canal, campaña y landing", detail: "Último clic sobre el conjunto completo de datos. El informe que decide tu presupuesto de medios.", value: "Incluido" },
       { item: "Instalación hecha por tu asistente de IA", detail: "Claude crea la cuenta, genera los píxeles y puede subirlos a GitHub o a GTM. Una tarde de tu desarrollador que no gastas.", value: "Incluido" },
       { item: "Bonus 1 · El método de conciliación de Incapto", detail: "Los cuatro pasos que siguió Incapto para contrastar las dos herramientas con la caja. En esta misma página, más abajo.", value: "Bonus" },
@@ -389,13 +386,11 @@ const es: FreeAccountCopy = {
       { item: "Bonus 3 · MCP, API y conector BigQuery", detail: "Tus datos salen cuando tú quieras, a la herramienta que ya usas.", value: "Bonus" },
       { item: "Bonus Black Friday · SLA de Enterprise durante la Navidad", detail: "Contrata Growth o Scale antes del 27 de noviembre y tu cuenta lleva el SLA de Enterprise hasta el 6 de enero, al precio de tu plan.", value: "Si contratas" },
     ],
-    totalLabel: "TU PRECIO", totalNote: "Sin tarjeta. Nada que cancelar. Lo único que gastas son 14 días de datos que, de todas formas, no estabas recogiendo.",
+    totalLabel: "TU PRECIO", totalNote: "Sin tarjeta. Nada que cancelar. Lo único que gastas son los minutos que lleva la instalación.",
     reasonTag: "POR QUÉ REGALAMOS EL PRIMER MILLÓN", reasonTitle: "Porque la conciliación vende mejor que nosotros.",
-    reasonBody: "Todos los clientes que hemos firmado hicieron lo mismo primero: midieron en paralelo y contrastaron los números con sus propios pedidos. Preferimos que veas el hueco en tu web a que lo leas en la nuestra. Si no hay hueco, no nos debes nada y habrás comprobado que tu analítica está bien.",
+    reasonBody: "Nuestros clientes publicados empezaron igual: Incapto contrastó Sealmetrics con sus pedidos de Shopify, Dreamplace con su CRM y Palladium con GA4. Preferimos que veas el hueco en tu web a que lo leas en la nuestra. Si no hay hueco, no nos debes nada y habrás comprobado que tu analítica está bien.",
     guaranteeTag: "LA GARANTÍA", guaranteeTitle: "Tu caja es la garantía.",
-    guaranteeBody: "Sealmetrics se concilia contra los pedidos que de verdad hizo tu tienda, no contra nuestra palabra. En Incapto fueron el 96% de los pedidos y el 97% de la facturación. Si a los 14 días no ves más tráfico y más ventas con canal que en GA4, no has pagado un céntimo y no hay nada que cancelar.",
-    paidGuaranteeTitle: "Para el plan que contrates antes del Black Friday",
-    paidGuaranteeBody: "Si el 6 de enero Sealmetrics no ha atribuido a canal más ventas que tu GA4 en los mismos días, cancelamos el contrato anual y devolvemos los meses no consumidos.",
+    guaranteeBody: "Sealmetrics se concilia contra los pedidos que de verdad hizo tu tienda, no contra nuestra palabra. En Incapto fueron el 96% de los pedidos y el 97% de la facturación. Si no ves más tráfico y más ventas con canal que en GA4, no has pagado un céntimo y no hay nada que cancelar.",
   },
   method: { tag: "BONUS 1 · EL MÉTODO INCAPTO", start: "Concilia contra la caja.", end: "Después lee la diferencia.", source: "INCAPTO · SHOPIFY, GA4 Y SEALMETRICS · JUNIO–AGOSTO DE 2026" },
   steps: {
@@ -411,7 +406,7 @@ const es: FreeAccountCopy = {
     paths: [
       ["Que los suba a tu web por GitHub", "Si Claude tiene acceso a tu repositorio, pídele que abra el pull request con los píxeles puestos."],
       ["Que los añada a GTM con un MCP de GTM", "Si usas un MCP de Google Tag Manager, pídele que cree las etiquetas y publique el contenedor."],
-      ["Copia y pega en tu GTM", "Crea una etiqueta HTML personalizado en All Pages y no le pongas el disparador de consentimiento: el píxel no guarda nada en el dispositivo, así que el faldón de cookies no le aplica."],
+      ["Copia y pega en tu GTM", "Crea una etiqueta HTML personalizado en All Pages. El píxel no guarda ni lee nada en el dispositivo; que pueda dispararse sin tu disparador de consentimiento depende de la configuración y del criterio de tu autoridad nacional, así que confírmalo con quien lleve la privacidad."],
     ],
     promptLabel: "COPIA, PON TU DOMINIO Y ENVÍASELO A CLAUDE",
     prompt: "Crea mi cuenta gratuita de Sealmetrics para [tu dominio], da de alta la web, genera los píxeles de medición de páginas vistas y compras, y dime cómo instalarlos.",
@@ -426,7 +421,7 @@ const es: FreeAccountCopy = {
     assistants: [
       { name: "Claude Code (terminal, escritorio o IDE)", badge: "LO MÁS FÁCIL · SE INSTALA DESDE EL CHAT",
         steps: [
-          { text: "Opción A: pega esto en el chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT] },
+          { text: "Opción A: pega esto en el chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT.es] },
           { text: "Opción B: escribe estos dos comandos en el cuadro de texto.", code: CLAUDE_CODE_PLUGIN_COMMANDS },
           { text: "En los dos casos, escribe /mcp, elige «sealmetrics» y entra con tu cuenta de Sealmetrics en el navegador. No hay ningún token que copiar. Si no aparece, reinicia Claude Code.", code: [CLAUDE_CODE_MCP_COMMAND] },
         ],
@@ -434,10 +429,12 @@ const es: FreeAccountCopy = {
           { text: "Instala el plugin y no sólo la URL del MCP: el plugin trae además las 15 skills de análisis. Sólo con la URL tienes las herramientas, pero no la metodología." },
           { text: "Opcional, para instalar el tracking en una web desde cero. Necesita la variable de entorno SEALMETRICS_API_KEY.", code: [CLAUDE_CODE_INSTALL_PLUGIN] },
         ] },
-      { name: "Codex", badge: "MISMO FLUJO",
+      { name: "Codex", badge: "SEGÚN EL README DEL PLUGIN",
         steps: [
-          { text: "Pega esto en el chat.", code: [CLAUDE_CODE_PLUGIN_PROMPT] },
-          { text: "O ejecuta estos tres comandos.", code: CODEX_COMMANDS },
+          { text: "Ejecuta estos tres comandos, tomados del README de seal-copilot.", code: CODEX_COMMANDS },
+        ],
+        notes: [
+          { text: "El plugin documenta este flujo, pero todavía no lo hemos probado de principio a fin en Codex. Si falla algún paso, la guía del Agentic Package tiene la configuración manual." },
         ] },
       { name: "Claude web y Claude escritorio (claude.ai, app de escritorio, Cowork)", badge: "DESDE AJUSTES, NO DESDE EL CHAT",
         steps: [
@@ -463,23 +460,23 @@ const es: FreeAccountCopy = {
     paragraphs: [
       "Mira, sé que si has llegado hasta aquí leyendo y aún no has abierto la cuenta, no me vas a contratar Sealmetrics hoy. Vale. Pero he de decirte que Sealmetrics es un cañón.",
       "Nuestro píxel pesa 132 veces menos que el de GA4 y 155 veces menos que el de Adobe. Por eso recoge visitas que los scripts pesados pierden antes de dispararse (en un medio europeo registró un 25% más de páginas vistas que Adobe, con Adobe disparando sin puerta de consentimiento), registra las ventas que ocurren sin un banner por medio y asigna cada una al canal que la cerró.",
-      "Tienes un paquete gratis. Pruébalo, no pierdes nada, compara. Uno: dile a Claude que te instale el MCP. Dos: dile que te cree la cuenta. Tres: que te genere los píxeles. Desde aquí depende de ti: que te los suba a tu web por GitHub, que te los añada en GTM si tienes un MCP de GTM, o copia y pega en tu GTM, sin aplicar las restricciones del faldón de cookies.",
+      "Tienes un paquete gratis. Pruébalo, no pierdes nada, compara. Uno: dile a Claude que te instale el MCP. Dos: dile que te cree la cuenta. Tres: que te genere los píxeles. Desde aquí depende de ti: que te los suba a tu web por GitHub, que te los añada en GTM si tienes un MCP de GTM, o copia y pega en tu GTM y decide con quien lleve la privacidad si la etiqueta espera al banner.",
     ],
     sign: "Rafa Jiménez", role: "Fundador de Sealmetrics",
   },
   faqTitle: "Antes de empezar, claro.",
   faqs: [
     { question: "¿Es gratis de verdad y sin tarjeta?", answer: "Sí. Te regalamos el primer millón de eventos: la cuenta Agentic es gratuita hasta un millón de eventos en total durante toda la vida de la cuenta, sin tarjeta y sin nada que cancelar. Necesitas un asistente compatible con MCP, como Claude; su suscripción va aparte." },
-    { question: "¿Qué es un evento?", answer: "Una interacción registrada en tu web: una página vista, un clic en algo que midas, un añadir al carrito, una compra. Una visita genera varios eventos. Sólo cuentan los eventos humanos: el tráfico de bots se detecta y no consume tu millón. Para una tienda mediana son semanas de medición, suficiente para conciliar contra tus pedidos y leer la diferencia por canal." },
+    { question: "¿Qué es un evento?", answer: "Una interacción registrada en tu web: una página vista, un clic en algo que midas, un añadir al carrito, una compra. Una visita genera varios eventos. El cupo se cuenta en eventos humanos, la misma unidad que los planes de pago. Para una tienda mediana son semanas de medición, suficiente para conciliar contra tus pedidos y leer la diferencia por canal." },
     { question: "¿Tengo que quitar GA4 o Matomo?", answer: "No. Mantenlo y mide con Sealmetrics en paralelo en la misma web y los mismos días. Después concilia las dos contra los pedidos de tu tienda o tu CRM. Esa conciliación, y no nuestra palabra, es la comparación." },
-    { question: "¿Por qué el píxel no necesita consentimiento?", answer: "Porque no escribe ni lee nada en el dispositivo: ni cookies, ni almacenamiento local, ni huella digital. El artículo 5.3 de la ePrivacy se activa con el almacenamiento en el dispositivo, así que no hay nada que consentir. Sealmetrics está diseñado para el RGPD desde la arquitectura, autoevaluado y no certificado, con los datos de visitantes procesados en Dublín y un DPA en todos los planes." },
-    { question: "¿En qué consiste exactamente la oferta de Black Friday?", answer: "Contrata un plan Growth o Scale antes del 27 de noviembre de 2026 y tu cuenta lleva el SLA de Enterprise, disponibilidad del 99,9% con créditos de servicio y soporte prioritario, hasta el 6 de enero de 2027, al precio de tu plan. Los informes en tiempo real sin muestreo en el pico forman parte del producto en todos los planes; la oferta es la garantía contractual que va encima." },
+    { question: "¿El píxel necesita consentimiento?", answer: "No escribe ni lee nada en el dispositivo: ni cookies, ni almacenamiento local, ni huella digital. El artículo 5.3 de la ePrivacy se refiere a guardar o acceder a información en el dispositivo, y por eso muchos despliegues pueden funcionar sin banner; que el tuyo pueda depende de su configuración y del criterio de tu autoridad nacional. Sealmetrics está diseñado para el RGPD desde la arquitectura, autoevaluado y no certificado, con los datos de visitantes procesados en Dublín y un DPA en todos los planes." },
+    { question: "¿En qué consiste exactamente la oferta de Black Friday?", answer: "Contrata un plan Growth o Scale antes del 27 de noviembre de 2026 y tu cuenta lleva el SLA de Enterprise, disponibilidad del 99,9% con créditos de servicio y soporte prioritario, hasta el 6 de enero de 2027, al precio de tu plan. Los informes frescos y sin muestreo forman parte del producto en todos los planes; la oferta es la garantía contractual que va encima." },
     { question: "¿Qué pasa cuando llego al millón de eventos?", answer: "Eliges un plan. Growth empieza en 499 € al mes con facturación anual y 5 millones de eventos al mes. No se te cobra nada sin que elijas un plan, porque no hay ninguna tarjeta registrada." },
-    { question: "¿Funciona con Shopify, WooCommerce, Magento o GTM?", answer: "Sí. Shopify y WordPress llevan unos 5 minutos; un desarrollo a medida o headless, hasta 30. En GTM, una etiqueta HTML personalizado en All Pages sin disparador de consentimiento. Claude puede generar el código para tu plataforma." },
-    { question: "¿Esto es atribución multi-touch?", answer: "No, y nunca lo será. Sealmetrics es medición agregada y anónima: atribuye cada conversión por último clic a la fuente observada en esa carga de página, sobre el conjunto completo de datos. Sin identificadores de visitante ni recorridos entre dispositivos." },
+    { question: "¿Funciona con Shopify, WooCommerce, Magento o GTM?", answer: "Sí. Shopify y WordPress llevan unos 5 minutos; un desarrollo a medida o headless, hasta 30. En GTM, una etiqueta HTML personalizado en All Pages; que se dispare sin tu disparador de consentimiento depende de la configuración y del criterio de tu autoridad nacional. Claude puede generar el código para tu plataforma." },
+    { question: "¿Esto es atribución multi-touch?", answer: "No, y nunca lo será. Sealmetrics es medición agregada y anónima: atribuye cada conversión por último clic a la fuente de la sesión en la que ocurre, sobre el conjunto completo de datos. Sin identificadores de visitante ni recorridos entre dispositivos." },
   ],
   final: {
-    tag: "LA SIGUIENTE COMPARACIÓN ES LA TUYA", start: "Dos semanas en paralelo.", end: "Un número que conciliar.",
+    tag: "LA SIGUIENTE COMPARACIÓN ES LA TUYA", start: "Mide en paralelo.", end: "Un número que conciliar.",
     body: "Incapto, Dreamplace y Palladium ya hicieron la prueba. Abre la cuenta gratis hoy y tendrás la comparación antes del Black Friday, y el SLA de Enterprise durante la Navidad si contratas.",
     line: "Invertir sobre los visitantes que pulsaron Aceptar también tiene un coste.", demo: "¿Prefieres hablarlo antes? Reserva una demo",
   },
