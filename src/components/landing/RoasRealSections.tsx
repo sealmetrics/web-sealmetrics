@@ -422,7 +422,7 @@ const TRADE_YES = [
   "Canal, campaña, medium, keyword, content y referrer sobre ese mismo dato.",
   "Embudo agregado completo: visita → producto visto → carrito → checkout → compra.",
   "Dato a nivel de producto: talla, color, marca, categoría, rango de precio, SKU.",
-  "Todo en tiempo real, al segundo, incluido el pico de Black Friday.",
+  "Todo con dato fresco: los hits suelen llegar a los informes en menos de dos minutos, sin muestreo.",
 ];
 
 export function Tradeoff() {
@@ -548,8 +548,8 @@ const SPECS = [
     h: "Velocidad",
     items: [
       { v: "1,1 KB", l: "Un solo paquete TCP. Sin dependencias, sin tag manager necesario." },
-      { v: "Tiempo real", l: "No en un informe: en toda la plataforma. Sabes al segundo cuándo se procesó el último hit." },
-      { v: "También en Black Friday", l: "Sin muestreo ni throttling en el pico, y el SLA garantiza el día completo antes de las 6 AM. Optimizas a las 10:01 de la mañana, no al día siguiente." },
+      { v: "Dato fresco", l: "No en un informe: en toda la plataforma. Los hits suelen llegar a los informes en menos de dos minutos." },
+      { v: "También en Black Friday", l: "Sin muestreo, y el SLA garantiza el día completo antes de las 6 AM. Ajustas durante la campaña, no a la semana siguiente." },
     ],
   },
   {
