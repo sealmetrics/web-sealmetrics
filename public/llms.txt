@@ -185,6 +185,7 @@ Open is our public transparency hub: numbered chapters on how we run the company
 - /for/ecommerce — Analytics for ecommerce: revenue attribution, funnel analysis, complete conversion tracking
 - /for/hotels — Analytics for hotels: keeping the source through booking engines and payment gateways (passthrough referrers), booking properties, portfolio of properties, limits (OTA bookings are out of reach). Palladium 35% of GA4 bookings with no channel, Dreamplace 15–20% more sales attributed
 - /for/agencies — Analytics for marketing agencies: why clients discount agency reports (platforms credit themselves, consent loss understates paid traffic), a client-owned organization with the agency as Admin or Member and one login across clients, channel rules reused via CSV, reconciliation with the client's orders, reporting through BigQuery/Data Studio, API and MCP; partners Product Hackers, 3dids, Ayesa; limits (no conversions sent to ad platforms, no spend import, one client at a time in the dashboard, last click per session). Palladium quote, Incapto +37–52% paid traffic vs GA4
+- /for/multi-brand-retailers — Analytics for multi-brand retail groups: why brand reports cannot be compared (a banner, GA4 property, agency and channel taxonomy per brand; consent loss varies with brand strength), one organization with a site per brand domain and per-site currency and timezone, brand teams scoped as Members, one channel taxonomy via CSV, reconciliation per brand, group total in a shared BigQuery dataset; limits (no journeys across brands, currencies converted in the warehouse, rules not retroactive). No multi-brand retail case yet: Palladium and Incapto figures
 - /for/saas — Analytics for SaaS: trial conversion, feature adoption, retention measurement
 - /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
 - /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
@@ -329,6 +330,7 @@ Role-specific (ES):
 Industry-specific (ES):
 - /es/for/ecommerce — Para eCommerce
 - /es/for/hotels — Analítica para hoteles: venta directa, motor de reservas y pasarelas de pago, límites
+- /es/for/multi-brand-retailers — Analítica para retail multimarca: comparar marcas con un mismo método, un sitio por dominio de marca, acceso por marca, reglas de canal comunes, total de grupo en BigQuery, límites
 - /es/for/saas — Para SaaS
 - /es/for/agencies — Analítica para agencias de marketing: organización del cliente, un acceso para todos los clientes, reglas de canal, conciliación con pedidos, límites
 - /es/for/media — Para Medios y Editores

@@ -144,7 +144,7 @@
     "date": "2026-04-25"
   },
   "/for/": {
-    "hash": "2a0d1c355ef562b4",
+    "hash": "5a3c709533659813",
     "date": "2026-09-15"
   },
   "/glossary/": {
@@ -320,7 +320,7 @@
     "date": "2026-09-15"
   },
   "/es/for/": {
-    "hash": "128fe2029067a8de",
+    "hash": "3f2ffc231f4bc217",
     "date": "2026-09-15"
   },
   "/es/glossary/": {
@@ -1257,6 +1257,14 @@
   },
   "/use-cases/single-source-of-truth/": {
     "hash": "1331669c164509b2",
+    "date": "2026-09-15"
+  },
+  "/es/for/multi-brand-retailers/": {
+    "hash": "d768d0ad3c678bb2",
+    "date": "2026-09-15"
+  },
+  "/for/multi-brand-retailers/": {
+    "hash": "179c6c266c42fd1d",
     "date": "2026-09-15"
   }
 }
