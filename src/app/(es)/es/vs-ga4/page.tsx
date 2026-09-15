@@ -27,7 +27,7 @@ const VS_GA4_DATE_MODIFIED = "2026-09-14";
 export const metadata: Metadata = {
   title: "Sealmetrics vs Google Analytics 4 — Datos completos",
   description:
-    "Comparativa honesta. GA4 pierde 40–60% del tráfico UE por consentimiento y ad blockers. Sealmetrics no depende del consentimiento. Corre ambos 30 días.",
+    "Comparativa honesta. GA4 pierde un 15–60% de visitas UE por consentimiento, según sector. Sealmetrics no depende de él. Corre ambos 30 días.",
   openGraph: {
     title: "Sealmetrics vs Google Analytics 4 — Datos completos",
     description: "Comparativa feature a feature. Honesta.",
@@ -55,7 +55,7 @@ const faqs = [
   { q: "¿Sealmetrics se conecta a Google Ads?", a: "Sí, vía export BigQuery y API. Para import nativo de conversiones en Google Ads, puedes mantener GA4 — Sealmetrics es tu fuente de verdad para decisiones, GA4 tu conducto a Google Ads." },
   { q: "¿Es realmente sin consentimiento?", a: "Sí. Sin cookies, sin localStorage, sin fingerprinting. Conteo first-party de eventos en servidor, agregado en totales por canal sin ningún identificador personal. Por eso, según nuestra autoevaluación frente a los criterios de la CNIL y la AEPD, la medición no necesita banner bajo RGPD ni ePrivacy. No es una certificación." },
   { q: "¿Cuánto cuesta la migración?", a: "Nada. No hay migración. Añade un script a tu web y corre los dos en paralelo. La mayoría de equipos nunca quitan GA4 del todo — simplemente dejan de tomar decisiones con él." },
-  { q: "¿Qué fiabilidad tiene el 40–60% de rechazo de consentimiento?", a: "Es media cross-industry para tráfico UE con un banner estándar. Tu tasa depende de sector, dispositivo y diseño del banner. El gap es menor en B2B, mayor en B2C consumer." },
+  { q: "¿Qué fiabilidad tiene el rango del 15–60% de pérdida por consentimiento?", a: "Es un rango, no una media. Dónde cae cada web depende del sector, la fuerza de la marca y el mix de tráfico: una marca reconocida cuyas visitas llegan sobre todo en directo se queda en la parte baja; una web que vive de captación de pago en frío en un mercado sensible a la privacidad, en la alta. Como caso medido, en la tienda Shopify de Incapto GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas durante 48 días. Corre las dos herramientas en paralelo para conocer tu cifra." },
   { q: "¿Puedo usar los datos en mi BigQuery?", a: "Sí. Export a BigQuery a resolución completa incluido en todos los planes, también en el Agentic gratuito — sin ETL, sin muestreo. Tu warehouse recibe cada evento, igual que tu dashboard." },
   { q: "¿Y el tier gratis de GA4? ¿No es una barrera?", a: "GA4 es gratis porque tú eres el producto — tus datos entrenan los modelos de Google Ads. Sealmetrics desde €499/mes anual. Para un equipo que invierte €20K+/mes en paid media, es un error de redondeo comparado con el coste de inversión mal asignada sobre datos incompletos." },
 ];
@@ -80,7 +80,7 @@ export default function VsGA4PageEs() {
       <TldrBlock
         label="En resumen"
         answer={
-          <>GA4 típicamente pierde el <strong>40–60% del tráfico UE</strong> por rechazo de consentimiento, ad-blockers e Intelligent Tracking Prevention de Apple — y luego reconstruye parte con modelado estadístico. Sealmetrics mide el tráfico con un pixel first-party sin cookies, sin depender del consentimiento, atribuye ingresos last-click sobre eventos observados y está diseñada para el RGPD desde la arquitectura. La mayoría de equipos corren ambos 30 días en paralelo y toman decisiones con Sealmetrics.</>
+          <>GA4 pierde <strong>entre el 15% y el 60% del tráfico UE</strong> por rechazo de consentimiento, según el sector, la fuerza de la marca y el mix de tráfico; los ad-blockers y la Intelligent Tracking Prevention de Apple restan más, y GA4 reconstruye parte con modelado estadístico. Sealmetrics mide el tráfico con un pixel first-party sin cookies, sin depender del consentimiento, atribuye ingresos last-click sobre eventos observados y está diseñada para el RGPD desde la arquitectura. La mayoría de equipos corren ambos 30 días en paralelo y toman decisiones con Sealmetrics.</>
         }
         bullets={[
           <>GA4: limitado por consentimiento, muestreado, US-hosted, propiedad de Google — ideal como conducto a Google Ads.</>,
@@ -156,7 +156,7 @@ export default function VsGA4PageEs() {
               Sealmetrics vs Google Analytics 4 (GA4): GA4 es la plataforma de analítica gratuita de Google — alojada en EE. UU., basada en cookies, muestreada a escala y dependiente de un banner de consentimiento en toda la UE. Sealmetrics es una plataforma cookieless alojada en la UE que mide el tráfico entrante sin depender del consentimiento y atribuye cada conversión last-click sobre eventos observados, desde 499€/mes con facturación anual.
             </p>
             <p>
-              Para el eCommerce europeo el gap es estructural: GA4 pierde el 40–60% del tráfico UE por rechazo de consentimiento y reconstruye parte con modelado estadístico, mientras la ITP de Safari y los ad blockers erosionan más. Sealmetrics mide ese mismo tráfico con un píxel first-party ligero — sin cookies, sin muestreo, sin revisión Schrems II — así el revenue del informe cuadra con Shopify. La mayoría corre ambos en paralelo 30 días, concilia con su CRM y mueve las decisiones de revenue a Sealmetrics manteniendo GA4 como conducto de Google Ads.
+              Para el eCommerce europeo el gap es estructural: GA4 pierde entre el 15% y el 60% del tráfico UE por rechazo de consentimiento, según el sector, la fuerza de la marca y el mix de tráfico, y reconstruye parte con modelado estadístico, mientras la ITP de Safari y los ad blockers erosionan más. Sealmetrics mide ese mismo tráfico con un píxel first-party ligero — sin cookies, sin muestreo, sin revisión Schrems II — así el revenue del informe cuadra con Shopify. La mayoría corre ambos en paralelo 30 días, concilia con su CRM y mueve las decisiones de revenue a Sealmetrics manteniendo GA4 como conducto de Google Ads.
             </p>
           </QuickAnswer>
         </div>

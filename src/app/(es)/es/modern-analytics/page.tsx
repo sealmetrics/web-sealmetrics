@@ -84,8 +84,8 @@ const pillars = [
     eyebrow: "Sin pérdida por consentimiento",
     title: "Datos limpios",
     body: "Visitantes y eventos contados acepten o no el banner. Ningún banner de consentimiento bloqueando la medición, ningún ad-blocker borrando tráfico, ningún bloqueador de JS limpiando datos. Conteo first-party en servidor que captura la verdad.",
-    metric: "+40-60%",
-    metricLabel: "más tráfico UE vs cookies",
+    metric: "15–60%",
+    metricLabel: "de visitas UE que la analítica con cookies pierde por consentimiento, según sector",
   },
   {
     eyebrow: "Agnóstica de fuente",
@@ -127,7 +127,7 @@ const pillars = [
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
   { feature: "Cookies / fingerprinting", legacy: "Requerido", modern: "Ninguno" },
   { feature: "Banner de consentimiento", legacy: "Sí", modern: "No" },
-  { feature: "Tráfico UE capturado", legacy: "40-60%", modern: "Sin pérdida por consentimiento" },
+  { feature: "Tráfico UE capturado", legacy: "Pierde 15–60% por consentimiento, según sector", modern: "Sin pérdida por consentimiento" },
   { feature: "Sampling en queries pesadas", legacy: "Sí (Card-2 / umbrales)", modern: "No" },
   { feature: "Datos modelados / sintéticos", legacy: "Sí, % no revelado", modern: "Nunca" },
   { feature: "Modelo de atribución", legacy: "Data-driven (caja negra)", modern: "Last-click sobre eventos crudos" },
@@ -225,7 +225,7 @@ export default function ModernAnalyticsPageEs() {
           </>
         }
         bullets={[
-          <>Analítica legacy con cookies: 40-60% de pérdida de tráfico UE, huecos modelados, hosted en US.</>,
+          <>Analítica legacy con cookies: pérdida de entre el 15% y el 60% del tráfico UE por consentimiento según sector y mix de tráfico, huecos modelados, hosted en US.</>,
           <>Analítica moderna: sin pérdida por consentimiento, last-click sobre datos crudos, hosted en UE, lista para agentes IA.</>,
           <>Sin migración. Corre las dos durante 30 días. Decide con tus propios números.</>,
         ]}

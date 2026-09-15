@@ -72,7 +72,7 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
         title: <>Lo que GA4 <em>no ve.</em></>,
         lede: "Cuatro puntos donde la arquitectura de GA4 pierde datos estructuralmente. No son errores — es el diseño funcionando como debe para el caso de uso de Google Ads.",
         stats: [
-          { n: "40–60%", l: "Rechazo de consentimiento", p: "GA4 depende de cookies. El usuario UE medio rechaza y GA4 no lo ve." },
+          { n: "15–60%", l: "Pérdida por consentimiento", p: "Según el sector, la fuerza de la marca y el mix de tráfico. Quien no acepta, GA4 no lo ve." },
           { n: "~25%", l: "Ad blockers", p: "Bloquean google-analytics.com. GA4 nunca recibe el ping." },
           { n: "Sampling", l: "Umbrales de volumen", p: "Encima de cierto volumen, GA4 muestrea y modela. Black Friday = estimaciones." },
           { n: "US-hosted", l: "Schrems II", p: "Los datos cruzan a US. Sujeto a challenge regulatorio en UE." },
@@ -83,7 +83,7 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
         title: <>What GA4 <em>doesn't see.</em></>,
         lede: "Four points where GA4's architecture loses data by design. Not bugs — this is the product working as intended for Google Ads' use case.",
         stats: [
-          { n: "40–60%", l: "Consent rejection", p: "GA4 depends on cookies. Average EU visitor rejects, GA4 never sees them." },
+          { n: "15–60%", l: "Consent loss", p: "Depends on sector, brand strength and traffic mix. Visitors who decline, GA4 never sees." },
           { n: "~25%", l: "Ad blockers", p: "Block google-analytics.com. GA4 never receives the ping." },
           { n: "Sampling", l: "Volume thresholds", p: "Above certain volume, GA4 samples and models. Black Friday = estimates." },
           { n: "US-hosted", l: "Schrems II", p: "Data crosses to US. Subject to ongoing EU regulatory challenge." },
@@ -154,7 +154,7 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
           },
           {
             scenario: "Cubo de tráfico directo",
-            ga: "40–60% del total atribuido a \u201Cdirect\u201D o \u201C(none)\u201D. El canal que más creció trimestre a trimestre — y que no puedes asignar.",
+            ga: "En una tienda Shopify medida, el 14% de las visitas de GA4 no tenía un origen útil, frente al 0,3% en Sealmetrics. El canal que más creció trimestre a trimestre — y que no puedes asignar.",
             seal: "Atribución de canal real preservada server-side. El cubo \u201Cdirect\u201D vuelve a su peso real.",
             con: "El canal \u201Cdirect\u201D deja de tapar a las campañas que en silencio sostenían el trimestre. La atribución se vuelve defendible en una review de presupuesto.",
           },
@@ -195,7 +195,7 @@ export function DashboardPatternsV3({ locale = "en" as Locale }) {
           },
           {
             scenario: "Direct traffic bucket",
-            ga: "40–60% of total sessions attributed to \u201Cdirect\u201D or \u201C(none)\u201D. The channel that grew fastest quarter-over-quarter — and you can't assign it.",
+            ga: "On a measured Shopify store, 14% of GA4 visits had no usable origin, against 0.3% in Sealmetrics. The channel that grew fastest quarter-over-quarter — and you can't assign it.",
             seal: "Real channel attribution preserved server-side. The \u201Cdirect\u201D bucket returns to its actual share.",
             con: "Direct stops masking the campaigns that were secretly carrying the quarter. Attribution becomes defensible in a budget review.",
           },
@@ -284,7 +284,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Data capture",
       block: "technical",
       rows: [
-        { feature: "Consent required", ga4: "Yes · 40–60% reject", seal: "No · no consent loss" },
+        { feature: "Consent required", ga4: "Yes · 15–60% lost, by sector", seal: "No · no consent loss" },
         { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "Far less · first-party subdomain" },
         { feature: "Cookies on visitor device", ga4: "Required", seal: "None" },
         { feature: "Sampling at scale", ga4: "Yes · above threshold", seal: "Never · full resolution" },
@@ -305,7 +305,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "reporting",
       rows: [
         { feature: "Channel attribution", ga4: "Cookie-dependent", seal: "Session-level, consent-free" },
-        { feature: "Direct/(none) bucket", ga4: "40–60% of sessions", seal: "Real share (typically <10%)" },
+        { feature: "Direct/(none) bucket", ga4: "14% with no usable origin (Incapto)", seal: "0.3% (Incapto, same days)" },
         { feature: "Last-click", ga4: "Limited", seal: "Default · on complete data" },
       ],
     },
@@ -363,7 +363,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Captura de datos",
       block: "technical",
       rows: [
-        { feature: "Consentimiento requerido", ga4: "Sí · 40–60% rechaza", seal: "No · sin pérdida por consent" },
+        { feature: "Consentimiento requerido", ga4: "Sí · 15–60% perdido, según sector", seal: "No · sin pérdida por consent" },
         { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "Mucho menos · subdominio first-party" },
         { feature: "Cookies en el dispositivo", ga4: "Obligatorias", seal: "Ninguna" },
         { feature: "Muestreo a escala", ga4: "Sí · sobre cierto umbral", seal: "Nunca · resolución completa" },
@@ -384,7 +384,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "reporting",
       rows: [
         { feature: "Atribución de canal", ga4: "Depende de cookies", seal: "A nivel sesión, sin consentimiento" },
-        { feature: "Bucket directo/(none)", ga4: "40–60% de sesiones", seal: "Porcentaje real (típicamente <10%)" },
+        { feature: "Bucket directo/(none)", ga4: "14% sin origen útil (Incapto)", seal: "0,3% (Incapto, mismos días)" },
         { feature: "Last-click", ga4: "Limitado", seal: "Por defecto · sobre datos completos" },
       ],
     },

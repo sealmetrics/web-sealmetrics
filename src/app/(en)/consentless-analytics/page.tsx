@@ -232,10 +232,10 @@ export default function ConsentlessAnalyticsPillar() {
                 Rejection rates climbed past the break-even line
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                When the average European visitor said yes 80% of the time,
-                cookie analytics could absorb the 20% loss. Today the
-                consumer brand average sits between 40% and 60% rejection.
-                Decisions made on the remaining 40% are decisions made on a
+                When most European visitors said yes, cookie analytics could
+                absorb the loss. Today consent-based tools lose 15–60% of EU
+                visitors, depending on sector, brand strength and traffic mix — on one Shopify store measured over 48 days,
+                GA4 did not record 29% of visits. Decisions made on what remains are decisions made on a
                 self-selected sample — typically older, less mobile, less
                 privacy-aware. The bias is silent and structural.
               </p>
@@ -595,7 +595,7 @@ export default function ConsentlessAnalyticsPillar() {
               {
                 href: "/blog/consent-banner-impact-on-analytics",
                 tag: "Measurement loss",
-                title: "How banners destroy 40–60% of your data",
+                title: "What consent banners cost your analytics data",
                 lede: "Industry-by-industry rejection rates and the cost of decisions made on the survivor sample.",
               },
               {

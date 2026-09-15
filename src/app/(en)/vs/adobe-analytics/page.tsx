@@ -77,7 +77,7 @@ export default function Page() {
               Sealmetrics vs Adobe Analytics: Adobe Analytics is an enterprise analytics suite on unpublished annual contracts that run from roughly $50,000/year for Select to $200,000+ for Ultimate, with a heavy implementation, US/hybrid hosting and a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that measures inbound traffic without consent dependency and attributes each conversion last-click on observed events — from &euro;499/month billed annually, no annual commit.
             </p>
             <p>
-              For EU eCommerce the difference is completeness and compliance. Adobe still loses 40&ndash;60% of EU traffic to consent rejection and carries Schrems II overhead through US data flows, on top of months of implementation. Sealmetrics installs with one pixel, runs side by side from day one, and its Dublin-only infrastructure with zero non-EU sub-processors removes the transfer review. Teams keep Adobe for deep custom analysis where they need it and use Sealmetrics as the complete, board-ready revenue number.
+              For EU eCommerce the difference is completeness and compliance. Adobe still loses 15&ndash;60% of EU traffic to consent rejection, depending on sector, brand strength and traffic mix, and carries Schrems II overhead through US data flows, on top of months of implementation. Sealmetrics installs with one pixel, runs side by side from day one, and its Dublin-only infrastructure with zero non-EU sub-processors removes the transfer review. Teams keep Adobe for deep custom analysis where they need it and use Sealmetrics as the complete, board-ready revenue number.
             </p>
           </QuickAnswer>
         </div>

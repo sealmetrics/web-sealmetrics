@@ -224,8 +224,8 @@ export default function PersonalDataInAnalyticsPage() {
               </Link>
               : no identifiers, no device storage, aggregate event measurement
               only. Because neither test is engaged, the consent banner stops
-              being a data-loss path — which matters when 40–60% of EU visitors
-              decline it. The longer legal argument is in the{" "}
+              being a data-loss path — which matters when consent rejection costs 15–60% of EU visitors,
+              depending on sector, brand strength and traffic mix. The longer legal argument is in the{" "}
               <Link href="/blog/gdpr-eprivacy-analytics-legal-assessment" className={linkCls}>
                 two-part legal assessment
               </Link>

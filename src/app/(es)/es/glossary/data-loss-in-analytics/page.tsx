@@ -56,7 +56,7 @@ export default function Page() {
           <p>La pérdida ocurre en cascada — cada capa multiplica la anterior:</p>
           <ul className="space-y-2 pl-0 list-none">
             {[
-              "Rechazo de consentimiento — 40-60% del tráfico UE rechaza el banner de cookies y nunca aparece en GA4",
+              "Rechazo de consentimiento — las herramientas con banner pierden entre el 15% y el 60% del tráfico UE, según el sector, la fuerza de la marca y el mix de tráfico; quien no acepta nunca aparece en GA4",
               "Bloqueadores de anuncios — en torno al 40% de quienes aceptan el banner bloquea igualmente el script de Google Analytics",
               "Restricciones de navegador — Safari ITP y Firefox ETP recortan sesiones a 7 días, acortando la vida de las cookies de quienes quedan",
             ].map((item) => (
@@ -74,7 +74,7 @@ export default function Page() {
           <p>La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link> elimina los tres vectores de pérdida en su origen: sin cookies que requieran consentimiento, sin scripts que los bloqueadores reconozcan, sin dependencia de identificadores que ITP/ETP recorten. El resultado es conteo agregado sin huecos de consentimiento — no una muestra, no una estimación.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La cuarta pérdida: la fuente de tráfico</h2>
-          <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De ese 40–45% que sí acepta el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. En el modelo de peor escenario, el efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta. En la medición real de Incapto, el 14% de las visitas de GA4 llegaba sin un origen utilizable, frente al 0,3% en Sealmetrics.</p>
+          <p>Hay una capa que casi nunca se cuenta y que suele doler más que las tres anteriores. De quienes sí aceptan el banner, alrededor de dos tercios aceptan en la segunda página vista — es decir, después de la landing, que es justo donde viaja el parámetro de campaña. El visitante queda medido, pero llega sin origen. En el modelo de peor escenario, el efecto neto es que solo un 16% aproximado del tráfico conserva la atribución de fuente correcta. En la medición real de Incapto, el 14% de las visitas de GA4 llegaba sin un origen utilizable, frente al 0,3% en Sealmetrics.</p>
           <p>La consecuencia práctica es que el número de sesiones y el número de conversiones atribuidas se degradan a ritmos distintos. Un informe puede parecer razonable en volumen y estar completamente equivocado en reparto: el tráfico directo se hincha con lo que en realidad era campaña, y el canal de pago aparece infrafinanciado en su propio panel. Cuando alguien dice que su ROAS no cuadra con el backend, esta suele ser la razón, no un error de etiquetado.</p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Cómo medir tu propia brecha</h2>
@@ -82,7 +82,7 @@ export default function Page() {
           <p>Si quieres una primera aproximación antes de tocar nada, la <Link href="/es/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">calculadora de pérdida de datos</Link> parte de tus visitas e ingresos mensuales y devuelve el importe que tu configuración actual está ocultando cada mes. Es una estimación, y está pensada para decidir si merece la pena hacer la comparación seria contra backend — no para sustituirla.</p>
         </div>
 
-        <CommercialModule locale="es" hook="Entre el 40–60% de rechazo de consentimiento y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo que no depende del consentimiento." />
+        <CommercialModule locale="es" hook="Entre la pérdida por consentimiento (del 15% al 60% de las visitas UE, según sector y mix de tráfico) y los bloqueadores, GA4 ve una fracción de tus visitas. Mide tu propia brecha contra un conteo que no depende del consentimiento." />
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">

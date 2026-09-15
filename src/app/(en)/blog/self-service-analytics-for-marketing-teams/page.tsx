@@ -142,7 +142,7 @@ const FAQ = [
   {
     question: "How is this different from asking GA4's AI features?",
     answer:
-      "The difference is the input, not the model. GA4 answers from consented traffic only. Sealmetrics answers from human traffic measured without consent gaps, which is why its numbers reconcile with Shopify and the CRM instead of sitting 40-60% below them.",
+      "The difference is the input, not the model. GA4 answers from consented traffic only. Sealmetrics answers from human traffic measured without consent gaps, which is why its numbers reconcile with Shopify and the CRM instead of sitting below them by the 15–60% of visitors a consent banner typically costs, depending on sector, brand strength and traffic mix.",
   },
 ];
 
@@ -227,7 +227,7 @@ export default function Page() {
               >
                 cookieless, first-party measurement
               </Link>
-              , which removes the 40–60% blind spot that consent-gated setups
+              , which removes the consent blind spot (15–60% of EU visitors, depending on sector, brand strength and traffic mix) that consent-gated setups
               carry.
             </p>
             <p>

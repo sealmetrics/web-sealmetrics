@@ -52,7 +52,7 @@ export const questions: QuizQuestion[] = [
         saas:
           "SaaS trial-to-paid funnels are especially vulnerable — invisible sessions break cohort analysis.",
         media:
-          "Publishers relying on CPM models undervalue their inventory when 40-60% of traffic is invisible.",
+          "Publishers relying on CPM models undervalue their inventory when consent hides 15–60% of their traffic, depending on sector and traffic mix.",
         agency:
           "Agencies with complete data win more trust and budget — the gap between real and reported performance is an opportunity to demonstrate true impact.",
       };
@@ -142,7 +142,7 @@ export const questions: QuizQuestion[] = [
         "20k_50k":
           "At this budget, incomplete data could be costing you EUR 10,000-25,000/month in suboptimal allocation.",
         over50k:
-          "Enterprise ad spend with a 40-60% data gap means EUR 25,000+ per month allocated based on partial information.",
+          "Enterprise ad spend with a 15–60% consent gap, depending on sector and traffic mix, means EUR 25,000+ per month allocated based on partial information.",
       };
       return map[v] ?? "";
     },
@@ -453,13 +453,13 @@ export function getAdSpendImpact(answers: QuizAnswers): {
 export function getIndustryContext(business: string): string {
   const contexts: Record<string, string> = {
     ecommerce:
-      "For eCommerce, every invisible session is a potential purchase you cannot attribute. When 40-60% of sessions are missing, your best-performing channels may appear underperforming — leading you to cut budget from what actually drives revenue. The gap between GA4-reported and actual conversion rates typically ranges from 30-55% for EU eCommerce sites.",
+      "For eCommerce, every invisible session is a potential purchase you cannot attribute. When consent rejection removes 15–60% of sessions, depending on sector, brand strength and traffic mix, your best-performing channels may appear underperforming — leading you to cut budget from what actually drives revenue. On a Shopify store measured in parallel for 48 days, GA4 did not record 29% of visits and 45% of pageviews.",
     leadgen:
       "In lead generation, the gap between reported and actual form completions directly affects cost-per-lead calculations. When half your traffic is invisible, you overvalue channels that happen to capture consenting users and undervalue channels that drive privacy-conscious prospects — often your most sophisticated buyers.",
     saas:
       "SaaS acquisition funnels depend on cohort analysis and trial-to-paid attribution. When cookie rejection breaks session continuity, free trial signups appear as direct traffic and your true CAC by channel becomes unreliable. This distortion compounds as you scale ad spend.",
     media:
-      "Publishers monetizing through advertising sell based on audience size and engagement. When 40-60% of your audience is invisible to analytics, you systematically undervalue your inventory. Programmatic buyers using your GA4 data see a smaller, less engaged audience than actually exists.",
+      "Publishers monetizing through advertising sell based on audience size and engagement. When consent hides 15–60% of your audience from analytics, depending on sector and traffic mix, you systematically undervalue your inventory. Programmatic buyers using your GA4 data see a smaller, less engaged audience than actually exists.",
     agency:
       "For agencies, data credibility is client retention. When your reports show different numbers than your clients see in their own systems, trust erodes. Complete data lets you demonstrate true campaign impact — not an estimate based on the fraction of visitors who accepted cookies.",
   };

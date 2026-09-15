@@ -60,7 +60,7 @@ export function ProblemNarrativeV3() {
     {
       title: "The \u201Cdirect / none\u201D bucket",
       scenario:
-        "Open GA4. Filter by channel. 40 to 60% of conversions are attributed to \u201Cdirect\u201D or \u201C(none)\u201D. You know those aren't direct visits. You just don't know which channels they belonged to.",
+        "Open GA4. Filter by channel. A block of conversions sits in \u201Cdirect\u201D or \u201C(none)\u201D \u2014 at Palladium Hotel Group, 35% of GA4 bookings had no channel. You know those aren't direct visits. You just don't know which channels they belonged to.",
       reframe:
         "That bucket is the silhouette of visitors who rejected consent or ran with ad-blockers. The campaigns that actually brought them in are invisible in your attribution — and in your budget decisions.",
     },

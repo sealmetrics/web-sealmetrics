@@ -139,7 +139,7 @@ const TABS = [
   {
     key: "Revenue attribution",
     head: "Last-click, on the full population.",
-    bullets: ["Every conversion attributed at channel level", "No 40–60% consent-rejection gap", "One number brand, media and finance accept"],
+    bullets: ["Every conversion attributed at channel level", "No consent-rejection gap", "One number brand, media and finance accept"],
     stat: "+17%", statLabel: "closer to CRM vs GA4",
   },
   {

@@ -32,7 +32,7 @@ export function HeroD() {
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
           Sealmetrics is cookieless analytics for eCommerce. Measure visits and sales without depending on consent — no
-          cookies, no consent banner, no 40–60% blind spot — so your real ROAS, your channel
+          cookies, no consent banner, no consent blind spot — so your real ROAS, your channel
           decisions and your board numbers finally match what actually happened.
         </p>
 
@@ -74,7 +74,7 @@ export function ConsentlessAnalytics() {
               Designed for GDPR from the architecture up
             </Link>
             {" "}(self-assessed), privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
-            wall, no 40–60% blind spot.
+            wall, no blind spot from rejected banners.
           </p>
           <p className="mt-4 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
             That&rsquo;s why your ROAS is finally <b className="text-ink font-semibold">real</b>: conversions

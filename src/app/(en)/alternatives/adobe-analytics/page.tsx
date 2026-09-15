@@ -89,7 +89,7 @@ export default function Page() {
             cheap or free.
             The second matters more and is easier to miss — how each one
             collects. GA360 and GA4 depend on cookies and consent, as Adobe
-            does, so they lose the 40–60% of EU visitors who reject a banner.
+            does, so they lose the 15–60% of EU visitors that consent rejection costs, depending on sector, brand strength and traffic mix.
             Piwik PRO and Matomo set cookies by default but document cookieless
             or consent-exempt configurations, and those have a price: with Piwik PRO&rsquo;s identifiers
             off, traffic-source and channel-attribution reports are unavailable,
@@ -158,7 +158,7 @@ export default function Page() {
               <br />
               <span className="text-text-tertiary">The catch —</span> privacy is
               a configuration you choose and maintain. With visitor cookies on,
-              it needs consent and the 40–60% rejection loss is unchanged. Piwik
+              it needs consent and the 15–60% consent loss is unchanged. Piwik
               PRO also documents a mode with no cookies and no session hash, but
               then every event counts as a new session and traffic-source and
               channel-attribution reports are unavailable — and whether that

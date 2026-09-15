@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "¿Qué precisión tiene comparada con GA4?",
-    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: 40–60% de visitantes rechazan el consentimiento, ~40% usan ad-blockers que eliminan el script, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección sin cookies evita las pérdidas por consentimiento y por expiración de cookies, y servida desde tu propio subdominio queda mucho menos expuesta a los ad-blockers. Casos medidos: Dreamplace Hotels ve aproximadamente un 30% más de tráfico que Google Analytics y atribuye un 15–20% más de ventas contra su CRM; en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales.",
+    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: el rechazo de consentimiento cuesta entre el 15% y el 60% de los visitantes según el sector, la fuerza de la marca y el mix de tráfico, ~40% usan ad-blockers que eliminan el script, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección sin cookies evita las pérdidas por consentimiento y por expiración de cookies, y servida desde tu propio subdominio queda mucho menos expuesta a los ad-blockers. Casos medidos: Dreamplace Hotels ve aproximadamente un 30% más de tráfico que Google Analytics y atribuye un 15–20% más de ventas contra su CRM; en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales.",
   },
   {
     q: "¿Puedo correrla junto a Google Analytics 4?",
@@ -163,13 +163,13 @@ export default function CookielessAnalyticsPillarEs() {
 
           <div className="mt-10 space-y-8">
             <div>
-              <h3 className="text-[18px] font-semibold text-ink mb-2">1. Rechazo de consentimiento — 40 a 60% de visitantes UE</h3>
+              <h3 className="text-[18px] font-semibold text-ink mb-2">1. Rechazo de consentimiento — del 15 al 60% de visitantes UE</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Desde que la guía CNIL/ICO de 2019 se endureció, se
                 requiere un banner de consentimiento antes de instalar
-                cualquier cookie no esencial. Las tasas reales de rechazo
-                están entre el 40% (B2B) y el 60% (B2C consumer) en
-                mercados europeos. Esos visitantes siguen en tu sitio,
+                cualquier cookie no esencial. Lo que eso le cuesta a una
+                herramienta con consentimiento va del 15% al 60% de los
+                visitantes UE, según el sector, la fuerza de la marca y el mix de tráfico. Esos visitantes siguen en tu sitio,
                 comprando, marchándose — pero invisibles para tu analítica.
               </p>
             </div>

@@ -30,7 +30,7 @@ export function HeroV3Es() {
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
           Sealmetrics es analítica sin consentimiento para eCommerce. Mide visitas y ventas sin depender del consentimiento
-          — sin cookies, sin banner, sin el punto ciego del 40–60% — para que tu ROAS real, tus
+          — sin cookies, sin banner, sin el punto ciego del consentimiento — para que tu ROAS real, tus
           decisiones de canal y los números que llevas al consejo cuadren por fin con lo que
           ocurrió de verdad.
         </p>
