@@ -15,6 +15,7 @@ export const ES_TERM_SLUGS = new Set([
   "analytics-data-residency",
   "attribution-model",
   "consent-management-platform",
+  "consent-mode-v2",
   "cookieless-analytics",
   "data-loss-in-analytics",
   "data-sampling",

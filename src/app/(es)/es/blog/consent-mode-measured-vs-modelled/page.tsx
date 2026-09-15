@@ -160,7 +160,7 @@ export default function ConsentModeMeasuredVsModelledPageEs() {
 
             <h2 className={h2}>Las cuatro señales y las dos implantaciones</h2>
             <p>
-              Consent Mode maneja cuatro tipos de consentimiento: <code>ad_storage</code>{" "}
+              <Link href="/es/glossary/consent-mode-v2" className={link}>Consent Mode</Link> maneja cuatro tipos de consentimiento: <code>ad_storage</code>{" "}
               y <code>analytics_storage</code> para las cookies e identificadores de
               dispositivo de publicidad y de analítica, y <code>ad_user_data</code> y{" "}
               <code>ad_personalization</code> para enviar datos de usuario a Google con

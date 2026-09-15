@@ -90,6 +90,7 @@ const translatedPaths = new Set([
   "/glossary/gdpr-analytics-compliance",
   "/glossary/multi-touch-attribution",
   "/glossary/data-loss-in-analytics",
+  "/glossary/consent-mode-v2",
   "/glossary/revenue-attribution",
   "/glossary/ad-blocker-analytics-impact",
   "/glossary/analytics-data-residency",
