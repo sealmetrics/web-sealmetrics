@@ -64,7 +64,7 @@ export default function ServerSideTrackingEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Combinado con recolección first-party</h2>
           <p>
-            El tracking server-side es más eficaz combinado con la <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link>. Cuando todo el camino del dato es first-party (tu dominio) y server-side (tu servidor), la infraestructura de analítica es invisible para las herramientas de bloqueo e inmune a las restricciones del navegador.
+            El tracking server-side es más eficaz combinado con la <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link>. Cuando todo el camino del dato es first-party (tu dominio) y server-side (tu servidor), la infraestructura de analítica evita las listas de terceros de las herramientas de bloqueo y las restricciones de cookies de terceros del navegador.
           </p>
         </div>
 

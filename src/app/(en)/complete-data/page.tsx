@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What does \"complete data\" actually mean?",
-    a: "Visitors counted whether or not they accept the banner. Conversions attributed on that same data. No consent gate, no ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means pageview and event capture that doesn't depend on consent, and last-click revenue attribution applied to every observed conversion — not the 13% that consented.",
+    a: "Visitors counted whether or not they accept the banner. Conversions attributed on that same data. No consent gate, far less ad-blocker drop-off, no Safari 7-day cookie expiry, no statistical modelling to fill the gaps. The number you see in the dashboard is the number that happened. Operationally that means pageview and event capture that doesn't depend on consent, and last-click revenue attribution applied to every observed conversion — not the 13% that consented.",
   },
   {
     q: "Isn't GA4's Consent Mode v2 already solving this?",
@@ -145,7 +145,7 @@ export default function CompleteDataPillar() {
           <>
             Complete data is web analytics where the number in the
             dashboard equals the number that happened. No consent gate
-            losing 40–60% of visitors, no ad blockers stripping the
+            losing 40–60% of visitors, far fewer ad blockers stripping the
             script on another 40%, no Safari ITP truncating attribution
             at 7 days, no statistical model filling the gap. It is the
             output of a deliberate architectural choice — cookieless,
@@ -277,7 +277,7 @@ export default function CompleteDataPillar() {
                 num: "01",
                 title: "Visitors counted, banner or not",
                 body:
-                  "No consent gate, no ad-blocker drop-off, no cookie expiry. First-party server-side collection runs from your own domain — there is no third-party script for browsers or rule lists to intercept.",
+                  "No consent gate, far less ad-blocker drop-off, no cookie expiry. In first-party mode, collection runs from your own domain, so the third-party rule lists browsers and blockers use don't match it.",
               },
               {
                 num: "02",

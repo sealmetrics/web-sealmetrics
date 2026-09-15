@@ -44,12 +44,12 @@ const seoFaqs = [
   {
     question: "¿Qué es analítica sin cookies para medios y editores?",
     answer:
-      "La analítica sin cookies para editores captura lectorazgo, engagement y datos del funnel de suscripción sin cookies, localStorage ni fingerprinting. Sobrevive a los ad-blockers (que afectan al 50–70% de las audiencias de medios) y opera first-party desde el dominio del editor.",
+      "La analítica sin cookies para editores captura lectorazgo, engagement y datos del funnel de suscripción sin cookies, localStorage ni fingerprinting. Resiste mucho mejor a los ad-blockers (que afectan al 50–70% de las audiencias de medios) y opera first-party desde el dominio del editor.",
   },
   {
     question: "¿Cómo ayuda a los editores con alta presión de ad-blockers?",
     answer:
-      "Las audiencias de medios tienen la mayor penetración de ad-blockers en la web abierta (50–70% en sitios de tecnología y noticias). La analítica sin cookies corre first-party desde el dominio del editor, así que los ad-blockers — que apuntan a endpoints de analítica de terceros como google-analytics.com — no la ven y no pueden bloquearla.",
+      "Las audiencias de medios tienen la mayor penetración de ad-blockers en la web abierta (50–70% en sitios de tecnología y noticias). La analítica sin cookies corre first-party desde el dominio del editor, así que los ad-blockers — que apuntan a endpoints de analítica de terceros como google-analytics.com — no la detectan. En nuestro test con cinco bloqueadores principales superó los cinco.",
   },
   {
     question: "¿Puede la analítica sin cookies medir conversión de suscripción?",
@@ -91,14 +91,14 @@ export default function Page() {
             publicitarios sin cookies — crítico para sitios donde el 50–70% de
             los visitantes usan ad-blockers. Sealmetrics opera como
             infraestructura first-party en el dominio del propio editor,
-            invisible a los ad-blockers e independiente de la deprecation de
+            fuera de las listas de terceros de los ad-blockers e independiente de la deprecation de
             cookies de terceros.
           </>
         }
         bullets={[
-          <>Recupera el 50–70% de lectores que los ad-blockers ocultan a GA4 en sitios de tech y noticias.</>,
+          <>Recupera lectores que los ad-blockers ocultan a GA4, donde el 50–70% de los visitantes de sitios de tech y noticias usa uno.</>,
           <>Conteos por paso del funnel por canal: landings de artículo, impresiones de paywall, eventos de suscripción — cada suscripción atribuida last-click a nivel de canal.</>,
-          <>La arquitectura first-party sobrevive a Safari ITP, Firefox ETP y Brave Shield.</>,
+          <>La arquitectura first-party no se ve afectada por los límites de cookies de terceros de Safari ITP y Firefox ETP.</>,
         ]}
       />
 

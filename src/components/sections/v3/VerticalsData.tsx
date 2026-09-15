@@ -92,14 +92,14 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { title: "BigQuery sampling above threshold", desc: "GA4 exports sampled data to BigQuery above certain volumes. Our export is full resolution — every event, no sampling, ever." },
         ],
         outcomes: [
-          { n: "846 B", label: "Minimum pixel", detail: "1.1 KB on the wire · ~132× lighter than GA4. Invisible to ad blockers. No CLS impact." },
+          { n: "846 B", label: "Minimum pixel", detail: "1.1 KB on the wire · ~132× lighter than GA4. First-party option off ad-blocker lists. No CLS impact." },
           { n: "15 min", label: "To full install", detail: "One script tag. Works with any CMS, framework or CDN." },
           { n: "0", label: "Ongoing maintenance", detail: "No GCP, no server-side GTM, no tag variables to update." },
           { n: "Full", label: "BigQuery resolution", detail: "Every event exported. No sampling, no thresholds, no modelling." },
         ],
         faqs: [
           { q: "Does Sealmetrics fingerprint users?", a: "No. No browser fingerprinting, no canvas, no audio, no device tricks. Each pageview is counted anonymously with channel metadata (referrer, UTM, landing page) and aggregated into channel totals — no unique identifier is ever created, no per-user profile is built. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
-          { q: "How does this bypass ad blockers?", a: "The pixel is first-party — it runs on your domain, not ours. Ad blocker lists target third-party analytics domains (google-analytics.com, segment.io, etc.). Because our collection flows through your own domain, it's invisible to ad blockers." },
+          { q: "How does this hold up against ad blockers?", a: "In first-party mode the pixel runs on your domain, not ours. Ad blocker lists target third-party analytics domains (google-analytics.com, segment.io, etc.), so collection through your own domain doesn't match them. In our test of five major blockers it passed all five; some loss is still possible." },
           { q: "What's the performance impact?", a: "846 bytes. Asynchronous load. No render-blocking. Our synthetic tests show no measurable CLS or LCP impact. Compared to GA4 (~146 KB) + GTM + Consent Mode polyfills, Sealmetrics typically improves Core Web Vitals." },
           { q: "Can I self-host or isolate processing?", a: "Enterprise plan includes isolated processing — your data never shares infrastructure with other customers. We don't offer on-prem self-hosting, but for regulated industries we support dedicated EU regions and custom SLAs." },
           { q: "Do you have a REST API and webhooks?", a: "Yes, both. REST API with full coverage from the Growth plan. Webhooks from the Scale plan. Plus a native MCP server so AI agents (Claude, ChatGPT, custom copilots) can query your analytics directly." },
@@ -425,8 +425,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
     media: {
       en: {
         eyebrow: "For media & publishers",
-        h1: <>Analytics that <em>survive ad blockers.</em></>,
-        lede: "Your audience runs ad blockers at 50%+ rates. Every analytics tool pretends it doesn't happen. Sealmetrics is first-party — invisible to ad blockers by design.",
+        h1: <>Analytics that <em>hold up against ad blockers.</em></>,
+        lede: "Your audience runs ad blockers at 50%+ rates. Most analytics tools pretend it doesn't happen. Sealmetrics can run first-party on your own domain, off the lists ad blockers use.",
         pains: [
           { title: "50% of your readers invisible to GA4", desc: "Your audience is technical. They block analytics at rates other sectors never see. GA4 shows you half the reality." },
           { title: "Ad revenue optimization on sampled data", desc: "Programmatic yield depends on knowing page-level engagement. Sampling breaks the feedback loop." },
@@ -434,13 +434,13 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { title: "Paywall conversion attribution impossible", desc: "Article read → paywall hit → subscription. GA4 loses the first touch to consent. You optimize conversion on incomplete funnel data." },
         ],
         outcomes: [
-          { n: "+50–80%", label: "Audience recovered", detail: "Ad blocker readers now visible for the first time." },
+          { n: "5/5", label: "Blockers passed", detail: "Passed all five major ad blockers in our published test." },
           { n: "Read → sub", label: "Paywall funnel", detail: "Read → hit → subscribe attributed to the originating channel, without consent gaps." },
           { n: "Email", label: "Newsletter attribution", detail: "Subscriptions attributed last-click to the newsletter session that produced them." },
           { n: "Real-time", label: "Yield optimization", detail: "Programmatic decisions on complete, not sampled, data." },
         ],
         faqs: [
-          { q: "Does Sealmetrics really work with ad blocker audiences?", a: "Yes. Because the pixel is first-party — running on your own domain — ad blockers don't see it as analytics. uBlock, AdGuard, Brave's shields, Safari ITP — none of them block first-party tracking on your own domain." },
+          { q: "Does Sealmetrics really work with ad blocker audiences?", a: "Mostly, yes. In first-party mode the pixel runs on your own domain, so it doesn't match the third-party analytics lists that uBlock Origin, AdGuard or Brave Shields use, and Safari ITP's third-party cookie limits don't affect it. It passed all five blockers in our test; custom filter rules can still block it." },
           { q: "Can I integrate with my ad server or SSP?", a: "Yes. Full API access and BigQuery export. Pipe Sealmetrics data into Google Ad Manager, Prebid, or any custom yield logic. Or pull GAM data into Sealmetrics for joined analytics." },
           { q: "Does it support paywall analytics?", a: "Yes. Custom events at each step — anonymous read, paywall hit, subscription — give you the aggregate funnel: how many readers hit the wall, how many convert, by channel. It's session-scoped, not a per-person journey — Sealmetrics never creates a persistent identifier to follow an individual reader across visits. All first-party, all consent-independent." },
           faqMigration.en,
@@ -452,8 +452,8 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
       },
       es: {
         eyebrow: "Para medios y publishers",
-        h1: <>Analítica que <em>sobrevive a los ad blockers.</em></>,
-        lede: "Tu audiencia corre ad blockers a tasas del 50%+. Toda analítica finge que no pasa. Sealmetrics es first-party — invisible para ad blockers por diseño.",
+        h1: <>Analítica que <em>resiste a los ad blockers.</em></>,
+        lede: "Tu audiencia corre ad blockers a tasas del 50%+. La mayoría de las analíticas finge que no pasa. Sealmetrics puede correr first-party en tu propio dominio, fuera de las listas de los ad blockers.",
         pains: [
           { title: "El 50% de tus lectores invisibles en GA4", desc: "Tu audiencia es técnica. Bloquea analítica a tasas que otros sectores no ven. GA4 te muestra la mitad de la realidad." },
           { title: "Optimización ad revenue sobre datos muestreados", desc: "El yield programático depende de engagement a nivel de página. El muestreo rompe el feedback loop." },
@@ -461,13 +461,13 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { title: "Atribución de conversión de paywall imposible", desc: "Lectura → hit paywall → suscripción. GA4 pierde el primer touch por consentimiento. Optimizas conversión sobre datos de funnel incompletos." },
         ],
         outcomes: [
-          { n: "+50–80%", label: "Audiencia recuperada", detail: "Lectores con ad blocker visibles por primera vez." },
+          { n: "5/5", label: "Bloqueadores superados", detail: "Superó los cinco principales ad blockers en nuestro test publicado." },
           { n: "Lectura → alta", label: "Funnel paywall", detail: "Lectura → hit → suscripción atribuida al canal origen, sin huecos de consentimiento." },
           { n: "Email", label: "Atribución newsletter", detail: "Suscripciones atribuidas a último clic a la sesión de newsletter que las produjo." },
           { n: "Tiempo real", label: "Optimización yield", detail: "Decisiones programáticas sobre datos completos, no muestreados." },
         ],
         faqs: [
-          { q: "¿Sealmetrics realmente funciona con audiencias que usan ad blockers?", a: "Sí. Como el pixel es first-party — corre en tu propio dominio — los ad blockers no lo ven como analítica. uBlock, AdGuard, shields de Brave, ITP de Safari — ninguno bloquea tracking first-party en tu propio dominio." },
+          { q: "¿Sealmetrics realmente funciona con audiencias que usan ad blockers?", a: "En general, sí. En modo first-party el pixel corre en tu propio dominio, así que no coincide con las listas de analítica de terceros que usan uBlock Origin, AdGuard o los shields de Brave, y los límites de cookies de terceros de ITP en Safari no le afectan. Superó los cinco bloqueadores de nuestro test; una regla de filtro personalizada aún puede bloquearlo." },
           { q: "¿Integra con mi ad server o SSP?", a: "Sí. Acceso API completo y export BigQuery. Envía datos de Sealmetrics a Google Ad Manager, Prebid, o cualquier lógica de yield custom. O tira datos de GAM a Sealmetrics para analítica unificada." },
           { q: "¿Soporta analítica de paywall?", a: "Sí. Eventos custom en cada paso — lectura anónima, hit del paywall, suscripción — te dan el funnel agregado: cuántos lectores llegan al muro, cuántos convierten, por canal. Es a nivel de sesión, no un journey por persona — Sealmetrics nunca crea un identificador persistente para seguir a un lector individual entre visitas. Todo first-party, todo sin consentimiento." },
           faqMigration.es,

@@ -68,7 +68,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
             <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — leaving approximately 13% of real traffic visible.</li>
             <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
             <li>Revenue attribution built on 13% of data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
-            <li>First-party cookieless collection bypasses every cause of data loss simultaneously: no consent dependency, no ad blocker vulnerability, no browser restrictions, no sampling.</li>
+            <li>First-party cookieless collection addresses the main causes of data loss together: no consent dependency, far less ad-blocker exposure, no third-party cookie restrictions, no sampling.</li>
           </ul>
         </div>
 
@@ -352,13 +352,13 @@ export default function WhatIsDataLossInAnalyticsPage() {
             cookies entirely. First-party cookieless collection &mdash; where
             analytics data flows through your own infrastructure without
             cookies, without PII, and without third-party scripts &mdash;
-            bypasses every cause of data loss simultaneously:
+            addresses the main causes of data loss together:
           </p>
 
           <ul className="space-y-2 pl-0 list-none">
             {[
               "No consent dependency \u2014 no cookies or PII means no consent requirement",
-              "No ad blocker vulnerability \u2014 first-party requests are not blocked",
+              "Far less ad-blocker exposure \u2014 first-party requests avoid third-party block lists",
               "No browser restrictions \u2014 no cookies to expire or partition",
               "No sampling \u2014 100% of collected data is processed",
             ].map((item) => (

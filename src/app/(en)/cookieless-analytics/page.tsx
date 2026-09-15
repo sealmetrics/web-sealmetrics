@@ -143,8 +143,8 @@ export default function CookielessAnalyticsPillar() {
             events and conversions{" "}
             <strong>anonymously, on the server side</strong>, from your own
             domain — without cookies, fingerprinting or personal identifiers.
-            It doesn't lose visitors to consent rejection because there is nothing for browsers,
-            consent banners or ad blockers to block, reject or expire. The
+            It doesn't lose visitors to consent rejection because there is no cookie for browsers to expire and no consent for a banner to reject, and
+            in first-party mode far less for ad blockers to block. The
             trade-off is honest: you measure channels and conversions at
             aggregate scale, not individual people across sessions. For an
             eCommerce or media business making investment decisions on traffic

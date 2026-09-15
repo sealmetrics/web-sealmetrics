@@ -12,10 +12,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "¿Qué es la recolección first-party? — Glosario",
-  description: "La recolección first-party captura analítica a través de tu propio dominio, esquivando bloqueadores y restricciones de cookies de terceros.",
+  description: "La recolección first-party captura analítica a través de tu propio dominio, evitando las listas de bloqueo de terceros y las restricciones de cookies de terceros.",
   openGraph: {
     title: "¿Qué es la recolección de datos first-party?",
-    description: "Captura analítica a través de tu propio dominio, invisible para los bloqueadores.",
+    description: "Captura analítica a través de tu propio dominio, fuera de las listas de los bloqueadores.",
     url: "https://sealmetrics.com/es/glossary/first-party-data-collection/",
     siteName: "Sealmetrics",
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la recolección de datos first-party?",
-    description: "Captura analítica a través de tu propio dominio, invisible para los bloqueadores.",
+    description: "Captura analítica a través de tu propio dominio, fuera de las listas de los bloqueadores.",
     images: [ogImage("/es/glossary/first-party-data-collection/")],
   },
   alternates: {
@@ -64,7 +64,7 @@ export default function FirstPartyDataCollectionEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué importa para la completitud del dato</h2>
           <p>
-            Alrededor del 40% de los usuarios europeos usa bloqueadores que apuntan específicamente a peticiones de analítica de terceros. La recolección first-party los esquiva por completo, no mediante engaño, sino cambiando de raíz el camino del dato para que sea genuinamente first-party.
+            Alrededor del 40% de los usuarios europeos usa bloqueadores que apuntan específicamente a peticiones de analítica de terceros. La recolección first-party evita la mayor parte de esa pérdida, no mediante engaño, sino cambiando de raíz el camino del dato para que sea genuinamente first-party.
           </p>
           <p>
             Combinada con la <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, la recolección first-party elimina dos de los tres grandes vectores de <Link href={glossaryHref("data-loss-in-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pérdida de datos</Link>: el bloqueo por extensiones y las restricciones de cookies del navegador.

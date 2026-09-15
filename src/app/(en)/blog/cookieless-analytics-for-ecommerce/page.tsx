@@ -161,7 +161,7 @@ export default function Page() {
               Cookieless analytics for eCommerce replaces the three-layer loss cascade with a different architecture. It is important to state what this architecture does <em>not</em> do: it does not identify individual visitors, it does not stitch pageviews into per-user journeys, and it does not build behavioral profiles. It counts events. That&apos;s all.
             </p>
             <p>
-              <strong>1. First-party event collection.</strong> A small tracking script runs on your own domain, not a third-party endpoint. Ad blockers can&apos;t target it because it has no third-party signature — it is your domain serving its own traffic. Each pageview logs anonymous metadata: referrer, UTM parameters, landing page, country, device class.
+              <strong>1. First-party event collection.</strong> A small tracking script runs on your own domain, not a third-party endpoint. Ad-blocker lists that target third-party analytics domains don&apos;t match it, because it is your domain serving its own traffic, which sharply reduces that loss. Each pageview logs anonymous metadata: referrer, UTM parameters, landing page, country, device class.
             </p>
             <p>
               <strong>2. Aggregate, anonymous counts.</strong> Events are aggregated on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign and landing page. At no point is a pageview linked to a specific person or device. There is no cross-session identifier and no &ldquo;returning user&rdquo; concept.

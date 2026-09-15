@@ -11,10 +11,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Ad Blocker Impact on Analytics — Sealmetrics",
   description:
-    "Ad blockers block 40%+ of EU analytics sessions by intercepting third-party scripts like GA4. First-party cookieless tools bypass ad blockers entirely.",
+    "Ad blockers block 40%+ of EU analytics sessions by intercepting third-party scripts like GA4. First-party cookieless tools avoid the third-party lists most ad blockers rely on.",
   openGraph: {
     title: "What Is Ad Blocker Impact on Analytics?",
-    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
+    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools avoid most of that loss.",
     type: "article",
     url: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
     siteName: "Sealmetrics",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Ad Blocker Impact on Analytics?",
-    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools bypass them entirely.",
+    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools avoid most of that loss.",
     images: [ogImage("/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
@@ -87,7 +87,7 @@ export default function AdBlockerAnalyticsImpactPage() {
           </p>
         </div>
 
-        <CommercialModule hook="Ad blockers never see Sealmetrics' first-party count. See what your traffic looks like when nothing strips sessions out." />
+        <CommercialModule hook="In first-party mode, Sealmetrics sits off the lists ad blockers use. See what your traffic looks like when far fewer sessions get stripped out." />
 
         <RelatedGlossaryTerms slug="ad-blocker-analytics-impact" />
 

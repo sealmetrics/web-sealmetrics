@@ -169,7 +169,7 @@ export default function WooCommercePlatformPage() {
             <li>
               Optionally set a custom pixel domain under your own
               domain for first-party tracking — this keeps the
-              request invisible to ad blockers.
+              request off the third-party lists ad blockers use.
             </li>
             <li>Save. The plugin starts ingesting on the next pageview. Verify in the Sealmetrics debugger.</li>
           </ol>

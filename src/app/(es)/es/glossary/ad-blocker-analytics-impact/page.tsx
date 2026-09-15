@@ -11,10 +11,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Impacto del bloqueador en la analítica — Glosario",
-  description: "Los bloqueadores cortan más del 40% de las sesiones de analítica en la UE. La recolección first-party sin cookies los esquiva por completo.",
+  description: "Los bloqueadores cortan más del 40% de las sesiones de analítica en la UE. La recolección first-party sin cookies evita la mayor parte de esa pérdida.",
   openGraph: {
     title: "¿Cómo afectan los bloqueadores a la analítica?",
-    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party los esquiva.",
+    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party evita la mayor parte.",
     url: "https://sealmetrics.com/es/glossary/ad-blocker-analytics-impact/",
     siteName: "Sealmetrics",
     locale: "es_ES",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Cómo afectan los bloqueadores a la analítica?",
-    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party los esquiva.",
+    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party evita la mayor parte.",
     images: [ogImage("/es/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
