@@ -45,10 +45,12 @@ jobs:
       # measure and a report would be fiction.
       - name: Probe the answer engines
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          # Repo secrets are named *_GEO_APIKEY (dedicated to this probe); the
+          # script reads the provider's conventional variable names.
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_GEO_APIKEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_GEO_APIKEY }}
+          PERPLEXITY_API_KEY: ${{ secrets.PERPLEXITY_GEO_APIKEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_GEO_APIKEY }}
         run: |
           node scripts/geo-probe.mjs \
             --runs "${{ inputs.runs || '3' }}" \

@@ -29,7 +29,9 @@
  *   - Raw responses are written to the .json alongside the report, so any score
  *     can be checked against what the engine actually said.
  *
- * KEYS (repo secrets, or the local environment)
+ * KEYS (environment variables; in CI they come from the repo secrets
+ * ANTHROPIC_GEO_APIKEY, OPENAI_GEO_APIKEY, PERPLEXITY_GEO_APIKEY and
+ * GEMINI_GEO_APIKEY, mapped in .github/workflows/geo-probe.yml)
  *   ANTHROPIC_API_KEY · OPENAI_API_KEY · PERPLEXITY_API_KEY · GEMINI_API_KEY
  *
  * GEMINI
