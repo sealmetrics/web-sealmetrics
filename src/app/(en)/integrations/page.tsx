@@ -72,6 +72,7 @@ const itemLinks: Record<string, string> = {
   "PrestaShop": "/platforms/prestashop",
   "OpenCart": "/platforms/opencart",
   "BigQuery connector": "/integrations/bigquery",
+  "Data Studio": "/data-studio",
   "Google Ads": "/integrations/google-ads",
   "Meta Ads": "/integrations/meta-ads",
   "MCP server": "/docs/mcp",
@@ -102,8 +103,8 @@ export default function Page() {
             everything through GTM. Any framework not on that list works from a
             single script tag. On the consumption side the same aggregate data
             leaves through a REST API, webhooks, a{" "}
-            <Link href="/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">BigQuery connector</Link>, Data
-            Studio, and an MCP server that lets Claude, ChatGPT, Cursor or Codex
+            <Link href="/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">BigQuery connector</Link>,{" "}
+            <Link href="/data-studio" className="text-ink no-underline border-b border-warm-200 hover:border-ink">Data Studio</Link>, and an MCP server that lets Claude, ChatGPT, Cursor or Codex
             query it in plain language. None of it asks for a cookie or a visitor
             identifier, so adding Sealmetrics adds no consent obligation to a
             stack that already carries one.

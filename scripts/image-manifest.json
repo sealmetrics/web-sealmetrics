@@ -891,6 +891,16 @@
       "sourceHash": "d9cd96ce1d75e1de0126061d98fd527fd3c7dae54863c074a354e1e8fcc07959",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/data-studio.avif": {
+      "source": "public/og/data-studio.png",
+      "sourceHash": "8a6568f162d97ee13df73be77c6f2599e136fdd1e67e859807fc88f1730ab15c",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/data-studio.webp": {
+      "source": "public/og/data-studio.png",
+      "sourceHash": "8a6568f162d97ee13df73be77c6f2599e136fdd1e67e859807fc88f1730ab15c",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/demo.avif": {
       "source": "public/og/demo.png",
       "sourceHash": "79a46ac4fb7cbbf53477426ce9a4bfe29460f8bcbf96deb7b7324485e1415851",

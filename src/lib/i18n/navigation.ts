@@ -37,6 +37,7 @@ const translatedPaths = new Set([
   "/platforms/prestashop",
   "/platforms/opencart",
   "/integrations/bigquery",
+  "/data-studio",
   "/integrations/google-ads",
   "/integrations/meta-ads",
   "/gdpr-analytics/spain",

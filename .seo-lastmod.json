@@ -124,7 +124,7 @@
     "date": "2026-09-14"
   },
   "/integrations/": {
-    "hash": "943383e717ea16a0",
+    "hash": "f922b33eabbb0e66",
     "date": "2026-09-15"
   },
   "/use-cases/": {
@@ -1136,8 +1136,8 @@
     "date": "2026-09-13"
   },
   "/data-studio/": {
-    "hash": "7dce6ebb2b7db255",
-    "date": "2026-09-13"
+    "hash": "e9346ebea18f213e",
+    "date": "2026-09-15"
   },
   "/blog/consent-mode-measured-vs-modelled/": {
     "hash": "94a383519806bf78",
@@ -1293,6 +1293,10 @@
   },
   "/platforms/prestashop/": {
     "hash": "5a962a5f11152179",
+    "date": "2026-09-15"
+  },
+  "/es/data-studio/": {
+    "hash": "a097d9040dec16a8",
     "date": "2026-09-15"
   }
 }

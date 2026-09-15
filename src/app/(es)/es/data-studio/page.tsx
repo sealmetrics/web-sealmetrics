@@ -1,26 +1,23 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
-import { getAlternates } from "@/lib/i18n/navigation";
+import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { DATA_STUDIO_PUBLISHED, dataStudioEn as content } from "@/lib/content/problem-landings/data-studio";
+import { DATA_STUDIO_PUBLISHED, dataStudioEs as content } from "@/lib/content/problem-landings/data-studio";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
-// Was a redirect stub to the one-click report until 15 Sep 2026. The short link
-// is still used in emails and docs, so the page's primary CTA is that same URL
-// (DATA_STUDIO_REPORT_URL, src/lib/content/data-studio.ts).
-const URL = "/data-studio";
-const TITLE = "Data Studio Report Template and Connector — Sealmetrics";
+const URL = "/es/data-studio";
+const TITLE = "Informe y conector para Data Studio — Sealmetrics";
 const DESCRIPTION =
-  "A ready Data Studio report on Sealmetrics data: seven report types, one-click copy, connector setup with a read-only API key, and its limits.";
+  "Un informe de Data Studio listo sobre datos de Sealmetrics: siete tipos de informe, copia en un clic, conector con API key de solo lectura y límites.";
 const SOCIAL =
-  "A Data Studio report on GA4 shows only the visitors who accepted the banner. Copy the Sealmetrics template and report on data without consent loss.";
+  "Un informe de Data Studio sobre GA4 solo ve a quien aceptó el banner. Copia la plantilla de Sealmetrics e informa sobre datos sin pérdida por consentimiento.";
 
 export const metadata: Metadata = {
   // Literal on purpose: generate-og-images.mjs reads the card title from it.
-  title: "Data Studio Report Template and Connector — Sealmetrics",
+  title: "Informe y conector para Data Studio — Sealmetrics",
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -29,7 +26,7 @@ export const metadata: Metadata = {
     images: [ogImage(`${URL}/`)],
     url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
-    locale: "en_US",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
@@ -40,24 +37,24 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://sealmetrics.com${URL}/`,
-    languages: getAlternates("/data-studio"),
+    languages: getAlternatesEs("/data-studio"),
   },
 };
 
-export default function DataStudioPage() {
+export default function DataStudioPageEs() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Integrations", url: "/integrations" }, { name: "Data Studio", url: URL }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Integraciones", url: "/es/integrations" }, { name: "Data Studio", url: URL }])} />
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "The Sealmetrics report for Data Studio: template, connector, setup and limits",
+          headline: "El informe de Sealmetrics para Data Studio: plantilla, conector, configuración y límites",
           description: DESCRIPTION,
           datePublished: DATA_STUDIO_PUBLISHED,
           dateModified: DATA_STUDIO_PUBLISHED,
           url: URL,
           category: "Integration",
-          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />
