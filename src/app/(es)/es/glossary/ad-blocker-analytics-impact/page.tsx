@@ -11,10 +11,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Impacto del bloqueador en la analítica — Glosario",
-  description: "Los bloqueadores cortan más del 40% de las sesiones de analítica en la UE. La recolección first-party sin cookies evita la mayor parte de esa pérdida.",
+  description: "Los bloqueadores cortan los scripts de analítica de terceros antes de que se ejecuten. La recolección first-party esquiva las listas en las que se apoyan.",
   openGraph: {
     title: "¿Cómo afectan los bloqueadores a la analítica?",
-    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party evita la mayor parte.",
+    description: "Los bloqueadores cortan los scripts de analítica de terceros. La recolección first-party esquiva sus listas.",
     url: "https://sealmetrics.com/es/glossary/ad-blocker-analytics-impact/",
     siteName: "Sealmetrics",
     locale: "es_ES",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Cómo afectan los bloqueadores a la analítica?",
-    description: "Más del 40% de las sesiones europeas se pierden. La recolección first-party evita la mayor parte.",
+    description: "Los bloqueadores cortan los scripts de analítica de terceros. La recolección first-party esquiva sus listas.",
     images: [ogImage("/es/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
@@ -49,7 +49,7 @@ export default function AdBlockerAnalyticsImpactEsPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Pérdida de datos causada por extensiones del navegador que bloquean los scripts de analítica de terceros antes de que se ejecuten. Más del 40% de los internautas europeos usa un bloqueador, lo que la convierte en la mayor fuente individual de dato ausente en analítica web.
+              Pérdida de datos causada por extensiones del navegador que bloquean los scripts de analítica de terceros antes de que se ejecuten. A cuántos visitantes afecta depende del país, del dispositivo y de la audiencia, y por eso conviene medirlo en tu propio sitio en lugar de tomarlo prestado de una encuesta.
             </p>
           </div>
 
@@ -63,7 +63,7 @@ export default function AdBlockerAnalyticsImpactEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">La magnitud del problema</h2>
           <p>
-            Según datos de PageFair y Statista, la adopción de bloqueadores en Europa supera el 40% en escritorio, con Alemania (39%), Francia (36%) y los países nórdicos (más del 40%) a la cabeza. En audiencias técnicas pasa del 50%. Sumado a tasas de rechazo de <Link href={glossaryHref("consent-management-platform", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">banner de consentimiento</Link> de entre el 40% y el 70% en la UE, el efecto se compone: en el peor escenario acumulado, la analítica basada en cookies acaba capturando en torno al 13% del tráfico real. En una <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tienda Shopify real medida durante 48 días</Link>, GA4 no registró el 29% de las visitas.
+            El uso de bloqueadores es desigual: mayor en escritorio que en móvil, y mayor en audiencias técnicas que entre compradores generalistas. Y no es la única pérdida. En una herramienta que depende del consentimiento se suma al rechazo del <Link href={glossaryHref("consent-management-platform", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">banner de consentimiento</Link>, que resta a la analítica tradicional entre el 15% y el 60% de las visitas UE según sector, fuerza de marca y mezcla de tráfico, y a las restricciones de los navegadores: en el peor escenario modelado, la analítica basada en cookies acaba capturando en torno al 13% del tráfico real. En una <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">tienda Shopify real medida durante 48 días</Link>, GA4 no registró el 29% de las visitas.
           </p>
           <p>
             No es un error de redondeo. Significa equipos de marketing decidiendo presupuesto sobre un fragmento de su dato real, y ese fragmento contamina cada informe, cada modelo de atribución y cada cálculo de retorno.
@@ -71,11 +71,11 @@ export default function AdBlockerAnalyticsImpactEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">First-party frente a terceros</h2>
           <p>
-            Los bloqueadores apuntan a scripts de terceros. La <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link> funciona distinto: el endpoint de medición vive en tu propio dominio, lo que lo hace indistinguible del resto de la funcionalidad del sitio. Combinada con <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, mide la actividad sin depender del consentimiento ni del bloqueador.
+            Los bloqueadores apuntan a scripts de terceros. La <Link href={glossaryHref("first-party-data-collection", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">recolección de datos first-party</Link> funciona distinto: el endpoint de medición vive en tu propio dominio, así que no figura en las listas de terceros con las que trabajan los bloqueadores. Una regla escrita para ese subdominio concreto aún podría bloquearlo. Combinada con <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, mide la actividad sin depender del consentimiento ni del bloqueador.
           </p>
         </div>
 
-        <CommercialModule locale="es" hook="Los bloqueadores no ven el conteo first-party de Sealmetrics. Mira cómo queda tu tráfico cuando nada lo recorta." />
+        <CommercialModule locale="es" hook="En modo first-party, Sealmetrics queda fuera de las listas que usan los bloqueadores. Mira cómo queda tu tráfico cuando se pierden muchas menos sesiones." />
 
         <RelatedGlossaryTerms slug="ad-blocker-analytics-impact" locale="es" />
 

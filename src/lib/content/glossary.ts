@@ -113,7 +113,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Ad Blocker Impact on Analytics",
     shortDefinition:
-      "The data loss caused by browser extensions and built-in features that block third-party analytics scripts. Ad blockers affect 40%+ of EU users, making analytics tools like GA4 blind to a significant portion of traffic.",
+      "The data loss caused by browser extensions and built-in features that block third-party analytics scripts. The share of visitors affected varies by country, device and audience, and every blocked visit is invisible to tools like GA4.",
     category: "Data Quality",
     related: ["data-loss-in-analytics", "first-party-data-collection", "server-side-tracking", "intelligent-tracking-prevention"],
   },

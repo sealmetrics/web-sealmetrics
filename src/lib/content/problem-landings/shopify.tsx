@@ -202,7 +202,7 @@ export const shopifyEn: ProblemLandingContent = {
   final: {
     tag: "Shopify walkthrough",
     title: <>Install on your store.<br /><em>See the channels behind the orders.</em></>,
-    body: "Book 30 minutes with the founder. We connect Sealmetrics to your Shopify store, check a test order and set up the comparison with your Shopify orders.",
+    body: "Book 30 minutes with the founder. We walk through connecting Sealmetrics to your Shopify store, how to check a test order and how to compare Sealmetrics with your Shopify orders.",
     primary: { label: "Book a Shopify walkthrough", href: "/demo/" },
     secondary: { label: "See pricing", href: "/pricing/" },
   },
@@ -385,7 +385,7 @@ export const shopifyEs: ProblemLandingContent = {
   final: {
     tag: "Revisión en Shopify",
     title: <>Instálalo en tu tienda.<br /><em>Ve los canales detrás de los pedidos.</em></>,
-    body: "Reserva 30 minutos con el founder. Conectamos Sealmetrics a tu tienda Shopify, comprobamos un pedido de prueba y dejamos preparada la comparación con tus pedidos de Shopify.",
+    body: "Reserva 30 minutos con el founder. Repasamos cómo conectar Sealmetrics a tu tienda Shopify, cómo comprobar un pedido de prueba y cómo comparar Sealmetrics con tus pedidos de Shopify.",
     primary: { label: "Reservar una revisión en Shopify", href: "/es/demo/" },
     secondary: { label: "Ver precios", href: "/es/pricing/" },
   },

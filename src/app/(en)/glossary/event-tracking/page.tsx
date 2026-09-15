@@ -85,7 +85,7 @@ export default function EventTrackingPage() {
             &mdash; <strong className="font-medium">Custom</strong> &mdash; anything else you define (manual setup with custom parameters)
           </p>
           <p>
-            The challenge: all of this depends on the client-side JavaScript executing successfully. If the GA4 script is blocked by an ad blocker &mdash; affecting <Link href="/glossary/ad-blocker-analytics-impact" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">40%+ of EU visitors</Link> &mdash; no events are captured at all. Zero pageviews, zero conversions, zero engagement data.
+            The challenge: all of this depends on the client-side JavaScript executing successfully. If the GA4 script is blocked by an ad blocker &mdash; affecting <Link href="/glossary/ad-blocker-analytics-impact" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">a share of visitors that varies by audience</Link> &mdash; no events are captured at all. Zero pageviews, zero conversions, zero engagement data.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Server-side vs client-side event tracking</h2>

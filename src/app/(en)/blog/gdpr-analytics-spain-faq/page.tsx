@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "How much traffic do I lose if my analytics depends on a banner?",
     answer:
-      "Between 35% and 55% of EU visitors reject the banner, ad blockers affect over 40% of users, and browsers restrict cookies. Stacked as a worst case, those losses can leave GA4 showing about 13% of real EU traffic. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits and 45% of pageviews, with the heaviest losses on organic social, affiliate and organic search. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
+      "Between 35% and 55% of EU visitors reject the banner, ad blockers remove a further share that varies by audience, and browsers restrict cookies. Stacked as a worst case, those losses can leave GA4 showing about 13% of real EU traffic. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits and 45% of pageviews, with the heaviest losses on organic social, affiliate and organic search. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
   },
 ];
 

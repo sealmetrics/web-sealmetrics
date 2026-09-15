@@ -111,7 +111,7 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
 - /dpa — Data Processing Agreement (DPA-2026-v2.1): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa
 - /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
-- /platforms — Works on any website: WordPress, WooCommerce, Magento, Shopify, Wix, Webflow, and more. One script tag setup
+- /platforms — Install guide hub: modules for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Drupal and Joomla, custom-code setup for Webflow, Wix and Squarespace, BigCommerce in private beta, and a script tag for headless stacks; 5 to 30 minutes by platform
 - /demo — Request a personalized demo
 - /about — Company story, mission, EU-first philosophy
 - /careers — Work with us: apply with public links (LinkedIn, GitHub), no CV uploads, no personal data forms

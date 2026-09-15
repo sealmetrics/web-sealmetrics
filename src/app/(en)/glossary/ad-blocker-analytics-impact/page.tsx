@@ -11,10 +11,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Ad Blocker Impact on Analytics — Sealmetrics",
   description:
-    "Ad blockers block 40%+ of EU analytics sessions by intercepting third-party scripts like GA4. First-party cookieless tools avoid the third-party lists most ad blockers rely on.",
+    "Ad blockers stop third-party analytics scripts like GA4 before they run, so those visits never reach the report. First-party collection avoids the lists they rely on.",
   openGraph: {
     title: "What Is Ad Blocker Impact on Analytics?",
-    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools avoid most of that loss.",
+    description: "Ad blockers stop third-party analytics scripts before they run. First-party collection avoids the lists they rely on.",
     type: "article",
     url: "https://sealmetrics.com/glossary/ad-blocker-analytics-impact/",
     siteName: "Sealmetrics",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Ad Blocker Impact on Analytics?",
-    description: "Ad blockers block 40%+ of EU analytics sessions. First-party cookieless tools avoid most of that loss.",
+    description: "Ad blockers stop third-party analytics scripts before they run. First-party collection avoids the lists they rely on.",
     images: [ogImage("/glossary/ad-blocker-analytics-impact/")],
   },
   alternates: {
@@ -53,7 +53,7 @@ export default function AdBlockerAnalyticsImpactPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Data loss caused by browser extensions that block third-party analytics scripts before they execute. Over 40% of EU internet users run ad blockers, making this the single largest source of missing data in web analytics.
+              Data loss caused by browser extensions that block third-party analytics scripts before they execute. How many visitors it affects varies by country, device and audience, which is why it is best measured on your own site rather than borrowed from a survey.
             </p>
           </div>
 
@@ -67,12 +67,10 @@ export default function AdBlockerAnalyticsImpactPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The scale of the problem</h2>
           <p>
-            According to PageFair and Statista research, ad blocker adoption in Europe exceeds 40% on desktop, with Germany (39%), France (36%), and the Nordics (40%+) leading adoption. On tech-savvy audiences, the rate climbs above 50%. Combined with <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection rates of 40&ndash;70% in the EU, the compounding effect is severe:
+            Ad blocker use is uneven: higher on desktop than on mobile, and higher among technical audiences than among general shoppers. It is also not the only loss. For a consent-gated tool it stacks on top of <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection, which costs traditional analytics 15&ndash;60% of EU visits depending on sector, brand strength and traffic mix, and on browser tracking restrictions:
           </p>
           <p>
-            &mdash; 40% of visitors blocked by ad blockers<br />
-            &mdash; 55% of visitors reject cookies via consent banners<br />
-            &mdash; Net result in the compounded worst case: cookie-based analytics captures roughly 13% of actual traffic<br />
+            &mdash; Modelled worst case, with consent rejection, ad blockers and browser restrictions compounded: cookie-based analytics captures roughly 13% of actual traffic<br />
             &mdash; Measured on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store over 48 days</Link>: GA4 did not record 29% of visits
           </p>
           <p>
@@ -81,7 +79,7 @@ export default function AdBlockerAnalyticsImpactPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">First-party vs third-party collection</h2>
           <p>
-            Ad blockers target third-party scripts &mdash; JavaScript loaded from external domains. <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> operates differently: the tracking endpoint lives on your own domain, making it indistinguishable from legitimate site functionality.
+            Ad blockers target third-party scripts &mdash; JavaScript loaded from external domains. <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> operates differently: the tracking endpoint lives on your own domain, so it does not appear on the third-party lists blockers match against. A filter rule written for that specific subdomain can still block it.
           </p>
           <p>
             <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> takes this further by routing data through your own domain, eliminating the third-party requests that ad blockers intercept. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> platforms like Sealmetrics combine first-party infrastructure with no cookies to measure visitor activity without depending on consent or ad blocker status.

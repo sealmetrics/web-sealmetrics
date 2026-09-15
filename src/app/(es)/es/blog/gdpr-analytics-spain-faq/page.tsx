@@ -70,7 +70,7 @@ const faqs = [
   {
     question: "¿Cuánto tráfico pierdo si mi analítica depende de un banner?",
     answer:
-      "Entre el 35% y el 55% de los visitantes UE rechaza el banner, los ad blockers afectan a más del 40% de los usuarios y los navegadores restringen las cookies. Sumadas en el peor escenario, esas pérdidas pueden dejar a GA4 viendo en torno al 13% del tráfico UE real. Medido en una tienda Shopify real durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas, y las mayores pérdidas se concentraron en redes sociales orgánicas, afiliación y búsqueda orgánica. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de Sealmetrics.",
+      "Entre el 35% y el 55% de los visitantes UE rechaza el banner, los ad blockers restan otra parte que depende de la audiencia y los navegadores restringen las cookies. Sumadas en el peor escenario, esas pérdidas pueden dejar a GA4 viendo en torno al 13% del tráfico UE real. Medido en una tienda Shopify real durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas, y las mayores pérdidas se concentraron en redes sociales orgánicas, afiliación y búsqueda orgánica. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de Sealmetrics.",
   },
 ];
 

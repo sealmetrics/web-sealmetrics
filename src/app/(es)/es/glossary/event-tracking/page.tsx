@@ -63,7 +63,7 @@ export default function EventTrackingEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">El punto de fallo del modelo de GA4</h2>
           <p>
-            Todo el modelo depende de que el JavaScript del cliente se ejecute con éxito. Si un bloqueador corta el script de GA4 —lo que afecta a <Link href={glossaryHref("ad-blocker-analytics-impact", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">más del 40% de los visitantes europeos</Link>— no se captura ningún evento: cero páginas vistas, cero conversiones, cero datos de interacción.
+            Todo el modelo depende de que el JavaScript del cliente se ejecute con éxito. Si un bloqueador corta el script de GA4 —lo que afecta a <Link href={glossaryHref("ad-blocker-analytics-impact", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">una parte de los visitantes que varía según la audiencia</Link>— no se captura ningún evento: cero páginas vistas, cero conversiones, cero datos de interacción.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Server-side frente a cliente</h2>
