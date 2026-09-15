@@ -195,6 +195,7 @@ const SEGMENT_EYEBROW = {
   authors: "Author",
   "case-studies": "Case study",
   blog: "Blog",
+  "data-studio": "Integration",
 };
 
 /**

@@ -1,26 +1,23 @@
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { DATA_STUDIO_PUBLISHED, dataStudioEn as content } from "@/lib/content/problem-landings/data-studio";
+import { OPENCART_PUBLISHED, opencartEn as content } from "@/lib/content/problem-landings/opencart";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
-// Was a redirect stub to the one-click report until 15 Sep 2026. The short link
-// is still used in emails and docs, so the page's primary CTA is that same URL
-// (DATA_STUDIO_REPORT_URL, src/lib/content/data-studio.ts).
-const URL = "/data-studio";
-const TITLE = "Data Studio Report Template and Connector — Sealmetrics";
+const URL = "/platforms/opencart";
+const TITLE = "OpenCart Analytics Without Cookies — Sealmetrics";
 const DESCRIPTION =
-  "A ready Data Studio report on Sealmetrics data: seven report types, one-click copy, connector setup with a read-only API key, and its limits.";
+  "Cookieless OpenCart analytics: an extension for 4.x, and 3.x with modifications, that tracks product views, cart, checkout and purchases per store.";
 const SOCIAL =
-  "A Data Studio report on GA4 shows only the visitors who accepted the banner. Copy the Sealmetrics template and report on data without consent loss.";
+  "A consent-gated tag loses the shoppers who reject the banner. Install the Sealmetrics extension and see the channels behind every OpenCart order.";
 
 export const metadata: Metadata = {
   // Literal on purpose: generate-og-images.mjs reads the card title from it.
-  title: "Data Studio Report Template and Connector — Sealmetrics",
+  title: "OpenCart Analytics Without Cookies — Sealmetrics",
   description: DESCRIPTION,
   openGraph: {
     title: TITLE,
@@ -40,21 +37,21 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `https://sealmetrics.com${URL}/`,
-    languages: getAlternates("/data-studio"),
+    languages: getAlternates("/platforms/opencart"),
   },
 };
 
-export default function DataStudioPage() {
+export default function OpenCartPlatformPage() {
   return (
     <>
-      <JsonLd data={breadcrumbSchema([{ name: "Integrations", url: "/integrations" }, { name: "Data Studio", url: URL }])} />
+      <JsonLd data={breadcrumbSchema([{ name: "Platforms", url: "/platforms" }, { name: "OpenCart", url: URL }])} />
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "The Sealmetrics report for Data Studio: template, connector, setup and limits",
+          headline: "OpenCart analytics without cookies: install, events, reconciliation and limits",
           description: DESCRIPTION,
-          datePublished: DATA_STUDIO_PUBLISHED,
-          dateModified: DATA_STUDIO_PUBLISHED,
+          datePublished: OPENCART_PUBLISHED,
+          dateModified: OPENCART_PUBLISHED,
           url: URL,
           category: "Integration",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
@@ -62,6 +59,7 @@ export default function DataStudioPage() {
       />
       <JsonLd data={faqPageSchema(content.faq, URL)} />
       <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      {content.proof.quote && <JsonLd data={quotationSchema({ text: content.proof.quote.text, spokenBy: content.proof.quote.person, spokenByRole: content.proof.quote.role, url: URL })} />}
       <ProblemLandingSignal content={content} />
     </>
   );

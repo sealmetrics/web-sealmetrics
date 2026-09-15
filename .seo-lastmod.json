@@ -36,7 +36,7 @@
     "date": "2026-04-25"
   },
   "/platforms/": {
-    "hash": "935c7c76666d17e0",
+    "hash": "1769d9c5dfa6dbc9",
     "date": "2026-09-15"
   },
   "/free-audit/": {
@@ -80,7 +80,7 @@
     "date": "2026-08-10"
   },
   "/gdpr-analytics/": {
-    "hash": "53c686571ee01422",
+    "hash": "803a3328e71f24fd",
     "date": "2026-09-15"
   },
   "/consentless-analytics/": {
@@ -124,7 +124,7 @@
     "date": "2026-09-14"
   },
   "/integrations/": {
-    "hash": "943383e717ea16a0",
+    "hash": "f922b33eabbb0e66",
     "date": "2026-09-15"
   },
   "/use-cases/": {
@@ -148,7 +148,7 @@
     "date": "2026-09-15"
   },
   "/glossary/": {
-    "hash": "2b506073abd163fa",
+    "hash": "98d4838d95280e54",
     "date": "2026-09-15"
   },
   "/trust/": {
@@ -248,7 +248,7 @@
     "date": "2026-09-15"
   },
   "/es/platforms/": {
-    "hash": "44c53fdfd3f73801",
+    "hash": "3e9c97ac15e3c2ec",
     "date": "2026-09-15"
   },
   "/es/security/": {
@@ -324,7 +324,7 @@
     "date": "2026-09-15"
   },
   "/es/glossary/": {
-    "hash": "01eb67dceabdbe2c",
+    "hash": "c27501433098c32e",
     "date": "2026-09-15"
   },
   "/es/trust/": {
@@ -632,7 +632,7 @@
     "date": "2026-09-15"
   },
   "/glossary/consent-mode-v2/": {
-    "hash": "dd26131aebb50707",
+    "hash": "1cb3773d30155cb5",
     "date": "2026-09-15"
   },
   "/glossary/server-side-tracking/": {
@@ -1076,7 +1076,7 @@
     "date": "2026-08-24"
   },
   "/es/gdpr-analytics/": {
-    "hash": "853f3e74c2857fb9",
+    "hash": "5bbd9a9ba65703f2",
     "date": "2026-09-15"
   },
   "/es/gdpr-analytics/spain/": {
@@ -1136,8 +1136,8 @@
     "date": "2026-09-13"
   },
   "/data-studio/": {
-    "hash": "7dce6ebb2b7db255",
-    "date": "2026-09-13"
+    "hash": "e9346ebea18f213e",
+    "date": "2026-09-15"
   },
   "/blog/consent-mode-measured-vs-modelled/": {
     "hash": "94a383519806bf78",
@@ -1236,7 +1236,7 @@
     "date": "2026-09-15"
   },
   "/es/use-cases/single-source-of-truth/": {
-    "hash": "3780bc54dc99cfb7",
+    "hash": "adeb79475cf98d93",
     "date": "2026-09-15"
   },
   "/integrations/bigquery/": {
@@ -1256,7 +1256,7 @@
     "date": "2026-09-15"
   },
   "/use-cases/single-source-of-truth/": {
-    "hash": "1331669c164509b2",
+    "hash": "f9411c02fa95c091",
     "date": "2026-09-15"
   },
   "/es/for/multi-brand-retailers/": {
@@ -1273,6 +1273,30 @@
   },
   "/es/ai-analytics/prompts/": {
     "hash": "42f1c94e9525aff1",
+    "date": "2026-09-15"
+  },
+  "/es/glossary/consent-mode-v2/": {
+    "hash": "cfeddf4357dbcca8",
+    "date": "2026-09-15"
+  },
+  "/es/platforms/opencart/": {
+    "hash": "fbcba8707c68e717",
+    "date": "2026-09-15"
+  },
+  "/es/platforms/prestashop/": {
+    "hash": "f2dc0c9a820092c4",
+    "date": "2026-09-15"
+  },
+  "/platforms/opencart/": {
+    "hash": "dabc3f7bc76ab462",
+    "date": "2026-09-15"
+  },
+  "/platforms/prestashop/": {
+    "hash": "5a962a5f11152179",
+    "date": "2026-09-15"
+  },
+  "/es/data-studio/": {
+    "hash": "a097d9040dec16a8",
     "date": "2026-09-15"
   }
 }

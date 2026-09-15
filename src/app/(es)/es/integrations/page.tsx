@@ -46,7 +46,10 @@ const itemLinks: Record<string, string> = {
   "Shopify": "/es/platforms/shopify",
   "WooCommerce": "/es/platforms/woocommerce",
   "Magento 2": "/es/platforms/magento",
+  "PrestaShop": "/es/platforms/prestashop",
+  "OpenCart": "/es/platforms/opencart",
   "Conector BigQuery": "/es/integrations/bigquery",
+  "Data Studio": "/es/data-studio",
   "Google Ads": "/es/integrations/google-ads",
   "Meta Ads": "/es/integrations/meta-ads",
 };
@@ -76,8 +79,8 @@ export default function Page() {
             despliegan todo por GTM. Cualquier framework fuera de esa lista
             funciona con un solo script. Del lado del consumo, ese mismo dato
             agregado sale por API REST, webhooks,{" "}
-            <Link href="/es/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">conector de BigQuery</Link>, Data
-            Studio y un servidor MCP que permite a Claude, ChatGPT, Cursor o
+            <Link href="/es/integrations/bigquery" className="text-ink no-underline border-b border-warm-200 hover:border-ink">conector de BigQuery</Link>,{" "}
+            <Link href="/es/data-studio" className="text-ink no-underline border-b border-warm-200 hover:border-ink">Data Studio</Link> y un servidor MCP que permite a Claude, ChatGPT, Cursor o
             Codex consultarlo en lenguaje natural. Nada de esto pide una cookie
             ni un identificador de visitante, así que añadir Sealmetrics no añade
             ninguna obligación de consentimiento a un stack que ya la tiene.
