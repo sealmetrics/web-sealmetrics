@@ -177,7 +177,7 @@ function toMarkdown(html, outerBlocks = null) {
   s = s.replace(/<noscript[\s\S]*?<\/noscript>/gi, "");
   s = s.replace(/<template[\s\S]*?<\/template>/gi, "");
   s = s.replace(/<form[\s\S]*?<\/form>/gi, "");
-  // The FAQ accordions (FaqAccordionV3, FaqV3, FaqV3Es, PricingFaqV3) render
+  // The FAQ accordions (FaqAccordionV3, FaqV3, FaqV3Es) render
   // each question AND its answer inside the disclosure <button>, so the generic
   // strip below erased every Q&A from the twins — the answers carry the
   // strongest material on the comparison pages. Unwrap the disclosure buttons
