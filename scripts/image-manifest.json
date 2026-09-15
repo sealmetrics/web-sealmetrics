@@ -963,12 +963,12 @@
     },
     "public/og/for/ecommerce.avif": {
       "source": "public/og/for/ecommerce.png",
-      "sourceHash": "a37d0d10812413ae47edbed3d4865ba42858a10c0bf3d300d676ddfefdef49f9",
+      "sourceHash": "ba92d9e7917638e8075e9beccd85d5a319817fc3d476ee2bed43a370e674867c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/ecommerce.webp": {
       "source": "public/og/for/ecommerce.png",
-      "sourceHash": "a37d0d10812413ae47edbed3d4865ba42858a10c0bf3d300d676ddfefdef49f9",
+      "sourceHash": "ba92d9e7917638e8075e9beccd85d5a319817fc3d476ee2bed43a370e674867c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/education.avif": {

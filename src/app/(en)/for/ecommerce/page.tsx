@@ -1,110 +1,66 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
-import {
-  breadcrumbSchema,
-  verticalSoftwareApplicationSchema,
-} from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { ECOMMERCE_MODIFIED, ECOMMERCE_PUBLISHED, ecommerceEn as content } from "@/lib/content/problem-landings/ecommerce";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/for/ecommerce";
+const TITLE = "Analytics for eCommerce: Revenue by Channel — Sealmetrics";
+const DESCRIPTION =
+  "Cookieless analytics for eCommerce: revenue by channel, funnel and product, checked against your store's orders. Incapto: 96% of orders recorded.";
+const SOCIAL =
+  "Your store knows what sold, not who sold it. Read channels, the purchase funnel and products by channel without consent loss, reconciled with your orders.";
+
 export const metadata: Metadata = {
-  title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
-  description:
-    "Cookieless analytics for eCommerce: no consent-driven data loss, last-click revenue attribution, no consent banner, EU-hosted in Dublin. From EUR499/mo.",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analytics for eCommerce: Revenue by Channel — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
-    description:
-      "Consentless analytics designed for GDPR, built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
-    type: "website",
-    images: [ogImage("/for/ecommerce/")],
-    url: "https://sealmetrics.com/for/ecommerce/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for eCommerce — Full Attribution | Sealmetrics",
-    description: "Consentless analytics designed for GDPR, built for DTC and retail eCommerce. Measures EU traffic without consent loss and reconciles with your Shopify/Magento CRM.",
-    images: [ogImage("/for/ecommerce/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/ecommerce/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternates("/for/ecommerce"),
   },
 };
 
-
-export default function Page() {
+export default function EcommercePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For eCommerce" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "For teams", url: "/for" }, { name: "eCommerce", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "For eCommerce", url: "/for/ecommerce" },
-        ])}
-      />
-      <JsonLd
-        data={verticalSoftwareApplicationSchema({
-          vertical: "eCommerce",
-          audienceType: "DTC and retail eCommerce teams",
-          description:
-            "Cookieless analytics for eCommerce: first-party measurement that reconciles with Shopify, WooCommerce and Magento backends without consent banners. Designed for GDPR from the architecture up (self-assessed).",
-          url: "/for/ecommerce",
+        data={articleSchema({
+          headline: "Analytics for eCommerce: revenue by channel, funnel and product, reconciled with the store",
+          description: DESCRIPTION,
+          datePublished: ECOMMERCE_PUBLISHED,
+          dateModified: ECOMMERCE_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
-
-      <VerticalPageV3 data={getVerticalData("ecommerce", "en")} />
-
-      <TldrBlock
-        label="Cookieless analytics for eCommerce"
-        answer={
-          <>
-            <strong>Cookieless analytics for eCommerce</strong> means capturing
-            visits, add-to-carts and purchases without browser cookies,
-            consent banners or ad-blocker gaps — and reconciling those numbers
-            with your Shopify, WooCommerce or Magento backend. Sealmetrics is a
-            first-party, EU-hosted implementation built specifically for DTC
-            and retail eCommerce teams under GDPR.
-          </>
-        }
-        bullets={[
-          <>Counts the visits consent-based analytics loses: at Incapto, GA4 did not record 29% of visits over 48 days on Shopify.</>,
-          <>Checkable against your backend: Sealmetrics recorded 96% of Incapto's real online-store orders and 97% of revenue.</>,
-          <>Native modules for Shopify (any plan), WooCommerce, Magento 2, PrestaShop and OpenCart.</>,
-        ]}
-      />
-
-      <RelatedPagesV3
-        locale="en"
-        eyebrow="Also explore"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-          {
-            href: "/blog/cookieless-analytics-for-ecommerce",
-            title: "Guide: Cookieless analytics for eCommerce",
-            desc: "Complete 2026 guide for DTC and retail teams.",
-          },
-          {
-            href: "/glossary/cookieless-analytics",
-            title: "What is cookieless analytics",
-            desc: "Definition, how it works, why it matters.",
-          },
-          {
-            href: "/for/hotels",
-            title: "For hotels",
-            desc: "eCommerce with booking-specific attribution.",
-          },
-        ]}
-      />
-      <LogosStrip />
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      {content.proof.quote && <JsonLd data={quotationSchema({ text: content.proof.quote.text, spokenBy: content.proof.quote.person, spokenByRole: content.proof.quote.role, url: URL })} />}
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
