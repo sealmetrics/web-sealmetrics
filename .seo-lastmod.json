@@ -148,7 +148,7 @@
     "date": "2026-09-15"
   },
   "/glossary/": {
-    "hash": "2b506073abd163fa",
+    "hash": "98d4838d95280e54",
     "date": "2026-09-15"
   },
   "/trust/": {
@@ -324,7 +324,7 @@
     "date": "2026-09-15"
   },
   "/es/glossary/": {
-    "hash": "01eb67dceabdbe2c",
+    "hash": "c27501433098c32e",
     "date": "2026-09-15"
   },
   "/es/trust/": {
@@ -428,27 +428,27 @@
     "date": "2026-09-15"
   },
   "/es/for/healthcare/": {
-    "hash": "01f74bf3be8c73fe",
+    "hash": "62a8483fb72aba8e",
     "date": "2026-09-15"
   },
   "/es/for/cto/": {
-    "hash": "eb9c4c51ae218e85",
+    "hash": "3ad24e9937d6e9f1",
     "date": "2026-09-15"
   },
   "/es/for/education/": {
-    "hash": "ba80d9735824c332",
+    "hash": "8a3c7a0a8e69adfc",
     "date": "2026-09-15"
   },
   "/es/for/dpo/": {
-    "hash": "1774258175d9d8c7",
+    "hash": "6f53b81cf262308e",
     "date": "2026-09-15"
   },
   "/es/for/cmo/": {
-    "hash": "ef173e0b637d1cb7",
+    "hash": "a894acdd053764d3",
     "date": "2026-09-15"
   },
   "/es/for/finance/": {
-    "hash": "b7685394301f41b7",
+    "hash": "f0888ea61f2657db",
     "date": "2026-09-15"
   },
   "/es/for/agencies/": {
@@ -456,11 +456,11 @@
     "date": "2026-09-15"
   },
   "/es/for/saas/": {
-    "hash": "6065d80b7d34dd9a",
+    "hash": "fcf59824208d6c82",
     "date": "2026-09-15"
   },
   "/es/for/media/": {
-    "hash": "e0d780c5758f4386",
+    "hash": "a83fd3932b015621",
     "date": "2026-09-15"
   },
   "/es/case-studies/european-hotel-group/": {
@@ -632,7 +632,7 @@
     "date": "2026-09-15"
   },
   "/glossary/consent-mode-v2/": {
-    "hash": "dd26131aebb50707",
+    "hash": "1cb3773d30155cb5",
     "date": "2026-09-15"
   },
   "/glossary/server-side-tracking/": {
@@ -744,27 +744,27 @@
     "date": "2026-09-15"
   },
   "/for/healthcare/": {
-    "hash": "c348f8ad676b10c4",
+    "hash": "db8f94cc025c8a71",
     "date": "2026-09-15"
   },
   "/for/cto/": {
-    "hash": "a0f640de7633def0",
+    "hash": "430d246aba8ab67a",
     "date": "2026-09-15"
   },
   "/for/education/": {
-    "hash": "b12d047d7267eace",
+    "hash": "62b907ec25da57fc",
     "date": "2026-09-15"
   },
   "/for/dpo/": {
-    "hash": "90a0a7ac4ce183fd",
+    "hash": "97c244ade36ba504",
     "date": "2026-09-15"
   },
   "/for/cmo/": {
-    "hash": "650470a573dcc50d",
+    "hash": "2d4aab86699524f8",
     "date": "2026-09-15"
   },
   "/for/finance/": {
-    "hash": "085845e27029971f",
+    "hash": "205bf23d5369deff",
     "date": "2026-09-15"
   },
   "/for/agencies/": {
@@ -772,11 +772,11 @@
     "date": "2026-09-15"
   },
   "/for/saas/": {
-    "hash": "94ebbcec5ee99124",
+    "hash": "1686dfb6353ecd66",
     "date": "2026-09-15"
   },
   "/for/media/": {
-    "hash": "3ecc4a221959d9b6",
+    "hash": "ed6cb99ce88e238e",
     "date": "2026-09-15"
   },
   "/use-cases/ga4-migration/": {
@@ -1273,6 +1273,10 @@
   },
   "/es/ai-analytics/prompts/": {
     "hash": "42f1c94e9525aff1",
+    "date": "2026-09-15"
+  },
+  "/es/glossary/consent-mode-v2/": {
+    "hash": "cfeddf4357dbcca8",
     "date": "2026-09-15"
   },
   "/es/platforms/opencart/": {

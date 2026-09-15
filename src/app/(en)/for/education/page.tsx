@@ -1,58 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { EDUCATION_MODIFIED, EDUCATION_PUBLISHED, educationEn as content } from "@/lib/content/problem-landings/education";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/for/education";
+const TITLE = "Analytics for Education: Enquiries by Channel — Sealmetrics";
+const DESCRIPTION =
+  "Cookieless analytics for universities and EdTech: enquiries and applications by channel, in aggregate, with no age, name or email collected from any visitor.";
+const SOCIAL =
+  "Count enquiries, not the students behind them. Measure enquiries and applications by channel without cookies, on an audience that includes minors.";
+
 export const metadata: Metadata = {
-  title: "Analytics for Education — GDPR Funnels | Sealmetrics",
-  description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analytics for Education: Enquiries by Channel — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analytics for Education — GDPR Funnels | Sealmetrics",
-    description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
-    type: "website",
-    images: [ogImage("/for/education/")],
-    url: "https://sealmetrics.com/for/education/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Education — GDPR Funnels | Sealmetrics",
-    description: getVerticalData("education", "en").lede.slice(0, 155) + "…",
-    images: [ogImage("/for/education/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/education/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternates("/for/education"),
   },
 };
 
-export default function Page() {
+export default function EducationPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For Education" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For Education", url: "/for/education" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Education and training", description: "Sealmetrics — enterprise analytics for education teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "en")} />
-      <RelatedPagesV3
-        locale="en"
-        eyebrow="Also explore"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-        { href: "/for/healthcare", title: "For healthcare", desc: "Minor-data compliance." },
-        { href: "/for/dpo", title: "For DPOs & legal", desc: "Compliance framework." },
-        { href: "/for/media", title: "For media & publishers", desc: "Academic media channels." }
-      ]}
+      <JsonLd data={breadcrumbSchema([{ name: "For teams", url: "/for" }, { name: "Education", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
+      <JsonLd
+        data={articleSchema({
+          headline: "Analytics for education: enquiries and applications by channel, without personal data",
+          description: DESCRIPTION,
+          datePublished: EDUCATION_PUBLISHED,
+          dateModified: EDUCATION_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+        })}
       />
-      <LogosStrip />
-      
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }

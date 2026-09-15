@@ -176,7 +176,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Google Consent Mode v2",
     shortDefinition:
-      "Google's framework that allows Analytics and Ads tags to load without storing cookies when the user has rejected consent — then statistically models the missing data. It is a modelling layer, not a measurement layer.",
+      "Google's API for passing a visitor's consent choices to Analytics and Ads tags through four consent types. With consent denied, tags send nothing or cookieless pings, and Google models part of what is missing.",
     category: "Privacy",
     related: ["consent-management-platform", "gdpr-analytics-compliance", "data-loss-in-analytics", "cookieless-analytics"],
   },

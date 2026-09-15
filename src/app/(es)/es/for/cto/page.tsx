@@ -1,58 +1,66 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { CTO_MODIFIED, CTO_PUBLISHED_ES, ctoEs as content } from "@/lib/content/problem-landings/cto";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/es/for/cto";
+const TITLE = "Analítica para CTOs: un tracker de 1,1 KB — Sealmetrics";
+const DESCRIPTION =
+  "Analítica para ingeniería: un script diferido de 1,1 KB sin almacenamiento en el dispositivo, seguimiento SPA automático y API, MCP y BigQuery.";
+const SOCIAL =
+  "GA4 pesa unos 149 KB y exige cablear el consentimiento. Sealmetrics es un script de 1,1 KB sin cookies, con seguimiento SPA y los datos detrás de una API.";
+
 export const metadata: Metadata = {
-  title: "Analítica para CTOs — arquitectura y setup | Sealmetrics",
-  description: getVerticalData("cto", "es").lede.slice(0, 155) + "…",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analítica para CTOs: un tracker de 1,1 KB — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analítica para CTOs — arquitectura y setup | Sealmetrics",
-    description: getVerticalData("cto", "es").lede.slice(0, 155) + "…",
-    type: "website",
-    images: [ogImage("/es/for/cto/")],
-    url: "https://sealmetrics.com/es/for/cto/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para CTOs — arquitectura y setup | Sealmetrics",
-    description: getVerticalData("cto", "es").lede.slice(0, 155) + "…",
-    images: [ogImage("/es/for/cto/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/for/cto/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternatesEs("/for/cto"),
   },
 };
 
-export default function Page() {
+export default function CTOPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para CTOs" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Para CTOs", url: "/es/for/cto" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "CTOs", audienceType: "Chief Technology Officer", description: "Sealmetrics — enterprise analytics for CTOs teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/es/for/cto" })} /><VerticalPageV3 data={getVerticalData("cto", "es")} />
-      <RelatedPagesV3
-        locale="es"
-        eyebrow="Explora también"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-        { href: "/es/for/cmo", title: "For CMOs", desc: "The business-side buyer." },
-        { href: "/es/for/dpo", title: "For DPOs & legal", desc: "The compliance review." },
-        { href: "/es/for/saas", title: "For SaaS", desc: "Technical product-led analytics." }
-      ]}
+      <JsonLd data={breadcrumbSchema([{ name: "Por equipo", url: "/es/for" }, { name: "CTOs", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
+      <JsonLd
+        data={articleSchema({
+          headline: "Analítica para CTOs: un tracker ligero, sin almacenamiento en el dispositivo y con los datos detrás de una API",
+          description: DESCRIPTION,
+          datePublished: CTO_PUBLISHED_ES,
+          dateModified: CTO_MODIFIED,
+          url: URL,
+          category: "Role",
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+        })}
       />
-      <LogosStripEs />
-      
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      {content.proof.quote && <JsonLd data={quotationSchema({ text: content.proof.quote.text, spokenBy: content.proof.quote.person, spokenByRole: content.proof.quote.role, url: URL })} />}
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
