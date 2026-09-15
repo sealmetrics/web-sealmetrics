@@ -1,58 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { EDUCATION_MODIFIED, EDUCATION_PUBLISHED_ES, educationEs as content } from "@/lib/content/problem-landings/education";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/es/for/education";
+const TITLE = "Analítica educativa: solicitudes por canal — Sealmetrics";
+const DESCRIPTION =
+  "Analítica sin cookies para universidades y EdTech: peticiones y solicitudes por canal, en agregado, sin recoger edad, nombre ni email de ningún visitante.";
+const SOCIAL =
+  "Cuenta peticiones, no a los alumnos que hay detrás. Mide peticiones y solicitudes por canal sin cookies, con una audiencia que incluye menores.";
+
 export const metadata: Metadata = {
-  title: "Analítica para educación — embudos con RGPD | Sealmetrics",
-  description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analítica educativa: solicitudes por canal — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analítica para educación — embudos con RGPD | Sealmetrics",
-    description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
-    type: "website",
-    images: [ogImage("/es/for/education/")],
-    url: "https://sealmetrics.com/es/for/education/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para educación — embudos con RGPD | Sealmetrics",
-    description: getVerticalData("education", "es").lede.slice(0, 155) + "…",
-    images: [ogImage("/es/for/education/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/for/education/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternatesEs("/for/education"),
   },
 };
 
-export default function Page() {
+export default function EducationPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para educación" }]} locale="es" />
-      <JsonLd data={breadcrumbSchema([{ name: "Para educación", url: "/es/for/education" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "education", audienceType: "Educacion y formacion", description: "Sealmetrics — enterprise analytics for education teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/es/for/education" })} /><VerticalPageV3 data={getVerticalData("education", "es")} />
-      <RelatedPagesV3
-        locale="es"
-        eyebrow="Explora también"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-        { href: "/es/for/healthcare", title: "For healthcare", desc: "Minor-data compliance." },
-        { href: "/es/for/dpo", title: "For DPOs & legal", desc: "Compliance framework." },
-        { href: "/es/for/media", title: "For media & publishers", desc: "Academic media channels." }
-      ]}
+      <JsonLd data={breadcrumbSchema([{ name: "Por equipo", url: "/es/for" }, { name: "Educación", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
+      <JsonLd
+        data={articleSchema({
+          headline: "Analítica para educación: peticiones y solicitudes por canal, sin datos personales",
+          description: DESCRIPTION,
+          datePublished: EDUCATION_PUBLISHED_ES,
+          dateModified: EDUCATION_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+        })}
       />
-      <LogosStripEs />
-      
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
