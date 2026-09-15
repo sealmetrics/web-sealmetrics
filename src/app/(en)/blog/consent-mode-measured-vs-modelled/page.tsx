@@ -183,7 +183,7 @@ export default function ConsentModeMeasuredVsModelledPage() {
 
             <h2 className={h2}>The four signals, and the two implementations</h2>
             <p>
-              Consent Mode carries four consent types: <code>ad_storage</code> and{" "}
+              <Link href="/glossary/consent-mode-v2" className={link}>Consent Mode</Link> carries four consent types: <code>ad_storage</code> and{" "}
               <code>analytics_storage</code> for cookies and device identifiers used for
               advertising and analytics, and <code>ad_user_data</code> and{" "}
               <code>ad_personalization</code> for sending user data to Google for

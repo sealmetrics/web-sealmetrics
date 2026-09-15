@@ -148,7 +148,7 @@
     "date": "2026-09-15"
   },
   "/glossary/": {
-    "hash": "2b506073abd163fa",
+    "hash": "98d4838d95280e54",
     "date": "2026-09-15"
   },
   "/trust/": {
@@ -324,7 +324,7 @@
     "date": "2026-09-15"
   },
   "/es/glossary/": {
-    "hash": "01eb67dceabdbe2c",
+    "hash": "c27501433098c32e",
     "date": "2026-09-15"
   },
   "/es/trust/": {
@@ -632,7 +632,7 @@
     "date": "2026-09-15"
   },
   "/glossary/consent-mode-v2/": {
-    "hash": "dd26131aebb50707",
+    "hash": "1cb3773d30155cb5",
     "date": "2026-09-15"
   },
   "/glossary/server-side-tracking/": {
@@ -1273,6 +1273,10 @@
   },
   "/es/ai-analytics/prompts/": {
     "hash": "42f1c94e9525aff1",
+    "date": "2026-09-15"
+  },
+  "/es/glossary/consent-mode-v2/": {
+    "hash": "cfeddf4357dbcca8",
     "date": "2026-09-15"
   }
 }
