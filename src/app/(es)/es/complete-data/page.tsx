@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa «datos completos», exactamente?",
-    a: "Visitantes contados acepten o no el banner. Conversiones atribuidas sobre ese mismo dato. Sin gate de consentimiento, mucha menos pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a cada conversión observada — no al 13% que dio consentimiento.",
+    a: "Visitantes contados acepten o no el banner. Conversiones atribuidas sobre ese mismo dato. Sin gate de consentimiento, mucha menos pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. Cada número que ves en el dashboard es un evento observado, no una estimación modelada, y ninguno depende de que el visitante acepte el banner. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a cada conversión observada — no al 13% que dio consentimiento.",
   },
   {
     q: "¿No lo está resolviendo ya el Consent Mode v2 de GA4?",
@@ -115,9 +115,9 @@ export default function CompleteDataPillarEs() {
       <TldrBlock
         answer={
           <>
-            Los datos completos son analítica web donde el número en el
-            dashboard equivale al número que ocurrió. Sin gate de
-            consentimiento perdiendo 40–60% de visitantes, sin
+            Los datos completos son analítica web donde cada número del
+            dashboard es un evento observado, no una estimación modelada. Sin gate de
+            consentimiento perdiendo 40–60% de visitantes, muchos menos
             ad-blockers eliminando el script en otro 40%, sin ITP de
             Safari truncando atribución a 7 días, sin modelo estadístico
             rellenando el hueco. Es el output de una decisión
