@@ -106,8 +106,8 @@ export default function Page() {
 
       <FinalCtaSharedV3
         locale="es"
-        titleEn={<>Install in 15 minutes.</>}
-        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutos</em> en tu plataforma.</>}
+        titleEn={<>Install in 5 to 30 minutes, depending on your platform.</>}
+        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>5 a 30 minutos</em>, según tu plataforma.</>}
         ledeEn="Book a walkthrough."
         ledeEs="Reserva 30 min. Te llevamos por la integración exacta para tu stack — en directo, sobre tu propia web."
       />

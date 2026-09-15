@@ -210,7 +210,7 @@ export default function Page() {
               For a standard Shopify, WooCommerce or Magento store, the setup is:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
-              <li>Install the first-party tracking script (5–15 minutes).</li>
+              <li>Install the first-party tracking script or the platform module (5–30 minutes, depending on the platform).</li>
               <li>Configure revenue event mapping — typically auto-mapped on Shopify and WooCommerce.</li>
               <li>Run side-by-side with GA4 for 30 days.</li>
               <li>Compare aggregate channel revenue against the Shopify/Magento backend weekly.</li>

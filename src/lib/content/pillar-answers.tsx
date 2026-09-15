@@ -147,7 +147,7 @@ export const howItWorksAnswer: Record<Locale, ReactNode> = {
       interpretation is what makes a disagreement diagnosable — you can tell
       whether a number is wrong because events are missing, because a commercial
       definition changed, or because of the attribution model. Installation
-      takes about 15 minutes, and the previous day is complete before 6 AM.
+      takes 5 to 30 minutes depending on the platform, and the previous day is complete before 6 AM.
     </p>
   ),
   es: (
@@ -164,8 +164,8 @@ export const howItWorksAnswer: Record<Locale, ReactNode> = {
       MCP y exportación a BigQuery. Mantener separadas la recogida y la
       interpretación es lo que hace diagnosticable un desacuerdo: puedes saber
       si un número está mal porque faltan eventos, porque cambió una definición
-      comercial o por el modelo de atribución. La instalación lleva unos 15
-      minutos y el día anterior está completo antes de las 6 de la mañana.
+      comercial o por el modelo de atribución. La instalación lleva de 5 a 30
+      minutos según la plataforma, y el día anterior está completo antes de las 6 de la mañana.
     </p>
   ),
 };

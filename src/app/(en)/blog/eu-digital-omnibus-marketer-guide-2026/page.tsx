@@ -470,7 +470,7 @@ export default function OmnibusGuidePage() {
         </div>
 
         <CommercialModule
-          hook="You can wait for the final text, or measure completely now. A 15-minute setup shows what your consent-gated analytics is missing today."
+          hook="You can wait for the final text, or measure completely now. A setup of 5 to 30 minutes, depending on your platform, shows what your consent-gated analytics is missing today."
         />
 
         {/* Related */}

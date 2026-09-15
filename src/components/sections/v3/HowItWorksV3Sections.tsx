@@ -225,7 +225,7 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
       lede:
         "Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without the cookie banner and without the sampling.",
       steps: [
-        { n: "Step 01", time: "15 minutes", t: "Install the pixel", p: "Add one script tag to your site. Works with any CMS or framework. Your dev deploys in 15 minutes." },
+        { n: "Step 01", time: "5–30 minutes", t: "Install the pixel", p: "Add one script tag or a native module. Works with any CMS or framework. Your dev deploys it in 5 to 30 minutes, depending on the platform." },
         { n: "Step 02", time: "Day 1", t: "Real data flows", p: "Full traffic visibility from the first hour. Every visitor, every source, every conversion — 100% observed." },
         { n: "Step 03", time: "Day 3", t: "GA4 side-by-side", p: "We help you calibrate and compare against your existing GA4. You see the gap with your own numbers, not ours." },
         { n: "Step 04", time: "Day 5", t: "Microconversions", p: "Tag the 5–10 microconversions that matter for revenue attribution. Cart adds, form completes, video plays." },
@@ -242,7 +242,7 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
       lede:
         "Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta — pero sin banner de cookies y sin muestreo.",
       steps: [
-        { n: "Paso 01", time: "15 minutos", t: "Instala el pixel", p: "Añade un script a tu web. Funciona con cualquier CMS o framework. Tu dev lo despliega en 15 minutos." },
+        { n: "Paso 01", time: "5–30 minutos", t: "Instala el pixel", p: "Añade un script o un módulo nativo. Funciona con cualquier CMS o framework. Tu dev lo despliega en 5 a 30 minutos, según la plataforma." },
         { n: "Paso 02", time: "Día 1", t: "Fluyen los datos reales", p: "Visibilidad completa del tráfico desde la primera hora. Cada visitante, cada fuente, cada conversión — 100% observado." },
         { n: "Paso 03", time: "Día 3", t: "GA4 en paralelo", p: "Te ayudamos a calibrar y comparar con tu GA4 actual. Ves el gap con tus propios datos, no los nuestros." },
         { n: "Paso 04", time: "Día 5", t: "Microconversiones", p: "Etiqueta las 5–10 microconversiones que importan para atribución. Add-to-cart, formularios, video plays." },
