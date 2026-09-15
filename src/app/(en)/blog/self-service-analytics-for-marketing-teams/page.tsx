@@ -13,11 +13,11 @@ const URL = "/blog/self-service-analytics-for-marketing-teams";
 
 export const metadata: Metadata = {
   title: "Self-Service Analytics for Marketing Teams",
-  description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 47 named tools instead of SQL, and BYOK or private AI.",
+  description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 40+ named tools instead of SQL, and BYOK or private AI.",
   openGraph: {
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
-      "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+      "Three moves: measure traffic without depending on consent, expose it to an AI agent as more than 40 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
-    description: "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+    description: "Three moves: measure traffic without depending on consent, expose it to an AI agent as more than 40 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
   },
   alternates: {
@@ -50,7 +50,7 @@ const preconditions = [
   {
     aspect: "Agent access method",
     them: "Raw SQL over the warehouse",
-    us: "47 named, read-only tools",
+    us: "40+ named, read-only tools",
   },
   {
     aspect: "Bot and AI-agent traffic",
@@ -122,7 +122,7 @@ const FAQ = [
   {
     question: "Can ChatGPT or Claude read my analytics data?",
     answer:
-      "Yes, through an MCP server. Sealmetrics exposes 47 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
+      "Yes, through an MCP server. Sealmetrics exposes more than 40 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
   },
   {
     question: "What is BYOK in analytics?",
@@ -158,7 +158,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
           description:
-            "Complete cookieless data, 47 named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
+            "Complete cookieless data, 40+ named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
           ...dates,
           url: URL,
           category: "AI & Analytics",
@@ -200,7 +200,7 @@ export default function Page() {
                 Self-service analytics means a marketing team gets a correct answer to a business
                 question without opening a ticket for the data team. At Sealmetrics it works in
                 three moves: the platform measures traffic without cookies or consent, it
-                exposes that data to an AI agent as 47 named, read-only tools instead of raw SQL,
+                exposes that data to an AI agent as more than 40 named, read-only tools instead of raw SQL,
                 and the customer chooses whether that agent runs on their own model key (BYOK) or on
                 an isolated private instance.
               </p>
@@ -232,15 +232,23 @@ export default function Page() {
             </p>
             <p>
               This is not a reporting detail. An agent that reads a partial dataset does not say
-              &ldquo;I only have 13% of your traffic.&rdquo; It answers confidently with the 13% it
+              &ldquo;I only see part of your traffic.&rdquo; It answers confidently with the part it
               has. The output is well formatted, precise-looking and wrong. Bad data plus a good
-              model produces false precision faster than a spreadsheet ever could — and the
-              arithmetic of how that 13% happens is worked through in{" "}
+              model produces false precision faster than a spreadsheet ever could. The gap is
+              measurable: on a real Shopify store tracked side by side for 48 days,{" "}
+              <Link
+                href="/case-studies/incapto"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                GA4 did not record 29% of visits
+              </Link>
+              , and the worst-case arithmetic, in which the visible share can fall to about 13%, is
+              worked through in{" "}
               <Link
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                why GA4 ends up showing a sliver of EU traffic
+                why GA4 can end up showing a sliver of EU traffic
               </Link>
               .
             </p>
@@ -317,11 +325,11 @@ export default function Page() {
               What can a marketing team actually ask?
             </h2>
             <p>
-              The 47 tools cover sites, traffic and campaigns, page performance and content groups,
-              conversions and microconversions, audience segmentation by geography, device, browser
-              and OS, event-level raw data (capped at 31-day ranges), funnel analysis, bot
-              detection, custom properties and segments, alerts and webhooks, and tracking code
-              generation.
+              On the hosted endpoint the tools cover sites, traffic and campaigns, page performance
+              and content groups, conversions and microconversions, audience breakdowns by geography,
+              device, browser and OS, event-level raw data (capped at 31-day ranges), funnel
+              analysis, custom properties, channel-rule testing and tracking code. The full list in
+              the server documentation adds bot detection, segments, alerts and webhooks.
             </p>
             <p>In practice that turns into questions a CMO asks out loud:</p>
 
@@ -479,9 +487,10 @@ export default function Page() {
                 href="/blog/ai-agent-traffic-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                AI agent traffic is tracked separately
+                AI agent traffic will be tracked separately
               </Link>{" "}
-              and does not count against the event limit.
+              once Agent Analytics ships, which is in development, and will not count against the
+              event limit.
             </p>
             <p>
               That is what makes growth scalable rather than linear. A team that adds Germany, France
@@ -523,7 +532,7 @@ export default function Page() {
                 </p>
                 <p className="text-[0.95rem] leading-[1.65] text-warm-50/80 mb-6 max-w-[52ch]">
                   The free Agentic Package runs the whole loop on your own traffic up to 1M human
-                  events. If you would rather quantify the gap first, the calculator does it from
+                  events in total. If you would rather quantify the gap first, the calculator does it from
                   your consent rate and your paid spend.
                 </p>
                 <div className="flex flex-wrap gap-3">

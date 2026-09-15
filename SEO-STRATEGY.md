@@ -322,6 +322,20 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 11 | 5 | CNIL-exempt analytics / analytics AEPD España | `/gdpr-analytics/france` + `/gdpr-analytics/spain` + CNIL post | live |
 | 12 | 5 | analytics compliance audit / análisis de brechas RGPD analítica | `/reg-gap-analysis` (EN+ES) | shipped 7 Jul |
 | 13 | 5 | analytics without consent for small business (ES focus — beat trustedshops.es) | `/blog/gdpr-analytics-spain-faq` (EN+ES) + `/es/reg-gap-analysis` | shipped 7 Jul |
+| 14 | 5 | why does GA4 show so much direct / none traffic / por qué GA4 muestra tanto tráfico directo | `/blog/why-ga4-shows-direct-none` (EN+ES) + `/complete-data` | shipped 14 Sep |
+| 15 | 2 | how to measure ROAS after cookie consent / cómo medir el ROAS con el consentimiento de cookies | `/blog/measure-roas-after-cookie-consent` (EN+ES) + `/use-cases/revenue-attribution` | shipped 14 Sep |
+| 16 | 5 | why don't Meta Ads conversions match my CRM / por qué no cuadran las conversiones de Meta Ads con el CRM | `/blog/meta-ads-conversions-vs-crm` (EN+ES) + `/use-cases/single-source-of-truth` | shipped 14 Sep |
+| 17 | 2 | what does GA4 consent mode model / qué modela Consent Mode en GA4 | `/blog/consent-mode-measured-vs-modelled` (EN+ES) + `/glossary/consent-mode-v2` | shipped 14 Sep |
+| 18 | 5 | last-click vs data-driven attribution / último clic frente a atribución basada en datos | `/blog/last-click-vs-modelled-attribution` (EN+ES) + `/blog/multi-touch-attribution-complete-data` | shipped 14 Sep |
+| 19 | 3 | GA4 vs Piwik PRO vs Sealmetrics / GA4 o Piwik PRO | `/blog/ga4-vs-piwik-pro-vs-sealmetrics` (EN+ES) + `/vs-ga4` + `/vs/piwik-pro` | shipped 14 Sep |
+| 20 | 2 | is server-side tracking GDPR compliant / server-side tracking y RGPD | `/blog/server-side-tracking-gdpr` (EN+ES) + `/glossary/server-side-tracking` | shipped 14 Sep |
+| 21 | 5 | cookieless analytics for Magento / analítica sin cookies para Magento | `/platforms/magento` (EN+ES) | shipped 14 Sep |
+| 22 | 4 | export analytics to BigQuery without GA4 / exportar analítica a BigQuery | `/integrations/bigquery` (EN+ES) | shipped 14 Sep |
+| 23 | 5 | track Google Ads revenue without GA4 / medir ingresos de Google Ads sin GA4 | `/integrations/google-ads` (EN+ES) | shipped 15 Sep |
+| 24 | 5 | track Meta Ads revenue by ad set without the pixel / medir ingresos de Meta Ads por conjunto | `/integrations/meta-ads` (EN+ES) + `/blog/meta-ads-conversions-vs-crm` | shipped 15 Sep |
+| 25 | 6 | analytics for multi-brand retail groups to compare brands / analítica para comparar marcas de un grupo retail | `/for/multi-brand-retailers` (EN+ES) | shipped 15 Sep |
+| 26 | 6 | how to attribute eCommerce revenue to channels without cookies / cómo atribuir ingresos de un eCommerce a canales sin cookies | `/for/ecommerce` (EN+ES) | shipped 15 Sep |
+| 27 | 7 | MCP prompts for web analytics in Claude or ChatGPT / prompts MCP para analítica web en Claude o ChatGPT | `/ai-analytics/prompts` (EN+ES) | shipped 15 Sep |
 
 ### Method (monthly, first week)
 

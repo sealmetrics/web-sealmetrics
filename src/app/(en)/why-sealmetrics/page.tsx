@@ -793,7 +793,7 @@ function ProofSlab() {
 
         <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6 justify-between pt-8 border-t border-white/10">
           <p className="font-mono text-[11px] uppercase tracking-[0.08em] text-white/50">
-            Dreamplace Hotels · +30% traffic vs GA · 15–20% CRM gap closed
+            Dreamplace Hotels · +30% traffic vs GA · 15–20% more sales attributed
           </p>
           <Link
             href="/case-studies/palladium-hotel-group"
@@ -956,7 +956,7 @@ function PrivateAI() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 47 read-only tools"].map((c) => (
+          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 40+ read-only tools"].map((c) => (
             <span key={c} className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 bg-white border border-warm-100 rounded-full px-4 py-1.5">
               {c}
             </span>

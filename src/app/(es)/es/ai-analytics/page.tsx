@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "¿Puedo conectar ChatGPT o Claude a mi analítica?",
-    a: "Sí. Sealmetrics incluye un servidor Model Context Protocol (MCP) con 47 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de Sealmetrics o traer tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek — eliges el algoritmo, no el dato.",
+    a: "Sí. Sealmetrics incluye un servidor Model Context Protocol (MCP) cuyo endpoint alojado ofrece más de 40 herramientas de solo lectura. Conéctalo desde Claude, ChatGPT, Cursor o Claude Code en mcp.sealmetrics.com y pregunta directamente a tu analítica — revenue por canal, conversiones, rendimiento de landing pages, desperdicio de campañas. Cada herramienta mapea un concepto de negocio a una métrica canónica, así que el modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Puedes usar la IA privada de Sealmetrics o traer tu propia clave de Anthropic, OpenAI, Gemini o DeepSeek — eliges el algoritmo, no el dato.",
   },
   {
     q: "¿Qué es la IA privada para analítica?",
@@ -89,7 +89,7 @@ const pillars = [
   {
     eyebrow: "La interfaz",
     title: "Un MCP semántico",
-    body: "47 herramientas de solo lectura con nombre, cada una mapeando un concepto de negocio a una métrica canónica. El modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Nada que malinterpretar.",
+    body: "Más de 40 herramientas de solo lectura con nombre, cada una mapeando un concepto de negocio a una métrica canónica. El modelo llama a un contrato documentado en lugar de adivinar sobre columnas en bruto. Nada que malinterpretar.",
     metric: "40+ herramientas",
     metricLabel: "vía MCP de fábrica",
   },
@@ -346,7 +346,7 @@ export default function AiAnalyticsEsPage() {
             <ul className="mt-7 space-y-3">
               {[
                 "Conecta Claude, ChatGPT, Cursor o Claude Code vía MCP en mcp.sealmetrics.com",
-                "47 herramientas de solo lectura: overview, canales, conversiones, funnels, landing pages, propiedades",
+                "40+ herramientas de solo lectura: overview, canales, conversiones, funnels, landing pages, propiedades",
                 "IA privada sobre gpt-oss-120b / Scaleway (París) o trae tu propia clave de modelo — eliges el algoritmo",
                 "Enterprise puede tener una instancia de IA privada dedicada y no compartida (por comercial)",
                 "Los hits llegan al informe normalmente en menos de 2 minutos, y el SLA garantiza el día completo antes de las 6 AM",
@@ -469,7 +469,12 @@ export default function AiAnalyticsEsPage() {
             >
               referencia del servidor MCP
             </a>{" "}
-            cubre ambos, cliente por cliente.
+            cubre ambos, cliente por cliente. Doce preguntas listas para pegar, agrupadas por el problema que
+            resuelven, están en la{" "}
+            <Link href="/es/ai-analytics/prompts" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+              biblioteca de prompts MCP
+            </Link>
+            .
           </p>
         </div>
       </section>

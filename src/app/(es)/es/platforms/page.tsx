@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { SignalAnswer } from "@/components/v4/SignalAnswer";
 import "@/components/v4/signal-answer.css";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
@@ -24,16 +25,16 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Plataformas — Sealmetrics",
-    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla y Salesforce Commerce Cloud.",
+    description: "Instalación nativa para Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal y Joomla.",
     images: [ogImage("/es/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/platforms/", languages: getAlternatesEs("/platforms") },
 };
 
 const platforms = [
-  { name: "Shopify", time: "5 min", desc: "Instalación en un click en Shopify Plus. Snippet theme.liquid para Shopify Standard. Datos de orden fluyen automáticamente." },
-  { name: "Magento", time: "15 min", desc: "Módulo Magento 2 nativo vía Composer. Funciona en Adobe Commerce y Magento Open Source." },
-  { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita)." },
+  { name: "Shopify", time: "5 min", desc: "App Pixel más app embed del tema, en cualquier plan de Shopify. Compras confirmadas en servidor por webhook.", href: "/es/platforms/shopify" },
+  { name: "Magento", time: "15 min", desc: "Módulo para Magento 2.4+ instalado en app/code, Adobe Commerce incluido. Todo el funnel por vista de tienda y moneda.", href: "/es/platforms/magento" },
+  { name: "WooCommerce", time: "10 min", desc: "Plugin WordPress oficial. Cero config. Respeta tu consentimiento actual (pero no lo necesita).", href: "/es/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "Módulo PrestaShop 1.7 & 8.x. Tracking de conversiones y funnel completo out-of-the-box." },
   { name: "OpenCart", time: "15 min", desc: "Extensión para tiendas OpenCart 3.x y 4.x. Eventos de conversión e ingresos desde el primer día." },
   { name: "Squarespace", time: "10 min", desc: "Code injection en los ajustes del sitio. Compatible con Squarespace Commerce." },
@@ -67,14 +68,15 @@ export default function Page() {
             propio; también WordPress, Drupal y Joomla, y Webflow, Wix y
             Squarespace. Los stacks headless y a medida — Next.js, Nuxt, Astro,
             Remix, SvelteKit — usan el script estándar más la API de eventos.
-            Cada instalación lleva menos de 30 minutos, y en Shopify Plus es un
-            clic y unos cinco; los datos de pedido fluyen después sin configurar
+            Cada instalación lleva menos de 30 minutos, y en Shopify, con
+            cualquier plan, unos cinco; los datos de pedido fluyen después sin configurar
             eventos a mano. El tracker es lo bastante pequeño como para no
             contar: menos de 5 KB comprimido, unas 132 veces más pequeño que GA4
             según la medición de agosto de 2026. Lo que la instalación no incluye
             nunca es un banner de consentimiento, una cookie ni un identificador
-            escrito en el dispositivo — no hay nada en la página que un
-            bloqueador pueda encontrar.
+            escrito en el dispositivo — y, servido desde tu propio subdominio,
+            nada en la página coincide con las listas third-party de los
+            bloqueadores.
           </SignalAnswer>
         </div>
       </section>
@@ -91,15 +93,30 @@ export default function Page() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {platforms.map((p) => (
-              <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{p.name}</h3>
-                  <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
-                </div>
-                <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
-              </article>
-            ))}
+            {platforms.map((p) => {
+              const card = (
+                <>
+                  <div className="flex items-center justify-between mb-3">
+                    <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em] group-hover:text-brand transition-colors">{p.name}</h3>
+                    <span className="inline-flex px-2.5 py-1 bg-brand-soft text-brand-hover font-mono text-[10px] font-bold uppercase tracking-[0.08em] rounded">{p.time}</span>
+                  </div>
+                  <p className="text-[13.5px] leading-[1.55] text-ink-soft">{p.desc}</p>
+                </>
+              );
+              return "href" in p && p.href ? (
+                <Link
+                  key={p.name}
+                  href={p.href as string}
+                  className="group bg-white border border-warm-100 rounded-xl p-6 flex flex-col no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
+                >
+                  {card}
+                </Link>
+              ) : (
+                <article key={p.name} className="bg-white border border-warm-100 rounded-xl p-6 flex flex-col">
+                  {card}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

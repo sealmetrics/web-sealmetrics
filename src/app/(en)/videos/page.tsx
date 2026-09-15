@@ -109,8 +109,9 @@ export default function VideosPage() {
           <h2 className="headline-section mb-6">Where to start</h2>
           <p className="text-[1.05rem] leading-[1.8] text-text-body">
             If you are evaluating, watch the platform overview first: it shows
-            what the reports look like when traffic is counted without consent gaps rather
-            than the roughly 13% GA4 sees in Europe, which is the difference
+            what the reports look like when the traffic consent-based tools lose
+            is counted too — on one Shopify store we measured, GA4 missed 29%
+            of visits — which is the difference
             most teams want to see before they believe the number. If you have
             already decided and want the tag live, the getting-started walkthrough
             covers installation end to end — one script, no cookie banner

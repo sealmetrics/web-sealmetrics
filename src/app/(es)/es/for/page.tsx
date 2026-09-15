@@ -9,7 +9,7 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics por equipo — Roles e industrias",
-  description: "Páginas dedicadas para CMOs, CTOs, DPOs y 8 verticales. Honestos sobre a quién encaja, con resultados concretos para cada uno.",
+  description: "Páginas dedicadas para CMOs, CTOs, DPOs y 9 verticales. Honestos sobre a quién encaja, con resultados concretos para cada uno.",
   openGraph: {
     title: "Sealmetrics para cada equipo",
     description: "Páginas dedicadas para cada rol e industria.",
@@ -36,10 +36,11 @@ const roles = [
 ];
 
 const industries = [
-  { slug: "ecommerce", name: "eCommerce", tagline: "La analítica que cuadra con tu CRM de Shopify." },
-  { slug: "hotels", name: "Hoteles y travel", tagline: "Ve el 25% de reservas que tu PMS genera pero marketing no atribuye." },
+  { slug: "ecommerce", name: "eCommerce", tagline: "Tu tienda sabe qué se vendió. Mira qué canales y productos lo vendieron." },
+  { slug: "hotels", name: "Hoteles y travel", tagline: "Palladium detectó un 35% de reservas de GA4 sin canal. Mira las tuyas." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activación, upgrade — todo first-party, independiente del consentimiento." },
-  { slug: "agencies", name: "Agencias", tagline: "Deja de ser el medio entre disputas de atribución con clientes." },
+  { slug: "multi-brand-retailers", name: "Retail multimarca", tagline: "Todas las marcas medidas con un mismo método, para que el grupo pueda compararlas." },
+  { slug: "agencies", name: "Agencias", tagline: "Una capa medida que posee el cliente y en la que trabaja todo tu equipo." },
   { slug: "media", name: "Medios y publishers", tagline: "Analítica que resiste a los ad-blockers. 50%+ de audiencia invisible para GA." },
   { slug: "finance", name: "Finanzas y banca", tagline: "Compliance grado bancario. Review en una reunión." },
   { slug: "healthcare", name: "Salud", tagline: "Sin datos personales de pacientes en la analítica. Portales medidos en agregado." },
@@ -54,7 +55,7 @@ export default function Page() {
       <JsonLd data={breadcrumbSchema([{ name: "Para", url: "/es/for" }])} />
       <JsonLd data={itemListSchema({
         name: "Sealmetrics por rol e industria",
-        description: "Páginas dedicadas de Sealmetrics para CMOs, CTOs, DPOs y 8 verticales.",
+        description: "Páginas dedicadas de Sealmetrics para CMOs, CTOs, DPOs y 9 verticales.",
         url: "/es/for",
         items: allItems,
       })} />

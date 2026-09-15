@@ -56,7 +56,7 @@ const faqs = [
   { q: "Is Sealmetrics really consent-free?", a: "Yes. No cookies, no localStorage, no fingerprinting. First-party event counting on the server side, aggregated into channel totals without any personal identifier. That is why, in our self-assessment against the CNIL and AEPD criteria, measurement needs no consent banner under GDPR or ePrivacy. It is not a certification." },
   { q: "How much does migration cost?", a: "Nothing. There's no migration. Add one script tag to your site and run both tools in parallel. Most teams never fully remove GA4 — they just stop making decisions on it." },
   { q: "How accurate is the 40–60% consent rejection figure?", a: "It's a cross-industry average for EU traffic with a standard consent banner. Your exact rejection rate depends on your sector, device mix and banner design. The gap is smaller in B2B, larger in B2C consumer brands." },
-  { q: "Can I use Sealmetrics data in my BigQuery warehouse?", a: "Yes. Full-resolution export to BigQuery is included from the Growth plan up — no ETL, no sampling. Your warehouse gets every event, same as your dashboard." },
+  { q: "Can I use Sealmetrics data in my BigQuery warehouse?", a: "Yes. Full-resolution export to BigQuery is included on every plan, the free Agentic tier among them — no ETL, no sampling. Your warehouse gets every event, same as your dashboard." },
   { q: "What about GA4's free tier? Isn't the price a barrier?", a: "GA4 is free because you are the product — your data trains Google's ad models. Sealmetrics starts at €499/mo annual. For a team spending €20K+/month in paid media, that's a rounding error compared to the cost of misallocated ad spend on incomplete data." },
 ];
 

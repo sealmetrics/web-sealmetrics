@@ -268,7 +268,6 @@ export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
       "Designed for GDPR/ePrivacy (self-assessed)",
       "Revenue attribution",
       "LENS AI — ask your data in plain language",
-      "AI Agent Analytics",
     ],
     offers: {
       "@type": "AggregateOffer",

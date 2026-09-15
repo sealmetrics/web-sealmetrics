@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "How long does it take to install Sealmetrics on Shopify?",
-    answer: "Five minutes on Shopify Plus (one-click install) or via theme.liquid snippet on Shopify Standard. Order data flows automatically — no manual event configuration.",
+    answer: "About five minutes on any Shopify plan: connect the Sealmetrics Pixel app and enable the theme app embed. Purchases are confirmed server-side by Shopify's orders/create webhook — no manual event configuration.",
   },
   {
     question: "Does Sealmetrics work with headless or custom-built sites?",
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Platforms — Sealmetrics",
-    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, BigCommerce, WordPress, Webflow, Wix, Drupal, Joomla and Salesforce Commerce Cloud.",
+    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     images: [ogImage("/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/platforms/", languages: getAlternates("/platforms") },
 };
 
 const platforms = [
-  { name: "Shopify", time: "5 min", desc: "One-click install on Shopify Plus. Theme.liquid snippet for Shopify Standard. Order data flows automatically.", href: "/platforms/shopify" },
-  { name: "Magento", time: "15 min", desc: "Native Magento 2 module via Composer. Works on Adobe Commerce and Magento Open Source." },
+  { name: "Shopify", time: "5 min", desc: "Pixel app plus theme app embed, on any Shopify plan. Purchases confirmed server-side by webhook.", href: "/platforms/shopify" },
+  { name: "Magento", time: "15 min", desc: "Magento 2.4+ module installed in app/code, including Adobe Commerce. Full funnel per store view and currency.", href: "/platforms/magento" },
   { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
   { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 3.x and 4.x stores. Conversion and revenue events out of the box." },
@@ -87,13 +87,14 @@ export default function Page() {
             modules; so do WordPress, Drupal and Joomla, and Webflow, Wix and
             Squarespace. Headless and custom stacks — Next.js, Nuxt, Astro,
             Remix, SvelteKit — use the standard tag plus the event API. Every
-            setup takes under 30 minutes, and Shopify Plus is a one-click
-            install of about five; order data then flows without manual event
+            setup takes under 30 minutes, and Shopify, on any plan, takes
+            about five; order data then flows without manual event
             configuration. The tracker is small enough not to matter: under 5 KB
             gzipped, roughly 132 times smaller than GA4 as measured in August
             2026. What installation never involves is a consent banner, a cookie
-            or an identifier written to the visitor&rsquo;s device — there is
-            nothing on the page for a blocker to find.
+            or an identifier written to the visitor&rsquo;s device — and served
+            from your own subdomain, nothing on the page matches the
+            third-party lists blockers work from.
           </SignalAnswer>
         </div>
       </section>

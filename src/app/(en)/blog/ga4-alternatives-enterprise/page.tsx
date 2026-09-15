@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "7 GA4 Alternatives for eCommerce Teams in 2026",
     description:
-      "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
+      "GA4 missed 29% of visits on one measured store. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
     type: "article",
     url: "https://sealmetrics.com/blog/ga4-alternatives-enterprise/",
     siteName: "Sealmetrics",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "7 GA4 Alternatives for eCommerce Teams in 2026",
-    description: "GA4 captures ~13% of EU traffic. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
+    description: "GA4 missed 29% of visits on one measured store. Compare 7 alternatives on data completeness, pricing, and eCommerce features.",
     images: ["https://sealmetrics.com/og/blog/ga4-alternatives-enterprise.png"],
   },
   alternates: {
@@ -46,7 +46,7 @@ const alternatives = [
     name: "Google Analytics 360 (GA360)",
     url: "https://marketingplatform.google.com/about/analytics-360/",
     pricing: "Quote-based, ~$50K–175K+/yr",
-    dataCompleteness: "~30-35% in EU",
+    dataCompleteness: "Consent-dependent",
     euCompliance: "US data processing, DPA required, consent mode v2",
     ecommerceFeatures:
       "Enhanced eCommerce, native Google Ads attribution, BigQuery export, unsampled reports (quota-limited)",
@@ -57,7 +57,7 @@ const alternatives = [
     name: "Adobe Analytics",
     url: "https://business.adobe.com/products/analytics/adobe-analytics.html",
     pricing: "Quote-based, ~$50K–200K+/yr",
-    dataCompleteness: "~30% in EU",
+    dataCompleteness: "Consent-dependent",
     euCompliance: "Configurable, optional EU hosting, legal review required",
     ecommerceFeatures:
       "Deepest segmentation available, Analysis Workspace, calculated metrics, cross-product integration with Adobe Experience Cloud",
@@ -72,7 +72,7 @@ const alternatives = [
     euCompliance:
       "Designed for GDPR (self-assessed) — no PII collected, no cookies, no consent banner needed under the CNIL and AEPD criteria (self-assessed), EU-only visitor data residency",
     ecommerceFeatures:
-      "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
+      "Last-click revenue attribution on complete data, LENS AI natural-language querying, zero data sampling",
     chooseIf:
       "You need no consent-driven data loss in the EU, accurate last-click revenue attribution, and enterprise analytics without six-figure pricing.",
   },
@@ -80,7 +80,7 @@ const alternatives = [
     name: "Piwik PRO",
     url: "https://piwikpro.com/",
     pricing: "From ~\u20ac30,000/yr",
-    dataCompleteness: "~35% in EU",
+    dataCompleteness: "Consent-dependent",
     euCompliance:
       "EU-only hosting, bundled consent manager, strong in regulated sectors",
     ecommerceFeatures:
@@ -92,7 +92,7 @@ const alternatives = [
     name: "Matomo",
     url: "https://matomo.org/",
     pricing: "Free (self-hosted) / From \u20ac23/mo (cloud)",
-    dataCompleteness: "~40-60% (configurable cookieless mode)",
+    dataCompleteness: "Consent-dependent by default (cookieless mode configurable)",
     euCompliance:
       "Full data ownership if self-hosted, cookieless mode available but limited",
     ecommerceFeatures:
@@ -195,10 +195,13 @@ export default function GA4AlternativesEnterprisePage() {
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 captures approximately 13% of actual EU eCommerce traffic
-                after accounting for consent rejection (40-60%), ad blockers
-                (40%+), and data sampling. Revenue attribution built on this data
-                is structurally incomplete.
+                GA4 depends on consent. Consent rejection (40-60%), ad blockers
+                (40%+) and browser restrictions can push it down to about 13% of
+                real EU eCommerce traffic in the compounded worst case. On a real
+                Shopify store measured over 48 days,{" "}
+                <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
+                . Revenue attribution built on this data is structurally
+                incomplete.
               </li>
               <li>
                 Enterprise alternatives split into two categories:
@@ -215,8 +218,8 @@ export default function GA4AlternativesEnterprisePage() {
               </li>
               <li>
                 The total cost gap between platforms spans 25x or more. GA360
-                costs six figures a year for ~35% EU data capture. Sealmetrics costs
-                {"\u20ac"}5,988/yr with no consent-driven data loss. The relevant comparison
+                costs six figures a year and still depends on consent. Sealmetrics costs
+                {"€"}5,988/yr with no consent-driven data loss. The relevant comparison
                 is cost per accurate data point.
               </li>
             </ul>
@@ -248,8 +251,8 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 data sampling
               </Link>{" "}
-              and ad blockers even enter the picture, GA4 has already lost a
-              third to half of your traffic. For eCommerce, that means revenue
+              and ad blockers even enter the picture, GA4 has already lost the
+              visitors who reject the banner. For eCommerce, that means revenue
               attribution, conversion rates, and{" "}
               <Link
                 href="/glossary/data-loss-in-analytics"
@@ -340,7 +343,7 @@ export default function GA4AlternativesEnterprisePage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~30-35%</span>
+                  <span className="font-mono text-text-primary">Consent-dependent</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -416,7 +419,7 @@ export default function GA4AlternativesEnterprisePage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~30%</span>
+                  <span className="font-mono text-text-primary">Consent-dependent</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -513,7 +516,7 @@ export default function GA4AlternativesEnterprisePage() {
                     eCommerce:
                   </span>{" "}
                   <span className="text-text-primary">
-                    Revenue attribution, LENS AI, agent analytics
+                    Revenue attribution, LENS AI, BigQuery export
                   </span>
                 </div>
               </div>
@@ -524,8 +527,7 @@ export default function GA4AlternativesEnterprisePage() {
               Sealmetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. Last-click revenue attribution is built
               on complete data — not estimates from a consented fraction. LENS AI answers
-              analytics questions in plain language, grounded in your complete data. Agent analytics
-              separates AI bot traffic from human visitors. Visitor data is processed and
+              analytics questions in plain language, grounded in your complete data. Visitor data is processed and
               stored exclusively in the EU.
             </p>
 
@@ -596,7 +598,7 @@ export default function GA4AlternativesEnterprisePage() {
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
                     EU Data Capture:
                   </span>{" "}
-                  <span className="font-mono text-text-primary">~35%</span>
+                  <span className="font-mono text-text-primary">Consent-dependent</span>
                 </div>
                 <div>
                   <span className="text-text-tertiary text-[0.75rem] uppercase tracking-[0.04em]">
@@ -674,7 +676,7 @@ export default function GA4AlternativesEnterprisePage() {
                     EU Data Capture:
                   </span>{" "}
                   <span className="font-mono text-text-primary">
-                    ~40-60%
+                    Consent-dependent by default
                   </span>
                 </div>
                 <div>
@@ -916,7 +918,7 @@ export default function GA4AlternativesEnterprisePage() {
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Shows 13% of Your EU Traffic
+                Why GA4 Can Show as Little as 13% of Your EU Traffic
               </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"

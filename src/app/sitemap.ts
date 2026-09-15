@@ -29,7 +29,7 @@ function lastModFor(route: string, locale: "en" | "es" = "en"): string {
     if (post) {
       const modified =
         locale === "es" ? post.dateModifiedEs ?? post.dateModified : post.dateModified;
-      return modified ?? post.date;
+      return modified ?? (locale === "es" ? post.dateEs ?? post.date : post.date);
     }
   }
   return today;

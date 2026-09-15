@@ -29,9 +29,10 @@ export const productAnswer: Record<Locale, ReactNode> = {
       Sealmetrics is a cookieless, consentless web analytics platform for
       eCommerce. It measures visits without cookies, identifiers or a consent
       banner, so the reported total covers visitors who accept and reject the
-      banner alike, not only the share that accepted tracking — in the EU, GA4 typically reports
-      around 13% of real traffic once sampling, consent rejection and ad
-      blockers are counted. Revenue is attributed on last click across that
+      banner alike, not only the share that accepted tracking — on a real Shopify store measured
+      over 48 days, GA4 did not record 29% of visits, and once sampling,
+      consent rejection and ad blockers compound in the EU worst case it can
+      fall to about 13%. Revenue is attributed on last click across that
       data, without consent gaps, under one declared model your team can name and defend.
       Four layers run on the same defined inputs: collection, attribution, nine
       reporting surfaces, and activation through the REST API, the MCP server
@@ -45,9 +46,10 @@ export const productAnswer: Record<Locale, ReactNode> = {
       Sealmetrics es una plataforma de analítica web cookieless y sin
       consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores y sin
       banner, así que el total que reporta incluye a quien acepta y a quien
-      rechaza el banner, no solo a la parte que aceptó ser medida — en la UE, GA4 suele reportar
-      en torno al 13% del tráfico real una vez descontados el muestreo, el
-      rechazo de consentimiento y los bloqueadores. Los ingresos se atribuyen a
+      rechaza el banner, no solo a la parte que aceptó ser medida — en una tienda Shopify real
+      medida durante 48 días, GA4 no registró el 29% de las visitas, y en el
+      peor escenario de la UE, sumando muestreo, rechazo de consentimiento y
+      bloqueadores, puede quedarse en torno al 13%. Los ingresos se atribuyen a
       último clic sobre ese dato, sin huecos de consentimiento, bajo un modelo declarado que tu
       equipo puede nombrar y defender. Cuatro capas trabajan sobre las mismas
       entradas definidas: recogida, atribución, nueve superficies de reporting y
@@ -65,8 +67,8 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       Sealmetrics pricing is a fixed allowance, not a metered event bill. Four
       plans share one measurement architecture: the price moves with sustained
       human-event volume, governance and support, never with access to the
-      underlying evidence. The Agentic tier is €0 for up to 1M human events a
-      month and takes no card — an MCP-capable assistant can provision it from a
+      underlying evidence. The Agentic tier is €0 for up to 1M human events in
+      total and takes no card — an MCP-capable assistant can provision it from a
       chat. Growth is €499/month billed annually, €599 monthly, for 5M events;
       Scale is €899/month annually, €1,079 monthly, for 15M; Enterprise is a
       tailored annual contract. Every paid plan carries the same collection,
@@ -82,7 +84,7 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       evento. Cuatro planes comparten una sola arquitectura de medición: el
       precio se mueve con el volumen sostenido de eventos humanos, la gobernanza
       y el soporte, nunca con el acceso a la evidencia. El plan Agentic cuesta
-      €0 hasta 1M de eventos humanos al mes y no pide tarjeta — un asistente
+      €0 hasta 1M de eventos humanos en total y no pide tarjeta — un asistente
       compatible con MCP puede darlo de alta desde el chat. Growth son €499/mes
       facturados anualmente, €599 mensual, para 5M de eventos; Scale son
       €899/mes anual, €1.079 mensual, para 15M; Enterprise es un contrato anual
@@ -187,9 +189,10 @@ export const homeAnswer: ReactNode = (
     eCommerce companies in the EU and UK. It records pageviews, events and
     conversions without setting a cookie, storing an identifier or asking for
     consent, so the number it reports includes visitors who reject the banner, not
-    only the fraction that accepted tracking — in the EU, GA4 typically sees around 13%
-    of real traffic once sampling, consent rejection and ad blockers are
-    counted. Revenue is attributed on last click across that data, without consent
+    only the fraction that accepted tracking — on a real Shopify store measured over 48
+    days, GA4 did not record 29% of visits, and in the compounded EU worst case
+    of sampling, consent rejection and ad blockers it can fall to about 13%.
+    Revenue is attributed on last click across that data, without consent
     gaps, and collection is first-party and server-side, processed and stored in
     Dublin only. It is built to be checked rather than believed: run it beside
     your current analytics and compare both totals against the revenue your

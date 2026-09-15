@@ -81,8 +81,14 @@ export default function Page() {
             What you get back
           </h2>
           <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
-            GA4 in Europe reports roughly 13% of a site&apos;s visitors, and
-            only about 16% arrive with the traffic source still attached. Every
+            GA4 in Europe counts only the visitors who consent and do not
+            block it. On a{" "}
+            <Link href="/case-studies/incapto" className="underline">
+              real Shopify store measured over 48 days
+            </Link>
+            , it did not record 29% of visits; in our compounded worst-case
+            model it sees about 13%, and only about 16% arrive with the traffic
+            source still attached. Every
             budget decision made on that base is a decision made on a sample
             nobody chose. The audit puts a number on your own version of that
             gap before you install anything.

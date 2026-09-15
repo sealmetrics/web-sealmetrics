@@ -9,7 +9,7 @@ import { ogImage } from "@/lib/seo/og";
 
 const TITLE = "Analytics use cases — cookieless measurement tasks";
 const DESCRIPTION =
-  "The three jobs teams hire Sealmetrics for: last-click revenue attribution, cookieless conversion tracking, and migrating off GA4. Each with the real trade-offs.";
+  "The jobs teams hire Sealmetrics for: revenue attribution, cookieless conversion tracking, GA4 migration and one reconciled number. With the real trade-offs.";
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -57,6 +57,13 @@ const useCases = [
     tagline:
       "A parallel-run plan rather than rip-and-replace: what you keep, what you replace, and how to make the decision in 30 days.",
   },
+  {
+    href: "/use-cases/single-source-of-truth",
+    name: "One number for marketing and finance",
+    job: "Reconcile the numbers",
+    tagline:
+      "Why ad platforms, GA4, the order system and finance disagree, and how to anchor every team to one total checked against real orders.",
+  },
 ];
 
 export default function Page() {
@@ -93,10 +100,11 @@ export default function Page() {
 
           <QuickAnswer>
             <p>
-              Three measurement jobs account for almost every Sealmetrics
+              Four measurement jobs account for almost every Sealmetrics
               deployment: attributing revenue to channels, tracking conversions
-              on sites that cannot rely on cookies, and replacing GA4 without
-              losing a quarter of reporting. Each page below covers the setup,
+              on sites that cannot rely on cookies, replacing GA4 without
+              losing a quarter of reporting, and giving marketing and finance
+              one number that reconciles with real orders. Each page below covers the setup,
               the data model, and the limits — including what the approach does
               not measure. Sealmetrics is aggregate, anonymous, event-level
               measurement: it attributes revenue last-click across the full
@@ -110,7 +118,7 @@ export default function Page() {
 
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {useCases.map((u) => (
               <Link
                 key={u.href}
@@ -132,10 +140,19 @@ export default function Page() {
           </div>
 
           <p className="mt-12 text-[15px] leading-[1.65] text-ink-soft max-w-[70ch]">
-            All three rest on the same foundation — first-party server-side
+            All four rest on the same foundation — first-party server-side
             collection described in{" "}
             <Link href="/how-it-works" className="text-brand">
               how it works
+            </Link>
+            . Two problems sit upstream of these jobs and have their own pages:
+            when GA4 does not reflect what really happened, start with{" "}
+            <Link href="/complete-data" className="text-brand">
+              complete data
+            </Link>
+            ; when you have to prove the setup to a DPO, start with{" "}
+            <Link href="/gdpr-analytics" className="text-brand">
+              GDPR analytics
             </Link>
             . If you are still deciding whether the data gap is real on your own
             traffic, the{" "}

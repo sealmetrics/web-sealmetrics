@@ -56,7 +56,7 @@ const faqs = [
   { q: "¿Es realmente sin consentimiento?", a: "Sí. Sin cookies, sin localStorage, sin fingerprinting. Conteo first-party de eventos en servidor, agregado en totales por canal sin ningún identificador personal. Por eso, según nuestra autoevaluación frente a los criterios de la CNIL y la AEPD, la medición no necesita banner bajo RGPD ni ePrivacy. No es una certificación." },
   { q: "¿Cuánto cuesta la migración?", a: "Nada. No hay migración. Añade un script a tu web y corre los dos en paralelo. La mayoría de equipos nunca quitan GA4 del todo — simplemente dejan de tomar decisiones con él." },
   { q: "¿Qué fiabilidad tiene el 40–60% de rechazo de consentimiento?", a: "Es media cross-industry para tráfico UE con un banner estándar. Tu tasa depende de sector, dispositivo y diseño del banner. El gap es menor en B2B, mayor en B2C consumer." },
-  { q: "¿Puedo usar los datos en mi BigQuery?", a: "Sí. Export a BigQuery a resolución completa incluido desde el plan Growth — sin ETL, sin muestreo. Tu warehouse recibe cada evento, igual que tu dashboard." },
+  { q: "¿Puedo usar los datos en mi BigQuery?", a: "Sí. Export a BigQuery a resolución completa incluido en todos los planes, también en el Agentic gratuito — sin ETL, sin muestreo. Tu warehouse recibe cada evento, igual que tu dashboard." },
   { q: "¿Y el tier gratis de GA4? ¿No es una barrera?", a: "GA4 es gratis porque tú eres el producto — tus datos entrenan los modelos de Google Ads. Sealmetrics desde €499/mes anual. Para un equipo que invierte €20K+/mes en paid media, es un error de redondeo comparado con el coste de inversión mal asignada sobre datos incompletos." },
 ];
 

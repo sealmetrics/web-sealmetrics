@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "La recolección first-party captura analítica a través de tu propio dominio, evitando las listas de bloqueo de terceros y las restricciones de cookies de terceros.",
   openGraph: {
     title: "¿Qué es la recolección de datos first-party?",
-    description: "Captura analítica a través de tu propio dominio, fuera de las listas de los bloqueadores.",
+    description: "Captura analítica a través de tu propio dominio, con muchas menos probabilidades de bloqueo.",
     url: "https://sealmetrics.com/es/glossary/first-party-data-collection/",
     siteName: "Sealmetrics",
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "¿Qué es la recolección de datos first-party?",
-    description: "Captura analítica a través de tu propio dominio, fuera de las listas de los bloqueadores.",
+    description: "Captura analítica a través de tu propio dominio, con muchas menos probabilidades de bloqueo.",
     images: [ogImage("/es/glossary/first-party-data-collection/")],
   },
   alternates: {
@@ -50,7 +50,7 @@ export default function FirstPartyDataCollectionEsPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Recoger datos de analítica a través de la infraestructura de tu propio dominio en lugar de servidores de terceros. Las peticiones first-party son invisibles para los bloqueadores y no están sujetas a las restricciones de cookies de terceros.
+              Recoger datos de analítica a través de la infraestructura de tu propio dominio en lugar de servidores de terceros. Las peticiones first-party tienen muchas menos probabilidades de ser bloqueadas y no están sujetas a las restricciones de cookies de terceros.
             </p>
           </div>
 
