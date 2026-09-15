@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              14 de septiembre de 2026 ·{" "}
+              15 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -96,6 +96,25 @@ export default function PrivacyPageEs() {
               <p className="mt-3">
                 No utilizamos cookies, píxeles de seguimiento ni herramientas de
                 analítica de terceros en sealmetrics.com.
+              </p>
+              <p className="mt-3">
+                Ese mismo script propio de Sealmetrics se ejecuta también en el
+                proceso de alta de la plataforma en{" "}
+                <span className="text-text-primary font-medium">
+                  my.sealmetrics.com
+                </span>{" "}
+                (creación de la cuenta, elección de plan, verificación del email y
+                creación de la organización) y en ninguna otra parte de la
+                plataforma: una vez has iniciado sesión, no se mide nada. En ese
+                proceso registra las páginas vistas y los pasos completados (cuenta
+                creada, plan elegido, prueba iniciada, email verificado), con el
+                plan y el intervalo de facturación elegidos como únicos atributos.
+                Nunca se le envía tu email, nombre, empresa ni identificadores de
+                usuario u organización. Funciona exactamente como se describe en la
+                sección 3: sin cookies ni almacenamiento local y con un
+                identificador de sesión efímero que no se conserva entre sesiones.
+                Es nuestra propia medición de audiencia, por lo que no requiere
+                consentimiento (ver sección 4).
               </p>
               <p className="mt-3">
                 Al iniciar sesión en la plataforma{" "}
@@ -219,7 +238,12 @@ export default function PrivacyPageEs() {
               <p>
                 Para los formularios de sealmetrics.com: consentimiento (art.
                 6.1.a RGPD) e interés legítimo en responder a las consultas
-                (art. 6.1.f). Para los datos de analítica en los sitios de los
+                (art. 6.1.f). Para nuestro propio script de analítica en
+                sealmetrics.com y en el proceso de alta de my.sealmetrics.com:
+                nuestro interés legítimo en medir la audiencia de nuestro propio
+                sitio y la eficacia de nuestro marketing (art. 6.1.f), dado que
+                no se tratan datos personales. Para los datos de analítica en los
+                sitios de los
                 Clientes: interés legítimo del Cliente en comprender el uso de
                 su sitio web (art. 6.1.f), dado que no se tratan datos
                 personales.
