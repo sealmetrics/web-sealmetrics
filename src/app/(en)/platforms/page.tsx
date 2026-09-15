@@ -10,7 +10,7 @@ import { ogImage } from "@/lib/seo/og";
 const faqs = [
   {
     question: "Which eCommerce platforms does Sealmetrics support?",
-    answer: "Sealmetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7/8.x and OpenCart 3.x/4.x. Any custom or headless framework (Next.js, Nuxt, React, Astro, Remix) works via a standard JavaScript tag.",
+    answer: "Sealmetrics has native integrations for Shopify, Magento 2 (Adobe Commerce), WooCommerce, PrestaShop 1.7+/8.x and OpenCart 4.x (3.x with modifications). Any custom or headless framework (Next.js, Nuxt, React, Astro, Remix) works via a standard JavaScript tag.",
   },
   {
     question: "How long does it take to install Sealmetrics on Shopify?",
@@ -54,8 +54,9 @@ const platforms = [
   { name: "Shopify", time: "5 min", desc: "Pixel app plus theme app embed, on any Shopify plan. Purchases confirmed server-side by webhook.", href: "/platforms/shopify" },
   { name: "Magento", time: "15 min", desc: "Magento 2.4+ module installed in app/code, including Adobe Commerce. Full funnel per store view and currency.", href: "/platforms/magento" },
   { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
-  { name: "PrestaShop", time: "15 min", desc: "PrestaShop 1.7 & 8.x module. Conversion tracking and full funnel out of the box." },
-  { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 3.x and 4.x stores. Conversion and revenue events out of the box." },
+  { name: "PrestaShop", time: "15 min", desc: "Module for PrestaShop 1.7+ and 8.x, uploaded in the Module Manager. Product, cart, checkout and purchase events, with combinations.", href: "/platforms/prestashop" },
+  { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 4.x, and 3.x with modifications. Product, cart, checkout and purchase events, configured per store.", href: "/platforms/opencart" },
+  { name: "BigCommerce", time: "Private beta", desc: "Native integration in private beta. Until then, the JavaScript tracker with eCommerce events sent manually." },
   { name: "Squarespace", time: "10 min", desc: "Code injection in site settings. Works with Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "WordPress plugin. Tracks page views, forms, CTAs. Works alongside any page builder." },
   { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and eCommerce." },

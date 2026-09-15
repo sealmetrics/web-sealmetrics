@@ -69,6 +69,8 @@ const itemLinks: Record<string, string> = {
   "Shopify": "/platforms/shopify",
   "WooCommerce": "/platforms/woocommerce",
   "Magento 2": "/platforms/magento",
+  "PrestaShop": "/platforms/prestashop",
+  "OpenCart": "/platforms/opencart",
   "BigQuery connector": "/integrations/bigquery",
   "Google Ads": "/integrations/google-ads",
   "Meta Ads": "/integrations/meta-ads",
