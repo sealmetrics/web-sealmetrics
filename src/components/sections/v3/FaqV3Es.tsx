@@ -26,7 +26,7 @@ const ITEMS = [
   },
   {
     q: "¿Cuánto tarda la implementación?",
-    a: "Cinco minutos para instalar. Primer dato en la primera hora. Nuestro equipo gestiona todo el onboarding y configura objetivos, embudos y reportes en la primera semana.",
+    a: "De 5 a 30 minutos para instalar, según la plataforma. Primer dato en la primera hora. Nuestro equipo gestiona todo el onboarding y configura objetivos, embudos y reportes en la primera semana.",
   },
 ];
 

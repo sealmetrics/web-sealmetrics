@@ -10,7 +10,7 @@ const COPY = {
     lede: "Traditional analytics lose most of your data before it's even recorded. Sealmetrics was built from scratch to solve this — without cookies, without consent dependency, and without compromising privacy.",
     ctaDemo: "Start 14-day trial",
     ctaPricing: "Book a demo",
-    microTrust: "5-minute setup · No cookies · EU-hosted by design",
+    microTrust: "5–30 min setup · No cookies · EU-hosted by design",
   },
   es: {
     eyebrow: "Cómo funciona",
@@ -19,7 +19,7 @@ const COPY = {
     lede: "La analítica tradicional pierde la mayoría de tus datos antes de registrarlos. Sealmetrics se construyó desde cero para resolverlo — sin cookies, sin consentimiento y sin comprometer la privacidad.",
     ctaDemo: "Prueba de 14 días",
     ctaPricing: "Reserva una demo",
-    microTrust: "Setup en 5 min · Sin cookies · Alojado en UE por diseño",
+    microTrust: "Setup en 5–30 min · Sin cookies · Alojado en UE por diseño",
   },
 };
 
@@ -91,7 +91,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
             "Optional first-party mode on your own subdomain",
             "1.1 KB on the wire · ~132× lighter than GA4",
             "Works with any CMS or framework",
-            "5-minute install · one script tag",
+            "5–30 min install · script tag or native module",
           ],
         },
         {
@@ -136,7 +136,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
             "Modo first-party opcional en tu propio subdominio",
             "1,1 KB en red · ~132× más ligero que GA4",
             "Funciona con cualquier CMS o framework",
-            "Instalación en 5 min · un solo script",
+            "Instalación en 5–30 min · script o módulo nativo",
           ],
         },
         {
@@ -297,7 +297,7 @@ export function HowItWorksFaqV3({ locale = "en" as Locale }) {
   const itemsEn = [
     { q: "How does cookieless tracking work without identifying users?", a: "Sealmetrics does not identify users at all. Each pageview is logged anonymously with channel metadata (referrer, UTM parameters, landing page, country, device class) and aggregated into channel totals on the server. No cookies, no localStorage, no fingerprinting, no cross-visit stitching — counts only, no per-user journeys." },
     { q: "Is Sealmetrics affected by ad blockers?", a: "No. Sealmetrics operates as first-party infrastructure on your own domain. Ad blockers target third-party analytics requests (like those to google-analytics.com). Because Sealmetrics data flows through your domain, it is invisible to ad blockers." },
-    { q: "How long does setup take?", a: "5 minutes. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up." },
+    { q: "How long does setup take?", a: "5 to 30 minutes, depending on the platform. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up." },
     { q: "Do I need to modify my consent banner?", a: "No. Sealmetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), Sealmetrics operates independently of it." },
     { q: "Where is data processed and stored?", a: "Visitor analytics data is processed and stored exclusively on EU servers in Dublin, Ireland, with no transfer outside the EU and no third-country sub-processor in its path. The only non-EEA sub-processor in the whole service is Resend (USA), which sends service emails to account users under Standard Contractual Clauses and the EU-US DPF and never receives visitor data. The full list is Annex 3 of the DPA." },
     { q: "Does Sealmetrics use fingerprinting?", a: "No. Sealmetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
@@ -306,7 +306,7 @@ export function HowItWorksFaqV3({ locale = "en" as Locale }) {
   const itemsEs = [
     { q: "¿Cómo funciona el tracking sin cookies sin identificar al usuario?", a: "Sealmetrics no identifica a los usuarios, en absoluto. Cada pageview se registra de forma anónima con metadatos de canal (referrer, UTM, landing, país, tipo de dispositivo) y se agrega en totales por canal en servidor. Sin cookies, sin localStorage, sin fingerprinting, sin stitching entre visitas — solo conteos, sin journeys por usuario." },
     { q: "¿Afectan los bloqueadores de anuncios a Sealmetrics?", a: "No. Sealmetrics opera como infraestructura first-party en tu propio dominio. Los bloqueadores atacan peticiones de analítica de terceros (como las de google-analytics.com). Como los datos de Sealmetrics pasan por tu dominio, es invisible para los bloqueadores." },
-    { q: "¿Cuánto tarda la instalación?", a: "5 minutos. Añade un script JavaScript a tu web — directamente en el HTML o vía Google Tag Manager. Sin configurar consent mode, sin integrar banner de cookies, sin variables de Tag Manager." },
+    { q: "¿Cuánto tarda la instalación?", a: "De 5 a 30 minutos, según la plataforma. Añade un script JavaScript a tu web — directamente en el HTML o vía Google Tag Manager. Sin configurar consent mode, sin integrar banner de cookies, sin variables de Tag Manager." },
     { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No. Sealmetrics no requiere consentimiento bajo RGPD o ePrivacy porque no usa cookies ni recopila datos personales. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), Sealmetrics opera independientemente." },
     { q: "¿Dónde se procesan y almacenan los datos?", a: "El dato de analítica de visitantes se procesa y almacena exclusivamente en servidores UE en Dublín, Irlanda, sin transferencias fuera de la UE ni sub-procesadores de terceros países en su ruta. El único sub-procesador fuera del EEE en todo el servicio es Resend (EE. UU.), que envía los emails de servicio a usuarios de la cuenta con Cláusulas Contractuales Tipo y el EU-US DPF y nunca recibe dato de visitante. La lista completa es el Anexo 3 del DPA." },
     { q: "¿Usa Sealmetrics fingerprinting?", a: "No. Sealmetrics no usa fingerprinting de navegador, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de características del dispositivo. Es una decisión arquitectónica — el fingerprinting crea dato personal y requeriría consentimiento." },

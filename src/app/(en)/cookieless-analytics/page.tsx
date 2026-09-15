@@ -65,7 +65,7 @@ const faqs = [
   },
   {
     q: "How fast is implementation?",
-    a: "Five minutes to install the 846-byte first-party pixel on any CMS, SPA or headless setup. First data in the first hour. Full calibration within a week. Side-by-side with GA4 from day one — no rip-and-replace.",
+    a: "5 to 30 minutes to install the 846-byte first-party pixel, depending on the platform — any CMS, SPA or headless setup. First data in the first hour. Full calibration within a week. Side-by-side with GA4 from day one — no rip-and-replace.",
   },
 ];
 

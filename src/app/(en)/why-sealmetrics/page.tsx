@@ -586,12 +586,12 @@ function FiveOutcomes() {
             </p>
           </article>
 
-          {/* 05 · Live in 5 minutes */}
+          {/* 05 · Live in 5 to 30 minutes */}
           <article className="md:col-span-2 bg-white border border-warm-100 rounded-2xl p-7 flex flex-col gap-5">
             <div>
               <span className="font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-brand">05</span>
               <h3 className="text-[20px] font-semibold text-ink leading-[1.25] mt-2">
-                Live in 5 minutes
+                Live in 5 to 30 minutes
               </h3>
             </div>
             <div className="bg-ink rounded-lg px-4 py-3.5 font-mono text-[12px] text-white/85 leading-snug overflow-x-auto whitespace-nowrap">
@@ -816,7 +816,7 @@ function ComparisonAnchor() {
     { label: "Attribution", ga4: "Modelled", ga360: "Modelled + sampled", adobe: "Consented data only", seal: "Last-click on observed aggregate events" },
     { label: "EU compliance", ga4: "Schrems II review", ga360: "Schrems II review", adobe: "US transfer review", seal: "Privacy-led architecture · Dublin" },
     { label: "Your data & AI", ga4: "Google ecosystem", ga360: "Google ecosystem", adobe: "Adobe ecosystem", seal: "Private AI or BYOK" },
-    { label: "Setup", ga4: "Tag plan + CMP", ga360: "Months", adobe: "Months", seal: "5 minutes" },
+    { label: "Setup", ga4: "Tag plan + CMP", ga360: "Months", adobe: "Months", seal: "5–30 minutes by platform" },
     { label: "Cost", ga4: "Free", ga360: "~$50–175K/yr", adobe: "~$50–200K/yr", seal: "From €499/mo" },
   ];
 
@@ -1056,8 +1056,8 @@ export default function WhySealmetricsPage() {
             </em>
           </>
         }
-        ledeEn="Run Sealmetrics side-by-side with GA4 — one tag, five minutes, 14-day trial. If the gap on your own traffic isn't worth acting on, keep GA4."
-        ledeEs="Ejecuta Sealmetrics en paralelo con GA4 — un tag, cinco minutos, prueba de 14 días. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
+        ledeEn="Run Sealmetrics side-by-side with GA4 — one tag or module, 5 to 30 minutes, 14-day trial. If the gap on your own traffic isn't worth acting on, keep GA4."
+        ledeEs="Ejecuta Sealmetrics en paralelo con GA4 — un tag o módulo, de 5 a 30 minutos, prueba de 14 días. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
       />
 
       <section className="bg-warm-white border-t border-warm-100 py-12">
