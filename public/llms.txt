@@ -62,8 +62,9 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
    https://mcp.sealmetrics.com/mcp`. In Claude.ai, Claude Desktop and ChatGPT it
    is Settings, then Connectors, then a custom connector with that URL.
 3. Confirm by asking the assistant to list the user's Sealmetrics sites. The
-   server exposes 47 read-only tools; the write tools that exist are draft-only
-   and can never change a live configuration.
+   hosted server lists more than 40 read-only tools and none that write; the
+   channel-rule tools in the server documentation work on drafts only and can
+   never change a live configuration.
 4. To install measurement on the user's site, the MCP server also exposes
    provisioning and instrumentation tools — detect the framework, fetch the
    pixel, verify the events fired. Step-by-step guidance is at
@@ -226,7 +227,7 @@ Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/gdpr-analytics-spain-faq — GDPR Analytics in Spain: 7 Questions Online Stores Ask (AEPD guidance, GA4 legality, LSSI fines, banner data loss)
 - /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, Sealmetrics)
 - /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
-- /blog/self-service-analytics-for-marketing-teams — Self-service analytics for marketing teams: traffic measured without consent, 47 named read-only tools instead of SQL, BYOK or private AI
+- /blog/self-service-analytics-for-marketing-teams — Self-service analytics for marketing teams: traffic measured without consent, 40+ named read-only tools instead of SQL, BYOK or private AI
 - /blog/server-side-tracking-gdpr — Server-side tracking and GDPR: a server container changes where data is processed, not whether consent or a legal basis is needed. ePrivacy Art. 5(3) applies to device storage and access regardless of personal data (EDPB Guidelines 2/2023, citing Planet49), and the EDPB treats JavaScript instructing the browser to send information as gaining access, while applicability does not automatically mean consent; server-set cookies are still cookies; GDPR and transfer questions remain. The CNIL's 2022 proxy conditions for Google Analytics (no IP transfer, replaced identifiers, URL parameters and external referrer removed) show both the minimisation server-side allows and its attribution cost. Includes a claims table and a DPO checklist, and states that Sealmetrics' own exemption depends on the national authority
 - /blog/ga4-vs-piwik-pro-vs-sealmetrics — GA4 vs Piwik PRO vs Sealmetrics, with dated vendor facts (14 Sep 2026): price, scope, identifiers, behaviour when a visitor rejects the banner (GA4 Consent Mode basic/advanced; Piwik PRO visitor cookies, 30-minute session hash or neither, where each event becomes a new session; Sealmetrics identifier-free), attribution, retention, hosting, export, tracker weight and MCP. Where each one is the right choice, what Sealmetrics does not do, and a vendor-neutral evaluation method. No Piwik PRO side-by-side percentage is claimed
 - /blog/last-click-vs-modelled-attribution — Last-click vs modelled attribution, honest about both: GA4's three remaining models (data-driven, paid and organic last click, Google paid last click; first click, linear, time decay, position-based removed Nov 2023), what data-driven gets right (credits assists, more signal, drives bidding) and what last click gets right (auditable, one rule for all channels, stable, runs without consent), where each fails (upper funnel vs a consent-filtered sample), choosing by decision (platform models for bidding, last click without consent loss for budget, incrementality tests and marketing mix models such as Meridian for the upper funnel), and what Sealmetrics does not do (no multi-touch, view-through, lookback or data-driven)

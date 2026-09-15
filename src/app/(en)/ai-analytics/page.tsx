@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     q: "Can I connect ChatGPT or Claude to my analytics?",
-    a: "Yes. Sealmetrics ships a Model Context Protocol (MCP) server with 47 read-only tools. Connect it from Claude, ChatGPT, Cursor or Claude Code at mcp.sealmetrics.com and ask your analytics questions directly — revenue by channel, conversions, landing-page performance, campaign waste. Each tool maps one business concept to one canonical metric, so the model calls a documented contract instead of guessing at raw columns. You can use Sealmetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key — you are choosing the algorithm, not the data.",
+    a: "Yes. Sealmetrics ships a Model Context Protocol (MCP) server whose hosted endpoint lists more than 40 read-only tools. Connect it from Claude, ChatGPT, Cursor or Claude Code at mcp.sealmetrics.com and ask your analytics questions directly — revenue by channel, conversions, landing-page performance, campaign waste. Each tool maps one business concept to one canonical metric, so the model calls a documented contract instead of guessing at raw columns. You can use Sealmetrics private AI, or bring your own Anthropic, OpenAI, Gemini or DeepSeek key — you are choosing the algorithm, not the data.",
   },
   {
     q: "What is private AI for analytics?",
@@ -89,7 +89,7 @@ const pillars = [
   {
     eyebrow: "The interface",
     title: "A semantic MCP",
-    body: "47 named, read-only tools, each mapping one business concept to one canonical metric. The model calls a documented contract instead of guessing at raw columns. Nothing to misread.",
+    body: "More than 40 named, read-only tools, each mapping one business concept to one canonical metric. The model calls a documented contract instead of guessing at raw columns. Nothing to misread.",
     metric: "40+ tools",
     metricLabel: "via MCP out of the box",
   },
@@ -344,7 +344,7 @@ export default function AiAnalyticsPage() {
             <ul className="mt-7 space-y-3">
               {[
                 "Connect Claude, ChatGPT, Cursor or Claude Code via MCP at mcp.sealmetrics.com",
-                "47 read-only tools: overview, channels, conversions, funnels, landing pages, properties",
+                "40+ read-only tools: overview, channels, conversions, funnels, landing pages, properties",
                 "Private AI on gpt-oss-120b / Scaleway (Paris) or bring your own model key — you choose the algorithm",
                 "Enterprise can get a dedicated, non-shared private AI instance (through sales)",
                 "Hits normally land in reports in under 2 minutes, and the SLA guarantees the day is complete before 6 AM",

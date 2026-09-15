@@ -70,18 +70,20 @@ const facts: { label: string; value: React.ReactNode }[] = [
 ];
 
 const canDo = [
-  "Traffic, sessions and page performance over any date range, with period comparison.",
-  "Conversions and revenue, broken down by channel, campaign, source, term, landing page or country.",
-  "Micro-conversions and funnels, including the drop between two declared steps.",
+  "Traffic, sessions and page performance over preset periods such as 7d, 30d, last_month or last_quarter, with comparison against the previous period or year.",
+  "Conversions and revenue, broken down by channel, campaign, source, term, landing page or country, plus the line items of each purchase.",
+  "Micro-conversions and the fixed purchase funnel, with the drop-off at each step.",
   "Custom properties the account already sends, such as a product or plan identifier.",
   "Landing pages, referrers, countries, devices, browsers and operating systems.",
+  "Channel rules: list them and test how a source, medium and campaign would be classified.",
+  "Documentation, the troubleshooting guide and the tracking code, so the assistant can help with setup.",
   "Search and fetch, so a client that indexes connectors can find a metric by name.",
 ];
 
 const willNotDo = [
   "Read a person. There is no visitor identifier to read, because Sealmetrics never sets one.",
   "Return raw personal data, session recordings or a user-level journey. None of it exists in the store.",
-  "Write anything at all. The endpoint lists no tool that creates, updates or deletes: configuration, alerts, webhooks and channel rules are absent from it, not merely refused.",
+  "Write anything at all. The hosted endpoint lists no tool that creates, updates or deletes: channel rules can be listed and tested but not edited, and alerts, webhooks and segments are absent, not merely refused.",
   "Delete data, move billing or touch account settings.",
   "Reach an account the authorising user cannot already open in the dashboard.",
 ];
@@ -109,7 +111,7 @@ const faqs = [
   {
     question: "Can an AI assistant change my configuration through it?",
     answer:
-      "No. The hosted endpoint lists read-only tools only: there is no tool on it that creates, updates or deletes anything, so a change is not refused at call time, it is simply not offered. Editing configuration means the dashboard, or the local server with an API key.",
+      "Not through the hosted endpoint. It lists read-only tools only: there is no tool on it that creates, updates or deletes anything, so a change is not refused at call time, it is simply not offered. The server documentation also lists channel-rule tools that work on drafts only and can never change or publish a live rule; publishing a rule, like any other configuration change, happens in the dashboard.",
   },
   {
     question: "How do I revoke access?",
@@ -124,7 +126,7 @@ const faqs = [
   {
     question: "Which model or vendor processes my data?",
     answer:
-      "Whichever assistant you connect. The server answers the tools that assistant calls; it does not choose or host a model. If you would rather the analysis never leave the EU, use LENS AI, which is hosted in Dublin alongside the data.",
+      "Whichever assistant you connect. The server answers the tools that assistant calls; it does not choose or host a model. If the model itself must run in the EU, use LENS with Private AI, Sealmetrics' managed model served in Paris, France, with no prompt retention.",
   },
 ];
 
@@ -223,11 +225,14 @@ export default function McpDocsPage() {
               What it can do
             </h2>
             <p className="mt-5 text-[16px] leading-[1.65] text-ink-soft">
-              The endpoint lists read-only analytics tools and nothing else. Each one maps a business
-              question to a canonical metric, so the model calls a documented contract instead of
-              guessing at raw columns. Attribution is{" "}
-              <Link href="/glossary/last-click-attribution">last non-direct click</Link>, measured on
-              traffic without consent gaps rather than the consented fraction. Worked examples, organised
+              The hosted endpoint lists more than 40 read-only tools and nothing that writes. Each one
+              maps a business question to a canonical metric, so the model calls a documented contract
+              instead of guessing at raw columns. The full list in the server documentation also covers
+              tools this endpoint does not offer, such as channel-rule drafts, alerts, webhooks,
+              segments and bot detection. Attribution is{" "}
+              <Link href="/glossary/last-click-attribution">last click</Link> within each session, with
+              no lookback across sessions, measured on traffic without consent gaps rather than the
+              consented fraction. Worked examples, organised
               by business problem, are in the{" "}
               <Link href="/ai-analytics/prompts">prompt library</Link>.
             </p>
@@ -295,7 +300,8 @@ export default function McpDocsPage() {
           <p className="mt-8 text-[16px] leading-[1.65] text-ink-soft max-w-[70ch]">
             If a client asks for a local command instead of a URL, it does not support remote MCP yet.
             Use <code>npx @sealmetrics/mcp</code> with <code>SEALMETRICS_API_KEY</code> in the
-            environment, which runs the same tools on your machine.
+            environment, which runs the server on your machine; its tools are listed in the server
+            documentation. API keys are read-only by design.
           </p>
         </div>
       </section>
@@ -316,7 +322,7 @@ export default function McpDocsPage() {
           <ul className="mt-8 space-y-3 text-[16px] leading-[1.65] text-ink-2 max-w-[70ch] list-none p-0">
             {[
               "Data is collected and stored in the European Union, in Dublin, Ireland.",
-              "Designed for GDPR from the architecture up (self-assessed) and aligned with the ePrivacy Directive; a Schrems II transfer problem cannot arise, because there is no transfer and no personal data.",
+              "Designed for GDPR from the architecture up (self-assessed) and aligned with the ePrivacy Directive; visitor data is not transferred outside the EU, so no Schrems II transfer arises for it.",
               "A DPA is included with every account, and the TPSR package is available for procurement review.",
               "The connector inherits those terms. It adds a reader, not a new collection.",
             ].map((line) => (

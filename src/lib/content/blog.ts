@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
     slug: "self-service-analytics-for-marketing-teams",
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
-      "A marketing team gets a correct answer without opening a ticket. Traffic measured without consent loss, 47 named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
+      "A marketing team gets a correct answer without opening a ticket. Traffic measured without consent loss, 40+ named read-only tools instead of raw SQL, and BYOK or an isolated private AI instance.",
     date: "2026-08-06",
     dateModified: "2026-09-15",
     category: "AI & Analytics",

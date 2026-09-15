@@ -956,7 +956,7 @@ function PrivateAI() {
         </div>
 
         <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-2">
-          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 47 read-only tools"].map((c) => (
+          {["LENS private AI", "BYOK · Anthropic / OpenAI / Gemini / DeepSeek", "MCP · 40+ read-only tools"].map((c) => (
             <span key={c} className="font-mono text-[11px] uppercase tracking-[0.08em] text-ink-2 bg-white border border-warm-100 rounded-full px-4 py-1.5">
               {c}
             </span>
