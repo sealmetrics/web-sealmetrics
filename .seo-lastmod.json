@@ -1298,5 +1298,13 @@
   "/es/data-studio/": {
     "hash": "a097d9040dec16a8",
     "date": "2026-09-15"
+  },
+  "/es/cuenta-gratis/": {
+    "hash": "e7f760ca47101801",
+    "date": "2026-09-15"
+  },
+  "/free-account/": {
+    "hash": "af21a93b2dd4ab12",
+    "date": "2026-09-15"
   }
 }
