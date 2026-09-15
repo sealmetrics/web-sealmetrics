@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: "What is AI-agent ready?",
-    a: "It means an LLM or autonomous agent (Claude, ChatGPT Operator, internal copilots) can connect to the analytics platform through the Model Context Protocol (MCP) and query revenue, conversions, properties, and forecasts in natural language — without you building dashboards. Sealmetrics ships an MCP server with 40+ tools out of the box.",
+    a: "It means an LLM or autonomous agent (Claude, ChatGPT Operator, internal copilots) can connect to the analytics platform through the Model Context Protocol (MCP) and query revenue, conversions, funnels and properties in natural language — without you building dashboards. Sealmetrics ships an MCP server with 40+ tools out of the box.",
   },
   {
     q: "Is this really compliant with GDPR and ePrivacy?",
@@ -112,7 +112,7 @@ const pillars = [
   {
     eyebrow: "AI native",
     title: "AI-agent ready",
-    body: "Native Model Context Protocol (MCP) server with 40+ tools. Claude, internal copilots, and AI agents can pull revenue, conversions, forecasts, and properties in natural language.",
+    body: "Native Model Context Protocol (MCP) server with 40+ tools. Claude, internal copilots, and AI agents can pull revenue, conversions, funnels and properties in natural language.",
     metric: "40+ tools",
     metricLabel: "via MCP out of the box",
   },
@@ -339,14 +339,14 @@ export default function ModernAnalyticsPage() {
             <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft">
               Sealmetrics ships a native MCP (Model Context Protocol) server with 40+ tools. Connect
               Claude, ChatGPT, or your internal copilot and let it pull revenue, conversions,
-              landing-page performance, forecasts, and product properties on demand.
+              landing-page performance and product properties on demand.
             </p>
             <ul className="mt-7 space-y-3">
               {[
                 "Plug into Claude Desktop, Claude Code, or any MCP-compatible client",
-                "40+ tools: overview, channels, conversions, segments, funnels, properties",
-                "Combine with Google Ads / Meta Ads / Search Console MCPs for full-funnel ROAS",
-                "Read-only, scoped, and rate-limited per agent",
+                "40+ read-only tools: overview, channels, conversions, funnels, landing pages, properties",
+                "Combine with Google Ads, Meta Ads or Search Console MCPs to join spend and search data with measured revenue",
+                "Read-only, limited to the sites the account can open, rate-limited by plan",
               ].map((line) => (
                 <li
                   key={line}

@@ -63,7 +63,7 @@ const faqs = [
   },
   {
     q: "¿Qué quiere decir lista para agentes IA?",
-    a: "Significa que un LLM o agente autónomo (Claude, ChatGPT Operator, copilots internos) puede conectar a la plataforma analítica mediante el Model Context Protocol (MCP) y consultar revenue, conversiones, propiedades y forecasts en lenguaje natural — sin que tengas que construir dashboards. Sealmetrics incluye un servidor MCP con 40+ herramientas listas.",
+    a: "Significa que un LLM o agente autónomo (Claude, ChatGPT Operator, copilots internos) puede conectar a la plataforma analítica mediante el Model Context Protocol (MCP) y consultar revenue, conversiones, embudos y propiedades en lenguaje natural — sin que tengas que construir dashboards. Sealmetrics incluye un servidor MCP con 40+ herramientas listas.",
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
@@ -111,7 +111,7 @@ const pillars = [
   {
     eyebrow: "AI native",
     title: "Lista para agentes IA",
-    body: "Servidor Model Context Protocol (MCP) nativo con 40+ tools. Claude, copilots internos y agentes IA pueden tirar de revenue, conversiones, forecasts y propiedades en lenguaje natural.",
+    body: "Servidor Model Context Protocol (MCP) nativo con 40+ tools. Claude, copilots internos y agentes IA pueden tirar de revenue, conversiones, embudos y propiedades en lenguaje natural.",
     metric: "40+ tools",
     metricLabel: "vía MCP de serie",
   },
@@ -339,14 +339,14 @@ export default function ModernAnalyticsPageEs() {
             <p className="mt-6 text-[17px] leading-[1.6] text-ink-soft">
               Sealmetrics incluye un servidor MCP (Model Context Protocol) nativo con 40+ tools.
               Conecta Claude, ChatGPT o tu copilot interno y deja que tire de revenue, conversiones,
-              performance de landings, forecasts y propiedades de producto bajo demanda.
+              performance de landings y propiedades de producto bajo demanda.
             </p>
             <ul className="mt-7 space-y-3">
               {[
                 "Conecta con Claude Desktop, Claude Code o cualquier cliente compatible con MCP",
-                "40+ tools: overview, canales, conversiones, segmentos, funnels, properties",
-                "Combina con MCPs de Google Ads / Meta Ads / Search Console para ROAS full-funnel",
-                "Solo lectura, scoped y rate-limited por agente",
+                "40+ herramientas de solo lectura: overview, canales, conversiones, embudos, landings, propiedades",
+                "Combina con MCPs de Google Ads, Meta Ads o Search Console para cruzar inversión y búsquedas con los ingresos medidos",
+                "Solo lectura, limitado a los sitios que puede abrir la cuenta, con límite de peticiones según el plan",
               ].map((line) => (
                 <li
                   key={line}
