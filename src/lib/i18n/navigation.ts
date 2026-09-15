@@ -110,6 +110,7 @@ const translatedPaths = new Set([
   "/for/hotels",
   "/for/saas",
   "/for/agencies",
+  "/for/multi-brand-retailers",
   "/for/media",
   "/for/finance",
   "/for/healthcare",

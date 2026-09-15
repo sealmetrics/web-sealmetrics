@@ -359,6 +359,15 @@ Observado: la documentación también tiene integración con PrestaShop, que el 
 
 ---
 
+## 12. Fase 6 · Verticales
+
+| # | Pieza | Estado |
+|---|---|---|
+| 1 | `/for/multi-brand-retailers` (EN+ES, nueva) | **Hecha** (15 sep) — plantilla v4. Ángulo: cada marca con su banner, su GA4, su agencia y su taxonomía, así que comparar marcas compara configuraciones. Contrastada con la doc: un dominio y sus subdominios por sitio, sin rastreo entre sitios; moneda y zona horaria por sitio; roles de organización y de sitio; reglas de canal por CSV; varios sitios en un mismo dataset de BigQuery (filas por `account_id`, `dim_accounts` con moneda); API Batch (50 consultas, zona horaria de cada sitio). Rango 15–60% citado como rango de la doc, no como medición. **No se afirma**: vista de dashboard que sume marcas (los endpoints agregados exigen superadmin), conversión de moneda automática ni recorridos entre marcas. Sin caso de retail multimarca: el bloque de prueba lo dice. Prompt 25 en §9b |
+| 2 | DTC reenfocado: `/for/ecommerce` con Incapto (EN+ES) | Pendiente |
+
+---
+
 ## 11. Integración (15 sep 2026)
 
 Las 24 PRs apiladas (#189–#234) se integran en una sola rama, `claude/positioning-integrated`, sobre `main`, que había avanzado con 11 commits de calidad (#197, #199, #202, #204, #205, #216, #223, #224, #226, #231, #232). Conflictos resueltos una vez (120 bloques en 56 archivos) y barrido del contenido nuevo contra las reglas añadidas a CLAUDE.md el 14 sep: sin afirmaciones de cobertura total ("measured on every visit", "en cada visita", "captura completa" → "sin pérdida por consentimiento"), sin "GDPR by architecture" como hecho, Resend como subencargado fuera de la UE sin dato de visitante. Las PRs apiladas quedan sustituidas por la integrada.

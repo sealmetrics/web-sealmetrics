@@ -9,7 +9,7 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics for every team — Roles, industries, verticals",
-  description: "Dedicated pages for CMOs, CTOs, DPOs and 8 industry verticals. Honest about who this fits, with concrete outcomes for each.",
+  description: "Dedicated pages for CMOs, CTOs, DPOs and 9 industry verticals. Honest about who this fits, with concrete outcomes for each.",
   openGraph: {
     title: "Sealmetrics for every team",
     description: "Dedicated pages for each role and industry.",
@@ -39,6 +39,7 @@ const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "The analytics that match your Shopify CRM." },
   { slug: "hotels", name: "Hotels & travel", tagline: "Palladium found 35% of GA4 bookings with no channel. See yours." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activation, upgrade — all first-party, all consent-independent." },
+  { slug: "multi-brand-retailers", name: "Multi-brand retailers", tagline: "Every brand measured on one method, so the group can compare them." },
   { slug: "agencies", name: "Agencies", tagline: "One measured layer the client owns and your whole team can work in." },
   { slug: "media", name: "Media & publishers", tagline: "Analytics that hold up against ad-blockers. 50%+ audiences invisible to GA." },
   { slug: "finance", name: "Finance & banking", tagline: "Bank-grade compliance. 1-meeting vendor review." },
@@ -54,7 +55,7 @@ export default function Page() {
       <JsonLd data={breadcrumbSchema([{ name: "For", url: "/for" }])} />
       <JsonLd data={itemListSchema({
         name: "Sealmetrics by role and industry",
-        description: "Sealmetrics dedicated pages for CMOs, CTOs, DPOs and 8 industry verticals.",
+        description: "Sealmetrics dedicated pages for CMOs, CTOs, DPOs and 9 industry verticals.",
         url: "/for",
         items: allItems,
       })} />

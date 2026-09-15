@@ -1021,6 +1021,16 @@
       "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/for/multi-brand-retailers.avif": {
+      "source": "public/og/for/multi-brand-retailers.png",
+      "sourceHash": "a563c0e378d967fb8c7c564abbaf3c7f2fb4a5e3e947110a02ce8b4406ae1cf1",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/for/multi-brand-retailers.webp": {
+      "source": "public/og/for/multi-brand-retailers.png",
+      "sourceHash": "a563c0e378d967fb8c7c564abbaf3c7f2fb4a5e3e947110a02ce8b4406ae1cf1",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/for/saas.avif": {
       "source": "public/og/for/saas.png",
       "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
