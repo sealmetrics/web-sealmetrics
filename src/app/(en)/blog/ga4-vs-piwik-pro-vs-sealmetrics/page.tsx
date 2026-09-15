@@ -87,7 +87,7 @@ const FAQ = [
   {
     question: "How much do GA4, Piwik PRO and Sealmetrics cost?",
     answer:
-      "Standard GA4 is free; Analytics 360 is quote-based. On 14 September 2026 Piwik PRO listed Business from €36 a month and Enterprise from €366 a month billed annually. Sealmetrics has a free Agentic plan up to 1M human events a month, Growth from €499 a month and Scale from €899 a month on annual billing, and custom Enterprise pricing.",
+      "Standard GA4 is free; Analytics 360 is quote-based. On 14 September 2026 Piwik PRO listed Business from €36 a month and Enterprise from €366 a month billed annually. Sealmetrics has a free Agentic plan up to 1M human events in total, Growth from €499 a month and Scale from €899 a month on annual billing, and custom Enterprise pricing.",
   },
   {
     question: "Is Piwik PRO GDPR compliant?",
@@ -115,7 +115,7 @@ const th = "text-left font-mono text-[11px] uppercase tracking-[0.08em] text-tex
 const td = "py-2 pr-4 border-b border-warm-100 align-top";
 
 const ROWS: [string, string, string, string][] = [
-  ["Price", "Standard GA4 free; Analytics 360 quote-based", "Business from €36/month; Enterprise from €366/month billed annually (listed 14 Sep 2026)", "Agentic free to 1M human events; Growth €499/month, Scale €899/month on annual billing; Enterprise custom"],
+  ["Price", "Standard GA4 free; Analytics 360 quote-based", "Business from €36/month; Enterprise from €366/month billed annually (listed 14 Sep 2026)", "Agentic free to 1M human events in total; Growth €499/month, Scale €899/month on annual billing; Enterprise custom"],
   ["Product scope", "Analytics, integrated with Google Ads and the Google marketing stack", "Analytics, Tag Manager, Consent Manager and Data Activation", "Aggregate analytics: channels, campaigns, conversions, revenue, funnels"],
   ["Identifiers", "First-party cookies; optional User-ID", "Configurable: visitor cookies, a session hash lasting 30 minutes after the last event, or neither", "None; a short-lived session marker that is not stored in the browser"],
   ["When a visitor rejects the banner", "Basic mode: nothing. Advanced mode: cookieless pings, with users and sessions modelled above Google's thresholds", "Depends on configuration; with both identifiers off, each event is a new session and returning visitors are not recognised", "Same measurement as for every other visit; nothing is stored on the device"],

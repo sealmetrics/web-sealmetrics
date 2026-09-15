@@ -59,7 +59,7 @@ const FAQ = [
   {
     question: "¿Cuánto cuestan GA4, Piwik PRO y Sealmetrics?",
     answer:
-      "GA4 estándar es gratuito; Analytics 360 va con presupuesto a medida. El 14 de septiembre de 2026, Piwik PRO publicaba Business desde 36 € al mes y Enterprise desde 366 € al mes con facturación anual. Sealmetrics tiene un plan Agentic gratuito hasta 1M de eventos humanos al mes, Growth desde 499 € al mes y Scale desde 899 € al mes con facturación anual, y Enterprise a medida.",
+      "GA4 estándar es gratuito; Analytics 360 va con presupuesto a medida. El 14 de septiembre de 2026, Piwik PRO publicaba Business desde 36 € al mes y Enterprise desde 366 € al mes con facturación anual. Sealmetrics tiene un plan Agentic gratuito hasta 1M de eventos humanos en total, Growth desde 499 € al mes y Scale desde 899 € al mes con facturación anual, y Enterprise a medida.",
   },
   {
     question: "¿Piwik PRO cumple el RGPD?",
@@ -87,7 +87,7 @@ const th = "text-left font-mono text-[11px] uppercase tracking-[0.08em] text-tex
 const td = "py-2 pr-4 border-b border-warm-100 align-top";
 
 const ROWS: [string, string, string, string][] = [
-  ["Precio", "GA4 estándar gratuito; Analytics 360 con presupuesto a medida", "Business desde 36 €/mes; Enterprise desde 366 €/mes con facturación anual (publicado el 14 sep 2026)", "Agentic gratuito hasta 1M de eventos humanos; Growth 499 €/mes y Scale 899 €/mes con facturación anual; Enterprise a medida"],
+  ["Precio", "GA4 estándar gratuito; Analytics 360 con presupuesto a medida", "Business desde 36 €/mes; Enterprise desde 366 €/mes con facturación anual (publicado el 14 sep 2026)", "Agentic gratuito hasta 1M de eventos humanos en total; Growth 499 €/mes y Scale 899 €/mes con facturación anual; Enterprise a medida"],
   ["Alcance del producto", "Analítica, integrada con Google Ads y el stack de marketing de Google", "Analítica, gestor de etiquetas, gestor de consentimiento y activación de datos", "Analítica agregada: canales, campañas, conversiones, ingresos y embudos"],
   ["Identificadores", "Cookies first-party; User-ID opcional", "Configurables: cookies de visitante, un hash de sesión que dura 30 minutos desde el último evento, o ninguno", "Ninguno; un marcador de sesión efímero que no se guarda en el navegador"],
   ["Cuando un visitante rechaza el banner", "Modo básico: nada. Modo avanzado: pings sin cookies, con usuarios y sesiones modelados por encima de los umbrales de Google", "Depende de la configuración; con los dos identificadores desactivados, cada evento es una sesión nueva y no se reconoce a quien vuelve", "La misma medición que en cualquier otra visita; no se guarda nada en el dispositivo"],

@@ -18,7 +18,7 @@ export const MCP_ENDPOINT = "https://mcp.sealmetrics.com/mcp";
 export const mcpSetupSteps: HowToStep[] = [
   {
     name: "Create a free Sealmetrics account",
-    text: "The Agentic tier is free up to 1M human events a month and needs no card. Register at my.sealmetrics.com, or let your assistant do it from the chat with the AI Agentic Package — no terminal, no dashboard login to start.",
+    text: "The Agentic tier is free up to 1M human events in total and needs no card. Register at my.sealmetrics.com, or let your assistant do it from the chat with the AI Agentic Package — no terminal, no dashboard login to start.",
   },
   {
     name: "Add the remote MCP endpoint to your assistant",
@@ -61,7 +61,7 @@ url = "${MCP_ENDPOINT}"`,
 export const mcpSetupStepsEs: HowToStep[] = [
   {
     name: "Crea una cuenta gratuita de Sealmetrics",
-    text: "El plan Agentic es gratis hasta 1M de eventos humanos al mes y no pide tarjeta. Regístrate en my.sealmetrics.com, o deja que tu asistente lo haga desde el chat con el AI Agentic Package: sin terminal y sin entrar al dashboard para empezar.",
+    text: "El plan Agentic es gratis hasta 1M de eventos humanos en total y no pide tarjeta. Regístrate en my.sealmetrics.com, o deja que tu asistente lo haga desde el chat con el AI Agentic Package: sin terminal y sin entrar al dashboard para empezar.",
   },
   {
     name: "Añade el endpoint MCP remoto a tu asistente",

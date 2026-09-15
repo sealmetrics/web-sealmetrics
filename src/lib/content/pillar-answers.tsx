@@ -67,8 +67,8 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       Sealmetrics pricing is a fixed allowance, not a metered event bill. Four
       plans share one measurement architecture: the price moves with sustained
       human-event volume, governance and support, never with access to the
-      underlying evidence. The Agentic tier is €0 for up to 1M human events a
-      month and takes no card — an MCP-capable assistant can provision it from a
+      underlying evidence. The Agentic tier is €0 for up to 1M human events in
+      total and takes no card — an MCP-capable assistant can provision it from a
       chat. Growth is €499/month billed annually, €599 monthly, for 5M events;
       Scale is €899/month annually, €1,079 monthly, for 15M; Enterprise is a
       tailored annual contract. Every paid plan carries the same collection,
@@ -84,7 +84,7 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       evento. Cuatro planes comparten una sola arquitectura de medición: el
       precio se mueve con el volumen sostenido de eventos humanos, la gobernanza
       y el soporte, nunca con el acceso a la evidencia. El plan Agentic cuesta
-      €0 hasta 1M de eventos humanos al mes y no pide tarjeta — un asistente
+      €0 hasta 1M de eventos humanos en total y no pide tarjeta — un asistente
       compatible con MCP puede darlo de alta desde el chat. Growth son €499/mes
       facturados anualmente, €599 mensual, para 5M de eventos; Scale son
       €899/mes anual, €1.079 mensual, para 15M; Enterprise es un contrato anual

@@ -379,7 +379,7 @@ For each flag, show the parameter, a masked example, the entrances affected and 
   final: {
     tag: "Start asking",
     title: <>Connect the assistant.<br /><em>Paste prompt A1.</em></>,
-    body: "The Agentic tier is free up to 1M human events a month and includes the MCP server. Connect it from AI analytics, then run the first prompt against your own site.",
+    body: "The Agentic tier is free up to 1M human events in total and includes the MCP server. Connect it from AI analytics, then run the first prompt against your own site.",
     primary: { label: "Connect an AI assistant", href: "/ai-analytics/" },
     secondary: { label: "See pricing", href: "/pricing/" },
   },
@@ -700,7 +700,7 @@ Para cada caso, muestra el parámetro, un ejemplo enmascarado, las entradas afec
   final: {
     tag: "Empieza a preguntar",
     title: <>Conecta el asistente.<br /><em>Pega el prompt A1.</em></>,
-    body: "El plan Agentic es gratuito hasta 1M de eventos humanos al mes e incluye el servidor MCP. Conéctalo desde analítica con IA y ejecuta el primer prompt sobre tu propia web.",
+    body: "El plan Agentic es gratuito hasta 1M de eventos humanos en total e incluye el servidor MCP. Conéctalo desde analítica con IA y ejecuta el primer prompt sobre tu propia web.",
     primary: { label: "Conectar un asistente de IA", href: "/es/ai-analytics/" },
     secondary: { label: "Ver precios", href: "/es/pricing/" },
   },

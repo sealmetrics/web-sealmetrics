@@ -32,7 +32,7 @@ const ITEMS_EN = [
   },
   {
     q: "What is the Agentic Package?",
-    a: "A free Sealmetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events per month. It's fully self-serve with documentation only and no credit card — no email, chat or priority support. When you pass 1M events in a month, the Growth plan activates.",
+    a: "A free Sealmetrics tier you set up directly from your AI assistant — Claude Desktop, Codex or any MCP-capable agent. Your agent creates the account and generates the pixel, and you get the same complete cookieless analytics as Growth, free up to 1M human events in total. It's fully self-serve with documentation only and no credit card — no email, chat or priority support. When you pass 1M events in a month, the Growth plan activates.",
   },
   {
     q: "How do I create an account from an LLM?",
@@ -91,7 +91,7 @@ const ITEMS_ES = [
   },
   {
     q: "¿Qué es el Agentic Package?",
-    a: "Un tier gratuito de Sealmetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos al mes. Es totalmente self-serve con solo documentación y sin tarjeta — sin soporte email, chat ni prioritario. Al superar 1M de eventos en un mes, se activa el plan Growth.",
+    a: "Un tier gratuito de Sealmetrics que configuras directamente desde tu asistente de IA — Claude Desktop, Codex o cualquier agente compatible con MCP. Tu agente crea la cuenta y genera el píxel, y obtienes la misma analítica completa sin cookies que Growth, gratis hasta 1M de eventos humanos en total. Es totalmente self-serve con solo documentación y sin tarjeta — sin soporte email, chat ni prioritario. Al superar 1M de eventos en un mes, se activa el plan Growth.",
   },
   {
     q: "¿Cómo creo una cuenta desde un LLM?",

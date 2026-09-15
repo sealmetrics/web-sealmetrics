@@ -60,7 +60,7 @@
     "date": "2026-09-14"
   },
   "/ai-analytics/": {
-    "hash": "a7e029bdfa14a75a",
+    "hash": "06f3161af1080a65",
     "date": "2026-09-15"
   },
   "/data-loss-calculator/": {
@@ -168,7 +168,7 @@
     "date": "2026-09-15"
   },
   "/es/": {
-    "hash": "0744a5f090ef87c7",
+    "hash": "c791eb62e34b0193",
     "date": "2026-09-15"
   },
   "/pricing-plans/": {
@@ -176,7 +176,7 @@
     "date": "2026-04-25"
   },
   "/pricing/": {
-    "hash": "506e3fd36ea5f001",
+    "hash": "5065a5de9915715b",
     "date": "2026-09-15"
   },
   "/open/": {
@@ -244,7 +244,7 @@
     "date": "2026-08-27"
   },
   "/es/why-sealmetrics/": {
-    "hash": "e785a554745948c5",
+    "hash": "000796001ca697d7",
     "date": "2026-09-15"
   },
   "/es/platforms/": {
@@ -256,7 +256,7 @@
     "date": "2026-09-14"
   },
   "/es/ai-analytics/": {
-    "hash": "3d3b8f7418087249",
+    "hash": "8a2835cd01c5152a",
     "date": "2026-09-15"
   },
   "/es/data-loss-calculator/": {
@@ -344,7 +344,7 @@
     "date": "2026-09-15"
   },
   "/es/pricing/": {
-    "hash": "3427f3558cb290de",
+    "hash": "b5a41d3baa515ea7",
     "date": "2026-09-15"
   },
   "/es/diagnostic-result/": {
@@ -620,15 +620,15 @@
     "date": "2026-09-15"
   },
   "/preview/home-power-d/": {
-    "hash": "974f7533067f53ae",
+    "hash": "1f41e05d98f670bd",
     "date": "2026-09-15"
   },
   "/preview/home-power-b/": {
-    "hash": "949c802a21ecd856",
+    "hash": "7a0546cea07c56ba",
     "date": "2026-09-15"
   },
   "/preview/home-power/": {
-    "hash": "cd96bf1809420dbd",
+    "hash": "cc843b888221e079",
     "date": "2026-09-15"
   },
   "/glossary/consent-mode-v2/": {
@@ -808,7 +808,7 @@
     "date": "2026-09-15"
   },
   "/blog/self-service-analytics-for-marketing-teams/": {
-    "hash": "686690c4fc258a9b",
+    "hash": "f9c00cfae26f5a5c",
     "date": "2026-09-15"
   },
   "/blog/what-is-data-loss-in-analytics/": {
@@ -1144,7 +1144,7 @@
     "date": "2026-09-15"
   },
   "/blog/ga4-vs-piwik-pro-vs-sealmetrics/": {
-    "hash": "24ae5a3dff62dbea",
+    "hash": "93be17c7c8f4282f",
     "date": "2026-09-15"
   },
   "/blog/last-click-vs-modelled-attribution/": {
@@ -1184,7 +1184,7 @@
     "date": "2026-09-15"
   },
   "/es/blog/ga4-vs-piwik-pro-vs-sealmetrics/": {
-    "hash": "7238fadb8f39fdc8",
+    "hash": "ca40f04c5fd4eb6a",
     "date": "2026-09-15"
   },
   "/es/blog/last-click-vs-modelled-attribution/": {
@@ -1268,11 +1268,11 @@
     "date": "2026-09-15"
   },
   "/ai-analytics/prompts/": {
-    "hash": "687a69c10edc102f",
+    "hash": "b08e2f79389d459d",
     "date": "2026-09-15"
   },
   "/es/ai-analytics/prompts/": {
-    "hash": "6be47c1662e3607d",
+    "hash": "42f1c94e9525aff1",
     "date": "2026-09-15"
   }
 }
