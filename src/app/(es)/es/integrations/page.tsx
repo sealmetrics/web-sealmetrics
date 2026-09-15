@@ -48,6 +48,7 @@ const itemLinks: Record<string, string> = {
   "Magento 2": "/es/platforms/magento",
   "Conector BigQuery": "/es/integrations/bigquery",
   "Google Ads": "/es/integrations/google-ads",
+  "Meta Ads": "/es/integrations/meta-ads",
 };
 
 export default function Page() {

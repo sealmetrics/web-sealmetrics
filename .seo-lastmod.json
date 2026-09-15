@@ -1244,11 +1244,19 @@
     "date": "2026-09-14"
   },
   "/es/integrations/google-ads/": {
-    "hash": "72f7ab4c6aace7d3",
+    "hash": "1d52c5fea562bda0",
     "date": "2026-09-15"
   },
   "/integrations/google-ads/": {
-    "hash": "b9546a7a815f1bf7",
+    "hash": "9ced5bafc1cfd78a",
+    "date": "2026-09-15"
+  },
+  "/es/integrations/meta-ads/": {
+    "hash": "99fcc2bce63c07f9",
+    "date": "2026-09-15"
+  },
+  "/integrations/meta-ads/": {
+    "hash": "38f610317318b41a",
     "date": "2026-09-15"
   }
 }

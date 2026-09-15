@@ -1411,6 +1411,16 @@
       "sourceHash": "2feb236e7c22e7f518220ae053c574e237fe2aca6bc37f928c63f12a897a1809",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/integrations/meta-ads.avif": {
+      "source": "public/og/integrations/meta-ads.png",
+      "sourceHash": "b0add8feeddfd6a3e0654e6ecfc6a58021a42ec837adae1321727bad78751a50",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/meta-ads.webp": {
+      "source": "public/og/integrations/meta-ads.png",
+      "sourceHash": "b0add8feeddfd6a3e0654e6ecfc6a58021a42ec837adae1321727bad78751a50",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/modern-analytics.avif": {
       "source": "public/og/modern-analytics.png",
       "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",

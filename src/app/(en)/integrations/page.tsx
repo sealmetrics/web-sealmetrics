@@ -71,6 +71,7 @@ const itemLinks: Record<string, string> = {
   "Magento 2": "/platforms/magento",
   "BigQuery connector": "/integrations/bigquery",
   "Google Ads": "/integrations/google-ads",
+  "Meta Ads": "/integrations/meta-ads",
   "MCP server": "/docs/mcp",
 };
 

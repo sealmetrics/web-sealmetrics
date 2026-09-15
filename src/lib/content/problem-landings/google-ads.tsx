@@ -210,7 +210,7 @@ export const googleAdsEn: ProblemLandingContent = {
     body: (
       <>
         These are deliberate. The same pattern for Meta is on{" "}
-        <Link className={link} href="/blog/meta-ads-conversions-vs-crm/">Meta Ads conversions vs CRM</Link>.
+        <Link className={link} href="/integrations/meta-ads/">Sealmetrics for Meta Ads</Link>.
       </>
     ),
     items: [
@@ -414,7 +414,7 @@ export const googleAdsEs: ProblemLandingContent = {
     body: (
       <>
         Son decisiones deliberadas. El mismo patrón para Meta está en{" "}
-        <Link className={link} href="/es/blog/meta-ads-conversions-vs-crm/">conversiones de Meta Ads frente al CRM</Link>.
+        <Link className={link} href="/es/integrations/meta-ads/">Sealmetrics para Meta Ads</Link>.
       </>
     ),
     items: [
