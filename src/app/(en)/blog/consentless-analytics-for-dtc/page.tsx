@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Consentless Analytics for DTC — 2026 Guide",
     description:
-      "No consent banner required. No cookies. No user tracking. Aggregate channel totals without consent gaps.",
+      "No consent banner needed under the CNIL and AEPD criteria (self-assessed). No cookies. No user tracking. Aggregate channel totals without consent gaps.",
     type: "article",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
     url: "https://sealmetrics.com/blog/consentless-analytics-for-dtc/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Consentless Analytics for DTC — 2026 Guide",
-    description: "No consent banner required. No cookies. No user tracking. Aggregate channel totals without consent gaps.",
+    description: "No consent banner needed under the CNIL and AEPD criteria (self-assessed). No cookies. No user tracking. Aggregate channel totals without consent gaps.",
     images: [ogImage("/blog/consentless-analytics-for-dtc/")],
   },
   alternates: {
@@ -39,12 +39,12 @@ const faqs = [
   {
     question: "What is consentless analytics?",
     answer:
-      "Consentless analytics is web measurement that requires no user consent because it stores no information on the visitor's device, reads no information from it, and collects no personal identifiers. No cookies, no localStorage, no fingerprinting, no per-user tracking. It counts events anonymously and attributes each conversion last-click at channel level. Because the ePrivacy Directive's consent requirement attaches to storage and access of device information, analytics without either falls outside it.",
+      "Consentless analytics is web measurement that requires no user consent because it stores no information on the visitor's device, reads no information from it, and collects no personal identifiers. No cookies, no localStorage, no fingerprinting, no per-user tracking. It counts events anonymously and attributes each conversion last-click at channel level. Because the ePrivacy Directive's consent requirement attaches to storage and access of device information, analytics without either falls outside it, which is what the CNIL and AEPD criteria for consent-exempt audience measurement look for.",
   },
   {
     question: "Is consentless the same as cookieless?",
     answer:
-      "Closely related but not identical. Cookieless specifically means no cookies. Consentless is broader: no cookies AND no localStorage AND no fingerprinting AND no personal identifiers — so consent is not legally required. All consentless analytics is cookieless; not all cookieless analytics is fully consentless.",
+      "Closely related but not identical. Cookieless specifically means no cookies. Consentless is broader: no cookies AND no localStorage AND no fingerprinting AND no personal identifiers — which is what the CNIL and AEPD criteria for consent-exempt audience measurement require, so consent is not needed when they are met. All consentless analytics is cookieless; not all cookieless analytics is fully consentless.",
   },
   {
     question: "Does consentless analytics track individual visitors?",
@@ -106,7 +106,7 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. Therefore no consent required under GDPR/ePrivacy.</li>
+              <li>Consentless analytics = no cookies, no localStorage, no fingerprinting, no personal identifiers, no per-user tracking. That is what the CNIL and AEPD criteria for consent-exempt audience measurement require, so no consent is needed under GDPR/ePrivacy when they are met.</li>
               <li>For DTC brands, this closes the 40–60% consent-rejection gap that breaks aggregate channel ROAS in Europe.</li>
               <li>It works alongside advertising pixels (Meta, Google Ads) — pixels stay consent-gated, analytics is free.</li>
               <li>Properly architected, aggregate channel revenue reconciles with Shopify/WooCommerce/Magento at within 15–20%.</li>
@@ -139,7 +139,7 @@ export default function Page() {
               The terms overlap but are not synonymous. Cookieless specifically means: no cookies used. Consentless is a stricter standard: no cookies, no localStorage, no IndexedDB, no sessionStorage, no fingerprinting, no persistent identifier of any kind that would trigger the <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ePrivacy storage-and-access rule</Link>.
             </p>
             <p>
-              Some &ldquo;cookieless&rdquo; analytics tools still use localStorage or device fingerprinting and technically still need consent. Fully consentless tools avoid all of them. Both are better than cookie-based, but only consentless is legally out of scope.
+              Some &ldquo;cookieless&rdquo; analytics tools still use localStorage or device fingerprinting and technically still need consent. Fully consentless tools avoid all of them. Both are better than cookie-based, but only consentless is built to meet the CNIL and AEPD criteria for consent-exempt measurement.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
