@@ -202,7 +202,7 @@ export const woocommerceEn: ProblemLandingContent = {
   final: {
     tag: "WooCommerce walkthrough",
     title: <>Install on your store.<br /><em>See the channels behind the orders.</em></>,
-    body: "Book 30 minutes with the founder. We install the plugin on your WooCommerce store, test the funnel and a purchase, and set up the comparison with your orders.",
+    body: "Book 30 minutes with the founder. We walk through the plugin setup on your WooCommerce store, how to test the funnel and a purchase, and how to compare Sealmetrics with your orders.",
     primary: { label: "Book a WooCommerce walkthrough", href: "/demo/" },
     secondary: { label: "See pricing", href: "/pricing/" },
   },
@@ -386,7 +386,7 @@ export const woocommerceEs: ProblemLandingContent = {
   final: {
     tag: "Revisión en WooCommerce",
     title: <>Instálalo en tu tienda.<br /><em>Ve los canales detrás de los pedidos.</em></>,
-    body: "Reserva 30 minutos con el founder. Instalamos el plugin en tu tienda WooCommerce, probamos el funnel y una compra, y dejamos preparada la comparación con tus pedidos.",
+    body: "Reserva 30 minutos con el founder. Repasamos la instalación del plugin en tu tienda WooCommerce, cómo probar el funnel y una compra, y cómo comparar Sealmetrics con tus pedidos.",
     primary: { label: "Reservar una revisión en WooCommerce", href: "/es/demo/" },
     secondary: { label: "Ver precios", href: "/es/pricing/" },
   },

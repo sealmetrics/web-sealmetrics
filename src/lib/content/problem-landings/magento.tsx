@@ -207,7 +207,7 @@ export const magentoEn: ProblemLandingContent = {
   final: {
     tag: "Magento walkthrough",
     title: <>Install on your store.<br /><em>See the channels behind the orders.</em></>,
-    body: "Book 30 minutes with the founder. We install the module on your Magento store, test the funnel and a purchase, and set up the comparison with your orders per store view.",
+    body: "Book 30 minutes with the founder. We walk through the module setup on your Magento store, how to test the funnel and a purchase, and how to compare Sealmetrics with your orders per store view.",
     primary: { label: "Book a Magento walkthrough", href: "/demo/" },
     secondary: { label: "See pricing", href: "/pricing/" },
   },
@@ -391,7 +391,7 @@ export const magentoEs: ProblemLandingContent = {
   final: {
     tag: "Revisión en Magento",
     title: <>Instálalo en tu tienda.<br /><em>Ve los canales detrás de los pedidos.</em></>,
-    body: "Reserva 30 minutos con el founder. Instalamos el módulo en tu tienda Magento, probamos el funnel y una compra, y dejamos preparada la comparación con tus pedidos por vista de tienda.",
+    body: "Reserva 30 minutos con el founder. Repasamos la instalación del módulo en tu tienda Magento, cómo probar el funnel y una compra, y cómo comparar Sealmetrics con tus pedidos por vista de tienda.",
     primary: { label: "Reservar una revisión en Magento", href: "/es/demo/" },
     secondary: { label: "Ver precios", href: "/es/pricing/" },
   },

@@ -170,7 +170,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
                 GA4 depende del consentimiento. Con el rechazo del banner
-                (40-60%), los ad blockers (40%+) y las restricciones de navegador
+                (15-60% de las visitas UE), los ad blockers y las restricciones de navegador
                 sumados en el peor escenario, puede quedarse en torno al 13% del
                 tráfico real de eCommerce UE. En una tienda Shopify real medida
                 durante 48 días,{" "}

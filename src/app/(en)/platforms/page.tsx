@@ -30,10 +30,10 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 
 export const metadata: Metadata = {
   title: "Platforms — Sealmetrics",
-  description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
+  description: "Install Sealmetrics on Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
   openGraph: {
     title: "Platforms — Sealmetrics",
-    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
+    description: "Install Sealmetrics on Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     type: "website",
     images: [ogImage("/platforms/")],
     url: "https://sealmetrics.com/platforms/",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Platforms — Sealmetrics",
-    description: "Native install for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
+    description: "Install Sealmetrics on Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal and Joomla.",
     images: [ogImage("/platforms/")],
   },
   alternates: { canonical: "https://sealmetrics.com/platforms/", languages: getAlternates("/platforms") },
@@ -53,16 +53,16 @@ export const metadata: Metadata = {
 const platforms = [
   { name: "Shopify", time: "5 min", desc: "Pixel app plus theme app embed, on any Shopify plan. Purchases confirmed server-side by webhook.", href: "/platforms/shopify" },
   { name: "Magento", time: "15 min", desc: "Magento 2.4+ module installed in app/code, including Adobe Commerce. Full funnel per store view and currency.", href: "/platforms/magento" },
-  { name: "WooCommerce", time: "10 min", desc: "Official WordPress plugin. Zero config. Respects your existing consent setup (but doesn't need it).", href: "/platforms/woocommerce" },
+  { name: "WooCommerce", time: "10 min", desc: "WooCommerce plugin downloaded from your dashboard. Tracks the funnel from product view to purchase, with no cookies.", href: "/platforms/woocommerce" },
   { name: "PrestaShop", time: "15 min", desc: "Module for PrestaShop 1.7+ and 8.x, uploaded in the Module Manager. Product, cart, checkout and purchase events, with combinations.", href: "/platforms/prestashop" },
   { name: "OpenCart", time: "15 min", desc: "Extension for OpenCart 4.x, and 3.x with modifications. Product, cart, checkout and purchase events, configured per store.", href: "/platforms/opencart" },
   { name: "BigCommerce", time: "Private beta", desc: "Native integration in private beta. Until then, the JavaScript tracker with eCommerce events sent manually." },
   { name: "Squarespace", time: "10 min", desc: "Code injection in site settings. Works with Squarespace Commerce." },
   { name: "WordPress", time: "5 min", desc: "WordPress plugin. Tracks page views, forms, CTAs. Works alongside any page builder." },
-  { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and eCommerce." },
+  { name: "Webflow", time: "10 min", desc: "Custom code embed in project settings. Works with CMS collections and Webflow eCommerce." },
   { name: "Wix", time: "10 min", desc: "Custom code in site settings. Compatible with Wix Stores and Wix Bookings." },
-  { name: "Drupal", time: "15 min", desc: "Drupal module compatible with Drupal 9 & 10. Works with Commerce Kickstart." },
-  { name: "Joomla", time: "15 min", desc: "Joomla extension for Joomla 4 & 5. Basic tracking and conversion events." },
+  { name: "Drupal", time: "15 min", desc: "Drupal module for Drupal 9, 10 and 11. Page views, forms and conversion events." },
+  { name: "Joomla", time: "15 min", desc: "Joomla plugin for Joomla 4 and 5. Page views, forms and conversion events." },
   { name: "Custom / headless", time: "30 min", desc: "Any framework (Next.js, Nuxt, Astro, Remix) via one script tag + event API." },
 ];
 
@@ -76,26 +76,26 @@ export default function Page() {
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8 text-center">
           <span className="eyebrow mb-5" style={{ display: "inline-flex", justifyContent: "center" }}>Platforms</span>
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
-            Native on <em>every eCommerce platform.</em>
+            A native install for <em>the platforms stores run.</em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[62ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Webflow, Wix, Squarespace, Drupal, Joomla — plus any headless framework via one script tag.
           </p>
           <SignalAnswer>
-            Sealmetrics installs natively on every major eCommerce and CMS
-            platform, and on anything else through a single script tag. Shopify,
-            Magento 2, WooCommerce, PrestaShop and OpenCart have purpose-built
-            modules; so do WordPress, Drupal and Joomla, and Webflow, Wix and
-            Squarespace. Headless and custom stacks — Next.js, Nuxt, Astro,
-            Remix, SvelteKit — use the standard tag plus the event API. Every
-            setup takes under 30 minutes, and Shopify, on any plan, takes
-            about five; order data then flows without manual event
-            configuration. The tracker is small enough not to matter: under 5 KB
-            gzipped, roughly 132 times smaller than GA4 as measured in August
-            2026. What installation never involves is a consent banner, a cookie
-            or an identifier written to the visitor&rsquo;s device — and served
-            from your own subdomain, nothing on the page matches the
-            third-party lists blockers work from.
+            Sealmetrics installs on the main eCommerce and CMS platforms, and on
+            anything else through a single script tag. Shopify, Magento 2,
+            WooCommerce, PrestaShop and OpenCart have purpose-built modules, as
+            do WordPress, Drupal and Joomla; Webflow, Wix and Squarespace take
+            the tag through their custom-code settings, and BigCommerce is in
+            private beta. Headless and custom stacks — Next.js, Nuxt, Astro,
+            Remix, SvelteKit — use the standard tag plus the event API. Setup
+            takes 5 to 30 minutes depending on the platform, and the modules
+            send order events without manual configuration. The tracker weighs
+            about 1.1 KB gzipped, roughly 132 times lighter than GA4 as measured
+            in August 2026. It writes no cookie and no identifier to the
+            visitor&rsquo;s device; whether a deployment needs no consent
+            banner depends on its configuration and each national
+            authority&rsquo;s criteria.
           </SignalAnswer>
         </div>
       </section>
@@ -105,10 +105,10 @@ export default function Page() {
           <div className="grid md:grid-cols-[1.1fr_1fr] gap-12 md:gap-16 items-end mb-12">
             <div>
               <span className="eyebrow mb-5">Native installs</span>
-              <h2 className="h-section mt-5">Every platform. <em>Every setup time under 30 minutes.</em></h2>
+              <h2 className="h-section mt-5">Every platform. <em>Five to thirty minutes.</em></h2>
             </div>
             <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-              Native integrations for the platforms your team already runs. No hacky workarounds, no server-side GTM gymnastics, no consent mode polyfills.
+              Modules for the platforms your team already runs, and a script tag for the rest. No server-side GTM container and no Consent Mode setup.
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
