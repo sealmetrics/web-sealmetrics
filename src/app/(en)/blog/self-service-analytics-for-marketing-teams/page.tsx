@@ -487,9 +487,10 @@ export default function Page() {
                 href="/blog/ai-agent-traffic-analytics"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                AI agent traffic is tracked separately
+                AI agent traffic will be tracked separately
               </Link>{" "}
-              and does not count against the event limit.
+              once Agent Analytics ships, which is in development, and will not count against the
+              event limit.
             </p>
             <p>
               That is what makes growth scalable rather than linear. A team that adds Germany, France

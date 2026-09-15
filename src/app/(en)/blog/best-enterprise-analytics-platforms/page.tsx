@@ -74,7 +74,7 @@ const platforms = [
     pricing: "From \u20ac5,988/yr",
     euDataCapture: "Not reduced by consent",
     strengths:
-      "Cookieless architecture measures traffic without depending on consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI answers analytics questions in plain language, grounded in your complete data. Last-click revenue attribution built on complete data. Agent analytics tracks AI bot traffic separately.",
+      "Cookieless architecture measures traffic without depending on consent banners. EU-only data residency. Zero data sampling at any volume. LENS AI answers analytics questions in plain language, grounded in your complete data. Last-click revenue attribution built on complete data.",
     limitations:
       "Smaller ecosystem than Google or Adobe. No native Google Ads integration (data export available). Newer platform with a growing feature set. Best suited for EU-focused operations.",
     bestFor: "EU eCommerce teams that need complete data, GDPR compliance by design, and enterprise analytics without enterprise pricing.",
@@ -522,8 +522,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               Sealmetrics offers enterprise-grade capabilities at a fraction of
               legacy enterprise pricing. LENS AI answers analytics questions in
               plain language, grounded in your own numbers. Last-click revenue attribution is built on
-              complete data — not estimates from a consented fraction. Agent analytics
-              separates AI bot traffic from human visitors. Data is processed and
+              complete data — not estimates from a consented fraction. Data is processed and
               stored exclusively in the EU.
             </p>
 

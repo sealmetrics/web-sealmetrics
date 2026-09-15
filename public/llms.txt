@@ -13,7 +13,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - Designed for GDPR, ePrivacy and CCPA from the architecture up (self-assessment; no ISO 27001 or SOC 2 certification)
 - LENS AI: ask your analytics in plain language and turn the answer into a report. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today
 - Last-click revenue attribution on data without consent gaps (Sealmetrics does not do multi-touch attribution by design)
-- AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
+- AI Agent Analytics — in development, not live: will identify AI agents (ChatGPT, Claude, Perplexity) as their own source, outside the billed event count
 - 9 specialized report types
 - Free Agentic tier up to 1M events in total over the life of the account, not per month (self-serve, set up from your AI assistant). Paid plans from €499/month billed annually (€599 monthly)
 
@@ -96,7 +96,7 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
 ## Core pages
 - / — Homepage: consentless analytics for eCommerce. Measure your traffic without consent loss, with no cookies and no models, EU-hosted in Dublin
 - /why-sealmetrics — The case in one page: consent banners hide 40–60% of EU visits, tracking prevention erases conversions, and ROAS gets defended on what survived
-- /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
+- /product — Full platform overview: data capture, last-click revenue attribution, LENS AI
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
 - /pricing — Free Agentic tier (up to 1M events in total over the life of the account, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise

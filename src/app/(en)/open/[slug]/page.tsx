@@ -2661,16 +2661,16 @@ function ChapterSevenBody() {
     "Designed for GDPR · DPA signed by default",
     "MCP server + BigQuery export + full API",
     "Unlimited sites and users",
-    "AI agent traffic tracked · free, on every plan",
+    "AI agent traffic excluded from billing once Agent Analytics ships",
   ];
 
   const neverExtra = [
-    "AI agent traffic (ChatGPT, Claude, Perplexity, etc.)",
+    "AI agent traffic (ChatGPT, Claude, Perplexity, etc.), once Agent Analytics ships",
     "Bot traffic — excluded before it counts",
     "First overage month per year — free",
     "DPA signature and legal review",
     "Product updates and new features",
-    "The 14-day trial — full product, no card required",
+    "The 14-day trial — full product, no charge if you cancel before it ends",
   ];
 
   const plans = [

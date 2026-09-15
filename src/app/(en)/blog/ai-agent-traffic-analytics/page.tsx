@@ -65,9 +65,9 @@ export default function AIAgentTrafficPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>AI agents (GPT, Claude, Perplexity, Google AI Overviews) are sending 7-22% of sessions to content-rich sites, but traditional analytics classifies this traffic as "direct" or "unassigned."</li>
+            <li>AI assistants (GPT, Claude, Perplexity, Google AI Overviews) read your pages and send visitors to them, and when no referrer or source parameter arrives, traditional analytics files those visits as "direct" or "unassigned."</li>
             <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
-            <li>For a site with 500,000 monthly sessions, 35,000 to 100,000 AI-influenced sessions per month may be invisible to or misclassified by traditional analytics.</li>
+            <li>There is no reliable cross-site benchmark for how much traffic this is yet. Size it on your own site: crawler user agents in server logs, and AI referrers and source parameters in your analytics.</li>
             <li>Sealmetrics Agent Analytics — in development, not yet live — will identify each AI agent type (GPT, Claude, Perplexity) as a distinct source, tracked separately from human traffic and never billed against your event limit.</li>
           </ul>
         </div>
@@ -125,43 +125,28 @@ export default function AIAgentTrafficPage() {
           </h2>
 
           <p>
-            The volume varies significantly by industry. Content-rich sites
-            (eCommerce product pages, knowledge bases, editorial content) see
-            higher AI agent activity. Based on Sealmetrics client data from
-            2025-2026:
+            It varies by site, sector and how much of your content answers the
+            questions people ask assistants, and there is no reliable
+            cross-site benchmark yet. Any single percentage you read should be
+            treated as a guess until you have measured your own site. Two
+            sources give you a first figure:
           </p>
 
-          <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
-            <div className="space-y-4">
-              {[
-                { type: "GPT (browsing mode)", share: "2-5% of sessions" },
-                { type: "Google AI Overviews", share: "3-8% of impressions" },
-                { type: "Perplexity", share: "1-3% of sessions" },
-                { type: "Claude (web access)", share: "0.5-2% of sessions" },
-                { type: "Other AI agents", share: "1-4% of sessions" },
-              ].map((item) => (
-                <div
-                  key={item.type}
-                  className="flex justify-between text-[0.9rem]"
-                >
-                  <span className="text-text-secondary">{item.type}</span>
-                  <span className="font-mono text-text-primary font-medium">
-                    {item.share}
-                  </span>
-                </div>
-              ))}
-            </div>
-            <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Ranges based on Sealmetrics Agent Analytics data across 100+
-              eCommerce sites, Q4 2025 — Q1 2026.
-            </p>
-          </div>
-
-          <p>
-            For a site with 500,000 monthly sessions, this could mean 35,000 to
-            100,000 AI-influenced sessions per month that are invisible to or
-            misclassified by traditional analytics.
-          </p>
+          <ul className="space-y-2 pl-0 list-none">
+            {[
+              "Server logs: count requests from the published AI crawler user agents, such as OpenAI's GPTBot and OAI-SearchBot, Anthropic's ClaudeBot and PerplexityBot. These are machines reading your pages, not visitors, and they never run a JavaScript tag",
+              "Analytics referrers: look for visits referred by chatgpt.com, perplexity.ai, claude.ai or gemini.google.com, and for source parameters some assistants add to the links they show. These are people who clicked through from an answer",
+              "Direct and unassigned: a rise in untagged visits to deep pages that are unlikely to be typed or bookmarked is a signal worth checking against the two sources above",
+            ].map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-[0.95rem]"
+              >
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                {item}
+              </li>
+            ))}
+          </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             Why this matters for marketing strategy
