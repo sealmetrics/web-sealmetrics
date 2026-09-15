@@ -983,32 +983,32 @@
     },
     "public/og/for/education.avif": {
       "source": "public/og/for/education.png",
-      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
+      "sourceHash": "05801a288eb20e41804638912a07d661ee63ab8a3017011392b25bba07b0dbdf",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/education.webp": {
       "source": "public/og/for/education.png",
-      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
+      "sourceHash": "05801a288eb20e41804638912a07d661ee63ab8a3017011392b25bba07b0dbdf",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/finance.avif": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
+      "sourceHash": "8c1074efd249c4582f9b9d613ea6ce8c19f4f7c8a020618f98eaa7bdb02fe8aa",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/finance.webp": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
+      "sourceHash": "8c1074efd249c4582f9b9d613ea6ce8c19f4f7c8a020618f98eaa7bdb02fe8aa",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/healthcare.avif": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
+      "sourceHash": "ef178cb2d6cbbc10783a16a44bf08ca1a00390211fec2d53f33b67eddaadc947",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/healthcare.webp": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
+      "sourceHash": "ef178cb2d6cbbc10783a16a44bf08ca1a00390211fec2d53f33b67eddaadc947",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/hotels.avif": {
