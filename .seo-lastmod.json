@@ -124,8 +124,8 @@
     "date": "2026-09-07"
   },
   "/integrations/": {
-    "hash": "ed994d4efb61c6ac",
-    "date": "2026-09-14"
+    "hash": "324e4bf2bceee06c",
+    "date": "2026-09-15"
   },
   "/use-cases/": {
     "hash": "ceff55253f9a9b75",
@@ -308,8 +308,8 @@
     "date": "2026-09-07"
   },
   "/es/integrations/": {
-    "hash": "09b56f539a7260ff",
-    "date": "2026-09-14"
+    "hash": "4bd66793cd9260bd",
+    "date": "2026-09-15"
   },
   "/es/audit/": {
     "hash": "ca9addd1243c6d2c",
@@ -1242,5 +1242,13 @@
   "/integrations/bigquery/": {
     "hash": "32c0e835e39215ef",
     "date": "2026-09-14"
+  },
+  "/es/integrations/google-ads/": {
+    "hash": "72f7ab4c6aace7d3",
+    "date": "2026-09-15"
+  },
+  "/integrations/google-ads/": {
+    "hash": "b9546a7a815f1bf7",
+    "date": "2026-09-15"
   }
 }

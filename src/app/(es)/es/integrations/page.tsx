@@ -37,6 +37,7 @@ const groups = [
   { title: "Constructores web", items: ["Webflow", "Wix", "Squarespace"] },
   { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
   { title: "Gestión de tags", items: ["Google Tag Manager", "Plantilla de contenedor GTM", "Plantilla de tag GTM"] },
+  { title: "Plataformas publicitarias (vía UTM)", items: ["Google Ads", "Meta Ads"] },
   { title: "Datos e IA", items: ["Conector BigQuery", "Data Studio", "MCP server", "Paquete agéntico Claude y Codex", "API REST", "Webhooks"] },
 ];
 
@@ -46,6 +47,7 @@ const itemLinks: Record<string, string> = {
   "WooCommerce": "/es/platforms/woocommerce",
   "Magento 2": "/es/platforms/magento",
   "Conector BigQuery": "/es/integrations/bigquery",
+  "Google Ads": "/es/integrations/google-ads",
 };
 
 export default function Page() {

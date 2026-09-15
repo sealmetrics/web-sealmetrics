@@ -34,6 +34,7 @@ const translatedPaths = new Set([
   "/platforms/woocommerce",
   "/platforms/magento",
   "/integrations/bigquery",
+  "/integrations/google-ads",
   "/gdpr-analytics/spain",
   "/cookieless-analytics",
   "/vs/ga360",

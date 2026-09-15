@@ -1401,6 +1401,16 @@
       "sourceHash": "c67d36bed4b2864925cc684b27c2823142f0fa5352d06e2e163a8e89b4a43ec0",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/integrations/google-ads.avif": {
+      "source": "public/og/integrations/google-ads.png",
+      "sourceHash": "2feb236e7c22e7f518220ae053c574e237fe2aca6bc37f928c63f12a897a1809",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/integrations/google-ads.webp": {
+      "source": "public/og/integrations/google-ads.png",
+      "sourceHash": "2feb236e7c22e7f518220ae053c574e237fe2aca6bc37f928c63f12a897a1809",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/modern-analytics.avif": {
       "source": "public/og/modern-analytics.png",
       "sourceHash": "6645a235c71e8172f774f4fd1e7d4221ac51bb411c8d7e07b7b1bf17ba373e8c",

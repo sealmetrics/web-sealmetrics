@@ -60,6 +60,7 @@ const groups = [
   { title: "Website builders", items: ["Webflow", "Wix", "Squarespace"] },
   { title: "Frameworks", items: ["Next.js", "React", "Nuxt 3"] },
   { title: "Tag management", items: ["Google Tag Manager", "GTM container template", "GTM tag template"] },
+  { title: "Ad platforms (via UTMs)", items: ["Google Ads", "Meta Ads"] },
   { title: "Data & AI", items: ["BigQuery connector", "Data Studio", "MCP server", "Claude & Codex agentic package", "REST API", "Webhooks"] },
 ];
 
@@ -69,6 +70,7 @@ const itemLinks: Record<string, string> = {
   "WooCommerce": "/platforms/woocommerce",
   "Magento 2": "/platforms/magento",
   "BigQuery connector": "/integrations/bigquery",
+  "Google Ads": "/integrations/google-ads",
   "MCP server": "/docs/mcp",
 };
 

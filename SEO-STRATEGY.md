@@ -331,6 +331,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 20 | 2 | is server-side tracking GDPR compliant / server-side tracking y RGPD | `/blog/server-side-tracking-gdpr` (EN+ES) + `/glossary/server-side-tracking` | shipped 14 Sep |
 | 21 | 5 | cookieless analytics for Magento / analítica sin cookies para Magento | `/platforms/magento` (EN+ES) | shipped 14 Sep |
 | 22 | 4 | export analytics to BigQuery without GA4 / exportar analítica a BigQuery | `/integrations/bigquery` (EN+ES) | shipped 14 Sep |
+| 23 | 5 | track Google Ads revenue without GA4 / medir ingresos de Google Ads sin GA4 | `/integrations/google-ads` (EN+ES) | shipped 15 Sep |
 
 ### Method (monthly, first week)
 
