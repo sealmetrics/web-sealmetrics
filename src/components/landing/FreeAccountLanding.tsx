@@ -6,7 +6,7 @@ import { breadcrumbSchema, faqPageSchema, organizationSchema } from "@/lib/schem
 import { getCaseStudy } from "@/lib/content/case-studies";
 import { CLIENT_LOGOS } from "@/components/sections/v3/ClientLogos";
 import {
-  AGENTIC_CODEX_CONFIG, AGENTIC_EXTENSION, AGENTIC_GUIDE, CHANNEL_LOSS, CHATGPT_CONNECTOR_LIVE, PAID_GUARANTEE_APPROVED,
+  AGENTIC_CODEX_CONFIG, AGENTIC_EXTENSION, AGENTIC_GUIDE, CHANNEL_LOSS, CHATGPT_CONNECTOR_LIVE,
   freeAccountLanding, type AssistantGuide, type FreeAccountLocale,
 } from "@/lib/content/free-account-landing";
 import { FreeAccountPrompt } from "./FreeAccountPrompt";
@@ -142,7 +142,7 @@ export function FreeAccountLanding({ locale }: { locale: FreeAccountLocale }) {
         </div>
         <div className="fa-offer-grid2">
           <article className="fa-reason"><p className="reality-kicker">{t.offer.reasonTag}</p><h3>{t.offer.reasonTitle}</h3><p>{t.offer.reasonBody}</p></article>
-          <article className="fa-guarantee"><p className="reality-kicker">{t.offer.guaranteeTag}</p><h3>{t.offer.guaranteeTitle}</h3><p>{t.offer.guaranteeBody}</p>{PAID_GUARANTEE_APPROVED && <><h4>{t.offer.paidGuaranteeTitle}</h4><p>{t.offer.paidGuaranteeBody}</p></>}</article>
+          <article className="fa-guarantee"><p className="reality-kicker">{t.offer.guaranteeTag}</p><h3>{t.offer.guaranteeTitle}</h3><p>{t.offer.guaranteeBody}</p></article>
         </div>
         <p className="fa-offer-note">{t.offer.note}</p>
       </div></section>

@@ -48,7 +48,7 @@
     "date": "2026-09-15"
   },
   "/real-roas/": {
-    "hash": "df2a75cb1aba1a65",
+    "hash": "58da4ed3afe7e46b",
     "date": "2026-09-15"
   },
   "/changelog/": {
@@ -316,7 +316,7 @@
     "date": "2026-09-15"
   },
   "/es/roas-real/": {
-    "hash": "8efd8262afdd84f4",
+    "hash": "d5ee410391d292d3",
     "date": "2026-09-15"
   },
   "/es/for/": {
@@ -1300,11 +1300,11 @@
     "date": "2026-09-15"
   },
   "/es/cuenta-gratis/": {
-    "hash": "e7f760ca47101801",
+    "hash": "dcbfd2a0afd458e9",
     "date": "2026-09-15"
   },
   "/free-account/": {
-    "hash": "af21a93b2dd4ab12",
+    "hash": "c836977234884dcb",
     "date": "2026-09-15"
   }
 }

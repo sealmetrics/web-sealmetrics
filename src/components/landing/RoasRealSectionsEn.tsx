@@ -423,7 +423,7 @@ const TRADE_YES = [
   "Channel, campaign, medium, keyword, content and referrer across that same data.",
   "The complete aggregate funnel: visit → product viewed → cart → checkout → purchase.",
   "Product-level data: size, colour, brand, category, price range, SKU.",
-  "All in real time, to the second, Black Friday peak included.",
+  "All on fresh data: hits usually reach your reports in under two minutes, with no sampling.",
 ];
 
 export function Tradeoff() {
@@ -549,8 +549,8 @@ const SPECS = [
     h: "Speed",
     items: [
       { v: "1.1 KB", l: "A single TCP packet. No dependencies, no tag manager required." },
-      { v: "Real time", l: "Not in one report: across the whole platform. You know to the second when the last hit was processed." },
-      { v: "Black Friday too", l: "No sampling and no throttling at peak, and the SLA guarantees the day is complete before 6 AM. You optimise at 10:01 in the morning, not the next day." },
+      { v: "Fresh data", l: "Not in one report: across the whole platform. Hits usually reach your reports in under two minutes." },
+      { v: "Black Friday too", l: "No sampling, and the SLA guarantees the day is complete before 6 AM. You adjust during the campaign, not the week after." },
     ],
   },
   {
