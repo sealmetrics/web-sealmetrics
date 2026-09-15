@@ -2673,9 +2673,9 @@ function ChapterSevenBody() {
     {
       label: "Annual cost",
       us: "From €5,988 (Growth) to custom (Enterprise)",
-      ga360: "Six-figure annual",
-      adobe: "Six-figure annual",
-      piwik: "Business from €35/mo · Enterprise quote-only",
+      ga360: "Quote-based · ~$50K entry, $100–175K mid-market",
+      adobe: "Unpublished · ~$50K to $200K+, plus implementation",
+      piwik: "Business from €36/mo · Enterprise from €366/mo, billed annually",
     },
     {
       label: "Data captured",
@@ -2916,9 +2916,11 @@ function ChapterSevenBody() {
         .
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        The comparison below uses publicly observable defaults. Specific
-        annual contracts vary by negotiated volume; the cost bands are
-        widely reported.
+        The comparison below uses publicly observable defaults. Piwik PRO
+        publishes its starting prices; the figures are from its pricing
+        page on 14 September 2026. GA360 and Adobe do not publish theirs,
+        so those cells are the commonly reported bands as of August 2026 —
+        a real contract moves with negotiated volume.
       </p>
 
       <div className="my-10 rounded-[14px] border border-warm-100 bg-white overflow-hidden overflow-x-auto">
