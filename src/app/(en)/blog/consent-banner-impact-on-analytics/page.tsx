@@ -154,7 +154,7 @@ export default function ConsentBannerImpactPage() {
             many eCommerce businesses want to understand.
           </p>
 
-          <CommercialModule hook="Your banner's rejection rate is measurable — see what the 40–60% you're losing looks like on your own traffic." />
+          <CommercialModule hook="Consent loss runs 15–60% depending on sector and traffic mix — see where your own traffic sits." />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
             The impact on attribution and revenue

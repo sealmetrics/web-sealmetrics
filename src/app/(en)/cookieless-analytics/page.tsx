@@ -49,7 +49,7 @@ const faqs = [
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
-    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: 40–60% of visitors reject consent, ~40% use ad blockers that strip the script, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
+    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: consent rejection removes 15–60% of visitors depending on sector, brand strength and traffic mix, ~40% use ad blockers that strip the script, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
   },
   {
     q: "Can I run it alongside Google Analytics 4?",
@@ -192,13 +192,13 @@ export default function CookielessAnalyticsPillar() {
           <div className="mt-10 space-y-8">
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                1. Consent rejection — 40 to 60% of EU visitors
+                1. Consent rejection — 15 to 60% of EU visitors
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Since the 2019 CNIL and ICO guidance hardened, a consent
                 banner is required before any non-essential cookie is set.
-                Real-world rejection rates sit between 40% (B2B) and 60%
-                (B2C consumer) across European markets. Those visitors are
+                What that costs a consent-based tool ranges from 15% to 60%
+                of EU visitors, depending on sector, brand strength and traffic mix. Those visitors are
                 still on your site, still buying, still leaving — but
                 invisible to your analytics.
               </p>

@@ -380,7 +380,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
 
         <CommercialModule
           locale="es"
-          hook="¿Cuánto dato recuperarías midiendo sin banner? Entre el 40% y el 60% de tus visitantes rechaza el consentimiento — ve en una demo tus informes sin esa pérdida por consentimiento."
+          hook="¿Cuánto dato recuperarías midiendo sin banner? Una herramienta con banner pierde entre el 15% y el 60% de las visitas, según el sector y el mix de tráfico — ve en una demo tus informes sin esa pérdida por consentimiento."
         />
 
         <div className="mt-16 pt-10 border-t border-warm-100">

@@ -101,7 +101,7 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
 
 ## Core pages
 - / — Homepage: consentless analytics for eCommerce. Measure your traffic without consent loss, with no cookies and no models, EU-hosted in Dublin
-- /why-sealmetrics — The case in one page: consent banners hide 40–60% of EU visits, tracking prevention erases conversions, and ROAS gets defended on what survived
+- /why-sealmetrics — The case in one page: consent banners hide 15–60% of EU visits depending on sector, brand strength and traffic mix, tracking prevention erases conversions, and ROAS gets defended on what survived
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
@@ -161,7 +161,7 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
 
 ## Alternatives (editorial comparisons)
 - /alternatives/google-analytics — Google Analytics alternative for European enterprises: consent-independent capture, EU residency, decision-grade attribution
-- /alternatives/adobe-analytics — 5 Adobe Analytics alternatives compared (GA360, Piwik PRO, Matomo, GA4, Sealmetrics) on entry cost, consent dependency and EU-only hosting. Key finding: GA360 and GA4 stay cookie- and consent-based, so the 40-60% EU consent gap follows you; Piwik PRO and Matomo can run without cookies, but those modes give up channel attribution or campaign parameters
+- /alternatives/adobe-analytics — 5 Adobe Analytics alternatives compared (GA360, Piwik PRO, Matomo, GA4, Sealmetrics) on entry cost, consent dependency and EU-only hosting. Key finding: GA360 and GA4 stay cookie- and consent-based, so the EU consent gap (15–60% of visitors, depending on sector, brand strength and traffic mix) follows you; Piwik PRO and Matomo can run without cookies, but those modes give up channel attribution or campaign parameters
 
 ## Disambiguation (not competitors)
 - /searchmetrics-vs-sealmetrics — Sealmetrics is NOT Searchmetrics. Searchmetrics was a Berlin SEO/search-visibility platform acquired by Conductor in February 2023; searchmetrics.com now 301-redirects to conductor.com. Different company, different category — this page is a name disambiguation, not a vendor comparison.
@@ -231,7 +231,7 @@ Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/data-breach-france-travail-fined-5-million — Learn why France Travail was fined €5 million for a data breach and how technical security, access controls, and cookieless analytics mitigate GDPR risks.
 - /blog/best-web-analytics-tool — The Best Web Analytics Tool: 12 Requirements That Decide It. A vendor-neutral buyer's specification rather than a product ranking — ultralightweight pixel (<5 KB gzip), consent-independent data with no sampling, real time across every dashboard rather than one live tile, arbitrary dimension × metric analysis, flexible instrumentation, a robust API, an MCP server for AI agents, auditable and in-jurisdiction AI, a declared attribution model, visible bot filtering, compliance by architecture, and data ownership. Each requirement states the failure it prevents and a test to run during a vendor demo. Closes with a self-scored Sealmetrics scorecard (23/24, the lost point being no ISO 27001 or SOC 2 certification) and an explicit list of what Sealmetrics does not do: no user-level analysis, no cohorts, no session replay, no multi-touch attribution
 - /blog/is-matomo-gdpr-compliant — Is Matomo GDPR Compliant? Yes, under six cumulative CNIL conditions — and unusually, banner-free WITH first-party cookies still enabled, not by disabling them: audience measurement only, no cross-referencing, no third-party transmission, IP anonymised, cookie lifetime max 13 months, retention max 25 months. Matomo ships a CNIL configuration mode. Two limits usually omitted: (1) the exemption is French — Germany's §25 TDDDG recognises no analytics carve-out, so the same configuration still needs a banner there; (2) the exempt configuration costs measurement — Matomo falls back to config_id, a hash deliberately built not to recognise returning visitors (~30 min window, 24h max), so returning-visitor counts, visit frequency, multi-session campaign attribution and cohorts degrade while pageviews, events, downloads, outlinks and site search survive intact. CNIL retired its published exempt-solutions list on 1 Jan 2026; criteria unchanged, suppliers now self-assess. The Digital Omnibus (COM(2025) 837) would generalise the exemption EU-wide if adopted, realistically 2027-2028
-- /blog/is-adobe-analytics-gdpr-compliant — Is Adobe Analytics GDPR Compliant? Yes, if configured: prior consent, DPA, transfer assessment, deliberate retention settings. The cost is statistical, not legal — a compliant Adobe deployment only measures the 40-60% who accept the banner. Note: Adobe's collection endpoints (dpm.demdex.net) measured as EU-hosted on AWS Dublin, so the common "US company therefore illegal" claim is wrong; Schrems II turns on legal access regimes, not server location
+- /blog/is-adobe-analytics-gdpr-compliant — Is Adobe Analytics GDPR Compliant? Yes, if configured: prior consent, DPA, transfer assessment, deliberate retention settings. The cost is statistical, not legal — a compliant Adobe deployment only measures the visitors who accept the banner, and consent-based tools lose 15–60% of EU visitors depending on sector, brand strength and traffic mix. Note: Adobe's collection endpoints (dpm.demdex.net) measured as EU-hosted on AWS Dublin, so the common "US company therefore illegal" claim is wrong; Schrems II turns on legal access regimes, not server location
 - /blog/gdpr-analytics-spain-faq — GDPR Analytics in Spain: 7 Questions Online Stores Ask (AEPD guidance, GA4 legality, LSSI fines, banner data loss)
 - /blog/gdpr-eprivacy-analytics-legal-assessment — Is Your Analytics Actually GDPR-Compliant? A Legal Assessment (ePrivacy vs GDPR two-part test, per-tool verdicts: GA4, Matomo, Plausible, Piwik PRO, Sealmetrics)
 - /blog/self-service-analytics-lens-ai — What It Takes to Make Self-Service Analytics Actually Work (complete data + semantic MCP + LENS AI)
@@ -317,7 +317,7 @@ Pillars (ES):
 
 Core pages (ES):
 - /es/ — Homepage (ES)
-- /es/why-sealmetrics — Por qué Sealmetrics: los banners ocultan 40–60% de las visitas UE y el ROAS se defiende sobre la fracción que sobrevivió
+- /es/why-sealmetrics — Por qué Sealmetrics: los banners ocultan entre el 15% y el 60% de las visitas UE, según el sector, la fuerza de la marca y el mix de tráfico, y el ROAS se defiende sobre la fracción que sobrevivió
 - /es/product — Plataforma completa
 - /es/how-it-works — Cómo funciona la analítica sin cookies
 - /es/pricing — Precios

@@ -163,7 +163,7 @@ function IndustryCardEs({ tag, name, line, proof, scene }: { tag: string; name: 
 export function ComparatorGA4Es() {
   const rows: { cap: string; ga: string; seal: string; icoGa: "no" | "partial"; icoSeal: "yes" }[] = [
     { cap: "Método de medición", ga: "Basado en cookies · requiere consentimiento", seal: "Sin cookies · sin pérdida por consentimiento", icoGa: "partial", icoSeal: "yes" },
-    { cap: "Banner de consentimiento", ga: "Obligatorio en UE · ~40–60% lo rechazan", seal: "No requerido · sin penalización de rebote", icoGa: "no", icoSeal: "yes" },
+    { cap: "Banner de consentimiento", ga: "Obligatorio en UE · pierde 15–60% de visitas, según sector", seal: "No requerido · sin penalización de rebote", icoGa: "no", icoSeal: "yes" },
     { cap: "Datos a escala", ga: "Muestreados y modelados sobre cierto umbral", seal: "Cero muestreo · cada evento observado", icoGa: "partial", icoSeal: "yes" },
     { cap: "Atribución", ga: "Sesgada hacia el ecosistema Google", seal: "Neutral · sin inventario publicitario", icoGa: "partial", icoSeal: "yes" },
     { cap: "Acceso AI / MCP", ga: "Sin integración LLM / MCP nativa", seal: "Consulta vía Claude o ChatGPT · MCP nativo", icoGa: "no", icoSeal: "yes" },

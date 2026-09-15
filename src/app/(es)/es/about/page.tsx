@@ -62,7 +62,7 @@ export default function Page() {
               Rafa Jiménez pasó dos décadas en eCommerce europeo — primero como marketer digital, luego fundando una agencia, luego asesorando grupos retail. Cada reunión seguía el mismo patrón: el número de GA4, el del pixel, el del CRM. Todos distintos. Todos defendidos. Ninguno fiable.
             </p>
             <p>
-              El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible el 40–60% del tráfico UE. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
+              El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible entre el 15% y el 60% del tráfico UE, según el sector, la marca y el mix de tráfico. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
             <p>
               Sealmetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.

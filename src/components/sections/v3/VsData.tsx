@@ -13,7 +13,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         hook: "GA360 is quote-based and scales with event volume — entry contracts around $50K/yr, mid-market typically $100–175K. Whatever you pay, the cookie and consent architecture is the same as free GA4.",
         eyebrow: "vs Google Analytics 360",
         h1: <>Enterprise data <em>without the six-figure invoice.</em></>,
-        lede: "GA360 costs tens to hundreds of thousands per year and still loses the same 40–60% of EU traffic that free GA4 loses — because the collection architecture is identical. Sealmetrics is complete data, EU-hosted, from €499/mo.",
+        lede: "GA360 costs tens to hundreds of thousands per year and still loses the same share of EU traffic to consent that free GA4 loses — 15–60%, depending on sector, brand strength and traffic mix — because the collection architecture is identical. Sealmetrics is complete data, EU-hosted, from €499/mo.",
         tldr: {
           answer: (
             <>
@@ -26,8 +26,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               properties. Underneath, the collection architecture is
               identical to free GA4: cookie-based, consent-required,
               US-hosted. In the EU, GA360 loses the same{" "}
-              <strong>40–60% of traffic</strong> to consent rejection
-              and ad blockers that free GA4 loses — premium price,
+              <strong>15–60% of traffic</strong> to consent rejection
+              (depending on sector, brand strength and traffic mix) that free GA4 loses, and ad blockers take more — premium price,
               premium incomplete data. Sealmetrics replaces the
               measurement layer for a published{" "}
               <strong>€10,788/year</strong> at Scale — a fraction of
@@ -52,7 +52,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         },
         gapStats: [
           { n: "$50–175K+", label: "Annual cost", detail: "Quote-based, scales with event volume. Billed annually upfront." },
-          { n: "40–60%", label: "Still cookie-dependent", detail: "Same consent rejection loss as free GA4." },
+          { n: "15–60%", label: "Still cookie-dependent", detail: "Same consent loss as free GA4, by sector and traffic mix." },
           { n: "US-hosted", label: "Schrems II exposure", detail: "EU data transfers to Google infrastructure." },
           { n: "12 months", label: "Minimum contract", detail: "Annual lock-in. Negotiation via Google sales." },
         ],
@@ -64,7 +64,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes", us: "No · cookieless by design" },
-            { feature: "Consent required", them: "Yes · 40–60% reject in EU", us: "No · not reduced by consent" },
+            { feature: "Consent required", them: "Yes · 15–60% lost in EU, by sector", us: "No · not reduced by consent" },
             { feature: "Sampling", them: "Above thresholds", us: "Zero sampling" },
           ]},
           { category: "Infrastructure", block: "technical", rows: [
@@ -98,7 +98,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
         ],
         faqs: [
-          { q: "Isn't GA360 more accurate than free GA4?", a: "Only on certain dimensions. GA360 removes sampling thresholds on BigQuery export and adds some advanced features, but uses the same cookie + consent architecture. Your 40–60% consent rejection loss is identical. Premium GA4 = premium incomplete data." },
+          { q: "Isn't GA360 more accurate than free GA4?", a: "Only on certain dimensions. GA360 removes sampling thresholds on BigQuery export and adds some advanced features, but uses the same cookie + consent architecture. Your consent loss — 15–60% of EU visitors, depending on sector, brand strength and traffic mix — is identical. Premium GA4 = premium incomplete data." },
           { q: "What about GA360's enterprise features?", a: "GA360 adds SLAs, dedicated support and custom data retention. Sealmetrics Enterprise includes the same — plus isolated processing, custom DPA and a dedicated account manager. At a fraction of the cost." },
           { q: "Can we migrate gradually from GA360?", a: "Yes. Run both in parallel. Most customers keep GA360 for Google Ads integration during the transition and move strategic reporting to Sealmetrics. Usually takes 60–90 days to fully decommission GA360." },
           { q: "Is there a way to compare costs directly?", a: "Yes, and it depends where your event volume lands, because GA360 is quote-based. A typical large eCommerce at 15M events/month sits at GA360's entry tier — around $50K/yr against Sealmetrics Scale at €10,788/yr, roughly 75–80% cheaper. Mid-market GA360 contracts commonly land between $100K and $175K, where the gap widens past 90%. Google does not publish a self-serve price, so get your own quote and compare it against our published tiers rather than against our estimate." },
@@ -112,7 +112,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         hook: "GA360 va por presupuesto y escala con el volumen de eventos — contratos de entrada sobre 50.000$/año, mid-market normalmente 100–175K$. Pagues lo que pagues, la arquitectura de cookies y consentimiento es la de GA4 gratis.",
         eyebrow: "vs Google Analytics 360",
         h1: <>Datos enterprise <em>sin la factura de seis cifras.</em></>,
-        lede: "GA360 cuesta entre decenas y cientos de miles al año y sigue perdiendo el mismo 40–60% del tráfico UE que GA4 gratis — porque la capa de recolección es idéntica. Sealmetrics es dato completo, alojado en UE, desde €499/mes.",
+        lede: "GA360 cuesta entre decenas y cientos de miles al año y sigue perdiendo por consentimiento la misma parte del tráfico UE que GA4 gratis — entre el 15% y el 60%, según el sector, la fuerza de la marca y el mix de tráfico — porque la capa de recolección es idéntica. Sealmetrics es dato completo, alojado en UE, desde €499/mes.",
         tldr: {
           answer: (
             <>
@@ -126,8 +126,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               recolección es idéntica a la de GA4 gratuito:
               basada en cookies, requiere consentimiento, alojada en
               EE.UU. En la UE, GA360 pierde el mismo{" "}
-              <strong>40–60% de tráfico</strong> que GA4 gratis por
-              rechazo de consentimiento y ad-blockers — precio premium,
+              <strong>15–60% de tráfico</strong> que GA4 gratis por
+              rechazo de consentimiento (según el sector, la fuerza de la marca y el mix de tráfico), y los ad-blockers restan más — precio premium,
               datos premium incompletos. Sealmetrics reemplaza la capa
               de medición por <strong>10.788€/año</strong> publicados
               en Scale — una fracción de cualquier contrato GA360 —,
@@ -152,7 +152,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         },
         gapStats: [
           { n: "50–175K$+", label: "Coste anual", detail: "Por presupuesto, escala con el volumen de eventos. Pagado anualmente por adelantado." },
-          { n: "40–60%", label: "Sigue con cookies", detail: "Misma pérdida por rechazo de consentimiento que GA4." },
+          { n: "15–60%", label: "Sigue con cookies", detail: "Misma pérdida por consentimiento que GA4, según sector y mix de tráfico." },
           { n: "US-hosted", label: "Exposición Schrems II", detail: "Transferencias UE a infra Google." },
           { n: "12 meses", label: "Contrato mínimo", detail: "Lock-in anual. Negociación vía Google sales." },
         ],
@@ -164,7 +164,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí", us: "No · sin cookies por diseño" },
-            { feature: "Consentimiento", them: "Sí · 40–60% rechaza en UE", us: "No · sin pérdida por consentimiento" },
+            { feature: "Consentimiento", them: "Sí · 15–60% perdido en UE, según sector", us: "No · sin pérdida por consentimiento" },
             { feature: "Muestreo", them: "Sobre umbrales", us: "Cero muestreo" },
           ]},
           { category: "Infraestructura", block: "technical", rows: [
@@ -198,7 +198,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
         ],
         faqs: [
-          { q: "¿No es GA360 más preciso que GA4?", a: "Solo en ciertas dimensiones. GA360 quita umbrales de muestreo en export BigQuery y añade features avanzadas, pero usa la misma arquitectura cookies + consentimiento. Tu 40–60% de pérdida por consentimiento es idéntico. GA4 premium = datos premium incompletos." },
+          { q: "¿No es GA360 más preciso que GA4?", a: "Solo en ciertas dimensiones. GA360 quita umbrales de muestreo en export BigQuery y añade features avanzadas, pero usa la misma arquitectura cookies + consentimiento. Tu pérdida por consentimiento — entre el 15% y el 60% de las visitas UE, según el sector, la fuerza de la marca y el mix de tráfico — es idéntica. GA4 premium = datos premium incompletos." },
           { q: "¿Y las features enterprise de GA360?", a: "GA360 añade SLAs, soporte dedicado y retención custom. Sealmetrics Enterprise incluye lo mismo — más procesamiento aislado, DPA custom y account manager dedicado. A una fracción del coste." },
           { q: "¿Podemos migrar gradualmente desde GA360?", a: "Sí. Corre ambos en paralelo. La mayoría de clientes mantienen GA360 para integración Google Ads durante la transición y mueven el reporting estratégico a Sealmetrics. Suele tardar 60–90 días retirar GA360 del todo." },
           { q: "¿Hay forma de comparar costes directamente?", a: "Sí, y depende de dónde caiga tu volumen de eventos, porque GA360 va por presupuesto. Un eCommerce grande típico con 15M eventos/mes está en el tier de entrada de GA360 — unos 50K$/año frente a los 10.788€/año de Sealmetrics Scale, un 75–80% más barato. Los contratos GA360 mid-market suelen quedar entre 100K$ y 175K$, donde la diferencia pasa del 90%. Google no publica precio self-serve, así que pide tu presupuesto y compáralo con nuestros tiers publicados en vez de con nuestra estimación." },
@@ -253,7 +253,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "$50–200K+", label: "Annual cost", detail: "Unpublished, by tier and volume. Plus $20–100K implementation consulting." },
           { n: "3–6 months", label: "Implementation", detail: "Typical time to first value." },
           { n: "+25%", label: "Measured traffic gap", detail: "30-day parallel run on a European media site. Losses beyond consent: blockers + a ~3 s hit window." },
-          { n: "40–60%", label: "Still consent-gated", detail: "Cookie-dependent capture. Same EU gap as GA." },
+          { n: "15–60%", label: "Still consent-gated", detail: "Cookie-dependent capture. Same EU consent gap as GA, by sector." },
         ],
         comparison: [
           { category: "Pricing & time to value", block: "commercial", rows: [
@@ -355,7 +355,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { n: "50–200K$+", label: "Coste anual", detail: "No publicado, por tier y volumen. Más 20–100K$ de consultoría de implementación." },
           { n: "3–6 meses", label: "Implementación", detail: "Tiempo típico al primer valor." },
           { n: "+25%", label: "Gap de tráfico medido", detail: "30 días en paralelo en un medio europeo. Pérdidas más allá del consentimiento: blockers + ventana de hit de ~3 s." },
-          { n: "40–60%", label: "Sigue con consentimiento", detail: "Captura dependiente de cookies. Mismo gap UE que GA." },
+          { n: "15–60%", label: "Sigue con consentimiento", detail: "Captura dependiente de cookies. Mismo gap UE por consentimiento que GA, según sector." },
         ],
         comparison: [
           { category: "Precio y tiempo al valor", block: "commercial", rows: [
@@ -852,7 +852,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       en: {
         competitor: "Google Analytics",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
-        hook: "Google Analytics remains the default, but the default is losing 40–60% of EU traffic. The honest alternative isn't 'another free tool' — it's complete data at enterprise reliability.",
+        hook: "Google Analytics remains the default, but the default is losing 15–60% of EU traffic to consent, depending on sector and traffic mix. The honest alternative isn't 'another free tool' — it's complete data at enterprise reliability.",
         eyebrow: "Google Analytics alternatives",
         h1: <>Looking for a <em>GA alternative</em> that doesn't commoditize your data?</>,
         lede: "Most alternatives are cheaper or simpler GA clones. Sealmetrics is a different category: complete data, EU-hosted, zero consent scope, enterprise reliability. The serious replacement for teams past the hobbyist tier.",
@@ -865,8 +865,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               Piwik PRO is EU-hosted; GA360 is the premium version of
               the original. They share the same trade-off: cookie or
               cookie-light tracking that still loses{" "}
-              <strong>40–60% of EU traffic</strong> to consent rejection
-              and ad blockers. The serious alternative for an eCommerce
+              <strong>15–60% of EU traffic</strong> to consent rejection
+              (depending on sector, brand strength and traffic mix), with ad blockers taking more. The serious alternative for an eCommerce
               over €10M revenue is a different category — consent-independent
               capture, EU-hosted, zero consent scope, last-click
               attribution on data without consent gaps.
@@ -888,7 +888,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Read the full Palladium case study",
         },
         gapStats: [
-          { n: "40–60%", label: "EU traffic lost", detail: "GA + consent banner combo." },
+          { n: "15–60%", label: "EU traffic lost", detail: "GA + consent banner, by sector, brand and traffic mix." },
           { n: "US-hosted", label: "Schrems II exposure", detail: "Ongoing CNIL/DPA challenges." },
           { n: "Sampling", label: "Above threshold", detail: "Black Friday = estimates, not measurements." },
           { n: "14 mo", label: "Max data retention", detail: "Free GA4 caps at 14 months. 50 months is a GA360 feature." },
@@ -941,7 +941,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
       es: {
         competitor: "Google Analytics",
         techReportHref: "https://docs.sealmetrics.com/guides/tracker-performance-report",
-        hook: "Google Analytics sigue siendo el default, pero el default está perdiendo 40–60% del tráfico UE. La alternativa honesta no es 'otra herramienta gratis' — es dato completo con fiabilidad enterprise.",
+        hook: "Google Analytics sigue siendo el default, pero el default está perdiendo entre el 15% y el 60% del tráfico UE por consentimiento, según el sector y el mix de tráfico. La alternativa honesta no es 'otra herramienta gratis' — es dato completo con fiabilidad enterprise.",
         eyebrow: "Alternativas a Google Analytics",
         h1: <>¿Buscando una <em>alternativa a GA</em> que no commoditice tus datos?</>,
         lede: "La mayoría de alternativas son clones más baratos o simples de GA. Sealmetrics es otra categoría: dato completo, alojado en UE, cero scope de consentimiento, fiabilidad enterprise. El reemplazo serio para equipos que pasan el tier hobbyist.",
@@ -954,8 +954,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
               es open-source; Piwik PRO está alojado en UE; GA360 es la
               versión premium del original. Comparten el mismo
               trade-off: tracking con cookies o cookie-light que sigue
-              perdiendo <strong>40–60% del tráfico UE</strong> por
-              rechazo de consentimiento y ad-blockers. La alternativa
+              perdiendo <strong>15–60% del tráfico UE</strong> por
+              rechazo de consentimiento (según el sector, la fuerza de la marca y el mix de tráfico), y los ad-blockers restan más. La alternativa
               seria para un eCommerce con más de 10M€ de ingresos es
               otra categoría — captura sin pérdida por consentimiento, alojada en UE, cero
               scope de consentimiento, atribución last-click sobre
@@ -978,7 +978,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           linkLabel: "Leer el case study completo de Palladium",
         },
         gapStats: [
-          { n: "40–60%", label: "Tráfico UE perdido", detail: "Combo GA + banner de consentimiento." },
+          { n: "15–60%", label: "Tráfico UE perdido", detail: "GA + banner de consentimiento, según sector, marca y mix de tráfico." },
           { n: "US-hosted", label: "Exposición Schrems II", detail: "Challenges CNIL/DPA en curso." },
           { n: "Muestreo", label: "Sobre umbral", detail: "Black Friday = estimaciones, no mediciones." },
           { n: "14 meses", label: "Retención máxima", detail: "GA4 gratuito topa en 14 meses. Los 50 meses son una feature de GA360." },

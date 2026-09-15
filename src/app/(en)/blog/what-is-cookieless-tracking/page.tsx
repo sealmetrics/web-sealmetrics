@@ -382,7 +382,7 @@ export default function WhatIsCookielessTrackingPage() {
         </div>
 
         <CommercialModule
-          hook="The practical question is not the definition — it is how many conversions the cookie path costs you. 40–60% of visitors never consent. Measure your gap."
+          hook="The practical question is not the definition — it is how many conversions the cookie path costs you. On one Shopify store, GA4 did not record 29% of visits. Measure your gap."
         />
 
         {/* Related */}

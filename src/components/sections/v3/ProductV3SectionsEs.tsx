@@ -43,7 +43,7 @@ export function ProblemNarrativeV3Es() {
     {
       title: "El cubo \u201Cdirect / none\u201D",
       scenario:
-        "Abres GA4. Filtras por canal. Entre el 40 y el 60% de tus conversiones cae en \u201Cdirect\u201D o \u201C(none)\u201D. Sabes que no son visitas directas. Lo que no sabes es a qué canal pertenecían.",
+        "Abres GA4. Filtras por canal. Un bloque de conversiones cae en \u201Cdirect\u201D o \u201C(none)\u201D \u2014 en Palladium Hotel Group, el 35% de las reservas de GA4 no ten\u00EDa canal. Sabes que no son visitas directas. Lo que no sabes es a qué canal pertenecían.",
       reframe:
         "Ese cubo es la silueta de visitantes que rechazaron el consentimiento o llegaron con bloqueador. Las campañas que de verdad los trajeron son invisibles en tu atribución — y en tu decisión de presupuesto.",
     },

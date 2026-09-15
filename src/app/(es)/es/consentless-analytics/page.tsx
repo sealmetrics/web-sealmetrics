@@ -469,7 +469,7 @@ export default function ConsentlessAnalyticsPillarEs() {
               className="group block border border-warm-100 rounded-xl p-7 bg-white no-underline transition-all hover:border-warm-200 hover:-translate-y-0.5"
             >
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Pérdida de medición</span>
-              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Cómo los banners destruyen el 40–60% de tus datos</h3>
+              <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Lo que los banners de consentimiento le cuestan a tu dato</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
                 Tasas de rechazo por industria y el coste de las decisiones sobre la muestra superviviente.
               </p>

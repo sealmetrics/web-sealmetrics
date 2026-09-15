@@ -223,7 +223,7 @@ export const blogPosts: BlogPost[] = [
     slug: "is-adobe-analytics-gdpr-compliant",
     title: "Is Adobe Analytics GDPR Compliant?",
     description:
-      "Adobe Analytics can be deployed compliantly under GDPR — consent, a DPA, a transfer assessment and deliberate configuration. What that costs you is not legal, it is 40–60% of your EU visitors.",
+      "Adobe Analytics can be deployed compliantly under GDPR — consent, a DPA, a transfer assessment and deliberate configuration. What that costs you is not legal, it is the 15–60% of EU visitors consent-based tools lose, depending on sector and traffic mix.",
     date: "2026-07-28",
     dateModified: "2026-07-28",
     category: "Regulation",

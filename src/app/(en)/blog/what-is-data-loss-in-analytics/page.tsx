@@ -207,7 +207,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </p>
 
           <CommercialModule
-            hook="Four causes, one compounding gap — consent rejection alone removes 40–60% of visitors. Quantify the loss on your own site, live."
+            hook="Four causes, one compounding gap — consent rejection alone removes 15–60% of visitors, depending on sector and traffic mix. Quantify the loss on your own site, live."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -180,7 +180,7 @@ export default function OmnibusShortPage() {
           <p>
             The combined effect of equal-prominence reject buttons and the
             six-month re-ask prohibition will likely push consent rejection
-            rates higher than the 40–60% of EU visits they already reach.
+            losses beyond the 15–60% of EU visits they already cost, depending on sector, brand strength and traffic mix.
             For cookie-dependent analytics, this means even more{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"
@@ -348,7 +348,7 @@ export default function OmnibusShortPage() {
         </div>
 
         <CommercialModule
-          hook="Whatever the Omnibus lands on, 40–60% of visitors already reject banners today. Measure what that hides on your own site now."
+          hook="Whatever the Omnibus lands on, consent banners already cost 15–60% of visitors today, depending on sector and traffic mix. Measure what that hides on your own site now."
         />
 
         {/* Related */}

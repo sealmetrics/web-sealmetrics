@@ -41,7 +41,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Consent Management Platform (CMP)",
     shortDefinition:
-      "Software that displays cookie consent banners and manages user preferences. Required under GDPR for websites using cookies or collecting personal data. EU rejection rates vary widely by market — roughly 40-60% on average, and higher in Germany.",
+      "Software that displays cookie consent banners and manages user preferences. Required under GDPR for websites using cookies or collecting personal data. What consent costs analytics varies widely: consent-based tools lose 15–60% of EU visitors, depending on sector, brand strength and traffic mix.",
     category: "Privacy",
     related: ["gdpr-analytics-compliance", "cookieless-analytics", "data-loss-in-analytics", "analytics-data-residency"],
   },

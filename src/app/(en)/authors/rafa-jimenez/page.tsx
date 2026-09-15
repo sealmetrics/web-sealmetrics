@@ -105,7 +105,7 @@ export default function Page() {
               Rafa&apos;s first roles were in digital marketing for European DTC brands, running paid acquisition across Google, Meta and affiliates. Every month, the meetings followed the same pattern: the GA4 number, the pixel number, the CRM number — three sets of figures, all different, all defended, none reconciled.
             </p>
             <p>
-              After founding an agency and advising retail groups, the pattern became impossible to ignore. The problem wasn&apos;t the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection made 40–60% of EU traffic invisible. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              After founding an agency and advising retail groups, the pattern became impossible to ignore. The problem wasn&apos;t the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection hid between 15% and 60% of EU traffic, depending on sector, brand and traffic mix. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
               Sealmetrics was built to replace reconciliation with a single neutral layer — first-party, cookieless, EU-hosted. Compliance-by-architecture, not by a banner layer bolted on afterwards.

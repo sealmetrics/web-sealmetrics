@@ -43,7 +43,7 @@ const platforms = [
     strengths:
       "Deep Google Ads integration, massive community, free tier with enterprise-adjacent features. Familiar interface for teams already in the Google ecosystem.",
     limitations:
-      "Cookie-dependent with 40-60% consent rejection in the EU. Data sampling in Explorations above 10M events. US data processing raises GDPR questions. Limited support on free tier.",
+      "Cookie-dependent, losing 15–60% of EU visitors to consent depending on sector, brand strength and traffic mix. Data sampling in Explorations above 10M events. US data processing raises GDPR questions. Limited support on free tier.",
     bestFor: "Small to mid-sized teams already invested in Google Ads who operate primarily outside the EU.",
   },
   {
@@ -54,7 +54,7 @@ const platforms = [
     strengths:
       "Unsampled reports (quota-limited), native BigQuery export, dedicated account manager, guaranteed SLAs. The tightest Google Ads attribution pipeline available.",
     limitations:
-      "Still cookie-dependent — consent rejection means 40-60% data loss in EU markets persists regardless of tier. US data processing. Six-figure annual commitment for what remains incomplete data in Europe.",
+      "Still cookie-dependent — consent rejection costs 15–60% of EU visitors regardless of tier, depending on sector, brand strength and traffic mix. US data processing. Six-figure annual commitment for what remains incomplete data in Europe.",
     bestFor: "Large organizations with six-figure analytics budgets deeply embedded in the Google Marketing Platform.",
   },
   {
@@ -87,7 +87,7 @@ const platforms = [
     strengths:
       "EU-native platform built in Poland. Full data ownership with EU-only hosting. Bundled tag manager and consent manager. No data sampling. Strong in regulated sectors — government, finance, healthcare.",
     limitations:
-      "Still cookie-dependent, so 40-60% of EU traffic remains invisible despite the privacy-first positioning. Limited AI-powered features. Enterprise pricing is mid-range but significant.",
+      "Still cookie-dependent, so the 15–60% of EU visitors lost to consent stays invisible despite the privacy-first positioning. Limited AI-powered features. Enterprise pricing is mid-range but significant.",
     bestFor: "Regulated EU organizations where data sovereignty is the primary requirement and cookie-based collection is acceptable.",
   },
   {
@@ -193,7 +193,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               <li>
                 Enterprise analytics in 2026 splits into two categories:
                 cookie-dependent platforms (GA4, GA360, Adobe, Piwik PRO,
-                Amplitude, Mixpanel) that lose 40-60% of EU traffic, and
+                Amplitude, Mixpanel) that lose 15–60% of EU traffic depending on sector, brand strength and traffic mix, and
                 cookieless platforms (Sealmetrics) that do not lose traffic to consent
                 rejection.
               </li>
@@ -259,7 +259,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               <strong className="font-semibold text-text-primary">
                 Data completeness.
               </strong>{" "}
-              When 40-60% of EU visitors reject cookies, every downstream metric
+              When consent rejection removes 15–60% of EU visitors, depending on sector, brand strength and traffic mix, every downstream metric
               is affected — attribution models, conversion rates, revenue
               reporting, audience segmentation. Enterprise decisions require data
               you can trust, not estimates extrapolated from a fraction of
@@ -362,7 +362,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               >
                 consent
               </Link>
-              . In the EU, where 40-60% of visitors reject cookies, GA4 can
+              . In the EU, where consent rejection costs 15–60% of visitors depending on sector, brand strength and traffic mix, GA4 can
               fall to{" "}
               <Link
                 href="/blog/why-ga4-shows-13pct-eu-traffic"
@@ -421,7 +421,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
 
             <p>
               The fundamental limitation remains: GA360 is cookie-dependent. In
-              European markets, this means 40-60% data loss persists regardless
+              European markets, this means a 15–60% consent loss, by sector and traffic mix, persists regardless
               of how much you spend. At six figures per year, that is a substantial
               investment for incomplete data.
             </p>
@@ -469,7 +469,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               months with specialized consultants. The learning curve requires
               dedicated Adobe analysts. Pricing is unpublished and starts around $50,000 per year
               and scales with server calls. And like every cookie-dependent
-              platform, Adobe Analytics faces the same 40-60% EU data gap.
+              platform, Adobe Analytics faces the same 15–60% EU consent gap.
             </p>
 
             <p>
@@ -581,7 +581,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
             <p>
               The limitation is that Piwik PRO still depends on cookies. Despite
               the privacy-first positioning, the platform requires consent for
-              tracking. In EU markets, this means 40-60% of traffic remains
+              tracking. In EU markets, this means 15–60% of traffic, depending on sector and traffic mix, remains
               invisible. AI-powered features are limited compared to newer
               platforms. Enterprise pricing starts around {"\u20ac"}30,000 per
               year.
@@ -727,7 +727,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 How much of your traffic is in the EU?
               </strong>{" "}
               If the majority of your visitors are European, cookie-dependent
-              platforms will structurally undercount your traffic by 40-60%.
+              platforms will structurally undercount your traffic — by 15–60%, depending on sector, brand strength and traffic mix.
               This is not a configuration problem — it is an architectural
               limitation. Only cookieless platforms avoid this gap entirely.
             </p>
