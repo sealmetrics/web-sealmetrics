@@ -331,7 +331,7 @@ export function SignalHome() {
           <p>Run Sealmetrics beside GA4 for 14 days. Define the eligible events and attribution model, then compare both against the sales your store recorded. Keep the setup that produces the more useful, supportable result.</p>
           <ul>
             <li>One first-party signal · implementation depends on event scope</li>
-            <li>Founder-led onboarding on Scale</li>
+            <li>One onboarding session on Scale</li>
             <li>EU-hosted in Dublin</li>
           </ul>
         </div>

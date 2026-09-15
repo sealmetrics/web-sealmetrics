@@ -345,7 +345,7 @@ export function PricingV3Es() {
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {[
             { name: "Growth", price: fmtPrice(PRICING.growth.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.growth.eventsMillions}M eventos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Dashboard de comparación GA4", "Soporte email"], cta: "Empezar con Growth", featured: false },
-            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.scale.eventsMillions}M eventos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding liderado por el founder"], cta: "Empezar con Scale", featured: true },
+            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.scale.eventsMillions}M eventos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "1 sesión de onboarding"], cta: "Empezar con Scale", featured: true },
             { name: "Enterprise", price: "A medida", per: "", billing: "Anual o términos personalizados", feat: ["Eventos ilimitados", "Dominios ilimitados", "Todo lo de Scale", "SSO, audit logs, SLA", "Customer engineer dedicado"], cta: "Hablemos", featured: false },
           ].map((p) => (
             <article key={p.name} className={`rounded-xl p-8 flex flex-col bg-white ${p.featured ? "border-2 border-brand" : "border border-warm-100"}`}>
@@ -416,7 +416,7 @@ export function FinalCtaV3Es() {
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            Hecho por un founder · soportado por un founder · alojado en UE por diseño
+            Hecho por un founder · alojado en UE por diseño
           </p>
         </div>
       </div>
