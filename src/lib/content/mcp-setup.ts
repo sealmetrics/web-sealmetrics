@@ -50,7 +50,7 @@ url = "${MCP_ENDPOINT}"`,
   },
   {
     name: "Confirm the connection",
-    text: 'Ask your assistant to list your Sealmetrics sites. If it answers with your sites, the 47 read-only tools are available and you are done.',
+    text: 'Ask your assistant to list your Sealmetrics sites. If it answers with your sites, the read-only analytics tools are available and you are done.',
   },
   {
     name: "Ask a revenue question, not a metrics question",
@@ -93,7 +93,7 @@ url = "${MCP_ENDPOINT}"`,
   },
   {
     name: "Comprueba la conexión",
-    text: "Pide a tu asistente que liste tus sites de Sealmetrics. Si responde con tus sites, las 47 herramientas de solo lectura están disponibles y ya está.",
+    text: "Pide a tu asistente que liste tus sites de Sealmetrics. Si responde con tus sites, las herramientas de analítica de solo lectura están disponibles y ya está.",
   },
   {
     name: "Pregunta por ingresos, no por métricas",

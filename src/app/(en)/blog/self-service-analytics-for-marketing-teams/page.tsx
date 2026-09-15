@@ -13,11 +13,11 @@ const URL = "/blog/self-service-analytics-for-marketing-teams";
 
 export const metadata: Metadata = {
   title: "Self-Service Analytics for Marketing Teams",
-  description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 47 named tools instead of SQL, and BYOK or private AI.",
+  description: "A marketing team gets a correct answer without opening a ticket. Complete cookieless data, 40+ named tools instead of SQL, and BYOK or private AI.",
   openGraph: {
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
     description:
-      "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+      "Three moves: measure traffic without depending on consent, expose it to an AI agent as more than 40 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     type: "article",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
     url: "https://sealmetrics.com/blog/self-service-analytics-for-marketing-teams/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
-    description: "Three moves: measure traffic without depending on consent, expose it to an AI agent as 47 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
+    description: "Three moves: measure traffic without depending on consent, expose it to an AI agent as more than 40 named read-only tools, and let the customer choose BYOK or an isolated private instance.",
     images: [ogImage("/blog/self-service-analytics-for-marketing-teams/")],
   },
   alternates: {
@@ -50,7 +50,7 @@ const preconditions = [
   {
     aspect: "Agent access method",
     them: "Raw SQL over the warehouse",
-    us: "47 named, read-only tools",
+    us: "40+ named, read-only tools",
   },
   {
     aspect: "Bot and AI-agent traffic",
@@ -122,7 +122,7 @@ const FAQ = [
   {
     question: "Can ChatGPT or Claude read my analytics data?",
     answer:
-      "Yes, through an MCP server. Sealmetrics exposes 47 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
+      "Yes, through an MCP server. Sealmetrics exposes more than 40 named read-only tools to any MCP-compatible assistant, including Claude Desktop, Claude Code, ChatGPT and Cursor. The assistant calls named functions rather than writing SQL against a warehouse.",
   },
   {
     question: "What is BYOK in analytics?",
@@ -158,7 +158,7 @@ export default function Page() {
         data={articleSchema({
           headline: "Self-Service Analytics for Marketing Teams: How Sealmetrics Does It",
           description:
-            "Complete cookieless data, 47 named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
+            "Complete cookieless data, 40+ named read-only tools instead of raw SQL, and a choice between BYOK and an isolated private AI instance. The reporting queue disappears; the definition of revenue does not.",
           ...dates,
           url: URL,
           category: "AI & Analytics",
@@ -200,7 +200,7 @@ export default function Page() {
                 Self-service analytics means a marketing team gets a correct answer to a business
                 question without opening a ticket for the data team. At Sealmetrics it works in
                 three moves: the platform measures traffic without cookies or consent, it
-                exposes that data to an AI agent as 47 named, read-only tools instead of raw SQL,
+                exposes that data to an AI agent as more than 40 named, read-only tools instead of raw SQL,
                 and the customer chooses whether that agent runs on their own model key (BYOK) or on
                 an isolated private instance.
               </p>
@@ -325,11 +325,11 @@ export default function Page() {
               What can a marketing team actually ask?
             </h2>
             <p>
-              The 47 tools cover sites, traffic and campaigns, page performance and content groups,
-              conversions and microconversions, audience segmentation by geography, device, browser
-              and OS, event-level raw data (capped at 31-day ranges), funnel analysis, bot
-              detection, custom properties and segments, alerts and webhooks, and tracking code
-              generation.
+              On the hosted endpoint the tools cover sites, traffic and campaigns, page performance
+              and content groups, conversions and microconversions, audience breakdowns by geography,
+              device, browser and OS, event-level raw data (capped at 31-day ranges), funnel
+              analysis, custom properties, channel-rule testing and tracking code. The full list in
+              the server documentation adds bot detection, segments, alerts and webhooks.
             </p>
             <p>In practice that turns into questions a CMO asks out loud:</p>
 
