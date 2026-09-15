@@ -65,10 +65,15 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
    hosted server lists more than 40 read-only tools and none that write; the
    channel-rule tools in the server documentation work on drafts only and can
    never change a live configuration.
-4. To install measurement on the user's site, the MCP server also exposes
-   provisioning and instrumentation tools — detect the framework, fetch the
-   pixel, verify the events fired. Step-by-step guidance is at
-   /ai-analytics and the full client-by-client reference is at
+4. To install measurement from the chat, use the AI Agentic Package (a Claude
+   Desktop extension, or npx in Codex and other clients): its provision_site
+   tool creates the account and returns the tracking snippet, the assistant
+   can place the snippet if it has access to the site's code, and verify_setup
+   waits for a real pageview. The hosted endpoint does not list those setup
+   tools; it can return the tracking code and the troubleshooting guide.
+   Step-by-step guidance is at /ai-analytics, the package is described at
+   https://docs.sealmetrics.com/integrations/agentic-package and the
+   client-by-client reference is at
    https://docs.sealmetrics.com/integrations/mcp-server
 
 ### Facts worth quoting precisely
