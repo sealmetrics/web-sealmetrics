@@ -1,108 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
-import {
-  breadcrumbSchema,
-  verticalSoftwareApplicationSchema,
-} from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { SAAS_MODIFIED, SAAS_PUBLISHED, saasEn as content } from "@/lib/content/problem-landings/saas";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/for/saas";
+const TITLE = "Analytics for SaaS: Sign-ups by Channel — Sealmetrics";
+const DESCRIPTION =
+  "Cookieless analytics for self-serve SaaS: sign-ups, form steps and plans by channel and campaign. Last click per session, no user-level tracking.";
+const SOCIAL =
+  "The trial started; its channel was not recorded. Measure sign-ups, form steps and plans by campaign without consent loss, and see where the account begins.";
+
 export const metadata: Metadata = {
-  title: "Analytics for SaaS — PLG & Trial-to-Paid | Sealmetrics",
-  description:
-    "Cookieless analytics for SaaS: product-led growth measurement without consent banners. Track trial-to-paid conversion and self-serve funnels on EU traffic.",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analytics for SaaS: Sign-ups by Channel — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analytics for SaaS — PLG & Trial-to-Paid | Sealmetrics",
-    description:
-      "First-party analytics for European SaaS companies. Trial-to-paid attribution, self-serve funnel tracking and PLG metrics — GDPR-safe, consent-free.",
-    type: "website",
-    images: [ogImage("/for/saas/")],
-    url: "https://sealmetrics.com/for/saas/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for SaaS — PLG & Trial-to-Paid | Sealmetrics",
-    description: "First-party analytics for European SaaS companies. Trial-to-paid attribution, self-serve funnel tracking and PLG metrics — GDPR-safe, consent-free.",
-    images: [ogImage("/for/saas/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/saas/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternates("/for/saas"),
   },
 };
 
-
-export default function Page() {
+export default function SaasPage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For SaaS" }]} />
+      <JsonLd data={breadcrumbSchema([{ name: "For teams", url: "/for" }, { name: "SaaS", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
-        data={breadcrumbSchema([{ name: "For SaaS", url: "/for/saas" }])}
-      />
-      <JsonLd
-        data={verticalSoftwareApplicationSchema({
-          vertical: "SaaS",
-          audienceType: "European SaaS and PLG companies",
-          description:
-            "Cookieless analytics for SaaS: marketing-to-trial attribution, self-serve funnel tracking and PQL measurement without cookies or consent banners.",
-          url: "/for/saas",
+        data={articleSchema({
+          headline: "Analytics for SaaS: sign-ups, form steps and plans by channel, measured without cookies",
+          description: DESCRIPTION,
+          datePublished: SAAS_PUBLISHED,
+          dateModified: SAAS_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
-
-      <VerticalPageV3 data={getVerticalData("saas", "en")} />
-
-      <TldrBlock
-        label="Cookieless analytics for SaaS"
-        answer={
-          <>
-            <strong>Cookieless analytics for SaaS</strong> counts marketing-site
-            visits and trial-signup events without consent banners, cookies or
-            ad-blocker interference — anonymously, at channel level. Sealmetrics
-            attributes each trial-signup event last-click to the source of the
-            session in which it fires, and exports channel totals into BigQuery to be
-            joined against product-side user data for PLG reporting.
-          </>
-        }
-        bullets={[
-          <>Trial-signup attribution on EU traffic without consent gaps (no per-user tracking).</>,
-          <>Clean separation of anonymous marketing-site analytics from authenticated product analytics (Mixpanel, Amplitude).</>,
-          <>Native BigQuery connector — or the full-resolution REST API — for joining aggregate channel data with your authenticated user tables.</>,
-        ]}
-      />
-
-      <RelatedPagesV3
-        locale="en"
-        eyebrow="Also explore"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-          {
-            href: "/blog/cookieless-analytics-for-saas",
-            title: "Guide: Cookieless analytics for SaaS",
-            desc: "PLG measurement without consent banners, 2026 playbook.",
-          },
-          {
-            href: "/glossary/cookieless-analytics",
-            title: "What is cookieless analytics",
-            desc: "Definition, how it works, why it matters.",
-          },
-          {
-            href: "/for/cto",
-            title: "For CTOs & engineering",
-            desc: "The technical buyer perspective.",
-          },
-        ]}
-      />
-      <LogosStrip />
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
