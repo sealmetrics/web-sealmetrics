@@ -187,7 +187,7 @@ export function ThankYouVariants() {
                   Create free account →
                 </a>
                 <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/60 font-semibold text-center md:text-right">
-                  14-day trial · cancel before day 14, pay nothing · 4-min setup
+                  14-day trial · cancel before day 14, pay nothing · 5–30 min setup by platform
                 </p>
               </div>
             </div>

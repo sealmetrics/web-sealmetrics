@@ -16,8 +16,8 @@ const faqGDPR = {
   es: { q: "¿Es realmente RGPD sin banner de consentimiento?", a: "Para la analítica en sí, está diseñada para eso: sin cookies, sin localStorage, sin fingerprinting y sin guardar la IP ni identificadores entre sesiones, con procesamiento en Dublín. Que una implantación concreta quede exenta de consentimiento depende de su configuración y de los criterios de tu autoridad nacional; los píxeles publicitarios o las herramientas de A/B testing que uses mantienen su propio requisito de consentimiento. Publicamos nuestro análisis frente a los criterios de CNIL, DSK y AEPD y firmamos un DPA para que tu DPO lo compruebe." },
 };
 const faqSetup = {
-  en: { q: "How long does setup take?", a: "5 minutes. Add one script tag to your site. Data flows from the first hour. Full calibration done together with our team during week 1." },
-  es: { q: "¿Cuánto tarda la instalación?", a: "5 minutos. Añade un script a tu web. Los datos fluyen desde la primera hora. Calibración completa con nuestro equipo durante la primera semana." },
+  en: { q: "How long does setup take?", a: "5 to 30 minutes, depending on the platform. Add one script tag or native module to your site. Data flows from the first hour. Calibration against your backend happens in week 1 — from the self-service docs on Agentic and Growth, with an onboarding session on Scale and white-glove onboarding on Enterprise." },
+  es: { q: "¿Cuánto tarda la instalación?", a: "De 5 a 30 minutos, según la plataforma. Añade un script o un módulo nativo a tu web. Los datos fluyen desde la primera hora. La calibración contra tu backend se hace en la primera semana — con la documentación self-service en Agentic y Growth, con una sesión de onboarding en Scale y con onboarding white-glove en Enterprise." },
 };
 
 export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageData {
@@ -93,7 +93,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "846 B", label: "Minimum pixel", detail: "1.1 KB on the wire · ~132× lighter than GA4. Can be served from your own subdomain. No CLS impact." },
-          { n: "15 min", label: "To full install", detail: "One script tag. Works with any CMS, framework or CDN." },
+          { n: "5–30 min", label: "To install, by platform", detail: "One script tag or a native module. Works with any CMS, framework or CDN." },
           { n: "0", label: "Ongoing maintenance", detail: "No GCP, no server-side GTM, no tag variables to update." },
           { n: "Full", label: "BigQuery resolution", detail: "Every event exported. No sampling, no thresholds, no modelling." },
         ],
@@ -105,7 +105,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { q: "Do you have a REST API and webhooks?", a: "Yes, both. REST API with full coverage from the Growth plan. Webhooks from the Scale plan. Plus a native MCP server so AI agents (Claude, ChatGPT, custom copilots) can query your analytics directly." },
           faqGDPR.en,
         ],
-        ctaTitle: <>See the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>integration</em> in 15 minutes.</>,
+        ctaTitle: <>See the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>integration</em> on your own stack.</>,
         ctaLede: "Book a technical walkthrough. Script, API, BigQuery schema, MCP server. No marketing fluff — we show the implementation.",
       },
       es: {
@@ -120,7 +120,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         outcomes: [
           { n: "846 B", label: "Pixel mínimo", detail: "1,1 KB en red · ~132× más ligero que GA4. Se puede servir desde tu propio subdominio. Sin impacto en CLS." },
-          { n: "15 min", label: "Instalación completa", detail: "Un script. Funciona con cualquier CMS, framework o CDN." },
+          { n: "5–30 min", label: "Instalación, según plataforma", detail: "Un script o un módulo nativo. Funciona con cualquier CMS, framework o CDN." },
           { n: "0", label: "Mantenimiento", detail: "Sin GCP, sin server-side GTM, sin variables que actualizar." },
           { n: "Total", label: "Resolución BigQuery", detail: "Cada evento exportado. Sin muestreo, sin umbrales, sin modelado." },
         ],
@@ -132,7 +132,7 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
           { q: "¿Tenéis REST API y webhooks?", a: "Sí, ambos. REST API con cobertura completa desde el plan Growth. Webhooks desde el plan Scale. Más un MCP server nativo para que agentes IA (Claude, ChatGPT, copilots propios) consulten tu analítica directamente." },
           faqGDPR.es,
         ],
-        ctaTitle: <>Ve la <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>integración</em> en 15 minutos.</>,
+        ctaTitle: <>Ve la <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>integración</em> sobre tu propio stack.</>,
         ctaLede: "Reserva un walkthrough técnico. Script, API, schema de BigQuery, MCP server. Sin marketing — te enseñamos la implementación.",
       },
     },

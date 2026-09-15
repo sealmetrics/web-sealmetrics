@@ -87,13 +87,17 @@ export default function Page() {
             from €36 a month and Enterprise from €366 a month billed annually,
             Matomo and GA4 are
             cheap or free.
-            The second matters more and is easier to miss — every option except
-            Sealmetrics collects data with cookies, so all of them lose the 40–60%
-            of EU visitors who reject a consent banner. Moving from Adobe to
-            GA360, Piwik PRO or Matomo changes what you pay and where data is
-            hosted, but not how much of your audience you measure. This page is
-            published by Sealmetrics, so treat the last entry accordingly; the
-            comparison points are checkable either way.
+            The second matters more and is easier to miss — how each one
+            collects. GA360 and GA4 depend on cookies and consent, as Adobe
+            does, so they lose the 40–60% of EU visitors who reject a banner.
+            Piwik PRO and Matomo set cookies by default but document cookieless
+            or consent-exempt configurations, and those have a price: with Piwik PRO&rsquo;s identifiers
+            off, traffic-source and channel-attribution reports are unavailable,
+            and Matomo&rsquo;s consent-exempt configuration strips campaign
+            parameters. Sealmetrics is cookieless by design and keeps campaign
+            and revenue reporting. This page is published by Sealmetrics, so
+            treat the last entry accordingly; the comparison points are
+            checkable either way.
           </QuickAnswer>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body mt-12">
@@ -148,15 +152,17 @@ export default function Page() {
               2. Piwik PRO
             </h3>
             <p>
-              The usual pick when EU data residency is the driver. Enterprise plans
-              start around €30,000 a year and hosting is European.
+              The usual pick when EU data residency is the driver, and a broader
+              suite than the others: analytics, consent management and Tag
+              Manager under one contract, with EU hosting options.
               <br />
-              <span className="text-text-tertiary">The catch —</span> the
-              architecture is closer to GA4 than the positioning suggests. Still
-              cookie-based, still needs a consent banner, so the 40–60% rejection
-              loss is unchanged, and adding a cookie still pulls you into a manual
-              DPIA. You move where the data lives, not how much of it you get. See
-              the{" "}
+              <span className="text-text-tertiary">The catch —</span> privacy is
+              a configuration you choose and maintain. With visitor cookies on,
+              it needs consent and the 40–60% rejection loss is unchanged. Piwik
+              PRO also documents a mode with no cookies and no session hash, but
+              then every event counts as a new session and traffic-source and
+              channel-attribution reports are unavailable — and whether that
+              mode runs without consent depends on your jurisdiction. See the{" "}
               <Link href="/vs/piwik-pro" className={linkCls}>
                 Piwik PRO comparison
               </Link>
@@ -172,8 +178,10 @@ export default function Page() {
               <br />
               <span className="text-text-tertiary">The catch —</span> self-hosted
               is free the way a server is free: you own the upgrades, the scaling
-              and the incident at 2am. Cookies are on by default and the cookieless
-              mode is partial. The modern stack — MCP, native BigQuery export,
+              and the incident at 2am. Cookies are on by default. The cookieless
+              mode loses returning visitors and multi-session attribution, and
+              the consent-exempt configuration recognised in France strips UTM
+              and campaign parameters. The modern stack — MCP, native BigQuery export,
               real-time reporting — is not there. See the{" "}
               <Link href="/vs/matomo" className={linkCls}>
                 Matomo comparison
@@ -206,8 +214,8 @@ export default function Page() {
               5. Sealmetrics
             </h3>
             <p>
-              Ours, so weigh it accordingly. It is the only option here that does
-              not collect with cookies:{" "}
+              Ours, so weigh it accordingly. It is the only option here that is
+              cookieless by design rather than by configuration:{" "}
               <Link href="/glossary/cookieless-analytics" className={linkCls}>
                 cookieless analytics
               </Link>{" "}
@@ -265,13 +273,13 @@ export default function Page() {
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Piwik PRO</td>
                     <td className="py-3 pr-4">Business from €36/mo, Enterprise from €366/mo billed annually</td>
-                    <td className="py-3 pr-4">Yes</td>
+                    <td className="py-3 pr-4">Yes by default · anonymous mode drops channel attribution</td>
                     <td className="py-3">Yes</td>
                   </tr>
                   <tr className="border-b border-warm-100">
                     <td className="py-3 pr-4">Matomo</td>
                     <td className="py-3 pr-4">Cloud mid-priced, self-hosted free</td>
-                    <td className="py-3 pr-4">Yes by default</td>
+                    <td className="py-3 pr-4">Yes by default · exempt mode strips campaign data</td>
                     <td className="py-3">Yes if you host it</td>
                   </tr>
                   <tr className="border-b border-warm-100">
@@ -301,13 +309,17 @@ export default function Page() {
               — If the problem is <strong>cost</strong>, Matomo or GA4 solve it
               immediately, and you accept less coverage and less support.
               <br />— If the problem is <strong>data residency</strong>, Piwik PRO
-              or self-hosted Matomo solve it, and the consent gap follows you.
+              or self-hosted Matomo solve it, and the consent gap follows you unless
+              you accept the reporting limits of their cookieless or consent-exempt
+              modes.
               <br />— If the problem is <strong>scale and support</strong> and
               budget is not the constraint, GA360 is the like-for-like swap.
               <br />— If the problem is that{" "}
               <strong>your reports do not reconcile with revenue</strong> because
-              most EU visitors never enter the dataset, none of the cookie-based
-              options fix it, because that is the thing they have in common.
+              most EU visitors never enter the dataset, the cookie-based options
+              do not fix it, and the cookieless or consent-exempt modes of Piwik
+              PRO and Matomo fix it only in part — by giving up channel attribution, campaign
+              parameters or multi-session attribution, depending on the mode.
             </p>
             <p>
               Most teams that leave Adobe over cost discover the coverage problem

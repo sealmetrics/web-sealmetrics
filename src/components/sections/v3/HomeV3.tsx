@@ -49,7 +49,7 @@ export function LogosSecondary() {
 
 
 /* ============================================
-   VALUE PROP · 4-minute strip
+   VALUE PROP · 3-minute audit strip
    ============================================ */
 export function ValueProp4Min() {
   return (
@@ -57,20 +57,20 @@ export function ValueProp4Min() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_auto] gap-7 md:gap-12 items-center">
         <div>
           <span className="inline-block bg-brand text-ink font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
-            4-minute demo
+            3-minute audit
           </span>
           <p
             className="text-white font-semibold leading-[1.2] tracking-[-0.025em] max-w-[32ch]"
             style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
           >
-            In 4 minutes, go from seeing{" "}
+            In 3 minutes, find out{" "}
             <em
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              half your sales
+              how much of your sales
             </em>{" "}
-            to seeing all of them.
+            your analytics is missing.
           </p>
           <p className="mt-3 font-mono text-[13px] tracking-[0.04em] text-white/60">
             Your own site · your real gap · no install · no commitment
@@ -81,7 +81,7 @@ export function ValueProp4Min() {
           className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition"
           style={{ backgroundColor: "#E8B84B" }}
         >
-          Book a 4-min walkthrough →
+          Start the 3-minute audit →
         </Link>
       </div>
     </section>
@@ -556,10 +556,10 @@ export function ProblemSection({ locale = "en" }: { locale?: "en" | "es" }) {
 const STEPS_COPY = {
   en: {
     eyebrow: "How to start",
-    headline: <>5 minutes to see your <em>real traffic.</em></>,
-    lede: "No migration. No cookie banner. No data team required. From zero to real data in less time than your standup.",
+    headline: <>5 to 30 minutes to see your <em>real traffic.</em></>,
+    lede: "No migration. No cookie banner. No data team required. A script or a module on your CMS, installed in 5 to 30 minutes depending on the platform.",
     stepLabel: "Step",
-    times: ["Minute 1", "Minute 3", "Minute 5"],
+    times: ["5–30 min", "Once installed", "Week 1"],
     titles: ["Paste our 846 bytes script", "See real data", "Unlock your real ROAs"],
     bodies: [
       "Activate our module on your CMS or paste the pixel via Tag Manager. No engineering ticket, no deployment.",
@@ -568,14 +568,14 @@ const STEPS_COPY = {
     ],
     primaryCta: "Start 14-day trial",
     secondaryCta: "See your GA4 gap first",
-    foot: "14-day trial · 4-minute setup · Worth a look before next quarter's budget",
+    foot: "14-day trial · 5–30 min setup by platform · Worth a look before next quarter's budget",
   },
   es: {
     eyebrow: "Cómo empezar",
-    headline: <>5 minutos para ver tu <em>tráfico real.</em></>,
-    lede: "Sin migración. Sin banner. Sin equipo de data. De cero a dato real en menos tiempo que tu standup.",
+    headline: <>De 5 a 30 minutos para ver tu <em>tráfico real.</em></>,
+    lede: "Sin migración. Sin banner. Sin equipo de data. Un script o un módulo en tu CMS, instalado en 5 a 30 minutos según la plataforma.",
     stepLabel: "Paso",
-    times: ["Minuto 1", "Minuto 3", "Minuto 5"],
+    times: ["5–30 min", "Una vez instalado", "Semana 1"],
     titles: ["Pega nuestro script de 846 bytes", "Ve datos reales", "Desbloquea tu ROAS real"],
     bodies: [
       "Activa nuestro módulo en tu CMS o pega el pixel vía Tag Manager. Sin ticket de ingeniería, sin deployment.",
@@ -584,7 +584,7 @@ const STEPS_COPY = {
     ],
     primaryCta: "Prueba de 14 días",
     secondaryCta: "Ver tu gap GA4 primero",
-    foot: "Prueba de 14 días · Setup en 4 minutos · Antes del próximo presupuesto",
+    foot: "Prueba de 14 días · Setup en 5–30 min según plataforma · Antes del próximo presupuesto",
   },
 } as const;
 
@@ -730,7 +730,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without Sealmetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
+    foot: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -738,7 +738,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin Sealmetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
+    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
   },
 } as const;
 
@@ -816,7 +816,7 @@ const PRICING_COPY = {
     scaleBlurb: "For serious eCommerce that needs the data to decide.",
     enterpriseBlurb: "For portfolio brands or custom integration needs.",
     growthFeatures: (m: number) => [`${m}M human events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 side-by-side comparison", "Email support"],
-    scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "Onboarding led by the founder"],
+    scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "One onboarding session"],
     enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "Private AI — exclusive, not shared", "99.9% SLA", "Dedicated account manager"],
     cta: "Start 14-day trial",
     enterpriseCta: "Talk to us",
@@ -841,7 +841,7 @@ const PRICING_COPY = {
     scaleBlurb: "Para eCommerce serio que decide con dato real.",
     enterpriseBlurb: "Para marcas portfolio o necesidades de integración custom.",
     growthFeatures: (m: number) => [`${m}M eventos humanos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Comparativa GA4 lado a lado", "Soporte por email"],
-    scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding con el founder"],
+    scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "1 sesión de onboarding"],
     enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "Private AI — exclusiva, no compartida", "SLA 99,9%", "Account manager dedicado"],
     cta: "Prueba de 14 días",
     enterpriseCta: "Habla con nosotros",

@@ -82,7 +82,7 @@ const copy = {
     implementationTitle: <>Compare first.<br /><em>Change later.</em></>,
     implementationBody: "Keep the existing stack live while Sealmetrics collects the same period. The change decision comes after both systems have been reconciled against backend outcomes.",
     steps: [
-      ["01", "15 minutes", "Install the event contract", "Deploy the script directly or through the current tag-management workflow."],
+      ["01", "5–30 minutes", "Install the event contract", "Deploy the script directly or through the current tag-management workflow."],
       ["02", "Day 1", "Observe the first full period", "Confirm traffic, channel context and commercial events are arriving."],
       ["03", "Day 3", "Compare with the current stack", "Review the difference by channel and explain each collection boundary."],
       ["04", "Day 5", "Calibrate commercial events", "Align purchases and 5–10 microconversions with backend definitions."],
@@ -155,7 +155,7 @@ const copy = {
     implementationTitle: <>Compara primero.<br /><em>Cambia después.</em></>,
     implementationBody: "Mantén vivo el stack existente mientras Sealmetrics recoge el mismo periodo. La decisión de cambio llega después de conciliar ambos sistemas contra resultados del backend.",
     steps: [
-      ["01", "15 minutos", "Instala el contrato de eventos", "Despliega el script directamente o mediante el flujo actual de tag management."],
+      ["01", "5–30 minutos", "Instala el contrato de eventos", "Despliega el script directamente o mediante el flujo actual de tag management."],
       ["02", "Día 1", "Observa el primer periodo completo", "Confirma tráfico, contexto de canal y llegada de eventos comerciales."],
       ["03", "Día 3", "Compara con el stack actual", "Revisa la diferencia por canal y explica cada límite de captura."],
       ["04", "Día 5", "Calibra eventos comerciales", "Alinea compras y 5–10 microconversiones con las definiciones del backend."],

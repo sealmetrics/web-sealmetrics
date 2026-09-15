@@ -174,8 +174,8 @@ REST coverage of every metric, every property, at full resolution. Webhooks for 
 
       <FinalCtaSharedV3
         locale="en"
-        titleEn={<>Install in <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutes.</em></>}
-        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutos.</em></>}
+        titleEn={<>Install in <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>5 to 30 minutes</em>, depending on your platform.</>}
+        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>5 a 30 minutos</em>, según tu plataforma.</>}
         ledeEn="Book a technical walkthrough. Script, API, BigQuery schema, MCP server. No marketing fluff — we show the integration."
         ledeEs="Reserva walkthrough técnico. Script, API, schema BigQuery, MCP server. Sin marketing — te enseñamos la integración."
       />

@@ -14,7 +14,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
         ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
-        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 min",
+        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
       }
     : {
         eyebrow: "vs Google Analytics 4",
@@ -24,7 +24,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
         ctaA: "Start 14-day trial",
         ctaB: "Book a demo",
-        micro: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
+        micro: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
       };
 
   return (
@@ -342,8 +342,8 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Customer success",
       block: "commercial",
       rows: [
-        { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Founder-led · 15-minute install" },
-        { feature: "Human support", ga4: "Community forums on the free tier", seal: "Direct support on every plan" },
+        { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Script or native module · 5–30 min by platform" },
+        { feature: "Human support", ga4: "Community forums on the free tier", seal: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
       ],
     },
     {
@@ -421,8 +421,8 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Customer success",
       block: "commercial",
       rows: [
-        { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Liderado por el founder · instalación en 15 min" },
-        { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Soporte directo en todos los planes" },
+        { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Script o módulo nativo · 5–30 min según plataforma" },
+        { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
       ],
     },
     {
@@ -569,7 +569,7 @@ export function RunBothV3({ locale = "en" as Locale }) {
         title: <>Corre los dos en paralelo. <em>Compara con tu CRM.</em></>,
         lede: "No te pedimos que reemplaces GA4. Te pedimos que los corras en paralelo 30 días, comparando ambos con tu CRM real. Después tú decides qué dato firmar.",
         phases: [
-          { n: "Semana 1", t: "Ambos instalados", p: "GA4 sigue donde está. Sealmetrics se instala en 15 min con un script. Los dos corren sobre el mismo tráfico." },
+          { n: "Semana 1", t: "Ambos instalados", p: "GA4 sigue donde está. Sealmetrics se instala con un script o un módulo nativo en 5 a 30 min, según la plataforma. Los dos corren sobre el mismo tráfico." },
           { n: "Semana 2", t: "Calibración", p: "Te ayudamos a mapear canales, UTMs y microconversiones. Ambos sistemas ven lo mismo, reportan distinto." },
           { n: "Semana 3", t: "Comparación", p: "CRM en mano, comparas canales, conversiones e ingresos. Ves exactamente dónde GA4 se queda corto sobre tu tráfico." },
           { n: "Semana 4", t: "Decisión", p: "La mayoría de equipos firman Sealmetrics como fuente de verdad y mantienen GA4 para las integraciones específicas de Google Ads." },
@@ -580,7 +580,7 @@ export function RunBothV3({ locale = "en" as Locale }) {
         title: <>Run both alongside. <em>Compare against your CRM.</em></>,
         lede: "We're not asking you to replace GA4. We're asking you to run both in parallel for 30 days, comparing each against your actual CRM. Then you decide which number to sign against.",
         phases: [
-          { n: "Week 1", t: "Both installed", p: "GA4 stays where it is. Sealmetrics installs in 15 minutes with one script tag. Both running on the same traffic." },
+          { n: "Week 1", t: "Both installed", p: "GA4 stays where it is. Sealmetrics installs with one script tag or a native module in 5 to 30 minutes, depending on the platform. Both running on the same traffic." },
           { n: "Week 2", t: "Calibration", p: "We help you map channels, UTMs and microconversions. Both systems see the same traffic — and report very differently." },
           { n: "Week 3", t: "Comparison", p: "CRM in hand, you compare channels, conversions and revenue. You see exactly where GA4 falls short on your own data." },
           { n: "Week 4", t: "Decision", p: "Most teams sign Sealmetrics as source of truth and keep GA4 for specific Google Ads integrations. No migration forced." },

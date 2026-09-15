@@ -21,7 +21,7 @@ const videosForSchema = [
   {
     name: "Getting Started with Sealmetrics",
     description:
-      "How to create your account, add your site, and install the 846-byte tracking script in 5 minutes.",
+      "How to create your account, add your site, and install the 846-byte tracking script.",
     thumbnailUrl: "/videos/getting-started.jpg",
     uploadDate: "2025-09-15T09:00:00+02:00",
     duration: "PT2M15S",

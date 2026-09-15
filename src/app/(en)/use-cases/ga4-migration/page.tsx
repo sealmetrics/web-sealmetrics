@@ -51,7 +51,7 @@ const faqs = [
   },
   {
     q: "How long does the migration actually take?",
-    a: "Five minutes to install. First data in the first hour. Decision-ready in week one. Full calibration to your CRM within 30 days of parallel running. There is no historical-data migration step — Sealmetrics begins counting from day one on new data; GA4's historical data stays in GA4 for reference.",
+    a: "5 to 30 minutes to install, depending on the platform. First data in the first hour. Decision-ready in week one. Full calibration to your CRM within 30 days of parallel running. There is no historical-data migration step — Sealmetrics begins counting from day one on new data; GA4's historical data stays in GA4 for reference.",
   },
   {
     q: "What about my BigQuery export from GA4?",
@@ -154,7 +154,8 @@ export default function Ga4MigrationPage() {
             revenue, channel-mix and board-level decisions to the new
             measurement layer. There is no historical-data migration
             step; GA4 history stays in GA4, the new tool counts forward.
-            Five minutes to install, decision-ready in week one.
+            5 to 30 minutes to install, depending on the platform, and
+            decision-ready in week one.
           </>
         }
         bullets={[

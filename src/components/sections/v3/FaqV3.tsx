@@ -26,7 +26,7 @@ const ITEMS = [
   },
   {
     q: "How long does implementation take?",
-    a: "Five minutes to install. First data from the first hour. Our team handles full onboarding and configures goals, funnels and reports in week one.",
+    a: "5 to 30 minutes to install, depending on the platform. First data from the first hour. Onboarding depends on the plan: self-service docs on Agentic and Growth, one onboarding session on Scale, white-glove onboarding on Enterprise.",
   },
 ];
 

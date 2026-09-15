@@ -101,8 +101,8 @@ export function FinalCtaSharedV3({
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
             {locale === "es"
-              ? "Hecho por un founder · soportado por un founder · alojado en UE por diseño"
-              : "Built by a founder · supported by a founder · EU-hosted by design"}
+              ? "Hecho por un founder · alojado en UE por diseño"
+              : "Built by a founder · EU-hosted by design"}
           </p>
         </div>
       </div>

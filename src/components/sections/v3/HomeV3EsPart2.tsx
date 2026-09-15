@@ -238,7 +238,7 @@ export function HowItWorksV3Es() {
 
         <div className="grid sm:grid-cols-3 gap-4">
           {[
-            { n: "Paso 01", time: "15 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin banners de cookies, sin piruetas en tag manager." },
+            { n: "Paso 01", time: "5–30 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin banners de cookies, sin piruetas en tag manager." },
             { n: "Paso 02", time: "Día 1", title: "Datos visibles", p: "Tráfico desde la primera hora. Visitantes, fuentes y conversiones — observados server-side, sin depender del consentimiento." },
             { n: "Paso 03", time: "Semana 1", title: "Escala lo que funciona", p: "Reubica presupuesto hacia los canales que realmente generan ingresos. Corta los que GA4 decía que funcionaban — pero no." },
           ].map((s) => (
@@ -345,7 +345,7 @@ export function PricingV3Es() {
         <div className="grid md:grid-cols-3 gap-4 items-stretch">
           {[
             { name: "Growth", price: fmtPrice(PRICING.growth.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.growth.eventsMillions}M eventos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Dashboard de comparación GA4", "Soporte email"], cta: "Empezar con Growth", featured: false },
-            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.scale.eventsMillions}M eventos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "Onboarding liderado por el founder"], cta: "Empezar con Scale", featured: true },
+            { name: "Scale", price: fmtPrice(PRICING.scale.annual, "es"), per: "/mes", billing: "Facturación anual", feat: [`${PRICING.scale.eventsMillions}M eventos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "1 sesión de onboarding"], cta: "Empezar con Scale", featured: true },
             { name: "Enterprise", price: "A medida", per: "", billing: "Anual o términos personalizados", feat: ["Eventos ilimitados", "Dominios ilimitados", "Todo lo de Scale", "SSO, audit logs, SLA", "Customer engineer dedicado"], cta: "Hablemos", featured: false },
           ].map((p) => (
             <article key={p.name} className={`rounded-xl p-8 flex flex-col bg-white ${p.featured ? "border-2 border-brand" : "border border-warm-100"}`}>
@@ -416,7 +416,7 @@ export function FinalCtaV3Es() {
             </Link>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            Hecho por un founder · soportado por un founder · alojado en UE por diseño
+            Hecho por un founder · alojado en UE por diseño
           </p>
         </div>
       </div>

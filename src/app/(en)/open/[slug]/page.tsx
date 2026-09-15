@@ -2735,7 +2735,7 @@ function ChapterSevenBody() {
       label: "Sampling",
       us: "Never",
       ga360: "Above query thresholds",
-      adobe: "Above query thresholds",
+      adobe: "Not on standard reports · Low-Traffic grouping above 2M values/mo",
       piwik: "No",
     },
     {

@@ -184,7 +184,7 @@ export function ThankYouVariantsEs() {
                   Crear cuenta gratis →
                 </a>
                 <p className="font-mono text-[11px] uppercase tracking-[0.1em] text-white/60 font-semibold text-center md:text-right">
-                  Prueba de 14 días · cancela antes del día 14 y no pagas · setup en 4 min
+                  Prueba de 14 días · cancela antes del día 14 y no pagas · setup en 5–30 min según plataforma
                 </p>
               </div>
             </div>

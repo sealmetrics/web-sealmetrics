@@ -150,8 +150,8 @@ export default function Page() {
 
       <FinalCtaSharedV3
         locale="es"
-        titleEn={<>Install in 15 minutes.</>}
-        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>15 minutos.</em></>}
+        titleEn={<>Install in 5 to 30 minutes, depending on your platform.</>}
+        titleEs={<>Instálalo en <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>5 a 30 minutos</em>, según tu plataforma.</>}
         ledeEn="30 min walkthrough."
         ledeEs="Reserva walkthrough técnico. Script, API, schema BigQuery, MCP server. Sin marketing — te enseñamos la integración."
       />
