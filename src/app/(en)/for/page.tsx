@@ -39,7 +39,7 @@ const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "The analytics that match your Shopify CRM." },
   { slug: "hotels", name: "Hotels & travel", tagline: "Palladium found 35% of GA4 bookings with no channel. See yours." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activation, upgrade — all first-party, all consent-independent." },
-  { slug: "agencies", name: "Agencies", tagline: "Stop being the middle between client disputes over attribution." },
+  { slug: "agencies", name: "Agencies", tagline: "One measured layer the client owns and your whole team can work in." },
   { slug: "media", name: "Media & publishers", tagline: "Analytics that hold up against ad-blockers. 50%+ audiences invisible to GA." },
   { slug: "finance", name: "Finance & banking", tagline: "Bank-grade compliance. 1-meeting vendor review." },
   { slug: "healthcare", name: "Healthcare", tagline: "No patient personal data in analytics. Portals measured in aggregate." },

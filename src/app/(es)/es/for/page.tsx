@@ -39,7 +39,7 @@ const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "La analítica que cuadra con tu CRM de Shopify." },
   { slug: "hotels", name: "Hoteles y travel", tagline: "Palladium detectó un 35% de reservas de GA4 sin canal. Mira las tuyas." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activación, upgrade — todo first-party, independiente del consentimiento." },
-  { slug: "agencies", name: "Agencias", tagline: "Deja de ser el medio entre disputas de atribución con clientes." },
+  { slug: "agencies", name: "Agencias", tagline: "Una capa medida que posee el cliente y en la que trabaja todo tu equipo." },
   { slug: "media", name: "Medios y publishers", tagline: "Analítica que resiste a los ad-blockers. 50%+ de audiencia invisible para GA." },
   { slug: "finance", name: "Finanzas y banca", tagline: "Compliance grado bancario. Review en una reunión." },
   { slug: "healthcare", name: "Salud", tagline: "Sin datos personales de pacientes en la analítica. Portales medidos en agregado." },
