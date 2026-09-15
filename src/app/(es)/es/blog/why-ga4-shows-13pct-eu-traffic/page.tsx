@@ -320,8 +320,8 @@ export default function WhyGA4Shows13PctPageEs() {
 
           <p>
             La alternativa es analítica que no depende de cookies, no carga
-            scripts cliente que puedan ser bloqueados y está diseñada para no requerir
-            consentimiento en la medición básica (lo confirma tu DPO).
+            scripts cliente que puedan ser bloqueados y cumple los criterios de la CNIL
+            y la AEPD para la medición básica exenta de consentimiento.
           </p>
 
           <p>
