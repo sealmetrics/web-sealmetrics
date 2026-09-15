@@ -356,3 +356,9 @@ Corrección de paso: el post DTC de #203 decía que GA4 registraba "un 37–52% 
 | 4 | `/integrations/meta-ads` (EN+ES) | **Hecha** (15 sep) — misma forma que Google Ads, limitación arriba. UTM y valores (facebook|instagram, paidsocial|cpc) según `how-to-track-social-ads-campaigns` y los prompts de Meta Ads; sin UTM se mezclan pago y orgánico. No se afirma que un fbclid solo sea tráfico de pago (Meta lo añade también a enlaces orgánicos), ni ventanas de atribución concretas, ni MCP oficial de Meta. Los parámetros dinámicos de Meta se mencionan remitiendo a su generador (su Help Center no se pudo leer). La reconciliación se enlaza al post de Meta vs CRM. Cierra la Fase 5. Prompt 24 en §9b |
 
 Observado: la documentación también tiene integración con PrestaShop, que el hub `/platforms` lista sin página propia (igual que OpenCart).
+
+---
+
+## 11. Integración (15 sep 2026)
+
+Las 24 PRs apiladas (#189–#234) se integran en una sola rama, `claude/positioning-integrated`, sobre `main`, que había avanzado con 11 commits de calidad (#197, #199, #202, #204, #205, #216, #223, #224, #226, #231, #232). Conflictos resueltos una vez (120 bloques en 56 archivos) y barrido del contenido nuevo contra las reglas añadidas a CLAUDE.md el 14 sep: sin afirmaciones de cobertura total ("measured on every visit", "en cada visita", "captura completa" → "sin pérdida por consentimiento"), sin "GDPR by architecture" como hecho, Resend como subencargado fuera de la UE sin dato de visitante. Las PRs apiladas quedan sustituidas por la integrada.
