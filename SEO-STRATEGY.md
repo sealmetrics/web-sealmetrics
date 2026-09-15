@@ -334,6 +334,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 23 | 5 | track Google Ads revenue without GA4 / medir ingresos de Google Ads sin GA4 | `/integrations/google-ads` (EN+ES) | shipped 15 Sep |
 | 24 | 5 | track Meta Ads revenue by ad set without the pixel / medir ingresos de Meta Ads por conjunto | `/integrations/meta-ads` (EN+ES) + `/blog/meta-ads-conversions-vs-crm` | shipped 15 Sep |
 | 25 | 6 | analytics for multi-brand retail groups to compare brands / analítica para comparar marcas de un grupo retail | `/for/multi-brand-retailers` (EN+ES) | shipped 15 Sep |
+| 26 | 6 | how to attribute eCommerce revenue to channels without cookies / cómo atribuir ingresos de un eCommerce a canales sin cookies | `/for/ecommerce` (EN+ES) | shipped 15 Sep |
 
 ### Method (monthly, first week)
 

@@ -3,7 +3,7 @@ import type { VerticalPageData } from "./VerticalPageV3";
 type Locale = "en" | "es";
 export type VerticalKey =
   | "cmo" | "cto" | "dpo"
-  | "ecommerce" | "hotels" | "saas"
+  | "hotels" | "saas"
   | "media" | "finance" | "healthcare" | "education";
 
 // Shared helpers for consistency
@@ -190,64 +190,6 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         ctaTitle: <>Recibe el <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>pack compliance</em> en una reunión.</>,
         ctaLede: "Reserva 30 min. Llevamos a tu equipo legal/DPO por arquitectura, DPA y posicionamiento Schrems II. Sin pitch, solo la evidencia que tu equipo necesita.",
-      },
-    },
-    ecommerce: {
-      en: {
-        eyebrow: "For eCommerce",
-        h1: <>The analytics that <em>match your Shopify CRM.</em></>,
-        lede: "Your pixel says 340 conversions. Your Shopify backend shows 180. Your agency defends one; your CFO wants the other. Sealmetrics closes that gap with complete, consent-independent data.",
-        pains: [
-          { title: "Pixel vs Shopify · the eternal disagreement", desc: "Every Monday you reconcile Meta pixel, Google Ads, GA4 and Shopify. Nobody agrees. Decisions wait." },
-          { title: "The return visit GA4 never sees", desc: "Shoppers add to cart, leave, and come back from an email link. If they rejected the banner, GA4 does not record that visit, and the order lands in a report with no channel your marketing can claim." },
-          { title: "Black Friday = sampled data", desc: "Peak traffic triggers sampling in GA4. You're making real-time decisions on estimated data on the busiest day of the year." },
-          { title: "Microconversions invisible above threshold", desc: "Newsletter signups, quiz starts, product configurator use — all the micro-events that predict revenue get dropped when traffic spikes." },
-        ],
-        outcomes: [
-          { n: "29%", label: "Of visits GA4 was missing", detail: "Incapto · 64,501 visits in 48 days on Shopify that appeared in no GA4 report." },
-          { n: "96%", label: "Of real orders recorded", detail: "Incapto · reconciled against the store's own Shopify orders, not a model." },
-          { n: "0", label: "Sampling", detail: "Black Friday traffic captured at full resolution — no estimates." },
-          { n: "Consentless", label: "Microconversions", detail: "Add-to-cart, checkout start and form submits recorded without depending on consent." },
-        ],
-        quote: { text: "Consent Mode left us with a structural blind spot: we knew there was traffic we were not seeing, but we had no way to size it.", cite: "Rosa Tomàs · B2C Acquisition Manager · Incapto" },
-        faqs: [
-          { q: "Does Sealmetrics integrate with Shopify?", a: "Yes, natively — the same install on any Shopify plan, no Plus/Standard split. Connect the Pixel app from your dashboard, enable the theme app embed, and the full eCommerce funnel flows automatically. No manual SKU mapping." },
-          { q: "Can I use this alongside Meta pixel and Google Ads pixel?", a: "Yes. Sealmetrics doesn't replace ad pixels — it's a neutral measurement layer. Keep your ad pixels for platform optimization. Use Sealmetrics for attribution truth." },
-          { q: "What about my DTC checkout on a custom domain?", a: "Yes. On Shopify the purchase is confirmed server-side through the orders/create webhook, so nothing has to load on the hosted checkout. On other platforms, fire the conversion on the order-confirmation page, wherever it lives. No cookie domain to configure. If you also want the tracker served from your own subdomain, it is one DNS record and our team finishes the setup." },
-          faqMigration.en,
-          faqSetup.en,
-          faqGDPR.en,
-        ],
-        ctaTitle: <>Close the gap between <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>your pixel and your CRM.</em></>,
-        ctaLede: "30 minutes. We run your Shopify traffic through Sealmetrics and compare live. No slides — we show you what your pixel has been hiding.",
-      },
-      es: {
-        eyebrow: "Para eCommerce",
-        h1: <>La analítica que <em>cuadra con tu CRM de Shopify.</em></>,
-        lede: "Tu pixel dice 340 conversiones. Tu backend de Shopify muestra 180. Tu agencia defiende una; tu CFO quiere la otra. Sealmetrics cierra ese gap con datos completos e independientes del consentimiento.",
-        pains: [
-          { title: "Pixel vs Shopify · el desacuerdo eterno", desc: "Cada lunes cuadras pixel de Meta, Google Ads, GA4 y Shopify. Nadie coincide. Las decisiones esperan." },
-          { title: "La vuelta que GA4 no ve", desc: "Añaden al carrito, se van y vuelven desde un email. Si rechazaron el banner, GA4 no registra esa visita y el pedido acaba en un informe sin un canal que marketing pueda reclamar." },
-          { title: "Black Friday = datos muestreados", desc: "El tráfico pico dispara muestreo en GA4. Tomas decisiones en tiempo real sobre datos estimados el día más importante del año." },
-          { title: "Microconversiones invisibles sobre umbral", desc: "Suscripciones, inicios de quiz, uso del configurador — todos los micro-eventos que predicen ingresos se pierden cuando el tráfico sube." },
-        ],
-        outcomes: [
-          { n: "29%", label: "De las visitas que GA4 no veía", detail: "Incapto · 64.501 visitas en 48 días sobre Shopify que no aparecían en ningún informe de GA4." },
-          { n: "96%", label: "De los pedidos reales registrados", detail: "Incapto · conciliado contra los pedidos de su propia tienda Shopify, no modelado." },
-          { n: "0", label: "Muestreo", detail: "Tráfico Black Friday capturado a resolución completa — sin estimaciones." },
-          { n: "Sin banner", label: "Microconversiones", detail: "Add-to-cart, inicio de checkout y envíos de formulario registrados sin depender del consentimiento." },
-        ],
-        quote: { text: "El Consent Mode nos dejaba un vacío estructural: sabíamos que había tráfico que no estábamos viendo, pero no teníamos forma de dimensionarlo.", cite: "Rosa Tomàs · Acquisition Manager B2C · Incapto" },
-        faqs: [
-          { q: "¿Sealmetrics integra con Shopify?", a: "Sí, nativamente — la misma instalación en cualquier plan de Shopify, sin distinción Plus/Standard. Conecta la app Pixel desde tu dashboard, activa el app embed del tema, y el funnel de eCommerce completo fluye automáticamente. Sin mapeo manual de SKUs." },
-          { q: "¿Lo puedo usar junto a pixel de Meta y Google Ads?", a: "Sí. Sealmetrics no reemplaza los pixels publicitarios — es una capa neutral de medición. Mantén tus pixels para optimización de plataforma. Usa Sealmetrics para la verdad de atribución." },
-          { q: "¿Y mi checkout DTC en un dominio custom?", a: "Sí. En Shopify la compra se confirma en servidor con el webhook orders/create, así que no hace falta cargar nada en el checkout alojado. En otras plataformas, dispara la conversión en la página de confirmación del pedido, esté donde esté. Sin dominio de cookies que configurar. Si además quieres servir el tracker desde tu propio subdominio, es un registro DNS y nuestro equipo completa la configuración." },
-          faqMigration.es,
-          faqSetup.es,
-          faqGDPR.es,
-        ],
-        ctaTitle: <>Cierra el gap entre <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tu pixel y tu CRM.</em></>,
-        ctaLede: "30 minutos. Pasamos tu tráfico de Shopify por Sealmetrics y comparamos en directo. Sin slides — te mostramos lo que tu pixel te está escondiendo.",
       },
     },
     hotels: {

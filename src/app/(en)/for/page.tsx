@@ -36,7 +36,7 @@ const roles = [
 ];
 
 const industries = [
-  { slug: "ecommerce", name: "eCommerce", tagline: "The analytics that match your Shopify CRM." },
+  { slug: "ecommerce", name: "eCommerce", tagline: "Your store knows what sold. See which channels and products sold it." },
   { slug: "hotels", name: "Hotels & travel", tagline: "Palladium found 35% of GA4 bookings with no channel. See yours." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activation, upgrade — all first-party, all consent-independent." },
   { slug: "multi-brand-retailers", name: "Multi-brand retailers", tagline: "Every brand measured on one method, so the group can compare them." },
