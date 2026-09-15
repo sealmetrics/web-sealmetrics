@@ -1023,12 +1023,12 @@
     },
     "public/og/for/media.avif": {
       "source": "public/og/for/media.png",
-      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
+      "sourceHash": "a5cf331a96987542cbf3c9ecc2e95087b7821c4108902797b9461727acc90291",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/media.webp": {
       "source": "public/og/for/media.png",
-      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
+      "sourceHash": "a5cf331a96987542cbf3c9ecc2e95087b7821c4108902797b9461727acc90291",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/multi-brand-retailers.avif": {
@@ -1043,12 +1043,12 @@
     },
     "public/og/for/saas.avif": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
+      "sourceHash": "751eabf4c9f06d0f9c283dcb81424b800502fc962aa7aa2779d59f9bcd4d6ea0",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/saas.webp": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
+      "sourceHash": "751eabf4c9f06d0f9c283dcb81424b800502fc962aa7aa2779d59f9bcd4d6ea0",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/free-audit.avif": {

@@ -1,109 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { TldrBlock } from "@/components/ui/TldrBlock";
-import {
-  breadcrumbSchema,
-  verticalSoftwareApplicationSchema,
-} from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
-import { LogosStripEs } from "@/components/sections/v3/HomeV3Es";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { MEDIA_MODIFIED, MEDIA_PUBLISHED_ES, mediaEs as content } from "@/lib/content/problem-landings/media";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/es/for/media";
+const TITLE = "Analítica para medios y editores — Sealmetrics";
+const DESCRIPTION =
+  "Analítica sin cookies para medios: secciones, canales y altas en newsletter y suscripciones, servida desde tu subdominio para perder menos por bloqueadores.";
+const SOCIAL =
+  "El artículo se leyó y el informe no lo vio. Cuenta lectores por sección y canal sin cookies, desde tu propio subdominio, y mira qué visitas se dan de alta.";
+
 export const metadata: Metadata = {
-  title: "Analítica para medios y editores | Sealmetrics",
-  description:
-    "Analítica sin cookies para editores: captura lectores que ad blockers esconden a GA4. Audiencia, engagement y atribución first-party en la UE.",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analítica para medios y editores — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analítica para medios y editores | Sealmetrics",
-    description:
-      "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
-    type: "website",
-    images: [ogImage("/es/for/media/")],
-    locale: "es_ES",
-    url: "https://sealmetrics.com/es/for/media/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
+    locale: "es_ES",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica para medios y editores | Sealmetrics",
-    description: "Analítica sin consentimiento construida para medios europeos. Medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sin cookies.",
-    images: [ogImage("/es/for/media/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/es/for/media/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternatesEs("/for/media"),
   },
 };
 
-
-export default function Page() {
+export default function MediaPageEs() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "Para medios" }]} locale="es" />
+      <JsonLd data={breadcrumbSchema([{ name: "Por equipo", url: "/es/for" }, { name: "Medios", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
-        data={breadcrumbSchema([{ name: "Para medios", url: "/es/for/media" }], "es")}
-      />
-      <JsonLd
-        data={verticalSoftwareApplicationSchema({
-          vertical: "Medios y editores",
-          audienceType: "Empresas de medios europeas, editores y redacciones digitales",
-          description:
-            "Analítica sin cookies para medios y editores: medición de audiencia, funnels de suscripción y atribución de ingresos publicitarios sobre infraestructura first-party, resistente a ad-blockers.",
-          url: "/es/for/media",
+        data={articleSchema({
+          headline: "Analítica para medios y editores: secciones, canales y altas, contadas sin cookies",
+          description: DESCRIPTION,
+          datePublished: MEDIA_PUBLISHED_ES,
+          dateModified: MEDIA_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
         })}
       />
-
-      <VerticalPageV3 data={getVerticalData("media", "es")} />
-
-      <TldrBlock
-        label="Analítica sin cookies para medios y editores"
-        answer={
-          <>
-            La <strong>analítica sin cookies para medios y editores</strong>{" "}
-            captura lectorazgo, funnels de suscripción y atribución de ingresos
-            publicitarios sin cookies — crítico para sitios donde el 50–70% de
-            los visitantes usan ad-blockers. Servido desde un subdominio del
-            propio editor, Sealmetrics esquiva las listas third-party con las
-            que trabajan los ad-blockers y no depende de la retirada de las
-            cookies de terceros.
-          </>
-        }
-        bullets={[
-          <>Recupera lectores que los ad-blockers ocultan a GA4, donde el 50–70% de los visitantes de sitios de tech y noticias usa uno.</>,
-          <>Conteos por paso del funnel por canal: landings de artículo, impresiones de paywall, eventos de suscripción — cada suscripción atribuida last-click a nivel de canal.</>,
-          <>La arquitectura first-party no se ve afectada por los límites de cookies de terceros de Safari ITP y Firefox ETP.</>,
-        ]}
-      />
-
-      <RelatedPagesV3
-        locale="es"
-        eyebrow="Explora también"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-          {
-            href: "/es/glossary/ad-blocker-analytics-impact",
-            title: "Impacto de ad-blockers en analítica",
-            desc: "Cómo afectan los ad-blockers a la medición en sitios de medios.",
-          },
-          {
-            href: "/glossary/cookieless-analytics",
-            title: "Qué es la analítica sin cookies",
-            desc: "Definición, cómo funciona, por qué importa.",
-          },
-          {
-            href: "/es/for/ecommerce",
-            title: "Para eCommerce",
-            desc: "Marcas editoriales con foco comercial.",
-          },
-        ]}
-      />
-      <LogosStripEs />
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
