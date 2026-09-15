@@ -343,7 +343,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "commercial",
       rows: [
         { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Script or native module · 5–30 min by platform" },
-        { feature: "Human support", ga4: "Community forums on the free tier", seal: "Direct support on every plan" },
+        { feature: "Human support", ga4: "Community forums on the free tier", seal: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
       ],
     },
     {
@@ -422,7 +422,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       block: "commercial",
       rows: [
         { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Script o módulo nativo · 5–30 min según plataforma" },
-        { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Soporte directo en todos los planes" },
+        { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
       ],
     },
     {

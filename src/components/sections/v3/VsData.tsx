@@ -89,7 +89,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Google sales + certified partners", us: "Script or native module · 5–30 min by platform" },
-            { feature: "Support", them: "Enterprise SLAs · via resellers", us: "Direct support on every plan" },
+            { feature: "Support", them: "Enterprise SLAs · via resellers", us: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
             { feature: "Standard reports", them: "Same GA4 interface · 24–48 h processing lag", us: "Decision-ready defaults · real-time" },
@@ -189,7 +189,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Google sales + partners certificados", us: "Script o módulo nativo · 5–30 min según plataforma" },
-            { feature: "Soporte", them: "SLAs enterprise · vía resellers", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte", them: "SLAs enterprise · vía resellers", us: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
             { feature: "Informes estándar", them: "Misma interfaz GA4 · 24–48 h de retraso", us: "Listos por defecto · tiempo real" },
@@ -288,7 +288,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Adobe Consulting Services or Solution Partners", us: "Script or native module · 5–30 min by platform" },
-            { feature: "Support", them: "Tiered enterprise support plans", us: "Direct support on every plan" },
+            { feature: "Support", them: "Tiered enterprise support plans", us: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
             { feature: "Account management", them: "Enterprise account teams", us: "Dedicated manager on Enterprise" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
@@ -390,7 +390,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Adobe Consulting Services o Solution Partners", us: "Script o módulo nativo · 5–30 min según plataforma" },
-            { feature: "Soporte", them: "Planes de soporte enterprise por tiers", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte", them: "Planes de soporte enterprise por tiers", us: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
             { feature: "Account management", them: "Equipos de cuenta enterprise", us: "Manager dedicado en Enterprise" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
@@ -488,7 +488,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Implementation assistance on Enterprise", us: "Script or native module · 5–30 min by platform" },
-            { feature: "Support", them: "Tiered · SLAs on enterprise", us: "Direct support on every plan" },
+            { feature: "Support", them: "Tiered · SLAs on enterprise", us: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
             { feature: "Prebuilt reports", them: "Full classic reporting UI · mature", us: "Decision-ready defaults · channels, funnels, pages" },
@@ -580,7 +580,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Asistencia de implementación en Enterprise", us: "Script o módulo nativo · 5–30 min según plataforma" },
-            { feature: "Soporte", them: "Por tiers · SLAs en enterprise", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte", them: "Por tiers · SLAs en enterprise", us: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
             { feature: "Informes listos", them: "UI de reporting clásica completa · madura", us: "Listos por defecto · canales, funnels, páginas" },
@@ -710,7 +710,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Cloud: free setup support · On-Premise: onboarding in paid bundles", us: "Script or native module · 5–30 min by platform" },
-            { feature: "Support", them: "Included on Cloud · paid plans On-Premise", us: "Direct support on every plan" },
+            { feature: "Support", them: "Included on Cloud · paid plans On-Premise", us: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
           ]},
         ],
         faqs: [
@@ -832,7 +832,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Cloud: soporte gratuito de puesta en marcha · On-Premise: onboarding en bundles de pago", us: "Script o módulo nativo · 5–30 min según plataforma" },
-            { feature: "Soporte", them: "Incluido en Cloud · planes de pago On-Premise", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte", them: "Incluido en Cloud · planes de pago On-Premise", us: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
           ]},
         ],
         faqs: [
@@ -921,7 +921,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve or agency-led", us: "Script or native module · 5–30 min by platform" },
-            { feature: "Human support", them: "Community forums on the free tier", us: "Direct support on every plan" },
+            { feature: "Human support", them: "Community forums on the free tier", us: "Email from Growth · chat and priority from Scale · account manager on Enterprise" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
             { feature: "Standard reports", them: "Reports + Explorations · 24–48 h processing lag", us: "Decision-ready defaults · real-time" },
@@ -1011,7 +1011,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           ]},
           { category: "Customer success", block: "commercial", rows: [
             { feature: "Onboarding", them: "Self-serve o vía agencia", us: "Script o módulo nativo · 5–30 min según plataforma" },
-            { feature: "Soporte humano", them: "Foros de comunidad en el tier gratuito", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte humano", them: "Foros de comunidad en el tier gratuito", us: "Email desde Growth · chat y prioritario desde Scale · account manager en Enterprise" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
             { feature: "Informes estándar", them: "Reports + Explorations · 24–48 h de retraso de procesado", us: "Listos por defecto · tiempo real" },
