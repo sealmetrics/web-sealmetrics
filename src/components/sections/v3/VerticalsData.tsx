@@ -3,7 +3,7 @@ import type { VerticalPageData } from "./VerticalPageV3";
 type Locale = "en" | "es";
 export type VerticalKey =
   | "cmo" | "cto" | "dpo"
-  | "ecommerce" | "hotels" | "saas" | "agencies"
+  | "ecommerce" | "hotels" | "saas"
   | "media" | "finance" | "healthcare" | "education";
 
 // Shared helpers for consistency
@@ -362,66 +362,6 @@ export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageD
         ],
         ctaTitle: <>Ve tu <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>tasa real de activación</em> en 30 minutos.</>,
         ctaLede: "Reserva walkthrough. Pasamos tu funnel de signup + activación por Sealmetrics y te mostramos la diferencia con tu analítica actual. Funciona para SaaS product-led y sales-led.",
-      },
-    },
-    agencies: {
-      en: {
-        eyebrow: "For agencies",
-        h1: <>The analytics your clients <em>stop arguing with.</em></>,
-        lede: "Stop defending attribution reports. Stop explaining why pixel says X and CRM says Y. Sealmetrics is the neutral layer that client, brand and performance team sign against — so you stop being in the middle.",
-        pains: [
-          { title: "Client disputes every QBR", desc: "Every quarterly review turns into a fight about numbers. Sealmetrics ends that. The client sees the same number you see, because neither of you produced it." },
-          { title: "Pixel/CRM gap eats your commission", desc: "Your commission is tied to CRM revenue, but you optimize on pixel data. The gap is real money you leave on the table." },
-          { title: "Multi-brand clients need portfolio attribution", desc: "Your client has 12 DTC brands under one group. Each has its own GA4. You can't roll up performance without a week of spreadsheet work." },
-          { title: "New client onboarding takes 3 weeks", desc: "GA4 audit, consent mode check, pixel setup, UTM taxonomy — three weeks before you have clean data. Sealmetrics is live in 15 minutes." },
-        ],
-        outcomes: [
-          { n: "1", label: "Source of truth", detail: "Client, brand and agency all sign the same number." },
-          { n: "Portfolio", label: "Multi-brand rollup", detail: "Performance across every brand in the group, one dashboard." },
-          { n: "15 min", label: "Onboarding time", detail: "From \"new client\" to \"data flowing\" in a single call." },
-          { n: "MCP", label: "AI-ready reporting", detail: "Your agency AI agents query client analytics natively." },
-        ],
-        quote: { text: "Today every player is happy. The data is neutral, there's no black box, and everyone has accepted these numbers as the reference.", cite: "Toni Andújar · Digital & Direct Sales Director · Palladium Hotel Group" },
-        faqs: [
-          { q: "Can I manage multiple clients from one account?", a: "Yes. Each client is its own organization, with its own sites, members and billing, and one login can be a member of all of them — an organization switcher appears in the sidebar. Your clients only see their own organization." },
-          { q: "Which agencies already work with Sealmetrics?", a: "Product Hackers, 3dids and Ayesa are Sealmetrics partners: growth-led implementations and CRO, technical tag and data-layer work, and enterprise transformations respectively." },
-          { q: "Do clients need to pay separately?", a: "Depends on your model. Some agencies bill clients for Sealmetrics as a pass-through. Others fold it into retainer and take it from the onboarding cost savings. Enterprise plans support reseller agreements with custom margin." },
-          { q: "Does Sealmetrics work for white-label reporting?", a: "Yes. BigQuery export + full API = you build whatever client-facing dashboard you want, branded however you want. Sealmetrics stays in your backend; your client sees your UI." },
-          { q: "What about Data Studio / Power BI dashboards?", a: "Native BigQuery export means any BI tool (Data Studio, Power BI, Tableau, Metabase) connects directly. No ETL, no sampled exports, no quota issues." },
-          faqMigration.en,
-          faqGDPR.en,
-        ],
-        ctaTitle: <>Stop being the middle. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Be the advisor.</em></>,
-        ctaLede: "Book 30 minutes. We show you how to onboard a new client in 15 minutes and end the attribution dispute before it starts.",
-      },
-      es: {
-        eyebrow: "Para agencias",
-        h1: <>La analítica con la que tus clientes <em>dejan de discutir.</em></>,
-        lede: "Deja de defender reportes de atribución. Deja de explicar por qué el pixel dice X y el CRM dice Y. Sealmetrics es la capa neutral que cliente, marca y performance firman — y tú dejas de estar en medio.",
-        pains: [
-          { title: "El cliente discute cada QBR", desc: "Cada review trimestral se convierte en pelea de números. Sealmetrics lo termina. El cliente ve el mismo número que tú, porque ninguno lo produjisteis." },
-          { title: "El gap pixel/CRM se come tu comisión", desc: "Tu comisión está atada al revenue del CRM, pero optimizas con datos de pixel. El gap es dinero real que dejas sobre la mesa." },
-          { title: "Clientes multi-marca necesitan portfolio", desc: "Tu cliente tiene 12 marcas DTC bajo un grupo. Cada una con su GA4. No puedes consolidar performance sin una semana de Excel." },
-          { title: "Onboarding de nuevo cliente = 3 semanas", desc: "Auditoría GA4, consent mode, setup de pixel, taxonomía UTM — tres semanas antes de tener dato limpio. Sealmetrics está vivo en 15 minutos." },
-        ],
-        outcomes: [
-          { n: "1", label: "Fuente de verdad", detail: "Cliente, marca y agencia firman el mismo número." },
-          { n: "Portfolio", label: "Rollup multi-marca", detail: "Performance de cada marca del grupo, un dashboard." },
-          { n: "15 min", label: "Tiempo onboarding", detail: "De \"nuevo cliente\" a \"datos fluyendo\" en una sola llamada." },
-          { n: "MCP", label: "Reporting AI-ready", detail: "Tus agentes IA de agencia consultan analítica de cliente nativamente." },
-        ],
-        quote: { text: "Hoy todos los players están contentos. Los datos son neutrales, no hay caja negra y todos han aceptado estos valores como la referencia.", cite: "Toni Andújar · Director Digital y Venta Directa · Palladium Hotel Group" },
-        faqs: [
-          { q: "¿Puedo gestionar varios clientes desde una cuenta?", a: "Sí. Cada cliente es su propia organización, con sus sitios, miembros y facturación, y un mismo login puede ser miembro de todas: aparece un selector de organización en la barra lateral. Tus clientes solo ven su organización." },
-          { q: "¿Qué agencias trabajan ya con Sealmetrics?", a: "Product Hackers, 3dids y Ayesa son partners de Sealmetrics: implantaciones orientadas a growth y CRO, trabajo técnico de etiquetado y data layer, y transformaciones enterprise, respectivamente." },
-          { q: "¿Los clientes pagan aparte?", a: "Depende de tu modelo. Algunas agencias facturan Sealmetrics al cliente como pass-through. Otras lo incluyen en el retainer y lo compensan con ahorro de onboarding. Los planes Enterprise soportan acuerdos de reseller con margen custom." },
-          { q: "¿Sealmetrics sirve para reporting white-label?", a: "Sí. Export BigQuery + API completa = construyes el dashboard cliente que quieras, con la marca que quieras. Sealmetrics queda en tu backend; tu cliente ve tu UI." },
-          { q: "¿Y dashboards en Data Studio / Power BI?", a: "Export nativo BigQuery = cualquier herramienta BI (Data Studio, Power BI, Tableau, Metabase) conecta directo. Sin ETL, sin exports muestreados, sin problemas de cuota." },
-          faqMigration.es,
-          faqGDPR.es,
-        ],
-        ctaTitle: <>Deja de ser el medio. <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>Sé el asesor.</em></>,
-        ctaLede: "Reserva 30 minutos. Te enseñamos cómo hacer onboarding de un nuevo cliente en 15 min y terminar con la disputa de atribución antes de empezar.",
       },
     },
     media: {

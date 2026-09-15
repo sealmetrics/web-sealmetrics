@@ -184,7 +184,7 @@ Open is our public transparency hub: numbered chapters on how we run the company
 ## Industry-specific pages
 - /for/ecommerce — Analytics for ecommerce: revenue attribution, funnel analysis, complete conversion tracking
 - /for/hotels — Analytics for hotels: keeping the source through booking engines and payment gateways (passthrough referrers), booking properties, portfolio of properties, limits (OTA bookings are out of reach). Palladium 35% of GA4 bookings with no channel, Dreamplace 15–20% more sales attributed
-- /for/agencies — Analytics for marketing agencies: multi-client reporting, white-label dashboards
+- /for/agencies — Analytics for marketing agencies: why clients discount agency reports (platforms credit themselves, consent loss understates paid traffic), a client-owned organization with the agency as Admin or Member and one login across clients, channel rules reused via CSV, reconciliation with the client's orders, reporting through BigQuery/Data Studio, API and MCP; partners Product Hackers, 3dids, Ayesa; limits (no conversions sent to ad platforms, no spend import, one client at a time in the dashboard, last click per session). Palladium quote, Incapto +37–52% paid traffic vs GA4
 - /for/saas — Analytics for SaaS: trial conversion, feature adoption, retention measurement
 - /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
 - /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
@@ -330,7 +330,7 @@ Industry-specific (ES):
 - /es/for/ecommerce — Para eCommerce
 - /es/for/hotels — Analítica para hoteles: venta directa, motor de reservas y pasarelas de pago, límites
 - /es/for/saas — Para SaaS
-- /es/for/agencies — Para Agencias
+- /es/for/agencies — Analítica para agencias de marketing: organización del cliente, un acceso para todos los clientes, reglas de canal, conciliación con pedidos, límites
 - /es/for/media — Para Medios y Editores
 - /es/for/finance — Para Finanzas
 - /es/for/healthcare — Para Salud
