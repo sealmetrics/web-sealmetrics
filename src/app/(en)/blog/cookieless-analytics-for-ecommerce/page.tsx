@@ -170,7 +170,7 @@ export default function Page() {
               <strong>3. Last-click attribution at the event level.</strong> When a conversion fires on a page, the traffic source visible on that page load gets the credit. If the visitor saw Google Ads three days earlier, that earlier visit contributed to the Google Ads channel total; it is not stitched onto the later conversion. Each event stands on its own. Channel totals are what rolls up.
             </p>
             <p>
-              <strong>4. No cookies, no consent required.</strong> Because nothing is stored on or read from the visitor&apos;s device, the analytics falls outside the storage-and-access provisions of the ePrivacy Directive. No banner required. The 40–60% consent-rejection gap disappears because there is nothing to reject.
+              <strong>4. No cookies, no consent needed (self-assessed).</strong> Because nothing is stored on or read from the visitor&apos;s device, the analytics is designed to fall outside the storage-and-access provisions of the ePrivacy Directive, so our assessment is that no banner is needed; your DPO confirms. The 40–60% consent-rejection gap disappears because there is nothing to reject.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

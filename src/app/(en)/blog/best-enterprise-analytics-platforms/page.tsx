@@ -505,7 +505,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 cookieless analytics
               </Link>{" "}
               to measure traffic without depending on consent. No cookies are set. No personal data
-              is collected. No consent banner is required.
+              is collected. Our self-assessment is that no consent banner is needed; your DPO makes the call.
             </p>
 
             <p>

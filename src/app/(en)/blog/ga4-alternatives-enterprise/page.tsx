@@ -70,7 +70,7 @@ const alternatives = [
     pricing: "From \u20ac499/mo billed annually (\u20ac5,988/yr)",
     dataCompleteness: "Not reduced by consent",
     euCompliance:
-      "Designed for GDPR (self-assessed) — no PII collected, no cookies, no consent required, EU-only visitor data residency",
+      "Designed for GDPR (self-assessed) — no PII collected, no cookies, no consent banner needed in our self-assessment, EU-only visitor data residency",
     ecommerceFeatures:
       "Last-click revenue attribution on complete data, LENS AI natural-language querying, AI agent analytics, zero data sampling",
     chooseIf:
@@ -481,7 +481,7 @@ export default function GA4AlternativesEnterprisePage() {
                 cookieless analytics
               </Link>{" "}
               to measure traffic without depending on consent. No cookies are set. No personal data is
-              collected. No consent banner is required.
+              collected. Our self-assessment is that no consent banner is needed; your DPO makes the call.
             </p>
 
             <div className="my-5 p-5 bg-warm-white border border-warm-100 rounded-[4px] text-[0.85rem]">
