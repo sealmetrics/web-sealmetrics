@@ -30,21 +30,21 @@ export const metadata: Metadata = {
 };
 
 const roles = [
-  { slug: "cmo", name: "CMOs", tagline: "Defiende tu presupuesto con los números que tu CFO firma." },
-  { slug: "cto", name: "CTOs e ingeniería", tagline: "Pixel de 846 bytes. Cero mantenimiento. Sin piruetas server-side GTM." },
-  { slug: "dpo", name: "DPOs y legal", tagline: "Analítica diseñada para el RGPD desde la arquitectura, no por capa de compliance." },
+  { slug: "cmo", name: "CMOs", tagline: "Primero el total con finanzas, después el reparto por canal." },
+  { slug: "cto", name: "CTOs e ingeniería", tagline: "Un script de 1,1 KB, nada en el dispositivo y los datos tras una API." },
+  { slug: "dpo", name: "DPOs y legal", tagline: "La revisión del proveedor con el DPA: datos, conservación, subencargados." },
 ];
 
 const industries = [
   { slug: "ecommerce", name: "eCommerce", tagline: "Tu tienda sabe qué se vendió. Mira qué canales y productos lo vendieron." },
   { slug: "hotels", name: "Hoteles y travel", tagline: "Palladium detectó un 35% de reservas de GA4 sin canal. Mira las tuyas." },
-  { slug: "saas", name: "SaaS", tagline: "Trial, activación, upgrade — todo first-party, independiente del consentimiento." },
+  { slug: "saas", name: "SaaS", tagline: "Registros y pruebas por canal, medidos sin pérdida por consentimiento." },
   { slug: "multi-brand-retailers", name: "Retail multimarca", tagline: "Todas las marcas medidas con un mismo método, para que el grupo pueda compararlas." },
   { slug: "agencies", name: "Agencias", tagline: "Una capa medida que posee el cliente y en la que trabaja todo tu equipo." },
-  { slug: "media", name: "Medios y publishers", tagline: "Analítica que resiste a los ad-blockers. 50%+ de audiencia invisible para GA." },
-  { slug: "finance", name: "Finanzas y banca", tagline: "Compliance grado bancario. Review en una reunión." },
-  { slug: "healthcare", name: "Salud", tagline: "Sin datos personales de pacientes en la analítica. Portales medidos en agregado." },
-  { slug: "education", name: "Educación", tagline: "Desde K-12 a universidades. Sin datos personales de estudiantes." },
+  { slug: "media", name: "Medios y publishers", tagline: "Lectores contados sin cookies, desde un subdominio propio." },
+  { slug: "finance", name: "Finanzas y banca", tagline: "Solicitudes por canal, con los documentos que pide una revisión." },
+  { slug: "healthcare", name: "Salud", tagline: "Solicitudes de cita por canal, en agregado y sin cookies." },
+  { slug: "education", name: "Educación", tagline: "Consultas y solicitudes por canal, sin identificadores." },
 ];
 
 export default function Page() {

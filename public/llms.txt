@@ -184,20 +184,20 @@ Open is our public transparency hub: numbered chapters on how we run the company
 
 ## Role-specific pages
 - /for — Audiences and verticals index
-- /for/cmo — How CMOs use Sealmetrics for attribution and budget decisions
-- /for/cto — Technical architecture, setup, and engineering overhead comparison
-- /for/dpo — GDPR compliance, privacy architecture, regulatory alignment
+- /for/cmo — Analytics for CMOs: three sources bring three revenue totals to the budget review; agree the order total with finance, reconcile, read the channel split on a measured base and test before cutting. Dreamplace 15–20% more sales attributed, Incapto paid share 50% vs 62%; limits (last click per session, no conversions sent to ad platforms, no spend import)
+- /for/cto — Analytics for CTOs and engineering: ~1.1 KB deferred script (GA4 gtag.js 132× heavier, measured 27 Aug 2026), no cookies or device storage, History API SPA tracking with auto=0/spa=0 manual mode, first-party subdomain via A record, conv/micro code, REST API with read-only tokens, hosted MCP and BigQuery on every plan, webhooks and audit logs from Scale; limits (no self-hosting, event rows kept 1 day, hash routers manual)
+- /for/dpo — Analytics for DPOs: the vendor review against the Article 28 DPA (data inventory, retention 1 day / 90 days / 24 months, sub-processors, purposes, clauses 4.6 and 4.7), checking the live site, auditing properties for personal data, privacy notice text; conditional on configuration and national authority; no ISO 27001 or SOC 2
 
 ## Industry-specific pages
 - /for/ecommerce — Analytics for eCommerce and DTC teams: the weekly questions (which channel, campaign, funnel step and product sells) and why GA4 and ad platforms answer them on the wrong base; reconciliation with store orders first, channel mix on the measured base, fixed purchase funnel with Funnel by UTM, products by channel from order line items; Shopify, WooCommerce, Magento 2, PrestaShop, OpenCart; limits (no customer-level analysis or LTV, no lookback across sessions, no conversions sent to ad platforms, no spend import, one fixed funnel). Incapto: 96% of orders, 29% of visits missing in GA4, paid share 50% vs 62%
 - /for/hotels — Analytics for hotels: keeping the source through booking engines and payment gateways (passthrough referrers), booking properties, portfolio of properties, limits (OTA bookings are out of reach). Palladium 35% of GA4 bookings with no channel, Dreamplace 15–20% more sales attributed
 - /for/agencies — Analytics for marketing agencies: why clients discount agency reports (platforms credit themselves, consent loss understates paid traffic), a client-owned organization with the agency as Admin or Member and one login across clients, channel rules reused via CSV, reconciliation with the client's orders, reporting through BigQuery/Data Studio, API and MCP; partners Product Hackers, 3dids, Ayesa; limits (no conversions sent to ad platforms, no spend import, one client at a time in the dashboard, last click per session). Palladium quote, Incapto +37–52% paid traffic vs GA4
 - /for/multi-brand-retailers — Analytics for multi-brand retail groups: why brand reports cannot be compared (a banner, GA4 property, agency and channel taxonomy per brand; consent loss varies with brand strength), one organization with a site per brand domain and per-site currency and timezone, brand teams scoped as Members, one channel taxonomy via CSV, reconciliation per brand, group total in a shared BigQuery dataset; limits (no journeys across brands, currencies converted in the warehouse, rules not retroactive). No multi-brand retail case yet: Palladium and Incapto figures
-- /for/saas — Analytics for SaaS: trial conversion, feature adoption, retention measurement
-- /for/media — Analytics for media & publishing: content performance, audience engagement, ad revenue
-- /for/finance — Analytics for financial services: compliance-first tracking, EU data residency
-- /for/education — Analytics for education: enrollment funnels, engagement measurement, GDPR compliance
-- /for/healthcare — Analytics for healthcare: privacy-first aggregate event measurement, no patient identification
+- /for/saas — Analytics for SaaS marketing sites: sign-up and trial flows as microconversions and conversions by channel and campaign without consent loss, SPA tracking, passthrough referrers for SSO; limits (no trial-to-paid per account, no cohorts or retention, no in-app product analytics, fixed eCommerce funnel only)
+- /for/media — Analytics for media and publishers: pageviews without cookies, first-party subdomain to reduce ad-blocker loss, sections via content groups, reading and newsletter/subscription events as microconversions and conversions; limits (no per-reader profiles or subscriber journeys, no ad-server integration)
+- /for/finance — Analytics for banks, insurers and lenders: applications and lead forms by channel, the documents a vendor review asks for (DPA annexes, TPSR, audit rights), audit logs from Scale, IP allowlist and isolated processing on Enterprise; no sector certification or DORA/EBA claims
+- /for/education — Analytics for universities and EdTech: programme enquiries and applications by channel without identifiers, audiences that include minors, keeping personal data out of properties; no claim about COPPA or children's-data rules
+- /for/healthcare — Analytics for clinics and health publishers: appointment requests by channel in aggregate without cookies, why condition-page visits are sensitive, keeping health data out of URLs and properties; decision left to counsel
 
 ## Seal AI — private AI for analytics (EU-only inference)
 Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistant and automated insights. It runs on the open-weight gpt-oss-120b model (Apache 2.0) hosted by Scaleway in Paris, France only. Scaleway is a French company with no US parent, so the US CLOUD Act does not apply and GDPR Chapter V (international transfers) is never triggered — no Standard Contractual Clauses, no Transfer Impact Assessment, no dependence on the EU-US Data Privacy Framework. Zero prompt retention by default, no training on customer data. Because Sealmetrics is consentless (no IPs, cookies or visitor identifiers are ever collected), there is no personal identifier to send to the model in the first place.
@@ -330,20 +330,20 @@ Core pages (ES):
 
 Role-specific (ES):
 - /es/for — Audiencias y verticales (índice)
-- /es/for/cmo — Para CMOs
-- /es/for/cto — Para CTOs
-- /es/for/dpo — Para DPOs
+- /es/for/cmo — Analítica para CMOs: acordar el total con finanzas, conciliar y repartir presupuesto por canal sobre una base medida; límites
+- /es/for/cto — Analítica para CTOs: script de ~1,1 KB, sin almacenamiento en el dispositivo, SPA, first-party, API, MCP y BigQuery; límites
+- /es/for/dpo — Analítica para DPOs: revisión del proveedor con el DPA del artículo 28, conservación, subencargados y finalidades; sin certificaciones
 
 Industry-specific (ES):
 - /es/for/ecommerce — Analítica para eCommerce y DTC: canal, campaña, embudo y producto sobre una base conciliada con los pedidos; límites. Caso Incapto
 - /es/for/hotels — Analítica para hoteles: venta directa, motor de reservas y pasarelas de pago, límites
 - /es/for/multi-brand-retailers — Analítica para retail multimarca: comparar marcas con un mismo método, un sitio por dominio de marca, acceso por marca, reglas de canal comunes, total de grupo en BigQuery, límites
-- /es/for/saas — Para SaaS
+- /es/for/saas — Analítica para SaaS: registros y pruebas por canal sin pérdida por consentimiento; límites (sin cohortes ni retención)
 - /es/for/agencies — Analítica para agencias de marketing: organización del cliente, un acceso para todos los clientes, reglas de canal, conciliación con pedidos, límites
-- /es/for/media — Para Medios y Editores
-- /es/for/finance — Para Finanzas
-- /es/for/healthcare — Para Salud
-- /es/for/education — Para Educación
+- /es/for/media — Analítica para medios: lectores sin cookies, subdominio propio, secciones y suscripciones; límites
+- /es/for/finance — Analítica para banca y seguros: solicitudes por canal y documentación para la revisión del proveedor
+- /es/for/healthcare — Analítica para salud: solicitudes de cita por canal en agregado, sin cookies; decisión de la asesoría
+- /es/for/education — Analítica para educación: consultas y solicitudes por canal sin identificadores
 
 About / extras (ES):
 - /es/about — Quiénes somos
