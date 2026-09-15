@@ -335,6 +335,7 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 | 24 | 5 | track Meta Ads revenue by ad set without the pixel / medir ingresos de Meta Ads por conjunto | `/integrations/meta-ads` (EN+ES) + `/blog/meta-ads-conversions-vs-crm` | shipped 15 Sep |
 | 25 | 6 | analytics for multi-brand retail groups to compare brands / analítica para comparar marcas de un grupo retail | `/for/multi-brand-retailers` (EN+ES) | shipped 15 Sep |
 | 26 | 6 | how to attribute eCommerce revenue to channels without cookies / cómo atribuir ingresos de un eCommerce a canales sin cookies | `/for/ecommerce` (EN+ES) | shipped 15 Sep |
+| 27 | 7 | MCP prompts for web analytics in Claude or ChatGPT / prompts MCP para analítica web en Claude o ChatGPT | `/ai-analytics/prompts` (EN+ES) | shipped 15 Sep |
 
 ### Method (monthly, first week)
 

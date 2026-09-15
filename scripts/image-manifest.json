@@ -131,6 +131,16 @@
       "sourceHash": "2d8ef0e79fe89f79cad5f1ba1ee48b11c65dc912c26482514c9a113c8a223b1d",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/ai-analytics/prompts.avif": {
+      "source": "public/og/ai-analytics/prompts.png",
+      "sourceHash": "76289c14effd59221d6b288d974965358a8ad717032ecf176ab99906d1e3a144",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/ai-analytics/prompts.webp": {
+      "source": "public/og/ai-analytics/prompts.png",
+      "sourceHash": "76289c14effd59221d6b288d974965358a8ad717032ecf176ab99906d1e3a144",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/ai-brand-monitoring.avif": {
       "source": "public/og/ai-brand-monitoring.png",
       "sourceHash": "8da3d107176db47ab4a98d0c9c4e12d62f2e6cab77018176ed9ab8f20b6c3801",

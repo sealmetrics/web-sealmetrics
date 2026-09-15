@@ -471,6 +471,10 @@ export default function AiAnalyticsPage() {
             <Link href="/docs/mcp" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
               connector reference
             </Link>
+            . Twelve questions ready to paste, grouped by the problem they solve, are in the{" "}
+            <Link href="/ai-analytics/prompts" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+              MCP prompt library
+            </Link>
             .
           </p>
         </div>
