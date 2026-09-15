@@ -305,7 +305,7 @@ Competitor mention counts (all engines, July run): **Matomo 45** (top cited: `ma
 
 ### Prompt tracking list → target asset
 
-Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and ES where listed. A prompt is **won** when SealMetrics is named; **cited** when a sealmetrics.com URL appears as a source.
+Run each prompt monthly on Perplexity, ChatGPT (search on), Claude and Gemini (Google Search grounding, the API counterpart of AI Overviews and AI Mode). EN and ES where listed. A prompt is **won** when SealMetrics is named; **cited** when a sealmetrics.com URL appears as a source.
 
 | # | Tier | Prompt (EN / ES) | Target asset | Status Jul 2026 |
 |---|---|---|---|---|
@@ -347,9 +347,9 @@ Run each prompt monthly on Perplexity, ChatGPT (search on), and Claude. EN and E
 
 **Log** (append monthly):
 
-| Date | Perplexity SOV | OpenAI SOV | Anthropic SOV | Tier 1–2 SOV | Won / 13 | Notes |
-|---|---:|---:|---:|---:|---|---|
-| Jul 2026 (baseline) | 16.7% | 10% | 10% | 0% | — | pre-content-batch audit |
+| Date | Perplexity SOV | OpenAI SOV | Anthropic SOV | Gemini SOV | Tier 1–2 SOV | Won / prompts | Notes |
+|---|---:|---:|---:|---:|---:|---|---|
+| Jul 2026 (baseline) | 16.7% | 10% | 10% | not run | 0% | — | pre-content-batch audit, 13 prompts |
 
 ### What the engines reward (from competitor citation analysis)
 
