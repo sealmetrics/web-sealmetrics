@@ -368,6 +368,18 @@ Observado: la documentación también tiene integración con PrestaShop, que el 
 
 ---
 
+## 13. Fase 7 · Producto y autoridad
+
+| # | Pieza | Estado |
+|---|---|---|
+| 1 | Biblioteca de prompts MCP por problema: `/ai-analytics/prompts` (EN+ES, nueva) | **Hecha** (15 sep) — doce prompts en cuatro grupos (A 3 · B 3 · C 4 · D 2), cada uno con cuándo usarlo, el prompt copiable, las herramientas que llama y lo que no puede responder, más un bloque de "prompts que no van a funcionar". Escritos contra la lista de herramientas de `integrations/mcp-server`: periodos y `compare` válidos, eventos en bruto limitados a 31 días, reglas de canal solo en borrador. Descartado del catálogo de docs lo que no está activo o no existe: cuota de bots y agentes, clientes recurrentes, user-agents, desglose por `utm_content`. Los prompts que cruzan con Google Analytics, Google Ads o Meta Ads lo dicen y no nombran ningún servidor como oficial. Enlazada desde `/ai-analytics` (EN+ES) y `/docs/mcp`. Prompt 27 en §9b |
+| 2 | `/videos` con transcripciones | Pendiente — necesita las grabaciones |
+| 3 | Benchmark europeo y State of Consentless Analytics | Bloqueado por D3 |
+
+Notas para la doc (otro repositorio): el catálogo `web-analytics-prompts` incluye prompts que dependen de funciones no activas (SEAL-003 cuota de bots y agentes, "returning customer split", user-agents en SEAL-026), un emoji en SEAL-005 y un email personal en "Contribute". `/docs/mcp` dice "last non-direct click" y "read-only tools and nothing else", mientras la doc del servidor lista herramientas de borrador de reglas de canal; conviene alinearlo.
+
+---
+
 ## 11. Integración (15 sep 2026)
 
 Las 24 PRs apiladas (#189–#234) se integran en una sola rama, `claude/positioning-integrated`, sobre `main`, que había avanzado con 11 commits de calidad (#197, #199, #202, #204, #205, #216, #223, #224, #226, #231, #232). Conflictos resueltos una vez (120 bloques en 56 archivos) y barrido del contenido nuevo contra las reglas añadidas a CLAUDE.md el 14 sep: sin afirmaciones de cobertura total ("measured on every visit", "en cada visita", "captura completa" → "sin pérdida por consentimiento"), sin "GDPR by architecture" como hecho, Resend como subencargado fuera de la UE sin dato de visitante. Las PRs apiladas quedan sustituidas por la integrada.

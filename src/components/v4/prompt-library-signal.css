@@ -1,0 +1,26 @@
+/* Prompt library additions on top of problem-landing-signal.css. */
+
+.sig-prompt-grid .sig-prompt-id {
+  display: inline-block;
+  margin: 0 0 12px !important;
+  padding: 3px 7px;
+  background: var(--ink);
+  color: var(--acid, #cbff3d);
+  font: 650 10px/1.4 var(--font-mono), monospace;
+  letter-spacing: 0.12em;
+}
+
+.sig-prompt-grid pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.sig-prompt-grid p code {
+  font: 500 12.5px/1.6 var(--font-mono), monospace;
+  overflow-wrap: anywhere;
+}
+
+.sig-prompt-grid p strong {
+  color: var(--ink);
+  font-weight: 700;
+}

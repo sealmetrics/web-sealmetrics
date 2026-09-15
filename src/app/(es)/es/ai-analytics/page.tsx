@@ -469,7 +469,12 @@ export default function AiAnalyticsEsPage() {
             >
               referencia del servidor MCP
             </a>{" "}
-            cubre ambos, cliente por cliente.
+            cubre ambos, cliente por cliente. Doce preguntas listas para pegar, agrupadas por el problema que
+            resuelven, están en la{" "}
+            <Link href="/es/ai-analytics/prompts" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
+              biblioteca de prompts MCP
+            </Link>
+            .
           </p>
         </div>
       </section>

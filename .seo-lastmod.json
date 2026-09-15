@@ -60,7 +60,7 @@
     "date": "2026-09-14"
   },
   "/ai-analytics/": {
-    "hash": "80e742ec81786bac",
+    "hash": "a7e029bdfa14a75a",
     "date": "2026-09-15"
   },
   "/data-loss-calculator/": {
@@ -256,7 +256,7 @@
     "date": "2026-09-14"
   },
   "/es/ai-analytics/": {
-    "hash": "1cd10c780bef755c",
+    "hash": "3d3b8f7418087249",
     "date": "2026-09-15"
   },
   "/es/data-loss-calculator/": {
@@ -1124,8 +1124,8 @@
     "date": "2026-09-14"
   },
   "/docs/mcp/": {
-    "hash": "62240a97dd70d462",
-    "date": "2026-09-14"
+    "hash": "4f418f2cec01bf4d",
+    "date": "2026-09-15"
   },
   "/es/mide-la-realidad/": {
     "hash": "9ef60e4399ac2695",
@@ -1265,6 +1265,14 @@
   },
   "/for/multi-brand-retailers/": {
     "hash": "179c6c266c42fd1d",
+    "date": "2026-09-15"
+  },
+  "/ai-analytics/prompts/": {
+    "hash": "687a69c10edc102f",
+    "date": "2026-09-15"
+  },
+  "/es/ai-analytics/prompts/": {
+    "hash": "6be47c1662e3607d",
     "date": "2026-09-15"
   }
 }

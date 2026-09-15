@@ -227,7 +227,9 @@ export default function McpDocsPage() {
               question to a canonical metric, so the model calls a documented contract instead of
               guessing at raw columns. Attribution is{" "}
               <Link href="/glossary/last-click-attribution">last non-direct click</Link>, measured on
-              traffic without consent gaps rather than the consented fraction.
+              traffic without consent gaps rather than the consented fraction. Worked examples, organised
+              by business problem, are in the{" "}
+              <Link href="/ai-analytics/prompts">prompt library</Link>.
             </p>
             <ul className="mt-7 space-y-3 text-[16px] leading-[1.65] text-ink-2 list-none p-0">
               {canDo.map((line) => (
