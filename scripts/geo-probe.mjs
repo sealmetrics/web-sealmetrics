@@ -12,7 +12,19 @@
  * Reads the prompt table straight out of SEO-STRATEGY.md §9b — the strategy doc
  * is the source of truth, never a copy in this file — runs each prompt against
  * every engine whose API key is present, scores it, and writes both the raw
- * transcript and a report in the shape of `.seo-audit/geo-runs/YYYY-MM.md`.
+ * transcript and a report to `.seo-audit/geo-runs/YYYY-MM-probe.md` (+ .json).
+ * The `-probe` suffix keeps it from overwriting a hand-written monthly report
+ * of the same month, which the first automated run did.
+ *
+ * READING §9b
+ *   - A row "EN prompt / ES prompt" yields one prompt per language. A second
+ *     half that is not Spanish is run as an extra English variant of the same
+ *     prompt number, never labelled "es".
+ *   - A trailing "(…)" is an internal note ("ES focus — beat trustedshops.es")
+ *     and is stripped before the prompt reaches an engine.
+ *   - A prompt that already contains the brand name is "branded": it is run and
+ *     reported, but kept out of share of voice, because naming Sealmetrics in
+ *     the question is not the engine choosing to name it.
  *
  * SCORING, per §9b
  *   0  Sealmetrics not named
@@ -59,6 +71,8 @@ const OUT_DIR = path.join(repoRoot, arg("out", ".seo-audit/geo-runs"));
 const RUNS = Number(arg("runs", "3"));
 const BRAND = /sealmetrics/i;
 const BRAND_URL = /sealmetrics\.com/i;
+// Enough to tell the ES half of a §9b row from a second English prompt.
+const SPANISH = /[áéíóúñ¿¡]|\b(de|del|la|el|para|con|sin|por|qué|cómo|o|y|a|en)\b/i;
 
 /* ------------------------------------------- the prompt list, from §9b only */
 
@@ -82,8 +96,11 @@ function readPrompts() {
   const rows = [...section.matchAll(/^\|\s*(\d+)\s*\|\s*(\d)\s*\|\s*([^|]+?)\s*\|/gm)];
   const prompts = rows.map(([, n, tier, text]) => {
     // "best GA4 alternatives for eCommerce / alternativas a Google Analytics"
-    const [en, es] = text.split(" / ").map((t) => t.replace(/\*\*/g, "").trim());
-    return { n: Number(n), tier: Number(tier), en, es: es ?? null };
+    const clean = (t) => t.replace(/\*\*/g, "").replace(/\s*\([^)]*\)\s*$/, "").trim();
+    const [first, second] = text.split(" / ").map(clean);
+    const variants = [{ lang: "en", text: first }];
+    if (second) variants.push({ lang: SPANISH.test(second) ? "es" : "en", text: second });
+    return { n: Number(n), tier: Number(tier), variants };
   });
   if (!prompts.length) {
     console.error("[geo-probe] found §9b but no prompt rows — refusing to guess.");
@@ -178,7 +195,7 @@ const ENGINES = {
     label: "Google (Gemini + Search)",
     key: () => process.env.GEMINI_API_KEY,
     async ask(prompt, key) {
-      const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+      const model = process.env.GEMINI_MODEL || "gemini-3.6-flash";
       const res = await fetch(
         `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,
         {
@@ -285,13 +302,23 @@ if (!active.length) {
 }
 
 const results = [];
+/** @type {{id: string, prompt?: number, tier: number|null, lang: string, text: string, kind: string}[]} */
 const tasks = [
-  ...prompts.flatMap((p) =>
-    [
-      { id: `${p.n}-en`, tier: p.tier, lang: "en", text: p.en, kind: "sov" },
-      p.es ? { id: `${p.n}-es`, tier: p.tier, lang: "es", text: p.es, kind: "sov" } : null,
-    ].filter(Boolean)
-  ),
+  ...prompts.flatMap((p) => {
+    const perLang = {};
+    return p.variants.map((v) => {
+      perLang[v.lang] = (perLang[v.lang] ?? 0) + 1;
+      const suffix = perLang[v.lang] > 1 ? `${v.lang}${perLang[v.lang]}` : v.lang;
+      return {
+        id: `${p.n}-${suffix}`,
+        prompt: p.n,
+        tier: p.tier,
+        lang: v.lang,
+        text: v.text,
+        kind: BRAND.test(v.text) ? "branded" : "sov",
+      };
+    });
+  }),
   ...DIAGNOSTICS.map((d) => ({ ...d, tier: null, lang: "en", kind: "diagnostic" })),
 ];
 
@@ -329,7 +356,7 @@ const stamp = `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(
 mkdirSync(OUT_DIR, { recursive: true });
 
 writeFileSync(
-  path.join(OUT_DIR, `${stamp}.json`),
+  path.join(OUT_DIR, `${stamp}-probe.json`),
   `${JSON.stringify({ generated_at: now.toISOString(), runs_per_prompt: RUNS, results }, null, 2)}\n`
 );
 
@@ -343,8 +370,10 @@ const won = (engineId) =>
 
 /** §9b log: a prompt is won when any measured engine names Sealmetrics, in EN or ES. */
 const promptsWon = new Set(
-  results.filter((r) => r.kind === "sov" && r.score >= 1).map((r) => r.id.split("-")[0])
+  results.filter((r) => r.kind === "sov" && r.score >= 1).map((r) => r.prompt)
 ).size;
+/** Prompts with at least one unbranded variant: the denominator of "won". */
+const promptsScored = new Set(tasks.filter((t) => t.kind === "sov").map((t) => t.prompt)).size;
 
 /** §9b log: SOV over tier 1 and 2 prompts, across every engine that was measured. */
 const tier12 = (() => {
@@ -400,11 +429,29 @@ for (const task of tasks.filter((t) => t.kind === "sov")) {
     ),
   ];
   lines.push(
-    `| ${task.id.split("-")[0]} | ${task.tier} | ${task.lang} | ${task.text.slice(0, 60)} | ` +
+    `| ${task.prompt} | ${task.tier} | ${task.lang} | ${task.text.slice(0, 60)} | ` +
       `${cells.join(" | ")} | ${rivals.slice(0, 8).join(", ") || "—"} |`
   );
 }
 lines.push("");
+const branded = tasks.filter((t) => t.kind === "branded");
+if (branded.length) {
+  lines.push("## 2b. Branded prompts — not in share of voice");
+  lines.push("");
+  lines.push("These §9b prompts name Sealmetrics in the question, so a mention is not the engine's choice.");
+  lines.push("They are scored for reference only and excluded from SOV, Tier 1–2 SOV and prompts won.");
+  lines.push("");
+  lines.push(`| # | Lang | Prompt | ${active.map(([, e]) => e.label).join(" | ")} |`);
+  lines.push(`|---|---|---|${active.map(() => "---").join("|")}|`);
+  for (const task of branded) {
+    const cells = active.map(([id]) => {
+      const r = results.find((x) => x.engine === id && x.id === task.id);
+      return r?.score === null || r === undefined ? "err" : String(r.score);
+    });
+    lines.push(`| ${task.prompt} | ${task.lang} | ${task.text.slice(0, 60)} | ${cells.join(" | ")} |`);
+  }
+  lines.push("");
+}
 lines.push("## 3. Diagnostics — which host gets cited");
 lines.push("");
 lines.push("Brand-named probes. They do not count toward SOV; they test whether the marketing site or");
@@ -438,12 +485,12 @@ lines.push("```");
 lines.push(
   `| ${now.toLocaleString("en", { month: "short", year: "numeric", timeZone: "UTC" })} (run) | ` +
     `${cell("perplexity")} | ${cell("openai")} | ${cell("anthropic")} | ${cell("gemini")} | ` +
-    `${tier12 === null ? "—" : `${tier12}%`} | ${promptsWon}/${prompts.length} | ` +
+    `${tier12 === null ? "—" : `${tier12}%`} | ${promptsWon}/${promptsScored} | ` +
     `Automated run via scripts/geo-probe.mjs. |`
 );
 lines.push("```");
 lines.push("");
 
-const reportPath = path.join(OUT_DIR, `${stamp}.md`);
+const reportPath = path.join(OUT_DIR, `${stamp}-probe.md`);
 writeFileSync(reportPath, `${lines.join("\n")}\n`);
 console.log(`[geo-probe] wrote ${path.relative(repoRoot, reportPath)} and the raw .json beside it.`);
