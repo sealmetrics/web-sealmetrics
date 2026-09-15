@@ -685,7 +685,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Entry cost", them: "Cloud from $23 / ~€29 per month (50K hits) · self-hosted 'free' + ops", us: "€499/mo · all-inclusive · no ops" },
             { feature: "Cloud price at eCommerce volume", them: "Quote-based above 10M hits/mo", us: "Published pricing at every tier" },
             { feature: "Total cost of ownership (self-host)", them: "Server, ops, security, plugins, upgrades", us: "Zero infra cost · fully managed" },
-            { feature: "Implementation support", them: "Free support on Cloud · forum or paid bundles On-Premise", us: "Direct support on every plan" },
+            { feature: "Implementation support", them: "Free support on Cloud · forum or paid bundles On-Premise", us: "Self-service docs · onboarding session from Scale" },
           ]},
           { category: "Modern stack", block: "reporting", rows: [
             { feature: "Native MCP / AI agents", them: "Plugin (Cloud + On-Premise, since 2026)", us: "Native · no plugin · all plans" },
@@ -807,7 +807,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Coste de entrada", them: "Cloud desde $23 / ~29€ al mes (50K hits) · self-hosted 'gratis' + ops", us: "€499/mes · todo incluido · sin ops" },
             { feature: "Precio Cloud a volumen eCommerce", them: "Bajo presupuesto por encima de 10M hits/mes", us: "Precio publicado en todos los tiers" },
             { feature: "TCO (self-host)", them: "Servidor, ops, seguridad, plugins, upgrades", us: "Cero coste de infra · totalmente gestionado" },
-            { feature: "Soporte implementación", them: "Soporte gratuito en Cloud · foro o bundles de pago On-Premise", us: "Soporte directo en todos los planes" },
+            { feature: "Soporte implementación", them: "Soporte gratuito en Cloud · foro o bundles de pago On-Premise", us: "Docs self-service · sesión de onboarding desde Scale" },
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / agentes IA nativos", them: "Plugin (Cloud + On-Premise, desde 2026)", us: "Nativo · sin plugin · todos los planes" },

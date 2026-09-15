@@ -16,8 +16,8 @@ const faqGDPR = {
   es: { q: "¿Es realmente RGPD sin banner de consentimiento?", a: "Está diseñada para ello; es nuestra autoevaluación, no una certificación. Sin cookies por arquitectura — sin cookies, sin localStorage, sin fingerprinting, sin datos personales. 100% alojado en UE en Dublín. Diseñada para el RGPD, ePrivacy y Schrems II desde la arquitectura." },
 };
 const faqSetup = {
-  en: { q: "How long does setup take?", a: "5 to 30 minutes, depending on the platform. Add one script tag or native module to your site. Data flows from the first hour. Full calibration done together with our team during week 1." },
-  es: { q: "¿Cuánto tarda la instalación?", a: "De 5 a 30 minutos, según la plataforma. Añade un script o un módulo nativo a tu web. Los datos fluyen desde la primera hora. Calibración completa con nuestro equipo durante la primera semana." },
+  en: { q: "How long does setup take?", a: "5 to 30 minutes, depending on the platform. Add one script tag or native module to your site. Data flows from the first hour. Calibration against your backend happens in week 1 — from the self-service docs on Agentic and Growth, with an onboarding session on Scale and white-glove onboarding on Enterprise." },
+  es: { q: "¿Cuánto tarda la instalación?", a: "De 5 a 30 minutos, según la plataforma. Añade un script o un módulo nativo a tu web. Los datos fluyen desde la primera hora. La calibración contra tu backend se hace en la primera semana — con la documentación self-service en Agentic y Growth, con una sesión de onboarding en Scale y con onboarding white-glove en Enterprise." },
 };
 
 export function getVerticalData(key: VerticalKey, locale: Locale): VerticalPageData {

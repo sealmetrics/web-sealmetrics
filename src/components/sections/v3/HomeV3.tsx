@@ -49,7 +49,7 @@ export function LogosSecondary() {
 
 
 /* ============================================
-   VALUE PROP · 4-minute strip
+   VALUE PROP · 3-minute audit strip
    ============================================ */
 export function ValueProp4Min() {
   return (
@@ -57,20 +57,20 @@ export function ValueProp4Min() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_auto] gap-7 md:gap-12 items-center">
         <div>
           <span className="inline-block bg-brand text-ink font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
-            4-minute demo
+            3-minute audit
           </span>
           <p
             className="text-white font-semibold leading-[1.2] tracking-[-0.025em] max-w-[32ch]"
             style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
           >
-            In 4 minutes, go from seeing{" "}
+            In 3 minutes, find out{" "}
             <em
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              half your sales
+              how much of your sales
             </em>{" "}
-            to seeing all of them.
+            your analytics is missing.
           </p>
           <p className="mt-3 font-mono text-[13px] tracking-[0.04em] text-white/60">
             Your own site · your real gap · no install · no commitment
@@ -81,7 +81,7 @@ export function ValueProp4Min() {
           className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition"
           style={{ backgroundColor: "#E8B84B" }}
         >
-          Book a 4-min walkthrough →
+          Start the 3-minute audit →
         </Link>
       </div>
     </section>
@@ -568,7 +568,7 @@ const STEPS_COPY = {
     ],
     primaryCta: "Start 14-day trial",
     secondaryCta: "See your GA4 gap first",
-    foot: "14-day trial · 4-minute setup · Worth a look before next quarter's budget",
+    foot: "14-day trial · 5–30 min setup by platform · Worth a look before next quarter's budget",
   },
   es: {
     eyebrow: "Cómo empezar",
@@ -584,7 +584,7 @@ const STEPS_COPY = {
     ],
     primaryCta: "Prueba de 14 días",
     secondaryCta: "Ver tu gap GA4 primero",
-    foot: "Prueba de 14 días · Setup en 4 minutos · Antes del próximo presupuesto",
+    foot: "Prueba de 14 días · Setup en 5–30 min según plataforma · Antes del próximo presupuesto",
   },
 } as const;
 
@@ -730,7 +730,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without Sealmetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
+    foot: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -738,7 +738,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin Sealmetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 minutos",
+    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
   },
 } as const;
 

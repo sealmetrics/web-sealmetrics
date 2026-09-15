@@ -382,7 +382,7 @@ export function ProductFinalCtaV3Es() {
             La plataforma de analítica que <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>los equipos eCommerce merecen.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Empieza la prueba de 14 días en 4 minutos — pega una línea de código y empieza a medir todo lo que GA4 te oculta. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
+            Empieza la prueba de 14 días — instala un script o un módulo nativo en 5 a 30 minutos, según tu plataforma, y empieza a medir lo que GA4 se pierde. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
           </p>
           <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">

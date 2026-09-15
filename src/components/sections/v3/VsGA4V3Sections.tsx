@@ -14,7 +14,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
         ctaA: "Prueba de 14 días",
         ctaB: "Reserva una demo",
-        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 4 min",
+        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
       }
     : {
         eyebrow: "vs Google Analytics 4",
@@ -24,7 +24,7 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
         ctaA: "Start 14-day trial",
         ctaB: "Book a demo",
-        micro: "14-day trial · Cancel before day 14, pay nothing · 4-minute setup",
+        micro: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
       };
 
   return (

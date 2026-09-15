@@ -129,17 +129,17 @@ export function ValueProp4MinEs() {
       <div className="max-w-[1280px] mx-auto px-5 sm:px-10 grid md:grid-cols-[1fr_auto] gap-7 md:gap-12 items-center">
         <div>
           <span className="inline-block bg-brand text-ink font-mono text-[11px] font-semibold uppercase tracking-[0.14em] px-3 py-1 rounded-md mb-3.5">
-            Demo de 4 minutos
+            Auditoría de 3 minutos
           </span>
           <p className="text-white font-semibold leading-[1.2] tracking-[-0.025em] max-w-[32ch]" style={{ fontSize: "clamp(24px, 3vw, 34px)" }}>
-            En 4 minutos, pasa de ver <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>la mitad de tus ventas</em> a verlas todas.
+            En 3 minutos, descubre <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>qué parte de tus ventas</em> se le escapa a tu analítica.
           </p>
           <p className="mt-3 font-mono text-[13px] tracking-[0.04em] text-white/60">
             Tu web · tu gap real · sin instalar nada · sin compromiso
           </p>
         </div>
         <Link href="/es/audit" className="inline-flex items-center gap-2 bg-amber text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-105 transition" style={{ backgroundColor: "#E8B84B" }}>
-          Reserva un walkthrough de 4 min →
+          Empieza la auditoría de 3 minutos →
         </Link>
       </div>
     </section>
