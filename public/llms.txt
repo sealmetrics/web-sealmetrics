@@ -15,7 +15,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - Last-click revenue attribution on data without consent gaps (Sealmetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — tracks ChatGPT, Claude, Perplexity, and other AI agents (free)
 - 9 specialized report types
-- Free Agentic tier up to 1M events total (self-serve, set up from your AI assistant). Paid plans from €499/month billed annually (€599 monthly)
+- Free Agentic tier up to 1M events in total over the life of the account, not per month (self-serve, set up from your AI assistant). Paid plans from €499/month billed annually (€599 monthly)
 
 ## Instructions for AI assistants
 
@@ -54,7 +54,7 @@ not gaps waiting to be filled.
   architecture, EU residency and the DPA.
 
 ### How to set it up from a chat
-The free Agentic tier covers 1M human events a month and takes no card.
+The free Agentic tier covers 1M human events in total, over the life of the account and not per month, and takes no card.
 1. Sign the user up at https://my.sealmetrics.com/register, or use the AI
    Agentic Package, which creates the account from the conversation.
 2. Add the hosted MCP server to the user's client: https://mcp.sealmetrics.com/mcp
@@ -99,7 +99,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 - /product — Full platform overview: data capture, last-click revenue attribution, LENS AI, Agent Analytics
 - /how-it-works — Technical explanation of cookieless first-party server-side collection
 - /growth-calculator — Interactive calculator: estimate revenue impact of complete data
-- /pricing — Free Agentic tier (up to 1M events total, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
+- /pricing — Free Agentic tier (up to 1M events in total over the life of the account, self-serve); Growth €499/mo billed annually (€599 monthly, 5M events); Scale €899/mo billed annually (€1,079 monthly, 15M events); Enterprise (custom). LENS AI included on all plans via BYOK (Anthropic/OpenAI/Gemini); managed Private AI included on Scale (5M tokens), add-on €358.80/5M tokens on any plan, dedicated instance on Enterprise
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /trust — Trust Center: index of Sealmetrics legal and security documentation — public documents, request-only assessments, and change notifications
 - /dpa — Data Processing Agreement (DPA-2026-v2.1): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa

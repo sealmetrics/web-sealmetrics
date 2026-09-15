@@ -531,7 +531,7 @@ export default function Page() {
                 </p>
                 <p className="text-[0.95rem] leading-[1.65] text-warm-50/80 mb-6 max-w-[52ch]">
                   The free Agentic Package runs the whole loop on your own traffic up to 1M human
-                  events. If you would rather quantify the gap first, the calculator does it from
+                  events in total. If you would rather quantify the gap first, the calculator does it from
                   your consent rate and your paid spend.
                 </p>
                 <div className="flex flex-wrap gap-3">

@@ -364,7 +364,7 @@ const comparisonData: ComparisonSection[] = [
   {
     category: "Infrastructure",
     rows: [
-      { feature: "Human events / month", agentic: "1M · free", growth: "5M", scale: "15M", enterprise: "Unlimited" },
+      { feature: "Human events / month", agentic: "1M in total · free", growth: "5M", scale: "15M", enterprise: "Unlimited" },
       { feature: "Websites", agentic: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
       { feature: "Users & accounts", agentic: "Unlimited", growth: "Unlimited", scale: "Unlimited", enterprise: "Unlimited" },
       { feature: "Data retention", agentic: "24 months", growth: "24 months", scale: "24 months", enterprise: "24 months" },

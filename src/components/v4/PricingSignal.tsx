@@ -12,7 +12,7 @@ type Billing = "annual" | "monthly";
 
 const comparison = [
   { category: ["Allowance", "Límite"], rows: [
-    [["Human events / month", "Eventos humanos / mes"], "1M · free", "5M", "15M", "Unlimited"],
+    [["Human events / month", "Eventos humanos / mes"], "1M in total · free", "5M", "15M", "Unlimited"],
     [["Websites", "Webs"], "Unlimited", "Unlimited", "Unlimited", "Unlimited"],
     [["Users and accounts", "Usuarios y cuentas"], "Unlimited", "Unlimited", "Unlimited", "Unlimited"],
     [["Data retention", "Retención de datos"], "24 months", "24 months", "24 months", "24 months"],
@@ -49,13 +49,13 @@ const copy = {
     hero1: "Pay for the traffic", hero2: "that informs", heroOutline: "a human decision.",
     heroBody: "Four plans, one measurement architecture. The price changes with sustained human-event volume, governance and support — not with access to the basic evidence.",
     heroPrimary: "Compare the plans", heroSecondary: "Book a pricing review", heroMicro: "14-day trial · no per-event overage invoice · annual or monthly billing",
-    boardTitle: "Annual plan map", boardRows: [["Agentic", "€0", "1M human events"], ["Growth", "€499/mo", "5M human events"], ["Scale", "€899/mo", "15M human events"], ["Enterprise", "Custom", "Unlimited"]],
+    boardTitle: "Annual plan map", boardRows: [["Agentic", "€0", "1M human events in total"], ["Growth", "€499/mo", "5M human events"], ["Scale", "€899/mo", "15M human events"], ["Enterprise", "Custom", "Unlimited"]],
     boardFoot: "Annual prices · paid upfront · two months equivalent saved",
     plansTag: "Choose a commercial boundary", plansTitle: <>The same evidence.<br /><em>A different operating envelope.</em></>,
     plansBody: "Start from observed monthly human events. Then choose the support, governance and managed-AI layer the team actually needs.",
     annual: "Annual", monthly: "Monthly", saving: "2 months equivalent saved", perMonth: "/mo", billedAnnually: "billed annually", custom: "Custom", free: "Free",
     plans: [
-      { name:"Agentic", desc:"For an MCP-capable agent to provision and operate self-service analytics.", events:"1M human events / month", features:["Complete aggregate analytics", "MCP + API + BigQuery", "Unlimited sites and users", "Documentation-only support"], cta:"Set up with your agent", href:"https://my.sealmetrics.com/register", featured:false },
+      { name:"Agentic", desc:"For an MCP-capable agent to provision and operate self-service analytics.", events:"1M human events in total", features:["Complete aggregate analytics", "MCP + API + BigQuery", "Unlimited sites and users", "Documentation-only support"], cta:"Set up with your agent", href:"https://my.sealmetrics.com/register", featured:false },
       { name:"Growth", desc:"For a team establishing a complete commercial baseline.", events:"5M human events / month", features:["LENS with your own model key", "Email support", "Full API and exports", "14-day trial"], cta:"Start 14-day trial", href:"https://my.sealmetrics.com/register", featured:false },
       { name:"Scale", desc:"For growing eCommerce teams with higher volume and governance needs.", events:"15M human events / month", features:["Managed Private AI · 5M tokens", "Webhooks and audit logs", "Priority support", "Guided onboarding"], cta:"Start 14-day trial", href:"https://my.sealmetrics.com/register", featured:true },
       { name:"Enterprise", desc:"For portfolio brands and regulated operating environments.", events:"Unlimited human events", features:["Exclusive Private AI instance", "Isolated processing", "99.9% SLA", "Dedicated account manager"], cta:"Book an enterprise review", href:"/demo/", featured:false },
@@ -77,13 +77,13 @@ const copy = {
     hero1: "Paga por el tráfico", hero2: "que informa", heroOutline: "una decisión humana.",
     heroBody: "Cuatro planes, una arquitectura de medición. El precio cambia con el volumen sostenido de eventos humanos, el governance y el soporte — no con el acceso a la evidencia básica.",
     heroPrimary: "Compara los planes", heroSecondary: "Reserva una revisión de precio", heroMicro: "14 días de prueba · sin factura variable por evento · anual o mensual",
-    boardTitle: "Mapa de planes anuales", boardRows: [["Agentic", "0€", "1M eventos humanos"], ["Growth", "499€/mes", "5M eventos humanos"], ["Scale", "899€/mes", "15M eventos humanos"], ["Enterprise", "A medida", "Ilimitados"]],
+    boardTitle: "Mapa de planes anuales", boardRows: [["Agentic", "0€", "1M eventos humanos en total"], ["Growth", "499€/mes", "5M eventos humanos"], ["Scale", "899€/mes", "15M eventos humanos"], ["Enterprise", "A medida", "Ilimitados"]],
     boardFoot: "Precios anuales · pago adelantado · ahorro equivalente a dos meses",
     plansTag: "Elige un límite comercial", plansTitle: <>La misma evidencia.<br /><em>Un entorno operativo distinto.</em></>,
     plansBody: "Empieza por los eventos humanos mensuales observados. Después elige el soporte, governance y capa de IA gestionada que el equipo necesita de verdad.",
     annual: "Anual", monthly: "Mensual", saving: "Ahorro equivalente a 2 meses", perMonth: "/mes", billedAnnually: "facturado anualmente", custom: "A medida", free: "Gratis",
     plans: [
-      { name:"Agentic", desc:"Para que un agente compatible con MCP aprovisione y opere analítica self-service.", events:"1M eventos humanos / mes", features:["Analítica agregada completa", "MCP + API + BigQuery", "Webs y usuarios ilimitados", "Soporte sólo por documentación"], cta:"Configura con tu agente", href:"https://my.sealmetrics.com/register", featured:false },
+      { name:"Agentic", desc:"Para que un agente compatible con MCP aprovisione y opere analítica self-service.", events:"1M eventos humanos en total", features:["Analítica agregada completa", "MCP + API + BigQuery", "Webs y usuarios ilimitados", "Soporte sólo por documentación"], cta:"Configura con tu agente", href:"https://my.sealmetrics.com/register", featured:false },
       { name:"Growth", desc:"Para un equipo que establece una base comercial completa.", events:"5M eventos humanos / mes", features:["LENS con tu propia clave de modelo", "Soporte email", "API completa y exports", "14 días de prueba"], cta:"Empieza 14 días de prueba", href:"https://my.sealmetrics.com/register", featured:false },
       { name:"Scale", desc:"Para equipos eCommerce en crecimiento con más volumen y governance.", events:"15M eventos humanos / mes", features:["Private AI gestionada · 5M tokens", "Webhooks y logs de auditoría", "Soporte prioritario", "Onboarding guiado"], cta:"Empieza 14 días de prueba", href:"https://my.sealmetrics.com/register", featured:true },
       { name:"Enterprise", desc:"Para portfolios de marcas y entornos operativos regulados.", events:"Eventos humanos ilimitados", features:["Instancia Private AI exclusiva", "Procesamiento aislado", "SLA 99,9%", "Account manager dedicado"], cta:"Reserva una revisión enterprise", href:"/es/demo/", featured:false },
@@ -115,7 +115,7 @@ function planPrice(name: string, billing: Billing, locale: Locale) {
 function Cell({ value, locale }: { value: string | boolean; locale: Locale }) {
   if (value === true) return <span className="sig-pricing-yes">{copy[locale].yes}</span>;
   if (value === false) return <span className="sig-pricing-no">{copy[locale].no}</span>;
-  const translations: Record<string,string> = locale === "es" ? {"Unlimited":"Ilimitados","24 months":"24 meses","Typically <2 min":"Normalmente <2 min","Add-on":"Add-on","Included":"Incluida","Basic":"Básico","Advanced":"Avanzado","Full":"Completo","Custom":"A medida"} : {};
+  const translations: Record<string,string> = locale === "es" ? {"1M in total · free":"1M en total · gratis","Unlimited":"Ilimitados","24 months":"24 meses","Typically <2 min":"Normalmente <2 min","Add-on":"Add-on","Included":"Incluida","Basic":"Básico","Advanced":"Avanzado","Full":"Completo","Custom":"A medida"} : {};
   return <span>{translations[value] ?? value}</span>;
 }
 

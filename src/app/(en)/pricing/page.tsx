@@ -11,7 +11,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Sealmetrics Pricing — Pay for humans, not bots",
   description:
-    "Free Agentic tier up to 1M events, set up from your AI assistant. Paid plans from €499/mo annual — every feature, every plan. You only pay more if you grow.",
+    "Free Agentic tier up to 1M events in total, set up from your AI assistant. Paid plans from €499/mo annual, every feature on every plan.",
   openGraph: {
     title: "Sealmetrics Pricing — Pay for humans, not bots",
     description:
@@ -39,7 +39,7 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={pricingSchema([
-        { name: "Agentic", price: "0", description: "1M human events/mo · free · set up from your AI assistant" },
+        { name: "Agentic", price: "0", description: "1M human events in total · free · set up from your AI assistant" },
         { name: "Growth", price: "499", description: "5M human events/mo · annual billing" },
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />
