@@ -19,6 +19,10 @@ import type { ProblemLandingContent } from "./types";
  * documents instead of a testimonial.
  */
 
+export const GDPR_ANALYTICS_PUBLISHED = "2026-08-07";
+export const GDPR_ANALYTICS_PUBLISHED_ES = "2026-08-27";
+export const GDPR_ANALYTICS_MODIFIED = "2026-09-14";
+
 const link = "sig-problem-inline";
 const WHAT_WE_TRACK = "https://docs.sealmetrics.com/security-privacy/what-we-track";
 const CNIL_GUIDANCE = "https://www.cnil.fr/fr/cookies-solutions-pour-les-outils-de-mesure-daudience";
@@ -35,6 +39,14 @@ export const gdprAnalyticsEn: ProblemLandingContent = {
   heroPrimary: { label: "See the review checklist", href: "#method" },
   heroSecondary: { label: "Read the DPA", href: "/dpa/" },
   heroMicro: "EU-hosted in Dublin · DPA included · no ISO 27001 or SOC 2 claimed · not legal advice",
+  byline: {
+    byLabel: "By",
+    authorName: "Rafa Jiménez",
+    authorHref: "/authors/rafa-jimenez/",
+    updatedLabel: "Updated",
+    date: GDPR_ANALYTICS_MODIFIED,
+    dateDisplay: "14 September 2026",
+  },
   module: {
     title: "Visitor data boundary",
     status: "Documented in the DPA",
@@ -91,8 +103,9 @@ export const gdprAnalyticsEn: ProblemLandingContent = {
         set their own conditions. The field list is public in{" "}
         <a className={link} href={WHAT_WE_TRACK} target="_blank" rel="noopener noreferrer">what we track</a>,
         and the legal reasoning across the EU is set out under{" "}
-        <Link className={link} href="/consentless-analytics/">consentless analytics</Link> and the{" "}
-        <Link className={link} href="/glossary/eprivacy-directive/">ePrivacy Directive</Link>.
+        <Link className={link} href="/consentless-analytics/">consentless analytics</Link>, the{" "}
+        <Link className={link} href="/glossary/eprivacy-directive/">ePrivacy Directive</Link> and{" "}
+        <Link className={link} href="/glossary/personal-data-in-analytics/">personal data in analytics</Link>.
       </>
     ),
   },
@@ -222,6 +235,14 @@ export const gdprAnalyticsEs: ProblemLandingContent = {
   heroPrimary: { label: "Ver la lista de revisión", href: "#method" },
   heroSecondary: { label: "Leer el DPA", href: "/es/dpa/" },
   heroMicro: "Alojado en Dublín · DPA incluido · sin ISO 27001 ni SOC 2 declarados · no es asesoramiento jurídico",
+  byline: {
+    byLabel: "Por",
+    authorName: "Rafa Jiménez",
+    authorHref: "/es/authors/rafa-jimenez/",
+    updatedLabel: "Actualizado",
+    date: GDPR_ANALYTICS_MODIFIED,
+    dateDisplay: "14 de septiembre de 2026",
+  },
   module: {
     title: "Perímetro del dato de visitante",
     status: "Documentado en el DPA",
@@ -279,7 +300,8 @@ export const gdprAnalyticsEs: ProblemLandingContent = {
         las suyas. La lista de campos es pública en{" "}
         <a className={link} href={WHAT_WE_TRACK} target="_blank" rel="noopener noreferrer">what we track</a>{" "}
         (en inglés), y el razonamiento jurídico para toda la UE está en{" "}
-        <Link className={link} href="/es/consentless-analytics/">analítica sin consentimiento</Link>.
+        <Link className={link} href="/es/consentless-analytics/">analítica sin consentimiento</Link> y en la entrada del glosario sobre{" "}
+        <Link className={link} href="/es/glossary/gdpr-analytics-compliance/">cumplimiento del RGPD en analítica</Link>.
       </>
     ),
   },
