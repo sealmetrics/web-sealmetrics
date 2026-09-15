@@ -1,58 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { HEALTHCARE_MODIFIED, HEALTHCARE_PUBLISHED, healthcareEn as content } from "@/lib/content/problem-landings/healthcare";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/for/healthcare";
+const TITLE = "Analytics for Healthcare Without Identifiers — Sealmetrics";
+const DESCRIPTION =
+  "Cookieless analytics for clinics and health publishers: appointment requests by channel as aggregate counts, with what is stored documented field by field.";
+const SOCIAL =
+  "The page a patient reads is sensitive, and so is the tag on it. See what Sealmetrics stores for a visit, and measure appointment requests by channel.";
+
 export const metadata: Metadata = {
-  title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
-  description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analytics for Healthcare Without Identifiers — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
-    description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
-    type: "website",
-    images: [ogImage("/for/healthcare/")],
-    url: "https://sealmetrics.com/for/healthcare/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Healthcare — Privacy-First | Sealmetrics",
-    description: getVerticalData("healthcare", "en").lede.slice(0, 155) + "…",
-    images: [ogImage("/for/healthcare/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/healthcare/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternates("/for/healthcare"),
   },
 };
 
-export default function Page() {
+export default function HealthcarePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For Healthcare" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For Healthcare", url: "/for/healthcare" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "healthcare", audienceType: "Healthcare and life sciences", description: "Sealmetrics — enterprise analytics for healthcare teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/for/healthcare" })} /><VerticalPageV3 data={getVerticalData("healthcare", "en")} />
-      <RelatedPagesV3
-        locale="en"
-        eyebrow="Also explore"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-        { href: "/for/dpo", title: "For DPOs & legal", desc: "Compliance framework." },
-        { href: "/for/finance", title: "For finance & banking", desc: "Regulated peer industry." },
-        { href: "/for/education", title: "For education", desc: "Youth-data adjacent rules." }
-      ]}
+      <JsonLd data={breadcrumbSchema([{ name: "For teams", url: "/for" }, { name: "Healthcare", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
+      <JsonLd
+        data={articleSchema({
+          headline: "Analytics for healthcare: appointment requests by channel, without stored identifiers",
+          description: DESCRIPTION,
+          datePublished: HEALTHCARE_PUBLISHED,
+          dateModified: HEALTHCARE_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+        })}
       />
-      <LogosStrip />
-      
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
