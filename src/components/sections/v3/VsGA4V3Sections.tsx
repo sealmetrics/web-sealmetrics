@@ -342,7 +342,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Customer success",
       block: "commercial",
       rows: [
-        { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Founder-led · 15-minute install" },
+        { feature: "Onboarding", ga4: "Self-serve or agency-led", seal: "Script or native module · 5–30 min by platform" },
         { feature: "Human support", ga4: "Community forums on the free tier", seal: "Direct support on every plan" },
       ],
     },
@@ -421,7 +421,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Customer success",
       block: "commercial",
       rows: [
-        { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Liderado por el founder · instalación en 15 min" },
+        { feature: "Onboarding", ga4: "Self-serve o vía agencia", seal: "Script o módulo nativo · 5–30 min según plataforma" },
         { feature: "Soporte humano", ga4: "Foros de comunidad en el tier gratuito", seal: "Soporte directo en todos los planes" },
       ],
     },

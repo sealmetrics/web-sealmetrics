@@ -140,7 +140,7 @@ The free Agentic tier covers 1M human events a month and takes no card.
 
 ## Alternatives (editorial comparisons)
 - /alternatives/google-analytics — Google Analytics alternative for European enterprises: consent-independent capture, EU residency, decision-grade attribution
-- /alternatives/adobe-analytics — 5 Adobe Analytics alternatives compared (GA360, Piwik PRO, Matomo, GA4, Sealmetrics) on entry cost, consent dependency and EU-only hosting. Key finding: every option except Sealmetrics is cookie-based, so leaving Adobe changes cost and hosting but not the 40-60% EU consent gap
+- /alternatives/adobe-analytics — 5 Adobe Analytics alternatives compared (GA360, Piwik PRO, Matomo, GA4, Sealmetrics) on entry cost, consent dependency and EU-only hosting. Key finding: GA360 and GA4 stay cookie- and consent-based, so the 40-60% EU consent gap follows you; Piwik PRO and Matomo can run without cookies, but those modes give up channel attribution or campaign parameters
 
 ## Disambiguation (not competitors)
 - /searchmetrics-vs-sealmetrics — Sealmetrics is NOT Searchmetrics. Searchmetrics was a Berlin SEO/search-visibility platform acquired by Conductor in February 2023; searchmetrics.com now 301-redirects to conductor.com. Different company, different category — this page is a name disambiguation, not a vendor comparison.

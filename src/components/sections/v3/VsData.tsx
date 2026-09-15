@@ -85,10 +85,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Where GA360 is the better choice", block: "commercial", rows: [
             { feature: "Google Ads and DV360", them: "Native bidding signals and conversion import", us: "Via BigQuery export — not a bidding source" },
             { feature: "Audiences and remarketing", them: "Its real strength", us: "Not a remarketing tool — no personal identifiers by design" },
-            { feature: "Ecosystem and hiring", them: "Every analyst already knows the interface", us: "New interface · founder-led onboarding" },
+            { feature: "Ecosystem and hiring", them: "Every analyst already knows the interface", us: "New interface for the team to learn" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Google sales + certified partners", us: "Founder-led · 15-minute install" },
+            { feature: "Onboarding", them: "Google sales + certified partners", us: "Script or native module · 5–30 min by platform" },
             { feature: "Support", them: "Enterprise SLAs · via resellers", us: "Direct support on every plan" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
@@ -185,10 +185,10 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Dónde GA360 es la mejor opción", block: "commercial", rows: [
             { feature: "Google Ads y DV360", them: "Señales de puja e import de conversiones nativos", us: "Vía export BigQuery — no es fuente de puja" },
             { feature: "Audiencias y remarketing", them: "Su verdadera fortaleza", us: "No es herramienta de remarketing — sin identificadores personales por diseño" },
-            { feature: "Ecosistema y contratación", them: "Cualquier analista ya conoce la interfaz", us: "Interfaz nueva · onboarding con el founder" },
+            { feature: "Ecosistema y contratación", them: "Cualquier analista ya conoce la interfaz", us: "Interfaz nueva que el equipo tiene que aprender" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Google sales + partners certificados", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Onboarding", them: "Google sales + partners certificados", us: "Script o módulo nativo · 5–30 min según plataforma" },
             { feature: "Soporte", them: "SLAs enterprise · vía resellers", us: "Soporte directo en todos los planes" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
@@ -259,7 +259,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Pricing & time to value", block: "commercial", rows: [
             { feature: "Starting price", them: "Unpublished · Select from ~$50,000/yr + implementation fees", us: "€499/mo · published · no hidden fees" },
             { feature: "Implementation time", them: "3–6 months typical", us: "1 week to decision-ready" },
-            { feature: "Required specialists", them: "Adobe-certified analyst on team", us: "Self-serve · founder onboarding" },
+            { feature: "Required specialists", them: "Adobe-certified analyst on team", us: "Self-serve · no certified-analyst role" },
           ]},
           { category: "Data capture", block: "technical", rows: [
             { feature: "Cookie-dependent", them: "Yes · AppMeasurement library", us: "No · first-party server-side" },
@@ -287,7 +287,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Cross-channel stitching", them: "Customer Journey Analytics", us: "Not attempted — aggregate event measurement by design" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Implementation partners · consultant-led", us: "Founder-led · 15-minute install" },
+            { feature: "Onboarding", them: "Adobe Consulting Services or Solution Partners", us: "Script or native module · 5–30 min by platform" },
             { feature: "Support", them: "Tiered enterprise support plans", us: "Direct support on every plan" },
             { feature: "Account management", them: "Enterprise account teams", us: "Dedicated manager on Enterprise" },
           ]},
@@ -307,7 +307,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "How hard is migration?", a: "No migration. Both tools run in parallel. Decide per use case where each serves best. Most teams move acquisition + attribution reporting to Sealmetrics and keep Adobe for enterprise segmentation and email orchestration." },
         ],
         ctaTitle: <>Skip the <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>6-month implementation.</em></>,
-        ctaLede: "30 minutes with the founder. Sealmetrics installed in 15 minutes. Decision-ready in week one. No consultants, no specialists, no six-figure invoice.",
+        ctaLede: "30 minutes with the founder. Install in 5–30 minutes depending on your platform. Decision-ready in week one. No consultants, no specialists, no six-figure invoice.",
       },
       es: {
         competitor: "Adobe Analytics",
@@ -361,7 +361,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { category: "Precio y tiempo al valor", block: "commercial", rows: [
             { feature: "Precio de entrada", them: "No publicado · Select desde ~50.000$/año + fees implementación", us: "€499/mes · publicado · sin fees ocultos" },
             { feature: "Tiempo implementación", them: "3–6 meses típicamente", us: "1 semana a decisiones" },
-            { feature: "Especialistas requeridos", them: "Analista certificado Adobe", us: "Self-serve · onboarding founder" },
+            { feature: "Especialistas requeridos", them: "Analista certificado Adobe", us: "Self-serve · sin rol de analista certificado" },
           ]},
           { category: "Captura de datos", block: "technical", rows: [
             { feature: "Depende de cookies", them: "Sí · librería AppMeasurement", us: "No · first-party server-side" },
@@ -389,7 +389,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Stitching cross-canal", them: "Customer Journey Analytics", us: "No se intenta — medición agregada de eventos por diseño" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Partners de implementación · liderado por consultores", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Onboarding", them: "Adobe Consulting Services o Solution Partners", us: "Script o módulo nativo · 5–30 min según plataforma" },
             { feature: "Soporte", them: "Planes de soporte enterprise por tiers", us: "Soporte directo en todos los planes" },
             { feature: "Account management", them: "Equipos de cuenta enterprise", us: "Manager dedicado en Enterprise" },
           ]},
@@ -409,7 +409,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
           { q: "¿Qué tan difícil es migrar?", a: "Sin migración. Ambas corren en paralelo. Decides caso a caso dónde encaja cada una. La mayoría mueve reporting de adquisición + atribución a Sealmetrics y mantienen Adobe para segmentación enterprise y orquestación email." },
         ],
         ctaTitle: <>Sáltate la <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>implementación de 6 meses.</em></>,
-        ctaLede: "30 min con el founder. Sealmetrics instalado en 15 min. Listo para decidir en semana uno. Sin consultores, sin especialistas, sin factura de seis cifras.",
+        ctaLede: "30 min con el founder. Instalación en 5–30 min según tu plataforma. Listo para decidir en semana uno. Sin consultores, sin especialistas, sin factura de seis cifras.",
       },
     },
     "piwik-pro": {
@@ -685,7 +685,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Entry cost", them: "Cloud from $23 / ~€29 per month (50K hits) · self-hosted 'free' + ops", us: "€499/mo · all-inclusive · no ops" },
             { feature: "Cloud price at eCommerce volume", them: "Quote-based above 10M hits/mo", us: "Published pricing at every tier" },
             { feature: "Total cost of ownership (self-host)", them: "Server, ops, security, plugins, upgrades", us: "Zero infra cost · fully managed" },
-            { feature: "Implementation support", them: "Community forum / paid consultancy", us: "Founder-led on all plans" },
+            { feature: "Implementation support", them: "Free support on Cloud · forum or paid bundles On-Premise", us: "Direct support on every plan" },
           ]},
           { category: "Modern stack", block: "reporting", rows: [
             { feature: "Native MCP / AI agents", them: "Plugin (Cloud + On-Premise, since 2026)", us: "Native · no plugin · all plans" },
@@ -709,8 +709,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Custom analysis", them: "Custom reports + segments · premium features included on Cloud, paid plugins on self-host", us: "Segments + property breakdowns · unsampled" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Self-serve · docs + forum", us: "Founder-led · 15-minute install" },
-            { feature: "Support", them: "Paid support plans (Cloud)", us: "Direct support on every plan" },
+            { feature: "Onboarding", them: "Cloud: free setup support · On-Premise: onboarding in paid bundles", us: "Script or native module · 5–30 min by platform" },
+            { feature: "Support", them: "Included on Cloud · paid plans On-Premise", us: "Direct support on every plan" },
           ]},
         ],
         faqs: [
@@ -807,7 +807,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Coste de entrada", them: "Cloud desde $23 / ~29€ al mes (50K hits) · self-hosted 'gratis' + ops", us: "€499/mes · todo incluido · sin ops" },
             { feature: "Precio Cloud a volumen eCommerce", them: "Bajo presupuesto por encima de 10M hits/mes", us: "Precio publicado en todos los tiers" },
             { feature: "TCO (self-host)", them: "Servidor, ops, seguridad, plugins, upgrades", us: "Cero coste de infra · totalmente gestionado" },
-            { feature: "Soporte implementación", them: "Foro comunidad / consultoría de pago", us: "Liderado por founder en todos los planes" },
+            { feature: "Soporte implementación", them: "Soporte gratuito en Cloud · foro o bundles de pago On-Premise", us: "Soporte directo en todos los planes" },
           ]},
           { category: "Stack moderno", block: "reporting", rows: [
             { feature: "MCP / agentes IA nativos", them: "Plugin (Cloud + On-Premise, desde 2026)", us: "Nativo · sin plugin · todos los planes" },
@@ -831,8 +831,8 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Análisis custom", them: "Informes custom + segmentos · premium incluido en Cloud, plugins de pago en self-host", us: "Segmentos + breakdowns por propiedad · sin muestreo" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Self-serve · docs + foro", us: "Liderado por el founder · instalación en 15 min" },
-            { feature: "Soporte", them: "Planes de soporte de pago (Cloud)", us: "Soporte directo en todos los planes" },
+            { feature: "Onboarding", them: "Cloud: soporte gratuito de puesta en marcha · On-Premise: onboarding en bundles de pago", us: "Script o módulo nativo · 5–30 min según plataforma" },
+            { feature: "Soporte", them: "Incluido en Cloud · planes de pago On-Premise", us: "Soporte directo en todos los planes" },
           ]},
         ],
         faqs: [
@@ -920,7 +920,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Pageview hit secured", them: "~0.5–0.7 s best case · only after consent", us: "~0.1–0.3 s · sendBeacon from the head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Self-serve or agency-led", us: "Founder-led · 15-minute install" },
+            { feature: "Onboarding", them: "Self-serve or agency-led", us: "Script or native module · 5–30 min by platform" },
             { feature: "Human support", them: "Community forums on the free tier", us: "Direct support on every plan" },
           ]},
           { category: "Reporting parity", block: "reporting", rows: [
@@ -1010,7 +1010,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Pageview asegurado", them: "~0,5–0,7 s mejor caso · solo tras consentimiento", us: "~0,1–0,3 s · sendBeacon desde el head" },
           ]},
           { category: "Customer success", block: "commercial", rows: [
-            { feature: "Onboarding", them: "Self-serve o vía agencia", us: "Liderado por el founder · instalación en 15 min" },
+            { feature: "Onboarding", them: "Self-serve o vía agencia", us: "Script o módulo nativo · 5–30 min según plataforma" },
             { feature: "Soporte humano", them: "Foros de comunidad en el tier gratuito", us: "Soporte directo en todos los planes" },
           ]},
           { category: "Paridad de reporting", block: "reporting", rows: [
