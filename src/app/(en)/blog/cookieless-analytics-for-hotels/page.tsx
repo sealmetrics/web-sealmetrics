@@ -47,7 +47,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual guests across sessions?",
     answer:
-      "No. Sealmetrics does not identify individuals, does not stitch visits into per-guest journeys and does not build per-visitor profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page, country and device. This is how the system stays out of personal-data territory under GDPR.",
+      "No. Sealmetrics does not identify individuals, does not stitch visits into per-guest journeys and does not build per-visitor profiles. The measurement is strictly aggregate: counts by channel, campaign, landing page, country and device. This is how the system is designed to avoid processing personal data under GDPR.",
   },
   {
     question: "How much of hotel booking attribution is lost to GA4?",
