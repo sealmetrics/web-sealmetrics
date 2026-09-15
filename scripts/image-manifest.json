@@ -953,32 +953,32 @@
     },
     "public/og/for/cmo.avif": {
       "source": "public/og/for/cmo.png",
-      "sourceHash": "4d77691ce7f145438d556c1862ab386b8d34697971826a49aa95b6baefd9e984",
+      "sourceHash": "09df48e89d037d8141dbefa0b436f78e2ffb67d1d929e9f62612d3b851ab241c",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/cmo.webp": {
       "source": "public/og/for/cmo.png",
-      "sourceHash": "4d77691ce7f145438d556c1862ab386b8d34697971826a49aa95b6baefd9e984",
+      "sourceHash": "09df48e89d037d8141dbefa0b436f78e2ffb67d1d929e9f62612d3b851ab241c",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/cto.avif": {
       "source": "public/og/for/cto.png",
-      "sourceHash": "e4c99d5f9151475322146ad181d23836ab64e69306392b6f6f8d23e477f955a9",
+      "sourceHash": "6ebf7897994e0b8b3dd5e9fb94369dfbd38e6a4260d0e49ff7d8e32edbba7c36",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/cto.webp": {
       "source": "public/og/for/cto.png",
-      "sourceHash": "e4c99d5f9151475322146ad181d23836ab64e69306392b6f6f8d23e477f955a9",
+      "sourceHash": "6ebf7897994e0b8b3dd5e9fb94369dfbd38e6a4260d0e49ff7d8e32edbba7c36",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/dpo.avif": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "0b444309857a29d52fe9ff6445cb053c4ce19d0bf70a5efdf12e97e3ab673150",
+      "sourceHash": "873323b86cb56f49c78ee5f740a4882b1b724068520aa7f2636593a600f05499",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/dpo.webp": {
       "source": "public/og/for/dpo.png",
-      "sourceHash": "0b444309857a29d52fe9ff6445cb053c4ce19d0bf70a5efdf12e97e3ab673150",
+      "sourceHash": "873323b86cb56f49c78ee5f740a4882b1b724068520aa7f2636593a600f05499",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/ecommerce.avif": {
@@ -993,32 +993,32 @@
     },
     "public/og/for/education.avif": {
       "source": "public/og/for/education.png",
-      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
+      "sourceHash": "05801a288eb20e41804638912a07d661ee63ab8a3017011392b25bba07b0dbdf",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/education.webp": {
       "source": "public/og/for/education.png",
-      "sourceHash": "a486bc21f0477cd224cf3407b1d89e6f3174e1c742ed974752a01511eb17d496",
+      "sourceHash": "05801a288eb20e41804638912a07d661ee63ab8a3017011392b25bba07b0dbdf",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/finance.avif": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
+      "sourceHash": "8c1074efd249c4582f9b9d613ea6ce8c19f4f7c8a020618f98eaa7bdb02fe8aa",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/finance.webp": {
       "source": "public/og/for/finance.png",
-      "sourceHash": "dcf94d19516963ab50f70a5e0ebe8656efe835a11e4bc4ab00b6a4902c2cc27e",
+      "sourceHash": "8c1074efd249c4582f9b9d613ea6ce8c19f4f7c8a020618f98eaa7bdb02fe8aa",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/healthcare.avif": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
+      "sourceHash": "ef178cb2d6cbbc10783a16a44bf08ca1a00390211fec2d53f33b67eddaadc947",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/healthcare.webp": {
       "source": "public/og/for/healthcare.png",
-      "sourceHash": "443060ac9ff8bb897f0e9403443fe07ed6d40e7508354e3f3dde2f28e280db24",
+      "sourceHash": "ef178cb2d6cbbc10783a16a44bf08ca1a00390211fec2d53f33b67eddaadc947",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/hotels.avif": {
@@ -1033,12 +1033,12 @@
     },
     "public/og/for/media.avif": {
       "source": "public/og/for/media.png",
-      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
+      "sourceHash": "a5cf331a96987542cbf3c9ecc2e95087b7821c4108902797b9461727acc90291",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/media.webp": {
       "source": "public/og/for/media.png",
-      "sourceHash": "db5cac5a7c2dcc0f3398455f15e39950e3fc38e7142104b64221a9f57a3cd7ab",
+      "sourceHash": "a5cf331a96987542cbf3c9ecc2e95087b7821c4108902797b9461727acc90291",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/for/multi-brand-retailers.avif": {
@@ -1053,12 +1053,12 @@
     },
     "public/og/for/saas.avif": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
+      "sourceHash": "751eabf4c9f06d0f9c283dcb81424b800502fc962aa7aa2779d59f9bcd4d6ea0",
       "signature": "avif:{\"quality\":60,\"effort\":4}"
     },
     "public/og/for/saas.webp": {
       "source": "public/og/for/saas.png",
-      "sourceHash": "197e68706cb407a77212389aec11175b8d1da915812971ca291aa768fa32c5b6",
+      "sourceHash": "751eabf4c9f06d0f9c283dcb81424b800502fc962aa7aa2779d59f9bcd4d6ea0",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/free-audit.avif": {
@@ -1569,6 +1569,26 @@
     "public/og/platforms/magento.webp": {
       "source": "public/og/platforms/magento.png",
       "sourceHash": "0cabfa4b775da1babcb9273860e44cec6994dce745cf484d603f32f70247c872",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/platforms/opencart.avif": {
+      "source": "public/og/platforms/opencart.png",
+      "sourceHash": "f12ab0c807f4ed207d27f27a1ad63ea7d837d5ea9c022333322d78bce2d9e22d",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/platforms/opencart.webp": {
+      "source": "public/og/platforms/opencart.png",
+      "sourceHash": "f12ab0c807f4ed207d27f27a1ad63ea7d837d5ea9c022333322d78bce2d9e22d",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/platforms/prestashop.avif": {
+      "source": "public/og/platforms/prestashop.png",
+      "sourceHash": "a0c76d7df1bcb8dbeed78ebce3182398bc6d2ec93fe1a1f4367ac7baeed6c72a",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/platforms/prestashop.webp": {
+      "source": "public/og/platforms/prestashop.png",
+      "sourceHash": "a0c76d7df1bcb8dbeed78ebce3182398bc6d2ec93fe1a1f4367ac7baeed6c72a",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/platforms/shopify.avif": {

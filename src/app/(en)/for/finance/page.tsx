@@ -1,58 +1,65 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
-import { breadcrumbSchema, verticalSoftwareApplicationSchema } from "@/lib/schema";
+import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
-import { LogosStrip } from "@/components/sections/v3/HomeV3";
-import { VerticalPageV3 } from "@/components/sections/v3/VerticalPageV3";
-import { RelatedPagesV3 } from "@/components/sections/v3/RelatedPagesV3";
-import { getVerticalData } from "@/components/sections/v3/VerticalsData";
+import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
+import { FINANCE_MODIFIED, FINANCE_PUBLISHED, financeEn as content } from "@/lib/content/problem-landings/finance";
+import "@/components/v4/problem-landing-signal.css";
+import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
 
+const URL = "/for/finance";
+const TITLE = "Analytics for Finance: Leads by Channel — Sealmetrics";
+const DESCRIPTION =
+  "Cookieless analytics for banks, insurers and lenders: applications by channel, with the DPA, data inventory and security measures a vendor review asks for.";
+const SOCIAL =
+  "The form is submitted, the channel is not on record. Measure applications by channel without cookies, and review the vendor on documents first.";
+
 export const metadata: Metadata = {
-  title: "Analytics for Finance — Compliance | Sealmetrics",
-  description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
+  // Literal on purpose: generate-og-images.mjs reads the card title from it.
+  title: "Analytics for Finance: Leads by Channel — Sealmetrics",
+  description: DESCRIPTION,
   openGraph: {
-    title: "Analytics for Finance — Compliance | Sealmetrics",
-    description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
-    type: "website",
-    images: [ogImage("/for/finance/")],
-    url: "https://sealmetrics.com/for/finance/",
+    title: TITLE,
+    description: SOCIAL,
+    type: "article",
+    images: [ogImage(`${URL}/`)],
+    url: `https://sealmetrics.com${URL}/`,
     siteName: "Sealmetrics",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analytics for Finance — Compliance | Sealmetrics",
-    description: getVerticalData("finance", "en").lede.slice(0, 155) + "…",
-    images: [ogImage("/for/finance/")],
+    title: TITLE,
+    description: SOCIAL,
+    images: [ogImage(`${URL}/`)],
   },
   alternates: {
-    canonical: "https://sealmetrics.com/for/finance/",
+    canonical: `https://sealmetrics.com${URL}/`,
     languages: getAlternates("/for/finance"),
   },
 };
 
-export default function Page() {
+export default function FinancePage() {
   return (
     <>
-      <Breadcrumbs items={[{ label: "For Finance" }]} />
-      <JsonLd data={breadcrumbSchema([{ name: "For Finance", url: "/for/finance" }])} />
-      <JsonLd data={verticalSoftwareApplicationSchema({ vertical: "finance", audienceType: "Banking, insurance and wealth management", description: "Sealmetrics — enterprise analytics for finance teams in the EU. Measurement without consent loss, designed for GDPR (self-assessed), last-click revenue attribution.", url: "/for/finance" })} /><VerticalPageV3 data={getVerticalData("finance", "en")} />
-      <RelatedPagesV3
-        locale="en"
-        eyebrow="Also explore"
-        titleEn="Related roles and industries"
-        titleEs="Roles e industrias relacionadas"
-        pages={[
-        { href: "/for/dpo", title: "For DPOs & legal", desc: "Compliance framework." },
-        { href: "/for/healthcare", title: "For healthcare", desc: "Regulated peer industry." },
-        { href: "/for/cto", title: "For CTOs & engineering", desc: "Technical implementation." }
-      ]}
+      <JsonLd data={breadcrumbSchema([{ name: "For teams", url: "/for" }, { name: "Finance", url: URL }])} />
+      <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
+      <JsonLd
+        data={articleSchema({
+          headline: "Analytics for financial services: applications by channel, reviewed on documents",
+          description: DESCRIPTION,
+          datePublished: FINANCE_PUBLISHED,
+          dateModified: FINANCE_MODIFIED,
+          url: URL,
+          category: "Industry",
+          author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
+        })}
       />
-      <LogosStrip />
-      
+      <JsonLd data={faqPageSchema(content.faq, URL)} />
+      <JsonLd data={howToSchema({ name: content.method.howToName, description: content.method.howToDescription, url: URL, steps: content.method.steps })} />
+      <ProblemLandingSignal content={content} />
     </>
   );
 }
