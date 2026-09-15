@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿Qué significa «datos completos», exactamente?",
-    a: "Visitantes contados acepten o no el banner. Conversiones atribuidas sobre ese mismo dato. Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a cada conversión observada — no al 13% que dio consentimiento.",
+    a: "Visitantes contados acepten o no el banner. Conversiones atribuidas sobre ese mismo dato. Sin gate de consentimiento, mucha menos pérdida por ad-blocker, sin expiración de cookies en Safari a 7 días, sin modelado estadístico para rellenar huecos. El número que ves en el dashboard es el número que ocurrió. Operacionalmente significa pageviews y eventos que no se pierden por el rechazo del consentimiento, y atribución de ingresos last-click aplicada a cada conversión observada — no al 13% que dio consentimiento.",
   },
   {
     q: "¿No lo está resolviendo ya el Consent Mode v2 de GA4?",
@@ -223,7 +223,7 @@ export default function CompleteDataPillarEs() {
               {
                 num: "01",
                 title: "Visitantes contados, con banner o sin él",
-                body: "Sin gate de consentimiento, sin pérdida por ad-blocker, sin expiración de cookies. La recolección first-party server-side corre desde tu propio dominio — no hay script third-party que los navegadores o las listas de reglas puedan interceptar.",
+                body: "Sin gate de consentimiento, mucha menos pérdida por ad-blocker, sin expiración de cookies. En modo first-party la recolección corre desde tu propio dominio, así que las listas de terceros que usan navegadores y bloqueadores no la detectan.",
               },
               {
                 num: "02",

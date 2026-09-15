@@ -23,7 +23,7 @@ Sealmetrics avoids the consent part of this problem by using first-party server-
 4. No personal data (IP addresses, device IDs, user IDs) is collected
 5. Because no personal data is collected and no device storage is used, our self-assessment is that no consent banner is required under GDPR or ePrivacy
 6. All visitor analytics data is processed and stored exclusively on EU servers
-7. The result: visitors are measured regardless of consent status, and the first-party setup is not stripped by common ad blockers
+7. The result: visitors are measured regardless of consent status, and the optional first-party setup avoids the third-party lists common ad blockers rely on
 
 ## Key capabilities
 
@@ -284,7 +284,7 @@ Q: How does Sealmetrics handle attribution?
 A: Sealmetrics does last-click revenue attribution on observed data, without consent gaps. It does not do multi-touch modelling. The position is deliberate: modelled attribution on incomplete data amplifies the sampling problem; last-click on data without consent gaps is defensible, reconcilable against the CRM, and suitable for board-level reporting.
 
 Q: Does Sealmetrics work with ad blockers?
-A: Yes. Because Sealmetrics operates as first-party infrastructure served from the customer's own domain, it is invisible to ad blockers — which target known third-party analytics endpoints like google-analytics.com.
+A: It is much less affected. In first-party mode the collection endpoint runs on the customer's own subdomain, so it is not on the lists ad blockers use to target known third-party analytics endpoints like google-analytics.com. In our test of five major ad blockers it passed all five; some loss is still possible.
 
 Q: How much does Sealmetrics cost?
 A: Pricing starts at €499/month billed annually (Growth plan, 5M human events/month). Scale plan is €899/month (15M events). Every plan includes all features — LENS AI, revenue attribution, API, MCP server, BigQuery export. A 14-day trial is available: you add a payment method to start and pay nothing if you cancel before day 14. The free Agentic Package (up to 1M human events/month, provisioned from an MCP-capable AI assistant) needs no card at all. AI agent traffic (ChatGPT, Claude, Perplexity) is tracked free and does not count against event limits.

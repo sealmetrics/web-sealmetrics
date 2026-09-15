@@ -236,7 +236,7 @@ export default function AnalyticsScriptsPage() {
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Tracked visitors</td>
                   <td className="py-2.5 text-right pr-6 font-mono text-red-alert">30-75%</td>
-                  <td className="py-2.5 text-right font-mono text-green-muted">100%</td>
+                  <td className="py-2.5 text-right font-mono text-green-muted">No consent loss</td>
                 </tr>
                 <tr className="border-b border-warm-100">
                   <td className="py-2.5 pr-4 text-text-body">Ad blocker resistant</td>

@@ -391,7 +391,7 @@ Glossary (ES):
 - /es/glossary/data-loss-in-analytics — Pérdida de datos en analítica
 - /es/glossary/revenue-attribution — Atribución de ingresos
 - /es/glossary/consent-management-platform — Qué es una CMP y por qué el 55% de rechazo en la UE sesga la analítica con cookies
-- /es/glossary/first-party-data-collection — Recolección first-party: por qué una petición a tu propio dominio esquiva bloqueadores y restricciones de cookies de terceros
+- /es/glossary/first-party-data-collection — Recolección first-party: por qué una petición a tu propio dominio evita las listas de bloqueo de terceros y las restricciones de cookies de terceros
 - /es/glossary/server-side-tracking — Tracking server-side: procesar eventos en tu servidor; server-side no implica automáticamente sin cookies
 - /es/glossary/intelligent-tracking-prevention — ITP de Safari: cookies first-party limitadas a 7 días, terceros bloqueadas; por qué no afecta a la medición sin cookies
 - /es/glossary/ad-blocker-analytics-impact — Más del 40% de usuarios europeos con bloqueador; el mayor vector individual de dato ausente

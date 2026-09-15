@@ -52,14 +52,14 @@ export default function FirstPartyDataCollectionPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are invisible to ad blockers and not subject to third-party cookie restrictions.
+              Collecting analytics data through your own domain infrastructure rather than third-party servers. First-party requests are not on the third-party lists ad blockers use and are not subject to third-party cookie restrictions.
             </p>
           </div>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">First-party vs. third-party</h2>
           <p>When GA4 collects data, it sends requests from your visitor&rsquo;s browser to google-analytics.com — a third-party domain. Ad blockers recognize this pattern and block the request. Browser privacy features may restrict the associated cookies.</p>
           <p>First-party data collection routes the data through your own domain. The request goes from the visitor&rsquo;s browser to your-domain.com, processed by infrastructure running on your domain. To the browser and to ad blockers, this is indistinguishable from any other first-party request.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why it matters for data completeness</h2>
-          <p>Approximately 40% of EU users run ad blockers that specifically target third-party analytics requests. First-party data collection bypasses this entirely — not through deception, but by fundamentally changing the data path to be genuinely first-party.</p>
+          <p>Approximately 40% of EU users run ad blockers that specifically target third-party analytics requests. First-party data collection avoids most of this loss — not through deception, but by fundamentally changing the data path to be genuinely first-party.</p>
           <p>Combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link>, first-party collection eliminates two of the three major <Link href="/glossary/data-loss-in-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss</Link> vectors: ad blocker blocking and browser cookie restrictions.</p>
         </div>
         <CommercialModule hook="Sealmetrics is first-party by design: your domain, your data, EU-hosted in Dublin. See what that changes in your numbers." />

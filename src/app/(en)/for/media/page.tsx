@@ -44,12 +44,12 @@ const seoFaqs = [
   {
     question: "What is cookieless analytics for media and publishers?",
     answer:
-      "Cookieless analytics for publishers captures readership, engagement and subscription funnel data without cookies, localStorage or fingerprinting. It survives ad blockers (which affect 50–70% of media audiences) and operates first-party on the publisher's own domain.",
+      "Cookieless analytics for publishers captures readership, engagement and subscription funnel data without cookies, localStorage or fingerprinting. It holds up far better against ad blockers (which affect 50–70% of media audiences) because it can run first-party on the publisher's own domain.",
   },
   {
     question: "How does cookieless analytics help publishers under heavy ad-blocker pressure?",
     answer:
-      "Media audiences have the highest ad-blocker penetration on the open web (50–70% on tech and news sites). Cookieless analytics runs first-party from the publisher's domain, so ad blockers — which target third-party analytics endpoints like google-analytics.com — don't see it and can't block it.",
+      "Media audiences have the highest ad-blocker penetration on the open web (50–70% on tech and news sites). Cookieless analytics runs first-party from the publisher's domain, so the lists ad blockers use — which target third-party analytics endpoints like google-analytics.com — don't match it. In our test of five major blockers it passed all five.",
   },
   {
     question: "Can cookieless analytics measure subscription conversion?",
@@ -75,7 +75,7 @@ export default function Page() {
           vertical: "Media & Publishers",
           audienceType: "European media companies, publishers and digital newsrooms",
           description:
-            "Cookieless analytics for media and publishers: audience measurement, subscription funnels and ad-revenue attribution on first-party infrastructure, ad-blocker resistant.",
+            "Cookieless analytics for media and publishers: audience measurement, subscription funnels and ad-revenue attribution on first-party infrastructure that holds up against ad blockers.",
           url: "/for/media",
         })}
       />
@@ -90,14 +90,14 @@ export default function Page() {
             captures readership, subscription funnels and ad-revenue attribution
             without cookies — critical for sites where 50–70% of visitors run
             ad blockers. Sealmetrics operates as first-party infrastructure on
-            the publisher's own domain, invisible to ad blockers and
+            the publisher's own domain, off the third-party lists ad blockers use and
             independent of third-party cookie deprecation.
           </>
         }
         bullets={[
-          <>Recovers the 50–70% of readers ad blockers hide from GA4 on tech and news sites.</>,
+          <>Recovers readers that ad blockers hide from GA4, where 50–70% of visitors on tech and news sites use one.</>,
           <>Funnel step counts by channel: article landings, paywall impressions, subscription events — each subscription attributed last-click at channel level.</>,
-          <>First-party architecture survives Safari ITP, Firefox ETP and Brave Shield.</>,
+          <>First-party architecture is unaffected by third-party cookie limits in Safari ITP and Firefox ETP.</>,
         ]}
       />
 

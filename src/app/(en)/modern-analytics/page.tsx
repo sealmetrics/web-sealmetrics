@@ -84,7 +84,7 @@ const pillars = [
   {
     eyebrow: "No consent loss",
     title: "Clean data",
-    body: "Visitors and events counted whether or not the banner is accepted. No consent banner gating measurement, no ad-blocker erasure, no JavaScript blockers wiping traffic. First-party server-side counting captures the truth.",
+    body: "Visitors and events counted whether or not the banner is accepted. No consent banner gating measurement, far less ad-blocker erasure, fewer JavaScript blockers wiping traffic. First-party server-side counting keeps what those tools would strip.",
     metric: "+40-60%",
     metricLabel: "more EU traffic vs cookie-based",
   },

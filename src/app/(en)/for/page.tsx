@@ -40,7 +40,7 @@ const industries = [
   { slug: "hotels", name: "Hotels & travel", tagline: "See the 25% of bookings your PMS makes but marketing can't attribute." },
   { slug: "saas", name: "SaaS", tagline: "Trial, activation, upgrade — all first-party, all consent-independent." },
   { slug: "agencies", name: "Agencies", tagline: "Stop being the middle between client disputes over attribution." },
-  { slug: "media", name: "Media & publishers", tagline: "Analytics that survive ad-blockers. 50%+ audiences invisible to GA." },
+  { slug: "media", name: "Media & publishers", tagline: "Analytics that hold up against ad-blockers. 50%+ audiences invisible to GA." },
   { slug: "finance", name: "Finance & banking", tagline: "Bank-grade compliance. 1-meeting vendor review." },
   { slug: "healthcare", name: "Healthcare", tagline: "No patient personal data in analytics. Portals measured in aggregate." },
   { slug: "education", name: "Education", tagline: "K-12 to universities. No student personal data collected." },

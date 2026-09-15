@@ -2173,11 +2173,11 @@ function ChapterElevenBody() {
       id: "server-side",
       term: "Server-side measurement",
       plain:
-        "Event ingestion that happens on a server you control, not in the browser. Survives ad blockers, ITP, and consent rejection because the request never has to leave the first-party domain.",
+        "Event ingestion that happens on a server you control, not in the browser. Holds up against ad blockers, ITP and consent rejection far better, because the request never has to leave the first-party domain.",
       body: (
         <>
           Event ingestion that happens on a server the customer controls,
-          not in the browser. Survives ad blockers, ITP, and consent
+          not in the browser. Holds up far better against ad blockers, ITP, and consent
           rejection because the request never has to leave the first-party
           domain.
         </>
@@ -2336,11 +2336,11 @@ function ChapterElevenBody() {
       id: "first-party",
       term: "First-party measurement",
       plain:
-        "Events that flow through the customer's own domain rather than a third-party analytics endpoint. Survives ad blockers and cross-site cookie restrictions because there is no third-party request to block.",
+        "Events that flow through the customer's own domain rather than a third-party analytics endpoint. Holds up against ad blockers and cross-site cookie restrictions because there is no third-party request for their lists to match.",
       body: (
         <>
           Events flow through the customer's own domain, not a third-party
-          endpoint. Survives ad blockers and cross-site cookie restrictions
+          endpoint. Holds up against ad blockers and cross-site cookie restrictions
           because there is no third-party request to block.
         </>
       ),
