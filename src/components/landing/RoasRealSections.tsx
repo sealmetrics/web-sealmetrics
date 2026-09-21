@@ -168,8 +168,18 @@ const STEPS = [
   },
   {
     n: "El agujero",
-    t: "Casi la mitad no da ese permiso",
-    d: "Entre rechazo de consentimiento (20–35%), dominios bloqueados por filtros (10–15%) y abandono antes de que el píxel pesado llegue a dispararse, el hueco se acumula.",
+    t: "En nuestra experiencia, entre el 40% y el 60% no lo da",
+    d: (
+      <>
+        En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las
+        aceptan, el 40% no lo hace en la primera página vista, que es la que trae el clic del anuncio. En{" "}
+        <Link href="/es/case-studies/incapto/" className="underline underline-offset-2">
+          Incapto
+        </Link>{" "}
+        (Shopify, con Consent Mode), las campañas de pago eran el 50% del tráfico medido en GA4 y el 62% en Sealmetrics:
+        12 puntos en la única línea del informe que decide el reparto de medios. Cuánto depende de la tienda y del canal.
+      </>
+    ),
   },
   {
     n: "El sesgo",

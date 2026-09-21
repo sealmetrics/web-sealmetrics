@@ -169,8 +169,18 @@ const STEPS = [
   },
   {
     n: "The gap",
-    t: "Almost half do not give it",
-    d: "Between consent rejection (20–35%), domains blocked by filters (10–15%) and visitors leaving before a heavy pixel ever fires, the hole compounds.",
+    t: "In our experience, 40–60% do not give it",
+    d: (
+      <>
+        In our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies, and of those who do,
+        40% don&rsquo;t accept on the first pageview &mdash; the one that carries the ad click. At{" "}
+        <Link href="/case-studies/incapto/" className="underline underline-offset-2">
+          Incapto
+        </Link>{" "}
+        (Shopify, Consent Mode), paid campaigns were 50% of measured traffic in GA4 and 62% in Sealmetrics: 12 points on
+        the one line that decides media budget. How much depends on the store and the channel.
+      </>
+    ),
   },
   {
     n: "The bias",
