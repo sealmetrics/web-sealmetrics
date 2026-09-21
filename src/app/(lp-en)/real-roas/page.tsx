@@ -29,12 +29,12 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Your real ROAS is higher than you think — Sealmetrics",
   description:
-    "Between 25% and 45% of your sales never reach your analytics. Measure without cookies or consent loss and recover the ROAS you were already generating.",
+    "In our experience with clients, 40–60% of traffic rejects cookies. Measure without consent loss and recover the ROAS you were already generating.",
   robots: { index: false, follow: true },
   openGraph: {
     title: "Your real ROAS is higher than you think",
     description:
-      "Between 25% and 45% of your sales never reach your analytics tool. They happened, you were paid for them, and the report you decide on does not count them.",
+      "In our experience with clients, 40–60% of traffic rejects cookies, and 40% of those who accept do so after the first page. Your report misses those sales.",
     type: "website",
     locale: "en_US",
     images: [ogImage("/real-roas/")],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Your real ROAS is higher than you think",
-    description: "Between 25% and 45% of your sales never reach your analytics tool. They happened, you were paid for them, and the report you decide on does not count them.",
+    description: "In our experience with clients, 40–60% of traffic rejects cookies, and 40% of those who accept do so after the first page. Your report misses those sales.",
     images: [ogImage("/real-roas/")],
   },
   alternates: { canonical: "https://sealmetrics.com/real-roas/" },

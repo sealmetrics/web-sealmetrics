@@ -35,8 +35,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-7 max-w-[58ch] text-ink-2 leading-[1.5]" style={{ fontSize: "clamp(17px,1.8vw,21px)" }}>
-          Between 25% and 45% of your sales never reach your analytics tool. They happened, you were paid for
-          them, and the report you make decisions on does not count them. You are switching off campaigns that
+          In our experience with clients, between 40% and 60% of traffic does not accept cookies, and of those
+          who do, 40% do not accept on the first pageview. Their sales happened, you were paid for them, and
+          the report you make decisions on does not count them, or files them under the wrong channel. You are switching off campaigns that
           work and you do not know it.
         </p>
 
