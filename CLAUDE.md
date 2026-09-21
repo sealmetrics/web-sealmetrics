@@ -40,7 +40,10 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
   - `banned-capability-claim` — "full-funnel" qualifying *attribution* or a *journey* is banned in visible copy. The **concept words are not**: "multi-touch" appears ~90 times across the site, almost always in our own argument for why we do not do it, and banning the word would delete the differentiator. What is banned is the affirmative claim about us
   - `nonstandard-spelling` — `eCommerce` in camelCase. Visible copy only, so URL slugs, form values and object keys are out of scope by construction; text inside `<blockquote>` or `<q>` is exempt, because a regulator that writes "e-commerce" must be quoted as written
 - **NEVER claim ISO 27001 or SOC 2 certification** — not certified yet. If compliance is mentioned, use: designed for GDPR from the architecture up (self-assessed, not certified), ePrivacy, Schrems II clean for visitor data, EU-hosted in Dublin, DPA included, TPSR package. Never write "GDPR-compliant", "compliant by design/architecture" or "GDPR by architecture" as a fact about Sealmetrics
-- **NEVER claim total coverage** (founder decision 2026-09-14) — no "captures/measures 100%", "every visit counted", "zero data loss", "all your traffic". Say what is demonstrable: no visits lost to consent rejection; coverage depends on the implementation. The ~13% GA4 framing stays
+- **No universal GA4 data-loss figure** (founder decision 2026-09-21, canon in the brain's `11-quality/compliance.md`). The ~13% / 13–40% framing is retired, along with "62% invisible", "~25% ad blockers" and "50–85%". Two kinds of figure are allowed:
+  - **Client experience, always attributed:** "In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview." / "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista." Always a range, never turned into "GA4 loses X%", never on legal, DPA or security pages
+  - **Named case figures:** Incapto (29% of visits and 45% of pageviews missing from GA4 over 48 days), Palladium (35% of GA4 bookings with no channel, +165% Display Cost-per-Search), always with the case named
+- **NEVER claim total coverage** (founder decision 2026-09-14) — no "captures/measures 100%", "every visit counted", "zero data loss", "all your traffic". Say what is demonstrable: no visits lost to consent rejection; coverage depends on the implementation
 - **Sub-processors**: visitor data never leaves the EU, but Resend (US, account emails, SCCs + DPF) is a non-EU sub-processor. Never write "0 sub-processors outside the EU" without "on visitor data"
 - **NEVER include `rafa@sealmetrics.com` or any personal email** — use Cal.com link or `/demo` CTA for contact
 - Data centre location: **Dublin, Ireland only** (not Frankfurt, not Germany)
@@ -129,7 +132,7 @@ Sealmetrics competes in the **enterprise analytics** tier, NOT in the privacy-li
 - Tone: authoritative, precise, editorial — not startup-casual, not corporate-boring
 - Never use superlatives without data ("the best" → "captures 100%")
 - Pain before solution — state the problem before presenting the answer
-- Use specific numbers: "13%", "87%", "60+ rules" — not "most", "many", "several"
+- Use specific numbers: "29% of visits at Incapto", "40–60% in our experience with clients", "60+ rules" — not "most", "many", "several"
 - CTA text should be action-specific: "Book a Demo", "Calculate Your Data Loss", "See Full Comparison" — not "Learn More" or "Click Here"
 - Avoid jargon without explanation on educational pages
 - Be honest about competitors — "GA4 works well when..." not "GA4 is terrible"
