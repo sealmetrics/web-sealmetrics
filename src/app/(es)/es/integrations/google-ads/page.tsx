@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternatesEs } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { GOOGLE_ADS_PUBLISHED, googleAdsEs as content } from "@/lib/content/problem-landings/google-ads";
+import { GOOGLE_ADS_MODIFIED, GOOGLE_ADS_PUBLISHED, googleAdsEs as content } from "@/lib/content/problem-landings/google-ads";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
@@ -51,7 +51,7 @@ export default function GoogleAdsIntegrationPageEs() {
           headline: "Medir Google Ads sin cookies: plantillas, conciliación y límites",
           description: DESCRIPTION,
           datePublished: GOOGLE_ADS_PUBLISHED,
-          dateModified: GOOGLE_ADS_PUBLISHED,
+          dateModified: GOOGLE_ADS_MODIFIED,
           url: URL,
           category: "Integration",
           author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },

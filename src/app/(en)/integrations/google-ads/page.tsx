@@ -3,7 +3,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { articleSchema, breadcrumbSchema, faqPageSchema, howToSchema, quotationSchema, speakableWebPageSchema } from "@/lib/schema";
 import { getAlternates } from "@/lib/i18n/navigation";
 import { ProblemLandingSignal } from "@/components/v4/ProblemLandingSignal";
-import { GOOGLE_ADS_PUBLISHED, googleAdsEn as content } from "@/lib/content/problem-landings/google-ads";
+import { GOOGLE_ADS_MODIFIED, GOOGLE_ADS_PUBLISHED, googleAdsEn as content } from "@/lib/content/problem-landings/google-ads";
 import "@/components/v4/problem-landing-signal.css";
 import "@/components/v4/signal-answer.css";
 import { ogImage } from "@/lib/seo/og";
@@ -51,7 +51,7 @@ export default function GoogleAdsIntegrationPage() {
           headline: "Tracking Google Ads without cookies: templates, reconciliation and limits",
           description: DESCRIPTION,
           datePublished: GOOGLE_ADS_PUBLISHED,
-          dateModified: GOOGLE_ADS_PUBLISHED,
+          dateModified: GOOGLE_ADS_MODIFIED,
           url: URL,
           category: "Integration",
           author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" },
