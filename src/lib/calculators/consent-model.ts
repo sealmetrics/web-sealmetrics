@@ -73,12 +73,3 @@ export function consentRange(opts: Omit<ConsentModelOptions, "rejection"> = {}) 
     high: consentShares({ ...opts, rejection: REJECTION_MAX }),
   };
 }
-
-/**
- * From the visits GA4 reports back to an estimate of real visits:
- * GA4 visits = real × seen, so real = GA4 / seen.
- */
-export function realFromGa4(ga4Value: number, opts: ConsentModelOptions = {}): number {
-  const { seen } = consentShares(opts);
-  return seen > 0 ? ga4Value / seen : 0;
-}

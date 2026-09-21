@@ -71,8 +71,8 @@ export default function Page() {
               This calculator uses the two figures we can stand behind, both from our experience with
               clients: between 40% and 60% of traffic doesn&rsquo;t accept cookies, and of those who
               do, 40% don&rsquo;t accept on the first pageview, the one that carries the traffic
-              source. With those inputs, GA4 would see 40–60% of visits and attribute 24–36% to the
-              source they came from. Revenue is estimated assuming the conversion rate is the same
+              source. With those inputs, GA4 would credit 24–36% of visits to their real source; the
+              rest it would see without their source or not see at all. Revenue is estimated assuming the conversion rate is the same
               for traffic GA4 sees and traffic it doesn&rsquo;t.{" "}
               <Link href="/glossary/ad-blocker-analytics-impact">Ad blockers</Link>, Safari&rsquo;s
               ITP and exits before a heavy tag fires cut further, but we have no figure for them, so

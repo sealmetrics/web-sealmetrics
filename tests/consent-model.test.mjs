@@ -49,8 +49,3 @@ test("the range helper returns both ends", () => {
   close(r.low.seen, 0.6);
   close(r.high.seen, 0.4);
 });
-
-test("real visits from GA4 visits invert the consent share", () => {
-  close(model.realFromGa4(60_000, { rejection: 0.4 }), 100_000);
-  close(model.realFromGa4(40_000, { rejection: 0.6 }), 100_000);
-});

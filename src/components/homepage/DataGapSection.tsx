@@ -9,6 +9,7 @@ import {
   formatCurrency,
   shouldShowAdSpend,
 } from "@/lib/content/diagnostic";
+import { LATE_CONSENT_SHARE } from "@/lib/calculators/consent-model";
 
 interface DataGapSectionProps {
   answers: QuizAnswers;
@@ -86,10 +87,20 @@ function DataGap({ answers }: { answers: QuizAnswers }) {
         channels that drove them cannot be optimized. Complete data changes
         that.
       </p>
+      <p className="text-[0.85rem] text-text-body mt-4 leading-relaxed">
+        {usesClientRange
+          ? "Of your traffic, GA4 would credit an estimated 24–36% to its real source: the rest it sees without the landing pageview that carries the source, or doesn't see at all."
+          : `Of your traffic, GA4 would credit an estimated ${Math.round((1 - lossRate) * (1 - LATE_CONSENT_SHARE) * 100)}% to its real source: the rest it sees without the landing pageview that carries the source, or doesn't see at all.`}
+      </p>
       <p className="text-[0.75rem] text-text-tertiary mt-4 leading-relaxed">
         {usesClientRange
           ? "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview), shown at the 50% midpoint. Measure your own store to know."
           : "Estimate based on the consent rate you entered. Measure your own store to know."}
+      </p>
+      <p className="text-[0.75rem] text-text-tertiary mt-2 leading-relaxed">
+        <a href="/case-studies/incapto/" className="underline decoration-1 underline-offset-2">
+          At Incapto (Shopify, Consent Mode), measured: GA4 missed 29% of visits — Consent Mode and your setup change the number. Measure your own store.
+        </a>
       </p>
     </div>
   );

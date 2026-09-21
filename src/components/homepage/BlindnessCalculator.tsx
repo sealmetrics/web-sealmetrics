@@ -7,7 +7,7 @@ import {
   REJECTION_MIN,
   LATE_CONSENT_SHARE,
   clampRejection,
-  realFromGa4,
+  consentShares,
 } from "@/lib/calculators/consent-model";
 
 type Locale = "en" | "es";
@@ -21,7 +21,7 @@ const COPY = {
     lying: "lying",
     h1B: "— and it's costing you",
     realMoney: "real money.",
-    intro: ["Enter your", "monthly", "numbers from GA4. We estimate how many visits, orders and revenue GA4 would be missing every month — and how few of your orders it can credit to the source that brought them."],
+    intro: ["Enter your", "monthly", "numbers from GA4. We estimate what share of your traffic GA4 would credit to its real source, and how much of what it reports arrives without the source that earned it."],
     inputLabel: "INPUT",
     yourCurrentNumbers: ["Your", "current", "numbers"],
     monthlyFiguresFrom: "Monthly figures from GA4",
@@ -36,33 +36,35 @@ const COPY = {
     rejectionHint: "Our client range is 40–60%. Default 50%.",
     sealmetricsModel: "Sealmetrics model",
     modelRows: {
-      visits: "Real visits vs GA4",
+      visits: "Traffic credited to its real source",
       range: "Across 40–60% rejection",
       lateConsent: "Accept after the first pageview",
       lateConsentValue: "40% of those who accept",
       capture: "Sealmetrics capture",
       captureValue: "No consent loss",
     },
-    estimateNote: "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview). Assumes the conversion rate is the same for traffic GA4 sees and traffic it doesn't. Measure your own store to know.",
+    estimateNote: "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview). Measure your own store to know.",
+    incapto: "At Incapto (Shopify, Consent Mode), measured: GA4 missed 29% of visits — Consent Mode and your setup change the number. Measure your own store.",
+    incaptoHref: "/case-studies/incapto/",
     blindnessCalc: "THE BLINDNESS CALCULATION",
     costOfBlindness: ["The cost of your", "blindness"],
     liveUpdate: "live update",
     metric: "Metric (monthly)",
-    ga4Biased: "GA4 (biased)",
-    sealReal: "Estimated real",
-    blindSpot: "Blind spot",
+    ga4Biased: "GA4 reports",
+    sealReal: "With their source",
+    blindSpot: "Without source",
     rowVisits: "Monthly visits",
     rowOrders: "Total orders",
     rowRevenue: "Monthly revenue",
     crBlock: ["Orders credited to their source", "— with these inputs —"],
     ga4TellsYou: "GA4 orders",
     reality: "With their source",
-    delta: "Of real orders",
+    delta: "Of your traffic",
     verdict: "The verdict",
-    blindOpening: "With these inputs, GA4 would miss about",
+    blindOpening: "of your traffic is what GA4 would credit to its real source, with these inputs. Of what GA4 reports,",
     inMonthlyRevenue: "in monthly revenue and",
-    ordersCantSee: "orders you can't see.",
-    yearlyAside: ["That's", "a year you don't even know exists."],
+    ordersCantSee: "orders arrive without their source — and visitors who reject cookies don't appear at all.",
+    yearlyAside: ["That's", "a year GA4 reports without the source that earned it."],
     stopBleeding: <>Stop estimating. <em className="italic-accent">Measure your own gap.</em></>,
     startTrial: "Open my free account",
     freeHref: "/free-account/",
@@ -75,15 +77,15 @@ const COPY = {
     plan: "Plan",
     salesBE: "Sales to break even",
     salesBESuffix: "orders / month",
-    salesBEHint: "Recovered orders Sealmetrics needs to surface — at your AOV — to fully pay for itself.",
-    pctBlind: "% of the blind spot",
-    pctBlindSuffix: "of recovered orders",
-    pctBlindHint: "A tiny fraction of the orders you're already missing. The rest is pure upside.",
+    salesBEHint: "Orders Sealmetrics needs to credit back to their real source — at your AOV — to pay for itself.",
+    pctBlind: "% of unattributed orders",
+    pctBlindSuffix: "of orders GA4 reports without source",
+    pctBlindHint: "Counted only on what GA4 already reports — before the visitors it doesn't see at all.",
     monthlyROI: "Monthly ROI",
     monthlyROISuffix: "return on Sealmetrics",
-    monthlyROIHint: "For every €1 spent on Sealmetrics, this is the recovered revenue you gain visibility on.",
+    monthlyROIHint: "For every €1 spent on Sealmetrics, the revenue GA4 reports without its source.",
     paybackFootA: "With",
-    paybackFootB: "recovered orders per day, Sealmetrics is already paying for itself.",
+    paybackFootB: "orders a day credited back to their source, Sealmetrics already pays for itself.",
     paybackFootC: "days into the month, you're in profit.",
     primaryFootCta: "Open my free account · first 1M events free",
     secondaryFootCta: "Run the deep gap audit",
@@ -98,7 +100,7 @@ const COPY = {
     lying: "miente",
     h1B: "— y te está costando",
     realMoney: "dinero real.",
-    intro: ["Introduce tus números", "mensuales", "de GA4. Estimamos cuántas visitas, pedidos e ingresos se le escaparían a GA4 cada mes — y qué pocos pedidos puede atribuir a la fuente que los trajo."],
+    intro: ["Introduce tus números", "mensuales", "de GA4. Estimamos qué parte de tu tráfico atribuiría GA4 a su fuente real, y cuánto de lo que reporta llega sin la fuente que lo generó."],
     inputLabel: "INPUT",
     yourCurrentNumbers: ["Tus números", "actuales", ""],
     monthlyFiguresFrom: "Cifras mensuales de GA4",
@@ -113,33 +115,35 @@ const COPY = {
     rejectionHint: "Nuestro rango con clientes es del 40–60%. Por defecto, 50%.",
     sealmetricsModel: "Modelo Sealmetrics",
     modelRows: {
-      visits: "Visitas reales vs GA4",
+      visits: "Tráfico atribuido a su fuente real",
       range: "Con un rechazo del 40–60%",
       lateConsent: "Aceptan después de la primera página",
       lateConsentValue: "El 40% de quienes aceptan",
       capture: "Captura de Sealmetrics",
       captureValue: "Sin pérdida por consentimiento",
     },
-    estimateNote: "Estimación basada en lo que vemos en nuestros clientes (entre el 40% y el 60% no acepta cookies; de quienes las aceptan, el 40% no lo hace en la primera página vista). Supone la misma tasa de conversión en el tráfico que GA4 ve y en el que no. Mide tu propia tienda para saberlo.",
+    estimateNote: "Estimación basada en lo que vemos en nuestros clientes (entre el 40% y el 60% no acepta cookies; de quienes las aceptan, el 40% no lo hace en la primera página vista). Mide tu propia tienda para saberlo.",
+    incapto: "En Incapto (Shopify, con Consent Mode), medido: GA4 no registró el 29% de las visitas — Consent Mode y tu configuración cambian la cifra. Mide tu propia tienda.",
+    incaptoHref: "/es/case-studies/incapto/",
     blindnessCalc: "EL CÁLCULO DE LA CEGUERA",
     costOfBlindness: ["El coste de tu", "ceguera"],
     liveUpdate: "actualización en vivo",
     metric: "Métrica (mensual)",
-    ga4Biased: "GA4 (sesgado)",
-    sealReal: "Real estimado",
-    blindSpot: "Punto ciego",
+    ga4Biased: "GA4 reporta",
+    sealReal: "Con su fuente",
+    blindSpot: "Sin fuente",
     rowVisits: "Visitas mensuales",
     rowOrders: "Pedidos totales",
     rowRevenue: "Ingresos mensuales",
     crBlock: ["Pedidos atribuidos a su fuente", "— con estos datos —"],
     ga4TellsYou: "Pedidos en GA4",
     reality: "Con su fuente",
-    delta: "De los pedidos reales",
+    delta: "De tu tráfico",
     verdict: "El veredicto",
-    blindOpening: "Con estos datos, a GA4 se le escaparían unos",
+    blindOpening: "de tu tráfico es lo que GA4 atribuiría a su fuente real, con estos datos. De lo que GA4 reporta,",
     inMonthlyRevenue: "en ingresos mensuales y",
-    ordersCantSee: "pedidos que no ves.",
-    yearlyAside: ["Eso son", "al año que ni sabes que existen."],
+    ordersCantSee: "pedidos llegan sin su fuente — y quien rechaza las cookies ni aparece.",
+    yearlyAside: ["Eso son", "al año que GA4 reporta sin la fuente que los generó."],
     stopBleeding: <>Deja de estimar. <em className="italic-accent">Mide tu propio hueco.</em></>,
     startTrial: "Abrir mi cuenta gratis",
     freeHref: "/es/cuenta-gratis/",
@@ -152,15 +156,15 @@ const COPY = {
     plan: "Plan",
     salesBE: "Ventas para break-even",
     salesBESuffix: "pedidos / mes",
-    salesBEHint: "Pedidos recuperados que Sealmetrics necesita aflorar — a tu AOV — para pagarse del todo.",
-    pctBlind: "% del punto ciego",
-    pctBlindSuffix: "de pedidos recuperados",
-    pctBlindHint: "Una fracción mínima de los pedidos que ya estás perdiendo. El resto es upside puro.",
+    salesBEHint: "Pedidos que Sealmetrics necesita devolver a su fuente real — a tu AOV — para pagarse solo.",
+    pctBlind: "% de pedidos sin atribuir",
+    pctBlindSuffix: "de los pedidos que GA4 reporta sin fuente",
+    pctBlindHint: "Contado solo sobre lo que GA4 ya reporta — antes de las visitas que ni ve.",
     monthlyROI: "ROI mensual",
     monthlyROISuffix: "retorno sobre Sealmetrics",
-    monthlyROIHint: "Por cada €1 gastado en Sealmetrics, este es el ingreso recuperado del que ganas visibilidad.",
+    monthlyROIHint: "Por cada €1 gastado en Sealmetrics, el ingreso que GA4 reporta sin su fuente.",
     paybackFootA: "Con",
-    paybackFootB: "pedidos recuperados al día, Sealmetrics ya se paga solo.",
+    paybackFootB: "pedidos al día devueltos a su fuente, Sealmetrics ya se paga solo.",
     paybackFootC: "días después de empezar el mes, estás en beneficio.",
     primaryFootCta: "Abrir mi cuenta gratis · el primer millón de eventos gratis",
     secondaryFootCta: "Auditoría profunda del gap",
@@ -192,26 +196,26 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
     const ga4Orders = ga4Visits * (Math.max(0, crPct) / 100);
     const ga4Revenue = ga4Orders * Math.max(0, ticket);
 
-    // consent-model.ts: GA4 records (1 − rejection) of real visits; orders
-    // follow visits under an equal-conversion-rate assumption.
+    // consent-model.ts. No extrapolation to a larger "real" total: the output is
+    // a breakdown. Of all traffic, GA4 credits (1 − r) × 0.6 to its real source.
+    // Of what GA4 reports, 40% comes from visitors who consented after the
+    // landing pageview, so it arrives without its source.
     const rejection = clampRejection(rejectionPct / 100);
-    const sealVisits = realFromGa4(ga4Visits, { rejection });
-    const sealOrders = realFromGa4(ga4Orders, { rejection });
-    const sealRevenue = sealOrders * Math.max(0, ticket);
-    // Of the orders GA4 sees, 40% come from visitors who consented after the
-    // landing pageview, so GA4 has them without their source.
-    const ordersWithSource = ga4Orders * (1 - LATE_CONSENT_SHARE);
-    const withSourceShare = sealOrders > 0 ? (ordersWithSource / sealOrders) * 100 : 0;
-    const upliftAt = (r: number) => (1 / (1 - r) - 1) * 100;
-    const upliftNow = upliftAt(rejection);
-    const upliftLow = upliftAt(REJECTION_MIN);
-    const upliftHigh = upliftAt(REJECTION_MAX);
+    const attributedShare = consentShares({ rejection }).attributed * 100;
+    const attributedLow = consentShares({ rejection: REJECTION_MAX }).attributed * 100;
+    const attributedHigh = consentShares({ rejection: REJECTION_MIN }).attributed * 100;
+    const keep = 1 - LATE_CONSENT_SHARE;
 
-    const dVisits = sealVisits - ga4Visits;
-    const dOrders = sealOrders - ga4Orders;
-    const dRevenue = sealRevenue - ga4Revenue;
+    const sealVisits = ga4Visits * keep;
+    const sealOrders = ga4Orders * keep;
+    const sealRevenue = ga4Revenue * keep;
+    const ordersWithSource = sealOrders;
 
-    const blindPct = sealRevenue > 0 ? (dRevenue / sealRevenue) * 100 : 0;
+    const dVisits = ga4Visits - sealVisits;
+    const dOrders = ga4Orders - sealOrders;
+    const dRevenue = ga4Revenue - sealRevenue;
+
+    const blindPct = attributedShare;
 
     const ordersToBreakEven = ticket > 0 ? planPrice / ticket : 0;
     const paybackPct = dOrders > 0 ? (ordersToBreakEven / dOrders) * 100 : 0;
@@ -223,7 +227,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
       ga4Visits, ga4Orders, ga4Revenue,
       sealVisits, sealOrders, sealRevenue,
       dVisits, dOrders, dRevenue,
-      ordersWithSource, withSourceShare, upliftNow, upliftLow, upliftHigh, blindPct,
+      ordersWithSource, attributedShare, attributedLow, attributedHigh, blindPct,
       ordersToBreakEven, paybackPct, monthlyROI, ordersPerDay, daysToPayback,
     };
   }, [visits, ticket, crPct, planPrice, rejectionPct]);
@@ -329,8 +333,8 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                 {c.sealmetricsModel}
               </div>
               {[
-                { k: c.modelRows.visits, v: `+${fmtNum(calc.upliftNow)}%` },
-                { k: c.modelRows.range, v: `+${fmtNum(calc.upliftLow)}% – +${fmtNum(calc.upliftHigh)}%` },
+                { k: c.modelRows.visits, v: `${fmtNum(calc.attributedShare)}%` },
+                { k: c.modelRows.range, v: `${fmtNum(calc.attributedLow)}–${fmtNum(calc.attributedHigh)}%` },
                 { k: c.modelRows.lateConsent, v: c.modelRows.lateConsentValue },
                 { k: c.modelRows.capture, v: c.modelRows.captureValue },
               ].map((row, i, arr) => (
@@ -389,19 +393,19 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                     label={c.rowVisits}
                     ga4={fmtNum(calc.ga4Visits)}
                     seal={fmtNum(calc.sealVisits)}
-                    diff={"+" + fmtNum(calc.dVisits)}
+                    diff={fmtNum(calc.dVisits)}
                   />
                   <CalcRow
                     label={c.rowOrders}
                     ga4={fmtNum(calc.ga4Orders)}
                     seal={fmtNum(calc.sealOrders)}
-                    diff={"+" + fmtNum(calc.dOrders)}
+                    diff={fmtNum(calc.dOrders)}
                   />
                   <CalcRow
                     label={c.rowRevenue}
                     ga4={fmtEur(calc.ga4Revenue)}
                     seal={fmtEur(calc.sealRevenue)}
-                    diff={"+" + fmtEur(calc.dRevenue)}
+                    diff={fmtEur(calc.dRevenue)}
                     headline
                   />
                 </tbody>
@@ -440,7 +444,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                     className="font-semibold text-[20px] tabular-nums"
                     style={{ color: "#B5423B" }}
                   >
-                    {fmtPct(calc.withSourceShare, 0)}
+                    {fmtPct(calc.attributedShare, 0)}
                   </div>
                 </div>
               </div>
@@ -478,6 +482,9 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
             </div>
 
             <p className="mt-4 text-[12px] leading-[1.5] text-ink-soft">{c.estimateNote}</p>
+            <p className="mt-2 text-[12px] leading-[1.5] text-ink-soft">
+              <a href={c.incaptoHref} className="underline decoration-1 underline-offset-2">{c.incapto}</a>
+            </p>
 
             {/* Conversion block — CTA */}
             <CalcConversionBlock stopBleeding={c.stopBleeding} startTrial={c.startTrial} href={c.freeHref} />
@@ -680,9 +687,6 @@ function CalcRow({
         <td
           className="bg-ink text-warm-white/40 px-3 py-5 text-right font-semibold tabular-nums text-[20px]"
           style={{
-            textDecoration: "line-through",
-            textDecorationColor: "#B5423B",
-            textDecorationThickness: "1.5px",
             letterSpacing: "-0.01em",
           }}
         >
@@ -711,9 +715,6 @@ function CalcRow({
       <td
         className="px-3 py-3.5 text-right font-semibold tabular-nums text-[18px] text-ink-soft"
         style={{
-          textDecoration: "line-through",
-          textDecorationColor: "#B5423B",
-          textDecorationThickness: "1.5px",
           letterSpacing: "-0.01em",
         }}
       >

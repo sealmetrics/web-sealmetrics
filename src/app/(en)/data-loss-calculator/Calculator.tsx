@@ -60,12 +60,14 @@ const COPY = {
     reportError: "We could not send the report. Please try again.",
     emptyTitle: "How much are you not seeing?",
     emptyBody: "Enter your monthly visitors, primary market and revenue. We estimate what GA4 would see with our client range of consent rejection.",
-    withInputs: "With these inputs, GA4 would see",
+    withInputs: "With these inputs, GA4 would credit to their real source",
     ofVisits: "of your visits",
-    andAttribute: (p: string) => `and attribute ${p} of them to the source they came from.`,
-    rangeLine: (seenHi: string, seenLo: string, attHi: string, attLo: string) =>
-      `Across our client range (40–60% rejection): GA4 would see ${seenHi}–${seenLo} of visits and attribute ${attHi}–${attLo} to their source.`,
-    visitsLine: (seen: string, real: string, unseen: string) => [`GA4 would record about `, seen, ` of `, real, ` monthly visits. About `, unseen, ` would not be recorded at all.`],
+    breakdown: (noSource: string, unseen: string) => `The rest: ${noSource} seen without their source, ${unseen} not seen at all.`,
+    rangeLine: (attHi: string, attLo: string) =>
+      `Across our client range (40–60% rejection): ${attHi}–${attLo} of visits credited to their real source.`,
+    visitsLine: (att: string, real: string, noSource: string, unseen: string) => [`Of your `, real, ` monthly visits, about `, att, ` would reach GA4 with their source, `, noSource, ` without it, and `, unseen, ` not at all.`],
+    incapto: "At Incapto (Shopify, Consent Mode), measured: GA4 missed 29% of visits — Consent Mode and your setup change the number. Measure your own store.",
+    incaptoHref: "/case-studies/incapto/",
     revenueTitle: "Revenue GA4 would not tie to its source",
     month: "This month",
     quarter: "This quarter",
@@ -140,12 +142,14 @@ const COPY = {
     reportError: "No hemos podido enviar el informe. Inténtalo de nuevo.",
     emptyTitle: "¿Cuánto no estás viendo?",
     emptyBody: "Introduce tus visitas mensuales, tu mercado y tus ingresos. Estimamos lo que vería GA4 con nuestro rango de rechazo del consentimiento en clientes.",
-    withInputs: "Con estos datos, GA4 vería",
+    withInputs: "Con estos datos, GA4 atribuiría a su fuente real",
     ofVisits: "de tus visitas",
-    andAttribute: (p: string) => `y atribuiría el ${p} a la fuente de la que llegaron.`,
-    rangeLine: (seenHi: string, seenLo: string, attHi: string, attLo: string) =>
-      `En nuestro rango con clientes (40–60% de rechazo): GA4 vería entre el ${seenHi} y el ${seenLo} de las visitas y atribuiría a su fuente entre el ${attHi} y el ${attLo}.`,
-    visitsLine: (seen: string, real: string, unseen: string) => [`GA4 registraría unas `, seen, ` de `, real, ` visitas mensuales. Unas `, unseen, ` no quedarían registradas.`],
+    breakdown: (noSource: string, unseen: string) => `El resto: el ${noSource} lo vería sin su fuente y el ${unseen} no lo vería.`,
+    rangeLine: (attHi: string, attLo: string) =>
+      `En nuestro rango con clientes (40–60% de rechazo): entre el ${attHi} y el ${attLo} de las visitas, atribuidas a su fuente real.`,
+    visitsLine: (att: string, real: string, noSource: string, unseen: string) => [`De tus `, real, ` visitas mensuales, unas `, att, ` llegarían a GA4 con su fuente, `, noSource, ` sin ella y `, unseen, ` no llegarían.`],
+    incapto: "En Incapto (Shopify, con Consent Mode), medido: GA4 no registró el 29% de las visitas — Consent Mode y tu configuración cambian la cifra. Mide tu propia tienda.",
+    incaptoHref: "/es/case-studies/incapto/",
     revenueTitle: "Ingresos que GA4 no ligaría a su fuente",
     month: "Este mes",
     quarter: "Este trimestre",
@@ -354,7 +358,7 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
     { label: t.fSource, value: ga4Attributed, pct: s.attributed * 100, note: t.fSourceNote },
   ];
 
-  const visitsLine = t.visitsLine(fmtN(ga4Seen), fmtN(visitors), fmtN(unseenVisitors));
+  const visitsLine = t.visitsLine(fmtN(ga4Attributed), fmtN(visitors), fmtN(ga4Seen - ga4Attributed), fmtN(unseenVisitors));
   const attrFoot = t.attrFoot(pct(correctAttributionRate), pct(1 - correctAttributionRate));
 
   return (
@@ -590,24 +594,29 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
                 <p className="text-[0.8rem] text-text-tertiary mb-3">{t.withInputs}</p>
                 <div className="flex items-baseline gap-3 mb-2">
                   <span className="font-mono text-[4rem] sm:text-[5rem] font-medium text-red-alert leading-none tracking-tight">
-                    {pct(s.seen)}
+                    {pct(s.attributed)}
                   </span>
                   <span className="text-[1.1rem] text-text-secondary">{t.ofVisits}</span>
                 </div>
-                <p className="text-[0.95rem] text-text-primary mb-3">{t.andAttribute(pct(s.attributed))}</p>
+                <p className="text-[0.95rem] text-text-primary mb-3">{t.breakdown(pct(s.seenWithoutSource), pct(s.unseen))}</p>
                 <p className="text-[0.9rem] text-text-secondary leading-relaxed">
                   {visitsLine[0]}
                   <span className="font-mono font-medium text-text-primary">{visitsLine[1]}</span>
                   {visitsLine[2]}
-                  <span className="font-mono font-medium text-text-primary">{visitsLine[3]}</span>
+                  <span className="font-mono font-medium text-green-muted">{visitsLine[3]}</span>
                   {visitsLine[4]}
-                  <span className="font-mono font-medium text-red-alert">{visitsLine[5]}</span>
+                  <span className="font-mono font-medium text-text-primary">{visitsLine[5]}</span>
                   {visitsLine[6]}
+                  <span className="font-mono font-medium text-red-alert">{visitsLine[7]}</span>
+                  {visitsLine[8]}
                 </p>
                 <p className="text-[0.8rem] text-text-secondary mt-3 leading-relaxed">
-                  {t.rangeLine(pct(range.high.seen), pct(range.low.seen), pct(range.high.attributed), pct(range.low.attributed))}
+                  {t.rangeLine(pct(range.high.attributed), pct(range.low.attributed))}
                 </p>
                 <p className="text-[0.75rem] text-text-tertiary mt-3 leading-relaxed">{t.estimateNote}</p>
+                <p className="text-[0.75rem] text-text-tertiary mt-2 leading-relaxed">
+                  <Link href={t.incaptoHref} className="underline decoration-1 underline-offset-2">{t.incapto}</Link>
+                </p>
               </div>
 
               {/* Revenue */}
@@ -630,6 +639,9 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
                   ))}
                 </div>
                 <p className="text-[0.8rem] text-text-secondary mt-5 leading-relaxed">{t.revenueNote(pct(s.attributed))}</p>
+                <p className="text-[0.75rem] text-text-tertiary mt-2 leading-relaxed">
+                  <Link href={t.incaptoHref} className="underline decoration-1 underline-offset-2">{t.incapto}</Link>
+                </p>
               </div>
 
               {/* Attribution */}
