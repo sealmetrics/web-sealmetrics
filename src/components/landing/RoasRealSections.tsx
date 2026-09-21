@@ -26,7 +26,7 @@ export function Hero() {
     <section className="bg-warm-white pt-14 md:pt-20 pb-20">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10">
         <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-ink-soft">
-          Analítica privacy by design · Sin consentimiento · RGPD · ePrivacy
+          Analítica privacy by design · Sin cookies ni identificadores · Diseñada para el RGPD desde la arquitectura
         </p>
 
         <h1 className="h-display mt-5 max-w-[16ch]">
@@ -422,7 +422,7 @@ export function PrivacyByDesign() {
 
 /* ---------- 08 · EL INTERCAMBIO ---------- */
 const TRADE_NO = [
-  "Modelos de atribución multitouch. El único modelo legal sin consentimiento es last-click.",
+  "Modelos de atribución multitouch. Sin identificadores de visitante, el único modelo posible es last-click.",
   "Customer journeys individuales ni secuencias de sesión.",
   "Construcción de audiencias para activar en plataformas.",
   "Cohortes de usuario, retención individual o LTV por persona.",
@@ -445,7 +445,7 @@ export function Tradeoff() {
           Te decimos lo que pierdes <em>antes de que lo descubras tú.</em>
         </h2>
         <p className="mt-6 max-w-[60ch] text-ink-2 leading-[1.55]" style={{ fontSize: "clamp(16px,1.5vw,19px)" }}>
-          Medir sin consentimiento tiene un precio y no lo escondemos en la letra pequeña. Si lo que necesitas
+          Medir sin cookies ni identificadores tiene un precio y no lo escondemos en la letra pequeña. Si lo que necesitas
           está en la columna izquierda, no somos tu herramienta y te lo diremos en la primera llamada.
         </p>
 
@@ -550,7 +550,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
 
 const TABLE_ROWS = [
   ["Transporte del hit", "sendBeacon · sobrevive al cierre de página", "Tipo beacon", "Image GET · se cancela al salir"],
-  ["Consentimiento en la UE", "No lo requiere, por diseño", "Sí · Consent Mode modela el hueco", "Sí en la mayoría de instalaciones"],
+  ["Consentimiento en la UE", "Sin cookies ni identificadores · el banner depende de tu configuración", "Sí · Consent Mode modela el hueco", "Sí en la mayoría de instalaciones"],
   ["Tráfico medido en paralelo", "Referencia", "25–45% menos (muestra de nuestros clientes)", "25% menos (30 días con doble etiqueta, campo)"],
 ];
 
@@ -566,7 +566,7 @@ const SPECS = [
   {
     h: "Verdad del dato",
     items: [
-      { v: "Sin pérdida por consentimiento", l: "Sin consentimiento, sin cookies, sin banner de por medio." },
+      { v: "Sin pérdida por consentimiento", l: "Sin cookies ni identificadores: no hay nada que el visitante tenga que rechazar." },
       { v: "Cero modelado", l: "No modeling. No sampling. No estimaciones. Si está en el informe, pasó." },
       { v: "+25% vs Adobe o GA4", l: "Medido en campo, 30 días de doble etiqueta sobre el mismo sitio." },
     ],
@@ -809,7 +809,7 @@ export function Implementation() {
           </p>
 
           <p className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.06em] text-ink-soft">
-            1,1 KB · DEFER · SENDBEACON · SIN COOKIES · SIN CONSENTIMIENTO
+            1,1 KB · DEFER · SENDBEACON · SIN COOKIES · SIN IDENTIFICADORES
           </p>
         </div>
       </div>
