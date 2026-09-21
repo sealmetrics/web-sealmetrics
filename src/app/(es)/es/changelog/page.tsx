@@ -34,6 +34,16 @@ export const metadata: Metadata = {
 
 const entries = [
   {
+    date: "Septiembre 2026",
+    updates: [
+      {
+        title: "Override en UTM Mapping — los clics de Shopping y Performance Max, para la campaña que los pagó",
+        type: "New",
+        desc: "Google Shopping y Performance Max sirven enlaces de producto que ya llegan con utm_source, utm_medium y utm_campaign puestos desde el feed, y el sufijo de URL final de Google Ads solo puede añadir parámetros, nunca quitarlos. Hasta ahora los UTMs del feed ganaban siempre: los clics de pago se atribuían a la campaña equivocada y el anunciante no tenía forma de corregirlo. Cada UTM Mapping tiene ahora la opción \u201COverride the UTM if the URL already has one\u201D. Si la activas, el valor de tu parámetro personalizado se escribe aunque la URL ya traiga ese UTM, y los ingresos caen en la campaña que compró el clic. Actívala al crear el mapping o con el interruptor Override de cada fila de la lista. Viene desactivada por defecto: los mappings que no la usen se comportan exactamente igual que antes.",
+      },
+    ],
+  },
+  {
     date: "Agosto 2026",
     updates: [
       {
