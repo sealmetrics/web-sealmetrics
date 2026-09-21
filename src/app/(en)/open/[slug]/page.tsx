@@ -146,7 +146,16 @@ export default async function OpenChapterPage({ params }: PageProps) {
               <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.78rem] font-mono uppercase tracking-[0.08em] text-text-tertiary">
                 <span>{chapter.readMinutes} min read</span>
                 <span aria-hidden="true">·</span>
-                <span>Last revised · May 2026</span>
+                <span>
+                  Last revised ·{" "}
+                  <time dateTime={chapter.dateModified}>
+                    {new Date(`${chapter.dateModified}T00:00:00Z`).toLocaleDateString("en-GB", {
+                      month: "long",
+                      year: "numeric",
+                      timeZone: "UTC",
+                    })}
+                  </time>
+                </span>
               </div>
             </header>
 
@@ -404,14 +413,13 @@ function ChapterOneBody() {
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         Consent banners get rejected, ad blockers strip events, and Intelligent
         Tracking Prevention purges cross-site cookies on Safari and Firefox.
-        Stack all three at full strength and GA4 can fall to about 13% of real
-        traffic. That is the worst case, not the average. The measured gap is
-        smaller and still large: on{" "}
+        How much each one removes depends on the store and the channel, so
+        there is no universal figure. What there is, is a measured one: on{" "}
         <Link
           href="/case-studies/incapto"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
         >
-          a Shopify store we measured side by side for 48 days
+          Incapto&rsquo;s Shopify store, measured side by side for 48 days
         </Link>
         , GA4 did not record 29% of visits or 45% of pageviews.
       </p>
@@ -786,7 +794,7 @@ function ChapterNineBody() {
               href="/open/what-complete-data-means"
               className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
             >
-              about 13% in the compounded worst case
+              a fraction whose size varies by store and by channel
             </Link>
             . Multi-touch on that fraction is multi-touch on a biased sample
             of consenting Chrome users. The output isn't measurement — it's an
@@ -1030,35 +1038,28 @@ function ChapterNineBody() {
 function ChapterThreeBody() {
   const cascade = [
     {
-      stage: "Start",
-      visitors: 100,
-      label: "real EU visitors",
-      detail: "Every person who actually loaded the page.",
-      delta: null,
-    },
-    {
       stage: "Stage 01 · Consent",
-      visitors: 45,
-      label: "after consent rejection",
+      figure: "40–60%",
+      figureNote: "don't accept cookies, in our experience with clients",
+      label: "Visitors who say no",
       detail:
-        "Average rejection rate across EU enterprise CMPs is ~55% — outright rejects, banner closures, and reject-all preferences combined.",
-      delta: "−55%",
+        "In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview — the page that carries the traffic source. Where a site lands depends on sector, brand strength, traffic mix and banner design.",
     },
     {
       stage: "Stage 02 · Ad blockers",
-      visitors: 27,
-      label: "after ad blockers",
+      figure: "Varies",
+      figureNote: "by audience and device",
+      label: "Tags stripped silently",
       detail:
-        "Of those who accepted, roughly 40% run uBlock, AdGuard, Brave Shields, or Pi-hole. Analytics requests are stripped silently — the user sees your site, GA4 does not see the user.",
-      delta: "−40%",
+        "Some of those who accepted run uBlock, AdGuard, Brave Shields or Pi-hole. Analytics requests are stripped silently — the user sees your site, GA4 does not see the user. The share is higher on desktop and in technical audiences.",
     },
     {
       stage: "Stage 03 · Browser restrictions",
-      visitors: 13,
-      label: "remain in GA4",
+      figure: "Varies",
+      figureNote: "by browser mix",
+      label: "Sessions broken apart",
       detail:
-        "Safari ITP, Firefox Total Cookie Protection, and Brave's defaults expire or block the cookies GA4 needs to keep sessions intact. Of the remaining 27, roughly half use browsers that interfere materially.",
-      delta: "−52%",
+        "Safari ITP, Firefox Total Cookie Protection and Brave's defaults expire or block the cookies GA4 needs to keep sessions intact. Returning visitors look new; multi-session journeys fall apart.",
     },
   ];
 
@@ -1106,18 +1107,20 @@ function ChapterThreeBody() {
         id="the-cascade"
         className="font-sans text-[1.85rem] sm:text-[2.15rem] font-semibold text-ink mt-14 mb-5 leading-[1.1] tracking-[-0.025em] scroll-mt-24"
       >
-        Where the 13% comes from
+        Where the gap comes from
       </h2>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        The 13% figure is not a slogan, and it is not a measurement either.
-        It is a model: the three-stage cascade that every analytics tool
-        relying on client-side cookies is exposed to, with every stage
-        hitting at once.
+        There is no universal figure for how much traffic GA4 misses. There
+        is a mechanism: three stages that every analytics tool relying on
+        client-side cookies is exposed to. GA4 doesn&rsquo;t see part of your
+        traffic because of consent rejection, ad blockers and browser
+        restrictions, plus sampling on top. How much depends on the store and
+        the channel.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        Start with 100 real EU visitors arriving at your site. Each stage
-        applies to the survivors of the previous one — the cascade is{" "}
-        <em className="italic-accent">multiplicative</em>, not additive.
+        Each stage applies to the visitors the previous one left — the
+        cascade is <em className="italic-accent">multiplicative</em>, not
+        additive.
       </p>
 
       {/* Cascade visual */}
@@ -1132,18 +1135,13 @@ function ChapterThreeBody() {
                 <span className="block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-text-tertiary mb-1">
                   {row.stage}
                 </span>
-                {row.delta && (
-                  <span className="font-mono text-[0.78rem] font-semibold text-coral">
-                    {row.delta}
-                  </span>
-                )}
               </div>
-              <div className="flex items-baseline gap-3">
+              <div className="flex flex-col gap-1.5">
                 <span className="font-sans text-[2.25rem] sm:text-[2.5rem] font-semibold text-ink leading-none tracking-[-0.025em]">
-                  {row.visitors}
+                  {row.figure}
                 </span>
-                <span className="font-mono text-[0.7rem] uppercase tracking-[0.1em] text-text-tertiary">
-                  / 100
+                <span className="font-mono text-[0.62rem] uppercase tracking-[0.1em] text-text-tertiary">
+                  {row.figureNote}
                 </span>
               </div>
               <p className="text-[0.92rem] leading-[1.55] text-text-secondary col-span-2 sm:col-span-1 m-0">
@@ -1159,13 +1157,12 @@ function ChapterThreeBody() {
 
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         Which is why "we'll improve our consent UX" doesn't recover the loss
-        — it only narrows the first stage. Even a perfect 80% accept rate
-        leaves you at roughly 20% of real traffic after the other two stages
-        apply.
+        — it only narrows the first stage. Ad blockers and browser
+        restrictions still apply to everyone who accepts.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        So read the 13% as the compounded worst case, not as the typical
-        result. Here is what a real store showed. Incapto, a specialty coffee
+        A mechanism is not a number. To put a size on the gap you have to
+        measure it, and here is what one store showed. Incapto, a specialty coffee
         brand on Shopify, ran GA4 with Consent Mode and Sealmetrics side by
         side for 48 days. GA4 did not record 29% of visits or 45% of
         pageviews. Sealmetrics, reconciled against Shopify&apos;s own orders,
@@ -1188,7 +1185,7 @@ function ChapterThreeBody() {
         measurement one.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        You can run the model with your own inputs using our{" "}
+        You can estimate your own gap before measuring it with our{" "}
         <Link
           href="/data-loss-calculator"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
@@ -1199,17 +1196,17 @@ function ChapterThreeBody() {
       </p>
 
       <p className="text-[0.85rem] text-text-tertiary mb-10 italic">
-        Cascade percentages are EU average rates used as model inputs.
-        The compounded 13% is a worst-case model, not a
-        measured average; the Incapto figures are measured. Methodology in
-        our{" "}
+        The consent range is our experience with clients, not a market
+        average; ad blockers and browser restrictions vary too much by
+        audience to state as one number. The Incapto figures are measured on
+        one store over one period. More in our{" "}
         <Link
-          href="/blog/why-ga4-shows-13pct-eu-traffic"
+          href="/blog/why-ga4-misses-traffic"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
         >
           published analysis
         </Link>
-        . Last revised May 2026.
+        .
       </p>
 
       {/* Section 2 · Sampling */}
@@ -1457,17 +1454,17 @@ function ChapterSixBody() {
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         The default route in analytics is consent — the user agrees to be
         tracked, the cookie fires, the data is processed. This is what GA4
-        requires. It is also what fails: on average, around 55% of EU users
-        reject consent (see{" "}
+        requires. It is also what fails: in our experience with clients,
+        between 40% and 60% of traffic doesn&rsquo;t accept cookies (see{" "}
         <Link
           href="/open/what-complete-data-means"
           className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
         >
           chapter 03
         </Link>
-        ). Stack ad blockers and browser restrictions on top, and in the
-        worst case the measurable population falls to about 13% of real
-        traffic.
+        ). Stack ad blockers and browser restrictions on top, and the
+        measurable population shrinks further, by an amount that depends on
+        the store.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
         Sealmetrics does not rely on consent because there is no personal
@@ -2165,7 +2162,7 @@ function ChapterElevenBody() {
       id: "multi-touch-attribution",
       term: "Multi-touch attribution",
       plain:
-        "Distributing conversion credit across the channels a user touched. Requires per-user, cross-session reconstruction, which in Europe is possible only for visitors who consented and are not blocked — about 13% in the worst case.",
+        "Distributing conversion credit across the channels a user touched. Requires per-user, cross-session reconstruction, which in Europe is possible only for visitors who consented and are not blocked — a fraction that varies by store and channel.",
       body: (
         <>
           Distributing credit across the channels involved in a conversion
@@ -2277,13 +2274,14 @@ function ChapterElevenBody() {
       id: "consent-rejection-rate",
       term: "Consent rejection rate",
       plain:
-        "Share of visitors who refuse the consent banner. EU enterprise average is approximately 55%. The first stage of the worst-case cascade that can bring GA4 measurement down to about 13% of real traffic.",
+        "Share of visitors who refuse the consent banner. In our experience with clients, between 40% and 60% of traffic doesn't accept cookies. The first stage of the cascade that hides part of your traffic from GA4.",
       body: (
         <>
           Share of visitors who refuse the CMP banner — reject-all clicks,
-          banner closures, "decline all" preferences combined. EU
-          enterprise average sits around 55%. The starting point of the
-          cascade.
+          banner closures, "decline all" preferences combined. In our
+          experience with clients, between 40% and 60% of traffic
+          doesn&rsquo;t accept cookies, and of those who do, 40% don&rsquo;t
+          accept on the first pageview. The starting point of the cascade.
         </>
       ),
       chapterHref: "/open/what-complete-data-means",
@@ -2391,7 +2389,7 @@ function ChapterElevenBody() {
       id: "itp",
       term: "Intelligent Tracking Prevention (ITP)",
       plain:
-        "Safari's mechanism for limiting cross-site tracking. Expires or blocks cookies that depend on cross-site context. One of the three layers in the worst-case cascade that can bring GA4 measurement down to about 13%.",
+        "Safari's mechanism for limiting cross-site tracking. Expires or blocks cookies that depend on cross-site context. One of the three layers in the cascade that hides part of your traffic from GA4.",
       body: (
         <>
           Safari's mechanism for limiting cross-site tracking. Expires or
@@ -2421,22 +2419,23 @@ function ChapterElevenBody() {
 
   const commercial: GlossaryTerm[] = [
     {
-      id: "the-13-percent",
-      term: "The 13%",
+      id: "measurement-gap",
+      term: "The measurement gap",
       plain:
-        "Our worst-case model of GA4 measurement coverage in the EU after consent rejection, ad blockers, and browser restrictions. A multiplicative cascade that starts at 100 real visitors and arrives at roughly 13 measurable ones. A compounded worst case, not an average: on one real Shopify store measured for 48 days, GA4 did not record 29% of visits.",
+        "The share of real traffic GA4 does not see, after consent rejection, ad blockers and browser restrictions. There is no universal figure: it depends on the store and the channel. At Incapto, on Shopify over 48 days, GA4 did not record 29% of visits and 45% of pageviews.",
       body: (
         <>
-          Our worst-case model of GA4 measurement coverage in the EU after
-          consent rejection (~55%), ad blockers (~40% of the remainder), and
-          browser restrictions. The end of the cascade — not an average. On{" "}
+          The share of real traffic GA4 does not see, after consent
+          rejection, ad blockers and browser restrictions. It is not one
+          number: it depends on the store and the channel, so it has to be
+          measured. At{" "}
           <Link
             href="/case-studies/incapto"
             className="text-brand hover:text-brand-hover no-underline border-b border-brand/40"
           >
-            a real Shopify store measured for 48 days
+            Incapto, on Shopify over 48 days
           </Link>
-          , GA4 did not record 29% of visits.
+          , GA4 did not record 29% of visits and 45% of pageviews.
         </>
       ),
       chapterHref: "/open/what-complete-data-means",
@@ -2727,8 +2726,8 @@ function ChapterSevenBody() {
     {
       label: "Data captured",
       us: "Not reduced by consent",
-      ga360: "~13% in EU after consent + ITP",
-      adobe: "~13% in EU after consent + ITP",
+      ga360: "Consenting, unblocked visitors only",
+      adobe: "Consenting, unblocked visitors only",
       piwik: "100% of consenting users",
     },
     {

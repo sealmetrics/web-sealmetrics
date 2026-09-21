@@ -169,11 +169,11 @@ export default function GA4AlternativesEnterpriseEsPage() {
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 depende del consentimiento. Con el rechazo del banner
-                (15-60% de las visitas UE), los ad blockers y las restricciones de navegador
-                sumados en el peor escenario, puede quedarse en torno al 13% del
-                tráfico real de eCommerce UE. En una tienda Shopify real medida
-                durante 48 días,{" "}
+                GA4 depende del consentimiento, así que no ve parte de tu
+                tráfico: el rechazo del banner, los ad blockers y las
+                restricciones del navegador se llevan cada uno una parte, y
+                cuánto depende de la tienda y del canal. En la tienda Shopify de
+                Incapto, medida durante 48 días,{" "}
                 <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no registró el 29% de las visitas</Link>
                 . La atribución de revenue construida sobre ese dato es
                 estructuralmente incompleta.
@@ -901,10 +901,10 @@ export default function GA4AlternativesEnterpriseEsPage() {
                 8 mejores plataformas de analítica enterprise en 2026
               </Link>
               <Link
-                href="/es/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/es/blog/why-ga4-misses-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Por qué GA4 puede ver solo el 13% de tu tráfico UE
+                Por qué GA4 no ve parte de tu tráfico
               </Link>
               <Link
                 href="/es/blog/cookieless-analytics-explained"

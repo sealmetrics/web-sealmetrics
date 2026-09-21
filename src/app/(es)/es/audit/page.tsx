@@ -86,13 +86,14 @@ export default function Page() {
           </h2>
           <p className="text-ink-soft mt-6 leading-[1.6] text-[17px] max-w-[62ch]">
             En Europa, GA4 solo cuenta a los visitantes que aceptan el banner y
-            no lo bloquean. En una{" "}
+            no lo bloquean. En la{" "}
             <Link href="/es/case-studies/incapto" className="underline">
-              tienda Shopify real medida durante 48 días
+              tienda Shopify de Incapto, medida durante 48 días
             </Link>
-            , no registró el 29% de las visitas; en nuestro modelo de peor
-            escenario acumulado se queda en torno al 13%, y solo un 16%
-            aproximadamente llega con la fuente de tráfico todavía asociada.
+            , no registró el 29% de las visitas. Y en nuestra experiencia con
+            clientes, de quienes aceptan las cookies, el 40% no lo hace en la
+            primera página vista, así que llega sin la fuente de tráfico
+            asociada.
             Cada decisión de inversión tomada sobre esa base se toma
             sobre una muestra que nadie eligió. La auditoría pone un número a tu
             versión concreta de ese gap antes de que instales nada.

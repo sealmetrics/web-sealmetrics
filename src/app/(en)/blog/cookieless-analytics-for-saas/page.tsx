@@ -130,7 +130,7 @@ export default function Page() {
               <li><strong>Warehouse / revenue</strong> (typically BigQuery or Snowflake): subscription tables, MRR, churn.</li>
             </ol>
             <p>
-              The top layer is the one that breaks. After consent rejection and ad blockers, GA4 can see as little as 13% of real EU traffic in the compounded worst case; on a Shopify store measured over 48 days it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics (Mixpanel/Amplitude) work fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
+              The top layer is the one that breaks. After consent rejection and ad blockers, GA4 doesn&apos;t see part of your traffic, and how much depends on the site; on Incapto&apos;s Shopify store, measured over 48 days, it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics (Mixpanel/Amplitude) work fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -124,7 +124,7 @@ export default function Page() {
           <div className="key-takeaways mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>Consent rejection, ad blockers and Safari restrictions compound. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits or 45% of pageviews; our model&apos;s compounded worst case leaves GA4 with about 13%.</li>
+              <li>Consent rejection, ad blockers and Safari restrictions compound. How much they remove depends on the store and the channel. Measured on Incapto&apos;s Shopify store over 48 days, GA4 did not record 29% of visits or 45% of pageviews.</li>
               <li>Cookieless analytics counts events anonymously — no cookies, no identifiers, no per-user tracking — and attributes each conversion last-click at channel level.</li>
               <li>Because no information is stored on or read from the device, the ePrivacy storage-and-access rule has nothing to attach to. Whether your analytics is consent-exempt still depends on your configuration and your national authority&apos;s criteria.</li>
               <li>The check that matters is against the backend: in Incapto&apos;s parallel run, Sealmetrics recorded 96% of real Shopify orders and 97% of revenue.</li>
@@ -144,19 +144,19 @@ export default function Page() {
               The three layers of data loss in eCommerce
             </h2>
             <p>
-              Your eCommerce analytics loses events in three sequential stages. The cascade is multiplicative — each layer compounds the one before. The percentages below are the assumptions of our worst-case model, not a measurement of your store.
+              Your eCommerce analytics loses events in three sequential stages. The cascade is multiplicative — each layer acts on what the one before left. How big each layer is depends on your store, your audience and your channels.
             </p>
             <p>
-              <strong>Layer 1 — Consent rejection (55% in the model).</strong> A large share of EU visitors reject the cookie banner, and the share varies by market and by banner design. If they reject, GA4 never writes its cookie, so the pageview is never measured. For a DTC brand running Facebook ads into a Shopify store, this is where most of the invisible conversions live.
+              <strong>Layer 1 — Consent rejection.</strong> In our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, and of those who do, 40% don&apos;t accept on the first pageview. The share varies by market and by banner design. If they reject, GA4 never writes its cookie, so the pageview is never measured. For a DTC brand running Facebook ads into a Shopify store, this is where most of the invisible conversions live.
             </p>
             <p>
-              <strong>Layer 2 — Ad blockers (40% of what is left, in the model).</strong> uBlock Origin, AdBlock Plus, Brave Shield and Firefox Enhanced Tracking Protection block requests to google-analytics.com. Your GA4 tag never fires. Add-to-cart events never arrive. Add this on top of consent rejection and you have compound loss.
+              <strong>Layer 2 — Ad blockers.</strong> uBlock Origin, AdBlock Plus, Brave Shield and Firefox Enhanced Tracking Protection block requests to google-analytics.com. Your GA4 tag never fires. Add-to-cart events never arrive. Add this on top of consent rejection and you have compound loss.
             </p>
             <p>
               <strong>Layer 3 — Browser restrictions (Safari ITP, Firefox ETP).</strong> Even visitors who accept cookies don&apos;t keep them long. Apple&apos;s <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Intelligent Tracking Prevention</Link> caps script-set first-party cookies at 7 days, and at 24 hours when the page arrived with tracking query parameters. Cookie-based tools lose the original source and a later email-driven conversion shows up as &ldquo;direct&rdquo;.
             </p>
             <p>
-              In our model&apos;s compounded worst case, 100 real visits become about 45 after consent, 27 after ad blockers and 13 after browser restrictions. <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Read the math here</Link>. A measured store is less extreme but just as uneven: running both tools on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&apos;s Shopify store</Link> for 48 days, GA4 did not record 29% of visits, and paid campaigns lost three to five times more than direct traffic.
+              There is no universal figure for how much the three layers remove together; <Link href="/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">why GA4 doesn&apos;t see part of your traffic</Link> walks through the mechanism. What a measurement shows is how uneven it is: running both tools on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&apos;s Shopify store</Link> for 48 days, GA4 did not record 29% of visits, and paid campaigns lost three to five times more than direct traffic.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -419,34 +419,35 @@ export default function BestWebAnalyticsToolPage() {
                 random.
               </p>
               <p>
-                Three separate leaks compound. Consent: in European markets,{" "}
+                Three separate leaks compound. Consent: in our experience with
+                clients,{" "}
                 <Link
                   href="/blog/consent-banner-impact-on-analytics"
                   className={linkClass}
                 >
-                  rejection rates of up to 60%
+                  between 40% and 60% of traffic doesn&rsquo;t accept cookies
                 </Link>{" "}
-                are normal once a compliant banner is in place, and rejected
-                visitors are not measured at all by consent-dependent tools.{" "}
+                once a compliant banner is in place, and rejected visitors are
+                not measured at all by consent-dependent tools.{" "}
                 <Link
                   href="/glossary/ad-blocker-analytics-impact"
                   className={linkClass}
                 >
                   Ad blockers
                 </Link>{" "}
-                and browser tracking protection: roughly 25% of technical
-                audiences, higher in some verticals. Tag failure: around 5% on
-                mobile, and it grows on slow networks. Multiply the survivors
+                and browser tracking protection: a share that depends on the
+                audience, higher in technical ones. Tag failure: a smaller
+                share, growing on slow mobile networks. Multiply the survivors
                 and you are reporting on a fraction — while your CFO reads it as
-                the whole. Stacked as a worst case, it is the arithmetic behind{" "}
+                the whole. That is{" "}
                 <Link
-                  href="/blog/why-ga4-shows-13pct-eu-traffic"
+                  href="/blog/why-ga4-misses-traffic"
                   className={linkClass}
                 >
-                  GA4 showing as little as 13% of EU traffic
+                  why GA4 doesn&rsquo;t see part of your traffic
                 </Link>
-                . Measured on a real Shopify store over 48 days, the gap was
-                smaller but still decisive:{" "}
+                , and how much depends on the store. On Incapto&rsquo;s Shopify
+                store, measured over 48 days, the gap was decisive:{" "}
                 <Link href="/case-studies/incapto" className={linkClass}>
                   GA4 did not record 29% of visits
                 </Link>

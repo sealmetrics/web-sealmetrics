@@ -69,7 +69,7 @@ export default function GA4DataSamplingPageEs() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 aplica muestreo en los reports de Exploración cuando los datos superan los umbrales internos — la versión gratis tiene umbrales más bajos que GA360.</li>
             <li>El dato muestreado puede invertir los rankings de campañas: la Campaña A con 342 conversiones reales puede estimarse en 310 mientras que la Campaña B con 298 aparece como 320.</li>
-            <li>Antes incluso de empezar el muestreo, GA4 ya ha perdido parte del tráfico UE por rechazo de consentimiento, ad blockers y restricciones de navegador — el 29% de las visitas en una tienda Shopify real medida durante 48 días, y hasta el 87% en el peor escenario. Estás decidiendo sobre una estimación de una fracción.</li>
+            <li>Antes incluso de empezar el muestreo, GA4 ya ha perdido parte del tráfico UE por rechazo de consentimiento, ad blockers y restricciones de navegador — cuánto depende de la tienda; en Incapto, medido en Shopify durante 48 días, fue el 29% de las visitas. Estás decidiendo sobre una estimación de una fracción.</li>
             <li>La analítica cookieless captura cada sesión sin muestreo — cuando ves 72.847 visitantes, son 72.847 sesiones reales, no una proyección.</li>
           </ul>
         </div>
@@ -149,9 +149,9 @@ export default function GA4DataSamplingPageEs() {
           </p>
 
           <p>
-            Cuánto se pierde depende de cada web. En una tienda Shopify real donde GA4 con Consent Mode y Sealmetrics funcionaron en paralelo durante 48 días,{" "}
+            Cuánto se pierde depende de cada web. En la tienda Shopify de Incapto, donde GA4 con Consent Mode y Sealmetrics funcionaron en paralelo durante 48 días,{" "}
             <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas</Link>
-            ; en el peor escenario, con todas las pérdidas sumadas, puede ver solo el 13% del tráfico real. Después, el muestreo degrada aún más la precisión de lo que queda. Estás decidiendo sobre una estimación de una fracción.
+            . Después, el muestreo degrada aún más la precisión de lo que queda. Estás decidiendo sobre una estimación de una fracción.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -362,18 +362,18 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               >
                 consent
               </Link>
-              . In the EU, where consent rejection costs 15–60% of visitors depending on sector, brand strength and traffic mix, GA4 can
-              fall to{" "}
+              . In the EU,{" "}
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/blog/why-ga4-misses-traffic"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                about 13% of actual traffic
-              </Link>{" "}
-              in the compounded worst case of consent rejection, ad blockers,
-              and browser restrictions. The measured gap is smaller but still
-              material: on a real Shopify store tracked side by side for 48
-              days,{" "}
+                GA4 doesn&apos;t see part of your traffic
+              </Link>
+              : consent rejection, ad blockers and browser restrictions each
+              take a share, and how much depends on the store and the channel.
+              In our experience with clients, between 40% and 60% of traffic
+              doesn&apos;t accept cookies. On Incapto&apos;s Shopify store,
+              tracked side by side for 48 days,{" "}
               <Link
                 href="/case-studies/incapto"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -787,10 +787,10 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
                 7 GA4 Alternatives for eCommerce Teams in 2026
               </Link>
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/blog/why-ga4-misses-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Can Show as Little as 13% of Your EU Traffic
+                Why GA4 Doesn&apos;t See Part of Your Traffic
               </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"

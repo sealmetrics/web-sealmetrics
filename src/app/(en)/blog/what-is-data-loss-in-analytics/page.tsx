@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "What Is Data Loss in Analytics?",
     description:
-      "The 4 causes of analytics data loss, how they compound to 87% in a worst-case model, and the 29% gap measured on a real store.",
+      "The 4 causes of analytics data loss, how they compound, and the 29% of visits GA4 missed at Incapto over 48 days.",
     type: "article",
     url: "https://sealmetrics.com/blog/what-is-data-loss-in-analytics/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Data Loss in Analytics?",
-    description: "The 4 causes of analytics data loss, how they compound to 87% in a worst-case model, and the 29% gap measured on a real store.",
+    description: "The 4 causes of analytics data loss, how they compound, and the 29% of visits GA4 missed at Incapto over 48 days.",
     images: ["https://sealmetrics.com/og/blog/what-is-data-loss-in-analytics.png"],
   },
   alternates: {
@@ -65,7 +65,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Analytics data loss compounds through 4 layers: consent rejection (-55%), ad blockers (-40% of remainder), browser restrictions (ITP/ETP), and data sampling — which in a compounded worst-case model leave about 13% of real traffic visible. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits.</li>
+            <li>Analytics data loss compounds through 4 layers: consent rejection, ad blockers, browser restrictions (ITP/ETP) and data sampling. How much each removes depends on the store and the channel. At Incapto, measured over 48 days on Shopify, GA4 did not record 29% of visits.</li>
             <li>Data loss is not inaccuracy — an inaccurate tool misattributes a visit, but a tool with data loss has no record the visit happened at all.</li>
             <li>Revenue attribution built on partial data systematically over-credits channels correlated with cookie acceptance and under-credits channels used by privacy-conscious visitors.</li>
             <li>First-party cookieless collection addresses the main causes of data loss together: no consent dependency, far less ad-blocker exposure, no third-party cookie restrictions, no sampling.</li>
@@ -75,8 +75,8 @@ export default function WhatIsDataLossInAnalyticsPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             Open your analytics dashboard. The number it shows for
-            yesterday&rsquo;s traffic is almost certainly too low. On a real
-            Shopify store measured side by side for 48 days,{" "}
+            yesterday&rsquo;s traffic is almost certainly too low. On
+            Incapto&rsquo;s Shopify store, measured side by side for 48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits and 45% of pageviews</Link>
             . Most analytics tools report a fraction of real traffic, and the
             gap between reported numbers and reality is growing every year.
@@ -130,14 +130,15 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </p>
 
           <h3 className="text-[1.1rem] font-medium text-text-primary mt-8 mb-3">
-            1. Consent rejection &mdash; 55% lost
+            1. Consent rejection &mdash; the visitors who say no
           </h3>
 
           <p>
             Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a>, any analytics tool that uses cookies must obtain
-            consent before tracking. Across the EU, approximately 55% of
-            visitors reject cookie consent. In Germany, rejection rates
-            exceed 65%. In the Netherlands, 60%. Every visitor who clicks
+            consent before tracking. In our experience with clients, between
+            40% and 60% of traffic doesn&rsquo;t accept cookies, and of those
+            who do, 40% don&rsquo;t accept on the first pageview. Every
+            visitor who clicks
             &ldquo;Reject&rdquo; on your{" "}
             <Link
               href="/glossary/consent-management-platform"
@@ -149,7 +150,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </p>
 
           <h3 className="text-[1.1rem] font-medium text-text-primary mt-8 mb-3">
-            2. Ad blockers &mdash; 40% of remaining traffic lost
+            2. Ad blockers &mdash; the script never loads
           </h3>
 
           <p>
@@ -162,8 +163,8 @@ export default function WhatIsDataLossInAnalyticsPage() {
             do not just block advertisements. They block analytics scripts.
             uBlock Origin, AdBlock Plus, and Brave&rsquo;s built-in blocker
             all include Google Analytics, Facebook Pixel, and similar tracking
-            scripts in their filter lists. Approximately 40% of European
-            desktop users run an ad blocker. These visitors load your pages
+            scripts in their filter lists. Usage is higher on desktop than on
+            mobile and higher in technical audiences. These visitors load your pages
             normally but generate zero analytics data.
           </p>
 
@@ -193,7 +194,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
 
           <p>
             After consent, ad blockers, and browser restrictions have removed
-            the majority of traffic,{" "}
+            their share of traffic,{" "}
             <Link
               href="/glossary/data-sampling"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -207,7 +208,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </p>
 
           <CommercialModule
-            hook="Four causes, one compounding gap — consent rejection alone removes 15–60% of visitors, depending on sector and traffic mix. Quantify the loss on your own site, live."
+            hook="Four causes, one compounding gap, and its size is different on every site. Quantify the loss on your own site, live."
           />
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -215,69 +216,53 @@ export default function WhatIsDataLossInAnalyticsPage() {
           </h2>
 
           <p>
-            Each cause does not operate in isolation. They cascade. Start
-            with 100 real visitors arriving at a European eCommerce site and
-            follow the data through each stage:
+            Each cause does not operate in isolation. They cascade, and how
+            hard each one hits depends on the store, the audience and the
+            channel. That is why there is no universal percentage to quote:
+            the only way to size the gap is to measure it. Here is what that
+            looked like when Incapto ran GA4, with Consent Mode, and
+            Sealmetrics side by side on its Shopify store.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
             <div className="space-y-4">
               {[
-                { stage: "Real visitors arrive", count: 100, lost: null, color: "text-text-primary" },
-                { stage: "After consent rejection (55% reject)", count: 45, lost: "\u221255", color: "text-text-primary" },
-                { stage: "After ad blockers (40% of remainder)", count: 27, lost: "\u221218", color: "text-text-secondary" },
-                { stage: "After browser restrictions (ITP/ETP)", count: 18, lost: "\u22129", color: "text-text-secondary" },
-                { stage: "After data sampling", count: 13, lost: "\u22125", color: "text-red-alert" },
+                { stage: "Visits GA4 did not record", value: "29%", color: "text-red-alert" },
+                { stage: "Pageviews GA4 did not record", value: "45%", color: "text-red-alert" },
+                { stage: "Extra traffic Sealmetrics saw in direct", value: "+11%", color: "text-text-primary" },
+                { stage: "Extra traffic Sealmetrics saw in organic search", value: "+62%", color: "text-text-primary" },
+                { stage: "Extra traffic Sealmetrics saw in organic social", value: "+133%", color: "text-text-primary" },
               ].map((item) => (
                 <div
                   key={item.stage}
-                  className="flex justify-between items-center text-[0.9rem]"
+                  className="flex justify-between items-center gap-4 text-[0.9rem]"
                 >
                   <span className="text-text-secondary">{item.stage}</span>
-                  <div className="flex items-center gap-3">
-                    {item.lost && (
-                      <span className="font-mono text-[0.8rem] text-red-alert">
-                        {item.lost}
-                      </span>
-                    )}
-                    <span className={`font-mono font-medium ${item.color}`}>
-                      {item.count}
-                    </span>
-                  </div>
+                  <span className={`font-mono font-medium ${item.color}`}>
+                    {item.value}
+                  </span>
                 </div>
               ))}
             </div>
-            <div className="mt-5 pt-4 border-t border-warm-100 flex justify-between items-center">
-              <span className="text-[0.9rem] text-text-primary font-medium">
-                Worst-case model loss
-              </span>
-              <span className="font-mono text-[1.1rem] font-medium text-red-alert">
-                87%
-              </span>
-            </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Worst-case model: every layer takes a high-end estimate and they
-              compound. It is not an average. Actual loss varies by country,
-              industry, and device mix. Calculate yours with the{" "}
+              Incapto, one Shopify store. Visits and pageviews cover 48 days
+              (14 Jun &rarr; 31 Jul 2026); channel figures cover 28 Jul &rarr;
+              6 Aug 2026. Not a typical rate: estimate yours with the{" "}
               <Link
                 href="/data-loss-calculator"
                 className="text-text-tertiary no-underline border-b border-warm-200 pb-0.5 hover:border-text-tertiary transition-colors"
               >
                 data loss calculator
               </Link>
-              .
+              , then measure it.
             </p>
           </div>
 
           <p>
-            In this model, out of 100 real visitors, your analytics platform
-            reports 13. That is the compounded worst case, not the typical
-            result. The measured gap is smaller but still large, and it is
-            uneven: when GA4 with Consent Mode and Sealmetrics ran side by side
-            on the same store, GA4 missed 29% of visits overall, while
-            Sealmetrics saw 62% more organic search traffic and 133% more
-            organic social traffic than GA4. The channels that bring new people
-            in are the ones that lose the most.
+            Two things stand out. The gap is large enough to change decisions,
+            and it is uneven: the channels that bring new people in are the
+            ones that lose the most, while direct barely moves. A report
+            corrected by a single multiplier would still be wrong.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -301,8 +286,7 @@ export default function WhatIsDataLossInAnalyticsPage() {
               Revenue attribution
             </Link>{" "}
             is only as good as the traffic it is computed on. When a large share of visitors is
-            invisible &mdash; 29% on one measured store, up to 87% in the
-            worst-case model &mdash; your attribution model only sees conversions
+            invisible &mdash; 29% of visits at Incapto &mdash; your attribution model only sees conversions
             from the visitors who accepted cookies, were not blocked, and were
             not sampled. This biased
             sample systematically over-credits channels that correlate with

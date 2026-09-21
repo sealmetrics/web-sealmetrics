@@ -195,10 +195,10 @@ export default function GA4AlternativesEnterprisePage() {
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 depends on consent. Consent rejection (15-60% of EU visits),
-                ad blockers and browser restrictions can push it down to about 13% of
-                real EU eCommerce traffic in the compounded worst case. On a real
-                Shopify store measured over 48 days,{" "}
+                GA4 depends on consent, so it doesn&apos;t see part of your
+                traffic: consent rejection, ad blockers and browser restrictions
+                each take a share, and how much depends on the store and the
+                channel. On Incapto&apos;s Shopify store, measured over 48 days,{" "}
                 <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
                 . Revenue attribution built on this data is structurally
                 incomplete.
@@ -915,10 +915,10 @@ export default function GA4AlternativesEnterprisePage() {
                 8 Best Enterprise Analytics Platforms in 2026
               </Link>
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/blog/why-ga4-misses-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Can Show as Little as 13% of Your EU Traffic
+                Why GA4 Doesn&apos;t See Part of Your Traffic
               </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"

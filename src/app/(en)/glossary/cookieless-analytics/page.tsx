@@ -66,7 +66,7 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does cookieless analytics matter for EU eCommerce?</h2>
           <p>
-            In the EU, cookie-based analytics lose traffic to consent rejection (55%), ad blockers (40%), and browser restrictions. Compounded, the worst case leaves about 13% of actual traffic; on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store measured over 48 days</Link>, GA4 did not record 29% of visits. Cookieless analytics eliminates all three loss vectors, counting real visits anonymously, without depending on consent.
+            In the EU, cookie-based analytics lose traffic to consent rejection, ad blockers and browser restrictions. In our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies; on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&rsquo;s Shopify store, measured over 48 days</Link>, GA4 did not record 29% of visits. Cookieless analytics eliminates all three loss vectors, counting real visits anonymously, without depending on consent.
           </p>
           <p>
             This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete aggregate totals.
@@ -94,7 +94,7 @@ export default function CookielessAnalyticsPage() {
               Cookieless analytics is a measurement approach that captures website traffic without browser cookies, localStorage, fingerprinting, or any personal identifier. Events are counted on the server side from a first-party pixel on your own domain, then aggregated by channel, campaign, landing page and country — there is no per-visitor profile, no returning-user recognition, and no multi-touch journey reconstruction. Because no information is stored on or read from the device, the architecture meets GDPR and the ePrivacy Directive by design rather than by a consent layer added on top.
             </p>
             <p>
-              For European eCommerce running cookie-based GA4, this closes the data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention &mdash; up to 87% in the compounded worst case. Sealmetrics&rsquo; implementation measures inbound traffic without depending on consent, attributes each conversion last-click at channel level, and lets you check aggregate orders and revenue against the Shopify, WooCommerce or Magento backend — in Incapto&rsquo;s 48-day parallel run on Shopify, it recorded 96% of real orders and 97% of revenue.
+              For European eCommerce running cookie-based GA4, this closes the data loss gap caused by consent rejection, ad blockers and Apple&rsquo;s Intelligent Tracking Prevention, whose size depends on the store and the channel. Sealmetrics&rsquo; implementation measures inbound traffic without depending on consent, attributes each conversion last-click at channel level, and lets you check aggregate orders and revenue against the Shopify, WooCommerce or Magento backend — in Incapto&rsquo;s 48-day parallel run on Shopify, it recorded 96% of real orders and 97% of revenue.
             </p>
           </QuickAnswer>
         </div>

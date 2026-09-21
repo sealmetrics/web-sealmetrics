@@ -325,7 +325,7 @@ export default function Page() {
               GA4 and Adobe — deep, but consent-dependent
             </h3>
             <p>
-              GA4 works well as an analytics product, and for a US-centric business the compliance questions are lighter. In the EU, though, it sets cookies and processes personal data, so it needs a consent banner for full measurement — and that is precisely why <Link href="/blog/why-ga4-shows-13pct-eu-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 ends up reporting a sliver of real EU traffic</Link>. Google has added EU data hosting and Consent Mode since the 2022 Schrems II rulings against specific GA deployments, but the architecture is unchanged: cookie-based, consent-gated, incomplete once visitors decline. Adobe Analytics sits in the same position at a higher price point.
+              GA4 works well as an analytics product, and for a US-centric business the compliance questions are lighter. In the EU, though, it sets cookies and processes personal data, so it needs a consent banner for full measurement — and that is precisely why <Link href="/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 doesn&rsquo;t see part of your traffic</Link>. Google has added EU data hosting and Consent Mode since the 2022 Schrems II rulings against specific GA deployments, but the architecture is unchanged: cookie-based, consent-gated, incomplete once visitors decline. Adobe Analytics sits in the same position at a higher price point.
             </p>
 
             <h3 className="font-serif text-[1.2rem] font-medium text-text-primary mt-10 mb-3">

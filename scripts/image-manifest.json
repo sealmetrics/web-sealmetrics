@@ -1860,6 +1860,16 @@
       "source": "public/videos/platform-overview.jpg",
       "sourceHash": "32daf556a18a25050b5fa17b53ac6692fc953f8ef092356a8d2fd67738a3ee25",
       "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/why-ga4-misses-traffic.avif": {
+      "source": "public/og/blog/why-ga4-misses-traffic.png",
+      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/why-ga4-misses-traffic.webp": {
+      "source": "public/og/blog/why-ga4-misses-traffic.png",
+      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
+      "signature": "webp:{\"quality\":78}"
     }
   }
 }

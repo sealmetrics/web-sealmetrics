@@ -227,28 +227,28 @@ export default function Page() {
               >
                 cookieless, first-party measurement
               </Link>
-              , which removes the consent blind spot (15–60% of EU visitors, depending on sector, brand strength and traffic mix) that consent-gated setups
-              carry.
+              , which removes the consent blind spot that consent-gated setups
+              carry: in our experience with clients, between 40% and 60% of
+              traffic doesn&apos;t accept cookies.
             </p>
             <p>
               This is not a reporting detail. An agent that reads a partial dataset does not say
               &ldquo;I only see part of your traffic.&rdquo; It answers confidently with the part it
               has. The output is well formatted, precise-looking and wrong. Bad data plus a good
               model produces false precision faster than a spreadsheet ever could. The gap is
-              measurable: on a real Shopify store tracked side by side for 48 days,{" "}
+              measurable: on Incapto&apos;s Shopify store, tracked side by side for 48 days,{" "}
               <Link
                 href="/case-studies/incapto"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
                 GA4 did not record 29% of visits
               </Link>
-              , and the worst-case arithmetic, in which the visible share can fall to about 13%, is
-              worked through in{" "}
+              , and how the losses stack is worked through in{" "}
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/blog/why-ga4-misses-traffic"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
               >
-                why GA4 can end up showing a sliver of EU traffic
+                why GA4 doesn&apos;t see part of your traffic
               </Link>
               .
             </p>

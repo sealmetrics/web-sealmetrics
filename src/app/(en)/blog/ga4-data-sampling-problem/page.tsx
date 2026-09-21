@@ -69,7 +69,7 @@ export default function GA4DataSamplingPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>GA4 applies data sampling in Exploration reports when data exceeds internal thresholds — the free version has lower thresholds than GA360.</li>
             <li>Sampled data can reverse campaign performance rankings: Campaign A with 342 real conversions could be estimated at 310 while Campaign B with 298 shows as 320.</li>
-            <li>Before sampling even begins, GA4 has already lost part of your EU traffic to consent rejection, ad blockers, and browser restrictions — 29% of visits on a real Shopify store measured over 48 days, up to 87% in the compounded worst case. You are making decisions based on an estimate of a fraction.</li>
+            <li>Before sampling even begins, GA4 has already lost part of your EU traffic to consent rejection, ad blockers, and browser restrictions — how much depends on the store; at Incapto, measured on Shopify over 48 days, it was 29% of visits. You are making decisions based on an estimate of a fraction.</li>
             <li>Cookieless analytics counts sessions without consent loss or sampling — when you see 72,847 visitors, that is 72,847 actual sessions, not a projection.</li>
           </ul>
         </div>
@@ -160,11 +160,10 @@ export default function GA4DataSamplingPage() {
           </p>
 
           <p>
-            How much is lost varies by site. On a real Shopify store where GA4
-            with Consent Mode and Sealmetrics ran side by side for 48 days,{" "}
+            How much is lost varies by site. On Incapto&apos;s Shopify store,
+            where GA4 with Consent Mode and Sealmetrics ran side by side for 48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits and 45% of pageviews</Link>
-            ; in the compounded worst case, it can see as little as 13% of
-            actual traffic. Sampling then degrades the accuracy of whatever is
+            . Sampling then degrades the accuracy of whatever is
             left. You are making decisions based on an estimate of a fraction.
           </p>
 

@@ -52,7 +52,7 @@ const faqs = [
   {
     question: "Is Google Analytics 4 legal in Spain?",
     answer:
-      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: consent-based tools lose 15–60% of EU visitors depending on sector, brand strength and traffic mix, and after ad blockers and browser restrictions GA4 can fall to about 13% of real EU traffic in the compounded worst case. On a real Shopify store measured over 48 days, GA4 with Consent Mode did not record 29% of visits. Legal with consent, yes; complete, no.",
+      "Yes, with consent. GA4 sets cookies and processes personal data (client ID, IP-derived location), so it requires a banner and prior consent under the LSSI-CE and GDPR. The practical consequence: GA4 doesn't see part of your traffic. Consent rejection, ad blockers and browser restrictions each take a share, and how much depends on the store and the channel. On Incapto's Shopify store, measured over 48 days, GA4 with Consent Mode did not record 29% of visits. Legal with consent, yes; complete, no.",
   },
   {
     question: "Which GDPR-compliant analytics can a small business use?",
@@ -72,7 +72,7 @@ const faqs = [
   {
     question: "How much traffic do I lose if my analytics depends on a banner?",
     answer:
-      "Consent-based tools lose 15–60% of EU visitors, depending on sector, brand strength and traffic mix; ad blockers remove a further share that varies by audience, and browsers restrict cookies. Stacked as a worst case, those losses can leave GA4 showing about 13% of real EU traffic. Measured on a real Shopify store over 48 days, GA4 did not record 29% of visits and 45% of pageviews, with the heaviest losses on organic social, affiliate and organic search. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
+      "GA4 doesn't see part of your traffic: consent rejection removes a share that depends on sector, brand strength and traffic mix; ad blockers remove a further share that varies by audience, and browsers restrict cookies. How much in total depends on the store and the channel. Measured on Incapto's Shopify store over 48 days, GA4 did not record 29% of visits and 45% of pageviews, with the heaviest losses on organic social, affiliate and organic search. For an online store that means campaign attribution and conversion rates computed on a fraction of reality. You can quantify your own case with the Sealmetrics data-loss calculator.",
   },
 ];
 

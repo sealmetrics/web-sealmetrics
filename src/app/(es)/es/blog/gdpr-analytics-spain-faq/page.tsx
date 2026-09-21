@@ -50,7 +50,7 @@ const faqs = [
   {
     question: "¿Es legal usar Google Analytics 4 en España?",
     answer:
-      "Sí, con consentimiento. GA4 coloca cookies y trata datos personales (client ID, localización por IP), así que requiere banner y consentimiento previo bajo la LSSI-CE y el RGPD. La consecuencia práctica: las herramientas que dependen del consentimiento pierden entre el 15% y el 60% de los visitantes UE, según el sector, la fuerza de la marca y el mix de tráfico, y si a eso se suman ad blockers y restricciones de navegador, en el peor escenario GA4 puede quedarse en torno al 13% del tráfico UE real. En una tienda Shopify real medida durante 48 días, GA4 con Consent Mode no registró el 29% de las visitas. Legal con consentimiento, sí; completo, no.",
+      "Sí, con consentimiento. GA4 coloca cookies y trata datos personales (client ID, localización por IP), así que requiere banner y consentimiento previo bajo la LSSI-CE y el RGPD. La consecuencia práctica: GA4 no ve parte de tu tráfico. El rechazo del consentimiento, los ad blockers y las restricciones del navegador se llevan cada uno una parte, y cuánto depende de la tienda y del canal. En la tienda Shopify de Incapto, medida durante 48 días, GA4 con Consent Mode no registró el 29% de las visitas. Legal con consentimiento, sí; completo, no.",
   },
   {
     question: "¿Qué analítica RGPD puede usar un pequeño negocio?",
@@ -70,7 +70,7 @@ const faqs = [
   {
     question: "¿Cuánto tráfico pierdo si mi analítica depende de un banner?",
     answer:
-      "Las herramientas que dependen del consentimiento pierden entre el 15% y el 60% de los visitantes UE, según el sector, la fuerza de la marca y el mix de tráfico; los ad blockers restan otra parte que depende de la audiencia y los navegadores restringen las cookies. Sumadas en el peor escenario, esas pérdidas pueden dejar a GA4 viendo en torno al 13% del tráfico UE real. Medido en una tienda Shopify real durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas, y las mayores pérdidas se concentraron en redes sociales orgánicas, afiliación y búsqueda orgánica. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de Sealmetrics.",
+      "GA4 no ve parte de tu tráfico: el rechazo del consentimiento se lleva una parte que depende del sector, la fuerza de la marca y el mix de tráfico; los ad blockers restan otra que depende de la audiencia, y los navegadores restringen las cookies. Cuánto en total depende de la tienda y del canal. Medido en la tienda Shopify de Incapto durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas, y las mayores pérdidas se concentraron en redes sociales orgánicas, afiliación y búsqueda orgánica. Para una tienda online eso significa atribución de campañas y tasas de conversión calculadas sobre una fracción de la realidad. Puedes cuantificar tu caso con la calculadora de pérdida de datos de Sealmetrics.",
   },
 ];
 
