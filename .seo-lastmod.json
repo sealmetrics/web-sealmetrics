@@ -44,8 +44,8 @@
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "7db06a2f4eaad4d7",
-    "date": "2026-09-15"
+    "hash": "5c44019c504fba43",
+    "date": "2026-09-21"
   },
   "/real-roas/": {
     "hash": "8b074797d8e9e224",
@@ -1064,8 +1064,8 @@
     "date": "2026-09-21"
   },
   "/es/privacy/": {
-    "hash": "2a3ba80f83b5711b",
-    "date": "2026-09-15"
+    "hash": "08f915aa17ee301f",
+    "date": "2026-09-21"
   },
   "/es/sla/": {
     "hash": "e2d58aadeb110db9",
@@ -1108,12 +1108,12 @@
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/": {
-    "hash": "930116a82a6996d8",
-    "date": "2026-09-14"
+    "hash": "649ae84ac5ad129f",
+    "date": "2026-09-21"
   },
   "/es/ai-brand-monitoring/": {
-    "hash": "6bd487cc787a8798",
-    "date": "2026-09-14"
+    "hash": "9e518e025caddc94",
+    "date": "2026-09-21"
   },
   "/ai-brand-monitoring/thank-you/": {
     "hash": "bbe25fc759886913",

@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> September
-            15, 2026 ·{" "}
+            21, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -334,7 +334,10 @@ export default function PrivacyPage() {
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
                 Cloudflare, Inc. runs the anti-bot check (Turnstile) and the
-                relay that receives the form.
+                relay that receives the form, and prints the finished report to
+                the PDF attached to the email (Browser Run). For the PDF it
+                receives the report itself &mdash; the brand, the models&rsquo;
+                findings and the recommendations &mdash; never your email.
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>

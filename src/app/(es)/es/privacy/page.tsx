@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              15 de septiembre de 2026 ·{" "}
+              21 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -362,8 +362,12 @@ export default function PrivacyPageEs() {
               <ul className="space-y-1 pl-5 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Cloudflare, Inc. hace la comprobación antibots (Turnstile) y
-                  opera el relé que recibe el formulario.
+                  Cloudflare, Inc. hace la comprobación antibots (Turnstile),
+                  opera el relé que recibe el formulario e imprime el informe
+                  terminado en el PDF que va adjunto al correo (Browser Run).
+                  Para el PDF recibe el propio informe &mdash;la marca, lo que
+                  encontraron los modelos y las recomendaciones&mdash;, nunca tu
+                  correo.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
