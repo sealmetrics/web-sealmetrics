@@ -15,6 +15,11 @@ import type { ProblemLandingContent } from "./types";
  *   gclid is never counted as organic; verification via Test, Last hit and the
  *   Sources tabs; redirects strip parameters; custom names via UTM Mappings;
  *   medium (none) when utm_medium is missing.
+ * - docs platform/settings/tracking/utm-mapping (rule 1 and use case 4, checked
+ *   21 Sep 2026): explicit UTMs win by default; the per-mapping "Override the
+ *   UTM if the URL already has one" option writes the mapped value anyway, for
+ *   Shopping / Performance Max feeds whose links already carry UTMs; the final
+ *   URL suffix can only append parameters. Off by default, not retroactive.
  * - docs reports/insights/attribution-model: click IDs start a paid entrance; a
  *   reload with the same click ID is not a second entrance; session-scoped last
  *   click.
@@ -32,6 +37,7 @@ import type { ProblemLandingContent } from "./types";
  */
 
 export const GOOGLE_ADS_PUBLISHED = "2026-09-15";
+export const GOOGLE_ADS_MODIFIED = "2026-09-21";
 
 const link = "sig-problem-inline";
 
@@ -57,9 +63,9 @@ export const googleAdsEn: ProblemLandingContent = {
     byLabel: "By",
     authorName: "Rafa Jiménez",
     authorHref: "/authors/rafa-jimenez/",
-    updatedLabel: "Published",
-    date: GOOGLE_ADS_PUBLISHED,
-    dateDisplay: "15 September 2026",
+    updatedLabel: "Updated",
+    date: GOOGLE_ADS_MODIFIED,
+    dateDisplay: "21 September 2026",
   },
   module: {
     title: "What each click carries",
@@ -154,7 +160,7 @@ export const googleAdsEn: ProblemLandingContent = {
       { name: "Use the Shopping variant", text: "For Shopping campaigns, use the same template with utm_term={_term}, where _term is a custom parameter you define in Google Ads. Keep utm_medium=cpc and utm_source=google fixed on every template." },
       { name: "Test the resolved URL", text: "Click Test next to the tracking template. Google shows the final URL a click would produce; check that the UTM parameters are present and filled in, not left as literal {keyword} text." },
       { name: "Confirm the hit in Sealmetrics", text: "Load the resolved URL on your site. The Last hit timestamp in Overview should read seconds ago, and the Sources report should show cpc under Mediums, google under Sources, the campaign ID under Campaigns and the keyword under Terms." },
-      { name: "Check redirects and parameter names", text: "Load a live ad URL and look at the address bar after every redirect: the parameters must still be there. If your team uses other names, such as campaign_id, map them in Settings → Sites → UTM Mappings instead of editing the template." },
+      { name: "Check redirects and parameter names", text: "Load a live ad URL and look at the address bar after every redirect: the parameters must still be there. If your team uses other names, such as campaign_id, map them in Settings → Sites → UTM Mappings instead of editing the template. If the URL already arrives with UTMs you did not set, as Shopping feed links do, enable Override on those mappings." },
     ],
   },
 
@@ -233,6 +239,7 @@ export const googleAdsEn: ProblemLandingContent = {
     { question: "Does Google Ads auto-tagging with gclid work with Sealmetrics?", answer: "Yes. A visit carrying a gclid is recognised as a Google Ads click and never counted as organic, and reloading the same tagged page does not create a second entrance. Keep the UTM template as well, because the gclid alone does not put the campaign and keyword in the URL." },
     { question: "How do I calculate ROAS with Sealmetrics and Google Ads?", answer: "Take spend per campaign from Google Ads and revenue per campaign ID from Sealmetrics for the same dates, timezone and currency, and divide. Compare it with the ROAS Google Ads reports: the platform figure is for bidding, the measured one for budget between channels." },
     { question: "Should I use a tracking template or the final URL suffix?", answer: "The Sealmetrics documentation uses a tracking template that starts with {lpurl}; Google appends its parameters to the landing page, and parallel tracking sends visitors straight to that page. What matters is that the resolved landing URL carries the UTMs, so test whichever field your account uses." },
+    { question: "My Shopping or Performance Max clicks show the feed's campaign, not mine. How do I fix it?", answer: "Product links in a Google Shopping or Performance Max feed often arrive with utm_source, utm_medium and utm_campaign already set by the feed platform, and the final URL suffix can only append parameters, never remove them. By default an explicit UTM in the URL wins, so those clicks are attributed to the feed's campaign. Put your own values in custom parameters in the suffix, such as sm_campaign={campaignid}, map each one in UTM Mapping and enable Override the UTM if the URL already has one. Applies to new clicks within about 5 minutes; past visits are not rewritten." },
     { question: "Does tagging Google Ads clicks require cookie consent for Sealmetrics?", answer: "The UTMs travel in the URL and Sealmetrics sets no cookie to read them. The Google Ads tag and remarketing still need consent, and whether your analytics configuration is exempt depends on your national authority's criteria." },
   ],
 
@@ -263,9 +270,9 @@ export const googleAdsEs: ProblemLandingContent = {
     byLabel: "Por",
     authorName: "Rafa Jiménez",
     authorHref: "/es/authors/rafa-jimenez/",
-    updatedLabel: "Publicado",
-    date: GOOGLE_ADS_PUBLISHED,
-    dateDisplay: "15 de septiembre de 2026",
+    updatedLabel: "Actualizado",
+    date: GOOGLE_ADS_MODIFIED,
+    dateDisplay: "21 de septiembre de 2026",
   },
   module: {
     title: "Lo que lleva cada clic",
@@ -358,7 +365,7 @@ export const googleAdsEs: ProblemLandingContent = {
       { name: "Usa la variante de Shopping", text: "En las campañas de Shopping, usa la misma plantilla con utm_term={_term}, donde _term es un parámetro personalizado que defines en Google Ads. Mantén fijos utm_medium=cpc y utm_source=google en todas las plantillas." },
       { name: "Prueba la URL resuelta", text: "Pulsa Probar junto a la plantilla de seguimiento. Google muestra la URL final que produciría un clic; comprueba que los parámetros UTM están presentes y rellenos, no como texto literal {keyword}." },
       { name: "Confirma el hit en Sealmetrics", text: "Carga la URL resuelta en tu web. La marca Last hit de Overview debe decir hace unos segundos, y el informe Sources debe mostrar cpc en Mediums, google en Sources, el ID de la campaña en Campaigns y la palabra clave en Terms." },
-      { name: "Revisa redirecciones y nombres de parámetros", text: "Carga la URL de un anuncio real y mira la barra de direcciones tras cada redirección: los parámetros tienen que seguir ahí. Si tu equipo usa otros nombres, como campaign_id, asígnalos en Settings → Sites → UTM Mappings en lugar de editar la plantilla." },
+      { name: "Revisa redirecciones y nombres de parámetros", text: "Carga la URL de un anuncio real y mira la barra de direcciones tras cada redirección: los parámetros tienen que seguir ahí. Si tu equipo usa otros nombres, como campaign_id, asígnalos en Settings → Sites → UTM Mappings en lugar de editar la plantilla. Si la URL ya llega con UTMs que no has puesto tú, como los enlaces de un feed de Shopping, activa Override en esos mappings." },
     ],
   },
 
@@ -437,6 +444,7 @@ export const googleAdsEs: ProblemLandingContent = {
     { question: "¿El etiquetado automático de Google Ads con gclid funciona con Sealmetrics?", answer: "Sí. Una visita con gclid se reconoce como clic de Google Ads y nunca se cuenta como orgánica, y recargar la misma página etiquetada no crea una segunda entrada. Mantén también la plantilla de UTM, porque el gclid por sí solo no pone la campaña ni la palabra clave en la URL." },
     { question: "¿Cómo calculo el ROAS con Sealmetrics y Google Ads?", answer: "Toma la inversión por campaña de Google Ads y los ingresos por ID de campaña de Sealmetrics para las mismas fechas, zona horaria y moneda, y divide. Compáralo con el ROAS que reporta Google Ads: la cifra de la plataforma es para pujar, la medida para el presupuesto entre canales." },
     { question: "¿Uso plantilla de seguimiento o sufijo de URL final?", answer: "La documentación de Sealmetrics usa una plantilla de seguimiento que empieza por {lpurl}; Google añade sus parámetros a la página de llegada, y el seguimiento paralelo lleva al visitante directamente a esa página. Lo que importa es que la URL de llegada resuelta lleve las UTM, así que prueba el campo que use tu cuenta." },
+    { question: "Mis clics de Shopping o Performance Max salen con la campaña del feed, no con la mía. ¿Cómo lo arreglo?", answer: "Los enlaces de producto de un feed de Google Shopping o Performance Max suelen llegar con utm_source, utm_medium y utm_campaign ya puestos por la plataforma del feed, y el sufijo de URL final solo puede añadir parámetros, nunca quitarlos. Por defecto gana el UTM explícito de la URL, así que esos clics se atribuyen a la campaña del feed. Pon tus valores en parámetros propios en el sufijo, como sm_campaign={campaignid}, asigna cada uno en UTM Mapping y activa Override the UTM if the URL already has one. Se aplica a los clics nuevos en unos 5 minutos; las visitas pasadas no se reescriben." },
     { question: "¿Etiquetar los clics de Google Ads exige consentimiento de cookies para Sealmetrics?", answer: "Las UTM viajan en la URL y Sealmetrics no instala ninguna cookie para leerlas. La etiqueta de Google Ads y el remarketing siguen necesitando consentimiento, y que tu configuración de analítica quede exenta depende de los criterios de tu autoridad nacional." },
   ],
 
