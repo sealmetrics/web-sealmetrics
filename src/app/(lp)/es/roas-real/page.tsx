@@ -29,12 +29,12 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Tu ROAS real es mayor del que crees — Sealmetrics",
   description:
-    "Entre el 25% y el 45% de tus ventas nunca llegan a tu analítica. Mide sin cookies ni pérdida por consentimiento y recupera el ROAS que ya estabas generando.",
+    "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico rechaza las cookies. Mide sin esa pérdida y recupera el ROAS que ya generabas.",
   robots: { index: false, follow: true },
   openGraph: {
     title: "Tu ROAS real es mayor del que crees",
     description:
-      "Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las cobraste, y el informe con el que decides no las cuenta.",
+      "En nuestra experiencia con clientes, entre el 40% y el 60% rechaza las cookies y el 40% de quien acepta lo hace tarde. Tu informe no ve esas ventas.",
     type: "website",
     locale: "es_ES",
     images: [ogImage("/es/roas-real/")],
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Tu ROAS real es mayor del que crees",
-    description: "Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las cobraste, y el informe con el que decides no las cuenta.",
+    description: "En nuestra experiencia con clientes, entre el 40% y el 60% rechaza las cookies y el 40% de quien acepta lo hace tarde. Tu informe no ve esas ventas.",
     images: [ogImage("/es/roas-real/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/roas-real/" },

@@ -34,8 +34,9 @@ export function Hero() {
         </h1>
 
         <p className="mt-7 max-w-[58ch] text-ink-2 leading-[1.5]" style={{ fontSize: "clamp(17px,1.8vw,21px)" }}>
-          Entre el 25% y el 45% de tus ventas nunca llegan a tu herramienta de analítica. Ocurrieron, las
-          cobraste, y el informe con el que decides no las cuenta. Estás apagando campañas que funcionan y no
+          En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes
+          las aceptan, el 40% no lo hace en la primera página vista. Sus ventas ocurrieron, las cobraste, y el
+          informe con el que decides no las cuenta, o las pone en el canal equivocado. Estás apagando campañas que funcionan y no
           lo sabes.
         </p>
 
