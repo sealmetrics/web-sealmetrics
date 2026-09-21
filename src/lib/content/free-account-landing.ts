@@ -93,13 +93,13 @@ export interface FreeAccountCopy {
 
 const en: FreeAccountCopy = {
   route: "/free-account/", otherRoute: "/es/cuenta-gratis/", otherLanguage: "ES",
-  title: "Half your traffic is missing. Compare it free | Sealmetrics",
+  title: "GA4 misses part of your traffic. Compare free | Sealmetrics",
   description: "GA4 behind a consent banner missed 29% of visits at Incapto. Open a free Sealmetrics account, 1M events, no card, and compare on your site before Black Friday.",
   nav: { evidence: "The evidence", offer: "Black Friday", start: "Start free", onPage: "On this page" },
   cta: "Open my free account",
   eyebrow: "The Black Friday Truth Test · 1,000,000 events · €0",
   h1Start: "You pay for every click.", h1End: "You decide on half.",
-  lead: "Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. Our clients found between a quarter and half of their traffic missing from GA4, and up to a third of their sales filed under no channel.",
+  lead: "Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. At Incapto, GA4 missed 29% of visits; at Palladium, 35% of GA4 bookings had no channel.",
   stats: [
     { value: "+41%", label: "more visits than GA4 recorded", note: "Incapto · Shopify · 48 days" },
     { value: "+52%", label: "more paid-campaign traffic", note: "Incapto · top of a +37 to +52% range" },
@@ -118,7 +118,7 @@ const en: FreeAccountCopy = {
   trust: "TEAMS ALREADY MEASURING WITH SEALMETRICS",
   challenge: {
     tag: "THE QUESTION",
-    body: "Explain to me how you make your campaigns profitable when you cannot see half the traffic or 30% of the sales, and 40% or more of the sales you do see are attributed to the wrong channel.",
+    body: "Explain to me how you make your campaigns profitable when part of your traffic never reaches your report, and part of the sales you do see are filed under the wrong channel, or under none.",
     sign: "Rafa Jiménez · Founder, Sealmetrics",
   },
   evidence: {
@@ -136,7 +136,7 @@ const en: FreeAccountCopy = {
     clientLink: "Read the case",
     storiesTag: "TWO THINGS OUR CLIENTS FOUND",
     stories: [
-      { title: "How Palladium doubled its Display sales", slug: "palladium-hotel-group" },
+      { title: "How Palladium improved Display Cost-per-Search by 165%", slug: "palladium-hotel-group" },
       { title: "How Incapto found that its best-converting traffic was the traffic that accepted cookies least", slug: "incapto" },
     ],
   },
@@ -289,13 +289,13 @@ const en: FreeAccountCopy = {
 
 const es: FreeAccountCopy = {
   route: "/es/cuenta-gratis/", otherRoute: "/free-account/", otherLanguage: "EN",
-  title: "Te falta la mitad del tráfico. Compara gratis | Sealmetrics",
+  title: "A GA4 se le escapa tráfico. Compara gratis | Sealmetrics",
   description: "GA4 tras el banner no vio el 29% de las visitas de Incapto. Abre tu cuenta gratis de Sealmetrics, 1M de eventos sin tarjeta, y compara antes del Black Friday.",
   nav: { evidence: "La prueba", offer: "Black Friday", start: "Empieza gratis", onPage: "En esta página" },
   cta: "Abrir mi cuenta gratis",
   eyebrow: "La Prueba de la Verdad del Black Friday · 1.000.000 de eventos · 0 €",
   h1Start: "Pagas por todos los clics.", h1End: "Decides con la mitad.",
-  lead: "Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. Nuestros clientes encontraron entre un cuarto y la mitad de su tráfico fuera de GA4, y hasta un tercio de sus ventas sin canal.",
+  lead: "Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. En Incapto, GA4 no vio el 29% de las visitas; en Palladium, el 35% de las reservas de GA4 no tenía canal.",
   stats: [
     { value: "+41%", label: "más visitas de las que registró GA4", note: "Incapto · Shopify · 48 días" },
     { value: "+52%", label: "más tráfico de campañas de pago", note: "Incapto · techo de un rango de +37 a +52%" },
@@ -314,7 +314,7 @@ const es: FreeAccountCopy = {
   trust: "EQUIPOS QUE YA MIDEN CON SEALMETRICS",
   challenge: {
     tag: "LA PREGUNTA",
-    body: "Explícame cómo puedes hacer que tus campañas sean rentables sin ver la mitad del tráfico ni el 30% de las ventas, y encima el 40% o más de las ventas que sí ves están mal atribuidas.",
+    body: "Explícame cómo puedes hacer que tus campañas sean rentables si parte de tu tráfico no llega a tu informe, y parte de las ventas que sí ves están en el canal equivocado, o en ninguno.",
     sign: "Rafa Jiménez · Fundador de Sealmetrics",
   },
   evidence: {
@@ -332,7 +332,7 @@ const es: FreeAccountCopy = {
     clientLink: "Ver el caso",
     storiesTag: "DOS COSAS QUE DESCUBRIERON NUESTROS CLIENTES",
     stories: [
-      { title: "Cómo Palladium duplicó sus ventas de Display", slug: "palladium-hotel-group" },
+      { title: "Cómo Palladium mejoró un 165% su coste por búsqueda en Display", slug: "palladium-hotel-group" },
       { title: "Cómo Incapto detectó que el tráfico que más convertía era el que menos cookies aceptaba", slug: "incapto" },
     ],
   },
