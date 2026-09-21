@@ -85,7 +85,7 @@ Sealmetrics does NOT compete with lightweight privacy tools (Plausible, Fathom, 
 ## Frequently asked questions
 
 **Can I run Sealmetrics alongside Google Analytics?**
-Yes. Many clients run both in parallel during a transition period to compare data. Sealmetrics typically shows 3-8x more tracked visitors and conversions than GA4 in EU markets.
+Yes. Many clients run both in parallel during a transition period to compare data. How far the two diverge depends on the store and the channel, so measure it on yours. At Incapto (Shopify, Consent Mode, 48 days), GA4 missed 29% of visits and 45% of pageviews; see https://sealmetrics.com/case-studies/incapto/
 
 **Does Sealmetrics work with single-page applications (SPAs)?**
 Yes. The JavaScript tag supports SPAs and dynamic page transitions automatically.

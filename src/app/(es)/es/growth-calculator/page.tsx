@@ -50,7 +50,7 @@ export default function Page() {
 
       <section className="pb-28 bg-warm-white">
         <div className="max-w-[1200px] mx-auto px-5 sm:px-8">
-          <Calculator />
+          <Calculator locale="es" />
         </div>
       </section>
 
