@@ -40,8 +40,8 @@ import type { ProblemLandingContent } from "./types";
  *   anyone with stats:read; docs custom-properties: never PII in properties
  * - docs external-auth-sso-attribution: an external domain in the journey takes
  *   the credit as Referral unless registered as a passthrough referrer (API)
- * - consent loss range 15–60% of EU visitors by sector, brand and traffic mix is
- *   the documentation's own range (faq/ga4-vs-sealmetrics); quoted as such
+ * - consent: the attributed client-experience range (40–60% of traffic doesn't
+ *   accept cookies, founder decision 2026-09-21); quoted as such
  * - install 5–30 minutes by platform (/platforms)
  *
  * Removed from the old VerticalPageV3 copy (VerticalsData.tsx `finance`):
@@ -65,7 +65,7 @@ import type { ProblemLandingContent } from "./types";
 
 export const FINANCE_PUBLISHED = "2026-03-02";
 export const FINANCE_PUBLISHED_ES = "2026-04-18";
-export const FINANCE_MODIFIED = "2026-09-15";
+export const FINANCE_MODIFIED = "2026-09-21";
 
 const link = "sig-problem-inline";
 const WHAT_WE_TRACK = "https://docs.sealmetrics.com/security-privacy/what-we-track";
@@ -158,9 +158,9 @@ export const financeEn: ProblemLandingContent = {
       ["01", "Channels judged on the visitors who accepted", (
         <>
           A consent-based tool records only the visitors who accept its banner.
-          The Sealmetrics documentation puts the loss at 15–60% of EU visitors
-          depending on sector, brand strength and traffic mix; no figure for
-          financial services has been published. Acquisition budgets for accounts,
+          In our experience with clients, between 40% and 60% of traffic
+          doesn&apos;t accept cookies; no figure for financial services has been
+          published. Acquisition budgets for accounts,
           cards or policies are then split on a partial mix, the problem described
           under{" "}
           <Link className={link} href="/glossary/data-loss-in-analytics/">data loss in analytics</Link>.
@@ -358,10 +358,9 @@ export const financeEs: ProblemLandingContent = {
       ["01", "Canales juzgados con quien aceptó el banner", (
         <>
           Una herramienta que depende del consentimiento solo registra a quien
-          acepta su banner. La documentación de Sealmetrics sitúa esa pérdida entre
-          el 15% y el 60% de los visitantes europeos según el sector, la fuerza de
-          la marca y el mix de tráfico; no hay una cifra publicada para servicios
-          financieros. El presupuesto de captación de cuentas, tarjetas o pólizas
+          acepta su banner. En nuestra experiencia con clientes, entre el 40% y el
+          60% del tráfico no acepta cookies; no hay una cifra publicada para
+          servicios financieros. El presupuesto de captación de cuentas, tarjetas o pólizas
           se reparte entonces sobre un mix incompleto, el problema que describe la{" "}
           <Link className={link} href="/es/glossary/data-loss-in-analytics/">pérdida de datos en analítica</Link>.
         </>

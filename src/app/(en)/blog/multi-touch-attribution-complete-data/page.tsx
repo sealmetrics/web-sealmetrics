@@ -65,7 +65,7 @@ export default function MultiTouchAttributionPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Multi-touch attribution models only see the touchpoints that survive consent rejection, ad blockers, and browser restrictions — on a real Shopify store measured over 48 days GA4 did not record 29% of visits, and in the compounded worst case up to 87% are lost.</li>
+            <li>Multi-touch attribution models only see the touchpoints that survive consent rejection, ad blockers, and browser restrictions — how many depends on the store; at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits.</li>
             <li>Direct traffic is systematically inflated because it absorbs all untracked touchpoints, while top-of-funnel channels (organic, social, display) are undervalued because first touches are most likely to be lost.</li>
             <li>GA4 data-driven attribution uses ML on a biased sample — it learns patterns from cookie-accepting visitors and extrapolates to the full population, producing sophisticated but misleading results.</li>
             <li>Complete data does not rescue multi-touch: without a persistent identifier there is no journey to split credit across. What it does is make last-click honest — credited whether or not the visitor accepted cookies, not only on the consenting fraction.</li>
@@ -145,8 +145,8 @@ export default function MultiTouchAttributionPage() {
             >
               data sampling
             </Link>
-            . In the compounded worst case, only about 13% of visits survive.
-            Measured on a real Shopify store over 48 days,{" "}
+            . How many survive depends on the store and the channel. Measured
+            on Incapto&apos;s Shopify store over 48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
             , and the loss was uneven: Sealmetrics saw 11% more direct traffic
             than GA4, but 62% more organic search and 133% more organic social.

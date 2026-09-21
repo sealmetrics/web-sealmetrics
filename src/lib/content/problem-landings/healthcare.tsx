@@ -30,8 +30,9 @@ import type { ProblemLandingContent } from "./types";
  *   properties changes the analysis
  * - docs implementation/tracking-methods/ignore-page-view exists; the page only
  *   says to leave the tracker off logged-in areas unless reviewed
- * - consent loss 15–60% of EU visitors is the documentation's own range
- *   (faq/ga4-vs-sealmetrics); no healthcare figure exists and the page says so
+ * - consent: the attributed client-experience range (40–60% of traffic doesn't
+ *   accept cookies, founder decision 2026-09-21); no healthcare figure exists
+ *   and the page says so
  * - install 5–30 minutes by platform (/platforms)
  *
  * Removed from the old VerticalPageV3 copy (VerticalsData.tsx `healthcare`):
@@ -57,7 +58,7 @@ import type { ProblemLandingContent } from "./types";
 
 export const HEALTHCARE_PUBLISHED = "2026-03-02";
 export const HEALTHCARE_PUBLISHED_ES = "2026-04-18";
-export const HEALTHCARE_MODIFIED = "2026-09-15";
+export const HEALTHCARE_MODIFIED = "2026-09-21";
 
 const link = "sig-problem-inline";
 const WHAT_WE_TRACK = "https://docs.sealmetrics.com/security-privacy/what-we-track";
@@ -150,9 +151,8 @@ export const healthcareEn: ProblemLandingContent = {
       ["03", "Channels judged on the visitors who accepted", (
         <>
           Where a banner stays, a consent-based tool loses the visitors who reject
-          it. The Sealmetrics documentation puts that at 15–60% of EU visitors
-          depending on sector, brand strength and traffic mix; no healthcare figure
-          has been published. How that gap forms is explained under{" "}
+          it. In our experience with clients, between 40% and 60% of traffic
+          doesn&apos;t accept cookies; no healthcare figure has been published. How that gap forms is explained under{" "}
           <Link className={link} href="/glossary/data-loss-in-analytics/">data loss in analytics</Link>.
         </>
       )],
@@ -337,10 +337,9 @@ export const healthcareEs: ProblemLandingContent = {
       ["03", "Canales juzgados con quien aceptó el banner", (
         <>
           Donde sigue el banner, una herramienta que depende del consentimiento
-          pierde a quien lo rechaza. La documentación de Sealmetrics sitúa esa
-          pérdida entre el 15% y el 60% de los visitantes europeos según el sector,
-          la fuerza de la marca y el mix de tráfico; no hay una cifra publicada para
-          salud. Cómo se forma ese hueco se explica en{" "}
+          pierde a quien lo rechaza. En nuestra experiencia con clientes, entre el
+          40% y el 60% del tráfico no acepta cookies; no hay una cifra publicada
+          para salud. Cómo se forma ese hueco se explica en{" "}
           <Link className={link} href="/es/glossary/data-loss-in-analytics/">pérdida de datos en analítica</Link>.
         </>
       )],

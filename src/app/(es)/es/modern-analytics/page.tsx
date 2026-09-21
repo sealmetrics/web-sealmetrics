@@ -84,8 +84,8 @@ const pillars = [
     eyebrow: "Sin pérdida por consentimiento",
     title: "Datos limpios",
     body: "Visitantes y eventos contados acepten o no el banner. Ningún banner de consentimiento bloqueando la medición, ningún ad-blocker borrando tráfico, ningún bloqueador de JS limpiando datos. Conteo first-party en servidor que captura la verdad.",
-    metric: "15–60%",
-    metricLabel: "de visitas UE que la analítica con cookies pierde por consentimiento, según sector",
+    metric: "40–60%",
+    metricLabel: "del tráfico no acepta cookies, en nuestra experiencia con clientes",
   },
   {
     eyebrow: "Agnóstica de fuente",
@@ -127,7 +127,7 @@ const pillars = [
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
   { feature: "Cookies / fingerprinting", legacy: "Requerido", modern: "Ninguno" },
   { feature: "Banner de consentimiento", legacy: "Sí", modern: "No" },
-  { feature: "Tráfico UE capturado", legacy: "Pierde 15–60% por consentimiento, según sector", modern: "Sin pérdida por consentimiento" },
+  { feature: "Tráfico UE capturado", legacy: "No ve a quien rechaza el consentimiento (el 40–60% del tráfico, en nuestra experiencia con clientes)", modern: "Sin pérdida por consentimiento" },
   { feature: "Sampling en queries pesadas", legacy: "Sí (Card-2 / umbrales)", modern: "No" },
   { feature: "Datos modelados / sintéticos", legacy: "Sí, % no revelado", modern: "Nunca" },
   { feature: "Modelo de atribución", legacy: "Data-driven (caja negra)", modern: "Last-click sobre eventos crudos" },
@@ -225,7 +225,7 @@ export default function ModernAnalyticsPageEs() {
           </>
         }
         bullets={[
-          <>Analítica legacy con cookies: pérdida de entre el 15% y el 60% del tráfico UE por consentimiento según sector y mix de tráfico, huecos modelados, hosted en US.</>,
+          <>Analítica legacy con cookies: ciega ante quien rechaza el consentimiento (en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies), huecos modelados, hosted en US.</>,
           <>Analítica moderna: sin pérdida por consentimiento, last-click sobre datos crudos, hosted en UE, lista para agentes IA.</>,
           <>Sin migración. Corre las dos durante 30 días. Decide con tus propios números.</>,
         ]}

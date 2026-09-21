@@ -66,7 +66,7 @@ export default function WhatIsCookielessTrackingPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
-            <li>Cookie-based tracking can fall to about 13% of EU traffic in the compounded worst case, and on a real Shopify store measured over 48 days GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
+            <li>Cookie-based tracking doesn&apos;t see part of your traffic, and how much depends on the store: at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>
             <li>Privacy is designed into the architecture: no cookies stored, no PII collected, no cross-site tracking — built around CNIL and German DSK guidance for consent-free analytics, and assessed per deployment.</li>
             <li>Every downstream analytics function improves when input data goes from the consenting fraction to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
@@ -78,16 +78,16 @@ export default function WhatIsCookielessTrackingPage() {
             Cookies are failing. Not in theory &mdash; in measurable,
             quantifiable ways that show up in every analytics dashboard across
             Europe. <a href="https://webkit.org/tracking-prevention/" target="_blank" rel="noopener noreferrer">Safari</a> and Firefox block third-party cookies by default.
-            Chrome has restricted them. <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements mean 55% of
-            EU visitors reject cookie-based tracking outright. Ad blockers
-            strip analytics scripts from another 40%.
+            Chrome has restricted them. Under <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">GDPR</a> consent requirements,
+            in our experience with clients, between 40% and 60% of traffic
+            doesn&apos;t accept cookies. Ad blockers strip analytics scripts
+            from part of what is left.
           </p>
 
           <p>
-            The cascade compounds: in the worst case, a European eCommerce site
-            running cookie-based analytics can see as little as 13% of its
-            actual traffic. The measured reality is less extreme but still
-            stark. On a real Shopify store tracked side by side for 48 days,{" "}
+            The losses compound, and how far depends on the store and the
+            channel. On Incapto&apos;s Shopify store, tracked side by side for
+            48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits and 45% of pageviews</Link>
             {" "}&mdash; real visitors and real sessions that never reached a
             report. That is not a margin of error. That is a measurement system
@@ -202,12 +202,12 @@ export default function WhatIsCookielessTrackingPage() {
                   },
                   {
                     aspect: "Ad blocker resistance",
-                    cookie: "Blocked by 40% of EU users",
+                    cookie: "Blocked by ad blockers (share varies by audience)",
                     cookieless: "Not blocked (first-party requests)",
                   },
                   {
                     aspect: "Consent dependency",
-                    cookie: "Required (55% reject in EU)",
+                    cookie: "Required (40–60% don't accept, in our experience with clients)",
                     cookieless: "Not required (no cookies or PII)",
                   },
                   {
@@ -240,18 +240,17 @@ export default function WhatIsCookielessTrackingPage() {
 
           <p>
             The size of the gap depends on the site, because the losses
-            compound: consent rejection removes around 55%, ad blockers remove
-            40% of the remainder, browser restrictions remove another portion,
-            and data sampling removes more. Stacked as a worst case, that leaves
-            about 13% of real traffic; measured on a real store, GA4 missed 29%
-            of visits. The{" "}
+            compound: consent rejection removes a share, ad blockers remove
+            part of the remainder, browser restrictions erode another portion,
+            and data sampling degrades what is left. Measured at Incapto, GA4
+            missed 29% of visits. The{" "}
             <Link
               href="/data-loss-calculator"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
               data loss calculator
             </Link>{" "}
-            shows the exact cascade for your traffic profile.
+            gives an estimate for your traffic profile; measuring it gives the real number.
           </p>
 
           <CommercialModule

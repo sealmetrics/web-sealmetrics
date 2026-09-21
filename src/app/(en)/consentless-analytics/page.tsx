@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -13,7 +14,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
-const PILLAR_DATE_MODIFIED = "2026-05-28";
+const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
   title: "Consentless analytics — lawful measurement without banners",
@@ -156,6 +157,7 @@ export default function ConsentlessAnalyticsPillar() {
               Lawful by architecture, not by paperwork.
             </em>
           </h1>
+          <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="en" />
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
@@ -233,9 +235,11 @@ export default function ConsentlessAnalyticsPillar() {
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 When most European visitors said yes, cookie analytics could
-                absorb the loss. Today consent-based tools lose 15–60% of EU
-                visitors, depending on sector, brand strength and traffic mix — on one Shopify store measured over 48 days,
-                GA4 did not record 29% of visits. Decisions made on what remains are decisions made on a
+                absorb the loss. Today, in our experience with clients,
+                between 40% and 60% of traffic doesn&rsquo;t accept cookies, and
+                of those who do, 40% don&rsquo;t accept on the first pageview.
+                On Incapto&rsquo;s Shopify store, measured over 48 days, GA4 did
+                not record 29% of visits. Decisions made on what remains are decisions made on a
                 self-selected sample — typically older, less mobile, less
                 privacy-aware. The bias is silent and structural.
               </p>

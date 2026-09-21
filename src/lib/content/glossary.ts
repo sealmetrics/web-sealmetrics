@@ -41,7 +41,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Consent Management Platform (CMP)",
     shortDefinition:
-      "Software that displays cookie consent banners and manages user preferences. Required under GDPR for websites using cookies or collecting personal data. What consent costs analytics varies widely: consent-based tools lose 15–60% of EU visitors, depending on sector, brand strength and traffic mix.",
+      "Software that displays cookie consent banners and manages user preferences. Required under GDPR for websites using cookies or collecting personal data. What consent costs analytics varies by site: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies.",
     category: "Privacy",
     related: ["gdpr-analytics-compliance", "cookieless-analytics", "data-loss-in-analytics", "analytics-data-residency"],
   },
@@ -77,7 +77,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Data Loss in Analytics",
     shortDefinition:
-      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. Measured at 29% of visits on a real Shopify store; up to 87% in the EU worst-case model.",
+      "The gap between actual website traffic and what analytics tools report. Caused by consent rejection, ad blockers, browser restrictions, and data sampling. How much depends on the store and the channel; at Incapto, GA4 missed 29% of visits over 48 days.",
     category: "Data Quality",
     related: ["ad-blocker-analytics-impact", "consent-management-platform", "intelligent-tracking-prevention", "data-sampling", "cookieless-analytics"],
   },

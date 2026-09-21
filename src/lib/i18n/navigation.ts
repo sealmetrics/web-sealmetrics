@@ -67,7 +67,7 @@ const translatedPaths = new Set([
   "/blog/last-click-vs-modelled-attribution",
   "/blog/ga4-vs-piwik-pro-vs-sealmetrics",
   "/blog/server-side-tracking-gdpr",
-  "/blog/why-ga4-shows-13pct-eu-traffic",
+  "/blog/why-ga4-misses-traffic",
   "/blog/gdpr-analytics-without-consent",
   "/blog/best-web-analytics-tool",
   // Seal AI series (17 posts, EN + ES)

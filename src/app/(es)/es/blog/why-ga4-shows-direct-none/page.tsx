@@ -317,8 +317,8 @@ export default function WhyGa4ShowsDirectNonePageEs() {
             </h2>
             <div className="space-y-4">
               <div>
-                <Link href="/es/blog/why-ga4-shows-13pct-eu-traffic" className={`text-[0.95rem] ${link}`}>
-                  Por qué GA4 puede ver solo el 13% de tu tráfico UE
+                <Link href="/es/blog/why-ga4-misses-traffic" className={`text-[0.95rem] ${link}`}>
+                  Por qué GA4 no ve parte de tu tráfico
                 </Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Calidad del dato</p>
               </div>

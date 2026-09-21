@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -13,7 +14,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
-const PILLAR_DATE_MODIFIED = "2026-05-28";
+const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
   title: "Cookieless analytics, explained — Sealmetrics",
@@ -49,7 +50,7 @@ const faqs = [
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
-    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: consent rejection removes 15–60% of visitors depending on sector, brand strength and traffic mix, ~40% use ad blockers that strip the script, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
+    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, ad blockers strip the script for a share of visitors that varies by audience, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
   },
   {
     q: "Can I run it alongside Google Analytics 4?",
@@ -123,14 +124,15 @@ export default function CookielessAnalyticsPillar() {
               Complete data, by architecture.
             </em>
           </h1>
+          <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="en" />
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
           >
             In 2026, cookie-based analytics misses a large and uneven share of
-            European traffic: on one Shopify store we measured, GA4 did not
-            record 29% of visits, and in the compounded worst case of our
-            model it sees about 13%. This is a guide to the alternative — what cookieless
+            European traffic: on Incapto&apos;s Shopify store, measured over 48
+            days, GA4 did not record 29% of visits, and the size of the gap is
+            different on every site. This is a guide to the alternative — what cookieless
             analytics is, what it counts, what it deliberately doesn&apos;t,
             and where it fits beside the rest of your stack.
           </p>
@@ -192,13 +194,14 @@ export default function CookielessAnalyticsPillar() {
           <div className="mt-10 space-y-8">
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                1. Consent rejection — 15 to 60% of EU visitors
+                1. Consent rejection — 40 to 60% of traffic, in our experience
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Since the 2019 CNIL and ICO guidance hardened, a consent
                 banner is required before any non-essential cookie is set.
-                What that costs a consent-based tool ranges from 15% to 60%
-                of EU visitors, depending on sector, brand strength and traffic mix. Those visitors are
+                In our experience with clients, between 40% and 60% of
+                traffic doesn&apos;t accept cookies, and of those who do, 40%
+                don&apos;t accept on the first pageview. Those visitors are
                 still on your site, still buying, still leaving — but
                 invisible to your analytics.
               </p>
@@ -206,7 +209,7 @@ export default function CookielessAnalyticsPillar() {
 
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                2. Ad blockers — ~40% of EU users
+                2. Ad blockers — a share that varies by audience
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 uBlock, AdBlock Plus and the Brave browser ship rule lists
@@ -235,16 +238,16 @@ export default function CookielessAnalyticsPillar() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            Stack those losses at their EU average rates and the compounded
-            worst case leaves you with around{" "}
+            Stack those losses and{" "}
             <Link
-              href="/blog/why-ga4-shows-13pct-eu-traffic"
+              href="/blog/why-ga4-misses-traffic"
               className="text-brand underline decoration-1 underline-offset-2"
             >
-              13% of European traffic visible
-            </Link>{" "}
-            in GA4. The rest is rejected, blocked or expired before
-            measurement begins. Google&apos;s answer — Consent Mode v2 — is
+              GA4 doesn&apos;t see part of your traffic
+            </Link>
+            : it is rejected, blocked or expired before measurement begins.
+            How much depends on the store and the channel, so it has to be
+            measured, not assumed. Google&apos;s answer — Consent Mode v2 — is
             to model the missing data statistically. That is a useful
             estimate for some questions. It is not a measurement.
           </p>
@@ -439,7 +442,7 @@ export default function CookielessAnalyticsPillar() {
                 {[
                   ["Traffic captured (EU)", "Consent-dependent — lost to consent, ad-block and ITP (GA4 missed 29% of visits on a measured store)", "Not reduced by consent — no script, no expiry"],
                   ["Consent banner", "Required before any tracking", "Not required — no personal data"],
-                  ["Ad-blocker impact", "Script stripped on ~40% of visits", "First-party request — not in rule lists"],
+                  ["Ad-blocker impact", "Script stripped for a share of visits that varies by audience", "First-party request — not in rule lists"],
                   ["Cookie lifespan", "Safari ITP caps at 7 days", "No cookie — irrelevant"],
                   ["Returning-visitor ID", "Possible (when cookie survives)", "Not possible by design"],
                   ["Attribution model", "Data-driven or last-click on consented traffic", "Last-click on data without consent gaps"],

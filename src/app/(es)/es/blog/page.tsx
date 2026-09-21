@@ -136,7 +136,7 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
   },
   "consent-banner-impact-on-analytics": {
     title: "Cómo los banners de consentimiento destruyen tus datos",
-    description: "55% de los visitantes UE rechaza cookies. 65% acepta solo en la segunda página. El impacto real sobre atribución y revenue.",
+    description: "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies. El impacto real sobre atribución y revenue.",
     category: "Calidad del dato",
     readTime: "6 min",
   },
@@ -146,11 +146,11 @@ const ES_TRANSLATIONS: Record<string, { title: string; description: string; cate
     category: "Calidad del dato",
     readTime: "7 min",
   },
-  "why-ga4-shows-13pct-eu-traffic": {
-    title: "Por qué GA4 puede ver solo el 13% de tu tráfico UE",
-    description: "GA4 pierde dato en tres niveles: rechazo de consentimiento, ad blockers y restricciones de navegador. En el peor caso se quedan en un 13%. Las cuentas.",
+  "why-ga4-misses-traffic": {
+    title: "Por qué GA4 no ve parte de tu tráfico",
+    description: "El rechazo de cookies, los bloqueadores y el navegador esconden a GA4 parte de tu tráfico. Cuánto depende de la tienda: en Incapto, el 29% de las visitas.",
     category: "Calidad del dato",
-    readTime: "8 min",
+    readTime: "7 min",
   },
   "gdpr-analytics-without-consent": {
     title: "Analítica conforme con RGPD sin banners de consentimiento",

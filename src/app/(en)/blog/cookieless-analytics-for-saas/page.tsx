@@ -102,7 +102,7 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>SaaS marketing-site attribution breaks in Europe when consent rejection removes 15–60% of visitors, depending on sector, brand strength and traffic mix.</li>
+              <li>SaaS marketing-site attribution breaks in Europe because GA4 doesn&apos;t see visitors who reject consent: in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies.</li>
               <li>Cookieless analytics counts visits and trial signups at channel level without cookies or user identifiers.</li>
               <li>It does not replace Mixpanel or Amplitude for in-product analytics — the two layers complement each other.</li>
               <li>BigQuery / Snowflake export lets you join aggregate marketing attribution with product-side user tables.</li>
@@ -112,7 +112,7 @@ export default function Page() {
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              If you run growth at a European SaaS company, you have one version of this conversation every quarter. Finance asks what the CAC is. You quote a number from GA4. They ask how confident you are. You shrug. You know that consent rejection costs 15–60% of European visitors, depending on sector, brand strength and traffic mix, that your Google Ads spend converts to signups the attribution model can&apos;t see, and that the number you just quoted is optimistic by some unknown factor.
+              If you run growth at a European SaaS company, you have one version of this conversation every quarter. Finance asks what the CAC is. You quote a number from GA4. They ask how confident you are. You shrug. You know that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, that your Google Ads spend converts to signups the attribution model can&apos;t see, and that the number you just quoted is optimistic by some unknown factor.
             </p>
             <p>
               Product-led growth depends on a measurement stack that works. When the marketing-site layer is broken, every downstream CAC calculation, every paid-channel ROI decision is made on partial data. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> fixes the top of the funnel — not by tracking harder, but by counting events anonymously and attributing each signup last-click at channel level. For the cross-vertical category overview, see the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this post is the SaaS-specific reading.
@@ -130,7 +130,7 @@ export default function Page() {
               <li><strong>Warehouse / revenue</strong> (typically BigQuery or Snowflake): subscription tables, MRR, churn.</li>
             </ol>
             <p>
-              The top layer is the one that breaks. After consent rejection and ad blockers, GA4 can see as little as 13% of real EU traffic in the compounded worst case; on a Shopify store measured over 48 days it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics (Mixpanel/Amplitude) work fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
+              The top layer is the one that breaks. After consent rejection and ad blockers, GA4 doesn&apos;t see part of your traffic, and how much depends on the site; on Incapto&apos;s Shopify store, measured over 48 days, it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics (Mixpanel/Amplitude) work fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

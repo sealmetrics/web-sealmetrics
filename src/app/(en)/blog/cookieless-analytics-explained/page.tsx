@@ -67,9 +67,9 @@ export default function CookielessAnalyticsExplainedPage() {
             Key Takeaways
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent causes ~55% rejection, and ad blockers strip scripts from another 40%.</li>
+            <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent means that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, and ad blockers strip scripts from part of what is left.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
-            <li>Cookie-based tracking can fall to about 13% of EU traffic in the compounded worst case, and on a real Shopify store measured over 48 days GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
+            <li>Cookie-based tracking doesn&apos;t see part of your traffic, and how much depends on the store: at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
           </ul>
         </div>
@@ -105,7 +105,7 @@ export default function CookielessAnalyticsExplainedPage() {
             {[
               "Browsers accepted all cookies by default (they no longer do)",
               "Users rarely cleared cookies (privacy features now do it automatically)",
-              "Ad blockers were uncommon (40% of EU users now run them)",
+              "Ad blockers were uncommon (a sizeable share of users now run them, more on desktop)",
               "Consent was not required (GDPR changed this in 2018)",
             ].map((item) => (
               <li
@@ -119,11 +119,9 @@ export default function CookielessAnalyticsExplainedPage() {
           </ul>
 
           <p>
-            The cumulative effect is large. In the compounded worst case, a
-            European eCommerce site can lose up to 87% of its visitor data
-            before any analytics processing occurs. The measured gap is smaller
-            but still material: on a real Shopify store tracked side by side for
-            48 days,{" "}
+            The cumulative effect is large, and its size depends on the store
+            and the channel, so there is no universal figure to quote. On
+            Incapto&apos;s Shopify store, tracked side by side for 48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
             . The{" "}
             <Link
@@ -132,7 +130,7 @@ export default function CookielessAnalyticsExplainedPage() {
             >
               data loss calculator
             </Link>{" "}
-            shows the cascade of losses for your specific traffic.
+            gives an estimate for your specific traffic; measuring gives the real number.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -184,12 +182,12 @@ export default function CookielessAnalyticsExplainedPage() {
                   },
                   {
                     aspect: "Blocked by ad blockers",
-                    cookie: "Yes (40% of users)",
+                    cookie: "Yes (share varies by audience)",
                     cookieless: "No (first-party requests)",
                   },
                   {
                     aspect: "Affected by consent",
-                    cookie: "Yes (55% reject in EU)",
+                    cookie: "Yes (40–60% don't accept, in our experience with clients)",
                     cookieless: "No (no cookies or PII)",
                   },
                   {

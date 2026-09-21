@@ -11,11 +11,11 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 export const metadata: Metadata = {
   title: "Cómo los banners de consentimiento destruyen tus datos",
   description:
-    "55% de los visitantes UE rechaza las cookies. 65% acepta solo después del landing. Impacto real en atribución, conversiones y reporting de revenue.",
+    "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y muchos aceptan tarde. El impacto en atribución y revenue.",
   openGraph: {
     title: "Cómo los banners de consentimiento destruyen tus datos de analítica",
     description:
-      "55% de visitantes UE rechaza cookies. Aquí está el impacto real sobre tu analítica.",
+      "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies. Esto es lo que le hace a tu analítica.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/consent-banner-impact-on-analytics/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cómo los banners de consentimiento destruyen tus datos de analítica",
-    description: "55% de visitantes UE rechaza cookies. Aquí está el impacto real sobre tu analítica.",
+    description: "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies. Esto es lo que le hace a tu analítica.",
     images: ["https://sealmetrics.com/og/blog/consent-banner-impact-on-analytics.png"],
   },
   alternates: {
@@ -41,7 +41,7 @@ export default function ConsentBannerImpactPageEs() {
   return (
     <>
       <Breadcrumbs items={[{ label: "Blog", href: "/es/blog" }, { label: "Impacto de los banners de consentimiento" }]} locale="es" />
-      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento causan más del 55% de pérdida de visitantes UE — y las cookies aceptadas llegan demasiado tarde para atribuir.", ...dates, url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
+      <JsonLd data={articleSchema({ headline: "Cómo los banners de consentimiento destruyen tus datos de analítica", description: "Los banners de consentimiento esconden parte de tu tráfico a la analítica — y las cookies aceptadas a menudo llegan tarde para atribuir.", ...dates, url: "/es/blog/consent-banner-impact-on-analytics", category: "Calidad del dato", author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez", jobTitle: "Founder, Sealmetrics" } })} />
       <JsonLd data={breadcrumbSchema([{ name: "Blog", url: "/es/blog" }, { name: "Impacto de los banners de consentimiento", url: "/es/blog/consent-banner-impact-on-analytics" }])} />
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
@@ -67,8 +67,8 @@ export default function ConsentBannerImpactPageEs() {
             Conclusiones clave
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>El rechazo de consentimiento UE promedia ~55%, llegando al 60-70% en Alemania y 55-65% en los Países Bajos — esos visitantes son completamente invisibles para la analítica con cookies.</li>
-            <li>Del 45% que acepta, el 65% lo hace en la segunda página vista — después del landing donde se captura la fuente del tráfico. Solo ~16% de los visitantes tiene atribución correcta de fuente.</li>
+            <li>En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y la proporción cambia según el país, el sector y el diseño del banner. Esos visitantes son completamente invisibles para la analítica con cookies.</li>
+            <li>De quienes aceptan las cookies, el 40% no lo hace en la primera página vista — el landing donde se captura la fuente del tráfico —, así que parte del tráfico que sí mides llega sin origen.</li>
             <li>El rechazo de cookies no es aleatorio: los usuarios sensibles a la privacidad suelen ser más tech-savvy y con mayor poder adquisitivo, introduciendo un sesgo demográfico sistemático en tu data.</li>
             <li>La solución es arquitectónica, no táctica — optimizar el diseño del banner no resuelve el problema porque los reguladores cada vez vigilan más los dark patterns que empujan a aceptar.</li>
           </ul>
@@ -88,9 +88,10 @@ export default function ConsentBannerImpactPageEs() {
           </h2>
 
           <p>
-            La tasa de rechazo varía por país, sector y diseño del banner, pero
-            la media europea es aproximadamente del 55%. En mercados sensibles a la privacidad como Alemania, las tasas de rechazo regularmente
-            superan el 65%. En los Países Bajos, el 60%.
+            La tasa de rechazo varía por país, sector y diseño del banner. En
+            nuestra experiencia con clientes, entre el 40% y el 60% del tráfico
+            no acepta cookies, y los mercados más sensibles a la privacidad,
+            como Alemania y los Países Bajos, están en la parte alta.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
@@ -148,7 +149,7 @@ export default function ConsentBannerImpactPageEs() {
           </h2>
 
           <p>
-            Cuando el 55% de los visitantes son invisibles para tu analítica, tu{" "}
+            Cuando una parte grande de los visitantes es invisible para tu analítica, tu{" "}
             <Link
               href="/es/glossary/multi-touch-attribution"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -167,9 +168,10 @@ export default function ConsentBannerImpactPageEs() {
           </h2>
 
           <p>
-            Incluso el 45% que acepta cookies presenta un problema de atribución
-            que la mayoría de equipos pasan por alto. Estudios muestran que el 65% de los que aceptan
-            lo hacen a partir de la segunda página vista&nbsp;&mdash; no la primera.
+            Incluso quien acepta las cookies presenta un problema de atribución
+            que la mayoría de equipos pasa por alto. En nuestra experiencia con
+            clientes, de quienes aceptan las cookies, el 40% no lo hace en la
+            primera página vista&nbsp;&mdash; navega primero y acepta después.
           </p>
 
           <p>
@@ -181,10 +183,12 @@ export default function ConsentBannerImpactPageEs() {
           </p>
 
           <p>
-            El resultado: solo el 35% del 45% que acepta cookies&nbsp;&mdash;
-            aproximadamente 16 de cada 100 visitantes&nbsp;&mdash; tiene su
-            fuente correctamente atribuida. Los 29 restantes son trackeados
-            pero sin datos de fuente, inflando tu canal &ldquo;Directo&rdquo; y haciendo que cada otro canal parezca más débil de lo que es.
+            El resultado: parte del tráfico que sí mides llega sin datos de
+            fuente, inflando tu canal &ldquo;Directo&rdquo; y haciendo que cada
+            otro canal parezca más débil de lo que es. En{" "}
+            <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto</Link>, el 14%
+            de las visitas que registró GA4 no tenía un origen accionable,
+            frente al 0,3% en Sealmetrics.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

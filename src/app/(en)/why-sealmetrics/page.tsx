@@ -112,16 +112,16 @@ function WhereDataDies() {
     },
     {
       label: "After the consent wall",
-      note: "illustrative 45% non-consent rate",
-      width: 55,
-      value: "≈55%",
+      note: "40–60% of traffic doesn't accept cookies · our client experience",
+      width: 50,
+      value: "40–60%",
       valueClass: "text-red-alert",
     },
     {
       label: "After tracking prevention",
-      note: "7-day cookie expiry · ad-blockers",
-      width: 42,
-      value: "≈42%",
+      note: "7-day cookie expiry · ad-blockers · depends on the site",
+      width: 38,
+      value: "less",
       valueClass: "text-red-alert",
     },
     {
@@ -170,7 +170,7 @@ function WhereDataDies() {
                     </div>
                   )}
                 </div>
-                <div className={`font-mono text-[18px] font-semibold tabular-nums w-16 text-right ${r.valueClass}`}>
+                <div className={`font-mono text-[18px] font-semibold tabular-nums w-20 text-right ${r.valueClass}`}>
                   {r.value}
                 </div>
               </div>
@@ -251,8 +251,8 @@ function ChannelDistortion() {
             Consent loss <em>isn&apos;t distributed evenly.</em>
           </h2>
           <p className="text-[17px] leading-[1.6] text-ink-soft mt-6">
-            This illustrative funnel uses a 45% non-consent rate. Your actual rate must be
-            measured on your own site. If you lost conversions at random, you&apos;d see a smaller picture
+            The example below is illustrative. In our experience with clients, between 40% and
+            60% of traffic doesn&apos;t accept cookies; your actual rate must be measured on your own site. If you lost conversions at random, you&apos;d see a smaller picture
             with the same proportions — and decide the same way. But cookie rejection rates
             vary by channel: paid social on mobile rejects far more than a brand search on
             desktop. GA4 doesn&apos;t give you a smaller picture.{" "}
@@ -982,7 +982,7 @@ export default function WhySealmetricsPage() {
         data={speakableWebPageSchema({
           url: "/why-sealmetrics",
           name: "Why Sealmetrics — aggregate analytics without identifiers",
-          dateModified: "2026-09-14",
+          dateModified: "2026-09-21",
         })}
       />
       <JsonLd

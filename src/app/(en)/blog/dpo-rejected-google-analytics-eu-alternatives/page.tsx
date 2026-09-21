@@ -210,7 +210,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </h2>
 
           <p>
-            The data loss you see in GA4 isn't a glitch; it's a direct consequence of its architecture (calculate your gap with our <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link>). When you rely on client-side cookies to track users, you trigger the strict consent requirements of the ePrivacy Directive and the <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</a>. If a user hits &ldquo;Reject All&rdquo; on your banner, that session vanishes. Depending on sector, brand strength and traffic mix, you lose 15&ndash;60% of your actual EU traffic, leaving you to make revenue decisions based on an incomplete data set.
+            The data loss you see in GA4 isn't a glitch; it's a direct consequence of its architecture (calculate your gap with our <Link href="/data-loss-calculator" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data loss calculator</Link>). When you rely on client-side cookies to track users, you trigger the strict consent requirements of the ePrivacy Directive and the <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR</a>. If a user hits &ldquo;Reject All&rdquo; on your banner, that session vanishes. How much of your actual EU traffic that is depends on sector, brand strength and traffic mix, and it leaves you to make revenue decisions based on an incomplete data set.
           </p>
 
           <p>
@@ -272,7 +272,7 @@ export default function DpoRejectedGoogleAnalyticsPage() {
           </p>
 
           <p>
-            The solution isn't to settle for broken, incomplete data. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent. By shifting to a first-party, aggregated measurement model, you align with the <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Gu&iacute;a sobre el uso de las cookies (AEPD)</a>. You stop losing the 15&ndash;60% of traffic that consent rejection typically costs and finally get the board number that reconciles.
+            The solution isn't to settle for broken, incomplete data. Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent. By shifting to a first-party, aggregated measurement model, you align with the <a href="https://www.aepd.es/guias/guia-cookies.pdf" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Gu&iacute;a sobre el uso de las cookies (AEPD)</a>. You stop losing the traffic that consent rejection costs and finally get the board number that reconciles.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

@@ -13,10 +13,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs GA360 — Enterprise data for less",
-  description: "GA360 is quote-based from ~$50K/year and still loses 15–60% of EU visits to consent, by sector. Sealmetrics delivers complete data from €499/mo.",
+  description: "GA360 is quote-based from ~$50K/year and still misses visitors who reject consent. Sealmetrics doesn't depend on consent, from €499/mo.",
   openGraph: {
     title: "Sealmetrics vs GA360 — Enterprise data for less",
-    description: "GA360 is quote-based from ~$50K/year and still loses 15–60% of EU visits to consent, by sector. Sealmetrics delivers complete data from €499/mo.",
+    description: "GA360 is quote-based from ~$50K/year and still misses visitors who reject consent. Sealmetrics doesn't depend on consent, from €499/mo.",
     type: "website",
     images: [ogImage("/vs/ga360/")],
     url: "https://sealmetrics.com/vs/ga360/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs GA360 — Enterprise data for less",
-    description: "GA360 is quote-based from ~$50K/year and still loses 15–60% of EU visits to consent, by sector. Sealmetrics delivers complete data from €499/mo.",
+    description: "GA360 is quote-based from ~$50K/year and still misses visitors who reject consent. Sealmetrics doesn't depend on consent, from €499/mo.",
     images: [ogImage("/vs/ga360/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/ga360/", languages: getAlternates("/vs/ga360") },
@@ -44,7 +44,7 @@ export default function Page() {
         url: "/vs/ga360",
         competitor: competitor("ga360"),
         datePublished: "2026-04-15",
-        dateModified: "2026-08-27",
+        dateModified: "2026-09-21",
         author: { name: "Rafa Jiménez", url: "/authors/rafa-jimenez" },
         criteria: [
           "Annual cost and contract length",
@@ -62,7 +62,7 @@ export default function Page() {
         spokenByRole: "Digital & Direct Sales Director, Palladium Hotel Group",
         url: "/vs/ga360",
       })} />
-      <VsComparisonV3 data={getVsData("ga360", "en")} dateModified="2026-08-27" />
+      <VsComparisonV3 data={getVsData("ga360", "en")} dateModified="2026-09-21" />
 
       <RelatedPagesV3
         locale="en"
@@ -83,7 +83,7 @@ export default function Page() {
               Google Analytics 360 (GA360) is the enterprise tier of Google Analytics. It is quote-based and scales with event volume — entry contracts start around $50,000/year and mid-market properties commonly land between $100,000 and $175,000 — on annual contracts, hosted in the United States, and requiring a cookie consent banner across the EU. Sealmetrics is an EU-hosted cookieless analytics platform that measures inbound traffic without consent dependency, attributes last-click on observed events, and starts at €499/month annually with no annual commit.
             </p>
             <p>
-              The architectural differences matter for EU eCommerce: GA360 still loses 15–60% of EU traffic to consent rejection, depending on sector, brand strength and traffic mix (Consent Mode v2 reconstructs the gap with statistical modelling, not measurement), and US hosting requires Schrems II SCCs with quarterly DPIA review. Sealmetrics&rsquo; Dublin-only infrastructure, with no sub-processors outside the EU in the visitor data path, removes that compliance overhead entirely. Customers typically run both for 30 days, reconcile against their CRM, and migrate revenue decisions to Sealmetrics while keeping GA360 as a Google Ads conduit.
+              The architectural differences matter for EU eCommerce: GA360 still does not see visitors who reject consent — in our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies (Consent Mode v2 reconstructs the gap with statistical modelling, not measurement), and US hosting requires Schrems II SCCs with quarterly DPIA review. Sealmetrics&rsquo; Dublin-only infrastructure, with no sub-processors outside the EU in the visitor data path, removes that compliance overhead entirely. Customers typically run both for 30 days, reconcile against their CRM, and migrate revenue decisions to Sealmetrics while keeping GA360 as a Google Ads conduit.
             </p>
           </QuickAnswer>
         </div>

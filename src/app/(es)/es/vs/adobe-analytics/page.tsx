@@ -44,7 +44,7 @@ export default function Page() {
         url: "/es/vs/adobe-analytics",
         competitor: competitor("adobe-analytics"),
         datePublished: "2026-04-15",
-        dateModified: "2026-08-27",
+        dateModified: "2026-09-21",
         author: { name: "Rafa Jiménez", url: "/es/authors/rafa-jimenez" },
         criteria: [
           "Coste anual de licencia y fees de implementación",
@@ -56,7 +56,7 @@ export default function Page() {
           "Inclusión de export BigQuery",
         ],
       })} />
-      <VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-08-27" />
+      <VsComparisonV3 data={getVsData("adobe-analytics", "es")} dateModified="2026-09-21" />
       <RelatedPagesV3
         locale="es"
         eyebrow="Otras comparativas"
@@ -77,7 +77,7 @@ export default function Page() {
               Sealmetrics vs Adobe Analytics: Adobe Analytics es una suite de analítica enterprise con contratos anuales no publicados que van de unos 50.000 $/año en Select a 200.000 $+ en Ultimate, con una implementación pesada, hosting en EE. UU./híbrido y un banner de consentimiento en toda la UE. Sealmetrics es una plataforma cookieless alojada en la UE que mide el tráfico entrante sin depender del consentimiento y atribuye cada conversión last-click sobre eventos observados — desde 499€/mes con facturación anual, sin compromiso anual.
             </p>
             <p>
-              Para el eCommerce UE la diferencia es completitud y compliance. Adobe sigue perdiendo entre el 15% y el 60% del tráfico UE por rechazo de consentimiento — según el sector, la fuerza de la marca y el mix de tráfico — y arrastra overhead Schrems II por sus flujos de datos a EE. UU., además de meses de implementación. Sealmetrics se instala con un píxel, corre en paralelo desde el día uno, y su infraestructura solo en Dublín sin sub-procesadores fuera de la UE elimina la revisión de transferencias. Los equipos mantienen Adobe para análisis custom profundo donde lo necesitan y usan Sealmetrics como el número de revenue completo y listo para el board.
+              Para el eCommerce UE la diferencia es completitud y compliance. Adobe sigue sin ver a quien rechaza el consentimiento — en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies — y arrastra overhead Schrems II por sus flujos de datos a EE. UU., además de meses de implementación. Sealmetrics se instala con un píxel, corre en paralelo desde el día uno, y su infraestructura solo en Dublín, sin sub-procesadores fuera de la UE para el dato de visitante, elimina la revisión de transferencias. Los equipos mantienen Adobe para análisis custom profundo donde lo necesitan y usan Sealmetrics como el número de revenue completo y listo para el board.
             </p>
           </QuickAnswer>
         </div>

@@ -420,30 +420,30 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 muestra que no es aleatoria.
               </p>
               <p>
-                Se acumulan tres fugas distintas. Consentimiento: en mercados
-                europeos,{" "}
+                Se acumulan tres fugas distintas. Consentimiento: en nuestra
+                experiencia con clientes,{" "}
                 <Link
                   href="/es/blog/consent-banner-impact-on-analytics"
                   className={linkClass}
                 >
-                  tasas de rechazo de hasta el 60%
+                  entre el 40% y el 60% del tráfico no acepta cookies
                 </Link>{" "}
-                son normales con un banner conforme, y al visitante que rechaza
+                con un banner conforme, y al visitante que rechaza
                 las herramientas dependientes de consentimiento no lo miden en
                 absoluto. Bloqueadores y protección antitracking del navegador:
-                en torno al 25% en audiencias técnicas, más en algunos sectores.
-                Fallo de etiqueta: alrededor del 5% en móvil, y crece en redes
-                lentas. Multiplica los supervivientes y estás reportando sobre
-                una fracción — mientras tu CFO lo lee como si fuera el total.
-                Sumadas en el peor escenario, es la aritmética por la que{" "}
+                una proporción que depende de la audiencia, mayor en las
+                técnicas. Fallo de etiqueta: una parte menor, que crece en redes
+                móviles lentas. Multiplica los supervivientes y estás reportando
+                sobre una fracción — mientras tu CFO lo lee como si fuera el
+                total. Por eso{" "}
                 <Link
-                  href="/es/blog/why-ga4-shows-13pct-eu-traffic"
+                  href="/es/blog/why-ga4-misses-traffic"
                   className={linkClass}
                 >
-                  GA4 puede ver solo el 13% del tráfico UE
+                  GA4 no ve parte de tu tráfico
                 </Link>
-                . Medida en una tienda Shopify real durante 48 días, la brecha
-                fue menor pero igual de decisiva:{" "}
+                , y cuánto depende de la tienda. En la tienda Shopify de
+                Incapto, medida durante 48 días, la brecha fue decisiva:{" "}
                 <Link href="/es/case-studies/incapto" className={linkClass}>
                   GA4 no registró el 29% de las visitas
                 </Link>
@@ -454,23 +454,18 @@ export default function MejorHerramientaAnaliticaWebPage() {
             <StatRow
               items={[
                 {
-                  value: "60%",
-                  label: "Rechaza el consentimiento en mercados UE con banner conforme",
+                  value: "40–60%",
+                  label: "Del tráfico no acepta cookies, en nuestra experiencia con clientes",
                   tone: "risk",
                 },
                 {
-                  value: "25%",
-                  label: "Bloqueado por adblockers y protección antitracking",
+                  value: "40%",
+                  label: "De quienes aceptan no lo hace en la primera página vista, donde se registra la fuente",
                   tone: "risk",
                 },
                 {
-                  value: "5%",
-                  label: "Fallos de etiqueta en móvil — más en redes lentas",
-                  tone: "risk",
-                },
-                {
-                  value: "~40%",
-                  label: "Lo que llega de verdad al informe que tu CFO lee como el total",
+                  value: "29%",
+                  label: "De las visitas que GA4 no registró en Incapto, medido durante 48 días",
                   tone: "risk",
                 },
               ]}

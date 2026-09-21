@@ -85,8 +85,8 @@ const pillars = [
     eyebrow: "No consent loss",
     title: "Clean data",
     body: "Visitors and events counted whether or not the banner is accepted. No consent banner gating measurement, far less ad-blocker erasure, fewer JavaScript blockers wiping traffic. First-party server-side counting keeps what those tools would strip.",
-    metric: "15–60%",
-    metricLabel: "of EU visits cookie-based tools lose to consent, by sector",
+    metric: "40–60%",
+    metricLabel: "of traffic doesn't accept cookies, in our experience with clients",
   },
   {
     eyebrow: "Source agnostic",
@@ -128,7 +128,7 @@ const pillars = [
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
   { feature: "Cookies / fingerprinting", legacy: "Required", modern: "None" },
   { feature: "Consent banner needed", legacy: "Yes", modern: "No" },
-  { feature: "EU traffic captured", legacy: "Loses 15–60% to consent, by sector", modern: "No consent loss" },
+  { feature: "EU traffic captured", legacy: "Misses visitors who reject consent (40–60% of traffic, in our experience with clients)", modern: "No consent loss" },
   { feature: "Sampling on heavy queries", legacy: "Yes (Card-2 / data thresholds)", modern: "No" },
   { feature: "Modeled / synthetic data", legacy: "Yes, undisclosed share", modern: "Never" },
   { feature: "Attribution model", legacy: "Data-driven (black box)", modern: "Last-click on raw events" },
@@ -225,7 +225,7 @@ export default function ModernAnalyticsPage() {
           </>
         }
         bullets={[
-          <>Legacy cookie-based analytics: 15–60% EU traffic loss to consent depending on sector and traffic mix, modeled gaps, US-hosted.</>,
+          <>Legacy cookie-based analytics: blind to visitors who reject consent (in our experience with clients, 40–60% of traffic doesn&rsquo;t accept cookies), modeled gaps, US-hosted.</>,
           <>Modern analytics: no consent-driven data loss, last-click on raw data, EU-hosted, AI-agent ready.</>,
           <>No migration. Run both for 30 days. Decide on your own numbers.</>,
         ]}

@@ -67,9 +67,9 @@ export default function CookielessAnalyticsExplainedPageEs() {
             Conclusiones clave
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-            <li>La analítica basada en cookies falla a tres niveles estructurales: los navegadores bloquean las cookies de terceros por defecto, el consentimiento RGPD provoca ~55% de rechazos, y los ad blockers eliminan los scripts en otro 40%.</li>
+            <li>La analítica basada en cookies falla a tres niveles estructurales: los navegadores bloquean las cookies de terceros por defecto, con el consentimiento RGPD, en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y los ad blockers eliminan los scripts en parte de lo que queda.</li>
             <li>La analítica cookieless reemplaza las cookies por recolección de datos first-party a través de tu propia infraestructura — sin servidor de terceros, sin scripts bloqueados, sin dependencia del consentimiento.</li>
-            <li>El tracking con cookies puede quedarse en torno al 13% del tráfico UE en el peor escenario, con todas las pérdidas sumadas, y en una tienda Shopify real medida durante 48 días GA4 no registró el 29% de las visitas; el tracking cookieless no pierde visitas por el consentimiento porque no hay nada que rechazar ni que expire.</li>
+            <li>El tracking con cookies no ve parte de tu tráfico, y cuánto depende de la tienda: en Incapto, medido en Shopify durante 48 días, GA4 no registró el 29% de las visitas; el tracking cookieless no pierde visitas por el consentimiento porque no hay nada que rechazar ni que expire.</li>
             <li>La exención de consentimiento es arquitectónica, no un workaround — no se recogen datos personales y no se almacenan cookies, en línea con las guías de la CNIL y del DSK alemán.</li>
           </ul>
         </div>
@@ -103,7 +103,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
             {[
               "Los navegadores aceptaban todas las cookies por defecto (ya no lo hacen)",
               "Los usuarios rara vez borraban las cookies (las funciones de privacidad ahora lo hacen automáticamente)",
-              "Los ad blockers eran poco comunes (40% de los usuarios UE los usan ahora)",
+              "Los ad blockers eran poco comunes (hoy los usa una parte relevante de los usuarios, sobre todo en escritorio)",
               "El consentimiento no era requerido (el RGPD lo cambió en 2018)",
             ].map((item) => (
               <li
@@ -117,11 +117,9 @@ export default function CookielessAnalyticsExplainedPageEs() {
           </ul>
 
           <p>
-            El efecto acumulado es considerable. En el peor escenario, con todas
-            las pérdidas sumadas, un eCommerce europeo puede perder hasta el 87%
-            de los datos de sus visitantes antes de cualquier procesamiento
-            analítico. La brecha medida es menor, pero sigue siendo relevante: en
-            una tienda Shopify real medida en paralelo durante 48 días,{" "}
+            El efecto acumulado es considerable, y su tamaño depende de la
+            tienda y del canal, así que no hay una cifra universal que citar. En
+            la tienda Shopify de Incapto, medida en paralelo durante 48 días,{" "}
             <Link href="/es/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no registró el 29% de las visitas</Link>
             . La{" "}
             <Link
@@ -130,7 +128,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
             >
               calculadora de pérdida de datos
             </Link>{" "}
-            muestra la cascada de pérdidas para tu tráfico específico.
+            te da una estimación para tu tráfico; medirlo te da la cifra real.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -183,12 +181,12 @@ export default function CookielessAnalyticsExplainedPageEs() {
                   },
                   {
                     aspect: "Bloqueado por ad blockers",
-                    cookie: "Sí (40% de usuarios)",
+                    cookie: "Sí (la proporción depende de la audiencia)",
                     cookieless: "No (peticiones first-party)",
                   },
                   {
                     aspect: "Afectado por consentimiento",
-                    cookie: "Sí (55% rechaza en UE)",
+                    cookie: "Sí (entre el 40% y el 60% no acepta, en nuestra experiencia con clientes)",
                     cookieless: "No (sin cookies ni PII)",
                   },
                   {

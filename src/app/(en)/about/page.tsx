@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: "Who are Sealmetrics customers?",
-    answer: "Sealmetrics serves 2,000+ European teams — hotels, DTC eCommerce, media publishers and public institutions. Typical customers are revenue-driven teams with 10M€+ in online revenue who cannot afford to have 15–60% of their EU traffic invisible to GA4 — the share depending on sector, brand strength and traffic mix.",
+    answer: "Sealmetrics serves 2,000+ European teams — hotels, DTC eCommerce, media publishers and public institutions. Typical customers are revenue-driven teams with 10M€+ in online revenue who cannot afford to have the visitors who reject consent invisible to GA4 — in our experience with clients, between 40% and 60% of traffic doesn't accept cookies.",
   },
   {
     question: "Is Sealmetrics funded or bootstrapped?",
@@ -81,7 +81,7 @@ export default function Page() {
               Rafa Jiménez spent two decades in European eCommerce — first as a digital marketer, then as an agency founder, then advising retail groups. Every meeting followed the same pattern: the GA4 number, the pixel number, the CRM number. All different. All defended. None trusted.
             </p>
             <p>
-              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection hid between 15% and 60% of EU traffic, depending on sector, brand and traffic mix. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
+              The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection hid a large share of traffic: in our experience with clients, between 40% and 60% of it doesn&apos;t accept cookies. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
               Sealmetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.

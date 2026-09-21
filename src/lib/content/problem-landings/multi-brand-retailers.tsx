@@ -24,9 +24,9 @@ import type { ProblemLandingContent } from "./types";
  *   datasets)
  * - Batch API: up to 50 queries per request, each resolving dates in its own
  *   site's timezone (api/batch, agent guide)
- * - consent-based tools lose 15–60% of EU visitors depending on sector, brand
- *   strength and traffic mix (docs llms.txt facts) — presented as the docs'
- *   range, never as a measured figure; the measured one is Incapto's 29%
+ * - consent: the attributed client-experience range (40–60% of traffic doesn't
+ *   accept cookies, founder decision 2026-09-21) — never as a measured GA4
+ *   loss; the measured one is Incapto's 29%
  * - unlimited websites and users on every plan (PricingSignal.tsx)
  *
  * Not claimed: a dashboard view that sums brands (the documented aggregate
@@ -75,8 +75,8 @@ export const multiBrandRetailersEn: ProblemLandingContent = {
       brand&apos;s tool can: which brand, market and channel is growing, measured
       on one comparable basis. When every brand runs its own consent banner, each
       GA4 property loses a different share of visitors, because rejection varies
-      with sector, brand strength and traffic mix; the Sealmetrics documentation
-      puts that loss at 15–60%. A comparison between brands then measures consent
+      with sector, brand strength and traffic mix; in our experience with
+      clients, between 40% and 60% of traffic doesn&apos;t accept cookies. A comparison between brands then measures consent
       rates as much as performance. Sealmetrics counts visits without cookies, so
       rejecting a banner removes no visit from any brand. Each brand domain is a
       site inside one group organization, with its own timezone and currency, and
@@ -252,8 +252,8 @@ export const multiBrandRetailersEs: ProblemLandingContent = {
       medido sobre una base comparable. Con un banner de consentimiento por
       marca, cada propiedad de GA4 pierde una
       proporción distinta de visitas, porque el rechazo varía según el sector, la
-      fuerza de la marca y el mix de tráfico; la documentación de Sealmetrics sitúa
-      esa pérdida entre el 15% y el 60%. Comparar marcas pasa a medir tasas de
+      fuerza de la marca y el mix de tráfico; en nuestra experiencia con clientes,
+      entre el 40% y el 60% del tráfico no acepta cookies. Comparar marcas pasa a medir tasas de
       consentimiento tanto como resultados. Sealmetrics cuenta visitas sin cookies,
       así que rechazar un banner no quita visitas a ninguna marca. Cada dominio de
       marca es un sitio dentro de una organización de grupo, con su zona horaria y

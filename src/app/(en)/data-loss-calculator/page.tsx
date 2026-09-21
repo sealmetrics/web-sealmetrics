@@ -77,7 +77,7 @@ export default function Page() {
             <p>
               Cookie-based analytics like{" "}
               <Link href="/vs-ga4">GA4</Link> lose a large share of European eCommerce traffic before
-              it is ever counted. Four cuts stack: consent rejection removes 15–60% of visitors, depending on sector, brand strength and traffic mix,
+              it is ever counted. Four cuts stack: consent rejection (in our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies),
               20–30% run{" "}
               <Link href="/glossary/ad-blocker-analytics-impact">ad blockers</Link>, Safari&rsquo;s
               ITP caps first-party cookies at 7 days, and GA4 and Adobe&rsquo;s heavy measurement

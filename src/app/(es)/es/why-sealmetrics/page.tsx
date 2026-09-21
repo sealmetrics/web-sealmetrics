@@ -112,16 +112,16 @@ function WhereDataDies() {
     },
     {
       label: "Tras el muro de consentimiento",
-      note: "45% ilustrativo sin consentimiento",
-      width: 55,
-      value: "≈55%",
+      note: "el 40–60% del tráfico no acepta cookies · nuestra experiencia con clientes",
+      width: 50,
+      value: "40–60%",
       valueClass: "text-red-alert",
     },
     {
       label: "Tras la prevención de rastreo",
-      note: "cookies caducan a 7 días · ad-blockers",
-      width: 42,
-      value: "≈42%",
+      note: "cookies caducan a 7 días · ad-blockers · depende de la web",
+      width: 38,
+      value: "menos",
       valueClass: "text-red-alert",
     },
     {
@@ -170,7 +170,7 @@ function WhereDataDies() {
                     </div>
                   )}
                 </div>
-                <div className={`font-mono text-[18px] font-semibold tabular-nums w-16 text-right ${r.valueClass}`}>
+                <div className={`font-mono text-[18px] font-semibold tabular-nums w-20 text-right ${r.valueClass}`}>
                   {r.value}
                 </div>
               </div>
@@ -251,8 +251,8 @@ function ChannelDistortion() {
             La pérdida por consentimiento <em>no se distribuye por igual.</em>
           </h2>
           <p className="text-[17px] leading-[1.6] text-ink-soft mt-6">
-            Este embudo ilustrativo usa una tasa de no consentimiento del 45%. La tasa real
-            debe medirse en tu propia web. Si perdieras conversiones al azar, verías una foto más pequeña
+            El ejemplo es ilustrativo. En nuestra experiencia con clientes, entre el 40% y el
+            60% del tráfico no acepta cookies; la tasa real debe medirse en tu propia web. Si perdieras conversiones al azar, verías una foto más pequeña
             con las mismas proporciones — y decidirías igual. Pero la tasa de rechazo de
             cookies cambia según el canal: el paid social en móvil rechaza mucho más que
             una búsqueda de marca en desktop. GA4 no te da una foto pequeña.{" "}
@@ -982,7 +982,7 @@ export default function WhySealmetricsPageEs() {
         data={speakableWebPageSchema({
           url: "/es/why-sealmetrics",
           name: "Por qué Sealmetrics — analítica agregada sin identificadores",
-          dateModified: "2026-09-14",
+          dateModified: "2026-09-21",
         })}
       />
       <JsonLd

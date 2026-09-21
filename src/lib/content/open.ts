@@ -52,7 +52,7 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-27",
-    dateModified: "2026-05-27",
+    dateModified: "2026-09-21",
     toc: [
       { id: "the-problem", label: "The problem we see" },
       { id: "what-breaks", label: "What breaks in decision-making" },
@@ -92,9 +92,9 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-21",
     toc: [
-      { id: "the-cascade", label: "Where the 13% comes from" },
+      { id: "the-cascade", label: "Where the gap comes from" },
       { id: "sampling-vs-complete", label: "Sampling vs complete measurement" },
       { id: "modeling-vs-measuring", label: "Modeling vs measuring" },
       { id: "where-we-sit", label: "Where Sealmetrics sits" },
@@ -152,7 +152,7 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 10,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-21",
     toc: [
       { id: "gdpr-architecture", label: "Designed for GDPR from the architecture up, not by permission" },
       { id: "eprivacy", label: "ePrivacy and the cookie question" },
@@ -172,7 +172,7 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-21",
     toc: [
       { id: "what-we-charge-for", label: "What we charge for and what we don't" },
       { id: "three-plans", label: "Three plans, one architecture" },
@@ -211,7 +211,7 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 7,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-21",
     toc: [
       { id: "no-multi-touch", label: "We won't do multi-touch attribution" },
       { id: "no-sessions", label: "We won't reconstruct sessions" },
@@ -251,7 +251,7 @@ export const openChapters: OpenChapter[] = [
     readMinutes: 7,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-05-28",
+    dateModified: "2026-09-21",
     toc: [
       { id: "method", label: "Method and measurement" },
       { id: "compliance", label: "Legal compliance" },

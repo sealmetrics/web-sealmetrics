@@ -64,7 +64,7 @@ export default function FirstPartyDataCollectionEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué importa para la completitud del dato</h2>
           <p>
-            Alrededor del 40% de los usuarios europeos usa bloqueadores que apuntan específicamente a peticiones de analítica de terceros. La recolección first-party evita la mayor parte de esa pérdida, no mediante engaño, sino cambiando de raíz el camino del dato para que sea genuinamente first-party.
+            Una parte de los usuarios europeos, mayor en escritorio y en audiencias técnicas, usa bloqueadores que apuntan específicamente a peticiones de analítica de terceros. La recolección first-party evita la mayor parte de esa pérdida, no mediante engaño, sino cambiando de raíz el camino del dato para que sea genuinamente first-party.
           </p>
           <p>
             Combinada con la <Link href={glossaryHref("cookieless-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin cookies</Link>, la recolección first-party elimina dos de los tres grandes vectores de <Link href={glossaryHref("data-loss-in-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pérdida de datos</Link>: el bloqueo por extensiones y las restricciones de cookies del navegador.
@@ -87,7 +87,7 @@ export default function FirstPartyDataCollectionEsPage() {
               La recolección de datos first-party enruta las peticiones de analítica por tu propio dominio (por ejemplo pixel.tudominio.com) en lugar de un host de terceros como google-analytics.com. Para el navegador, para las listas de reglas de los bloqueadores y para las barreras de consentimiento, la petición es indistinguible de cualquier otro recurso de tu sitio: no se elimina, no se bloquea y no queda sujeta a las restricciones de cookies de terceros que imponen Safari ITP o Firefox ETP.
             </p>
             <p>
-              Para el eCommerce europeo esto importa porque los bloqueadores descartan en silencio alrededor del 40% de las llamadas de analítica de terceros antes de que se ejecuten, y Safari limita las cookies de terceros por completo. La recolección first-party elimina ambos vectores de pérdida. Combinada con no almacenar ninguna cookie ni identificador en el dispositivo, forma la base arquitectónica de la analítica sin consentimiento: el mismo camino del dato que contemplan el RGPD y los criterios de exención de la CNIL al describir una analítica que no requiere banner.
+              Para el eCommerce europeo esto importa porque los bloqueadores descartan en silencio parte de las llamadas de analítica de terceros antes de que se ejecuten, y Safari limita las cookies de terceros por completo. La recolección first-party reduce la primera pérdida y elimina la segunda. Combinada con no almacenar ninguna cookie ni identificador en el dispositivo, forma la base arquitectónica de la analítica sin consentimiento: el mismo camino del dato que contemplan el RGPD y los criterios de exención de la CNIL al describir una analítica que no requiere banner.
             </p>
           </QuickAnswer>
         </div>

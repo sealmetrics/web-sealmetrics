@@ -67,11 +67,10 @@ export default function AdBlockerAnalyticsImpactPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The scale of the problem</h2>
           <p>
-            Ad blocker use is uneven: higher on desktop than on mobile, and higher among technical audiences than among general shoppers. It is also not the only loss. For a consent-gated tool it stacks on top of <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection, which costs traditional analytics 15&ndash;60% of EU visits depending on sector, brand strength and traffic mix, and on browser tracking restrictions:
+            Ad blocker use is uneven: higher on desktop than on mobile, and higher among technical audiences than among general shoppers. It is also not the only loss. For a consent-gated tool it stacks on top of <Link href="/glossary/consent-management-platform" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consent banner</Link> rejection (in our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies) and on browser tracking restrictions. How much they remove together depends on the site:
           </p>
           <p>
-            &mdash; Modelled worst case, with consent rejection, ad blockers and browser restrictions compounded: cookie-based analytics captures roughly 13% of actual traffic<br />
-            &mdash; Measured on a <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">real Shopify store over 48 days</Link>: GA4 did not record 29% of visits
+            &mdash; Measured on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&rsquo;s Shopify store over 48 days</Link>: GA4 did not record 29% of visits
           </p>
           <p>
             This is not a rounding error. It means marketing teams making budget decisions on a fragment of their real data &mdash; a problem that compounds across every report, every attribution model, and every ROI calculation.

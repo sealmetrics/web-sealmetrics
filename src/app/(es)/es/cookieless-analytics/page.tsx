@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -13,7 +14,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-29";
-const PILLAR_DATE_MODIFIED = "2026-05-29";
+const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
   title: "Analítica sin cookies, explicada — Sealmetrics",
@@ -49,7 +50,7 @@ const faqs = [
   },
   {
     q: "¿Qué precisión tiene comparada con GA4?",
-    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: el rechazo de consentimiento cuesta entre el 15% y el 60% de los visitantes según el sector, la fuerza de la marca y el mix de tráfico, ~40% usan ad-blockers que eliminan el script, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección sin cookies evita las pérdidas por consentimiento y por expiración de cookies, y servida desde tu propio subdominio queda mucho menos expuesta a los ad-blockers. Casos medidos: Dreamplace Hotels ve aproximadamente un 30% más de tráfico que Google Analytics y atribuye un 15–20% más de ventas contra su CRM; en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales.",
+    a: "Captura más, no lo mismo. Las herramientas basadas en cookies pierden datos tres veces en Europa: en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, los ad-blockers eliminan el script en una proporción de visitantes que depende de la audiencia, y Safari/Firefox limitan las cookies first-party a 7 días. La recolección sin cookies evita las pérdidas por consentimiento y por expiración de cookies, y servida desde tu propio subdominio queda mucho menos expuesta a los ad-blockers. Casos medidos: Dreamplace Hotels ve aproximadamente un 30% más de tráfico que Google Analytics y atribuye un 15–20% más de ventas contra su CRM; en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas y Sealmetrics registró el 96% de los pedidos reales.",
   },
   {
     q: "¿Puedo correrla junto a Google Analytics 4?",
@@ -113,11 +114,12 @@ export default function CookielessAnalyticsPillarEs() {
               Datos completos, por arquitectura.
             </em>
           </h1>
+          <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="es" />
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
             En 2026, la analítica basada en cookies pierde una parte grande y
-            desigual del tráfico europeo: en una tienda Shopify que medimos,
-            GA4 no registró el 29% de las visitas, y en el peor escenario
-            acumulado de nuestro modelo ve en torno al 13%. Esta es una guía sobre
+            desigual del tráfico europeo: en la tienda Shopify de Incapto,
+            medida durante 48 días, GA4 no registró el 29% de las visitas, y el
+            tamaño del hueco es distinto en cada web. Esta es una guía sobre
             la alternativa — qué es la analítica sin cookies, qué cuenta,
             qué deliberadamente no, y dónde encaja junto al resto de tu stack.
           </p>
@@ -163,19 +165,20 @@ export default function CookielessAnalyticsPillarEs() {
 
           <div className="mt-10 space-y-8">
             <div>
-              <h3 className="text-[18px] font-semibold text-ink mb-2">1. Rechazo de consentimiento — del 15 al 60% de visitantes UE</h3>
+              <h3 className="text-[18px] font-semibold text-ink mb-2">1. Rechazo de consentimiento — del 40 al 60% del tráfico, en nuestra experiencia</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Desde que la guía CNIL/ICO de 2019 se endureció, se
                 requiere un banner de consentimiento antes de instalar
-                cualquier cookie no esencial. Lo que eso le cuesta a una
-                herramienta con consentimiento va del 15% al 60% de los
-                visitantes UE, según el sector, la fuerza de la marca y el mix de tráfico. Esos visitantes siguen en tu sitio,
+                cualquier cookie no esencial. En nuestra experiencia con
+                clientes, entre el 40% y el 60% del tráfico no acepta cookies,
+                y de quienes las aceptan, el 40% no lo hace en la primera
+                página vista. Esos visitantes siguen en tu sitio,
                 comprando, marchándose — pero invisibles para tu analítica.
               </p>
             </div>
 
             <div>
-              <h3 className="text-[18px] font-semibold text-ink mb-2">2. Ad-blockers — ~40% de usuarios UE</h3>
+              <h3 className="text-[18px] font-semibold text-ink mb-2">2. Ad-blockers — una proporción que depende de la audiencia</h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 uBlock, AdBlock Plus y el navegador Brave incorporan
                 listas de reglas que eliminan scripts de analítica
@@ -202,13 +205,13 @@ export default function CookielessAnalyticsPillarEs() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            Suma esas pérdidas a sus tasas medias en la UE y, en el peor
-            escenario acumulado, te quedas con cerca del{" "}
-            <Link href="/es/blog/why-ga4-shows-13pct-eu-traffic" className="text-brand underline decoration-1 underline-offset-2">
-              13% del tráfico europeo visible
-            </Link>{" "}
-            en GA4. El resto se rechaza, se bloquea o expira antes de
-            empezar la medición. La respuesta de Google — Consent Mode
+            Suma esas pérdidas y{" "}
+            <Link href="/es/blog/why-ga4-misses-traffic" className="text-brand underline decoration-1 underline-offset-2">
+              GA4 no ve parte de tu tráfico
+            </Link>
+            : se rechaza, se bloquea o expira antes de empezar la medición.
+            Cuánto depende de la tienda y del canal, así que hay que medirlo,
+            no suponerlo. La respuesta de Google — Consent Mode
             v2 — es modelar estadísticamente los datos que faltan. Es
             una estimación útil para algunas preguntas. No es una medición.
           </p>

@@ -179,7 +179,7 @@ export default function GA4AlternativesEnterprisePage() {
               7 GA4 Alternatives for eCommerce Teams in 2026
             </h1>
             <QuickAnswer>
-              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that measures site traffic without cookies or consent banners and is designed for GDPR from the architecture up (self-assessed), not by configuration. Unlike GA4, which loses 15–60% of EU visitor data to consent rejection depending on sector, brand strength and traffic mix, Sealmetrics measures events whether or not the banner is accepted and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and funnel visibility without consent gaps from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a revenue-focused alternative that is designed for GDPR (self-assessed), not reduced by consent, and built specifically for the European regulatory environment.`}
+              {`Sealmetrics is a GA4 alternative for eCommerce in Europe that measures site traffic without cookies or consent banners and is designed for GDPR from the architecture up (self-assessed), not by configuration. Unlike GA4, which does not see visitors who reject consent (in our experience with clients, between 40% and 60% of traffic doesn't accept cookies), Sealmetrics measures events whether or not the banner is accepted and attributes the revenue on last click, giving mid-market online stores and agencies accurate conversion data for reporting and ad optimization. Matomo still relies on cookies in its default setup, triggering the same consent-banner drop-off, while Plausible offers privacy-friendly pageview tracking but no attribution or revenue reporting—leaving eCommerce teams unable to connect traffic to sales. Sealmetrics closes that gap: no cookies, no banners, no sampling, and funnel visibility without consent gaps from first click to purchase. For EU-based online retailers facing stricter enforcement of consent requirements and shrinking analytics accuracy in GA4, Sealmetrics provides a revenue-focused alternative that is designed for GDPR (self-assessed), not reduced by consent, and built specifically for the European regulatory environment.`}
             </QuickAnswer>
             <PostByline
               {...dates}
@@ -195,10 +195,10 @@ export default function GA4AlternativesEnterprisePage() {
             </h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>
-                GA4 depends on consent. Consent rejection (15-60% of EU visits),
-                ad blockers and browser restrictions can push it down to about 13% of
-                real EU eCommerce traffic in the compounded worst case. On a real
-                Shopify store measured over 48 days,{" "}
+                GA4 depends on consent, so it doesn&apos;t see part of your
+                traffic: consent rejection, ad blockers and browser restrictions
+                each take a share, and how much depends on the store and the
+                channel. On Incapto&apos;s Shopify store, measured over 48 days,{" "}
                 <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
                 . Revenue attribution built on this data is structurally
                 incomplete.
@@ -206,7 +206,7 @@ export default function GA4AlternativesEnterprisePage() {
               <li>
                 Enterprise alternatives split into two categories:
                 cookie-dependent platforms (GA360, Adobe, Piwik PRO) that
-                improve on GA4 but still lose 15–60% of EU traffic to consent, and
+                improve on GA4 but still miss visitors who reject consent, and
                 cookieless platforms (Sealmetrics) that do not lose traffic to consent
                 rejection.
               </li>
@@ -244,7 +244,7 @@ export default function GA4AlternativesEnterprisePage() {
               >
                 consent
               </Link>
-              . In the EU, consent rejection costs 15–60% of visitors, depending on sector, brand strength and traffic mix. Before{" "}
+              . In the EU, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies. Before{" "}
               <Link
                 href="/glossary/data-sampling"
                 className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -366,7 +366,7 @@ export default function GA4AlternativesEnterprisePage() {
 
             <p>
               The fundamental limitation remains: GA360 is cookie-dependent. In
-              European eCommerce, this means a 15–60% consent loss persists regardless
+              European eCommerce, this means the consent gap persists regardless
               of spend. At six figures per year, the question is whether your budget
               produces complete data or better estimates.
             </p>
@@ -444,7 +444,7 @@ export default function GA4AlternativesEnterprisePage() {
               The trade-offs are significant. Implementation takes 3-6 months
               with specialized consultants. Pricing is unpublished, starts around $50K and scales
               with server calls. And like every cookie-dependent platform, Adobe
-              faces the same 15–60% EU consent gap.
+              faces the same EU consent gap.
             </p>
 
             <p>
@@ -622,7 +622,7 @@ export default function GA4AlternativesEnterprisePage() {
             <p>
               Piwik PRO still depends on cookies. Despite privacy-first
               positioning, the platform requires consent for tracking. In EU
-              markets, this means 15–60% of eCommerce traffic, depending on sector and traffic mix, remains invisible.
+              markets, this means visitors who reject consent remain invisible.
               AI-powered features are limited. Enterprise pricing starts around
               {"\u20ac"}30,000 per year.
             </p>
@@ -859,7 +859,7 @@ export default function GA4AlternativesEnterprisePage() {
                 How much of your revenue depends on EU traffic?
               </strong>{" "}
               If the majority of your customers are European, cookie-dependent
-              platforms will structurally misattribute the revenue behind the 15–60% of visits they lose to consent. This
+              platforms will structurally misattribute the revenue behind the visits they lose to consent rejection. This
               affects campaign ROI calculations, budget allocation, and executive
               reporting. Only cookieless platforms avoid this gap entirely.
             </p>
@@ -915,10 +915,10 @@ export default function GA4AlternativesEnterprisePage() {
                 8 Best Enterprise Analytics Platforms in 2026
               </Link>
               <Link
-                href="/blog/why-ga4-shows-13pct-eu-traffic"
+                href="/blog/why-ga4-misses-traffic"
                 className="block text-[0.9rem] text-text-secondary no-underline hover:text-text-primary transition-colors"
               >
-                Why GA4 Can Show as Little as 13% of Your EU Traffic
+                Why GA4 Doesn&apos;t See Part of Your Traffic
               </Link>
               <Link
                 href="/blog/cookieless-analytics-explained"

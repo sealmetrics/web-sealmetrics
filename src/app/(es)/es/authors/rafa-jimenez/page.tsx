@@ -108,7 +108,7 @@ export default function Page() {
               Los primeros roles de Rafa fueron en marketing digital para marcas DTC europeas, gestionando adquisición pagada en Google, Meta y afiliados. Cada mes, las reuniones seguían el mismo patrón: el número de GA4, el del pixel, el del CRM — tres fuentes, todas distintas, todas defendidas, ninguna cuadrada.
             </p>
             <p>
-              Tras fundar una agencia y asesorar grupos retail, el patrón se volvió imposible de ignorar. El problema no eran los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporting. El rechazo de consentimiento dejaba invisible entre el 15% y el 60% del tráfico UE, según el sector, la marca y el mix de tráfico. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando que actuando.
+              Tras fundar una agencia y asesorar grupos retail, el patrón se volvió imposible de ignorar. El problema no eran los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporting. El rechazo de consentimiento dejaba invisible una parte grande del tráfico: en nuestra experiencia con clientes, entre el 40% y el 60% no acepta cookies. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando que actuando.
             </p>
             <p>
               Sealmetrics se construyó para reemplazar la conciliación con una capa neutral única — first-party, sin cookies, alojada en UE. Compliance por arquitectura, no por una capa banner añadida después.

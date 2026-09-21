@@ -134,7 +134,7 @@ export default function CookielessAnalyticsForEcommercePageEs() {
           <div className="key-takeaways mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Conclusiones clave</h2>
             <ul className={`text-[0.9rem] leading-[1.7] text-text-secondary ${dashList}`}>
-              <li>El rechazo del consentimiento, los ad-blockers y las restricciones de Safari se suman. Medido en una tienda Shopify real durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas; en el peor caso compuesto de nuestro modelo, GA4 se queda con un 13%.</li>
+              <li>El rechazo del consentimiento, los ad-blockers y las restricciones de Safari se suman. Cuánto se llevan depende de la tienda y del canal. Medido en la tienda Shopify de Incapto durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas.</li>
               <li>La analítica sin cookies cuenta eventos de forma anónima, sin identificadores ni seguimiento individual, y atribuye cada conversión a último clic por canal.</li>
               <li>Como no guarda ni lee nada en el dispositivo, la regla de ePrivacy sobre almacenamiento y acceso no tiene a qué aplicarse. Que tu analítica quede exenta de consentimiento depende de tu configuración y de los criterios de tu autoridad nacional.</li>
               <li>La prueba que importa es el backend: en la medición en paralelo de Incapto, Sealmetrics registró el 96% de los pedidos reales de Shopify y el 97% de la facturación.</li>
@@ -167,19 +167,21 @@ export default function CookielessAnalyticsForEcommercePageEs() {
             <p>
               La analítica de una tienda pierde eventos en tres etapas sucesivas, y el
               efecto es multiplicativo: cada capa se aplica sobre lo que dejó la
-              anterior. Los porcentajes de este apartado son los supuestos de nuestro
-              modelo del peor caso, no una medición de tu tienda.
+              anterior. El tamaño de cada capa depende de tu tienda, tu audiencia y
+              tus canales.
             </p>
             <p>
-              <strong>Capa 1: rechazo del consentimiento (55% en el modelo).</strong>{" "}
-              Una parte grande de los visitantes europeos rechaza el banner, y esa
-              parte cambia según el mercado y el diseño del banner. Si lo rechazan,
+              <strong>Capa 1: rechazo del consentimiento.</strong>{" "}
+              En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico
+              no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la
+              primera página vista. La proporción cambia según el mercado y el
+              diseño del banner. Si lo rechazan,
               GA4 no escribe su cookie y la visita no se mide. Para una marca que
               lleva tráfico de pago a una tienda Shopify, aquí es donde viven la
               mayoría de las conversiones invisibles.
             </p>
             <p>
-              <strong>Capa 2: ad-blockers (40% de lo que queda, en el modelo).</strong>{" "}
+              <strong>Capa 2: ad-blockers.</strong>{" "}
               uBlock Origin, AdBlock Plus, Brave Shields o la protección reforzada de
               Firefox bloquean las peticiones a google-analytics.com. La etiqueta no
               se dispara y los añadidos al carrito no llegan. Sumado al rechazo del
@@ -195,11 +197,10 @@ export default function CookielessAnalyticsForEcommercePageEs() {
               origen y una conversión posterior aparece como &ldquo;directo&rdquo;.
             </p>
             <p>
-              En el peor caso compuesto del modelo, 100 visitas reales se quedan en
-              unas 45 tras el consentimiento, 27 tras los ad-blockers y 13 tras las
-              restricciones del navegador; las cuentas están en{" "}
-              <Link href="/es/blog/why-ga4-shows-13pct-eu-traffic" className={link}>por qué GA4 puede ver solo el 13% de tu tráfico</Link>.
-              Una tienda medida es menos extrema, pero igual de desigual: con las dos
+              No hay una cifra universal de cuánto se llevan las tres capas juntas;
+              el mecanismo está explicado en{" "}
+              <Link href="/es/blog/why-ga4-misses-traffic" className={link}>por qué GA4 no ve parte de tu tráfico</Link>.
+              Lo que enseña una medición es lo desigual que es: con las dos
               herramientas funcionando a la vez en la{" "}
               <Link href="/es/case-studies/incapto" className={link}>tienda Shopify de Incapto</Link>{" "}
               durante 48 días, GA4 no registró el 29% de las visitas, y las campañas
@@ -316,8 +317,8 @@ export default function CookielessAnalyticsForEcommercePageEs() {
                 <p className="text-[0.8rem] text-text-tertiary mt-1">7 min de lectura</p>
               </div>
               <div>
-                <Link href="/es/blog/why-ga4-shows-13pct-eu-traffic" className={`text-[0.95rem] ${link}`}>
-                  Por qué GA4 puede ver solo el 13% de tu tráfico UE
+                <Link href="/es/blog/why-ga4-misses-traffic" className={`text-[0.95rem] ${link}`}>
+                  Por qué GA4 no ve parte de tu tráfico
                 </Link>
                 <p className="text-[0.8rem] text-text-tertiary mt-1">Calidad del dato</p>
               </div>

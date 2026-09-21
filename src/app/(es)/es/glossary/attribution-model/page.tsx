@@ -63,7 +63,7 @@ export default function AttributionModelEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Por qué la atribución necesita el dato completo</h2>
           <p>
-            Todos los modelos, del last-touch más simple al data-driven más sofisticado, dependen de ver el recorrido entero. Cuando la <Link href={glossaryHref("data-loss-in-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pérdida de datos</Link> elimina contactos &mdash;el 29% de las visitas en una tienda Shopify medida, hasta el 87% en el peor escenario acumulado&mdash;, el modelo trabaja sobre un fragmento de la realidad.
+            Todos los modelos, del last-touch más simple al data-driven más sofisticado, dependen de ver el recorrido entero. Cuando la <Link href={glossaryHref("data-loss-in-analytics", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pérdida de datos</Link> elimina contactos &mdash;el 29% de las visitas en la tienda Shopify de Incapto durante 48 días, y una proporción distinta en cada web&mdash;, el modelo trabaja sobre un fragmento de la realidad.
           </p>
           <p>
             Piensa en un cliente que descubre tu marca en una búsqueda orgánica (bloqueada por un bloqueador), luego hace clic en un anuncio de display (registrado) y finalmente convierte por búsqueda de marca (registrada). Un modelo last-touch acredita a la búsqueda de marca; un data-driven acredita a display. Ninguno sabe que la visita orgánica existió. El canal que de verdad trajo al cliente recibe cero crédito, y cero presupuesto en la siguiente planificación.

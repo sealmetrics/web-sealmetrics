@@ -5,18 +5,18 @@ import type { ProblemLandingContent } from "./types";
  * Problem A — "GA4 does not reflect reality". Lives on the /complete-data pillar
  * (decision D1: reuse the pillar's authority instead of a new URL).
  *
- * Decision D8 governs every number here: the measured Incapto gap leads, and the
- * 13% appears only as the compounded worst case of the model. Figures come from
- * src/lib/content/case-studies.tsx; loss-vector ranges from docs.sealmetrics.com
- * (consent rejection 15–60% by sector, ad blockers 25–40% of tech-literate
- * audiences). The Incapto case explicitly does not claim that Sealmetrics
- * measures 100% of traffic, so this page does not either.
+ * Decision D8 governs every number here: the measured Incapto gap leads. Since
+ * 2026-09-21 there is no universal GA4 loss figure on this page (the worst-case
+ * model is retired); the only other figure is the attributed client-experience
+ * consent range. Case figures come from src/lib/content/case-studies.tsx. The
+ * Incapto case explicitly does not claim that Sealmetrics measures 100% of
+ * traffic, so this page does not either.
  *
  * As a pillar it links down to its spokes, always inside a sentence.
  */
 
 export const COMPLETE_DATA_PUBLISHED = "2026-05-28";
-export const COMPLETE_DATA_MODIFIED = "2026-09-14";
+export const COMPLETE_DATA_MODIFIED = "2026-09-21";
 
 const link = "sig-problem-inline";
 
@@ -62,8 +62,8 @@ export const completeDataEn: ProblemLandingContent = {
       on a real store, with GA4 and Sealmetrics running side by side on
       Incapto&apos;s Shopify site for 48 days, GA4 did not record 29% of visits
       or 45% of pageviews, while Sealmetrics recorded 96% of the real orders.
-      Stacked as a worst case, the losses can leave GA4 with about 13% of EU
-      traffic. Sealmetrics measures without cookies or personal data and
+      How much GA4 misses depends on the store and the channel, so it has to
+      be measured on each site. Sealmetrics measures without cookies or personal data and
       attributes revenue to the last click of each session. It does not
       identify people or reconstruct journeys across visits.
     </p>
@@ -76,20 +76,20 @@ export const completeDataEn: ProblemLandingContent = {
     headers: ["Loss", "What happens", "What GA4 does about it", "What changes without cookies"],
     rows: [
       ["Consent rejection", "Visitors who decline the banner are not recorded. Rejection ranges widely by sector, brand and banner design.", "Consent Mode estimates part of the missing activity", "Nothing is stored on the device, so the analytics can run where the regulator's exemption criteria are met"],
-      ["Ad blockers", "Requests to known tracking domains are blocked, often for 25–40% of tech-literate audiences", "The visit is lost", "Served from your own subdomain, the tracker is far less likely to match a blocklist"],
+      ["Ad blockers", "Requests to known tracking domains are blocked, more often on desktop and in tech-literate audiences", "The visit is lost", "Served from your own subdomain, the tracker is far less likely to match a blocklist"],
       ["Browser restrictions (Safari ITP)", "Script-set cookies expire in days, so returning visitors lose their original source", "Later visits land in direct or unassigned", "No cookie to expire; each session keeps the source it arrived with"],
       ["Sampling and thresholds", "Large explorations are sampled and small rows can be withheld", "Estimates or hides the row", "Every recorded event is counted, with no sampling"],
     ],
     note: (
       <>
-        How the losses compound into the worst-case 13% is worked through in{" "}
-        <Link className={link} href="/blog/why-ga4-shows-13pct-eu-traffic/">why GA4 can show as little as 13% of your EU traffic</Link>;
+        How the losses stack is worked through in{" "}
+        <Link className={link} href="/blog/why-ga4-misses-traffic/">why GA4 doesn&apos;t see part of your traffic</Link>;
         each vector is defined under{" "}
         <Link className={link} href="/glossary/data-loss-in-analytics/">data loss in analytics</Link>,{" "}
         <Link className={link} href="/glossary/intelligent-tracking-prevention/">Intelligent Tracking Prevention</Link> and{" "}
         <Link className={link} href="/blog/ga4-data-sampling-problem/">GA4&apos;s sampling problem</Link>.
-        A real site lands somewhere between the model and no consent loss — which
-        is why the rest of this page uses measured figures.
+        How big each loss is depends on the site, which is why the rest of this
+        page uses measured figures.
       </>
     ),
   },
@@ -178,7 +178,7 @@ export const completeDataEn: ProblemLandingContent = {
       </>
     ),
     items: [
-      ["Your gap is your own", "29% was one store over 48 days; 13% is a worst-case model. Sector, audience and banner design move the number, so measure yours."],
+      ["Your gap is your own", "29% was one store, Incapto, over 48 days. Sector, audience and banner design move the number, so measure yours."],
       ["It counts what fires", "Pages without the tracker, filtered bots and orders with no web visit stay outside. The Incapto figures are checked against orders, not presented as 100%."],
       ["No person-level analysis", "No returning-visitor recognition, no cohorts of people and no journeys across sessions. For product analytics inside a logged-in app, use a tool built for it."],
       ["Last click per session", "No multi-touch model and no view-through. Earlier influence belongs in a marketing-mix model."],
@@ -191,10 +191,10 @@ export const completeDataEn: ProblemLandingContent = {
   faqTitle: <>Before you trust<br /><em>the next report.</em></>,
   faq: [
     { question: "Why does GA4 show less traffic than reality?", answer: "Because GA4 only records visitors who accept the consent banner, do not block its script and keep their cookies. Consent Mode estimates part of the rest, but estimates are not measurement. When Incapto ran GA4 and Sealmetrics side by side on its Shopify store for 48 days, GA4 did not record 29% of visits and 45% of pageviews." },
-    { question: "How much traffic does GA4 miss in Europe?", answer: "It depends on the site, and it is uneven by channel. On one measured Shopify store the gap was 29% of visits; Dreamplace Hotels measures roughly 30% more traffic with Sealmetrics than with Google Analytics. Stacked as a worst case, consent rejection, ad blockers and browser restrictions can leave GA4 with about 13% of EU traffic, but that is a model, not an average." },
+    { question: "How much traffic does GA4 miss in Europe?", answer: "It depends on the site, and it is uneven by channel. On one measured Shopify store the gap was 29% of visits; Dreamplace Hotels measures roughly 30% more traffic with Sealmetrics than with Google Analytics. In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview. There is no universal figure for the rest: measure it on your own site." },
     { question: "Isn't GA4's Consent Mode v2 already solving this?", answer: "Consent Mode is a modelling layer. When visitors reject cookies, Google estimates what they probably did based on the visitors who did consent. That is useful for a ballpark, but it is not a measurement, and it cannot tell you which channels the missing visitors came from. Complete data measures the traffic that actually arrived." },
     { question: "What does complete data actually mean?", answer: "Analytics whose totals can be checked against something that really happened. Operationally: no consent gate on the analytics, no cookie to expire, no sampling and no statistical gap-filling, with revenue attributed to the last click of each session. At Incapto that check was against Shopify's orders, where Sealmetrics recorded 96% of them and 97% of revenue." },
-    { question: "How do I know my data is incomplete?", answer: "Run the data loss calculator for an estimate, then measure: keep GA4, add Sealmetrics for at least 30 days and compare both against the orders your store recorded. In our client sample, GA4 records 25–45% less traffic for B2C brands. If your measured gap is below 10%, you probably do not need to switch." },
+    { question: "How do I know my data is incomplete?", answer: "Run the data loss calculator for an estimate, then measure: keep GA4, add Sealmetrics for at least 30 days and compare both against the orders your store recorded. There is no benchmark to compare against: the gap depends on the store and the channel. If your measured gap is below 10%, you probably do not need to switch." },
     { question: "Does complete data mean Sealmetrics ignores privacy?", answer: "The opposite. Complete capture is possible because the architecture stores nothing on the device and keeps no personal data: no cookies, no identifiers, no stored IP addresses. Privacy is the constraint that forces the measurement to be aggregate, and aggregate measurement is what lets it run without a consent dialog where the regulator's criteria are met." },
     { question: "Where is this data stored?", answer: "Exclusively in Dublin, Ireland. The dashboard, the BigQuery export, the API and the MCP server all read the same EU-resident dataset." },
   ],
@@ -250,8 +250,8 @@ export const completeDataEs: ProblemLandingContent = {
       una tienda real, con GA4 y Sealmetrics funcionando en paralelo sobre la web
       Shopify de Incapto durante 48 días, GA4 no registró el 29% de las visitas
       ni el 45% de las páginas vistas, mientras Sealmetrics registraba el 96% de
-      los pedidos reales. Acumuladas en el peor escenario, las pérdidas pueden
-      dejar a GA4 con en torno al 13% del tráfico europeo. Sealmetrics mide sin
+      los pedidos reales. Cuánto se pierde depende de la tienda y del canal, así
+      que hay que medirlo en cada web. Sealmetrics mide sin
       cookies ni datos personales y atribuye los ingresos al último clic de cada
       sesión. No identifica personas ni reconstruye recorridos entre visitas.
     </p>
@@ -264,20 +264,20 @@ export const completeDataEs: ProblemLandingContent = {
     headers: ["Pérdida", "Qué ocurre", "Qué hace GA4", "Qué cambia sin cookies"],
     rows: [
       ["Rechazo del consentimiento", "Quien rechaza el banner no queda registrado. El rechazo varía mucho según sector, marca y diseño del banner.", "Consent Mode estima parte de la actividad que falta", "Nada se guarda en el dispositivo, así que la analítica puede funcionar donde se cumplen los criterios de exención de la autoridad"],
-      ["Ad-blockers", "Se bloquean las peticiones a dominios de tracking conocidos, a menudo en el 25–40% de las audiencias técnicas", "La visita se pierde", "Servido desde tu propio subdominio, el tracker tiene muchas menos probabilidades de coincidir con una lista de bloqueo"],
+      ["Ad-blockers", "Se bloquean las peticiones a dominios de tracking conocidos, más en escritorio y en audiencias técnicas", "La visita se pierde", "Servido desde tu propio subdominio, el tracker tiene muchas menos probabilidades de coincidir con una lista de bloqueo"],
       ["Restricciones del navegador (ITP de Safari)", "Las cookies creadas por script caducan en días y quien vuelve pierde su origen", "Las visitas posteriores acaban en directo o sin asignar", "No hay cookie que caduque; cada sesión conserva el origen con el que llegó"],
       ["Muestreo y umbrales", "Las exploraciones grandes se muestrean y las filas pequeñas pueden ocultarse", "Estima u oculta la fila", "Cada evento registrado se cuenta, sin muestreo"],
     ],
     note: (
       <>
-        Cómo se acumulan las pérdidas hasta el 13% del peor escenario se explica en{" "}
-        <Link className={link} href="/es/blog/why-ga4-shows-13pct-eu-traffic/">por qué GA4 puede ver solo el 13% de tu tráfico UE</Link>;
+        Cómo se suman las pérdidas se explica en{" "}
+        <Link className={link} href="/es/blog/why-ga4-misses-traffic/">por qué GA4 no ve parte de tu tráfico</Link>;
         cada vector se define en{" "}
         <Link className={link} href="/es/glossary/data-loss-in-analytics/">pérdida de datos en analítica</Link>,{" "}
         <Link className={link} href="/es/glossary/intelligent-tracking-prevention/">Intelligent Tracking Prevention</Link> y{" "}
         <Link className={link} href="/es/blog/ga4-data-sampling-problem/">el problema del muestreo en GA4</Link>.
-        Una web real queda entre el modelo y ninguna pérdida por consentimiento, y por eso el
-        resto de esta página usa cifras medidas.
+        El tamaño de cada pérdida depende de la web, y por eso el resto de esta
+        página usa cifras medidas.
       </>
     ),
   },
@@ -366,7 +366,7 @@ export const completeDataEs: ProblemLandingContent = {
       </>
     ),
     items: [
-      ["Tu brecha es la tuya", "El 29% fue una tienda durante 48 días; el 13% es un peor escenario de modelo. El sector, la audiencia y el diseño del banner mueven la cifra, así que mide la tuya."],
+      ["Tu brecha es la tuya", "El 29% fue una tienda, Incapto, durante 48 días. El sector, la audiencia y el diseño del banner mueven la cifra, así que mide la tuya."],
       ["Cuenta lo que se dispara", "Las páginas sin tracker, los bots filtrados y los pedidos sin visita web quedan fuera. Las cifras de Incapto se contrastan con pedidos, no se presentan como un 100%."],
       ["Sin análisis por persona", "No reconoce a quien vuelve, no hace cohortes de personas ni recorridos entre sesiones. Para analítica de producto dentro de una app con login, usa una herramienta pensada para eso."],
       ["Último clic por sesión", "Sin modelo multi-touch y sin view-through. La influencia anterior se analiza en un marketing-mix model."],
@@ -379,10 +379,10 @@ export const completeDataEs: ProblemLandingContent = {
   faqTitle: <>Antes de fiarte<br /><em>del próximo informe.</em></>,
   faq: [
     { question: "¿Por qué GA4 muestra menos tráfico del real?", answer: "Porque GA4 solo registra a quien acepta el banner de consentimiento, no bloquea su script y conserva sus cookies. Consent Mode estima parte del resto, pero una estimación no es una medición. Cuando Incapto midió GA4 y Sealmetrics en paralelo sobre su tienda Shopify durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas." },
-    { question: "¿Cuánto tráfico pierde GA4 en Europa?", answer: "Depende de la web, y es desigual por canal. En una tienda Shopify medida la brecha fue del 29% de las visitas; Dreamplace Hotels mide aproximadamente un 30% más de tráfico con Sealmetrics que con Google Analytics. Acumulados en el peor escenario, el rechazo del consentimiento, los ad-blockers y las restricciones del navegador pueden dejar a GA4 con en torno al 13% del tráfico UE, pero eso es un modelo, no una media." },
+    { question: "¿Cuánto tráfico pierde GA4 en Europa?", answer: "Depende de la web, y es desigual por canal. En una tienda Shopify medida la brecha fue del 29% de las visitas; Dreamplace Hotels mide aproximadamente un 30% más de tráfico con Sealmetrics que con Google Analytics. En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Para el resto no hay una cifra universal: mídelo en tu propia web." },
     { question: "¿No lo resuelve ya el Consent Mode v2 de GA4?", answer: "Consent Mode es una capa de modelado. Cuando los visitantes rechazan las cookies, Google estima lo que probablemente hicieron a partir de quienes sí dieron su consentimiento. Sirve para un orden de magnitud, pero no es una medición y no te dice de qué canales venía el tráfico que falta. Los datos completos miden el tráfico que llegó de verdad." },
     { question: "¿Qué significa exactamente «datos completos»?", answer: "Analítica cuyos totales se pueden contrastar con algo que ocurrió de verdad. En la práctica: sin barrera de consentimiento en la analítica, sin cookie que caduque, sin muestreo y sin relleno estadístico, con los ingresos atribuidos al último clic de cada sesión. En Incapto ese contraste se hizo con los pedidos de Shopify, donde Sealmetrics registró el 96% de los pedidos y el 97% de la facturación." },
-    { question: "¿Cómo sé si mi dato está incompleto?", answer: "Usa la calculadora de pérdida de datos para una estimación y después mide: mantén GA4, añade Sealmetrics durante al menos 30 días y compara ambos con los pedidos que registró tu tienda. En nuestra muestra de clientes, GA4 registra entre un 25% y un 45% menos de tráfico en marcas B2C. Si tu brecha medida está por debajo del 10%, probablemente no necesitas cambiar." },
+    { question: "¿Cómo sé si mi dato está incompleto?", answer: "Usa la calculadora de pérdida de datos para una estimación y después mide: mantén GA4, añade Sealmetrics durante al menos 30 días y compara ambos con los pedidos que registró tu tienda. No hay un valor de referencia con el que compararte: la brecha depende de la tienda y del canal. Si tu brecha medida está por debajo del 10%, probablemente no necesitas cambiar." },
     { question: "¿«Datos completos» significa que Sealmetrics ignora la privacidad?", answer: "Lo contrario. Medir sin pérdida por consentimiento es posible porque la arquitectura no guarda nada en el dispositivo ni conserva datos personales: sin cookies, sin identificadores y sin guardar direcciones IP. La privacidad es la restricción que obliga a medir en agregado, y la medición agregada es lo que permite funcionar sin diálogo de consentimiento cuando se cumplen los criterios de la autoridad." },
     { question: "¿Dónde se almacenan estos datos?", answer: "Exclusivamente en Dublín, Irlanda. El dashboard, el export a BigQuery, la API y el servidor MCP leen el mismo dataset residente en la UE." },
   ],

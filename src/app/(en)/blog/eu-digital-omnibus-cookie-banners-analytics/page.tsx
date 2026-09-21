@@ -180,7 +180,7 @@ export default function OmnibusShortPage() {
           <p>
             The combined effect of equal-prominence reject buttons and the
             six-month re-ask prohibition will likely push consent rejection
-            losses beyond the 15–60% of EU visits they already cost, depending on sector, brand strength and traffic mix.
+            losses beyond what they already cost: in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies today.
             For cookie-dependent analytics, this means even more{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"
@@ -315,12 +315,12 @@ export default function OmnibusShortPage() {
             signals, and the continued requirement for consent when data
             goes to third parties will compound the{" "}
             <Link
-              href="/blog/why-ga4-shows-13pct-eu-traffic"
+              href="/blog/why-ga4-misses-traffic"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
             >
-              data loss problem that, in the worst case, already leaves GA4 with about 13% of real EU traffic
+              data loss problem that already keeps part of your traffic out of GA4
             </Link>
-            . Even on a real store measured side by side over 48 days,{" "}
+            . On Incapto&apos;s Shopify store, measured side by side over 48 days,{" "}
             <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 did not record 29% of visits</Link>
             .
           </p>
@@ -348,7 +348,7 @@ export default function OmnibusShortPage() {
         </div>
 
         <CommercialModule
-          hook="Whatever the Omnibus lands on, consent banners already cost 15–60% of visitors today, depending on sector and traffic mix. Measure what that hides on your own site now."
+          hook="Whatever the Omnibus lands on, consent banners already hide part of your traffic today. Measure how much on your own site now."
         />
 
         {/* Related */}
