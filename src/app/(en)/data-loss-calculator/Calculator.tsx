@@ -5,112 +5,207 @@ import Link from "next/link";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
 import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
+import {
+  REJECTION_DEFAULT,
+  REJECTION_MAX,
+  REJECTION_MIN,
+  clampRejection,
+  consentRange,
+  consentShares,
+} from "@/lib/calculators/consent-model";
 
 /* ===========================================
-   Country-specific loss rates
-   Sources: Advance Metrics (5yr GDPR study),
-   CookieYes 2026, SEOSandwitch, Stape (ITP)
+   Model — see src/lib/calculators/consent-model.ts
+   Two approved inputs only (client experience, founder decision 2026-09-21):
+   40–60% of traffic doesn't accept cookies; of those who accept, 40% don't
+   accept on the first pageview. No per-country figures, no ad-blocker,
+   sampling or early-exit defaults: those are optional user inputs at 0.
    =========================================== */
 
+type Locale = "en" | "es";
 type CountryCode = "DE" | "FR" | "NL" | "ES" | "IT" | "UK" | "EU" | "US";
+const COUNTRY_CODES: CountryCode[] = ["DE", "FR", "NL", "ES", "IT", "UK", "EU", "US"];
 
-interface CountryData {
-  label: string;
-  consentRejection: number;
-  adBlockerRate: number;
-  safariShare: number;
-  safariItpDegradation: number;
-}
-
-const COUNTRY_DATA: Record<CountryCode, CountryData> = {
-  DE: {
-    label: "Germany",
-    consentRejection: 0.55,
-    adBlockerRate: 0.49,
-    safariShare: 0.18,
-    safariItpDegradation: 0.15,
+const COPY = {
+  en: {
+    numLocale: "en",
+    countries: { DE: "Germany", FR: "France", NL: "Netherlands", ES: "Spain", IT: "Italy", UK: "United Kingdom", EU: "Other EU country", US: "United States" } as Record<CountryCode, string>,
+    yourNumbers: "Your numbers",
+    fourFields: "Four fields. Instant estimate.",
+    visitors: "Monthly website visitors",
+    visitorsHint: "All visits, not only what GA4 reports.",
+    market: "Primary market",
+    marketNote: "Rejection varies by country and by banner design; in our experience with clients the overall range is 40–60%. The market does not change the numbers.",
+    rejection: "Share of traffic that doesn't accept cookies",
+    rejectionHint: "Set within our client range, 40–60%. Default 50%.",
+    revenue: "Monthly online revenue (EUR)",
+    refineShow: "+ Refine",
+    refineHide: "- Hide",
+    refineWord: "estimate",
+    cr: "Conversion rate (%)",
+    aov: "Average order value (EUR)",
+    derived: "derived",
+    adBlockers: "Ad blockers (% of consenting visitors, optional)",
+    earlyExits: "Visitors who leave before the tag fires (%, optional)",
+    optionalNote: "Not included by default — no figure we can stand behind. Add your own if you have measured it.",
+    calculate: "Estimate your data loss",
+    noEmail: "No email required.",
+    estimateNote: "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview). Measure your own store to know.",
+    freeCta: "Open my free account — measure your own gap",
+    freeHref: "/free-account/",
+    freeSub: "First 1M events free · run it next to GA4 on your own traffic.",
+    reportPrompt: "Want this estimate by email?",
+    reportSent: "Report sent. Check your inbox.",
+    sendReport: "Send report",
+    reportError: "We could not send the report. Please try again.",
+    emptyTitle: "How much are you not seeing?",
+    emptyBody: "Enter your monthly visitors, primary market and revenue. We estimate what GA4 would see with our client range of consent rejection.",
+    withInputs: "With these inputs, GA4 would see",
+    ofVisits: "of your visits",
+    andAttribute: (p: string) => `and attribute ${p} of them to the source they came from.`,
+    rangeLine: (seenHi: string, seenLo: string, attHi: string, attLo: string) =>
+      `Across our client range (40–60% rejection): GA4 would see ${seenHi}–${seenLo} of visits and attribute ${attHi}–${attLo} to their source.`,
+    visitsLine: (seen: string, real: string, unseen: string) => [`GA4 would record about `, seen, ` of `, real, ` monthly visits. About `, unseen, ` would not be recorded at all.`],
+    revenueTitle: "Revenue GA4 would not tie to its source",
+    month: "This month",
+    quarter: "This quarter",
+    year: "This year",
+    revenueNote: (att: string) => `Assumes the conversion rate is the same for traffic GA4 sees and traffic it doesn't. With these inputs, channel decisions rest on the ${att} of revenue GA4 can attribute.`,
+    attrTitle: "Where your sales would land in GA4",
+    attrBody: "Your payment system records every sale. GA4 only credits the ones it saw arrive, and without the landing pageview it can't tell which campaign brought the visitor.",
+    yourSales: (n: string) => `Your ${n} monthly sales`,
+    correct: "Right source",
+    noSource: "Seen, no source",
+    invisible: "Not seen",
+    salesMonth: "sales/month",
+    noSourceSub: (e: string) => `${e} without its source`,
+    invisibleSub: (e: string) => `${e} not recorded`,
+    attrFoot: (p: string, q: string) => [`With these inputs, you would be steering spend on the `, p, ` of sales GA4 attributes to their source. The other `, q, ` are credited to the wrong channel or not recorded.`],
+    funnelTitle: "Where the data disappears",
+    funnelBody: "Consent is the part we can size from client experience. Ad blockers, browser restrictions and exits before a heavy tag fires cut further, but we have no figure we can stand behind, so they only count if you enter your own.",
+    fReal: "Real visitors",
+    fConsent: "Accept cookies",
+    fConsentNote: (r: string) => `${r} don't accept (our client range is 40–60%)`,
+    fAdBlock: "After ad blockers (your input)",
+    fExit: "After early exits (your input)",
+    fSource: "Recorded with their source",
+    fSourceNote: "40% of those who accept do so after the first pageview",
+    sealTitle: "Sealmetrics",
+    sealLine: "Visits lost to consent rejection: none. No cookies, no consent dependency, no sampling. How much it records depends on your implementation.",
+    meansTitle: "What this means for your decisions",
+    m1Title: "Your ROAS is built on part of your sales",
+    m1Body: (n: string) => `${n} sales/month would reach GA4 without their source. They inflate direct and make the channels that brought them look weaker.`,
+    m2Title: (n: string) => `${n} sales/month would not appear in GA4 at all`,
+    m2Body: (e: string) => `They happen — your payment system records them — but analytics can't tell you what drove them. That is ${e}/month with no attribution.`,
+    m3Title: (p: string) => `Budget decisions on ${p} of your sales`,
+    m3Body: (a: string, t: string) => `Only ${a} of your ${t} monthly sales would be attributed to their source. This is an estimate; your own store will land somewhere else.`,
+    ctaTitle: "Stop estimating. Measure your own gap.",
+    ctaBody: "Open a free account, run Sealmetrics next to GA4 for a few weeks and compare both against the orders your store recorded.",
+    ctaButton: "Open my free account",
+    ctaFoot: "First 1M events free. No card to start.",
+    share: "Share this estimate with your team",
+    copied: "Link copied",
+    copy: "Copy link",
   },
-  FR: {
-    label: "France",
-    consentRejection: 0.50,
-    adBlockerRate: 0.44,
-    safariShare: 0.22,
-    safariItpDegradation: 0.15,
+  es: {
+    numLocale: "es",
+    countries: { DE: "Alemania", FR: "Francia", NL: "Países Bajos", ES: "España", IT: "Italia", UK: "Reino Unido", EU: "Otro país de la UE", US: "Estados Unidos" } as Record<CountryCode, string>,
+    yourNumbers: "Tus números",
+    fourFields: "Cuatro campos. Estimación al momento.",
+    visitors: "Visitas mensuales a tu web",
+    visitorsHint: "Todas las visitas, no solo las que reporta GA4.",
+    market: "Mercado principal",
+    marketNote: "El rechazo varía según el país y el diseño del banner; en nuestra experiencia con clientes, el rango global es del 40–60%. El mercado no cambia las cifras.",
+    rejection: "Parte del tráfico que no acepta cookies",
+    rejectionHint: "Dentro de nuestro rango con clientes, 40–60%. Por defecto, 50%.",
+    revenue: "Ingresos online mensuales (EUR)",
+    refineShow: "+ Afinar",
+    refineHide: "- Ocultar",
+    refineWord: "estimación",
+    cr: "Tasa de conversión (%)",
+    aov: "Ticket medio (EUR)",
+    derived: "derivado",
+    adBlockers: "Bloqueadores (% de quienes aceptan, opcional)",
+    earlyExits: "Visitas que se van antes de que cargue la etiqueta (%, opcional)",
+    optionalNote: "No se incluye por defecto: no tenemos una cifra que podamos defender. Añade la tuya si la has medido.",
+    calculate: "Estima tu pérdida de datos",
+    noEmail: "Sin email.",
+    estimateNote: "Estimación basada en lo que vemos en nuestros clientes (entre el 40% y el 60% no acepta cookies; de quienes las aceptan, el 40% no lo hace en la primera página vista). Mide tu propia tienda para saberlo.",
+    freeCta: "Abrir mi cuenta gratis — mide tu propio hueco",
+    freeHref: "/es/cuenta-gratis/",
+    freeSub: "El primer millón de eventos gratis · ponlo junto a GA4 sobre tu propio tráfico.",
+    reportPrompt: "¿Quieres esta estimación por email?",
+    reportSent: "Informe enviado. Revisa tu bandeja.",
+    sendReport: "Enviar informe",
+    reportError: "No hemos podido enviar el informe. Inténtalo de nuevo.",
+    emptyTitle: "¿Cuánto no estás viendo?",
+    emptyBody: "Introduce tus visitas mensuales, tu mercado y tus ingresos. Estimamos lo que vería GA4 con nuestro rango de rechazo del consentimiento en clientes.",
+    withInputs: "Con estos datos, GA4 vería",
+    ofVisits: "de tus visitas",
+    andAttribute: (p: string) => `y atribuiría el ${p} a la fuente de la que llegaron.`,
+    rangeLine: (seenHi: string, seenLo: string, attHi: string, attLo: string) =>
+      `En nuestro rango con clientes (40–60% de rechazo): GA4 vería entre el ${seenHi} y el ${seenLo} de las visitas y atribuiría a su fuente entre el ${attHi} y el ${attLo}.`,
+    visitsLine: (seen: string, real: string, unseen: string) => [`GA4 registraría unas `, seen, ` de `, real, ` visitas mensuales. Unas `, unseen, ` no quedarían registradas.`],
+    revenueTitle: "Ingresos que GA4 no ligaría a su fuente",
+    month: "Este mes",
+    quarter: "Este trimestre",
+    year: "Este año",
+    revenueNote: (att: string) => `Supone que la tasa de conversión es la misma en el tráfico que GA4 ve y en el que no. Con estos datos, las decisiones por canal se apoyan en el ${att} de los ingresos que GA4 puede atribuir.`,
+    attrTitle: "Dónde acabarían tus ventas en GA4",
+    attrBody: "Tu sistema de pagos registra todas las ventas. GA4 solo acredita las que vio llegar, y sin la primera página vista no sabe qué campaña trajo al visitante.",
+    yourSales: (n: string) => `Tus ${n} ventas mensuales`,
+    correct: "Fuente correcta",
+    noSource: "Vistas, sin fuente",
+    invisible: "No vistas",
+    salesMonth: "ventas/mes",
+    noSourceSub: (e: string) => `${e} sin su fuente`,
+    invisibleSub: (e: string) => `${e} sin registrar`,
+    attrFoot: (p: string, q: string) => [`Con estos datos, estarías dirigiendo la inversión con el `, p, ` de las ventas que GA4 atribuye a su fuente. El otro `, q, ` se acredita al canal equivocado o no se registra.`],
+    funnelTitle: "Dónde desaparece el dato",
+    funnelBody: "El consentimiento es la parte que podemos dimensionar con la experiencia de clientes. Los bloqueadores, las restricciones del navegador y las salidas antes de que cargue una etiqueta pesada recortan más, pero no tenemos una cifra que podamos defender, así que solo cuentan si introduces la tuya.",
+    fReal: "Visitas reales",
+    fConsent: "Aceptan cookies",
+    fConsentNote: (r: string) => `El ${r} no acepta (nuestro rango con clientes es del 40–60%)`,
+    fAdBlock: "Tras bloqueadores (tu dato)",
+    fExit: "Tras salidas tempranas (tu dato)",
+    fSource: "Registradas con su fuente",
+    fSourceNote: "El 40% de quienes aceptan lo hace después de la primera página vista",
+    sealTitle: "Sealmetrics",
+    sealLine: "Visitas perdidas por rechazo del consentimiento: ninguna. Sin cookies, sin depender del consentimiento, sin muestreo. Cuánto registra depende de tu implementación.",
+    meansTitle: "Qué significa para tus decisiones",
+    m1Title: "Tu ROAS se calcula sobre parte de tus ventas",
+    m1Body: (n: string) => `${n} ventas/mes llegarían a GA4 sin su fuente. Inflan el directo y hacen que los canales que las trajeron parezcan más débiles.`,
+    m2Title: (n: string) => `${n} ventas/mes no aparecerían en GA4`,
+    m2Body: (e: string) => `Ocurren — tu sistema de pagos las registra —, pero la analítica no te dice qué las generó. Son ${e}/mes sin atribución.`,
+    m3Title: (p: string) => `Decisiones de inversión sobre el ${p} de tus ventas`,
+    m3Body: (a: string, t: string) => `Solo ${a} de tus ${t} ventas mensuales se atribuirían a su fuente. Es una estimación; tu tienda caerá en otro punto.`,
+    ctaTitle: "Deja de estimar. Mide tu propio hueco.",
+    ctaBody: "Abre una cuenta gratis, pon Sealmetrics junto a GA4 unas semanas y compara ambos con los pedidos que registró tu tienda.",
+    ctaButton: "Abrir mi cuenta gratis",
+    ctaFoot: "El primer millón de eventos, gratis. Sin tarjeta para empezar.",
+    share: "Comparte esta estimación con tu equipo",
+    copied: "Enlace copiado",
+    copy: "Copiar enlace",
   },
-  NL: {
-    label: "Netherlands",
-    consentRejection: 0.65,
-    adBlockerRate: 0.38,
-    safariShare: 0.19,
-    safariItpDegradation: 0.15,
-  },
-  ES: {
-    label: "Spain",
-    consentRejection: 0.40,
-    adBlockerRate: 0.35,
-    safariShare: 0.20,
-    safariItpDegradation: 0.15,
-  },
-  IT: {
-    label: "Italy",
-    consentRejection: 0.42,
-    adBlockerRate: 0.33,
-    safariShare: 0.21,
-    safariItpDegradation: 0.15,
-  },
-  UK: {
-    label: "United Kingdom",
-    consentRejection: 0.38,
-    adBlockerRate: 0.39,
-    safariShare: 0.31,
-    safariItpDegradation: 0.15,
-  },
-  EU: {
-    label: "EU average",
-    consentRejection: 0.48,
-    adBlockerRate: 0.40,
-    safariShare: 0.20,
-    safariItpDegradation: 0.15,
-  },
-  US: {
-    label: "United States",
-    consentRejection: 0.12,
-    adBlockerRate: 0.37,
-    safariShare: 0.27,
-    safariItpDegradation: 0.15,
-  },
-};
-
-/* ===========================================
-   Heavy-pixel abandonment
-   Weighty measurement tags (GA4, Adobe Analytics) load megabytes of
-   JavaScript and fire late in the page lifecycle. A share of visitors
-   leaves before the tag executes, so the hit is never sent — this loss
-   is independent of consent, ad blockers or Safari ITP, and it is the
-   same regardless of country because it is a property of the tag, not
-   the market. Grounded in page-speed abandonment research (Google/
-   Deloitte, "Milliseconds Make Millions"). Sealmetrics ships a
-   lightweight first-party pixel that fires immediately, so it does not
-   pay this tax.
-   =========================================== */
-
-const HEAVY_PIXEL_ABANDON = 0.15;
+} as const;
 
 /* ===========================================
    Formatting helpers
    =========================================== */
 
-function formatEur(n: number): string {
-  if (n >= 1_000_000) return `\u20AC${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 1_000) return `\u20AC${Math.round(n / 1_000).toLocaleString("en")}K`;
-  return `\u20AC${Math.round(n).toLocaleString("en")}`;
+function formatEur(n: number, l: string): string {
+  if (n >= 1_000_000) return `€${(n / 1_000_000).toLocaleString(l, { maximumFractionDigits: 1, minimumFractionDigits: 1 })}M`;
+  if (n >= 1_000) return `€${Math.round(n / 1_000).toLocaleString(l)}K`;
+  return `€${Math.round(n).toLocaleString(l)}`;
 }
 
-function formatNumber(n: number): string {
-  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(1)}M`;
-  if (n >= 10_000) return `${Math.round(n / 1_000).toLocaleString("en")}K`;
-  return Math.round(n).toLocaleString("en");
+function formatNumber(n: number, l: string): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toLocaleString(l, { maximumFractionDigits: 1, minimumFractionDigits: 1 })}M`;
+  if (n >= 10_000) return `${Math.round(n / 1_000).toLocaleString(l)}K`;
+  return Math.round(n).toLocaleString(l);
 }
+
+const pct = (x: number) => `${Math.round(x * 100)}%`;
 
 function formatInputNumber(value: string): string {
   const digits = value.replace(/[^\d]/g, "");
@@ -122,96 +217,89 @@ function parseInputNumber(value: string): number {
   return parseInt(value.replace(/[^\d]/g, ""), 10) || 0;
 }
 
+const parsePct = (v: string) => {
+  const n = parseFloat(v.replace(",", "."));
+  return Number.isFinite(n) && n > 0 ? Math.min(n, 100) / 100 : 0;
+};
+
 /* ===========================================
    Calculator component
    =========================================== */
 
-export function Calculator() {
-  // Primary inputs (3 fields for first reveal)
+export function Calculator({ locale = "en" }: { locale?: Locale }) {
+  const t = COPY[locale];
+  const L = t.numLocale;
+  const fmtN = (n: number) => formatNumber(n, L);
+  const fmtE = (n: number) => formatEur(n, L);
+
   const [visitorsRaw, setVisitorsRaw] = useState("");
   const [country, setCountry] = useState<CountryCode>("DE");
   const [revenueRaw, setRevenueRaw] = useState("");
+  const [rejectionPct, setRejectionPct] = useState(Math.round(REJECTION_DEFAULT * 100));
 
-  // Advanced inputs (optional refinement)
   const [showAdvanced, setShowAdvanced] = useState(false);
   const [conversionRate, setConversionRate] = useState("2.0");
   const [avgOrderValue, setAvgOrderValue] = useState("");
+  const [adBlockersRaw, setAdBlockersRaw] = useState("0");
+  const [earlyExitsRaw, setEarlyExitsRaw] = useState("0");
 
-  // UI state
   const [hasCalculated, setHasCalculated] = useState(false);
 
-  // Parse inputs
   const visitors = parseInputNumber(visitorsRaw);
   const monthlyRevenue = parseInputNumber(revenueRaw);
+  const rejection = clampRejection(rejectionPct / 100);
+  const adBlockers = parsePct(adBlockersRaw);
+  const earlyExits = parsePct(earlyExitsRaw);
 
-  // Derive conversion rate and AOV from revenue if advanced not used
   const crRate = parseFloat(conversionRate) / 100 || 0.02;
-  const derivedAov = visitors > 0 && crRate > 0
-    ? monthlyRevenue / (visitors * crRate)
-    : 0;
-  const aov = showAdvanced && avgOrderValue
-    ? parseFloat(avgOrderValue) || derivedAov
-    : derivedAov;
+  const derivedAov = visitors > 0 && crRate > 0 ? monthlyRevenue / (visitors * crRate) : 0;
+  const aov = showAdvanced && avgOrderValue ? parseFloat(avgOrderValue) || derivedAov : derivedAov;
 
-  // Country data
-  const cd = COUNTRY_DATA[country];
+  // Shares of real traffic (see consent-model.ts)
+  const s = consentShares({ rejection, adBlockers, earlyExits });
+  const range = consentRange({ adBlockers, earlyExits });
 
-  // Cascade of losses
-  const afterConsent = visitors * (1 - cd.consentRejection);
-  const afterAdBlock = afterConsent * (1 - cd.adBlockerRate);
-  const safariLoss = afterAdBlock * cd.safariShare * cd.safariItpDegradation;
-  const afterSafari = afterAdBlock - safariLoss;
-  // Heavy measurement tag fires late — a share of visitors leaves first.
-  const pixelWeightLoss = afterSafari * HEAVY_PIXEL_ABANDON;
-  const ga4Visible = Math.round(afterSafari - pixelWeightLoss);
-  const invisibleVisitors = visitors - ga4Visible;
-  const visibilityRate = visitors > 0 ? ga4Visible / visitors : 0;
+  const afterConsent = visitors * (1 - rejection);
+  const afterAdBlock = afterConsent * (1 - adBlockers);
+  const ga4Seen = Math.round(visitors * s.seen);
+  const ga4Attributed = Math.round(visitors * s.attributed);
+  const unseenVisitors = visitors - ga4Seen;
 
-  // Revenue impact
-  const revenuePerVisitor = visitors > 0 ? monthlyRevenue / visitors : 0;
-  const invisibleRevenueMonthly = invisibleVisitors * revenuePerVisitor;
-  const invisibleRevenueQuarterly = invisibleRevenueMonthly * 3;
-  const invisibleRevenueYearly = invisibleRevenueMonthly * 12;
+  // Revenue — assumes equal conversion rate across seen and unseen traffic
+  const notAttributedRevenueMonthly = monthlyRevenue * (1 - s.attributed);
 
-  // Conversion impact
+  // Sales — same assumption
   const realConversions = Math.round(visitors * crRate);
-  const ga4Conversions = Math.round(ga4Visible * crRate);
-  const lostConversions = realConversions - ga4Conversions;
-
-  // Attribution quality — even visible sales are misattributed
-  const SALES_VISIBILITY = 0.80;
-  const MISATTRIBUTION_RATE = 0.60;
-  const visibleSales = Math.round(realConversions * SALES_VISIBILITY);
-  const invisibleSales = realConversions - visibleSales;
-  const misattributedSales = Math.round(visibleSales * MISATTRIBUTION_RATE);
-  const correctlyAttributed = visibleSales - misattributedSales;
-  const correctAttributionRate = realConversions > 0
-    ? correctlyAttributed / realConversions
-    : 0;
-  const misattributedRevenue = misattributedSales * aov;
+  const correctlyAttributed = Math.round(realConversions * s.attributed);
+  const withoutSourceSales = Math.round(realConversions * s.seenWithoutSource);
+  const invisibleSales = Math.max(0, realConversions - correctlyAttributed - withoutSourceSales);
+  const correctAttributionRate = realConversions > 0 ? correctlyAttributed / realConversions : 0;
+  const withoutSourceRevenue = withoutSourceSales * aov;
   const invisibleSalesRevenue = invisibleSales * aov;
 
-  // Shareable URL
   const buildShareUrl = useCallback(() => {
     const params = new URLSearchParams({
       v: String(visitors),
       c: country,
       r: String(monthlyRevenue),
+      j: String(rejectionPct),
     });
-    return `https://sealmetrics.com/data-loss-calculator?${params.toString()}`;
-  }, [visitors, country, monthlyRevenue]);
+    const base = locale === "es" ? "https://sealmetrics.com/es/data-loss-calculator/" : "https://sealmetrics.com/data-loss-calculator/";
+    return `${base}?${params.toString()}`;
+  }, [visitors, country, monthlyRevenue, rejectionPct, locale]);
 
-  // Read URL params on mount
   useEffect(() => {
     if (typeof window === "undefined") return;
     const params = new URLSearchParams(window.location.search);
     const v = params.get("v");
     const c = params.get("c");
     const r = params.get("r");
+    const j = params.get("j");
     if (v && parseInt(v, 10) > 0) {
       setVisitorsRaw(parseInt(v, 10).toLocaleString("en"));
-      if (c && c in COUNTRY_DATA) setCountry(c as CountryCode);
+      if (c && (COUNTRY_CODES as string[]).includes(c)) setCountry(c as CountryCode);
       if (r) setRevenueRaw(parseInt(r, 10).toLocaleString("en"));
+      if (j) setRejectionPct(Math.round(clampRejection(parseInt(j, 10) / 100) * 100));
       setHasCalculated(true);
     }
   }, []);
@@ -219,27 +307,26 @@ export function Calculator() {
   const handleCalculate = () => {
     if (visitors > 0 && monthlyRevenue > 0) {
       setHasCalculated(true);
-      // Fire micro-conversion
       pushEvent({
         event: "calculator_used",
         country,
         visitors: String(visitors),
       });
-      // Update URL without reload for shareability
       const url = new URL(window.location.href);
       url.searchParams.set("v", String(visitors));
       url.searchParams.set("c", country);
       url.searchParams.set("r", String(monthlyRevenue));
+      url.searchParams.set("j", String(rejectionPct));
       window.history.replaceState({}, "", url.toString());
     }
   };
 
+  const [copied, setCopied] = useState(false);
   const handleCopyLink = () => {
     navigator.clipboard.writeText(buildShareUrl());
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
-  const [copied, setCopied] = useState(false);
   const [reportEmail, setReportEmail] = useState("");
   const [reportSent, setReportSent] = useState(false);
   const [reportTurnstileToken, setReportTurnstileToken] = useState<string | null>(null);
@@ -250,58 +337,38 @@ export function Calculator() {
     "w-full px-4 py-3 text-[0.95rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none focus-visible:outline-2 focus-visible:outline-blue-accent focus-visible:outline-offset-2 transition-colors";
   const labelClasses = "block text-[0.8rem] font-medium text-text-body mb-1.5";
 
-  // Funnel data for visualization
-  const funnelSteps = [
+  const funnelSteps: { label: string; value: number; pct: number; note: string | null }[] = [
+    { label: t.fReal, value: visitors, pct: 100, note: null },
     {
-      label: "Real visitors",
-      value: visitors,
-      pct: 100,
-      note: null,
-    },
-    {
-      label: "After consent banner",
+      label: t.fConsent,
       value: Math.round(afterConsent),
       pct: visitors > 0 ? (afterConsent / visitors) * 100 : 0,
-      note: `${Math.round(cd.consentRejection * 100)}% reject tracking in ${cd.label}`,
+      note: t.fConsentNote(pct(rejection)),
     },
-    {
-      label: "After ad blockers",
-      value: Math.round(afterAdBlock),
-      pct: visitors > 0 ? (afterAdBlock / visitors) * 100 : 0,
-      note: `${Math.round(cd.adBlockerRate * 100)}% use ad blockers`,
-    },
-    {
-      label: "After Safari ITP",
-      value: Math.round(afterSafari),
-      pct: visitors > 0 ? (afterSafari / visitors) * 100 : 0,
-      note: `${Math.round(cd.safariShare * 100)}% Safari share, 7-day cookie cap`,
-    },
-    {
-      label: "After tag load",
-      value: ga4Visible,
-      pct: visitors > 0 ? visibilityRate * 100 : 0,
-      note: `${Math.round(HEAVY_PIXEL_ABANDON * 100)}% leave before GA4/Adobe's heavy pixel fires`,
-    },
+    ...(adBlockers > 0
+      ? [{ label: t.fAdBlock, value: Math.round(afterAdBlock), pct: visitors > 0 ? (afterAdBlock / visitors) * 100 : 0, note: null }]
+      : []),
+    ...(earlyExits > 0
+      ? [{ label: t.fExit, value: ga4Seen, pct: s.seen * 100, note: null }]
+      : []),
+    { label: t.fSource, value: ga4Attributed, pct: s.attributed * 100, note: t.fSourceNote },
   ];
+
+  const visitsLine = t.visitsLine(fmtN(ga4Seen), fmtN(visitors), fmtN(unseenVisitors));
+  const attrFoot = t.attrFoot(pct(correctAttributionRate), pct(1 - correctAttributionRate));
 
   return (
     <div>
-      {/* Two-column layout: inputs left, results right */}
       <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-12 lg:gap-16 items-start">
         {/* ========== INPUTS ========== */}
         <div className="lg:sticky lg:top-32">
           <div className="bg-warm-white border border-warm-100 rounded-[4px] p-8 sm:p-10">
-            <h2 className="font-serif text-[1.35rem] text-text-primary mb-1">
-              Your numbers
-            </h2>
-            <p className="text-[0.8rem] text-text-tertiary mb-8">
-              Three fields. Instant results.
-            </p>
+            <h2 className="font-serif text-[1.35rem] text-text-primary mb-1">{t.yourNumbers}</h2>
+            <p className="text-[0.8rem] text-text-tertiary mb-8">{t.fourFields}</p>
 
             <div className="space-y-5">
-              {/* Monthly visitors */}
               <div>
-                <label htmlFor="calc-visitors" className={labelClasses}>Monthly website visitors</label>
+                <label htmlFor="calc-visitors" className={labelClasses}>{t.visitors}</label>
                 <input
                   id="calc-visitors"
                   type="text"
@@ -311,39 +378,46 @@ export function Calculator() {
                     setVisitorsRaw(formatInputNumber(e.target.value));
                     setHasCalculated(false);
                   }}
-                  placeholder="e.g. 500,000"
+                  placeholder="500,000"
                   className={inputClasses}
                 />
+                <p className="text-[0.7rem] text-text-tertiary mt-1">{t.visitorsHint}</p>
               </div>
 
-              {/* Country */}
               <div>
-                <label htmlFor="calc-country" className={labelClasses}>Primary market</label>
+                <label htmlFor="calc-country" className={labelClasses}>{t.market}</label>
                 <select
                   id="calc-country"
                   value={country}
-                  onChange={(e) => {
-                    setCountry(e.target.value as CountryCode);
-                    setHasCalculated(false);
-                  }}
+                  onChange={(e) => setCountry(e.target.value as CountryCode)}
                   className={inputClasses}
                 >
-                  <option value="DE">Germany</option>
-                  <option value="FR">France</option>
-                  <option value="NL">Netherlands</option>
-                  <option value="ES">Spain</option>
-                  <option value="IT">Italy</option>
-                  <option value="UK">United Kingdom</option>
-                  <option value="EU">Other EU country</option>
-                  <option value="US">United States</option>
+                  {COUNTRY_CODES.map((code) => (
+                    <option key={code} value={code}>{t.countries[code]}</option>
+                  ))}
                 </select>
+                <p className="text-[0.7rem] text-text-tertiary mt-1 leading-relaxed">{t.marketNote}</p>
               </div>
 
-              {/* Monthly revenue */}
               <div>
-                <label htmlFor="calc-revenue" className={labelClasses}>
-                  Monthly online revenue (EUR)
+                <label htmlFor="calc-rejection" className={labelClasses}>
+                  {t.rejection}: <span className="font-mono">{rejectionPct}%</span>
                 </label>
+                <input
+                  id="calc-rejection"
+                  type="range"
+                  min={REJECTION_MIN * 100}
+                  max={REJECTION_MAX * 100}
+                  step={1}
+                  value={rejectionPct}
+                  onChange={(e) => setRejectionPct(parseInt(e.target.value, 10))}
+                  className="w-full"
+                />
+                <p className="text-[0.7rem] text-text-tertiary mt-1">{t.rejectionHint}</p>
+              </div>
+
+              <div>
+                <label htmlFor="calc-revenue" className={labelClasses}>{t.revenue}</label>
                 <input
                   id="calc-revenue"
                   type="text"
@@ -353,147 +427,144 @@ export function Calculator() {
                     setRevenueRaw(formatInputNumber(e.target.value));
                     setHasCalculated(false);
                   }}
-                  placeholder="e.g. 2,000,000"
+                  placeholder="2,000,000"
                   className={inputClasses}
                 />
               </div>
 
-              {/* Advanced toggle */}
               <div>
                 <button
                   type="button"
                   onClick={() => setShowAdvanced(!showAdvanced)}
                   className="text-[0.8rem] text-text-secondary hover:text-text-primary transition-colors cursor-pointer"
                 >
-                  {showAdvanced ? "- Hide" : "+ Refine"} estimate
+                  {showAdvanced ? t.refineHide : t.refineShow} {t.refineWord}
                 </button>
                 {showAdvanced && (
                   <div className="mt-4 space-y-4 pt-4 border-t border-warm-100">
                     <div>
-                      <label htmlFor="calc-cr" className={labelClasses}>
-                        Conversion rate (%)
-                      </label>
+                      <label htmlFor="calc-cr" className={labelClasses}>{t.cr}</label>
                       <input
                         id="calc-cr"
                         type="text"
                         inputMode="decimal"
                         value={conversionRate}
-                        onChange={(e) => {
-                          setConversionRate(e.target.value);
-                          setHasCalculated(false);
-                        }}
+                        onChange={(e) => setConversionRate(e.target.value)}
                         placeholder="2.0"
                         className={inputClasses}
                       />
                     </div>
                     <div>
-                      <label htmlFor="calc-aov" className={labelClasses}>
-                        Average order value (EUR)
-                      </label>
+                      <label htmlFor="calc-aov" className={labelClasses}>{t.aov}</label>
                       <input
                         id="calc-aov"
                         type="text"
                         inputMode="decimal"
                         value={avgOrderValue}
-                        onChange={(e) => {
-                          setAvgOrderValue(e.target.value);
-                          setHasCalculated(false);
-                        }}
-                        placeholder={derivedAov > 0 ? `${Math.round(derivedAov)} (derived)` : "80"}
+                        onChange={(e) => setAvgOrderValue(e.target.value)}
+                        placeholder={derivedAov > 0 ? `${Math.round(derivedAov)} (${t.derived})` : "80"}
                         className={inputClasses}
                       />
+                    </div>
+                    <div>
+                      <label htmlFor="calc-adblock" className={labelClasses}>{t.adBlockers}</label>
+                      <input
+                        id="calc-adblock"
+                        type="text"
+                        inputMode="decimal"
+                        value={adBlockersRaw}
+                        onChange={(e) => setAdBlockersRaw(e.target.value)}
+                        placeholder="0"
+                        className={inputClasses}
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="calc-exits" className={labelClasses}>{t.earlyExits}</label>
+                      <input
+                        id="calc-exits"
+                        type="text"
+                        inputMode="decimal"
+                        value={earlyExitsRaw}
+                        onChange={(e) => setEarlyExitsRaw(e.target.value)}
+                        placeholder="0"
+                        className={inputClasses}
+                      />
+                      <p className="text-[0.7rem] text-text-tertiary mt-1 leading-relaxed">{t.optionalNote}</p>
                     </div>
                   </div>
                 )}
               </div>
 
-              {/* Calculate button */}
               <button
                 type="button"
                 onClick={handleCalculate}
                 disabled={visitors === 0 || monthlyRevenue === 0}
                 className="w-full py-3.5 text-[0.95rem] font-medium text-white bg-text-primary rounded-[4px] hover:bg-[#333] transition-colors cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Calculate Your Data Loss
+                {t.calculate}
               </button>
 
               <p className="text-[0.7rem] text-text-tertiary text-center leading-relaxed">
-                Loss rates from published research: Advance Metrics, CookieYes,
-                SEOSandwitch, Stape, Google/Deloitte page-speed. No email required.
+                {t.estimateNote} {t.noEmail}
               </p>
 
               {hasCalculated && (
                 <div className="mt-6 pt-6 border-t border-warm-100">
-                  <p className="text-[0.8rem] text-text-tertiary mb-3">
-                    These are estimates based on EU consent averages. Your real
-                    numbers may be higher.
-                  </p>
                   <a
-                    href="https://my.sealmetrics.com/register"
+                    href={t.freeHref}
                     className="block w-full py-3 text-center text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors mb-2"
                   >
-                    Start 14-day trial &mdash; see your exact numbers
+                    {t.freeCta}
                   </a>
-                  <p className="text-[0.72rem] text-text-tertiary text-center">
-                    14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform.
-                  </p>
+                  <p className="text-[0.72rem] text-text-tertiary text-center">{t.freeSub}</p>
                   <div className="mt-4 pt-4 border-t border-warm-100">
-                    <p className="text-[0.75rem] text-text-tertiary text-center mb-3">
-                      Not ready for a demo? Get this report by email.
-                    </p>
+                    <p className="text-[0.75rem] text-text-tertiary text-center mb-3">{t.reportPrompt}</p>
                     {reportSent ? (
-                      <p className="text-[0.8rem] text-green-muted text-center">
-                        Report sent. Check your inbox.
-                      </p>
+                      <p className="text-[0.8rem] text-green-muted text-center">{t.reportSent}</p>
                     ) : (
                       <div className="space-y-3">
                         <div className="flex gap-2">
                           <input
-                          type="email"
-                          placeholder="your@email.com"
-                          value={reportEmail}
-                          onChange={(e) => setReportEmail(e.target.value)}
-                          className="flex-1 px-3 py-2 text-[0.85rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none transition-colors"
+                            type="email"
+                            placeholder="your@email.com"
+                            value={reportEmail}
+                            onChange={(e) => setReportEmail(e.target.value)}
+                            className="flex-1 px-3 py-2 text-[0.85rem] border border-warm-200 rounded-[4px] bg-white text-text-primary focus:border-text-body focus:outline-none transition-colors"
                           />
                           <button
-                          type="button"
-                          className="px-4 py-2 text-[0.85rem] font-medium text-text-primary border border-warm-200 rounded-[4px] hover:border-text-body transition-colors whitespace-nowrap cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                          disabled={!reportEmail || !reportTurnstileToken}
-                          onClick={async () => {
-                            try {
-                              pushEvent({
-                                event: "calculator_report_email",
-                                email: reportEmail,
-                              });
-                              setReportError(false);
-                              await submitFirstPartyForm(
-                                "calculator",
-                                {
-                                  email: reportEmail,
-                                  source: "calculator-report",
-                                  visitors: String(visitors),
-                                  country,
-                                  revenue: String(monthlyRevenue),
-                                  dataLoss: `${Math.round((1 - visibilityRate) * 100)}%`,
-                                },
-                                { turnstileToken: reportTurnstileToken ?? "" }
-                              );
-                              setReportSent(true);
-                            } catch {
-                              setReportError(true);
-                              setReportTurnstileToken(null);
-                              setReportTurnstileResetKey((key) => key + 1);
-                            }
-                          }}
-                        >
-                          Send report
+                            type="button"
+                            className="px-4 py-2 text-[0.85rem] font-medium text-text-primary border border-warm-200 rounded-[4px] hover:border-text-body transition-colors whitespace-nowrap cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
+                            disabled={!reportEmail || !reportTurnstileToken}
+                            onClick={async () => {
+                              try {
+                                pushEvent({ event: "calculator_report_email", email: reportEmail });
+                                setReportError(false);
+                                await submitFirstPartyForm(
+                                  "calculator",
+                                  {
+                                    email: reportEmail,
+                                    source: "calculator-report",
+                                    visitors: String(visitors),
+                                    country,
+                                    revenue: String(monthlyRevenue),
+                                    rejection: `${rejectionPct}%`,
+                                    dataLoss: `${Math.round(s.unseen * 100)}%`,
+                                  },
+                                  { turnstileToken: reportTurnstileToken ?? "" }
+                                );
+                                setReportSent(true);
+                              } catch {
+                                setReportError(true);
+                                setReportTurnstileToken(null);
+                                setReportTurnstileResetKey((key) => key + 1);
+                              }
+                            }}
+                          >
+                            {t.sendReport}
                           </button>
                         </div>
-                        <LeadTurnstile
-                          onToken={setReportTurnstileToken}
-                          resetKey={reportTurnstileResetKey}
-                        />
-                        {reportError && <p role="alert" className="text-[0.75rem] text-red-alert">We could not send the report. Please try again.</p>}
+                        <LeadTurnstile onToken={setReportTurnstileToken} resetKey={reportTurnstileResetKey} />
+                        {reportError && <p role="alert" className="text-[0.75rem] text-red-alert">{t.reportError}</p>}
                       </div>
                     )}
                   </div>
@@ -506,227 +577,134 @@ export function Calculator() {
         {/* ========== RESULTS ========== */}
         <div>
           {!hasCalculated ? (
-            /* Empty state */
             <div className="p-12 sm:p-16 border border-warm-100 rounded-[4px] text-center bg-warm-white">
               <div className="max-w-[320px] mx-auto">
-                <p className="font-serif text-[1.5rem] text-text-primary mb-3">
-                  How much are you not seeing?
-                </p>
-                <p className="text-[0.85rem] text-text-tertiary leading-relaxed">
-                  Enter your monthly visitors, primary market, and revenue. We
-                  will calculate exactly how much data your analytics are
-                  missing.
-                </p>
+                <p className="font-serif text-[1.5rem] text-text-primary mb-3">{t.emptyTitle}</p>
+                <p className="text-[0.85rem] text-text-tertiary leading-relaxed">{t.emptyBody}</p>
               </div>
             </div>
           ) : (
             <div className="space-y-6">
-              {/* ===== THE AHA MOMENT ===== */}
-              {/* Primary shock number */}
+              {/* Headline estimate */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-warm-white">
-                <p className="text-[0.8rem] text-text-tertiary mb-3">
-                  Your analytics decisions are based on
-                </p>
+                <p className="text-[0.8rem] text-text-tertiary mb-3">{t.withInputs}</p>
                 <div className="flex items-baseline gap-3 mb-2">
                   <span className="font-mono text-[4rem] sm:text-[5rem] font-medium text-red-alert leading-none tracking-tight">
-                    {Math.round(visibilityRate * 100)}%
+                    {pct(s.seen)}
                   </span>
-                  <span className="text-[1.1rem] text-text-secondary">
-                    of your real data
-                  </span>
+                  <span className="text-[1.1rem] text-text-secondary">{t.ofVisits}</span>
                 </div>
+                <p className="text-[0.95rem] text-text-primary mb-3">{t.andAttribute(pct(s.attributed))}</p>
                 <p className="text-[0.9rem] text-text-secondary leading-relaxed">
-                  GA4 reports{" "}
-                  <span className="font-mono font-medium text-text-primary">
-                    {formatNumber(ga4Visible)}
-                  </span>{" "}
-                  visitors. In reality,{" "}
-                  <span className="font-mono font-medium text-text-primary">
-                    {formatNumber(visitors)}
-                  </span>{" "}
-                  people visit your site every month.{" "}
-                  <span className="font-mono font-medium text-red-alert">
-                    {formatNumber(invisibleVisitors)}
-                  </span>{" "}
-                  are invisible.
+                  {visitsLine[0]}
+                  <span className="font-mono font-medium text-text-primary">{visitsLine[1]}</span>
+                  {visitsLine[2]}
+                  <span className="font-mono font-medium text-text-primary">{visitsLine[3]}</span>
+                  {visitsLine[4]}
+                  <span className="font-mono font-medium text-red-alert">{visitsLine[5]}</span>
+                  {visitsLine[6]}
                 </p>
+                <p className="text-[0.8rem] text-text-secondary mt-3 leading-relaxed">
+                  {t.rangeLine(pct(range.high.seen), pct(range.low.seen), pct(range.high.attributed), pct(range.low.attributed))}
+                </p>
+                <p className="text-[0.75rem] text-text-tertiary mt-3 leading-relaxed">{t.estimateNote}</p>
               </div>
 
-              {/* Revenue impact — the gut punch */}
+              {/* Revenue */}
               <div className="p-8 sm:p-10 border-2 border-red-alert/20 rounded-[4px] bg-white">
-                <p className="text-[0.75rem] font-medium tracking-[0.06em] uppercase text-red-alert mb-5">
-                  Revenue you cannot attribute, optimize, or learn from
-                </p>
+                <p className="text-[0.75rem] font-medium tracking-[0.06em] uppercase text-red-alert mb-5">{t.revenueTitle}</p>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                  <div>
-                    <p className="text-[0.75rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      This month
-                    </p>
-                    <p className="font-mono text-[1.6rem] sm:text-[1.8rem] font-medium text-text-primary leading-tight">
-                      {formatEur(invisibleRevenueMonthly)}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[0.75rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      This quarter
-                    </p>
-                    <p className="font-mono text-[1.6rem] sm:text-[1.8rem] font-medium text-text-primary leading-tight">
-                      {formatEur(invisibleRevenueQuarterly)}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-[0.75rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      This year
-                    </p>
-                    <p className="font-mono text-[1.6rem] sm:text-[1.8rem] font-medium text-red-alert leading-tight">
-                      {formatEur(invisibleRevenueYearly)}
-                    </p>
-                  </div>
+                  {(
+                    [
+                      [t.month, notAttributedRevenueMonthly, false],
+                      [t.quarter, notAttributedRevenueMonthly * 3, false],
+                      [t.year, notAttributedRevenueMonthly * 12, true],
+                    ] as [string, number, boolean][]
+                  ).map(([label, value, strong]) => (
+                    <div key={label}>
+                      <p className="text-[0.75rem] text-text-tertiary uppercase tracking-wider mb-1">{label}</p>
+                      <p className={`font-mono text-[1.6rem] sm:text-[1.8rem] font-medium leading-tight ${strong ? "text-red-alert" : "text-text-primary"}`}>
+                        {fmtE(value)}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-                <p className="text-[0.8rem] text-text-secondary mt-5 leading-relaxed">
-                  Every campaign optimization, every ROAS calculation, every
-                  board report — based on{" "}
-                  <span className="font-medium text-text-primary">
-                    {Math.round(visibilityRate * 100)}%
-                  </span>{" "}
-                  of what is actually happening.
-                </p>
+                <p className="text-[0.8rem] text-text-secondary mt-5 leading-relaxed">{t.revenueNote(pct(s.attributed))}</p>
               </div>
 
-              {/* ===== ATTRIBUTION QUALITY — second shock ===== */}
+              {/* Attribution */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-warm-white">
-                <h3 className="font-serif text-[1.15rem] text-text-primary mb-2">
-                  It gets worse. The sales you do see are misattributed.
-                </h3>
-                <p className="text-[0.8rem] text-text-secondary mb-6 leading-relaxed">
-                  Your payment system records the sale, but analytics cannot
-                  trace which channel, campaign, or touchpoint drove it. The
-                  result: budget goes to the wrong channels.
-                </p>
+                <h3 className="font-serif text-[1.15rem] text-text-primary mb-2">{t.attrTitle}</h3>
+                <p className="text-[0.8rem] text-text-secondary mb-6 leading-relaxed">{t.attrBody}</p>
 
-                {/* Attribution funnel — horizontal stacked bar */}
                 <div className="mb-6">
                   <div className="flex justify-between text-[0.75rem] text-text-tertiary uppercase tracking-wider mb-2">
-                    <span>Your {formatNumber(realConversions)} monthly sales</span>
-                    <span>100%</span>
+                    <span>{t.yourSales(fmtN(realConversions))}</span>
                   </div>
                   <div className="h-10 flex rounded-[2px] overflow-hidden">
-                    <div
-                      className="bg-green-muted transition-all duration-700"
-                      style={{ width: `${correctAttributionRate * 100}%` }}
-                      title="Correctly attributed"
-                    />
-                    <div
-                      className="bg-[#E8B84B] transition-all duration-700"
-                      style={{ width: `${(misattributedSales / realConversions) * 100}%` }}
-                      title="Misattributed"
-                    />
-                    <div
-                      className="bg-red-alert transition-all duration-700"
-                      style={{ width: `${(invisibleSales / realConversions) * 100}%` }}
-                      title="Invisible"
-                    />
+                    <div className="bg-green-muted transition-all duration-700" style={{ width: `${s.attributed * 100}%` }} title={t.correct} />
+                    <div className="bg-[#E8B84B] transition-all duration-700" style={{ width: `${s.seenWithoutSource * 100}%` }} title={t.noSource} />
+                    <div className="bg-red-alert transition-all duration-700" style={{ width: `${s.unseen * 100}%` }} title={t.invisible} />
                   </div>
-                  <div className="flex gap-5 mt-3">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-[1px] bg-green-muted" />
-                      <span className="text-[0.7rem] text-text-secondary">
-                        Correct — {Math.round(correctAttributionRate * 100)}%
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-[1px] bg-[#E8B84B]" />
-                      <span className="text-[0.7rem] text-text-secondary">
-                        Wrong source — {Math.round((misattributedSales / realConversions) * 100)}%
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-[1px] bg-red-alert" />
-                      <span className="text-[0.7rem] text-text-secondary">
-                        Invisible — {Math.round((invisibleSales / realConversions) * 100)}%
-                      </span>
-                    </div>
+                  <div className="flex flex-wrap gap-5 mt-3">
+                    {(
+                      [
+                        ["bg-green-muted", t.correct, s.attributed],
+                        ["bg-[#E8B84B]", t.noSource, s.seenWithoutSource],
+                        ["bg-red-alert", t.invisible, s.unseen],
+                      ] as [string, string, number][]
+                    ).map(([cls, label, share]) => (
+                      <div key={label} className="flex items-center gap-1.5">
+                        <div className={`w-2.5 h-2.5 rounded-[1px] ${cls}`} />
+                        <span className="text-[0.7rem] text-text-secondary">
+                          {label} — {pct(share)}
+                        </span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                {/* Attribution numbers */}
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                   <div className="p-4 border border-warm-100 rounded-[4px] bg-white">
-                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      Correctly attributed
-                    </p>
-                    <p className="font-mono text-[1.4rem] font-medium text-green-muted leading-tight">
-                      {formatNumber(correctlyAttributed)}
-                    </p>
-                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">
-                      sales/month
-                    </p>
+                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">{t.correct}</p>
+                    <p className="font-mono text-[1.4rem] font-medium text-green-muted leading-tight">{fmtN(correctlyAttributed)}</p>
+                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">{t.salesMonth}</p>
                   </div>
                   <div className="p-4 border border-warm-100 rounded-[4px] bg-white">
-                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      Wrong source
-                    </p>
-                    <p className="font-mono text-[1.4rem] font-medium text-[#C8960A] leading-tight">
-                      {formatNumber(misattributedSales)}
-                    </p>
-                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">
-                      {formatEur(misattributedRevenue)} misallocated
-                    </p>
+                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">{t.noSource}</p>
+                    <p className="font-mono text-[1.4rem] font-medium text-[#C8960A] leading-tight">{fmtN(withoutSourceSales)}</p>
+                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">{t.noSourceSub(fmtE(withoutSourceRevenue))}</p>
                   </div>
                   <div className="p-4 border border-warm-100 rounded-[4px] bg-white">
-                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">
-                      Completely invisible
-                    </p>
-                    <p className="font-mono text-[1.4rem] font-medium text-red-alert leading-tight">
-                      {formatNumber(invisibleSales)}
-                    </p>
-                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">
-                      {formatEur(invisibleSalesRevenue)} untracked
-                    </p>
+                    <p className="text-[0.7rem] text-text-tertiary uppercase tracking-wider mb-1">{t.invisible}</p>
+                    <p className="font-mono text-[1.4rem] font-medium text-red-alert leading-tight">{fmtN(invisibleSales)}</p>
+                    <p className="text-[0.7rem] text-text-tertiary mt-0.5">{t.invisibleSub(fmtE(invisibleSalesRevenue))}</p>
                   </div>
                 </div>
 
                 <p className="text-[0.8rem] text-text-secondary mt-5 leading-relaxed">
-                  You are optimizing ad spend based on{" "}
-                  <span className="font-mono font-medium text-text-primary">
-                    {Math.round(correctAttributionRate * 100)}%
-                  </span>{" "}
-                  correctly attributed sales. The other{" "}
-                  {Math.round((1 - correctAttributionRate) * 100)}% are either
-                  credited to the wrong channel or not tracked at all.
+                  {attrFoot[0]}
+                  <span className="font-mono font-medium text-text-primary">{attrFoot[1]}</span>
+                  {attrFoot[2]}
+                  {attrFoot[3]}
+                  {attrFoot[4]}
                 </p>
               </div>
 
-              {/* Funnel breakdown */}
+              {/* Funnel */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-warm-white">
-                <h3 className="font-serif text-[1.15rem] text-text-primary mb-3">
-                  Where the data disappears
-                </h3>
-                <p className="text-[0.8rem] text-text-secondary mb-6 leading-relaxed max-w-[62ch]">
-                  Consent, ad blockers and Safari ITP are only part of it. The
-                  last cut is technical: GA4 and Adobe Analytics load a heavy
-                  measurement tag that fires late in the page, so another{" "}
-                  <span className="font-medium text-text-primary">
-                    {Math.round(HEAVY_PIXEL_ABANDON * 100)}%
-                  </span>{" "}
-                  of visitors leave before the hit is ever sent. Sealmetrics
-                  uses a lightweight first-party pixel that fires immediately —
-                  it never pays this tax.
-                </p>
+                <h3 className="font-serif text-[1.15rem] text-text-primary mb-3">{t.funnelTitle}</h3>
+                <p className="text-[0.8rem] text-text-secondary mb-6 leading-relaxed max-w-[62ch]">{t.funnelBody}</p>
                 <div className="space-y-5">
                   {funnelSteps.map((step, i) => {
                     const isLast = i === funnelSteps.length - 1;
                     return (
                       <div key={step.label}>
                         <div className="flex justify-between text-[0.8rem] mb-1.5">
-                          <span className="text-text-secondary">
-                            {step.label}
-                          </span>
+                          <span className="text-text-secondary">{step.label}</span>
                           <span className="font-mono text-text-primary font-medium">
-                            {formatNumber(step.value)}
-                            <span className="text-text-tertiary ml-1.5">
-                              ({Math.round(step.pct)}%)
-                            </span>
+                            {fmtN(step.value)}
+                            <span className="text-text-tertiary ml-1.5">({Math.round(step.pct)}%)</span>
                           </span>
                         </div>
                         <div className="h-6 bg-warm-100 rounded-[2px] overflow-hidden">
@@ -737,138 +715,68 @@ export function Calculator() {
                             style={{ width: `${Math.max(step.pct, 1)}%` }}
                           />
                         </div>
-                        {step.note && (
-                          <p className="text-[0.7rem] text-text-tertiary mt-1">
-                            {step.note}
-                          </p>
-                        )}
+                        {step.note && <p className="text-[0.7rem] text-text-tertiary mt-1">{step.note}</p>}
                       </div>
                     );
                   })}
 
-                  {/* Sealmetrics bar */}
                   <div className="pt-3 mt-3 border-t border-warm-200">
-                    <div className="flex justify-between text-[0.8rem] mb-1.5">
-                      <span className="text-text-secondary font-medium">
-                        Sealmetrics captures
-                      </span>
-                      <span className="font-mono text-green-muted font-medium">
-                        {formatNumber(visitors)}
-                        <span className="ml-1.5">(100%)</span>
-                      </span>
-                    </div>
-                    <div className="h-6 bg-warm-100 rounded-[2px] overflow-hidden">
-                      <div className="h-full bg-green-muted rounded-[2px] w-full" />
-                    </div>
-                    <p className="text-[0.7rem] text-text-tertiary mt-1">
-                      No cookies. No consent dependency. No sampling.
-                    </p>
+                    <p className="text-[0.8rem] text-text-secondary font-medium mb-1">{t.sealTitle}</p>
+                    <p className="text-[0.75rem] text-text-tertiary leading-relaxed">{t.sealLine}</p>
                   </div>
                 </div>
               </div>
 
-              {/* What this means for your team */}
+              {/* What this means */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-white">
-                <h3 className="font-serif text-[1.15rem] text-text-primary mb-5">
-                  What this means for your decisions
-                </h3>
+                <h3 className="font-serif text-[1.15rem] text-text-primary mb-5">{t.meansTitle}</h3>
                 <div className="space-y-4">
-                  <div className="flex gap-4">
-                    <div className="w-1 bg-red-alert/30 rounded-full flex-shrink-0" />
-                    <div>
-                      <p className="text-[0.85rem] text-text-primary font-medium">
-                        Your ROAS is wrong
-                      </p>
-                      <p className="text-[0.8rem] text-text-secondary mt-0.5">
-                        {formatNumber(misattributedSales)} sales/month are
-                        credited to the wrong channel. You may be scaling
-                        campaigns that are not working and cutting campaigns
-                        that are.
-                      </p>
+                  {[
+                    [t.m1Title, t.m1Body(fmtN(withoutSourceSales))],
+                    [t.m2Title(fmtN(invisibleSales)), t.m2Body(fmtE(invisibleSalesRevenue))],
+                    [t.m3Title(pct(correctAttributionRate)), t.m3Body(fmtN(correctlyAttributed), fmtN(realConversions))],
+                  ].map(([title, body]) => (
+                    <div key={title} className="flex gap-4">
+                      <div className="w-1 bg-red-alert/30 rounded-full flex-shrink-0" />
+                      <div>
+                        <p className="text-[0.85rem] text-text-primary font-medium">{title}</p>
+                        <p className="text-[0.8rem] text-text-secondary mt-0.5">{body}</p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="w-1 bg-red-alert/30 rounded-full flex-shrink-0" />
-                    <div>
-                      <p className="text-[0.85rem] text-text-primary font-medium">
-                        {formatNumber(invisibleSales)} sales/month have no source at all
-                      </p>
-                      <p className="text-[0.8rem] text-text-secondary mt-0.5">
-                        These conversions happen — your payment system records
-                        them — but analytics cannot tell you what drove them.
-                        That is {formatEur(invisibleSalesRevenue)}/month with
-                        zero attribution.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="flex gap-4">
-                    <div className="w-1 bg-red-alert/30 rounded-full flex-shrink-0" />
-                    <div>
-                      <p className="text-[0.85rem] text-text-primary font-medium">
-                        Budget allocation is based on {Math.round(correctAttributionRate * 100)}% accurate data
-                      </p>
-                      <p className="text-[0.8rem] text-text-secondary mt-0.5">
-                        Only {formatNumber(correctlyAttributed)} of your{" "}
-                        {formatNumber(realConversions)} monthly sales are
-                        correctly attributed. Every budget decision — which
-                        channels to scale, which to cut — is informed by{" "}
-                        {Math.round((1 - correctAttributionRate) * 100)}%
-                        incorrect or missing data.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
               {/* CTA */}
               <div className="p-8 sm:p-10 border border-warm-100 rounded-[4px] bg-warm-white text-center">
-                <p className="font-serif text-[1.4rem] text-text-primary mb-2">
-                  See what {Math.round(visibilityRate * 100)}% looks like
-                  next to 100%
-                </p>
-                <p className="text-[0.85rem] text-text-secondary mb-6 max-w-[480px] mx-auto">
-                  In a 30-minute demo, we show your real traffic alongside GA4.
-                  Most teams see 3-8x more visitors and conversions.
-                </p>
+                <p className="font-serif text-[1.4rem] text-text-primary mb-2">{t.ctaTitle}</p>
+                <p className="text-[0.85rem] text-text-secondary mb-6 max-w-[480px] mx-auto">{t.ctaBody}</p>
                 <Link
-                  href="/demo"
+                  href={t.freeHref}
                   className="inline-flex items-center px-10 py-4 text-[1rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
                 >
-                  See Your Real Numbers
+                  {t.ctaButton}
                 </Link>
-                <p className="mt-4 text-[0.75rem] text-text-tertiary">
-                  No commitment. Just your actual data.
-                </p>
+                <p className="mt-4 text-[0.75rem] text-text-tertiary">{t.ctaFoot}</p>
               </div>
 
-              {/* Share bar */}
+              {/* Share */}
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-5 border border-warm-100 rounded-[4px] bg-warm-50">
-                <p className="text-[0.8rem] text-text-secondary">
-                  Share this result with your team
-                </p>
+                <p className="text-[0.8rem] text-text-secondary">{t.share}</p>
                 <button
                   type="button"
                   onClick={handleCopyLink}
                   className="inline-flex items-center gap-2 px-5 py-2.5 text-[0.8rem] font-medium text-text-primary border border-warm-200 rounded-[4px] bg-white hover:bg-warm-white transition-colors cursor-pointer"
                 >
                   {copied ? (
-                    "Link copied"
+                    t.copied
                   ) : (
                     <>
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      >
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                         <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                       </svg>
-                      Copy link
+                      {t.copy}
                     </>
                   )}
                 </button>

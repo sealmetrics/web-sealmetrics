@@ -92,40 +92,38 @@ export default function ConsentBannerImpactPage() {
           <p>
             The consent rejection rate varies by country, industry, and banner
             design. In our experience with clients, between 40% and 60% of
-            traffic doesn&apos;t accept cookies, and privacy-conscious markets
-            such as Germany and the Netherlands sit at the high end.
+            traffic doesn&apos;t accept cookies. Where a site lands in that
+            range depends on its market, its audience and its banner.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
             <div className="space-y-4">
               {[
-                { country: "Germany", rate: "60-70%" },
-                { country: "Netherlands", rate: "55-65%" },
-                { country: "France", rate: "50-60%" },
-                { country: "Spain", rate: "40-50%" },
-                { country: "UK", rate: "35-45%" },
+                { label: "Traffic that doesn't accept cookies", rate: "40–60%" },
+                { label: "Of those who accept, not on the first pageview", rate: "40%" },
               ].map((item) => (
                 <div
-                  key={item.country}
-                  className="flex justify-between text-[0.9rem]"
+                  key={item.label}
+                  className="flex justify-between gap-4 text-[0.9rem]"
                 >
-                  <span className="text-text-secondary">{item.country}</span>
+                  <span className="text-text-secondary">{item.label}</span>
                   <span className="font-mono text-text-primary font-medium">
-                    {item.rate} rejection
+                    {item.rate}
                   </span>
                 </div>
               ))}
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Approximate ranges based on industry reports and Sealmetrics
-              client data, 2025.
+              Our experience with clients, not a study. Rejection varies by
+              country and by banner design; we don&apos;t publish per-country
+              figures. Measure your own site to know.
             </p>
           </div>
 
           <p>
-            This means that if your primary audience is in Germany, your
-            analytics might be missing half of your visitors before any other
-            loss factor is considered. Ad blockers, browser restrictions, and{" "}
+            This means that at the top of that range your analytics is missing
+            more than half of your visitors before any other loss factor is
+            considered. Ad blockers, browser restrictions, and{" "}
             <Link
               href="/blog/ga4-data-sampling-problem"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

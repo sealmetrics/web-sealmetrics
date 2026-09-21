@@ -21,6 +21,7 @@ function DataGap({ answers }: { answers: QuizAnswers }) {
   const invisible = traffic - visible;
   const visiblePct = Math.round((1 - lossRate) * 100);
   const invisiblePct = 100 - visiblePct;
+  const usesClientRange = !answers.cookieRate || answers.cookieRate === "unknown";
 
   return (
     <div>
@@ -28,7 +29,9 @@ function DataGap({ answers }: { answers: QuizAnswers }) {
         Your growth opportunity
       </p>
       <h2 className="headline-sub mb-8">
-        ~{invisiblePct}% of your traffic is currently unmeasured
+        {usesClientRange
+          ? "An estimated 40–60% of your traffic is currently unmeasured"
+          : `~${invisiblePct}% of your traffic is currently unmeasured`}
       </h2>
 
       {/* Visual bar */}
@@ -82,6 +85,11 @@ function DataGap({ answers }: { answers: QuizAnswers }) {
         real visitors, browsing real pages, making real purchase decisions. The
         channels that drove them cannot be optimized. Complete data changes
         that.
+      </p>
+      <p className="text-[0.75rem] text-text-tertiary mt-4 leading-relaxed">
+        {usesClientRange
+          ? "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview), shown at the 50% midpoint. Measure your own store to know."
+          : "Estimate based on the consent rate you entered. Measure your own store to know."}
       </p>
     </div>
   );
