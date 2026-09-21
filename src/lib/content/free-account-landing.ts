@@ -99,7 +99,7 @@ const en: FreeAccountCopy = {
   cta: "Open my free account",
   eyebrow: "The Black Friday Truth Test · 1,000,000 events · €0",
   h1Start: "You pay for every click.", h1End: "You decide on half.",
-  lead: "Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. At Incapto, GA4 missed 29% of visits; at Palladium, 35% of GA4 bookings had no channel.",
+  lead: "In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview. Here is the deal for CMOs and eCommerce managers. Run Sealmetrics next to GA4 on your own site, and reconcile both against the orders your store actually took. You will know which channels are selling for real before Black Friday. Claude installs it, there is no card, and you keep GA4. At Incapto, GA4 missed 29% of visits; at Palladium, 35% of GA4 bookings had no channel.",
   stats: [
     { value: "+41%", label: "more visits than GA4 recorded", note: "Incapto · Shopify · 48 days" },
     { value: "+52%", label: "more paid-campaign traffic", note: "Incapto · top of a +37 to +52% range" },
@@ -295,7 +295,7 @@ const es: FreeAccountCopy = {
   cta: "Abrir mi cuenta gratis",
   eyebrow: "La Prueba de la Verdad del Black Friday · 1.000.000 de eventos · 0 €",
   h1Start: "Pagas por todos los clics.", h1End: "Decides con la mitad.",
-  lead: "Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. En Incapto, GA4 no vio el 29% de las visitas; en Palladium, el 35% de las reservas de GA4 no tenía canal.",
+  lead: "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Este es el trato para CMOs y eCommerce managers. Mide con Sealmetrics en paralelo a GA4 en tu propia web, y concilia las dos contra los pedidos que de verdad hizo tu tienda. Sabrás qué canales están vendiendo de verdad antes del Black Friday. Lo instala Claude, no hay tarjeta y te quedas con GA4. En Incapto, GA4 no vio el 29% de las visitas; en Palladium, el 35% de las reservas de GA4 no tenía canal.",
   stats: [
     { value: "+41%", label: "más visitas de las que registró GA4", note: "Incapto · Shopify · 48 días" },
     { value: "+52%", label: "más tráfico de campañas de pago", note: "Incapto · techo de un rango de +37 a +52%" },
