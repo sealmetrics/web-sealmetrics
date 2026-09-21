@@ -181,7 +181,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               <li>
                 Las alternativas enterprise se dividen en dos categorías: las
                 plataformas dependientes de cookies (GA360, Adobe, Piwik PRO) que
-                mejoran a GA4 pero aún pierden entre el 15% y el 60% del tráfico UE por consentimiento, y las
+                mejoran a GA4 pero siguen sin ver a quien rechaza el consentimiento, y las
                 plataformas cookieless (Sealmetrics) que no pierden tráfico por el consentimiento.
               </li>
               <li>
@@ -218,7 +218,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               >
                 consentimiento
               </Link>
-              . En la UE, el rechazo de consentimiento cuesta entre el 15% y el 60% de los visitantes, según el sector, la fuerza de la marca y el mix de tráfico. Antes de
+              . En la UE, en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies. Antes de
               que el{" "}
               <Link
                 href="/es/glossary/data-sampling"
@@ -341,7 +341,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
 
             <p>
               La limitación de fondo persiste: GA360 depende de cookies. En el
-              eCommerce europeo, eso significa que la pérdida por consentimiento, de entre el 15% y el 60% del dato, se
+              eCommerce europeo, eso significa que el hueco por consentimiento se
               mantiene sin importar el gasto. A seis cifras al año, la pregunta es
               si tu presupuesto produce dato completo o mejores estimaciones.
             </p>
@@ -419,8 +419,8 @@ export default function GA4AlternativesEnterpriseEsPage() {
               Las contrapartidas son significativas. La implementación lleva de 3 a
               6 meses con consultores especializados. El precio arranca por encima
               de 50K$ y escala con las server calls. Y como toda plataforma
-              dependiente de cookies, Adobe se enfrenta a la misma brecha por consentimiento, de entre el 15% y el 60%
-              de dato UE.
+              dependiente de cookies, Adobe se enfrenta a la misma brecha por
+              consentimiento en la UE.
             </p>
 
             <p>
@@ -602,7 +602,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
             <p>
               Piwik PRO sigue dependiendo de cookies. Pese a su posicionamiento
               privacy-first, la plataforma requiere consentimiento para el tracking.
-              En mercados UE, eso significa que entre el 15% y el 60% del tráfico de eCommerce, según el sector y el mix de tráfico,
+              En mercados UE, eso significa que quien rechaza el consentimiento
               permanece invisible. Las features con IA son limitadas. El precio
               enterprise arranca en torno a {"€"}30.000 al año.
             </p>
@@ -843,7 +843,7 @@ export default function GA4AlternativesEnterpriseEsPage() {
               </strong>{" "}
               Si la mayoría de tus clientes son europeos, las plataformas
               dependientes de cookies atribuirán mal de forma estructural
-              el revenue de ese 15–60% de visitas que pierden por consentimiento. Esto afecta al cálculo del ROI de campañas, a la
+              el revenue de las visitas que pierden por rechazo del consentimiento. Esto afecta al cálculo del ROI de campañas, a la
               asignación de presupuesto y al reporting de dirección. Solo las
               plataformas cookieless evitan esta brecha por completo.
             </p>

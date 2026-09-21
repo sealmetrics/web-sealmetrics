@@ -458,23 +458,18 @@ export default function BestWebAnalyticsToolPage() {
             <StatRow
               items={[
                 {
-                  value: "60%",
-                  label: "Reject consent in EU markets, once the banner is compliant",
+                  value: "40–60%",
+                  label: "Of traffic doesn't accept cookies, in our experience with clients",
                   tone: "risk",
                 },
                 {
-                  value: "25%",
-                  label: "Blocked by ad blockers and browser tracking protection",
+                  value: "40%",
+                  label: "Of those who accept don't do it on the first pageview, where the source is recorded",
                   tone: "risk",
                 },
                 {
-                  value: "5%",
-                  label: "Tag failures on mobile — more on slow networks",
-                  tone: "risk",
-                },
-                {
-                  value: "~40%",
-                  label: "What actually reaches the report your CFO reads as the whole",
+                  value: "29%",
+                  label: "Of visits GA4 did not record at Incapto, measured over 48 days",
                   tone: "risk",
                 },
               ]}

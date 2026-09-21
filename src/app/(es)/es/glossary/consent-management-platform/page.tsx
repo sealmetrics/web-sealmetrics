@@ -56,7 +56,7 @@ export default function ConsentManagementPlatformEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">El coste analítico del consentimiento</h2>
           <p>
-            Las CMP son legalmente necesarias para la analítica basada en cookies, pero crean un problema de medición de fondo: quien rechaza las cookies se vuelve invisible para la analítica. En la UE, la analítica que depende del consentimiento pierde entre el 15% y el 60% de los visitantes, según el sector, la fuerza de la marca y el mix de tráfico.
+            Las CMP son legalmente necesarias para la analítica basada en cookies, pero crean un problema de medición de fondo: quien rechaza las cookies se vuelve invisible para la analítica. En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista.
           </p>
           <p>
             Eso introduce un sesgo sistemático en tus datos. Tu analítica sobrerrepresenta al segmento que acepta cookies y pierde por completo al segmento preocupado por la privacidad, que a menudo incluye a los visitantes de mayor valor.
@@ -81,7 +81,7 @@ export default function ConsentManagementPlatformEsPage() {
         <div className="mt-12">
           <QuickAnswer label="Respuesta rápida">
             <p>
-              Una plataforma de gestión de consentimiento (CMP) es el software que muestra el banner de cookies, registra la decisión del visitante y comunica a las herramientas de destino (analítica, píxeles publicitarios, tests A/B) si pueden almacenar cookies o leer información del dispositivo. Es obligatoria bajo el art. 7 del RGPD y el art. 5(3) de ePrivacy para cualquier herramienta que use cookies, localStorage o fingerprinting. Lo que eso le cuesta a la analítica varía mucho: las herramientas que dependen del consentimiento pierden entre el 15% y el 60% de los visitantes UE, según el sector, la fuerza de la marca y el mix de tráfico.
+              Una plataforma de gestión de consentimiento (CMP) es el software que muestra el banner de cookies, registra la decisión del visitante y comunica a las herramientas de destino (analítica, píxeles publicitarios, tests A/B) si pueden almacenar cookies o leer información del dispositivo. Es obligatoria bajo el art. 7 del RGPD y el art. 5(3) de ePrivacy para cualquier herramienta que use cookies, localStorage o fingerprinting. Lo que eso le cuesta a la analítica depende de cada web: en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies.
             </p>
             <p>
               La consecuencia práctica: la analítica con cookies mide solo la fracción de visitantes que consiente, y eso produce una muestra autoseleccionada que sesga cada decisión de canal y cada tasa de conversión construida sobre ella. Una arquitectura sin consentimiento —sin cookies, sin identificadores, sin almacenamiento en el dispositivo— queda fuera del supuesto del art. 5(3) y del ámbito material del RGPD, así que la capa de analítica no necesita la CMP. Otras herramientas (píxel de Meta, píxel de Google Ads) sí siguen necesitando el banner si permanecen en el stack.

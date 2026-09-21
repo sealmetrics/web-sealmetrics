@@ -52,7 +52,7 @@ export const questions: QuizQuestion[] = [
         saas:
           "SaaS trial-to-paid funnels are especially vulnerable — invisible sessions break cohort analysis.",
         media:
-          "Publishers relying on CPM models undervalue their inventory when consent hides 15–60% of their traffic, depending on sector and traffic mix.",
+          "Publishers relying on CPM models undervalue their inventory when consent hides part of their audience — in our experience with clients, between 40% and 60% of traffic doesn't accept cookies.",
         agency:
           "Agencies with complete data win more trust and budget — the gap between real and reported performance is an opportunity to demonstrate true impact.",
       };
@@ -75,12 +75,12 @@ export const questions: QuizQuestion[] = [
     getInsight: (v) => {
       const map: Record<string, string> = {
         fr_de:
-          "France and Germany have some of the highest cookie rejection rates in Europe — 60-80% of visitors decline tracking.",
+          "France and Germany sit at the high end of cookie rejection in Europe. In our experience with clients, between 40% and 60% of traffic doesn't accept cookies overall.",
         es_it:
-          "Spain and Italy see 40-55% rejection rates, growing 8-12 points per year as consent fatigue increases.",
+          "Spain and Italy are no exception: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview.",
         nl_be_at:
-          "The Netherlands, Belgium and Austria consistently reject cookies at 55-70%, driven by strict DPA enforcement.",
-        uk: "UK rejection rates hover at 35-50%, lower than continental Europe but still enough to distort your attribution.",
+          "The Netherlands, Belgium and Austria sit at the high end of cookie rejection, driven by strict DPA enforcement.",
+        uk: "UK rejection tends to be lower than in continental Europe, but still enough to distort your attribution.",
         eu_other:
           "Most EU markets now see 40-65% cookie rejection. The trend is accelerating across all member states.",
         non_eu:
@@ -142,7 +142,7 @@ export const questions: QuizQuestion[] = [
         "20k_50k":
           "At this budget, incomplete data could be costing you EUR 10,000-25,000/month in suboptimal allocation.",
         over50k:
-          "Enterprise ad spend with a 15–60% consent gap, depending on sector and traffic mix, means EUR 25,000+ per month allocated based on partial information.",
+          "Enterprise ad spend with a consent gap — in our experience with clients, 40–60% of traffic doesn't accept cookies — means EUR 25,000+ per month allocated based on partial information.",
       };
       return map[v] ?? "";
     },
@@ -453,13 +453,13 @@ export function getAdSpendImpact(answers: QuizAnswers): {
 export function getIndustryContext(business: string): string {
   const contexts: Record<string, string> = {
     ecommerce:
-      "For eCommerce, every invisible session is a potential purchase you cannot attribute. When consent rejection removes 15–60% of sessions, depending on sector, brand strength and traffic mix, your best-performing channels may appear underperforming — leading you to cut budget from what actually drives revenue. On a Shopify store measured in parallel for 48 days, GA4 did not record 29% of visits and 45% of pageviews.",
+      "For eCommerce, every invisible session is a potential purchase you cannot attribute. When, as in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, your best-performing channels may appear underperforming — leading you to cut budget from what actually drives revenue. On Incapto's Shopify store, measured in parallel for 48 days, GA4 did not record 29% of visits and 45% of pageviews.",
     leadgen:
       "In lead generation, the gap between reported and actual form completions directly affects cost-per-lead calculations. When half your traffic is invisible, you overvalue channels that happen to capture consenting users and undervalue channels that drive privacy-conscious prospects — often your most sophisticated buyers.",
     saas:
       "SaaS acquisition funnels depend on cohort analysis and trial-to-paid attribution. When cookie rejection breaks session continuity, free trial signups appear as direct traffic and your true CAC by channel becomes unreliable. This distortion compounds as you scale ad spend.",
     media:
-      "Publishers monetizing through advertising sell based on audience size and engagement. When consent hides 15–60% of your audience from analytics, depending on sector and traffic mix, you systematically undervalue your inventory. Programmatic buyers using your GA4 data see a smaller, less engaged audience than actually exists.",
+      "Publishers monetizing through advertising sell based on audience size and engagement. When consent hides part of your audience from analytics — in our experience with clients, between 40% and 60% of traffic doesn't accept cookies — you systematically undervalue your inventory. Programmatic buyers using your GA4 data see a smaller, less engaged audience than actually exists.",
     agency:
       "For agencies, data credibility is client retention. When your reports show different numbers than your clients see in their own systems, trust erodes. Complete data lets you demonstrate true campaign impact — not an estimate based on the fraction of visitors who accepted cookies.",
   };

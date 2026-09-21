@@ -180,7 +180,7 @@ export default function OmnibusShortPage() {
           <p>
             The combined effect of equal-prominence reject buttons and the
             six-month re-ask prohibition will likely push consent rejection
-            losses beyond the 15–60% of EU visits they already cost, depending on sector, brand strength and traffic mix.
+            losses beyond what they already cost: in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies today.
             For cookie-dependent analytics, this means even more{" "}
             <Link
               href="/blog/consent-banner-impact-on-analytics"

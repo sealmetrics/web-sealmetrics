@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 };
 
 const comparisons = [
-  { slug: "vs-ga4", name: "Google Analytics 4", stat: "15–60% of EU visits, by sector", tagline: "The free default everyone uses — and its structural blind spot in Europe." },
+  { slug: "vs-ga4", name: "Google Analytics 4", stat: "40–60% of traffic rejects cookies (client experience)", tagline: "The free default everyone uses — and its structural blind spot in Europe." },
   { slug: "vs/ga360", name: "Google Analytics 360", stat: "~$50–175K/yr", tagline: "Enterprise price, enterprise contract, same cookie architecture as free GA4." },
   { slug: "vs/adobe-analytics", name: "Adobe Analytics", stat: "~$50–200K + specialists", tagline: "Enterprise depth, but 6-month implementation and Adobe-certified staff required." },
   { slug: "vs/piwik-pro", name: "Piwik PRO", stat: "Enterprise quote-only", tagline: "EU-hosted — but still cookie-based and consent-dependent." },

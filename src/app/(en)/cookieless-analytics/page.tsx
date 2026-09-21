@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ComparisonByline } from "@/components/sections/v3/ComparisonByline";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -13,7 +14,7 @@ import { FinalCtaSharedV3 } from "@/components/sections/v3/FinalCtaSharedV3";
 import { ogImage } from "@/lib/seo/og";
 
 const PILLAR_DATE_PUBLISHED = "2026-05-28";
-const PILLAR_DATE_MODIFIED = "2026-05-28";
+const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
   title: "Cookieless analytics, explained — Sealmetrics",
@@ -49,7 +50,7 @@ const faqs = [
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
-    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: consent rejection removes 15–60% of visitors depending on sector, brand strength and traffic mix, ad blockers strip the script for a share of visitors that varies by audience, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
+    a: "It captures more, not the same. Cookie-based tools lose data three times in Europe: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, ad blockers strip the script for a share of visitors that varies by audience, and Safari/Firefox cap first-party cookies at 7 days. Cookieless collection avoids the consent and cookie-expiry losses, and served from your own subdomain it is far less exposed to ad blockers. Measured cases: Dreamplace Hotels sees roughly 30% more traffic than Google Analytics and attributes 15–20% more sales against its CRM; on Incapto's Shopify store, GA4 missed 29% of visits while Sealmetrics recorded 96% of real orders.",
   },
   {
     q: "Can I run it alongside Google Analytics 4?",
@@ -123,6 +124,7 @@ export default function CookielessAnalyticsPillar() {
               Complete data, by architecture.
             </em>
           </h1>
+          <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="en" />
           <p
             className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
             style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
@@ -192,13 +194,14 @@ export default function CookielessAnalyticsPillar() {
           <div className="mt-10 space-y-8">
             <div>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                1. Consent rejection — 15 to 60% of EU visitors
+                1. Consent rejection — 40 to 60% of traffic, in our experience
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 Since the 2019 CNIL and ICO guidance hardened, a consent
                 banner is required before any non-essential cookie is set.
-                What that costs a consent-based tool ranges from 15% to 60%
-                of EU visitors, depending on sector, brand strength and traffic mix. Those visitors are
+                In our experience with clients, between 40% and 60% of
+                traffic doesn&apos;t accept cookies, and of those who do, 40%
+                don&apos;t accept on the first pageview. Those visitors are
                 still on your site, still buying, still leaving — but
                 invisible to your analytics.
               </p>

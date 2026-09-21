@@ -12,10 +12,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "What Is a Consent Management Platform (CMP)?",
   description:
-    "A CMP displays cookie consent banners and manages user preferences. Required under GDPR for cookie analytics, which loses 15–60% of EU visits by sector.",
+    "A CMP shows the cookie consent banner and stores choices. In our experience with clients, 40–60% of traffic rejects cookies, and analytics never sees it.",
   openGraph: {
     title: "What Is a Consent Management Platform (CMP)?",
-    description: "A CMP displays cookie consent banners and manages user preferences. Consent costs analytics 15–60% of EU visits, by sector.",
+    description: "A CMP shows the cookie consent banner and stores choices. In our experience with clients, 40–60% of traffic doesn't accept cookies.",
     type: "article",
     url: "https://sealmetrics.com/glossary/consent-management-platform/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is a Consent Management Platform (CMP)?",
-    description: "A CMP displays cookie consent banners and manages user preferences. Consent costs analytics 15–60% of EU visits, by sector.",
+    description: "A CMP shows the cookie consent banner and stores choices. In our experience with clients, 40–60% of traffic doesn't accept cookies.",
     images: [ogImage("/glossary/consent-management-platform/")],
   },
   alternates: {
@@ -56,7 +56,7 @@ export default function ConsentManagementPlatformPage() {
             </p>
           </div>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The analytics cost of consent</h2>
-          <p>CMPs are legally necessary for cookie-based analytics, but they create a fundamental measurement problem: visitors who reject cookies become invisible to analytics. In the EU, consent-based analytics loses 15–60% of visitors, depending on sector, brand strength and traffic mix.</p>
+          <p>CMPs are legally necessary for cookie-based analytics, but they create a fundamental measurement problem: visitors who reject cookies become invisible to analytics. In our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies, and of those who do, 40% don&rsquo;t accept on the first pageview.</p>
           <p>This creates a systematic bias in your data. Your analytics over-represent the cookie-accepting segment and entirely miss the privacy-conscious segment, which often includes higher-value visitors.</p>
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The alternative</h2>
           <p><Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> does not require a CMP for its operation because it does not use cookies or collect personal data. This eliminates the consent rejection data loss vector entirely while maintaining full <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link>.</p>
@@ -73,7 +73,7 @@ export default function ConsentManagementPlatformPage() {
         <div className="mt-12">
           <QuickAnswer>
             <p>
-              A Consent Management Platform (CMP) is software that displays a cookie banner, captures the visitor&rsquo;s consent decision, and signals downstream tools (analytics, ad pixels, A/B testing) whether they may store cookies or read terminal-device information. Required under GDPR Art. 7 and ePrivacy Art. 5(3) for any tool that uses cookies, localStorage, or fingerprinting. What that costs analytics varies widely: consent-based tools lose 15–60% of EU visitors, depending on sector, brand strength and traffic mix.
+              A Consent Management Platform (CMP) is software that displays a cookie banner, captures the visitor&rsquo;s consent decision, and signals downstream tools (analytics, ad pixels, A/B testing) whether they may store cookies or read terminal-device information. Required under GDPR Art. 7 and ePrivacy Art. 5(3) for any tool that uses cookies, localStorage, or fingerprinting. What that costs analytics varies by site: in our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies.
             </p>
             <p>
               The practical consequence: cookie-based analytics measure only the consenting fraction of visitors, creating a self-selected sample that biases every channel and conversion-rate decision built on it. Consentless architecture — no cookies, no identifiers, no terminal-device storage — sits outside the Art. 5(3) trigger and the GDPR material scope, so the CMP is not required for the analytics layer. Other tools (Meta pixel, Google Ads pixel) still need the banner if they remain in the stack.

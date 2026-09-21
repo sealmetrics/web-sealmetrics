@@ -454,23 +454,18 @@ export default function MejorHerramientaAnaliticaWebPage() {
             <StatRow
               items={[
                 {
-                  value: "60%",
-                  label: "Rechaza el consentimiento en mercados UE con banner conforme",
+                  value: "40–60%",
+                  label: "Del tráfico no acepta cookies, en nuestra experiencia con clientes",
                   tone: "risk",
                 },
                 {
-                  value: "25%",
-                  label: "Bloqueado por adblockers y protección antitracking",
+                  value: "40%",
+                  label: "De quienes aceptan no lo hace en la primera página vista, donde se registra la fuente",
                   tone: "risk",
                 },
                 {
-                  value: "5%",
-                  label: "Fallos de etiqueta en móvil — más en redes lentas",
-                  tone: "risk",
-                },
-                {
-                  value: "~40%",
-                  label: "Lo que llega de verdad al informe que tu CFO lee como el total",
+                  value: "29%",
+                  label: "De las visitas que GA4 no registró en Incapto, medido durante 48 días",
                   tone: "risk",
                 },
               ]}

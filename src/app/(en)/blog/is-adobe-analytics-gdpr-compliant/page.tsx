@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   // fuera del snippet, que es lo que la página aporta y el listado del
   // blog (src/lib/content/blog.ts) ya contaba mejor que la propia página.
   description:
-    "Yes — with consent, a DPA and a transfer assessment. But consent costs 15–60% of EU visitors by sector, so the lawful dataset misses part of your audience.",
+    "Yes — with consent, a DPA and a transfer assessment. But visitors who reject consent go unmeasured, so the lawful dataset misses part of your audience.",
   openGraph: {
     title: "Is Adobe Analytics GDPR Compliant?",
     description:
@@ -108,8 +108,8 @@ export default function Page() {
             retention and privacy settings configured deliberately rather than
             left at default. The cost is not legal, it is statistical. Because
             Adobe collects through cookies, the consent requirement is
-            load-bearing — and consent rejection costs 15–60% of EU visitors,
-            depending on sector, brand strength and traffic mix. You end
+            load-bearing — and the visitors who reject it are never measured;
+            how many depends on sector, brand strength and traffic mix. You end
             up with a lawful dataset that is missing a large part of your audience. The
             question worth asking is not whether Adobe can be compliant, but
             whether a compliant Adobe still answers the questions you bought it
@@ -197,8 +197,8 @@ export default function Page() {
             <p>
               Consent is load-bearing in that architecture. Adobe measures the
               visitors who accepted your banner and no one else. In European
-              eCommerce, consent rejection costs 15–60% of visitors, depending on sector, brand strength and traffic mix,
-              which means a fully compliant Adobe deployment is reporting on a filtered
+              eCommerce, the share of visitors who reject consent depends on sector, brand strength and traffic mix,
+              and a fully compliant deployment never sees them, which means a fully compliant Adobe deployment is reporting on a filtered
               subset of your real traffic — and not a random subset. The visitors who reject
               banners skew by device, by browser, by acquisition channel and by
               privacy posture. You are not sampling your audience, you are
@@ -231,7 +231,7 @@ export default function Page() {
                 consentless analytics
               </Link>
               , and the reason the coverage problem disappears with it: there is no
-              banner to reject, so that 15–60% never goes missing in the first
+              banner to reject, so those visitors never go missing in the first
               place. The trade is real and worth stating plainly — you give up
               individual-level analysis, cross-session stitching and audience
               activation, because those are exactly the capabilities that require

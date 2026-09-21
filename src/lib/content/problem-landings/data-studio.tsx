@@ -138,8 +138,8 @@ export const dataStudioEn: ProblemLandingContent = {
       ["01", "Rejected visitors are not in the chart", (
         <>
           A tag that waits for consent never records the visitor who says no. The
-          Sealmetrics documentation puts the loss at 15–60% of EU visitors,
-          depending on sector, brand strength and traffic mix; on Incapto&apos;s
+          In our experience with clients, between 40% and 60% of traffic
+          doesn&apos;t accept cookies; on Incapto&apos;s
           Shopify store, GA4 did not record 29% of visits over 48 days. The
           argument in full is on{" "}
           <Link className={link} href="/complete-data/">complete data</Link>.
@@ -333,9 +333,8 @@ export const dataStudioEs: ProblemLandingContent = {
       ["01", "Quien rechaza no aparece en el gráfico", (
         <>
           Una etiqueta que espera al consentimiento nunca registra al visitante que
-          dice que no. La documentación de Sealmetrics sitúa la pérdida entre el 15%
-          y el 60% de los visitantes europeos, según sector, fuerza de marca y mezcla
-          de tráfico; en la tienda Shopify de Incapto, GA4 no registró el 29% de las
+          dice que no. En nuestra experiencia con clientes, entre el 40% y el 60%
+          del tráfico no acepta cookies; en la tienda Shopify de Incapto, GA4 no registró el 29% de las
           visitas en 48 días. El argumento completo está en{" "}
           <Link className={link} href="/es/complete-data/">datos completos</Link>.
         </>

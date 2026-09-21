@@ -73,7 +73,7 @@ export default function ServerSideTrackingPage() {
         <div className="mt-12">
           <QuickAnswer>
             <p>
-              Server-side tracking processes analytics events on a server you control instead of inside the visitor&rsquo;s browser. A minimal client-side hook (or a server-to-server beacon for backend events like Shopify orders) ships the raw signal to your own endpoint; processing, enrichment and storage happen server-side. Because the request never leaves the first-party origin and no script is exposed to ad-blocker rule lists, the data path is resilient to ~40% client-side data loss caused by uBlock, Brave and the analytics block-lists shipped with iOS Safari content blockers.
+              Server-side tracking processes analytics events on a server you control instead of inside the visitor&rsquo;s browser. A minimal client-side hook (or a server-to-server beacon for backend events like Shopify orders) ships the raw signal to your own endpoint; processing, enrichment and storage happen server-side. Because the request never leaves the first-party origin and no script is exposed to ad-blocker rule lists, the data path is far less exposed to the client-side data loss caused by uBlock, Brave and the analytics block-lists shipped with iOS Safari content blockers.
             </p>
             <p>
               Server-side does not automatically mean &ldquo;cookieless.&rdquo; A server-side tracker can still set a first-party cookie or generate a visitor ID — at which point it triggers ePrivacy Art. 5(3) and requires consent. Sealmetrics is server-side AND cookieless: events are counted in aggregate with no per-visitor identifier, which is what makes the architecture both resilient and consent-free.

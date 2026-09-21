@@ -72,7 +72,7 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
         title: <>Lo que GA4 <em>no ve.</em></>,
         lede: "Cuatro puntos donde la arquitectura de GA4 pierde datos estructuralmente. No son errores — es el diseño funcionando como debe para el caso de uso de Google Ads.",
         stats: [
-          { n: "15–60%", l: "Pérdida por consentimiento", p: "Según el sector, la fuerza de la marca y el mix de tráfico. Quien no acepta, GA4 no lo ve." },
+          { n: "40–60%", l: "No acepta cookies", p: "Del tráfico, en nuestra experiencia con clientes. Quien no acepta, GA4 no lo ve." },
           { n: "~25%", l: "Ad blockers", p: "Bloquean google-analytics.com. GA4 nunca recibe el ping." },
           { n: "Sampling", l: "Umbrales de volumen", p: "Encima de cierto volumen, GA4 muestrea y modela. Black Friday = estimaciones." },
           { n: "US-hosted", l: "Schrems II", p: "Los datos cruzan a US. Sujeto a challenge regulatorio en UE." },
@@ -83,7 +83,7 @@ export function VsGA4GapStatsV3({ locale = "en" as Locale }) {
         title: <>What GA4 <em>doesn't see.</em></>,
         lede: "Four points where GA4's architecture loses data by design. Not bugs — this is the product working as intended for Google Ads' use case.",
         stats: [
-          { n: "15–60%", l: "Consent loss", p: "Depends on sector, brand strength and traffic mix. Visitors who decline, GA4 never sees." },
+          { n: "40–60%", l: "Don't accept cookies", p: "Of traffic, in our experience with clients. Visitors who decline, GA4 never sees." },
           { n: "~25%", l: "Ad blockers", p: "Block google-analytics.com. GA4 never receives the ping." },
           { n: "Sampling", l: "Volume thresholds", p: "Above certain volume, GA4 samples and models. Black Friday = estimates." },
           { n: "US-hosted", l: "Schrems II", p: "Data crosses to US. Subject to ongoing EU regulatory challenge." },
@@ -284,7 +284,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Data capture",
       block: "technical",
       rows: [
-        { feature: "Consent required", ga4: "Yes · 15–60% lost, by sector", seal: "No · no consent loss" },
+        { feature: "Consent required", ga4: "Yes · 40–60% of traffic doesn't accept (our client experience)", seal: "No · no consent loss" },
         { feature: "Ad blocker affected", ga4: "Yes · ~25% blocked", seal: "Far less · first-party subdomain" },
         { feature: "Cookies on visitor device", ga4: "Required", seal: "None" },
         { feature: "Sampling at scale", ga4: "Yes · above threshold", seal: "Never · full resolution" },
@@ -363,7 +363,7 @@ export function VsGA4TableV3({ locale = "en" as Locale }) {
       category: "Captura de datos",
       block: "technical",
       rows: [
-        { feature: "Consentimiento requerido", ga4: "Sí · 15–60% perdido, según sector", seal: "No · sin pérdida por consent" },
+        { feature: "Consentimiento requerido", ga4: "Sí · el 40–60% del tráfico no acepta (nuestra experiencia con clientes)", seal: "No · sin pérdida por consent" },
         { feature: "Afectado por ad blockers", ga4: "Sí · ~25% bloqueado", seal: "Mucho menos · subdominio first-party" },
         { feature: "Cookies en el dispositivo", ga4: "Obligatorias", seal: "Ninguna" },
         { feature: "Muestreo a escala", ga4: "Sí · sobre cierto umbral", seal: "Nunca · resolución completa" },
