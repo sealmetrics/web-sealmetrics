@@ -27,7 +27,7 @@ export function Hero() {
     <section className="bg-warm-white pt-14 md:pt-20 pb-20">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10">
         <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-ink-soft">
-          Privacy-by-design analytics · No consent required · GDPR · ePrivacy
+          Privacy-by-design analytics · No cookies, no identifiers · Designed for GDPR from the architecture up
         </p>
 
         <h1 className="h-display mt-5 max-w-[16ch]">
@@ -423,7 +423,7 @@ export function PrivacyByDesign() {
 
 /* ---------- 07 · THE TRADE-OFF ---------- */
 const TRADE_NO = [
-  "Multi-touch attribution models. The only lawful model without consent is last-click.",
+  "Multi-touch attribution models. Without visitor identifiers, the only possible model is last-click.",
   "Individual customer journeys or session sequences.",
   "Audience building for activation on ad platforms.",
   "User cohorts, individual retention or per-person LTV.",
@@ -446,7 +446,7 @@ export function Tradeoff() {
           We tell you what you lose <em>before you find out yourself.</em>
         </h2>
         <p className="mt-6 max-w-[60ch] text-ink-2 leading-[1.55]" style={{ fontSize: "clamp(16px,1.5vw,19px)" }}>
-          Measuring without consent has a price and we do not hide it in the small print. If what you need is
+          Measuring without cookies or identifiers has a price and we do not hide it in the small print. If what you need is
           in the left-hand column, we are not your tool and we will tell you so on the first call.
         </p>
 
@@ -551,7 +551,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
 
 const TABLE_ROWS = [
   ["Hit transport", "sendBeacon · survives page close", "Beacon type", "Image GET · cancelled on exit"],
-  ["Consent in the EU", "Not required, by design", "Yes · Consent Mode models the gap", "Yes in most installations"],
+  ["Consent in the EU", "No cookies or identifiers · banner depends on your setup", "Yes · Consent Mode models the gap", "Yes in most installations"],
   ["Traffic measured in parallel", "Baseline", "25–45% less (our client sample)", "25% less (30 days dual-tagged, field)"],
 ];
 
@@ -567,7 +567,7 @@ const SPECS = [
   {
     h: "Data truth",
     items: [
-      { v: "No consent loss", l: "No consent, no cookies, no banner in the way." },
+      { v: "No consent loss", l: "No cookies, no identifiers: nothing for the visitor to reject." },
       { v: "Zero modelling", l: "No modelling. No sampling. No estimates. If it is in the report, it happened." },
       { v: "+25% vs Adobe or GA4", l: "Measured in the field, 30 days dual-tagged on the same site." },
     ],
@@ -809,7 +809,7 @@ export function Implementation() {
           </p>
 
           <p className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.06em] text-ink-soft">
-            1.1 KB · DEFER · SENDBEACON · NO COOKIES · NO CONSENT
+            1.1 KB · DEFER · SENDBEACON · NO COOKIES · NO IDENTIFIERS
           </p>
         </div>
       </div>
