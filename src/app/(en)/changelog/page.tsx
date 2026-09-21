@@ -34,6 +34,16 @@ export const metadata: Metadata = {
 
 const entries = [
   {
+    date: "September 2026",
+    updates: [
+      {
+        title: "UTM Mapping override — Shopping and Performance Max clicks credited to the campaign that paid for them",
+        type: "New",
+        desc: "Google Shopping and Performance Max serve product links that already carry utm_source, utm_medium and utm_campaign from the feed, and a Google Ads final URL suffix can only append parameters, never remove them. Until now the feed's UTMs always won: paid clicks were attributed to the wrong campaign and there was nothing the advertiser could do about it. Each UTM Mapping now has an \u201COverride the UTM if the URL already has one\u201D option. With it on, the value of your custom parameter is written even when the URL already carries that UTM, so the revenue lands on the campaign that bought the click. Enable it when you create the mapping, or with the Override switch on any row of the list. It is off by default: mappings that don't use it behave exactly as before.",
+      },
+    ],
+  },
+  {
     date: "August 2026",
     updates: [
       {
