@@ -2,6 +2,8 @@
 // Diagnostic Quiz — Content, Scoring & Logic
 // =============================================================
 
+import { LATE_CONSENT_SHARE, REJECTION_DEFAULT } from "@/lib/calculators/consent-model";
+
 export type QuizAnswers = {
   business?: string;
   geography?: string;
@@ -46,9 +48,9 @@ export const questions: QuizQuestion[] = [
     getInsight: (v) => {
       const map: Record<string, string> = {
         ecommerce:
-          "eCommerce businesses have 42% of purchase attribution invisible in the EU — the channels driving those purchases cannot be scaled.",
+          "In our experience with clients, between 40% and 60% of traffic doesn't accept cookies. For eCommerce that means purchases whose channel GA4 can't see — and channels that can't be scaled.",
         leadgen:
-          "Lead generation sites typically miss 35-50% of form-fill attribution when consent is rejected.",
+          "Lead generation sites lose form-fill attribution for every visitor who rejects consent — in our experience with clients, between 40% and 60% of traffic doesn't accept cookies.",
         saas:
           "SaaS trial-to-paid funnels are especially vulnerable — invisible sessions break cohort analysis.",
         media:
@@ -63,7 +65,7 @@ export const questions: QuizQuestion[] = [
     key: "geography",
     number: 2,
     title: "Where is most of your traffic?",
-    subtitle: "Cookie rejection rates vary dramatically by country.",
+    subtitle: "Cookie rejection varies by country and by banner design.",
     options: [
       { value: "fr_de", label: "France / Germany" },
       { value: "es_it", label: "Spain / Italy" },
@@ -82,9 +84,9 @@ export const questions: QuizQuestion[] = [
           "The Netherlands, Belgium and Austria sit at the high end of cookie rejection, driven by strict DPA enforcement.",
         uk: "UK rejection tends to be lower than in continental Europe, but still enough to distort your attribution.",
         eu_other:
-          "Most EU markets now see 40-65% cookie rejection. The trend is accelerating across all member states.",
+          "Rejection varies by country and by banner design; in our experience with clients the overall range is 40–60%.",
         non_eu:
-          "Even outside the EU, ad blockers and browser privacy features create a 15-25% data gap that grows each year.",
+          "Outside the EU, consent rules differ by market, and ad blockers and browser privacy features still cut into what your analytics records.",
       };
       return map[v] ?? "";
     },
@@ -239,14 +241,10 @@ interface DimensionScores {
   urgency: number;
 }
 
-const geoLossRate: Record<string, number> = {
-  fr_de: 0.7,
-  nl_be_at: 0.62,
-  es_it: 0.48,
-  uk: 0.42,
-  eu_other: 0.52,
-  non_eu: 0.2,
-};
+// No per-country coefficients (founder decision 2026-09-21): every market uses
+// the midpoint of the client-experience range, 40–60% of traffic rejecting
+// cookies. The geography answer still changes the copy, not the number.
+const DEFAULT_LOSS_RATE = REJECTION_DEFAULT;
 
 const cookieOverride: Record<string, number | null> = {
   unknown: null,
@@ -278,7 +276,7 @@ export function getLossRate(answers: QuizAnswers): number {
     ? cookieOverride[answers.cookieRate]
     : null;
   if (cookieVal !== null && cookieVal !== undefined) return cookieVal;
-  return geoLossRate[answers.geography ?? "eu_other"] ?? 0.5;
+  return DEFAULT_LOSS_RATE;
 }
 
 export function getTrafficVolume(answers: QuizAnswers): number {
@@ -419,12 +417,12 @@ export function buildComparison(answers: QuizAnswers): ComparisonRow[] {
     {
       metric: "ROAS reliability",
       current: `Distorted by ${Math.round(lossRate * 100)}% data gap`,
-      sealmetrics: "Calculated on complete data",
+      sealmetrics: "Not reduced by consent rejection",
     },
     {
       metric: "Revenue attribution",
       current: tool === "no analytics tool" ? "None" : "Partial — cookie-dependent",
-      sealmetrics: "Channel-level attribution on all sessions",
+      sealmetrics: "Channel-level attribution, no consent gap",
     },
     {
       metric: "Consent dependency",
@@ -444,8 +442,11 @@ export function getAdSpendImpact(answers: QuizAnswers): {
   const spend = getAdSpendValue(answers);
   const lossRate = getLossRate(answers);
   if (spend < 2000) return { show: false, misallocated: 0, percentage: 0 };
-  const misallocated = Math.round(spend * lossRate * 0.6);
-  return { show: true, misallocated, percentage: Math.round(lossRate * 60) };
+  // Share of conversions not credited to their real source: the ones GA4 never
+  // sees (lossRate) plus the ones it sees without the landing pageview.
+  const notAttributed = 1 - (1 - lossRate) * (1 - LATE_CONSENT_SHARE);
+  const misallocated = Math.round(spend * notAttributed);
+  return { show: true, misallocated, percentage: Math.round(notAttributed * 100) };
 }
 
 // ----- Industry context -----

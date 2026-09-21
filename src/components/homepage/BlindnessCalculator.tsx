@@ -1,6 +1,14 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import {
+  REJECTION_DEFAULT,
+  REJECTION_MAX,
+  REJECTION_MIN,
+  LATE_CONSENT_SHARE,
+  clampRejection,
+  consentShares,
+} from "@/lib/calculators/consent-model";
 
 type Locale = "en" | "es";
 
@@ -13,7 +21,7 @@ const COPY = {
     lying: "lying",
     h1B: "— and it's costing you",
     realMoney: "real money.",
-    intro: ["Enter your", "monthly", "numbers from GA4. We'll show you how many visits, orders and revenue you're missing every month — and why your conversion rate is, in reality, lower than you think."],
+    intro: ["Enter your", "monthly", "numbers from GA4. We estimate what share of your traffic GA4 would credit to its real source, and how much of what it reports arrives without the source that earned it."],
     inputLabel: "INPUT",
     yourCurrentNumbers: ["Your", "current", "numbers"],
     monthlyFiguresFrom: "Monthly figures from GA4",
@@ -23,34 +31,43 @@ const COPY = {
     aov: "Average order value (AOV)",
     aovHint: "Average revenue per order.",
     cr: "Observed conversion rate",
-    crHint: "The CR GA4 reports. Spoiler: it's inflated.",
+    crHint: "The CR GA4 reports.",
+    rejection: "Traffic that doesn't accept cookies",
+    rejectionHint: "Our client range is 40–60%. Default 50%.",
     sealmetricsModel: "Sealmetrics model",
-    modelRows: [
-      { k: "Real visits vs GA4", v: "+55%" },
-      { k: "Real conversions vs GA4", v: "+25%" },
-      { k: "Consentless capture", v: "No consent loss" },
-    ],
+    modelRows: {
+      visits: "Traffic credited to its real source",
+      range: "Across 40–60% rejection",
+      lateConsent: "Accept after the first pageview",
+      lateConsentValue: "40% of those who accept",
+      capture: "Sealmetrics capture",
+      captureValue: "No consent loss",
+    },
+    estimateNote: "Estimate based on what we see across our clients (40–60% don't accept cookies; 40% of those who do, not on the first pageview). Measure your own store to know.",
+    incapto: "At Incapto (Shopify, Consent Mode), measured: GA4 missed 29% of visits — Consent Mode and your setup change the number. Measure your own store.",
+    incaptoHref: "/case-studies/incapto/",
     blindnessCalc: "THE BLINDNESS CALCULATION",
     costOfBlindness: ["The cost of your", "blindness"],
     liveUpdate: "live update",
     metric: "Metric (monthly)",
-    ga4Biased: "GA4 (biased)",
-    sealReal: "Sealmetrics (real)",
-    blindSpot: "Blind spot",
+    ga4Biased: "GA4 reports",
+    sealReal: "With their source",
+    blindSpot: "Without source",
     rowVisits: "Monthly visits",
     rowOrders: "Total orders",
     rowRevenue: "Monthly revenue",
-    crBlock: ["Conversion Rate", "— the inconvenient truth —"],
-    ga4TellsYou: "GA4 tells you",
-    reality: "Reality",
-    delta: "Delta",
+    crBlock: ["Orders credited to their source", "— with these inputs —"],
+    ga4TellsYou: "GA4 orders",
+    reality: "With their source",
+    delta: "Of your traffic",
     verdict: "The verdict",
-    blindOpening: "You're operating with a blind spot of",
+    blindOpening: "of your traffic is what GA4 would credit to its real source, with these inputs. Of what GA4 reports,",
     inMonthlyRevenue: "in monthly revenue and",
-    ordersCantSee: "orders you can't see.",
-    yearlyAside: ["That's", "a year you don't even know exists."],
-    stopBleeding: <>Stop the bleeding. <em className="italic-accent">Start your 14-day trial.</em></>,
-    startTrial: "Start 14-day trial",
+    ordersCantSee: "orders arrive without their source — and visitors who reject cookies don't appear at all.",
+    yearlyAside: ["That's", "a year GA4 reports without the source that earned it."],
+    stopBleeding: <>Stop estimating. <em className="italic-accent">Measure your own gap.</em></>,
+    startTrial: "Open my free account",
+    freeHref: "/free-account/",
     whyTitle: "Why this happens",
     whyBody: "GA4 depends on the consent banner. In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview. Those visitors buy — but you never see them.",
     whatTitle: "What Sealmetrics does",
@@ -60,17 +77,17 @@ const COPY = {
     plan: "Plan",
     salesBE: "Sales to break even",
     salesBESuffix: "orders / month",
-    salesBEHint: "Recovered orders Sealmetrics needs to surface — at your AOV — to fully pay for itself.",
-    pctBlind: "% of the blind spot",
-    pctBlindSuffix: "of recovered orders",
-    pctBlindHint: "A tiny fraction of the orders you're already missing. The rest is pure upside.",
+    salesBEHint: "Orders Sealmetrics needs to credit back to their real source — at your AOV — to pay for itself.",
+    pctBlind: "% of unattributed orders",
+    pctBlindSuffix: "of orders GA4 reports without source",
+    pctBlindHint: "Counted only on what GA4 already reports — before the visitors it doesn't see at all.",
     monthlyROI: "Monthly ROI",
     monthlyROISuffix: "return on Sealmetrics",
-    monthlyROIHint: "For every €1 spent on Sealmetrics, this is the recovered revenue you gain visibility on.",
+    monthlyROIHint: "For every €1 spent on Sealmetrics, the revenue GA4 reports without its source.",
     paybackFootA: "With",
-    paybackFootB: "recovered orders per day, Sealmetrics is already paying for itself.",
+    paybackFootB: "orders a day credited back to their source, Sealmetrics already pays for itself.",
     paybackFootC: "days into the month, you're in profit.",
-    primaryFootCta: "Stop the bleeding · start 14-day trial",
+    primaryFootCta: "Open my free account · first 1M events free",
     secondaryFootCta: "Run the deep gap audit",
     auditHref: "/data-loss-calculator/",
     locale: "en-US",
@@ -83,7 +100,7 @@ const COPY = {
     lying: "miente",
     h1B: "— y te está costando",
     realMoney: "dinero real.",
-    intro: ["Introduce tus números", "mensuales", "de GA4. Te mostramos cuántas visitas, pedidos e ingresos estás perdiendo cada mes — y por qué tu tasa de conversión es, en realidad, más baja de lo que crees."],
+    intro: ["Introduce tus números", "mensuales", "de GA4. Estimamos qué parte de tu tráfico atribuiría GA4 a su fuente real, y cuánto de lo que reporta llega sin la fuente que lo generó."],
     inputLabel: "INPUT",
     yourCurrentNumbers: ["Tus números", "actuales", ""],
     monthlyFiguresFrom: "Cifras mensuales de GA4",
@@ -93,34 +110,43 @@ const COPY = {
     aov: "Ticket medio (AOV)",
     aovHint: "Ingreso medio por pedido.",
     cr: "Tasa de conversión observada",
-    crHint: "La CR que GA4 reporta. Spoiler: está inflada.",
+    crHint: "La CR que GA4 reporta.",
+    rejection: "Tráfico que no acepta cookies",
+    rejectionHint: "Nuestro rango con clientes es del 40–60%. Por defecto, 50%.",
     sealmetricsModel: "Modelo Sealmetrics",
-    modelRows: [
-      { k: "Visitas reales vs GA4", v: "+55%" },
-      { k: "Conversiones reales vs GA4", v: "+25%" },
-      { k: "Captura sin consentimiento", v: "Sin pérdida por consentimiento" },
-    ],
+    modelRows: {
+      visits: "Tráfico atribuido a su fuente real",
+      range: "Con un rechazo del 40–60%",
+      lateConsent: "Aceptan después de la primera página",
+      lateConsentValue: "El 40% de quienes aceptan",
+      capture: "Captura de Sealmetrics",
+      captureValue: "Sin pérdida por consentimiento",
+    },
+    estimateNote: "Estimación basada en lo que vemos en nuestros clientes (entre el 40% y el 60% no acepta cookies; de quienes las aceptan, el 40% no lo hace en la primera página vista). Mide tu propia tienda para saberlo.",
+    incapto: "En Incapto (Shopify, con Consent Mode), medido: GA4 no registró el 29% de las visitas — Consent Mode y tu configuración cambian la cifra. Mide tu propia tienda.",
+    incaptoHref: "/es/case-studies/incapto/",
     blindnessCalc: "EL CÁLCULO DE LA CEGUERA",
     costOfBlindness: ["El coste de tu", "ceguera"],
     liveUpdate: "actualización en vivo",
     metric: "Métrica (mensual)",
-    ga4Biased: "GA4 (sesgado)",
-    sealReal: "Sealmetrics (real)",
-    blindSpot: "Punto ciego",
+    ga4Biased: "GA4 reporta",
+    sealReal: "Con su fuente",
+    blindSpot: "Sin fuente",
     rowVisits: "Visitas mensuales",
     rowOrders: "Pedidos totales",
     rowRevenue: "Ingresos mensuales",
-    crBlock: ["Tasa de conversión", "— la verdad incómoda —"],
-    ga4TellsYou: "GA4 te dice",
-    reality: "Realidad",
-    delta: "Delta",
+    crBlock: ["Pedidos atribuidos a su fuente", "— con estos datos —"],
+    ga4TellsYou: "Pedidos en GA4",
+    reality: "Con su fuente",
+    delta: "De tu tráfico",
     verdict: "El veredicto",
-    blindOpening: "Estás operando con un punto ciego de",
+    blindOpening: "de tu tráfico es lo que GA4 atribuiría a su fuente real, con estos datos. De lo que GA4 reporta,",
     inMonthlyRevenue: "en ingresos mensuales y",
-    ordersCantSee: "pedidos que no ves.",
-    yearlyAside: ["Eso son", "al año que ni sabes que existen."],
-    stopBleeding: <>Para la sangría. <em className="italic-accent">Empieza tu prueba de 14 días.</em></>,
-    startTrial: "Prueba de 14 días",
+    ordersCantSee: "pedidos llegan sin su fuente — y quien rechaza las cookies ni aparece.",
+    yearlyAside: ["Eso son", "al año que GA4 reporta sin la fuente que los generó."],
+    stopBleeding: <>Deja de estimar. <em className="italic-accent">Mide tu propio hueco.</em></>,
+    startTrial: "Abrir mi cuenta gratis",
+    freeHref: "/es/cuenta-gratis/",
     whyTitle: "Por qué pasa",
     whyBody: "GA4 depende del banner de consentimiento. En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Esos visitantes compran — pero tú no los ves nunca.",
     whatTitle: "Qué hace Sealmetrics",
@@ -130,17 +156,17 @@ const COPY = {
     plan: "Plan",
     salesBE: "Ventas para break-even",
     salesBESuffix: "pedidos / mes",
-    salesBEHint: "Pedidos recuperados que Sealmetrics necesita aflorar — a tu AOV — para pagarse del todo.",
-    pctBlind: "% del punto ciego",
-    pctBlindSuffix: "de pedidos recuperados",
-    pctBlindHint: "Una fracción mínima de los pedidos que ya estás perdiendo. El resto es upside puro.",
+    salesBEHint: "Pedidos que Sealmetrics necesita devolver a su fuente real — a tu AOV — para pagarse solo.",
+    pctBlind: "% de pedidos sin atribuir",
+    pctBlindSuffix: "de los pedidos que GA4 reporta sin fuente",
+    pctBlindHint: "Contado solo sobre lo que GA4 ya reporta — antes de las visitas que ni ve.",
     monthlyROI: "ROI mensual",
     monthlyROISuffix: "retorno sobre Sealmetrics",
-    monthlyROIHint: "Por cada €1 gastado en Sealmetrics, este es el ingreso recuperado del que ganas visibilidad.",
+    monthlyROIHint: "Por cada €1 gastado en Sealmetrics, el ingreso que GA4 reporta sin su fuente.",
     paybackFootA: "Con",
-    paybackFootB: "pedidos recuperados al día, Sealmetrics ya se paga solo.",
+    paybackFootB: "pedidos al día devueltos a su fuente, Sealmetrics ya se paga solo.",
     paybackFootC: "días después de empezar el mes, estás en beneficio.",
-    primaryFootCta: "Para la sangría · prueba de 14 días",
+    primaryFootCta: "Abrir mi cuenta gratis · el primer millón de eventos gratis",
     secondaryFootCta: "Auditoría profunda del gap",
     auditHref: "/es/data-loss-calculator/",
     locale: "es-ES",
@@ -163,23 +189,33 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
   const [ticket, setTicket] = useState(87);
   const [crPct, setCrPct] = useState(0.8);
   const [planPrice, setPlanPrice] = useState(499);
+  const [rejectionPct, setRejectionPct] = useState(Math.round(REJECTION_DEFAULT * 100));
 
   const calc = useMemo(() => {
     const ga4Visits = Math.max(0, visits);
     const ga4Orders = ga4Visits * (Math.max(0, crPct) / 100);
     const ga4Revenue = ga4Orders * Math.max(0, ticket);
 
-    const sealVisits = ga4Visits * 1.55;
-    const sealOrders = ga4Orders * 1.25;
-    const sealRevenue = sealOrders * Math.max(0, ticket);
+    // consent-model.ts. No extrapolation to a larger "real" total: the output is
+    // a breakdown. Of all traffic, GA4 credits (1 − r) × 0.6 to its real source.
+    // Of what GA4 reports, 40% comes from visitors who consented after the
+    // landing pageview, so it arrives without its source.
+    const rejection = clampRejection(rejectionPct / 100);
+    const attributedShare = consentShares({ rejection }).attributed * 100;
+    const attributedLow = consentShares({ rejection: REJECTION_MAX }).attributed * 100;
+    const attributedHigh = consentShares({ rejection: REJECTION_MIN }).attributed * 100;
+    const keep = 1 - LATE_CONSENT_SHARE;
 
-    const dVisits = sealVisits - ga4Visits;
-    const dOrders = sealOrders - ga4Orders;
-    const dRevenue = sealRevenue - ga4Revenue;
+    const sealVisits = ga4Visits * keep;
+    const sealOrders = ga4Orders * keep;
+    const sealRevenue = ga4Revenue * keep;
+    const ordersWithSource = sealOrders;
 
-    const realCR = sealVisits > 0 ? (sealOrders / sealVisits) * 100 : 0;
-    const dCR = realCR - crPct;
-    const blindPct = sealRevenue > 0 ? (dRevenue / sealRevenue) * 100 : 0;
+    const dVisits = ga4Visits - sealVisits;
+    const dOrders = ga4Orders - sealOrders;
+    const dRevenue = ga4Revenue - sealRevenue;
+
+    const blindPct = attributedShare;
 
     const ordersToBreakEven = ticket > 0 ? planPrice / ticket : 0;
     const paybackPct = dOrders > 0 ? (ordersToBreakEven / dOrders) * 100 : 0;
@@ -191,10 +227,10 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
       ga4Visits, ga4Orders, ga4Revenue,
       sealVisits, sealOrders, sealRevenue,
       dVisits, dOrders, dRevenue,
-      realCR, dCR, blindPct,
+      ordersWithSource, attributedShare, attributedLow, attributedHigh, blindPct,
       ordersToBreakEven, paybackPct, monthlyROI, ordersPerDay, daysToPayback,
     };
-  }, [visits, ticket, crPct, planPrice]);
+  }, [visits, ticket, crPct, planPrice, rejectionPct]);
 
   return (
     <section id="ga4-gap" className="bg-warm-50 border-t border-warm-100 py-24">
@@ -281,20 +317,35 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
               suffix="%"
               step={0.01}
             />
+            <CalcField
+              label={c.rejection}
+              hint={c.rejectionHint}
+              value={rejectionPct}
+              onChange={setRejectionPct}
+              suffix="%"
+              step={1}
+              min={REJECTION_MIN * 100}
+              max={REJECTION_MAX * 100}
+            />
 
             <div className="mt-9 pt-6 border-t border-dashed border-white/20">
               <div className="font-mono text-[10px] uppercase tracking-[0.18em] text-white/55 mb-3.5">
                 {c.sealmetricsModel}
               </div>
-              {c.modelRows.map((row, i, arr) => (
+              {[
+                { k: c.modelRows.visits, v: `${fmtNum(calc.attributedShare)}%` },
+                { k: c.modelRows.range, v: `${fmtNum(calc.attributedLow)}–${fmtNum(calc.attributedHigh)}%` },
+                { k: c.modelRows.lateConsent, v: c.modelRows.lateConsentValue },
+                { k: c.modelRows.capture, v: c.modelRows.captureValue },
+              ].map((row, i, arr) => (
                 <div
                   key={row.k}
-                  className={`flex justify-between items-baseline py-2.5 text-[13px] ${
+                  className={`flex justify-between items-baseline gap-3 py-2.5 text-[13px] ${
                     i < arr.length - 1 ? "border-b border-dotted border-white/15" : ""
                   }`}
                 >
                   <span className="text-white/70">{row.k}</span>
-                  <span className="font-mono font-bold text-amber">{row.v}</span>
+                  <span className="font-mono font-bold text-amber text-right">{row.v}</span>
                 </div>
               ))}
             </div>
@@ -342,19 +393,19 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                     label={c.rowVisits}
                     ga4={fmtNum(calc.ga4Visits)}
                     seal={fmtNum(calc.sealVisits)}
-                    diff={"+" + fmtNum(calc.dVisits)}
+                    diff={fmtNum(calc.dVisits)}
                   />
                   <CalcRow
                     label={c.rowOrders}
                     ga4={fmtNum(calc.ga4Orders)}
                     seal={fmtNum(calc.sealOrders)}
-                    diff={"+" + fmtNum(calc.dOrders)}
+                    diff={fmtNum(calc.dOrders)}
                   />
                   <CalcRow
                     label={c.rowRevenue}
                     ga4={fmtEur(calc.ga4Revenue)}
                     seal={fmtEur(calc.sealRevenue)}
-                    diff={"+" + fmtEur(calc.dRevenue)}
+                    diff={fmtEur(calc.dRevenue)}
                     headline
                   />
                 </tbody>
@@ -373,15 +424,8 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                   <div className="font-mono text-[9px] tracking-[0.18em] uppercase text-ink-soft">
                     {c.ga4TellsYou}
                   </div>
-                  <div
-                    className="font-semibold text-[20px] tabular-nums text-ink-soft"
-                    style={{
-                      textDecoration: "line-through",
-                      textDecorationColor: "#B5423B",
-                      textDecorationThickness: "1.5px",
-                    }}
-                  >
-                    {fmtPct(crPct)}
+                  <div className="font-semibold text-[20px] tabular-nums text-ink-soft">
+                    {fmtNum(calc.ga4Orders)}
                   </div>
                 </div>
                 <div>
@@ -389,7 +433,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                     {c.reality}
                   </div>
                   <div className="font-semibold text-[20px] tabular-nums text-red-alert">
-                    {fmtPct(calc.realCR)}
+                    {fmtNum(calc.ordersWithSource)}
                   </div>
                 </div>
                 <div>
@@ -400,7 +444,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
                     className="font-semibold text-[20px] tabular-nums"
                     style={{ color: "#B5423B" }}
                   >
-                    {(calc.dCR >= 0 ? "+" : "−") + fmtPct(Math.abs(calc.dCR))}
+                    {fmtPct(calc.attributedShare, 0)}
                   </div>
                 </div>
               </div>
@@ -437,8 +481,13 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
               </div>
             </div>
 
-            {/* Conversion block — CTA + email capture */}
-            <CalcConversionBlock stopBleeding={c.stopBleeding} startTrial={c.startTrial} />
+            <p className="mt-4 text-[12px] leading-[1.5] text-ink-soft">{c.estimateNote}</p>
+            <p className="mt-2 text-[12px] leading-[1.5] text-ink-soft">
+              <a href={c.incaptoHref} className="underline decoration-1 underline-offset-2">{c.incapto}</a>
+            </p>
+
+            {/* Conversion block — CTA */}
+            <CalcConversionBlock stopBleeding={c.stopBleeding} startTrial={c.startTrial} href={c.freeHref} />
 
             {/* Footnote */}
             <div className="mt-9 pt-5 border-t border-warm-100 grid sm:grid-cols-2 gap-7 font-mono text-[11px] leading-[1.6] text-ink-soft">
@@ -550,7 +599,7 @@ export function BlindnessCalculator({ locale = "en" }: { locale?: Locale }) {
 
         <div className="mt-9 flex flex-wrap justify-center gap-3">
           <a
-            href="https://my.sealmetrics.com/register"
+            href={c.freeHref}
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
           >
             {c.primaryFootCta} <span>→</span>
@@ -575,6 +624,8 @@ function CalcField({
   suffix,
   prefix,
   step = 1,
+  min = 0,
+  max,
 }: {
   label: string;
   hint?: string;
@@ -583,6 +634,8 @@ function CalcField({
   suffix?: string;
   prefix?: string;
   step?: number;
+  min?: number;
+  max?: number;
 }) {
   return (
     <div className="mb-6">
@@ -594,7 +647,8 @@ function CalcField({
         <input
           type="number"
           value={value}
-          min={0}
+          min={min}
+          max={max}
           step={step}
           onChange={(e) => onChange(parseFloat(e.target.value) || 0)}
           className="min-w-0 bg-transparent border-0 text-white font-semibold text-[28px] md:text-[32px] w-full outline-none tabular-nums"
@@ -633,9 +687,6 @@ function CalcRow({
         <td
           className="bg-ink text-warm-white/40 px-3 py-5 text-right font-semibold tabular-nums text-[20px]"
           style={{
-            textDecoration: "line-through",
-            textDecorationColor: "#B5423B",
-            textDecorationThickness: "1.5px",
             letterSpacing: "-0.01em",
           }}
         >
@@ -664,9 +715,6 @@ function CalcRow({
       <td
         className="px-3 py-3.5 text-right font-semibold tabular-nums text-[18px] text-ink-soft"
         style={{
-          textDecoration: "line-through",
-          textDecorationColor: "#B5423B",
-          textDecorationThickness: "1.5px",
           letterSpacing: "-0.01em",
         }}
       >
@@ -724,7 +772,7 @@ function PaybackCell({
   );
 }
 
-function CalcConversionBlock({ stopBleeding, startTrial }: { stopBleeding: React.ReactNode; startTrial: string }) {
+function CalcConversionBlock({ stopBleeding, startTrial, href }: { stopBleeding: React.ReactNode; startTrial: string; href: string }) {
   return (
     <div
       className="mt-6 p-7 rounded-xl border flex flex-col sm:flex-row sm:items-center justify-between gap-5"
@@ -737,7 +785,7 @@ function CalcConversionBlock({ stopBleeding, startTrial }: { stopBleeding: React
         {stopBleeding}
       </p>
       <a
-        href="https://my.sealmetrics.com/register"
+        href={href}
         className="inline-flex items-center justify-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors shrink-0"
       >
         {startTrial} <span>→</span>

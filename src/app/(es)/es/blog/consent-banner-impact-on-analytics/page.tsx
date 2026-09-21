@@ -90,38 +90,37 @@ export default function ConsentBannerImpactPageEs() {
           <p>
             La tasa de rechazo varía por país, sector y diseño del banner. En
             nuestra experiencia con clientes, entre el 40% y el 60% del tráfico
-            no acepta cookies, y los mercados más sensibles a la privacidad,
-            como Alemania y los Países Bajos, están en la parte alta.
+            no acepta cookies. Dónde cae cada web dentro de ese rango depende de
+            su mercado, su audiencia y su banner.
           </p>
 
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px] my-6">
             <div className="space-y-4">
               {[
-                { country: "Alemania", rate: "60-70%" },
-                { country: "Países Bajos", rate: "55-65%" },
-                { country: "Francia", rate: "50-60%" },
-                { country: "España", rate: "40-50%" },
-                { country: "Reino Unido", rate: "35-45%" },
+                { label: "Tráfico que no acepta cookies", rate: "40–60%" },
+                { label: "De quienes aceptan, no en la primera página vista", rate: "40%" },
               ].map((item) => (
                 <div
-                  key={item.country}
-                  className="flex justify-between text-[0.9rem]"
+                  key={item.label}
+                  className="flex justify-between gap-4 text-[0.9rem]"
                 >
-                  <span className="text-text-secondary">{item.country}</span>
+                  <span className="text-text-secondary">{item.label}</span>
                   <span className="font-mono text-text-primary font-medium">
-                    {item.rate} de rechazo
+                    {item.rate}
                   </span>
                 </div>
               ))}
             </div>
             <p className="text-[0.8rem] text-text-tertiary mt-4">
-              Rangos aproximados basados en informes del sector y datos de clientes de Sealmetrics, 2025.
+              Nuestra experiencia con clientes, no un estudio. El rechazo varía
+              según el país y el diseño del banner; no publicamos cifras por país.
+              Mide tu propia web para saberlo.
             </p>
           </div>
 
           <p>
-            Esto significa que si tu audiencia principal está en Alemania, tu analítica
-            puede estar perdiendo la mitad de los visitantes antes de considerar cualquier otro factor de pérdida. Ad blockers, restricciones de navegador y{" "}
+            Esto significa que, en la parte alta de ese rango, tu analítica pierde
+            más de la mitad de los visitantes antes de considerar cualquier otro factor de pérdida. Ad blockers, restricciones de navegador y{" "}
             <Link
               href="/es/blog/ga4-data-sampling-problem"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
