@@ -1314,5 +1314,121 @@
   "/es/blog/why-ga4-misses-traffic/": {
     "hash": "f5840a819c769225",
     "date": "2026-09-21"
+  },
+  "/about-us/": {
+    "hash": "f7ca9bd3efa8cb98",
+    "date": "2026-09-23"
+  },
+  "/blog/cookieless-analytics/": {
+    "hash": "671ce1ce14286697",
+    "date": "2026-09-23"
+  },
+  "/blog/cookieless-solutions-compliant-with-gdpr/": {
+    "hash": "e0e9ad802ef2dada",
+    "date": "2026-09-23"
+  },
+  "/blog/cookieless-tracking-based-on-digital-fingerprinting/": {
+    "hash": "0d04481acce84643",
+    "date": "2026-09-23"
+  },
+  "/blog/cookieless-tracking-guide-to-e-commerce-2025/": {
+    "hash": "0d04481acce84643",
+    "date": "2026-09-23"
+  },
+  "/blog/ga4-data-threshold/": {
+    "hash": "3b4f09d0b64e7193",
+    "date": "2026-09-23"
+  },
+  "/blog/gdpr-and-google-analytics-guide/": {
+    "hash": "25d39cafa5f437ec",
+    "date": "2026-09-23"
+  },
+  "/blog/google-ads-implement-consent/": {
+    "hash": "2254fa190c4b2af6",
+    "date": "2026-09-23"
+  },
+  "/blog/google-ads-utm-parameters/": {
+    "hash": "2254fa190c4b2af6",
+    "date": "2026-09-23"
+  },
+  "/blog/google-analytics-cookieless/": {
+    "hash": "671ce1ce14286697",
+    "date": "2026-09-23"
+  },
+  "/blog/google-search-analytics/": {
+    "hash": "b23c13e874b78cd6",
+    "date": "2026-09-23"
+  },
+  "/blog/how-gdpr-affects-google-analytics/": {
+    "hash": "25d39cafa5f437ec",
+    "date": "2026-09-23"
+  },
+  "/blog/personalization-with-privacy/": {
+    "hash": "37e5eebe18669552",
+    "date": "2026-09-23"
+  },
+  "/blog/privacy-sandbox/": {
+    "hash": "37e5eebe18669552",
+    "date": "2026-09-23"
+  },
+  "/blog/questions-google-analytics-cookies/": {
+    "hash": "b23c13e874b78cd6",
+    "date": "2026-09-23"
+  },
+  "/blog/single-source-of-truth-analytics/": {
+    "hash": "f8200b35a9f83dd4",
+    "date": "2026-09-23"
+  },
+  "/comparison/matomo/": {
+    "hash": "1104d3ab4f6cfbf2",
+    "date": "2026-09-23"
+  },
+  "/enhanced-conversions-google-ads/": {
+    "hash": "2254fa190c4b2af6",
+    "date": "2026-09-23"
+  },
+  "/google-analytics-alternatives/": {
+    "hash": "b23c13e874b78cd6",
+    "date": "2026-09-23"
+  },
+  "/google-cookieless-future/consent-mode/google-consent-mode-v2-recommendations/": {
+    "hash": "1736d647061a96ed",
+    "date": "2026-09-23"
+  },
+  "/marketing-analytics/": {
+    "hash": "0d3b1048b32c52ab",
+    "date": "2026-09-23"
+  },
+  "/matomo/": {
+    "hash": "1104d3ab4f6cfbf2",
+    "date": "2026-09-23"
+  },
+  "/matomo-alternative/": {
+    "hash": "1104d3ab4f6cfbf2",
+    "date": "2026-09-23"
+  },
+  "/product-intelligence/": {
+    "hash": "62e58f225d046e2a",
+    "date": "2026-09-23"
+  },
+  "/solutions/ecommerce/": {
+    "hash": "bbc5e3eef45d60a3",
+    "date": "2026-09-23"
+  },
+  "/solutions/education/": {
+    "hash": "5dc174a678ad6c4b",
+    "date": "2026-09-23"
+  },
+  "/solutions/healthcare/": {
+    "hash": "cdb4f04e3cef0678",
+    "date": "2026-09-23"
+  },
+  "/solutions/saas/": {
+    "hash": "690bb639f6f05bf3",
+    "date": "2026-09-23"
+  },
+  "/what-is-a-consent-management-platform/": {
+    "hash": "ee9b07ea73124bde",
+    "date": "2026-09-23"
   }
 }
