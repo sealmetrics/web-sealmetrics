@@ -742,6 +742,18 @@
 .sig-brand-request {
   scroll-margin-top: 96px;
 }
+/* One sentence under the form pointing at the two-question live check. */
+.sig-brand-quick {
+  margin-top: 22px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+.sig-brand-page a.sig-brand-quick-link {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 650;
+}
 .sig-brand-sample + .sig-brand-request {
   padding-top: clamp(48px, 5vw, 76px);
 }

@@ -1,0 +1,618 @@
+/*
+ * "What do AIs say about…?" — /what-ai-says and /es/que-dicen-las-ia.
+ *
+ * Builds on brand-monitoring-signal.css (tokens, hero, fields, buttons, the
+ * section heads) and adds only what the live result needs. Square corners and
+ * hard offset shadows throughout. The four verdict colours are data semantics,
+ * never emphasis, and every state also carries its label in ink, so no state is
+ * told apart by colour alone.
+ */
+.sig-check-page {
+  --state-correct: #2f7a3e;
+  --state-partial: #b7791f;
+  --state-confused: #b5423b;
+  --state-none: #b9b6ac;
+  --alert: #b5423b;
+  --quote: #2e5c8a;
+}
+
+.sig-check-hero {
+  padding-bottom: clamp(20px, 2.4vw, 32px);
+}
+.sig-check-hero h1 {
+  max-width: 14ch;
+}
+/* `.sig-brand-page p { margin: 0 }` outranks the hero body's own margin. */
+.sig-check-page .sig-brand-hero-body {
+  margin-top: 28px;
+}
+
+.sig-check-live {
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+  padding-bottom: clamp(48px, 5vw, 76px);
+}
+.sig-check-app {
+  display: grid;
+  gap: 28px;
+}
+
+/* ── Form ─────────────────────────────────────────────────────────────── */
+.sig-check-form {
+  border: 1px solid var(--ink);
+}
+.sig-check-form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: end;
+}
+.sig-check-form-row input {
+  font-size: 18px;
+  padding: 14px 14px;
+}
+.sig-check-form-foot {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.sig-check-hint {
+  max-width: 62ch;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.sig-check-turnstile {
+  min-height: 65px;
+}
+
+/* ── Status and alerts ────────────────────────────────────────────────── */
+.sig-check-status {
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 16px 20px;
+  border: 1px dashed var(--ink);
+  background: var(--white);
+}
+.sig-check-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 16px 20px;
+  border: 1px solid var(--alert);
+  border-left-width: 4px;
+  background: var(--white);
+  font-size: 15px;
+  line-height: 1.5;
+}
+.sig-check-link-button,
+.sig-check-open-compare {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 650;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+.sig-check-link-button:focus-visible,
+.sig-check-open-compare:focus-visible,
+.sig-check-share-row a:focus-visible,
+.sig-check-share-row button:focus-visible,
+.sig-check-answers summary:focus-visible {
+  outline: 2px solid var(--acid-ink);
+  outline-offset: 2px;
+}
+
+/* ── Result ───────────────────────────────────────────────────────────── */
+.sig-check-result {
+  display: grid;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* The share card: the one line people screenshot, so it is the biggest thing. */
+.sig-check-card {
+  border: 1px solid var(--ink);
+  background: var(--white);
+  box-shadow: 12px 12px 0 var(--acid);
+  padding: clamp(22px, 3vw, 40px);
+  display: grid;
+  gap: 16px;
+}
+.sig-check-card-eyebrow span {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--acid);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+.sig-check-page .sig-check-card-brand {
+  font-size: clamp(34px, 4.4vw, 64px);
+  font-weight: 790;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  overflow-wrap: anywhere;
+}
+.sig-check-card-line {
+  font-size: clamp(20px, 2.1vw, 30px);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  max-width: 42ch;
+}
+.sig-check-card-line.is-running {
+  color: var(--muted);
+}
+.sig-check-card-line.is-failed {
+  color: var(--alert);
+}
+.sig-check-progress {
+  display: grid;
+  gap: 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sig-check-bar {
+  height: 10px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+.sig-check-bar span {
+  display: block;
+  height: 100%;
+  background: var(--ink);
+  transition: width 0.4s ease;
+}
+
+/* Agree / disagree. */
+.sig-check-consensus {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+.sig-check-consensus section {
+  background: var(--white);
+  padding: 22px;
+  display: grid;
+  align-content: start;
+  gap: 10px;
+}
+.sig-check-page .sig-check-consensus h3,
+.sig-check-page .sig-check-models > h3,
+.sig-check-page .sig-check-method h3 {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-check-consensus p {
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+/* Model by model. */
+.sig-check-models {
+  display: grid;
+  gap: 14px;
+}
+.sig-check-model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+.sig-check-model {
+  border: 1px solid var(--ink);
+  background: var(--white);
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+/* Not reviewed: the judge did not rule, so the card says so in its outline too. */
+.sig-check-model.is-unreviewed {
+  border-style: dashed;
+  background: var(--paper);
+}
+.sig-check-model.is-pending {
+  border-color: var(--rule);
+}
+.sig-check-model-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 12px;
+  align-items: flex-start;
+}
+.sig-check-page .sig-check-model h4 {
+  margin: 0;
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  overflow-wrap: anywhere;
+}
+.sig-check-model-top p {
+  margin-top: 3px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.sig-check-model-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+.sig-check-kind,
+.sig-check-recommends {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 7px;
+  border: 1px solid var(--ink);
+  white-space: nowrap;
+}
+.sig-check-kind.is-closed {
+  background: var(--ink);
+  color: var(--white);
+}
+.sig-check-kind.is-open {
+  background: var(--white);
+  color: var(--ink);
+}
+.sig-check-recommends {
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-check-state {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sig-check-state::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border: 1px solid var(--ink);
+  background: var(--state, transparent);
+}
+.sig-check-state.is-correct { --state: var(--state-correct); }
+.sig-check-state.is-partial { --state: var(--state-partial); }
+.sig-check-state.is-confused { --state: var(--state-confused); }
+.sig-check-state.is-none { --state: var(--state-none); }
+.sig-check-state.is-unreviewed::before {
+  background: repeating-linear-gradient(45deg, var(--ink) 0 2px, transparent 2px 4px);
+  border-style: dashed;
+}
+.sig-check-state.is-pending {
+  color: var(--muted);
+}
+.sig-check-state.is-pending::before {
+  border-style: dashed;
+  border-color: var(--muted);
+}
+.sig-check-note {
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink);
+  border-left: 3px solid var(--ink);
+  padding-left: 10px;
+}
+.sig-check-model.is-confused .sig-check-note {
+  border-left-color: var(--state-confused);
+}
+.sig-check-answers {
+  margin-top: auto;
+  display: grid;
+  border-top: 1px solid var(--rule);
+}
+.sig-check-answers details {
+  border-bottom: 1px solid var(--rule);
+}
+.sig-check-answers summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 650;
+}
+.sig-check-answers summary::-webkit-details-marker {
+  display: none;
+}
+.sig-check-answers summary::after {
+  content: "+";
+  font-family: var(--font-mono), monospace;
+  font-weight: 650;
+}
+.sig-check-answers details[open] summary::after {
+  content: "–";
+}
+.sig-check-question {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.sig-check-answers blockquote {
+  margin: 0 0 14px;
+  padding-left: 12px;
+  border-left: 3px solid var(--quote);
+  font-size: 14px;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.sig-check-answers blockquote.is-missing {
+  border-left-color: var(--state-none);
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Methodology. */
+.sig-check-method {
+  border-top: 1px solid var(--ink);
+  padding-top: 18px;
+  display: grid;
+  gap: 12px;
+}
+.sig-check-method dl {
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px 24px;
+}
+.sig-check-method dt {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-check-method dd {
+  margin: 4px 0 0;
+  font-size: 15px;
+  font-weight: 650;
+}
+.sig-check-method > p {
+  font-size: 14px;
+  color: var(--ink);
+}
+
+/* Share. */
+.sig-check-share {
+  display: grid;
+  gap: 12px;
+}
+.sig-check-share-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sig-check-page .sig-check-share-row a,
+.sig-check-share-row button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  border-radius: 0;
+  cursor: pointer;
+  transition: transform 0.12s ease;
+}
+.sig-check-page .sig-check-share-row a:hover,
+.sig-check-share-row button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.sig-check-share-status {
+  font-size: 13px;
+  min-height: 1em;
+}
+.sig-check-url {
+  font-family: var(--font-mono), monospace;
+  overflow-wrap: anywhere;
+}
+
+.sig-check-takedown {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.sig-check-page .sig-check-takedown a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+/* Sits in the ink "what it is not" slab, so it takes the slab's own text colour. */
+.sig-check-page a.sig-check-inline-link {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--acid);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ── Compare ──────────────────────────────────────────────────────────── */
+.sig-check-compare {
+  display: grid;
+  gap: 24px;
+}
+.sig-check-compare-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.sig-check-page .sig-check-compare-head h2,
+.sig-check-page .sig-check-compare-form h2 {
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 790;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  overflow-wrap: anywhere;
+}
+.sig-check-compare-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 12px 12px 0 var(--acid);
+}
+.sig-check-compare-cards p {
+  background: var(--white);
+  padding: 20px;
+  font-size: clamp(17px, 1.6vw, 22px);
+  font-weight: 650;
+  line-height: 1.3;
+}
+.sig-check-compare-cards strong {
+  display: block;
+  font-weight: 790;
+  font-size: 1.3em;
+  letter-spacing: -0.03em;
+  margin-bottom: 6px;
+}
+.sig-check-compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+  border: 1px solid var(--ink);
+  font-size: 15px;
+}
+.sig-check-compare-table caption {
+  text-align: left;
+  padding-bottom: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-check-compare-table th,
+.sig-check-compare-table td {
+  text-align: left;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--rule);
+}
+.sig-check-compare-table thead th {
+  font-weight: 790;
+  border-bottom: 1px solid var(--ink);
+}
+.sig-check-compare-table tbody th {
+  font-weight: 400;
+  color: var(--muted);
+}
+.sig-check-compare-table td {
+  font-family: var(--font-mono), monospace;
+  font-weight: 650;
+}
+.sig-check-compare-table td.is-lead {
+  background: var(--acid);
+}
+.sig-check-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+.sig-check-columns .sig-check-model-grid {
+  grid-template-columns: minmax(0, 1fr);
+}
+.sig-check-columns .sig-check-consensus {
+  grid-template-columns: minmax(0, 1fr);
+}
+.sig-check-compare-form {
+  border-top: 1px solid var(--rule);
+  padding-top: 24px;
+}
+.sig-check-compare-form form {
+  display: grid;
+  gap: 16px;
+}
+.sig-check-open-compare {
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sig-check-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Static sections ──────────────────────────────────────────────────── */
+.sig-check-how-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 900px) {
+  .sig-check-columns,
+  .sig-check-compare-cards,
+  .sig-check-consensus,
+  .sig-check-how-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .sig-check-form-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sig-check-form-row .sig-brand-submit {
+    width: 100%;
+  }
+  .sig-check-card {
+    box-shadow: 6px 6px 0 var(--acid);
+  }
+  .sig-check-compare-cards {
+    box-shadow: 6px 6px 0 var(--acid);
+  }
+}

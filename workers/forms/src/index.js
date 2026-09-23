@@ -269,7 +269,10 @@ function isRecord(value) {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
-function corsHeaders(origin, env) {
+const FORMS_METHODS = "POST, OPTIONS";
+const BRAND_CHECK_METHODS = "GET, POST, OPTIONS";
+
+function corsHeaders(origin, env, methods = FORMS_METHODS) {
   const headers = {
     "Cache-Control": "no-store",
     "Content-Type": "application/json; charset=utf-8",
@@ -278,7 +281,7 @@ function corsHeaders(origin, env) {
   };
   if (origin && csvSet(env.ALLOWED_ORIGINS).has(origin)) {
     headers["Access-Control-Allow-Origin"] = origin;
-    headers["Access-Control-Allow-Methods"] = "POST, OPTIONS";
+    headers["Access-Control-Allow-Methods"] = methods;
     headers["Access-Control-Allow-Headers"] = "Content-Type";
     headers.Vary = "Origin";
   }
@@ -446,11 +449,12 @@ async function verifyTurnstile(request, env, token) {
   }
 }
 
-async function rateLimit(request, env) {
+async function rateLimit(request, env, binding = "FORM_RATE_LIMITER") {
   if (env.ALLOW_INSECURE_TESTING === "true") return true;
-  if (!env.FORM_RATE_LIMITER?.limit) return false;
+  const limiter = env[binding];
+  if (!limiter?.limit) return false;
   const ip = request.headers.get("CF-Connecting-IP") || "unknown";
-  const result = await env.FORM_RATE_LIMITER.limit({ key: ip });
+  const result = await limiter.limit({ key: ip });
   return result.success === true;
 }
 
@@ -522,11 +526,276 @@ async function handleSubmission(request, env) {
   }
 }
 
+// ---------------------------------------------------------------------------
+// "What do AIs say about…?" brand check (Enroutia D-320).
+//
+// The page at /que-dicen-las-ia/ and /what-ai-says/ never talks to Enroutia
+// directly: the bearer token that pays for a check lives only here, as the
+// `ENROUTIA_BRAND_CHECK_TOKEN` secret.
+//
+// - POST /api/brand-check creates (or reuses from Enroutia's 7-day cache) a
+//   check. Same protections as /api/forms: allowed origin, FORM_RATE_LIMITER,
+//   JSON body, honeypot, Turnstile.
+// - GET /api/brand-check?brand=…&language=… and GET /api/brand-check?id=<uuid>
+//   read a public result. No Turnstile — the page polls every 2 s and a result
+//   URL must open from a shared link — so it has its own, looser limiter.
+//   The token goes along when set, so Enroutia limits per project, not per IP.
+//
+// Upstream bodies are only ever relayed on success (and 404 on reads). Every
+// other upstream answer collapses into a fixed error so Enroutia internals
+// (balance, key state, stack traces) never reach the browser.
+// ---------------------------------------------------------------------------
+
+const BRAND_CHECK_PATH = "/api/brand-check";
+const BRAND_CHECK_CREATE_TIMEOUT_MS = 15_000;
+const BRAND_CHECK_READ_TIMEOUT_MS = 10_000;
+const BRAND_CHECK_LANGUAGES = new Set(["es", "en"]);
+const UUID_RE =
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+// A brand is a name, not an address. Enroutia answers 422 `brand_invalid` for
+// emails and URLs; refusing them here saves the round trip and the Turnstile
+// token. A bare domain-like brand ("Booking.com") is a real brand name and is
+// allowed; a scheme, a leading "www.", a path or an email address is not.
+const BRAND_REJECT_PATTERNS = [
+  /[\u0000-\u001f\u007f]/, // control characters
+  /[^\s@]+@[^\s@]+\.[^\s@]+/, // email address
+  /[a-z][a-z0-9+.-]*:\/\//i, // any scheme://
+  /(^|\s)www\./i, // www.example
+  /[^\s/]+\.[a-z]{2,}\/\S*/i, // example.com/path
+];
+
+function normalizeBrand(value) {
+  if (typeof value !== "string") return null;
+  const brand = value.trim();
+  if (!brand || brand.length > 120) return null;
+  if (BRAND_REJECT_PATTERNS.some((re) => re.test(brand))) return null;
+  return brand;
+}
+
+function brandCheckJson(request, env, data, status, extraHeaders = {}) {
+  const headers = corsHeaders(
+    request.headers.get("Origin"),
+    env,
+    BRAND_CHECK_METHODS,
+  );
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: { ...headers, ...extraHeaders },
+  });
+}
+
+function brandCheckUnavailable(request, env) {
+  return brandCheckJson(request, env, { ok: false, error: "unavailable" }, 503);
+}
+
+function enroutiaBase(env) {
+  const base = typeof env.ENROUTIA_API_BASE === "string"
+    ? env.ENROUTIA_API_BASE.trim().replace(/\/+$/, "")
+    : "";
+  return base || null;
+}
+
+// Reads an upstream body that must be JSON. Anything else is treated as an
+// upstream failure, so a proxy error page can never be relayed as a result.
+async function readUpstreamJson(response) {
+  try {
+    const text = await response.text();
+    JSON.parse(text);
+    return text;
+  } catch {
+    return null;
+  }
+}
+
+async function handleBrandCheckCreate(request, env) {
+  if (!originAllowed(request, env)) {
+    return brandCheckJson(request, env, { ok: false, error: "origin_not_allowed" }, 403);
+  }
+  if (!(await rateLimit(request, env, "FORM_RATE_LIMITER"))) {
+    return brandCheckJson(request, env, { ok: false, error: "rate_limited" }, 429);
+  }
+  if (!(request.headers.get("Content-Type") || "").includes("application/json")) {
+    return brandCheckJson(request, env, { ok: false, error: "invalid_content_type" }, 415);
+  }
+  const declaredSize = Number(request.headers.get("Content-Length") || "0");
+  if (declaredSize > MAX_BODY_BYTES) {
+    return brandCheckJson(request, env, { ok: false, error: "payload_too_large" }, 413);
+  }
+
+  let body;
+  try {
+    const raw = await request.text();
+    if (new TextEncoder().encode(raw).byteLength > MAX_BODY_BYTES) {
+      return brandCheckJson(request, env, { ok: false, error: "payload_too_large" }, 413);
+    }
+    body = JSON.parse(raw);
+  } catch {
+    return brandCheckJson(request, env, { ok: false, error: "invalid_json" }, 400);
+  }
+  if (!isRecord(body)) {
+    return brandCheckJson(request, env, { ok: false, error: "invalid_request" }, 400);
+  }
+  // Honeypot: a bot that fills it gets a quiet 202 and nothing is created or
+  // charged. The shape is minimal on purpose — there is no check to poll.
+  if (typeof body.company_fax === "string" && body.company_fax.trim()) {
+    return brandCheckJson(request, env, { ok: true }, 202);
+  }
+
+  const brand = normalizeBrand(body.brand);
+  const language = body.language;
+  const country = body.country;
+  const countryValid =
+    country === undefined ||
+    country === null ||
+    (typeof country === "string" && country.trim().length <= 60);
+  if (!brand || !BRAND_CHECK_LANGUAGES.has(language) || !countryValid) {
+    return brandCheckJson(request, env, { ok: false, error: "invalid_fields" }, 400);
+  }
+
+  const base = enroutiaBase(env);
+  if (!base || !env.ENROUTIA_BRAND_CHECK_TOKEN) {
+    return brandCheckUnavailable(request, env);
+  }
+  if (!(await verifyTurnstile(request, env, body.turnstileToken))) {
+    return brandCheckJson(request, env, { ok: false, error: "challenge_failed" }, 403);
+  }
+
+  // `country` is optional upstream (it defaults per language), so it is only
+  // sent when the visitor actually typed one.
+  const upstreamBody = { brand, language };
+  if (typeof country === "string" && country.trim()) {
+    upstreamBody.country = country.trim();
+  }
+
+  let response;
+  try {
+    response = await fetch(`${base}/api/brand-checks`, {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${env.ENROUTIA_BRAND_CHECK_TOKEN}`,
+        "Content-Type": "application/json",
+        "User-Agent": "Sealmetrics-Forms/1.0",
+      },
+      body: JSON.stringify(upstreamBody),
+      signal: AbortSignal.timeout(BRAND_CHECK_CREATE_TIMEOUT_MS),
+    });
+  } catch {
+    return brandCheckUnavailable(request, env);
+  }
+
+  if (response.status === 200 || response.status === 202) {
+    const text = await readUpstreamJson(response);
+    if (text === null) return brandCheckUnavailable(request, env);
+    return new Response(text, {
+      status: response.status,
+      headers: corsHeaders(request.headers.get("Origin"), env, BRAND_CHECK_METHODS),
+    });
+  }
+  if (response.status === 429) {
+    return brandCheckJson(request, env, { ok: false, error: "quota" }, 429);
+  }
+  // Our validation mirrors Enroutia's; a 422 still means the brand was refused
+  // (its normaliser is the one that decides), and the visitor can fix that.
+  if (response.status === 400 || response.status === 422) {
+    return brandCheckJson(request, env, { ok: false, error: "invalid_fields" }, 400);
+  }
+  // 401/403 (token), 402/409 (balance, key state), 404 and 5xx: none of them is
+  // something the visitor can act on, and none of their bodies leaves here.
+  return brandCheckUnavailable(request, env);
+}
+
+async function handleBrandCheckRead(request, env, url) {
+  // A browser always sends Origin on a cross-origin fetch. A direct
+  // navigation (a shared result link opened in a tab) sends none, and is let
+  // through without CORS headers.
+  const origin = request.headers.get("Origin");
+  if (origin && !csvSet(env.ALLOWED_ORIGINS).has(origin)) {
+    return brandCheckJson(request, env, { ok: false, error: "origin_not_allowed" }, 403);
+  }
+  if (!(await rateLimit(request, env, "BRAND_CHECK_READ_LIMITER"))) {
+    return brandCheckJson(request, env, { ok: false, error: "rate_limited" }, 429);
+  }
+
+  let upstreamPath;
+  const id = url.searchParams.get("id");
+  if (id !== null) {
+    if (!UUID_RE.test(id)) {
+      return brandCheckJson(request, env, { ok: false, error: "invalid_fields" }, 400);
+    }
+    upstreamPath = `/api/brand-checks/public/${id.toLowerCase()}`;
+  } else {
+    const brand = normalizeBrand(url.searchParams.get("brand"));
+    const language = url.searchParams.get("language");
+    if (!brand || !BRAND_CHECK_LANGUAGES.has(language)) {
+      return brandCheckJson(request, env, { ok: false, error: "invalid_fields" }, 400);
+    }
+    upstreamPath = `/api/brand-checks/public?${new URLSearchParams({ brand, language })}`;
+  }
+
+  const base = enroutiaBase(env);
+  if (!base) return brandCheckUnavailable(request, env);
+
+  // The public read works anonymously, but with the token Enroutia limits per
+  // project instead of per IP — and every visitor shares this Worker's IP.
+  const headers = {
+    Accept: "application/json",
+    "User-Agent": "Sealmetrics-Forms/1.0",
+  };
+  if (env.ENROUTIA_BRAND_CHECK_TOKEN) {
+    headers.Authorization = `Bearer ${env.ENROUTIA_BRAND_CHECK_TOKEN}`;
+  }
+
+  let response;
+  try {
+    response = await fetch(`${base}${upstreamPath}`, {
+      method: "GET",
+      headers,
+      signal: AbortSignal.timeout(BRAND_CHECK_READ_TIMEOUT_MS),
+    });
+  } catch {
+    return brandCheckUnavailable(request, env);
+  }
+
+  if (response.status === 200 || response.status === 404) {
+    const text = await readUpstreamJson(response);
+    if (text === null) return brandCheckUnavailable(request, env);
+    const out = corsHeaders(origin, env, BRAND_CHECK_METHODS);
+    // Enroutia decides freshness: max-age=5 while running, 300 when done.
+    out["Cache-Control"] = response.headers.get("Cache-Control") || "no-store";
+    out["X-Robots-Tag"] = "noindex";
+    out.Vary = "Origin";
+    return new Response(text, { status: response.status, headers: out });
+  }
+  if (response.status === 429) {
+    return brandCheckJson(request, env, { ok: false, error: "rate_limited" }, 429);
+  }
+  return brandCheckUnavailable(request, env);
+}
+
+async function handleBrandCheckRoute(request, env, url) {
+  if (request.method === "OPTIONS") {
+    if (!originAllowed(request, env)) {
+      return brandCheckJson(request, env, { ok: false, error: "origin_not_allowed" }, 403);
+    }
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders(request.headers.get("Origin"), env, BRAND_CHECK_METHODS),
+    });
+  }
+  if (request.method === "POST") return handleBrandCheckCreate(request, env);
+  if (request.method === "GET") return handleBrandCheckRead(request, env, url);
+  return brandCheckJson(request, env, { ok: false, error: "method_not_allowed" }, 405);
+}
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/health" && request.method === "GET") {
       return json(request, env, { ok: true });
+    }
+    if (url.pathname === BRAND_CHECK_PATH) {
+      return handleBrandCheckRoute(request, env, url);
     }
     if (url.pathname !== "/api/forms") {
       return json(request, env, { ok: false, error: "not_found" }, 404);

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import type { Locale } from "@/lib/i18n/types";
-import { hasTranslation } from "@/lib/i18n/navigation";
+import { counterpartPath, hasTranslation } from "@/lib/i18n/navigation";
 
 export function LanguageSwitcher({ locale }: { locale: Locale }) {
   const pathname = usePathname();
@@ -19,9 +19,12 @@ export function LanguageSwitcher({ locale }: { locale: Locale }) {
   const targetLocale = locale === "es" ? "en" : "es";
   // Trailing slash to match `trailingSlash: true` — this link sits on every
   // page, so without it the switcher costs a 301 hop site-wide.
+  // A few pages use a different slug per language (/what-ai-says ↔
+  // /es/que-dicen-las-ia); counterpartPath maps those and passes the rest through.
+  const targetPath = counterpartPath(basePath, targetLocale);
   const rawHref = targetLocale === "es"
-    ? `/es${basePath === "/" ? "" : basePath}`
-    : basePath;
+    ? `/es${targetPath === "/" ? "" : targetPath}`
+    : targetPath;
   const targetHref = rawHref.endsWith("/") ? rawHref : `${rawHref}/`;
 
   return (

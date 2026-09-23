@@ -1870,6 +1870,26 @@
       "source": "public/og/blog/why-ga4-misses-traffic.png",
       "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
       "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/que-dicen-las-ia.avif": {
+      "source": "public/og/que-dicen-las-ia.png",
+      "sourceHash": "ef03505847c48a366f2affd1fe22b0c7e38dacfc7d22764617c9a2f4aef1818b",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/que-dicen-las-ia.webp": {
+      "source": "public/og/que-dicen-las-ia.png",
+      "sourceHash": "ef03505847c48a366f2affd1fe22b0c7e38dacfc7d22764617c9a2f4aef1818b",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/what-ai-says.avif": {
+      "source": "public/og/what-ai-says.png",
+      "sourceHash": "483732f8c72149a7203c456e0316cfa12f78a50f85ce2cde62a31e0cc2824490",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/what-ai-says.webp": {
+      "source": "public/og/what-ai-says.png",
+      "sourceHash": "483732f8c72149a7203c456e0316cfa12f78a50f85ce2cde62a31e0cc2824490",
+      "signature": "webp:{\"quality\":78}"
     }
   }
 }
