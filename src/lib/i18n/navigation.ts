@@ -123,10 +123,32 @@ const translatedPaths = new Set([
   "/authors/rafa-jimenez",
 ]);
 
+/**
+ * Pages whose Spanish slug is not the English one. Key: English path; value:
+ * the Spanish path WITHOUT the `/es` prefix. Every other translated page keeps
+ * the same slug in both languages and lives in `translatedPaths` above.
+ */
+const localizedSlugs: Record<string, string> = {
+  "/what-ai-says": "/que-dicen-las-ia",
+};
+const englishForSpanishSlug: Record<string, string> = Object.fromEntries(
+  Object.entries(localizedSlugs).map(([en, es]) => [es, en]),
+);
+
 /** Returns true if the path has a Spanish translation */
 export function hasTranslation(path: string): boolean {
   const clean = path.replace(/\/$/, "") || "/";
-  return translatedPaths.has(clean);
+  return translatedPaths.has(clean) || clean in localizedSlugs || clean in englishForSpanishSlug;
+}
+
+/**
+ * The same page in the other language, as a base path without the `/es` prefix.
+ * Accepts either language's base path; identical for same-slug pages.
+ */
+export function counterpartPath(basePath: string, targetLocale: Locale): string {
+  const clean = basePath.replace(/\/$/, "") || "/";
+  if (targetLocale === "es") return localizedSlugs[clean] ?? clean;
+  return englishForSpanishSlug[clean] ?? clean;
 }
 
 /**
@@ -144,7 +166,8 @@ export function localizedHref(path: string, locale: Locale): string {
   if (locale === "en") return withTrailingSlash(path);
   const clean = path.replace(/\/$/, "") || "/";
   if (!hasTranslation(clean)) return withTrailingSlash(path);
-  return withTrailingSlash(`${localePrefix[locale]}${clean === "/" ? "" : clean}`);
+  const target = counterpartPath(clean, "es");
+  return withTrailingSlash(`${localePrefix[locale]}${target === "/" ? "" : target}`);
 }
 
 /** Generate alternates.languages for Next.js metadata (use from English pages) */
@@ -153,9 +176,11 @@ export function getAlternates(path: string) {
   if (!hasTranslation(clean)) return undefined;
   // Trailing slash to match trailingSlash:true served URLs, the on-page
   // canonical and the sitemap — otherwise hreflang is non-reciprocal.
-  const suffix = clean === "/" ? "/" : `${clean}/`;
-  const enUrl = `${SITE_URL}${suffix}`;
-  const esUrl = `${SITE_URL}/es${suffix}`;
+  const enPath = counterpartPath(clean, "en");
+  const esPath = counterpartPath(clean, "es");
+  const suffix = (p: string) => (p === "/" ? "/" : `${p}/`);
+  const enUrl = `${SITE_URL}${suffix(enPath)}`;
+  const esUrl = `${SITE_URL}/es${suffix(esPath)}`;
   return {
     "en": enUrl,
     "es": esUrl,

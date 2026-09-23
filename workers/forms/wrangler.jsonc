@@ -12,7 +12,8 @@
     "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com",
     "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
     "TURNSTILE_ACTION": "sealmetrics_lead",
-    "REQUIRE_TURNSTILE": "true"
+    "REQUIRE_TURNSTILE": "true",
+    "ENROUTIA_API_BASE": "https://api.enroutia.com"
   },
   "ratelimits": [
     {
@@ -20,6 +21,14 @@
       "namespace_id": "19081",
       "simple": {
         "limit": 10,
+        "period": 60
+      }
+    },
+    {
+      "name": "BRAND_CHECK_READ_LIMITER",
+      "namespace_id": "19082",
+      "simple": {
+        "limit": 120,
         "period": 60
       }
     }
