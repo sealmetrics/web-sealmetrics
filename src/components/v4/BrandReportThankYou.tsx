@@ -32,13 +32,13 @@ const copy = {
     eyebrow: "Request received",
     h1: (
       <>
-        Fifteen models are
+        Seventeen models are
         <br />
         <em>answering right now.</em>
       </>
     ),
     heroBody:
-      "Your report is being written while you read this: six questions, fifteen models, every answer kept whole. It arrives by email in about five minutes, as a page you can open, keep and forward. Keep an eye on your inbox — and on the spam folder, if five minutes pass and nothing has landed.",
+      "Your report is being written while you read this: six questions, seventeen models, every answer kept whole. It arrives by email in about five minutes, as a page you can open, keep and forward. Keep an eye on your inbox — and on the spam folder, if five minutes pass and nothing has landed.",
     productTag: "Meet Sealmetrics",
     productTitle: (
       <>
@@ -98,13 +98,13 @@ const copy = {
     eyebrow: "Solicitud recibida",
     h1: (
       <>
-        Quince modelos están
+        Diecisiete modelos están
         <br />
         <em>contestando ahora mismo.</em>
       </>
     ),
     heroBody:
-      "Tu informe se está escribiendo mientras lees esto: seis preguntas, quince modelos y cada respuesta entera. Llega por correo en unos cinco minutos, como una página que puedes abrir, guardar y reenviar. No pierdas de vista tu bandeja de entrada — ni la carpeta de spam, si pasan cinco minutos y no ha aparecido nada.",
+      "Tu informe se está escribiendo mientras lees esto: seis preguntas, diecisiete modelos y cada respuesta entera. Llega por correo en unos cinco minutos, como una página que puedes abrir, guardar y reenviar. No pierdas de vista tu bandeja de entrada — ni la carpeta de spam, si pasan cinco minutos y no ha aparecido nada.",
     productTag: "Conoce Sealmetrics",
     productTitle: (
       <>

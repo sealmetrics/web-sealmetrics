@@ -22,14 +22,14 @@ export const brandMonitoringFaq = {
         "No, and the difference matters. This measures what a model knows from training, with web search switched off. It is the layer underneath: when a model has no source at hand, or when a tool calls the API without search, this is the answer it falls back on. What a user sees in ChatGPT with browsing is a different measurement.",
     },
     {
-      question: "Does the report include ChatGPT and Claude?",
+      question: "Does the report include ChatGPT, Claude, Gemini and Perplexity?",
       answer:
-        "Yes. GPT-5.6 from OpenAI, the company behind ChatGPT, and Claude Opus 5 and Claude Sonnet 5 from Anthropic answer the same six questions as the twelve open models. They are called through the API with web search switched off, so the report shows what each model holds in memory, not what the ChatGPT or Claude apps would find by browsing that day.",
+        "Yes. GPT-5.6 from OpenAI, the company behind ChatGPT, Claude Opus 5 and Claude Sonnet 5 from Anthropic, Gemini 3.8 Flash from Google and Sonar from Perplexity answer the same six questions as the twelve open models. All five are called through the API with web search switched off, so the report shows what each model holds in memory, not what the ChatGPT, Claude, Gemini or Perplexity apps would find by searching that day.",
     },
     {
       question: "Which models answer the questions?",
       answer:
-        "Fifteen: twelve open models served from European infrastructure, plus GPT-5.6, Claude Sonnet 5 and Claude Opus 5. Each one gets the same six questions, one run each, at the same output budget. The report names every model beside its answer.",
+        "Seventeen: twelve open models served from European infrastructure, plus GPT-5.6, Claude Sonnet 5, Claude Opus 5, Gemini 3.8 Flash and Perplexity Sonar. Each one gets the same six questions, one run each, at the same output budget. The report names every model beside its answer.",
     },
     {
       question: "Who decides whether a model got my company right?",
@@ -49,7 +49,7 @@ export const brandMonitoringFaq = {
     {
       question: "Can I ask about a company that is not mine?",
       answer:
-        "Yes for a company, a product or a competitor. No for a person: the report is about organisations, and asking fifteen models what they believe about a named individual is a different problem with a different answer.",
+        "Yes for a company, a product or a competitor. No for a person: the report is about organisations, and asking seventeen models what they believe about a named individual is a different problem with a different answer.",
     },
     {
       question: "How often does the answer change?",
@@ -64,14 +64,14 @@ export const brandMonitoringFaq = {
         "No, y la diferencia importa. Esto mide lo que el modelo sabe de su entrenamiento, con la búsqueda web apagada. Es la capa de debajo: cuando un modelo no tiene una fuente a mano, o cuando una automatización llama a la API sin búsqueda, ésta es la respuesta a la que recurre. Lo que ve un usuario en ChatGPT navegando es otra medición.",
     },
     {
-      question: "¿El informe incluye ChatGPT y Claude?",
+      question: "¿El informe incluye ChatGPT, Claude, Gemini y Perplexity?",
       answer:
-        "Sí. GPT-5.6, de OpenAI, la empresa detrás de ChatGPT, y Claude Opus 5 y Claude Sonnet 5, de Anthropic, contestan las mismas seis preguntas que los doce modelos abiertos. Se les llama por la API con la búsqueda web apagada, así que el informe enseña lo que cada modelo tiene en la memoria, no lo que las apps de ChatGPT o Claude encontrarían navegando ese día.",
+        "Sí. GPT-5.6, de OpenAI, la empresa detrás de ChatGPT; Claude Opus 5 y Claude Sonnet 5, de Anthropic; Gemini 3.8 Flash, de Google, y Sonar, de Perplexity, contestan las mismas seis preguntas que los doce modelos abiertos. A los cinco se les llama por la API con la búsqueda web apagada, así que el informe enseña lo que cada modelo tiene en la memoria, no lo que las apps de ChatGPT, Claude, Gemini o Perplexity encontrarían buscando ese día.",
     },
     {
       question: "¿Qué modelos contestan?",
       answer:
-        "Quince: doce modelos abiertos servidos desde infraestructura europea, más GPT-5.6, Claude Sonnet 5 y Claude Opus 5. Todos reciben las mismas seis preguntas, una ejecución cada uno y el mismo presupuesto de respuesta. El informe nombra cada modelo junto a lo que dijo.",
+        "Diecisiete: doce modelos abiertos servidos desde infraestructura europea, más GPT-5.6, Claude Sonnet 5, Claude Opus 5, Gemini 3.8 Flash y Sonar de Perplexity. Todos reciben las mismas seis preguntas, una ejecución cada uno y el mismo presupuesto de respuesta. El informe nombra cada modelo junto a lo que dijo.",
     },
     {
       question: "¿Quién decide si un modelo acierta con mi empresa?",
@@ -91,7 +91,7 @@ export const brandMonitoringFaq = {
     {
       question: "¿Puedo preguntar por una empresa que no es la mía?",
       answer:
-        "Sí para una empresa, un producto o un competidor. No para una persona: el informe es de organizaciones, y preguntar a quince modelos qué creen sobre alguien con nombre y apellidos es otro problema con otra respuesta.",
+        "Sí para una empresa, un producto o un competidor. No para una persona: el informe es de organizaciones, y preguntar a diecisiete modelos qué creen sobre alguien con nombre y apellidos es otro problema con otra respuesta.",
     },
     {
       question: "¿Cada cuánto cambia la respuesta?",
@@ -104,11 +104,11 @@ export const brandMonitoringFaq = {
 type SampleState = "correct" | "partial" | "confused" | "none";
 
 // One square per model for question 01 of the sample. The mix is what the sample's
-// headline figures count — four correct and two partial make "6 / 15", four confused
-// make "4 / 15" — so change one and the other has to move with it.
+// headline figures count — four correct and two partial make "6 / 17", four confused
+// make "4 / 17" — so change one and the other has to move with it.
 const SAMPLE_GRID: SampleState[] = [
-  "correct", "partial", "confused", "none", "correct",
-  "none", "confused", "correct", "none", "partial",
+  "correct", "partial", "confused", "none", "correct", "none",
+  "none", "confused", "correct", "none", "partial", "none",
   "confused", "none", "correct", "confused", "none",
 ];
 const SAMPLE_LEGEND: SampleState[] = ["correct", "partial", "confused", "none"];
@@ -120,22 +120,24 @@ const copy = {
     eyebrow: "Free report · no account",
     h1: (
       <>
-        Ask fifteen models
+        Ask seventeen models
         <br />
         <em>what they know about you.</em>
       </>
     ),
     heroBody:
-      "Buyers no longer start at a search box. They ask a model, and the model answers from memory. This report asks fifteen of them six questions about your company and sends you what they actually said, quote by quote.",
+      "Buyers no longer start at a search box. They ask a model, and the model answers from memory. This report asks seventeen of them six questions about your company and sends you what they actually said, quote by quote.",
     modelsLabel: "Who answers",
     models: [
       ["GPT-5.6", "OpenAI · ChatGPT"],
       ["Claude Opus 5", "Anthropic · Claude"],
       ["Claude Sonnet 5", "Anthropic · Claude"],
+      ["Gemini 3.8 Flash", "Google · Gemini"],
+      ["Sonar", "Perplexity"],
       ["+ 12 open models", "Served from EU infrastructure"],
     ],
     modelsNote:
-      "Called through the API with web search off: what each model remembers, not what the ChatGPT or Claude app finds by browsing.",
+      "Called through the API with web search off: what each model remembers, not what the ChatGPT, Claude, Gemini or Perplexity app finds by searching.",
     sampleTag: "What you get back",
     sampleTitle: (
       <>
@@ -148,9 +150,9 @@ const copy = {
       "An invented coffee brand run through the same six questions. The layout, the four states and the closing correction are the real report's; the brand and the answers are made up, so no company is on display without having asked.",
     sampleBar: ["Sample · fictional brand", "Orvalla Coffee · specialty coffee eCommerce"],
     sampleStats: [
-      ["6 / 15", "described the brand correctly or with one error"],
+      ["6 / 17", "described the brand correctly or with one error"],
       ["2 / 11", "named it when asked for a brand like it, without being prompted"],
-      ["4 / 15", "confused it with another company"],
+      ["4 / 17", "confused it with another company"],
     ],
     sampleGridLabel: "Question 01 · Who you are · one square per model",
     sampleStates: {
@@ -188,14 +190,14 @@ const copy = {
     sampleFixLabel: "Correction worth making at the source",
     sampleFix:
       "Say on the About page, in one sentence a model can quote, that Orvalla sells online only and has no physical cafés. Two of the partial answers repeat the same error.",
-    sampleFoot: "The full report · six questions · fifteen models · ninety answers kept whole",
+    sampleFoot: "The full report · six questions · seventeen models · 102 answers kept whole",
     sampleCta: "Request yours",
     clientsTag: "Built by Sealmetrics",
     clientsBody:
       "The report is free. It comes from the team behind Sealmetrics, the cookieless analytics these companies use to measure what their marketing brings in.",
     formTitle: "Request your report",
-    formFoot: "Six questions · fifteen models · about five minutes",
-    ownTag: "We ran it on ourselves first",
+    formFoot: "Six questions · seventeen models · about five minutes",
+    ownTag: "We ran it on ourselves first, with fifteen models",
     ownTitle: (
       <>
         Five of fifteen models
@@ -272,22 +274,24 @@ const copy = {
     eyebrow: "Informe gratuito · sin cuenta",
     h1: (
       <>
-        Pregunta a quince modelos
+        Pregunta a diecisiete modelos
         <br />
         <em>qué saben de ti.</em>
       </>
     ),
     heroBody:
-      "Quien te compra ya no empieza en un buscador. Le pregunta a un modelo, y el modelo contesta de memoria. Este informe hace seis preguntas sobre tu empresa a quince de ellos y te manda lo que dijeron, cita a cita.",
+      "Quien te compra ya no empieza en un buscador. Le pregunta a un modelo, y el modelo contesta de memoria. Este informe hace seis preguntas sobre tu empresa a diecisiete de ellos y te manda lo que dijeron, cita a cita.",
     modelsLabel: "Quién contesta",
     models: [
       ["GPT-5.6", "OpenAI · ChatGPT"],
       ["Claude Opus 5", "Anthropic · Claude"],
       ["Claude Sonnet 5", "Anthropic · Claude"],
+      ["Gemini 3.8 Flash", "Google · Gemini"],
+      ["Sonar", "Perplexity"],
       ["+ 12 modelos abiertos", "Servidos desde infraestructura europea"],
     ],
     modelsNote:
-      "Por la API y con la búsqueda web apagada: lo que cada modelo recuerda, no lo que encuentra la app de ChatGPT o de Claude navegando.",
+      "Por la API y con la búsqueda web apagada: lo que cada modelo recuerda, no lo que encuentran las apps de ChatGPT, Claude, Gemini o Perplexity buscando.",
     sampleTag: "Lo que recibes",
     sampleTitle: (
       <>
@@ -300,9 +304,9 @@ const copy = {
       "Una marca de café inventada, pasada por las mismas seis preguntas. La estructura, los cuatro estados y la corrección final son los del informe real; la marca y las respuestas son inventadas, para no exponer a ninguna empresa que no lo haya pedido.",
     sampleBar: ["Muestra · marca ficticia", "Orvalla Coffee · eCommerce de café de especialidad"],
     sampleStats: [
-      ["6 / 15", "describen la marca bien o con un solo error"],
+      ["6 / 17", "describen la marca bien o con un solo error"],
       ["2 / 11", "la nombran al pedir una marca como ella, sin que nadie la mencione"],
-      ["4 / 15", "la confunden con otra empresa"],
+      ["4 / 17", "la confunden con otra empresa"],
     ],
     sampleGridLabel: "Pregunta 01 · Quién eres · un cuadro por modelo",
     sampleStates: {
@@ -340,14 +344,14 @@ const copy = {
     sampleFixLabel: "Corrección que merece la pena hacer en origen",
     sampleFix:
       "Decir en la página de empresa, en una frase que un modelo pueda citar, que Orvalla sólo vende online y no tiene cafeterías físicas. Dos de las respuestas parciales repiten el mismo error.",
-    sampleFoot: "El informe completo · seis preguntas · quince modelos · noventa respuestas enteras",
+    sampleFoot: "El informe completo · seis preguntas · diecisiete modelos · 102 respuestas enteras",
     sampleCta: "Pide el tuyo",
     clientsTag: "Lo hace Sealmetrics",
     clientsBody:
       "El informe es gratis. Lo hace el equipo de Sealmetrics, la analítica sin cookies con la que estas empresas miden lo que les trae su marketing.",
     formTitle: "Pide tu informe",
-    formFoot: "Seis preguntas · quince modelos · unos cinco minutos",
-    ownTag: "Empezamos por nosotros",
+    formFoot: "Seis preguntas · diecisiete modelos · unos cinco minutos",
+    ownTag: "Empezamos por nosotros, con quince modelos",
     ownTitle: (
       <>
         Cinco de quince modelos

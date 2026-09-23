@@ -499,7 +499,7 @@
   margin: 12px 0 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--rule);
   border: 1px solid var(--ink);
@@ -510,9 +510,8 @@
   display: grid;
   gap: 4px;
 }
-.sig-brand-models li:first-child,
-.sig-brand-models li:nth-child(2),
-.sig-brand-models li:nth-child(3) {
+/* The named commercial models carry the acid rule; the open-model cell closes the list. */
+.sig-brand-models li:not(:last-child) {
   box-shadow: inset 0 3px 0 var(--acid);
 }
 .sig-brand-models strong {
