@@ -124,7 +124,7 @@ The free Agentic tier covers 1M human events in total, over the life of the acco
 - /ai-analytics — AI analytics done right: complete cookieless data + semantic MCP + private AI hosted in the EU (LENS AI). Connect Claude/ChatGPT to your analytics
 - /ai-analytics/prompts — MCP prompt library: twelve copy-ready prompts for Claude, ChatGPT, Cursor or Codex connected to the Sealmetrics MCP server, grouped by problem (A GA4 gaps by channel, untraceable traffic, reconciliation with store orders; B campaign revenue, measured ROAS with a Google Ads MCP, funnel by campaign; C finance reconciliation, board summary, Meta Ads Manager gap, channel-rule check; D personal data in custom properties and in UTM values). Each lists the tools it calls and what it cannot answer, plus prompts that will not work (journeys, returning customers, identifying visitors, sending conversions, publishing rules)
 - /docs/mcp — MCP server reference: the endpoint, OAuth 2.1 authorisation with dynamic client registration, the scopes it asks for, the read-only tools it lists, and the boundaries it will not cross (no visitor identifier, no write tool on the hosted endpoint)
-- /ai-brand-monitoring — Free AI brand monitoring report: fifteen models answer six fixed questions about a company from training memory, without web search, and every answer is returned verbatim with factual errors marked
+- /ai-brand-monitoring — Free AI brand monitoring report: seventeen models (among them GPT-5.6, Claude, Gemini and Perplexity Sonar) answer six fixed questions about a company from training memory, without web search, and every answer is returned verbatim with factual errors marked
 - /reg-gap-analysis — Regulatory gap analysis for web analytics: GDPR, ePrivacy, AEPD, UK PECR — requirement-by-requirement audit with self-assessment
 - /authors/rafa-jimenez — Author profile: Rafa Jiménez, founder of Sealmetrics
 - /growth — Practical systems for digital teams: measurement, attribution, privacy, and revenue decisions that growth teams can defend
@@ -358,7 +358,7 @@ About / extras (ES):
 - /es/modern-analytics — Analítica moderna en 2026
 - /es/ai-analytics — Analítica con IA: dato cookieless completo + MCP semántico + IA privada en la UE (LENS AI)
 - /es/ai-analytics/prompts — Biblioteca de prompts MCP: doce prompts por problema (A–D) con las herramientas que usan y lo que no pueden responder
-- /es/ai-brand-monitoring — Informe gratuito de monitorización de marca en IA: quince modelos contestan seis preguntas fijas sobre una empresa de memoria, sin búsqueda web, con cada respuesta literal y los errores marcados
+- /es/ai-brand-monitoring — Informe gratuito de monitorización de marca en IA: diecisiete modelos (entre ellos GPT-5.6, Claude, Gemini y Sonar de Perplexity) contestan seis preguntas fijas sobre una empresa de memoria, sin búsqueda web, con cada respuesta literal y los errores marcados
 - /es/reg-gap-analysis — Análisis de brechas regulatorias: RGPD, ePrivacy, AEPD, PECR — auditoría requisito a requisito
 - /es/data-loss-calculator — Calculadora de pérdida de datos
 - /es/integrations — Integraciones

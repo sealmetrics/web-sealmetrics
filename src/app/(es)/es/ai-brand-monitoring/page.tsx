@@ -7,7 +7,7 @@ import "@/components/v4/brand-monitoring-signal.css";
 
 const title = "Monitorización de marca en IA — Qué dicen los modelos de ti";
 const description =
-  "Informe gratuito: quince modelos de IA, entre ellos GPT-5.6 de ChatGPT y Claude, contestan seis preguntas sobre tu empresa de memoria. Lee cada respuesta.";
+  "Informe gratuito: diecisiete modelos de IA, entre ellos GPT-5.6, Claude, Gemini y Perplexity, contestan seis preguntas sobre tu empresa de memoria.";
 const url = "https://sealmetrics.com/es/ai-brand-monitoring/";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function PaginaMonitorizacionMarcaIa() {
         data={servicePageSchema({
           name: "Informe de monitorización de marca en IA",
           description:
-            "Informe gratuito que hace seis preguntas fijas sobre una empresa a quince modelos de IA, entre ellos GPT-5.6, Claude Opus 5 y Claude Sonnet 5, sin búsqueda web, y devuelve cada respuesta literal con los errores de hecho marcados.",
+            "Informe gratuito que hace seis preguntas fijas sobre una empresa a diecisiete modelos de IA, entre ellos GPT-5.6, Claude Opus 5, Claude Sonnet 5, Gemini 3.8 Flash y Sonar de Perplexity, sin búsqueda web, y devuelve cada respuesta literal con los errores de hecho marcados.",
           url: "/es/ai-brand-monitoring",
           audience: "Equipos de marketing y comunicación",
         })}

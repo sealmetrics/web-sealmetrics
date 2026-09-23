@@ -7,7 +7,7 @@ import "@/components/v4/brand-monitoring-signal.css";
 
 const title = "Tu informe de marca está en camino — Sealmetrics";
 const description =
-  "Quince modelos están contestando ahora mismo las seis preguntas sobre tu empresa. El informe llega a tu correo en unos cinco minutos.";
+  "Diecisiete modelos están contestando ahora mismo las seis preguntas sobre tu empresa. El informe llega a tu correo en unos cinco minutos.";
 const url = "https://sealmetrics.com/es/ai-brand-monitoring/thank-you/";
 
 export const metadata: Metadata = {

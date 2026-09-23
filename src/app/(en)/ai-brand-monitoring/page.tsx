@@ -7,7 +7,7 @@ import { ogImage } from "@/lib/seo/og";
 import "@/components/v4/brand-monitoring-signal.css";
 
 const description =
-  "Free report: fifteen AI models, ChatGPT's GPT-5.6 and Claude among them, answer six questions about your company from memory. Read every answer.";
+  "Free report: seventeen AI models, among them GPT-5.6, Claude, Gemini and Perplexity, answer six questions about your company from memory. Read every answer.";
 const url = "https://sealmetrics.com/ai-brand-monitoring/";
 
 // The title is written out here rather than referenced from a constant because
@@ -43,7 +43,7 @@ export default function AiBrandMonitoringPage() {
         data={servicePageSchema({
           name: "AI brand monitoring report",
           description:
-            "A free report that asks fifteen AI models, including GPT-5.6, Claude Opus 5 and Claude Sonnet 5, six fixed questions about a company, without web search, and returns every answer verbatim with the factual errors marked.",
+            "A free report that asks seventeen AI models, including GPT-5.6, Claude Opus 5, Claude Sonnet 5, Gemini 3.8 Flash and Perplexity Sonar, six fixed questions about a company, without web search, and returns every answer verbatim with the factual errors marked.",
           url: "/ai-brand-monitoring",
           audience: "Marketing and communications teams",
         })}

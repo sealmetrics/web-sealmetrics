@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              21 de septiembre de 2026 ·{" "}
+              23 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -333,7 +333,7 @@ export default function PrivacyPageEs() {
                 <a href="/es/ai-brand-monitoring/" className="underline">
                   /es/ai-brand-monitoring
                 </a>{" "}
-                hace seis preguntas sobre una empresa a quince modelos de IA y
+                hace seis preguntas sobre una empresa a diecisiete modelos de IA y
                 envía las respuestas por correo a quien lo pide.
               </p>
               <p className="mb-3">
@@ -381,9 +381,10 @@ export default function PrivacyPageEs() {
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
                   Los modelos de IA que contestan reciben sólo la marca, el
-                  sector y los competidores, nunca tu correo. Tres de ellos
-                  (GPT-5.6, de OpenAI, y Claude Sonnet 5 y Claude Opus 5, de
-                  Anthropic) se sirven desde Estados Unidos.
+                  sector y los competidores, nunca tu correo. Cinco de ellos
+                  (GPT-5.6, de OpenAI; Claude Sonnet 5 y Claude Opus 5, de
+                  Anthropic; Gemini 3.8 Flash, de Google, y Sonar, de
+                  Perplexity) se sirven desde Estados Unidos.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
