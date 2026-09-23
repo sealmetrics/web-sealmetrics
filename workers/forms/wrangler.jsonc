@@ -13,7 +13,7 @@
     "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
     "TURNSTILE_ACTION": "sealmetrics_lead",
     "REQUIRE_TURNSTILE": "true",
-    "ENROUTIA_API_BASE": "https://api.enroutia.com"
+    "ENROUTIA_API_BASE": "https://platform.enroutia.com"
   },
   "ratelimits": [
     {
