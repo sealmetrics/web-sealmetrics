@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { BrandReportForm } from "@/components/forms/BrandReportForm";
 import { FaqSection } from "@/components/ui/FaqSection";
+import { Picture } from "@/components/ui/Picture";
+import { CLIENT_LOGOS } from "@/components/sections/v3/ClientLogos";
 
 type Locale = "en" | "es";
 
@@ -18,6 +20,11 @@ export const brandMonitoringFaq = {
       question: "Is this the same as tracking what ChatGPT says with search enabled?",
       answer:
         "No, and the difference matters. This measures what a model knows from training, with web search switched off. It is the layer underneath: when a model has no source at hand, or when a tool calls the API without search, this is the answer it falls back on. What a user sees in ChatGPT with browsing is a different measurement.",
+    },
+    {
+      question: "Does the report include ChatGPT and Claude?",
+      answer:
+        "Yes. GPT-5.6 from OpenAI, the company behind ChatGPT, and Claude Opus 5 and Claude Sonnet 5 from Anthropic answer the same six questions as the twelve open models. They are called through the API with web search switched off, so the report shows what each model holds in memory, not what the ChatGPT or Claude apps would find by browsing that day.",
     },
     {
       question: "Which models answer the questions?",
@@ -57,6 +64,11 @@ export const brandMonitoringFaq = {
         "No, y la diferencia importa. Esto mide lo que el modelo sabe de su entrenamiento, con la búsqueda web apagada. Es la capa de debajo: cuando un modelo no tiene una fuente a mano, o cuando una automatización llama a la API sin búsqueda, ésta es la respuesta a la que recurre. Lo que ve un usuario en ChatGPT navegando es otra medición.",
     },
     {
+      question: "¿El informe incluye ChatGPT y Claude?",
+      answer:
+        "Sí. GPT-5.6, de OpenAI, la empresa detrás de ChatGPT, y Claude Opus 5 y Claude Sonnet 5, de Anthropic, contestan las mismas seis preguntas que los doce modelos abiertos. Se les llama por la API con la búsqueda web apagada, así que el informe enseña lo que cada modelo tiene en la memoria, no lo que las apps de ChatGPT o Claude encontrarían navegando ese día.",
+    },
+    {
       question: "¿Qué modelos contestan?",
       answer:
         "Quince: doce modelos abiertos servidos desde infraestructura europea, más GPT-5.6, Claude Sonnet 5 y Claude Opus 5. Todos reciben las mismas seis preguntas, una ejecución cada uno y el mismo presupuesto de respuesta. El informe nombra cada modelo junto a lo que dijo.",
@@ -89,6 +101,18 @@ export const brandMonitoringFaq = {
   ],
 } as const;
 
+type SampleState = "correct" | "partial" | "confused" | "none";
+
+// One square per model for question 01 of the sample. The mix is what the sample's
+// headline figures count — four correct and two partial make "6 / 15", four confused
+// make "4 / 15" — so change one and the other has to move with it.
+const SAMPLE_GRID: SampleState[] = [
+  "correct", "partial", "confused", "none", "correct",
+  "none", "confused", "correct", "none", "partial",
+  "confused", "none", "correct", "confused", "none",
+];
+const SAMPLE_LEGEND: SampleState[] = ["correct", "partial", "confused", "none"];
+
 const copy = {
   en: {
     home: "Home",
@@ -103,6 +127,72 @@ const copy = {
     ),
     heroBody:
       "Buyers no longer start at a search box. They ask a model, and the model answers from memory. This report asks fifteen of them six questions about your company and sends you what they actually said, quote by quote.",
+    modelsLabel: "Who answers",
+    models: [
+      ["GPT-5.6", "OpenAI · ChatGPT"],
+      ["Claude Opus 5", "Anthropic · Claude"],
+      ["Claude Sonnet 5", "Anthropic · Claude"],
+      ["+ 12 open models", "Served from EU infrastructure"],
+    ],
+    modelsNote:
+      "Called through the API with web search off: what each model remembers, not what the ChatGPT or Claude app finds by browsing.",
+    sampleTag: "What you get back",
+    sampleTitle: (
+      <>
+        A sample report,
+        <br />
+        <em>before you ask for yours.</em>
+      </>
+    ),
+    sampleBody:
+      "An invented coffee brand run through the same six questions. The layout, the four states and the closing correction are the real report's; the brand and the answers are made up, so no company is on display without having asked.",
+    sampleBar: ["Sample · fictional brand", "Orvalla Coffee · specialty coffee eCommerce"],
+    sampleStats: [
+      ["6 / 15", "described the brand correctly or with one error"],
+      ["2 / 11", "named it when asked for a brand like it, without being prompted"],
+      ["4 / 15", "confused it with another company"],
+    ],
+    sampleGridLabel: "Question 01 · Who you are · one square per model",
+    sampleStates: {
+      correct: "Correct",
+      partial: "Partial",
+      confused: "Confuses it",
+      none: "No usable answer",
+    },
+    sampleQuotes: [
+      {
+        model: "GPT-5.6",
+        vendor: "OpenAI · ChatGPT",
+        question: "01 · Who you are",
+        state: "correct",
+        text: "Orvalla Coffee is a Spanish online roaster that sells single-origin beans by subscription, roasted to order and shipped within 48 hours.",
+        note: "",
+      },
+      {
+        model: "Claude Opus 5",
+        vendor: "Anthropic · Claude",
+        question: "03 · Who it recommends",
+        state: "partial",
+        text: "For a coffee subscription in Spain, Orvalla Coffee is worth a look, or a larger roaster with national distribution. Orvalla also runs two cafés in Madrid.",
+        note: "One error: the brand sells online only and has no cafés.",
+      },
+      {
+        model: "Open model · EU-served",
+        vendor: "One of twelve",
+        question: "01 · Who you are",
+        state: "confused",
+        text: "Orvalla is a restaurant group in northern Portugal known for wood-fired cooking.",
+        note: "Attaches the name to a different business.",
+      },
+    ],
+    sampleFixLabel: "Correction worth making at the source",
+    sampleFix:
+      "Say on the About page, in one sentence a model can quote, that Orvalla sells online only and has no physical cafés. Two of the partial answers repeat the same error.",
+    sampleFoot: "The full report · six questions · fifteen models · ninety answers kept whole",
+    sampleCta: "Request yours",
+    clientsTag: "Built by Sealmetrics",
+    clientsBody:
+      "The report is free. It comes from the team behind Sealmetrics, the cookieless analytics these companies use to measure what their marketing brings in.",
     formTitle: "Request your report",
     formFoot: "Six questions · fifteen models · about five minutes",
     ownTag: "We ran it on ourselves first",
@@ -189,6 +279,72 @@ const copy = {
     ),
     heroBody:
       "Quien te compra ya no empieza en un buscador. Le pregunta a un modelo, y el modelo contesta de memoria. Este informe hace seis preguntas sobre tu empresa a quince de ellos y te manda lo que dijeron, cita a cita.",
+    modelsLabel: "Quién contesta",
+    models: [
+      ["GPT-5.6", "OpenAI · ChatGPT"],
+      ["Claude Opus 5", "Anthropic · Claude"],
+      ["Claude Sonnet 5", "Anthropic · Claude"],
+      ["+ 12 modelos abiertos", "Servidos desde infraestructura europea"],
+    ],
+    modelsNote:
+      "Por la API y con la búsqueda web apagada: lo que cada modelo recuerda, no lo que encuentra la app de ChatGPT o de Claude navegando.",
+    sampleTag: "Lo que recibes",
+    sampleTitle: (
+      <>
+        Un informe de muestra,
+        <br />
+        <em>antes de pedir el tuyo.</em>
+      </>
+    ),
+    sampleBody:
+      "Una marca de café inventada, pasada por las mismas seis preguntas. La estructura, los cuatro estados y la corrección final son los del informe real; la marca y las respuestas son inventadas, para no exponer a ninguna empresa que no lo haya pedido.",
+    sampleBar: ["Muestra · marca ficticia", "Orvalla Coffee · eCommerce de café de especialidad"],
+    sampleStats: [
+      ["6 / 15", "describen la marca bien o con un solo error"],
+      ["2 / 11", "la nombran al pedir una marca como ella, sin que nadie la mencione"],
+      ["4 / 15", "la confunden con otra empresa"],
+    ],
+    sampleGridLabel: "Pregunta 01 · Quién eres · un cuadro por modelo",
+    sampleStates: {
+      correct: "Correcta",
+      partial: "Parcial",
+      confused: "La confunde",
+      none: "Sin respuesta utilizable",
+    },
+    sampleQuotes: [
+      {
+        model: "GPT-5.6",
+        vendor: "OpenAI · ChatGPT",
+        question: "01 · Quién eres",
+        state: "correct",
+        text: "Orvalla Coffee es un tostador español que vende online café de origen único por suscripción, tostado bajo pedido y enviado en 48 horas.",
+        note: "",
+      },
+      {
+        model: "Claude Opus 5",
+        vendor: "Anthropic · Claude",
+        question: "03 · A quién recomienda",
+        state: "partial",
+        text: "Para una suscripción de café en España, merece la pena mirar Orvalla Coffee o un tostador más grande con distribución nacional. Orvalla tiene además dos cafeterías en Madrid.",
+        note: "Un error: la marca sólo vende online y no tiene cafeterías.",
+      },
+      {
+        model: "Modelo abierto · servido en la UE",
+        vendor: "Uno de doce",
+        question: "01 · Quién eres",
+        state: "confused",
+        text: "Orvalla es un grupo de restaurantes del norte de Portugal conocido por su cocina a la brasa.",
+        note: "Le cuelga el nombre a otro negocio.",
+      },
+    ],
+    sampleFixLabel: "Corrección que merece la pena hacer en origen",
+    sampleFix:
+      "Decir en la página de empresa, en una frase que un modelo pueda citar, que Orvalla sólo vende online y no tiene cafeterías físicas. Dos de las respuestas parciales repiten el mismo error.",
+    sampleFoot: "El informe completo · seis preguntas · quince modelos · noventa respuestas enteras",
+    sampleCta: "Pide el tuyo",
+    clientsTag: "Lo hace Sealmetrics",
+    clientsBody:
+      "El informe es gratis. Lo hace el equipo de Sealmetrics, la analítica sin cookies con la que estas empresas miden lo que les trae su marketing.",
     formTitle: "Pide tu informe",
     formFoot: "Seis preguntas · quince modelos · unos cinco minutos",
     ownTag: "Empezamos por nosotros",
@@ -280,14 +436,114 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
         </p>
         <h1>{t.h1}</h1>
         <p className="sig-brand-hero-body">{t.heroBody}</p>
+        <div className="sig-brand-models">
+          <p className="sig-brand-tag">{t.modelsLabel}</p>
+          <ul className="sig-brand-models-list">
+            {t.models.map(([name, vendor]) => (
+              <li key={name}>
+                <strong>{name}</strong>
+                <span>{vendor}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="sig-brand-models-note">{t.modelsNote}</p>
+        </div>
       </section>
 
-      <section className="sig-brand-request" aria-label={t.formTitle}>
+      <section className="sig-brand-sample" aria-labelledby="sample-report-title">
+        <div className="sig-brand-section-head">
+          <div>
+            <p className="sig-brand-tag">{t.sampleTag}</p>
+            <h2 id="sample-report-title">{t.sampleTitle}</h2>
+          </div>
+          <p>{t.sampleBody}</p>
+        </div>
+        {/* The sample's brand and answers are invented. Kept out of the Markdown twin so an
+            answer engine cannot lift a made-up quote and attribute it to a real model. */}
+        <figure data-md="skip" className="sig-brand-report">
+          <div className="sig-brand-module-top">
+            <span>{t.sampleBar[0]}</span>
+            <span>{t.sampleBar[1]}</span>
+          </div>
+          <div className="sig-brand-report-stats">
+            {t.sampleStats.map(([figure, label]) => (
+              <p key={label}>
+                <strong>{figure}</strong>
+                <span>{label}</span>
+              </p>
+            ))}
+          </div>
+          <div className="sig-brand-report-grid">
+            <p className="sig-brand-report-label">{t.sampleGridLabel}</p>
+            <ol aria-label={t.sampleGridLabel}>
+              {SAMPLE_GRID.map((state, i) => (
+                <li
+                  key={i}
+                  className={`is-${state}`}
+                  role="img"
+                  aria-label={t.sampleStates[state]}
+                  title={t.sampleStates[state]}
+                />
+              ))}
+            </ol>
+            <ul className="sig-brand-report-legend">
+              {SAMPLE_LEGEND.map((state) => (
+                <li key={state} className={`is-${state}`}>
+                  {t.sampleStates[state]}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="sig-brand-report-quotes">
+            {t.sampleQuotes.map((quote) => (
+              <article key={quote.model + quote.question}>
+                <div className="sig-brand-report-quote-top">
+                  <span>{quote.question}</span>
+                  <span className={`sig-brand-report-state is-${quote.state}`}>
+                    {t.sampleStates[quote.state]}
+                  </span>
+                </div>
+                <p className="sig-brand-report-model">
+                  <strong>{quote.model}</strong> <span>{quote.vendor}</span>
+                </p>
+                <blockquote>{quote.text}</blockquote>
+                {quote.note ? <p className="sig-brand-report-note">{quote.note}</p> : null}
+              </article>
+            ))}
+          </div>
+          <div className="sig-brand-report-fix">
+            <p className="sig-brand-report-label">{t.sampleFixLabel}</p>
+            <p>{t.sampleFix}</p>
+          </div>
+          <figcaption>
+            <span>{t.sampleFoot}</span>
+            <a href="#request" className="sig-brand-report-cta">
+              {t.sampleCta} <Arrow />
+            </a>
+          </figcaption>
+        </figure>
+      </section>
+
+      <section id="request" className="sig-brand-request" aria-label={t.formTitle}>
         <div className="sig-brand-module-top">
           <span>{t.formTitle}</span>
           <span>{t.formFoot}</span>
         </div>
         <BrandReportForm locale={locale} />
+      </section>
+
+      <section className="sig-brand-clients" aria-label={t.clientsTag}>
+        <div className="sig-brand-clients-head">
+          <p className="sig-brand-tag">{t.clientsTag}</p>
+          <p>{t.clientsBody}</p>
+        </div>
+        <div className="sig-brand-client-logos">
+          {CLIENT_LOGOS.map((logo) => (
+            <div className="sig-brand-client-logo" key={logo.alt}>
+              <Picture src={logo.src} alt={logo.alt} width={220} height={logo.h ?? 40} />
+            </div>
+          ))}
+        </div>
       </section>
 
       <section className="sig-brand-own">
