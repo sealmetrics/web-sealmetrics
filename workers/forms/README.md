@@ -13,6 +13,7 @@ be committed:
 - `N8N_DEMO_ACCESS_URL`
 - `N8N_CAREERS_URL`
 - `N8N_BRAND_REPORT_URL`
+- `N8N_STUDY_DOWNLOAD_URL`
 - `TURNSTILE_SECRET`
 
 `N8N_BRAND_REPORT_URL` points at the `sm-brand-report` webhook in n8n, the flow

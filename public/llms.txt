@@ -359,6 +359,7 @@ About / extras (ES):
 - /es/ai-analytics — Analítica con IA: dato cookieless completo + MCP semántico + IA privada en la UE (LENS AI)
 - /es/ai-analytics/prompts — Biblioteca de prompts MCP: doce prompts por problema (A–D) con las herramientas que usan y lo que no pueden responder
 - /es/ai-brand-monitoring — Informe gratuito de monitorización de marca en IA: quince modelos contestan seis preguntas fijas sobre una empresa de memoria, sin búsqueda web, con cada respuesta literal y los errores marcados
+- /es/ai-brand-monitoring/hoteles-mallorca — Estudio: qué hoteles de Mallorca recomiendan dieciséis modelos de IA sin búsqueda web, a quién olvidan y qué hoteles se inventan, con las 64 respuestas literales
 - /es/reg-gap-analysis — Análisis de brechas regulatorias: RGPD, ePrivacy, AEPD, PECR — auditoría requisito a requisito
 - /es/data-loss-calculator — Calculadora de pérdida de datos
 - /es/integrations — Integraciones

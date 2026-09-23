@@ -562,6 +562,14 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
             </article>
           ))}
         </div>
+        {/* Sector studies are Spanish only for now, so the link exists only on the ES page. */}
+        {locale === "es" ? (
+          <p className="sig-brand-case-link">
+            <Link className="sig-brand-text-link" href="/es/ai-brand-monitoring/hoteles-mallorca/">
+              Estudio: qué hoteles de Mallorca recomiendan las IA <Arrow />
+            </Link>
+          </p>
+        ) : null}
       </section>
 
       <section className="sig-brand-measures">

@@ -195,6 +195,9 @@ const EVENT_MAP: Record<string, Mapping> = {
   // name was absent from this table until now, so every request since the page
   // shipped was silently dropped by the `!mapping` guard below.
   lead_brand_report: { kind: "micro", name: "brand_report_request" },
+  // A sector study sent to the visitor's inbox. Registered here on the day the form
+  // shipped: an unmapped name is dropped without a trace by the guard below.
+  lead_study_download: { kind: "micro", name: "study_download" },
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };
