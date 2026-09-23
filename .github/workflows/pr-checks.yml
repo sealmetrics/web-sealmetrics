@@ -99,6 +99,11 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    # `statuses: write` para el último paso: escribe el resultado sobre el
+    # commit que ha construido. El resto del job sigue siendo de solo lectura.
+    permissions:
+      contents: read
+      statuses: write
     # `always()` para que un PR normal —donde `stamp` se salta por el `if`—
     # siga construyendo; sin esto, un `needs` sobre un job saltado cancela.
     needs: [stamp]
@@ -163,3 +168,22 @@ jobs:
             echo "::warning::The build modified tracked files. Diff follows."
             git diff --stat
           fi
+
+      # El sellado empuja su commit con `[skip ci]` (ver el job `stamp`), así
+      # que el commit final del PR se queda SIN checks: GitHub muestra "no
+      # checks reported" y el auto-merge del content-agent —que pregunta por
+      # los checks del último commit— lo lee como "CI pendiente" y no publica
+      # nunca. Pasó con el PR #276, el primero del carril automático.
+      #
+      # Este build sí construyó ese commit: en ramas de agente hace checkout
+      # de la punta sellada. Así que deja su resultado escrito donde se mira.
+      - name: Publicar el resultado sobre el commit sellado
+        if: always() && needs.stamp.result == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api "repos/${{ github.repository }}/statuses/$(git rev-parse HEAD)" \
+            -f state="${{ job.status == 'success' && 'success' || 'failure' }}" \
+            -f context="build (commit sellado)" \
+            -f description="pr-checks construyó este commit" \
+            -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
