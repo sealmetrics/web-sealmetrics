@@ -47,7 +47,7 @@ export default function PrivacyPage() {
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
             <strong className="text-text-primary">Last updated:</strong> September
-            21, 2026 ·{" "}
+            23, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -250,7 +250,7 @@ export default function PrivacyPage() {
               sub-processor list is Annex 3 of the{" "}
               <a href="/dpa/" className="underline">DPA</a>. The AI brand
               monitoring report requested on sealmetrics.com has its own
-              recipients, listed in <a href="#brand-report" className="underline">section 9</a>.
+              recipients, listed in <a href="#brand-report" className="underline">section 9</a>, and so do the downloadable sector studies, in <a href="#sector-studies" className="underline">section 10</a>.
             </p>
           </div>
 
@@ -371,9 +371,67 @@ export default function PrivacyPage() {
             </p>
           </div>
 
+          <div id="sector-studies">
+            <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
+              10. Downloadable sector studies
+            </h2>
+            <p className="mb-3">
+              On some pages we publish studies of what AI models say about a
+              sector, such as 
+              <a href="/es/ai-brand-monitoring/hoteles-mallorca/" className="underline">
+                the one on Mallorca hotels
+              </a> 
+              (in Spanish). The full report of each study is requested with
+              your email address, and we send it to you by email.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Data processed.</strong> 
+              Your email address and the study you ask for. The form does not
+              ask for your name. We note whether the address belongs to a free
+              email provider, to tell apart the requests that come from
+              companies.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Purposes and legal basis.</strong> 
+              (a) Sending you the study, because you asked for it (Article
+              6(1)(b) GDPR). (b) Keeping a record of the request, to prevent
+              abuse of a free service and to answer any question about it
+              (Article 6(1)(f)). (c) Sending you occasional studies and product
+              news, only if you tick the separate, optional box on the form
+              (Article 6(1)(a) GDPR and Article 21 of Spain&rsquo;s LSSI).
+              Without that box we send you no commercial communications. Not
+              ticking it does not affect the study, and you can withdraw that
+              consent at any time through the unsubscribe link in any email or
+              by writing to privacy@sealmetrics.com.
+            </p>
+            <p className="mb-3">
+              <strong className="text-text-primary">Recipients.</strong>
+            </p>
+            <ul className="space-y-1 pl-5 list-none">
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Cloudflare, Inc. runs the anti-bot check (Turnstile) and the relay that receives the form.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Resend, Inc. (USA) delivers the study and, if you consented, the occasional emails, covered by Standard Contractual Clauses and its EU-US Data Privacy Framework certification. Resend fetches the study PDF from sealmetrics.com; it contains no data about you.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Neither Enroutia nor the AI models receive anything: the study is done before you ask for it.
+              </li>
+            </ul>
+            <p className="mt-3">
+              <strong className="text-text-primary">Retention.</strong> The
+              request record is kept for up to 24 months, like any other form
+              submission. If you consented to occasional emails, your address
+              stays on that list until you unsubscribe or withdraw consent.
+            </p>
+          </div>
+
           <div id="google-user-data">
             <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-              10. Looker Studio connector and Google user data
+              11. Looker Studio connector and Google user data
             </h2>
             <p className="mb-3">
               The Sealmetrics connector for Looker Studio is a Google Apps
@@ -453,7 +511,7 @@ export default function PrivacyPage() {
 
           <div>
             <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-              11. Contact
+              12. Contact
             </h2>
             <p>
               For privacy-related questions or to exercise your rights, contact

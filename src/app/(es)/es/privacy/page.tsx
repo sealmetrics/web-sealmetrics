@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              21 de septiembre de 2026 ·{" "}
+              23 de septiembre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -274,6 +274,10 @@ export default function PrivacyPageEs() {
                 <a href="#informe-de-marca" className="underline">
                   apartado 9
                 </a>
+                , y la descarga de estudios sectoriales, en el{" "}
+                <a href="#estudios" className="underline">
+                  apartado 10
+                </a>
                 .
               </p>
             </div>
@@ -404,9 +408,68 @@ export default function PrivacyPageEs() {
               </p>
             </div>
 
+            <div id="estudios">
+              <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
+                10. Estudios sectoriales descargables
+              </h2>
+              <p className="mb-3">
+                En algunas páginas publicamos estudios sobre lo que dicen los
+                modelos de IA de un sector, como 
+                <a href="/es/ai-brand-monitoring/hoteles-mallorca/" className="underline">
+                  el de los hoteles de Mallorca
+                </a>
+                . El informe completo de cada estudio se pide con el correo y te
+                lo enviamos por email.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Datos tratados.</strong> 
+                Tu correo y el estudio que pides. El formulario no pide tu
+                nombre. Anotamos si la dirección es de un proveedor de correo
+                gratuito, para distinguir las solicitudes que vienen de
+                empresas.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Finalidades y base jurídica.</strong> 
+                (a) Enviarte el estudio, porque lo has pedido (art. 6.1.b
+                RGPD). (b) Conservar un registro de la solicitud, para evitar el
+                abuso de un servicio gratuito y atender cualquier consulta sobre
+                ella (art. 6.1.f). (c) Enviarte de vez en cuando estudios y
+                novedades, sólo si marcas la casilla separada y opcional del
+                formulario (art. 6.1.a RGPD y art. 21 de la LSSI). Sin esa
+                casilla no te enviamos comunicaciones comerciales. No marcarla
+                no afecta al envío del estudio, y puedes retirar ese
+                consentimiento cuando quieras desde el enlace de baja de
+                cualquier correo o escribiendo a privacy@sealmetrics.com.
+              </p>
+              <p className="mb-3">
+                <strong className="text-text-primary">Destinatarios.</strong>
+              </p>
+              <ul className="space-y-1 pl-5 list-none">
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Cloudflare, Inc. hace la comprobación antibots (Turnstile) y opera el relé que recibe el formulario.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Resend, Inc. (EE. UU.) entrega el estudio y, si lo has consentido, los correos ocasionales, con cláusulas contractuales tipo y su certificación EU-US Data Privacy Framework. El PDF del estudio lo descarga Resend de sealmetrics.com y no contiene datos tuyos.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Ni Enroutia ni los modelos de IA reciben nada: el estudio está hecho antes de que lo pidas.
+                </li>
+              </ul>
+              <p className="mt-3">
+                <strong className="text-text-primary">Conservación.</strong> El
+                registro de la solicitud se conserva un máximo de 24 meses, como
+                cualquier otro envío de formulario. Si consentiste los correos
+                ocasionales, tu dirección permanece en esa lista hasta que te des
+                de baja o retires el consentimiento.
+              </p>
+            </div>
+
             <div id="datos-de-google">
               <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-                10. Conector de Looker Studio y datos de usuario de Google
+                11. Conector de Looker Studio y datos de usuario de Google
               </h2>
               <p className="mb-3">
                 El conector de Sealmetrics para Looker Studio es un Google Apps
@@ -488,7 +551,7 @@ export default function PrivacyPageEs() {
 
             <div>
               <h2 className="font-serif text-[1.3rem] font-medium text-text-primary mb-3">
-                11. Contacto
+                12. Contacto
               </h2>
               <p>
                 Para cualquier consulta sobre privacidad o para ejercer tus
