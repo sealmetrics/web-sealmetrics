@@ -6,6 +6,7 @@ const FORM_TYPES = new Set([
   "calculator",
   "growth",
   "brand_report",
+  "study_download",
 ]);
 
 // Free-mail, ISP and throwaway domains. Used by `brand_report` (which refuses
@@ -359,6 +360,17 @@ function validatePayload(type, payload) {
     );
   }
 
+  // A sector study sent by email. Only the study's slug travels: which PDF goes out is
+  // decided by n8n from a closed list, never by the form. Personal addresses are allowed
+  // here — a PDF costs nothing to send — and n8n marks them in the CRM instead.
+  if (type === "study_download") {
+    if (typeof payload.study !== "string" || !/^[a-z0-9-]{1,60}$/.test(payload.study)) {
+      return false;
+    }
+    const consent = payload.marketing_consent;
+    return consent === undefined || typeof consent === "boolean";
+  }
+
   const websiteValue = payload.websiteRaw || payload.website;
 
   if (
@@ -395,6 +407,7 @@ function endpointFor(type, env) {
   if (type === "demo_access") return env.N8N_DEMO_ACCESS_URL;
   if (type === "careers") return env.N8N_CAREERS_URL;
   if (type === "brand_report") return env.N8N_BRAND_REPORT_URL;
+  if (type === "study_download") return env.N8N_STUDY_DOWNLOAD_URL;
   return env.N8N_WEBFORM_LEAD_URL;
 }
 

@@ -5,7 +5,8 @@ export type FirstPartyFormType =
   | "careers"
   | "calculator"
   | "growth"
-  | "brand_report";
+  | "brand_report"
+  | "study_download";
 
 const FORMS_ENDPOINT =
   process.env.NEXT_PUBLIC_FORMS_ENDPOINT ??
