@@ -8,12 +8,12 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Bounce Rate? — Sealmetrics Glossary",
+  title: "How Is Bounce Rate Calculated? — The Formula Explained",
   description:
-    "Bounce rate measures single-page sessions as a percentage of total sessions. Learn how GA4 redefined it and why incomplete data makes it unreliable.",
+    "Bounce rate = single-page sessions ÷ total sessions in traditional analytics tools; standard market tools flip it to inverse of engagement rate (under 10s, no conversion, under 2 pageviews).",
   openGraph: {
     title: "What Is Bounce Rate?",
-    description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
+    description: "Bounce rate measures single-page sessions. Learn how standard market tools redefined it and why incomplete data distorts it.",
     type: "article",
     url: "https://sealmetrics.com/glossary/bounce-rate/",
     siteName: "Sealmetrics",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Bounce Rate?",
-    description: "Bounce rate measures single-page sessions. Learn how GA4 redefined it and why incomplete data distorts it.",
+    description: "Bounce rate measures single-page sessions. Learn how standard market tools redefined it and why incomplete data distorts it.",
     images: [ogImage("/glossary/bounce-rate/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate/" },
@@ -47,16 +47,16 @@ export default function BounceRatePage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <div className="p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <p className="text-[1rem] text-text-primary font-medium">
-              The percentage of sessions in which the visitor viewed only one page before leaving. In GA4, bounce rate is redefined as the inverse of engagement rate &mdash; a session is a &ldquo;bounce&rdquo; if it lasts under 10 seconds, triggers no conversion event, and includes fewer than 2 pageviews.
+              The percentage of sessions in which the visitor viewed only one page before leaving. In standard market tools, bounce rate is redefined as the inverse of engagement rate &mdash; a session is a &ldquo;bounce&rdquo; if it lasts under 10 seconds, triggers no conversion event, and includes fewer than 2 pageviews.
             </p>
           </div>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How bounce rate is calculated</h2>
           <p>
-            In Universal Analytics (the pre-GA4 standard), the formula was straightforward: single-page sessions divided by total sessions. A visitor who landed on a blog post, read it for 8 minutes, and left without clicking another page counted as a bounce &mdash; even though they consumed the content.
+            Under the traditional standard, the formula was straightforward: single-page sessions divided by total sessions. A visitor who landed on a blog post, read it for 8 minutes, and left without clicking another page counted as a bounce &mdash; even though they consumed the content.
           </p>
           <p>
-            GA4 changed this. A bounced session is now one that does not qualify as &ldquo;engaged.&rdquo; A session is engaged if any of the following are true:
+            Standard market tools changed this. A bounced session is now one that does not qualify as &ldquo;engaged.&rdquo; A session is engaged if any of the following are true:
           </p>
           <p>
             &mdash; It lasts longer than 10 seconds<br />
@@ -64,15 +64,15 @@ export default function BounceRatePage() {
             &mdash; It triggers a conversion event
           </p>
           <p>
-            This means GA4 bounce rates are typically 10&ndash;30 percentage points lower than Universal Analytics bounce rates for the same traffic. Comparing the two directly leads to false conclusions.
+            This means bounce rates under the new definition are typically noticeably lower than bounce rates under the traditional definition for the same traffic. Comparing the two directly leads to false conclusions.
           </p>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">GA4 vs traditional bounce rate</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Engagement-based vs traditional bounce rate</h2>
           <p>
             The shift from pageview-based to engagement-based bounce rate reflects a real improvement in measurement philosophy. However, it introduces a dependency on <Link href="/glossary/event-tracking" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">event tracking</Link> accuracy. If your events are not firing reliably &mdash; due to ad blockers, consent rejection, or <Link href="/glossary/data-sampling" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">data sampling</Link> &mdash; your engagement rate (and therefore bounce rate) is calculated on a partial dataset.
           </p>
           <p>
-            For enterprise sites processing millions of sessions, GA4&rsquo;s sampling thresholds kick in above 500K events in a standard property. Sampled engagement data means sampled bounce rates &mdash; which means the metric you are optimizing against may not reflect reality.
+            For enterprise sites processing millions of sessions, standard market tools can apply sampling to exploration reports once query data exceeds large event volumes, according to platform documentation. Sampled engagement data means sampled bounce rates &mdash; which means the metric you are optimizing against may not reflect reality.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why bounce rate is unreliable on incomplete data</h2>
