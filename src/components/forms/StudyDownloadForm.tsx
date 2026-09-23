@@ -159,7 +159,7 @@ export function StudyDownloadForm({ study }: { study: string }) {
           </div>
         </dl>
         <p>
-          <a href="/es/privacy/">Política de privacidad completa</a>
+          <a href="/es/privacy/#estudios">Política de privacidad completa</a>
         </p>
       </div>
     </form>
