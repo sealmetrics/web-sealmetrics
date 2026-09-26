@@ -9,9 +9,9 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Analytics Data Residency? — Sealmetrics Glossary",
+  title: "Data Residency Analytics Europe: How EU Storage Works",
   description:
-    "Analytics data residency defines where visitor data is stored and processed. EU residency is required for GDPR compliance after Schrems II.",
+    "Data residency analytics for Europe: keep visitor data stored on EU servers (e.g. Dublin), avoiding cross-border transfers and Schrems II risk.",
   openGraph: {
     title: "What Is Analytics Data Residency?",
     description: "Data residency defines where analytics data is stored. EU residency is key for GDPR compliance.",
@@ -59,10 +59,10 @@ export default function AnalyticsDataResidencyPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why data residency matters</h2>
           <p>
-            Analytics data &mdash; even aggregated, pseudonymized web traffic data &mdash; is subject to the data protection laws of the jurisdiction where it is processed. When a European company uses Google Analytics, visitor data is transmitted to Google&rsquo;s servers in the United States. This creates a cross-border data transfer that must comply with specific legal mechanisms under GDPR Chapter V.
+            Analytics data &mdash; even aggregated, pseudonymized web traffic data &mdash; is subject to the data protection laws of the jurisdiction where it is processed. When a European company uses standard market analytics tools, visitor data is often transmitted to servers in the United States. This creates a cross-border data transfer that must comply with specific legal mechanisms under GDPR Chapter V.
           </p>
           <p>
-            The practical consequences of non-compliance are significant. Since 2022, Data Protection Authorities (DPAs) in Austria, France, Italy, Denmark, Finland, and Norway have all issued rulings against the use of Google Analytics, citing inadequate transfer safeguards. The French CNIL ordered organizations to stop using GA within one month of its February 2022 decision. Fines under GDPR Article 83 can reach 4% of global annual turnover or 20 million EUR &mdash; whichever is higher.
+            The practical consequences of non-compliance are significant. Since 2022, Data Protection Authorities (DPAs) in Austria, France, Italy, Denmark, Finland, and Norway have all issued rulings against the use of standard market analytics tools, citing inadequate transfer safeguards (see, for example, the <a href="https://www.cnil.fr/en/use-google-analytics-and-data-transfers-united-states-cnil-orders-website-manager-comply-cnil" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">French CNIL decision</a>). The French CNIL ordered organizations to stop using such tools within one month of its <a href="https://www.cnil.fr/en/use-google-analytics-and-data-transfers-united-states-cnil-orders-website-manager-comply-cnil" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">February 2022 decision</a>. Fines under GDPR Article 83 can reach 4% of global annual turnover or 20 million EUR &mdash; whichever is higher.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">EU data residency under GDPR</h2>
@@ -78,13 +78,13 @@ export default function AnalyticsDataResidencyPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Schrems II implications</h2>
           <p>
-            The July 2020 Schrems II ruling by the Court of Justice of the European Union (CJEU) invalidated the EU-US Privacy Shield and raised the bar for Standard Contractual Clauses (SCCs). The court found that US surveillance laws do not provide EU citizens with equivalent data protection, and that SCCs alone cannot bridge this gap without &ldquo;supplementary measures.&rdquo;
+            The <a href="https://curia.europa.eu/juris/liste.jsf?num=C-311/18" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">July 2020 Schrems II ruling</a> by the Court of Justice of the European Union (CJEU) invalidated the EU-US Privacy Shield and raised the bar for Standard Contractual Clauses (SCCs). The court found that US surveillance laws do not provide EU citizens with equivalent data protection, and that SCCs alone cannot bridge this gap without &ldquo;supplementary measures.&rdquo;
           </p>
           <p>
-            For analytics, this created a practical dilemma: Google Analytics transmits data to US servers where it is accessible under FISA 702. Google&rsquo;s subsequent attempts to address this &mdash; including server-side tagging via EU-based proxy servers &mdash; were deemed insufficient by multiple DPAs because Google retains the ability to access the data and remains subject to US law.
+            For analytics, this created a practical dilemma: standard market analytics tools transmit data to US servers where it is accessible under FISA 702. Subsequent attempts by these providers to address this &mdash; including server-side tagging via EU-based proxy servers &mdash; were deemed insufficient by multiple DPAs because the underlying provider retains the ability to access the data and remains subject to US law.
           </p>
           <p>
-            The EU-US Data Privacy Framework (DPF), adopted in July 2023, provides a new adequacy basis. However, legal experts widely expect a &ldquo;Schrems III&rdquo; challenge, and the European Data Protection Board has flagged concerns about the DPF&rsquo;s durability. Organizations prioritizing long-term compliance are choosing EU-resident analytics solutions that are structurally immune to transfer rulings.
+            The <a href="https://commission.europa.eu/law/law-topic/data-protection/international-dimension-data-protection/eu-us-data-privacy-framework_en" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">EU-US Data Privacy Framework (DPF)</a>, adopted in July 2023, provides a new adequacy basis. However, legal experts widely expect a &ldquo;Schrems III&rdquo; challenge, and the <a href="https://edpb.europa.eu/our-work-tools/our-documents/other/edpb-statement-eu-us-data-privacy-framework_en" target="_blank" rel="noopener noreferrer" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">European Data Protection Board has flagged concerns</a> about the DPF&rsquo;s durability. Organizations prioritizing long-term compliance are choosing EU-resident analytics solutions that are structurally immune to transfer rulings.
           </p>
           <p>
             <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">First-party data collection</Link> with EU-only infrastructure, combined with <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics</Link> that collects no personal data, provides the strongest compliance posture &mdash; no consent required, no transfers, no dependency on shifting adequacy decisions.
