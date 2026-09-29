@@ -33,11 +33,11 @@ export function ProductHeroV3() {
             href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
           >
-            Start 14-day trial
+            Start free
           </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          14-day trial · nothing charged if you cancel · EU-hosted
+          First 1M events free · No card · EU-hosted
         </p>
       </div>
     </section>
@@ -677,7 +677,7 @@ export function ProductFinalCtaV3() {
             The analytics platform <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>eCommerce teams deserve.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Start the 14-day trial — install a script or a native module in 5 to 30 minutes, depending on your platform, and start measuring what GA4 misses. You add a card to start, and pay nothing if you cancel before day 14. No call required.
+            Start free — install a script or a native module in 5 to 30 minutes, depending on your platform, and start measuring what GA4 misses. The first 1M events are free, in total and with no card; you choose a plan only when they are used up. No call required.
           </p>
           <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <Link
@@ -690,11 +690,11 @@ export function ProductFinalCtaV3() {
               href="https://my.sealmetrics.com/register"
               className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5"
             >
-              Start 14-day trial
+              Start free
             </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            14-day trial · EU-hosted · Consentless by design
+            First 1M events free · EU-hosted · Consentless by design
           </p>
         </div>
       </div>

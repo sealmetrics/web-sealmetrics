@@ -235,7 +235,7 @@ export default function ChangelogPage() {
             href="https://my.sealmetrics.com/register"
             className="inline-flex items-center px-7 py-3 text-[0.9rem] font-medium text-white bg-text-primary rounded-[4px] no-underline hover:bg-[#333] transition-colors"
           >
-            Start 14-day trial
+            Start free
           </a>
           <p className="mt-4 text-[0.8rem] text-text-tertiary">
             Or explore the{" "}

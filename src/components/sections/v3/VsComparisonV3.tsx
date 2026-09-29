@@ -165,7 +165,7 @@ export function VsComparisonV3({ data, dateModified }: { data: VsData; dateModif
               href="https://my.sealmetrics.com/register"
               className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors"
             >
-              {locale === "es" ? "Prueba de 14 días" : "Start 14-day trial"}
+              {locale === "es" ? "Empieza gratis" : "Start free"}
             </a>
           </div>
           <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">

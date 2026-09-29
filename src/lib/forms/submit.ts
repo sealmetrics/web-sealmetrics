@@ -5,11 +5,19 @@ export type FirstPartyFormType =
   | "careers"
   | "calculator"
   | "growth"
-  | "brand_report";
+  | "brand_report"
+  | "study_download";
 
 const FORMS_ENDPOINT =
   process.env.NEXT_PUBLIC_FORMS_ENDPOINT ??
   "https://sealmetrics-forms.sealmetrics-forms-worker.workers.dev/api/forms";
+
+/**
+ * The forms Worker's origin plus any base path, without `/api/forms`. Other
+ * Worker routes (the brand check at `/api/brand-check`) hang off it, so they
+ * follow NEXT_PUBLIC_FORMS_ENDPOINT instead of needing a variable of their own.
+ */
+export const FORMS_WORKER_BASE = FORMS_ENDPOINT.replace(/\/api\/forms\/?$/, "");
 
 export async function submitFirstPartyForm(
   type: FirstPartyFormType,

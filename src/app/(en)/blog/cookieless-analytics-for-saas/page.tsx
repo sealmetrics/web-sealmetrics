@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cookieless Analytics for SaaS — 2026 Guide",
     description:
-      "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements Mixpanel/Amplitude. BigQuery export included.",
+      "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-saas/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-saas/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cookieless Analytics for SaaS — 2026 Guide",
-    description: "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements Mixpanel/Amplitude. BigQuery export included.",
+    description: "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
     images: [ogImage("/blog/cookieless-analytics-for-saas/")],
   },
   alternates: {
@@ -39,22 +39,22 @@ const faqs = [
   {
     question: "What is cookieless analytics for SaaS?",
     answer:
-      "Cookieless analytics for SaaS is aggregate measurement of the marketing site — visit counts, trial signup counts, paid conversion counts — by channel, without cookies, consent banners or personal identifiers. Each trial signup is attributed last-click to the source on that pageview. It complements in-product analytics (Mixpanel, Amplitude) but does not replace it.",
+      "Cookieless analytics for SaaS is aggregate measurement of the marketing site — visit counts, trial signup counts, paid conversion counts — by channel, without cookies, consent banners or personal identifiers. Each trial signup is attributed last-click to the source on that pageview. It complements your in-product analytics tool but does not replace it.",
   },
   {
     question: "Does cookieless analytics track individual visitors or users?",
     answer:
-      "No. On the marketing site, Sealmetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in Mixpanel, Amplitude or your own product database, where the user is authenticated and tracking is a different compliance question.",
+      "No. On the marketing site, Sealmetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in your product analytics tool or your own product database, where the user is authenticated and tracking is a different compliance question.",
   },
   {
-    question: "Does cookieless analytics replace Mixpanel or Amplitude?",
+    question: "Does cookieless analytics replace my product analytics tool?",
     answer:
-      "Not usually. Mixpanel and Amplitude run inside the authenticated product and do feature adoption, retention cohorts and in-app analytics. Cookieless analytics covers the marketing site — visits, signup conversion, paid-channel attribution — where cookies and consent drive data loss. Most SaaS teams run both layers side by side.",
+      "Not usually. Your product analytics tool runs inside the authenticated product and does feature adoption, retention cohorts and in-app analytics. Cookieless analytics covers the marketing site — visits, signup conversion, paid-channel attribution — where cookies and consent drive data loss. Most SaaS teams run both layers side by side.",
   },
   {
     question: "Can I build PQL reports with cookieless analytics?",
     answer:
-      "Yes, by joining aggregate marketing attribution (from cookieless analytics) with product-side data (from your product database or Mixpanel). Export marketing attribution to BigQuery or Snowflake at full resolution and join against the authenticated user table. The join happens in the warehouse, not in the marketing-site tracker.",
+      "Yes, by joining aggregate marketing attribution (from cookieless analytics) with product-side data (from your product database or your product analytics tool). Export marketing attribution to BigQuery or Snowflake at full resolution and join against the authenticated user table. The join happens in the warehouse, not in the marketing-site tracker.",
   },
   {
     question: "Is cookieless analytics compliant for SaaS marketing sites?",
@@ -102,9 +102,9 @@ export default function Page() {
           <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>SaaS marketing-site attribution breaks in Europe because GA4 doesn&apos;t see visitors who reject consent: in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies.</li>
+              <li>SaaS marketing-site attribution breaks in Europe because the standard market analytics tool doesn&apos;t see visitors who reject consent: in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies.</li>
               <li>Cookieless analytics counts visits and trial signups at channel level without cookies or user identifiers.</li>
-              <li>It does not replace Mixpanel or Amplitude for in-product analytics — the two layers complement each other.</li>
+              <li>It does not replace your product analytics tool for in-product analytics — the two layers complement each other.</li>
               <li>BigQuery / Snowflake export lets you join aggregate marketing attribution with product-side user tables.</li>
               <li>For PLG companies, this is the difference between knowing your real channel CAC and guessing it.</li>
             </ul>
@@ -112,7 +112,7 @@ export default function Page() {
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              If you run growth at a European SaaS company, you have one version of this conversation every quarter. Finance asks what the CAC is. You quote a number from GA4. They ask how confident you are. You shrug. You know that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, that your Google Ads spend converts to signups the attribution model can&apos;t see, and that the number you just quoted is optimistic by some unknown factor.
+              If you run growth at a European SaaS company, you have one version of this conversation every quarter. Finance asks what the CAC is. You quote a number from your standard analytics tool. They ask how confident you are. You shrug. You know that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, that your Google Ads spend converts to signups the attribution model can&apos;t see, and that the number you just quoted is optimistic by some unknown factor.
             </p>
             <p>
               Product-led growth depends on a measurement stack that works. When the marketing-site layer is broken, every downstream CAC calculation, every paid-channel ROI decision is made on partial data. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> fixes the top of the funnel — not by tracking harder, but by counting events anonymously and attributing each signup last-click at channel level. For the cross-vertical category overview, see the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this post is the SaaS-specific reading.
@@ -125,23 +125,23 @@ export default function Page() {
               A standard PLG measurement stack has three layers:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
-              <li><strong>Marketing-site attribution</strong> (typically GA4): traffic source → landing page → signup.</li>
-              <li><strong>Product event analytics</strong> (typically Mixpanel or Amplitude): in-product actions → activation → retention cohorts.</li>
+              <li><strong>Marketing-site attribution</strong> (typically the standard market analytics tool): traffic source → landing page → signup.</li>
+              <li><strong>Product event analytics</strong> (typically your product analytics tool): in-product actions → activation → retention cohorts.</li>
               <li><strong>Warehouse / revenue</strong> (typically BigQuery or Snowflake): subscription tables, MRR, churn.</li>
             </ol>
             <p>
-              The top layer is the one that breaks. After consent rejection and ad blockers, GA4 doesn&apos;t see part of your traffic, and how much depends on the site; on Incapto&apos;s Shopify store, measured over 48 days, it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics (Mixpanel/Amplitude) work fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
+              The top layer is the one that breaks. After consent rejection and ad blockers, the standard market analytics tool doesn&apos;t see part of your traffic, and how much depends on the site; on Incapto&apos;s Shopify store, measured over 48 days, it did not record 29% of visits. Even the signups it sees are attributed poorly, because the cookie that would have preserved the source was rejected or expired. The in-product analytics tool works fine — the user has authenticated, cookies are not the problem, and user-level tracking is compliant on explicit consent inside the product. But the marketing-to-signup layer is unreliable.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
               What cookieless analytics replaces (and doesn&apos;t)
             </h2>
             <p>
-              Cookieless analytics for SaaS replaces GA4 at the marketing-site layer. It does not replace Mixpanel or Amplitude anywhere. The two systems have different jobs:
+              Cookieless analytics for SaaS replaces the standard market analytics tool at the marketing-site layer. It does not replace your product analytics tool anywhere. The two systems have different jobs:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>Cookieless analytics (marketing site, anonymous).</strong> Counts visits and signups by channel, campaign and landing page. No user identification, no per-visitor journey.</li>
-              <li><strong>Mixpanel / Amplitude (authenticated product, user-level).</strong> Tracks what each logged-in user does inside the app. Retention cohorts, feature adoption, in-product funnels.</li>
+              <li><strong>Product analytics tool (authenticated product, user-level).</strong> Tracks what each logged-in user does inside the app. Retention cohorts, feature adoption, in-app funnels.</li>
             </ul>
             <p>
               What cookieless analytics covers:
@@ -172,7 +172,7 @@ export default function Page() {
             <ol className="list-decimal pl-5 space-y-2">
               <li>Aggregate marketing attribution from cookieless analytics: acquisition channel, campaign, UTM — stored anonymously with signup event metadata.</li>
               <li>Trial signup records from the product database: email, signup timestamp, plan selected (user-level once authenticated).</li>
-              <li>In-product activation from Mixpanel/Amplitude or your own event log: activation event, time-to-value (user-level).</li>
+              <li>In-product activation from your product analytics tool or your own event log: activation event, time-to-value (user-level).</li>
             </ol>
             <p>
               The join happens at the warehouse, not in the marketing tracker. Because cookieless analytics exports signup attribution to BigQuery or Snowflake at full resolution (no sampling), you get clean channel metadata on every signup. You then join on your own user/email column to add the activation side. A PQL definition like &ldquo;signed up from paid search + activated within 7 days&rdquo; becomes a single SQL query.
@@ -185,14 +185,14 @@ export default function Page() {
               The setup that works for most teams:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
-              <li>Install cookieless analytics on the marketing site only. Leave Mixpanel/Amplitude alone in the app.</li>
+              <li>Install cookieless analytics on the marketing site only. Leave your product analytics tool alone in the app.</li>
               <li>Configure BigQuery / Snowflake export.</li>
-              <li>Run side-by-side with GA4 on the marketing site for 30 days.</li>
+              <li>Run side-by-side with your standard analytics tool on the marketing site for 30 days.</li>
               <li>Write the join query (channel attribution + signup + product activation).</li>
               <li>Switch channel-level CAC reporting to the new numbers when the side-by-side comparison stabilises.</li>
             </ol>
             <p>
-              No cookie banner for the marketing-site analytics itself (keep the banner for advertising pixels if needed). No migration for in-product analytics. No change to the product team&apos;s workflow.
+              No cookie banner for the marketing-site analytics itself (keep the banner for advertising pixels if needed). No migration for in-product analytics. No change to the product team&apos;s workflow. If you want to check which plan includes warehouse export before you start, the <Link href="/pricing/" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">pricing page</Link> lists what&apos;s included at each tier.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

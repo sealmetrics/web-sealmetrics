@@ -390,7 +390,7 @@ export function Header({ locale = "en" }: { locale?: Locale }) {
           />
 
           {/* Secondary CTA only from xl: between lg and xl there is room for
-              the primary ask but not both. The trial stays reachable from every
+              the primary ask but not both. The free account stays reachable from every
               page hero and from the mobile menu. */}
           <a
             href="https://my.sealmetrics.com/register"

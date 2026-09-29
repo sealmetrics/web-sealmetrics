@@ -1,11 +1,11 @@
 {
   "/": {
-    "hash": "ecba2eddab368892",
-    "date": "2026-09-21"
+    "hash": "af9f0517390115c7",
+    "date": "2026-09-29"
   },
   "/404/": {
-    "hash": "78339b3fbd6e71a3",
-    "date": "2026-08-18"
+    "hash": "eff349124bb67735",
+    "date": "2026-09-29"
   },
   "/customers/": {
     "hash": "cee7abe8537753b7",
@@ -16,8 +16,8 @@
     "date": "2026-09-02"
   },
   "/vs/": {
-    "hash": "8af42f75ba071051",
-    "date": "2026-09-21"
+    "hash": "50f8adde60eecdaa",
+    "date": "2026-09-29"
   },
   "/searchmetrics-vs-sealmetrics/": {
     "hash": "d4fab8623c2e8ef4",
@@ -28,23 +28,23 @@
     "date": "2026-09-14"
   },
   "/why-sealmetrics/": {
-    "hash": "ca4334be768baca3",
-    "date": "2026-09-21"
+    "hash": "eb569e1b47c7563e",
+    "date": "2026-09-29"
   },
   "/contact/": {
     "hash": "14e7a7456c8f0169",
     "date": "2026-04-25"
   },
   "/platforms/": {
-    "hash": "c94f6917afa5b7f5",
-    "date": "2026-09-15"
+    "hash": "5fd41f7476ebfa0c",
+    "date": "2026-09-29"
   },
   "/free-audit/": {
     "hash": "41b8e11b941c0150",
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "18aa257868c338f0",
+    "hash": "e2775f99292ed513",
     "date": "2026-09-23"
   },
   "/real-roas/": {
@@ -52,24 +52,24 @@
     "date": "2026-09-21"
   },
   "/changelog/": {
-    "hash": "bc1fddd0cfbdc190",
-    "date": "2026-09-21"
+    "hash": "bb34e41aa6d41c70",
+    "date": "2026-09-29"
   },
   "/security/": {
     "hash": "b3a561bbe9064d22",
     "date": "2026-09-14"
   },
   "/ai-analytics/": {
-    "hash": "d4cffcedadb2916f",
-    "date": "2026-09-15"
+    "hash": "6d292cdccfb25ee6",
+    "date": "2026-09-29"
   },
   "/data-loss-calculator/": {
-    "hash": "c18b220bfbeb73c5",
-    "date": "2026-09-21"
+    "hash": "c2cd668cd7424d51",
+    "date": "2026-09-29"
   },
   "/reg-gap-analysis/": {
-    "hash": "bfac91e895fbe448",
-    "date": "2026-09-15"
+    "hash": "8245e83dd8dd873a",
+    "date": "2026-09-29"
   },
   "/features/": {
     "hash": "a0ee14ed28e9170a",
@@ -84,24 +84,24 @@
     "date": "2026-09-15"
   },
   "/consentless-analytics/": {
-    "hash": "c008d2feadb086b6",
-    "date": "2026-09-21"
+    "hash": "7dc66f9e96d26896",
+    "date": "2026-09-29"
   },
   "/growth-calculator/": {
-    "hash": "0568b3f28b0cf7e3",
-    "date": "2026-09-21"
+    "hash": "cbadf2174dffac24",
+    "date": "2026-09-29"
   },
   "/about/": {
-    "hash": "f44ccd4c05e556fa",
-    "date": "2026-09-21"
+    "hash": "4cbd0277776df499",
+    "date": "2026-09-29"
   },
   "/dpa/": {
     "hash": "938f5e4b0f83e1d9",
     "date": "2026-08-10"
   },
   "/product/": {
-    "hash": "1dd4c681b1ab5128",
-    "date": "2026-09-21"
+    "hash": "ceb3d7750cdbf4ce",
+    "date": "2026-09-29"
   },
   "/how-it-works/": {
     "hash": "04721dea27cf2506",
@@ -124,16 +124,16 @@
     "date": "2026-09-14"
   },
   "/integrations/": {
-    "hash": "f922b33eabbb0e66",
-    "date": "2026-09-15"
+    "hash": "40b873f4c4cb4ee7",
+    "date": "2026-09-29"
   },
   "/use-cases/": {
-    "hash": "3bea9e35a5cf6246",
-    "date": "2026-09-15"
+    "hash": "7c6146ea3c34dcd5",
+    "date": "2026-09-29"
   },
   "/videos/": {
-    "hash": "da26394525528eda",
-    "date": "2026-09-15"
+    "hash": "72f40f82fbbb7dee",
+    "date": "2026-09-29"
   },
   "/audit/": {
     "hash": "6862356ae8907989",
@@ -144,12 +144,12 @@
     "date": "2026-04-25"
   },
   "/for/": {
-    "hash": "b04f99cdf3075489",
-    "date": "2026-09-15"
+    "hash": "e06bc28b4f24aa13",
+    "date": "2026-09-29"
   },
   "/glossary/": {
-    "hash": "d21e881df61f4a5e",
-    "date": "2026-09-21"
+    "hash": "8aafd26b5504a3a3",
+    "date": "2026-09-29"
   },
   "/trust/": {
     "hash": "619a30bffa86d273",
@@ -160,24 +160,24 @@
     "date": "2026-09-21"
   },
   "/vs-ga4/": {
-    "hash": "0222ca6c80698902",
-    "date": "2026-09-21"
+    "hash": "09599fd8bbab8c27",
+    "date": "2026-09-29"
   },
   "/modern-analytics/": {
-    "hash": "6065b915a4e36bc0",
-    "date": "2026-09-21"
+    "hash": "322a2597977703cb",
+    "date": "2026-09-29"
   },
   "/es/": {
-    "hash": "83d8c6d496e5bbde",
-    "date": "2026-09-21"
+    "hash": "3c4404cfffadd72a",
+    "date": "2026-09-29"
   },
   "/pricing-plans/": {
     "hash": "7137e66e17a37086",
     "date": "2026-04-25"
   },
   "/pricing/": {
-    "hash": "5065a5de9915715b",
-    "date": "2026-09-15"
+    "hash": "80860fae826e9e99",
+    "date": "2026-09-29"
   },
   "/open/": {
     "hash": "0dfc7e781e3b50c5",
@@ -192,8 +192,8 @@
     "date": "2026-08-13"
   },
   "/cookieless-analytics/": {
-    "hash": "aae89fa10f1eecf1",
-    "date": "2026-09-21"
+    "hash": "0937e75c02c6be1b",
+    "date": "2026-09-29"
   },
   "/open/what-we-wont-do/": {
     "hash": "4d430b90de76de58",
@@ -220,16 +220,16 @@
     "date": "2026-09-21"
   },
   "/open/how-we-price/": {
-    "hash": "35633a2753d743a9",
-    "date": "2026-09-21"
+    "hash": "895f06899a402716",
+    "date": "2026-09-29"
   },
   "/open/why-we-exist/": {
     "hash": "1b1238d3b28f473b",
     "date": "2026-09-21"
   },
   "/alternatives/google-analytics/": {
-    "hash": "e6c0eb2ec8de201e",
-    "date": "2026-09-21"
+    "hash": "a9342d318416675e",
+    "date": "2026-09-29"
   },
   "/alternatives/adobe-analytics/": {
     "hash": "9feecfa11a3b6d13",
@@ -240,56 +240,56 @@
     "date": "2026-09-02"
   },
   "/es/vs/": {
-    "hash": "17ed47d51a3dbc3b",
-    "date": "2026-09-21"
+    "hash": "5a422351319314c3",
+    "date": "2026-09-29"
   },
   "/es/why-sealmetrics/": {
-    "hash": "1db428df290b4a2a",
-    "date": "2026-09-21"
+    "hash": "7bfd49f66115654b",
+    "date": "2026-09-29"
   },
   "/es/platforms/": {
-    "hash": "734f4c2ac15cdfc8",
-    "date": "2026-09-15"
+    "hash": "f1b48c7a33e26a85",
+    "date": "2026-09-29"
   },
   "/es/security/": {
     "hash": "b25b35764b8fc47d",
     "date": "2026-09-14"
   },
   "/es/ai-analytics/": {
-    "hash": "994c07e69204f5ea",
-    "date": "2026-09-15"
+    "hash": "83d977cb1423ca22",
+    "date": "2026-09-29"
   },
   "/es/data-loss-calculator/": {
-    "hash": "f368a9bcd81d6b7d",
-    "date": "2026-09-21"
+    "hash": "0c3fa60aa59c886f",
+    "date": "2026-09-29"
   },
   "/es/reg-gap-analysis/": {
-    "hash": "24e9b612fb532484",
-    "date": "2026-09-15"
+    "hash": "81e9d6ab71b400d6",
+    "date": "2026-09-29"
   },
   "/es/terms/": {
     "hash": "4802903bcca144e7",
     "date": "2026-08-10"
   },
   "/es/consentless-analytics/": {
-    "hash": "6d47a96e5d4641a3",
-    "date": "2026-09-15"
+    "hash": "3ebdf6cbd4ea014f",
+    "date": "2026-09-29"
   },
   "/es/growth-calculator/": {
-    "hash": "7a9959f9ded7fd8f",
-    "date": "2026-09-21"
+    "hash": "91d39e8d6e02a77f",
+    "date": "2026-09-29"
   },
   "/es/about/": {
-    "hash": "316db70b8cb73871",
-    "date": "2026-09-21"
+    "hash": "d43ca088fff129f7",
+    "date": "2026-09-29"
   },
   "/es/dpa/": {
     "hash": "d3f279a0e6ced256",
     "date": "2026-08-10"
   },
   "/es/product/": {
-    "hash": "673ab5b70a633171",
-    "date": "2026-09-21"
+    "hash": "966ac5f3c6985828",
+    "date": "2026-09-29"
   },
   "/es/how-it-works/": {
     "hash": "e0fa97d80bb9af60",
@@ -308,8 +308,8 @@
     "date": "2026-09-14"
   },
   "/es/integrations/": {
-    "hash": "1a45534f58591363",
-    "date": "2026-09-15"
+    "hash": "e9913dd3031311c5",
+    "date": "2026-09-29"
   },
   "/es/audit/": {
     "hash": "2f0ce0ef9856f877",
@@ -320,12 +320,12 @@
     "date": "2026-09-21"
   },
   "/es/for/": {
-    "hash": "20587405858f2ffe",
-    "date": "2026-09-15"
+    "hash": "f4eda5b8e0fb6b78",
+    "date": "2026-09-29"
   },
   "/es/glossary/": {
-    "hash": "7e401b4907e1e719",
-    "date": "2026-09-21"
+    "hash": "f588f3245c9b0e4e",
+    "date": "2026-09-29"
   },
   "/es/trust/": {
     "hash": "bc7b06ad3b39ba20",
@@ -336,16 +336,16 @@
     "date": "2026-09-21"
   },
   "/es/vs-ga4/": {
-    "hash": "155bad47592f45d9",
-    "date": "2026-09-21"
+    "hash": "bd23d38773f9739e",
+    "date": "2026-09-29"
   },
   "/es/modern-analytics/": {
-    "hash": "0c80c62258c0f77a",
-    "date": "2026-09-21"
+    "hash": "99df0b011e9c44cb",
+    "date": "2026-09-29"
   },
   "/es/pricing/": {
-    "hash": "b5a41d3baa515ea7",
-    "date": "2026-09-15"
+    "hash": "cfb65afaa42fbce7",
+    "date": "2026-09-29"
   },
   "/es/diagnostic-result/": {
     "hash": "32e448f1c6f8388b",
@@ -356,12 +356,12 @@
     "date": "2026-08-13"
   },
   "/es/cookieless-analytics/": {
-    "hash": "ea201dc8c2fcb924",
-    "date": "2026-09-21"
+    "hash": "f626de16062caba0",
+    "date": "2026-09-29"
   },
   "/es/alternatives/google-analytics/": {
-    "hash": "a96ee09439aba419",
-    "date": "2026-09-21"
+    "hash": "6df4104d5d848a29",
+    "date": "2026-09-29"
   },
   "/es/glossary/server-side-tracking/": {
     "hash": "8447dc2925b1d778",
@@ -588,48 +588,48 @@
     "date": "2026-09-04"
   },
   "/es/authors/rafa-jimenez/": {
-    "hash": "9df1cc1e098b1899",
-    "date": "2026-09-21"
+    "hash": "6d0e907c19884a2f",
+    "date": "2026-09-29"
   },
   "/es/vs/ga360/": {
-    "hash": "127b615df667b209",
-    "date": "2026-09-21"
+    "hash": "acafcdd37e31c704",
+    "date": "2026-09-29"
   },
   "/es/vs/adobe-analytics/": {
-    "hash": "66301cbd237e5c10",
-    "date": "2026-09-21"
+    "hash": "b3a658c0db0c59e8",
+    "date": "2026-09-29"
   },
   "/es/vs/piwik-pro/": {
-    "hash": "bce87a35529cc7c6",
-    "date": "2026-09-15"
+    "hash": "5a0351d25428de0a",
+    "date": "2026-09-29"
   },
   "/es/vs/ga4/": {
     "hash": "a773d2e56165d147",
     "date": "2026-08-07"
   },
   "/es/vs/matomo/": {
-    "hash": "b528a3a1ebc9bfca",
-    "date": "2026-09-15"
+    "hash": "48e1ff4c60b27e00",
+    "date": "2026-09-29"
   },
   "/es/demo/thank-you/": {
     "hash": "80badfd9c1866777",
     "date": "2026-08-09"
   },
   "/preview/home-power-c/": {
-    "hash": "a6aa77be90190e29",
-    "date": "2026-09-15"
+    "hash": "f267a03c6d525196",
+    "date": "2026-09-29"
   },
   "/preview/home-power-d/": {
-    "hash": "e05772d70e8ac991",
-    "date": "2026-09-15"
+    "hash": "a4252a540d42a2e3",
+    "date": "2026-09-29"
   },
   "/preview/home-power-b/": {
-    "hash": "41e73187944bda49",
-    "date": "2026-09-15"
+    "hash": "e032b207f29c4fbe",
+    "date": "2026-09-29"
   },
   "/preview/home-power/": {
-    "hash": "5a428e58c636dccb",
-    "date": "2026-09-15"
+    "hash": "b1fa039a9e42b7f2",
+    "date": "2026-09-29"
   },
   "/glossary/consent-mode-v2/": {
     "hash": "ee898774be7e5521",
@@ -700,8 +700,8 @@
     "date": "2026-09-21"
   },
   "/glossary/analytics-data-residency/": {
-    "hash": "f936c295634a80a5",
-    "date": "2026-09-21"
+    "hash": "b3c54b778ee2b3bb",
+    "date": "2026-09-26"
   },
   "/glossary/ad-blocker-analytics-impact/": {
     "hash": "51c153766dd09075",
@@ -780,16 +780,16 @@
     "date": "2026-09-15"
   },
   "/use-cases/ga4-migration/": {
-    "hash": "5139f0a3b33ed584",
-    "date": "2026-09-15"
+    "hash": "0db215fc6c1c5e55",
+    "date": "2026-09-29"
   },
   "/use-cases/revenue-attribution/": {
     "hash": "e5e703ca5b99c179",
     "date": "2026-09-15"
   },
   "/use-cases/conversion-tracking/": {
-    "hash": "f898358a745fa20f",
-    "date": "2026-09-15"
+    "hash": "027eeccc87b3f689",
+    "date": "2026-09-29"
   },
   "/case-studies/european-hotel-group/": {
     "hash": "2d24dd0fa1fc0d62",
@@ -892,8 +892,8 @@
     "date": "2026-09-14"
   },
   "/blog/meet-seal-ai/": {
-    "hash": "99aa0a2fc8616eaf",
-    "date": "2026-09-04"
+    "hash": "49a8736dd7fe261f",
+    "date": "2026-09-24"
   },
   "/blog/analytics-tools-data-sampling/": {
     "hash": "68726fd7b072d667",
@@ -948,8 +948,8 @@
     "date": "2026-09-04"
   },
   "/blog/cookieless-analytics-for-saas/": {
-    "hash": "970b02fb3e97529c",
-    "date": "2026-09-21"
+    "hash": "2fc9cf65927d4e98",
+    "date": "2026-09-27"
   },
   "/blog/eu-digital-omnibus-cookie-banners-analytics/": {
     "hash": "805068aef6428e1e",
@@ -1004,20 +1004,20 @@
     "date": "2026-09-15"
   },
   "/gdpr-analytics/france/": {
-    "hash": "dabbdc88022cf182",
-    "date": "2026-09-15"
+    "hash": "21638e98204b1723",
+    "date": "2026-09-29"
   },
   "/gdpr-analytics/spain/": {
-    "hash": "87c9363c280cf0b1",
-    "date": "2026-09-15"
+    "hash": "f7c1b3c6e7a0fd38",
+    "date": "2026-09-29"
   },
   "/gdpr-analytics/germany/": {
-    "hash": "482923878cb2126c",
-    "date": "2026-09-15"
+    "hash": "3a06b52e5fbbe2b1",
+    "date": "2026-09-29"
   },
   "/authors/rafa-jimenez/": {
-    "hash": "9ec17c3fabe4068c",
-    "date": "2026-09-21"
+    "hash": "e6351875d9587144",
+    "date": "2026-09-29"
   },
   "/platforms/woocommerce/": {
     "hash": "524134be270a0e9f",
@@ -1028,24 +1028,24 @@
     "date": "2026-09-15"
   },
   "/vs/ga360/": {
-    "hash": "00a909725bc694be",
-    "date": "2026-09-21"
+    "hash": "fe777e374dec03f9",
+    "date": "2026-09-29"
   },
   "/vs/adobe-analytics/": {
-    "hash": "a2c31453f3979549",
-    "date": "2026-09-21"
+    "hash": "81cda16a53fd730b",
+    "date": "2026-09-29"
   },
   "/vs/piwik-pro/": {
-    "hash": "d3a74f31fe98825e",
-    "date": "2026-09-15"
+    "hash": "7249469e248bc755",
+    "date": "2026-09-29"
   },
   "/vs/ga4/": {
     "hash": "b7afd897dd156d41",
     "date": "2026-08-07"
   },
   "/vs/matomo/": {
-    "hash": "58119437036813ee",
-    "date": "2026-09-15"
+    "hash": "a03168571d136bf2",
+    "date": "2026-09-29"
   },
   "/demo/thank-you/": {
     "hash": "6cbff94eb9382a9c",
@@ -1060,11 +1060,11 @@
     "date": "2026-09-14"
   },
   "/es/changelog/": {
-    "hash": "b23d4e3a59603895",
-    "date": "2026-09-21"
+    "hash": "d5e2596c3929e967",
+    "date": "2026-09-29"
   },
   "/es/privacy/": {
-    "hash": "172c792ae8c9bb11",
+    "hash": "63b87fb426e2b4f7",
     "date": "2026-09-23"
   },
   "/es/sla/": {
@@ -1080,8 +1080,8 @@
     "date": "2026-09-15"
   },
   "/es/gdpr-analytics/spain/": {
-    "hash": "a3604959043b7e7c",
-    "date": "2026-09-15"
+    "hash": "c57cd496302500dc",
+    "date": "2026-09-29"
   },
   "/blog/data-breach-france-travail-fined-5-million/": {
     "hash": "9708ac890a3f8d46",
@@ -1092,8 +1092,8 @@
     "date": "2026-09-14"
   },
   "/case-studies/incapto/": {
-    "hash": "d153c3ac253a7ee2",
-    "date": "2026-09-14"
+    "hash": "99372987a01636ad",
+    "date": "2026-09-27"
   },
   "/es/case-studies/incapto/": {
     "hash": "a39a2bc1f5972500",
@@ -1108,20 +1108,20 @@
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/": {
-    "hash": "a239648d62b0918e",
+    "hash": "bb273b9d93a30442",
     "date": "2026-09-23"
   },
   "/es/ai-brand-monitoring/": {
-    "hash": "0609fbf20a5005fe",
+    "hash": "2138272516b920be",
     "date": "2026-09-23"
   },
   "/ai-brand-monitoring/thank-you/": {
-    "hash": "3ea37bc5137bbac2",
-    "date": "2026-09-23"
+    "hash": "bbe25fc759886913",
+    "date": "2026-09-14"
   },
   "/es/ai-brand-monitoring/thank-you/": {
-    "hash": "7546dc211c832d4e",
-    "date": "2026-09-23"
+    "hash": "823831b05cde6e43",
+    "date": "2026-09-14"
   },
   "/docs/mcp/": {
     "hash": "d01d73b1ee0af310",
@@ -1429,6 +1429,18 @@
   },
   "/what-is-a-consent-management-platform/": {
     "hash": "ee9b07ea73124bde",
+    "date": "2026-09-23"
+  },
+  "/es/ai-brand-monitoring/hoteles-mallorca/": {
+    "hash": "4dec733bf52703de",
+    "date": "2026-09-23"
+  },
+  "/es/que-dicen-las-ia/": {
+    "hash": "1cae47e8ee623d77",
+    "date": "2026-09-23"
+  },
+  "/what-ai-says/": {
+    "hash": "78bb4aeaf4939118",
     "date": "2026-09-23"
   }
 }

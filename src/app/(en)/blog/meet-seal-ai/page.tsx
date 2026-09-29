@@ -23,8 +23,8 @@ const DESCRIPTION =
   "Ask your analytics questions in plain language and get grounded answers — with inference that runs in the EU only, retains nothing, and trains no one's model. Here's how Seal AI works and why it's private by architecture, not by promise.";
 
 export const metadata: Metadata = {
-  title: "Meet Seal AI: Analytics Answers That Never Leave the EU",
-  description: "Ask your analytics in plain language and get grounded answers, from inference that runs in the EU only, retains nothing and trains no one's model.",
+  title: "Seal AI: EU-Only Analytics AI That Retains Nothing",
+  description: "Seal AI runs inference only in Paris, France (Scaleway) — no US parent, zero prompt retention, no model training on your data.",
   openGraph: {
     title: "Meet Seal AI: Private, EU-Only Analytics AI",
     description:
@@ -217,9 +217,10 @@ export default function MeetSealAiPage() {
               <li>
                 <strong>No transfer, so no transfer problem.</strong> Because your
                 data never leaves the EU and the provider has no US parent, GDPR
-                Chapter V simply isn&apos;t triggered — no Standard Contractual
+                Chapter V generally isn&apos;t triggered — no Standard Contractual
                 Clauses, no transfer assessment, no dependence on the EU-US Data
-                Privacy Framework surviving its next court date.
+                Privacy Framework surviving its next court date. As with any
+                cross-border data question, confirm the specifics with your DPO.
               </li>
               <li>
                 <strong>Zero retention, no training.</strong> Scaleway retains no

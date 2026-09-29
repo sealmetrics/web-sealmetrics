@@ -1056,8 +1056,8 @@ export default function WhySealmetricsPage() {
             </em>
           </>
         }
-        ledeEn="Run Sealmetrics side-by-side with GA4 — one tag or module, 5 to 30 minutes, 14-day trial. If the gap on your own traffic isn't worth acting on, keep GA4."
-        ledeEs="Ejecuta Sealmetrics en paralelo con GA4 — un tag o módulo, de 5 a 30 minutos, prueba de 14 días. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
+        ledeEn="Run Sealmetrics side-by-side with GA4 — one tag or module, 5 to 30 minutes, first 1M events free. If the gap on your own traffic isn't worth acting on, keep GA4."
+        ledeEs="Ejecuta Sealmetrics en paralelo con GA4 — un tag o módulo, de 5 a 30 minutos, el primer millón de eventos gratis. Si el gap en tu propio tráfico no justifica actuar, quédate con GA4."
       />
 
       <section className="bg-warm-white border-t border-warm-100 py-12">

@@ -197,6 +197,10 @@ const copy = {
       "The report is free. It comes from the team behind Sealmetrics, the cookieless analytics these companies use to measure what their marketing brings in.",
     formTitle: "Request your report",
     formFoot: "Six questions · seventeen models · about five minutes",
+    quickPrefix: "Want a quick look first? ",
+    quickLink: "See what AIs say about any brand in two questions",
+    quickSuffix: ", live on the page and without leaving an email.",
+    quickHref: "/what-ai-says/",
     ownTag: "We ran it on ourselves first, with fifteen models",
     ownTitle: (
       <>
@@ -351,6 +355,10 @@ const copy = {
       "El informe es gratis. Lo hace el equipo de Sealmetrics, la analítica sin cookies con la que estas empresas miden lo que les trae su marketing.",
     formTitle: "Pide tu informe",
     formFoot: "Seis preguntas · diecisiete modelos · unos cinco minutos",
+    quickPrefix: "¿Prefieres un vistazo rápido antes? ",
+    quickLink: "Mira qué dicen las IA de cualquier marca con dos preguntas",
+    quickSuffix: ", en directo y sin dejar el correo.",
+    quickHref: "/es/que-dicen-las-ia/",
     ownTag: "Empezamos por nosotros, con quince modelos",
     ownTitle: (
       <>
@@ -534,6 +542,13 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
           <span>{t.formFoot}</span>
         </div>
         <BrandReportForm locale={locale} />
+        <p className="sig-brand-quick">
+          {t.quickPrefix}
+          <Link className="sig-brand-quick-link" href={t.quickHref}>
+            {t.quickLink}
+          </Link>
+          {t.quickSuffix}
+        </p>
       </section>
 
       <section className="sig-brand-clients" aria-label={t.clientsTag}>
@@ -566,6 +581,14 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
             </article>
           ))}
         </div>
+        {/* Sector studies are Spanish only for now, so the link exists only on the ES page. */}
+        {locale === "es" ? (
+          <p className="sig-brand-case-link">
+            <Link className="sig-brand-text-link" href="/es/ai-brand-monitoring/hoteles-mallorca/">
+              Estudio: qué hoteles de Mallorca recomiendan las IA <Arrow />
+            </Link>
+          </p>
+        ) : null}
       </section>
 
       <section className="sig-brand-measures">

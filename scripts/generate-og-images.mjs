@@ -180,6 +180,7 @@ const HUB_OVERRIDES = {
   security: { eyebrow: "Security", title: "Designed for GDPR, EU-hosted in Dublin" },
   open: { eyebrow: "Open", title: "How Sealmetrics works, written down in public" },
   blog: { eyebrow: "Blog", title: "Measurement, attribution and privacy for eCommerce" },
+  "what-ai-says": { eyebrow: "Free check · every model, live", title: "What do AIs say about your brand?" },
 };
 
 /** First path segment → the eyebrow line printed above the title. */
@@ -561,6 +562,18 @@ mkdirSync(path.join(outDir, "open"), { recursive: true });
 for (const c of parseOpenChapters()) {
   const out = path.join(outDir, "open", `${c.slug}.png`);
   const made = await renderOg({ outFile: out, eyebrow: `Open · ${c.eyebrow}`, title: c.title, font });
+  if (made) generated++; else skipped++;
+}
+
+// Spanish pages whose slug differs from the English one. og.ts resolves an ES
+// route to the card at its own (unprefixed) slug, so a Spanish-only slug gets
+// its own Spanish card instead of falling through to the generic image.
+const ES_ONLY_CARDS = [
+  { route: "que-dicen-las-ia", eyebrow: "Consulta gratuita · todos los modelos", title: "¿Qué dicen las IA de tu marca?" },
+];
+for (const c of ES_ONLY_CARDS) {
+  const out = path.join(outDir, `${c.route}.png`);
+  const made = await renderOg({ outFile: out, eyebrow: c.eyebrow, title: c.title, font });
   if (made) generated++; else skipped++;
 }
 

@@ -195,6 +195,16 @@ const EVENT_MAP: Record<string, Mapping> = {
   // name was absent from this table until now, so every request since the page
   // shipped was silently dropped by the `!mapping` guard below.
   lead_brand_report: { kind: "micro", name: "brand_report_request" },
+  // A sector study sent to the visitor's inbox. Registered here on the day the form
+  // shipped: an unmapped name is dropped without a trace by the guard below.
+  lead_study_download: { kind: "micro", name: "study_download" },
+  // "What do AIs say about…?" (/what-ai-says, /es/que-dicen-las-ia). The brand
+  // typed is never sent: it is free text, and a visitor can type a person's
+  // name however clearly the page says not to.
+  brand_check_start: { kind: "micro", name: "brand_check_request" }, // check accepted by the relay
+  brand_check_done: { kind: "micro", name: "brand_check_result" }, // a result finished on screen
+  brand_check_share: { kind: "micro", name: "brand_check_share" }, // share button, copy or PNG
+  brand_check_compare: { kind: "micro", name: "brand_check_compare" }, // second brand requested
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };

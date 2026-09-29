@@ -36,7 +36,7 @@ export function HeroV3Es() {
         </p>
 
         {/* Misma escalera de conversión que la home inglesa: demo primero
-            (venta asistida para el ICP), prueba de 14 días como secundaria.
+            (venta asistida para el ICP), cuenta gratis como secundaria.
             La auditoría gratuita no se pierde — baja al tercer peldaño, como
             micro-conversión contextual. Ver PRD-CONVERSION-REDESIGN.md §4.1. */}
         <DualCTA locale="es" className="justify-center mt-7" />

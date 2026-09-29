@@ -192,6 +192,7 @@ test("routes every public form type through the private relay", async () => {
     N8N_DEMO_ACCESS_URL: "https://automation.invalid/demo-access",
     N8N_CAREERS_URL: "https://automation.invalid/careers",
     N8N_BRAND_REPORT_URL: "https://automation.invalid/brand-report",
+    N8N_STUDY_DOWNLOAD_URL: "https://automation.invalid/study-download",
   };
   const cases = [
     ["demo", { name: "Test Lead", email: "test@example.com", website: "https://example.com", gdpr: true }, env.N8N_WEBFORM_LEAD_URL],
@@ -201,6 +202,7 @@ test("routes every public form type through the private relay", async () => {
     ["calculator", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
     ["growth", { email: "test@example.com" }, env.N8N_WEBFORM_LEAD_URL],
     ["brand_report", { email: "test@example.com", brand: "Test Brand" }, env.N8N_BRAND_REPORT_URL],
+    ["study_download", { email: "test@example.com", study: "hoteles-mallorca" }, env.N8N_STUDY_DOWNLOAD_URL],
   ];
 
   try {
@@ -314,6 +316,54 @@ test("rejects brand reports that fail their own field rules", async () => {
       assert.deepEqual(await response.json(), { ok: false, error: "invalid_fields" });
     }
     assert.equal(forwarded, 0, "no rejected brand report should reach n8n");
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a study download accepts a personal address and forwards only the slug", async () => {
+  const originalFetch = globalThis.fetch;
+  let forwarded;
+  globalThis.fetch = async (url, options) => {
+    forwarded = { url: String(url), options };
+    return new Response(null, { status: 204 });
+  };
+  const payload = { email: "someone@gmail.com", study: "hoteles-mallorca", marketing_consent: false };
+  try {
+    const response = await worker.fetch(
+      request({ type: "study_download", payload }),
+      { ...baseEnv, N8N_STUDY_DOWNLOAD_URL: "https://automation.invalid/study-download" },
+    );
+    assert.equal(response.status, 200);
+    assert.equal(forwarded.url, "https://automation.invalid/study-download");
+    assert.deepEqual(JSON.parse(forwarded.options.body), payload);
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test("a study download refuses anything that is not a plain slug", async () => {
+  const originalFetch = globalThis.fetch;
+  let forwarded = 0;
+  globalThis.fetch = async () => {
+    forwarded += 1;
+    return new Response(null, { status: 204 });
+  };
+  const env = { ...baseEnv, N8N_STUDY_DOWNLOAD_URL: "https://automation.invalid/study-download" };
+  try {
+    for (const study of ["", "https://evil.example/x.pdf", "../etc", "Hoteles Mallorca", 42]) {
+      const response = await worker.fetch(
+        request({ type: "study_download", payload: { email: "a@example.com", study } }),
+        env,
+      );
+      assert.equal(response.status, 400, `study ${JSON.stringify(study)} should be refused`);
+    }
+    const badConsent = await worker.fetch(
+      request({ type: "study_download", payload: { email: "a@example.com", study: "hoteles-mallorca", marketing_consent: "yes" } }),
+      env,
+    );
+    assert.equal(badConsent.status, 400);
+    assert.equal(forwarded, 0);
   } finally {
     globalThis.fetch = originalFetch;
   }
