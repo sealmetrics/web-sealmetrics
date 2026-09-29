@@ -1,25 +1,12 @@
-import { Onest, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
+import "@/app/fonts.css";
 import { Header } from "@/components/layout/Header";
 import { AnnouncementBar, AnnouncementBarOffset } from "@/components/layout/AnnouncementBar";
 import { Footer } from "@/components/layout/Footer";
 import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
 import type { Locale } from "@/lib/i18n/types";
 import { organizationSchema } from "@/lib/schema";
-
-const onest = Onest({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500"],
-});
+import { FontPreloads } from "@/components/layout/FontPreloads";
 
 export function SharedLayout({
   locale,
@@ -29,11 +16,9 @@ export function SharedLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html
-      lang={locale}
-      className={`${onest.variable} ${jetbrainsMono.variable}`}
-    >
+    <html lang={locale}>
       <head>
+        <FontPreloads />
         {/* Discovery for AI agents. An agent that lands on a page from a
             search result never reads robots.txt, so the entry points are
             advertised here — the same pattern docs.sealmetrics.com uses.

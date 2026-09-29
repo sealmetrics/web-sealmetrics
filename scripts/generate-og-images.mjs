@@ -96,36 +96,16 @@ mkdirSync(path.join(outDir, "blog"), { recursive: true });
 mkdirSync(path.join(outDir, "case-studies"), { recursive: true });
 mkdirSync(path.join(outDir, "glossary"), { recursive: true });
 
-// Load Onest from node_modules — Next already pulls Google Fonts at build time
-// so the woff2 lives in node_modules under .next-font cache. Use a simple
-// system-fallback render: satori needs a font but woff/ttf works.
-// Fall back to embedded Inter-like via fetch isn't possible offline; download
-// once and cache.
-const FONT_CACHE = path.join(repoRoot, ".og-font-cache");
-mkdirSync(FONT_CACHE, { recursive: true });
-const fontPath = path.join(FONT_CACHE, "onest-700.ttf");
+// Onest 700 for the cards, committed in scripts/fonts/ (SIL OFL 1.1, see
+// public/fonts/OFL-Onest.txt). It used to be fetched from Google Fonts on every
+// fresh checkout — i.e. every CI run — and a failed fetch silently skipped OG
+// generation. Reading it from the repo means the cards never depend on the network.
+const fontPath = path.join(repoRoot, "scripts", "fonts", "onest-700.ttf");
 
 async function ensureFont() {
   if (existsSync(fontPath)) return readFileSync(fontPath);
-  // Resolve current Onest 700 TTF URL from Google Fonts CSS — version-stable approach.
-  try {
-    const cssRes = await fetch(
-      "https://fonts.googleapis.com/css2?family=Onest:wght@700&display=swap",
-      { headers: { "User-Agent": "Mozilla/5.0" } }
-    );
-    if (!cssRes.ok) throw new Error(`CSS HTTP ${cssRes.status}`);
-    const css = await cssRes.text();
-    const ttfUrl = css.match(/url\((https:[^)]+\.ttf)\)/)?.[1];
-    if (!ttfUrl) throw new Error("no .ttf URL in Google CSS");
-    const fontRes = await fetch(ttfUrl);
-    if (!fontRes.ok) throw new Error(`Font HTTP ${fontRes.status}`);
-    const buf = Buffer.from(await fontRes.arrayBuffer());
-    writeFileSync(fontPath, buf);
-    return buf;
-  } catch (err) {
-    console.warn(`[og] font fetch failed (${err.message}); skipping OG generation`);
-    return null;
-  }
+  console.warn(`[og] ${path.relative(repoRoot, fontPath)} is missing; skipping OG generation`);
+  return null;
 }
 
 function parseBlogPosts() {

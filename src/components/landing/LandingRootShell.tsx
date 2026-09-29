@@ -1,7 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Onest, JetBrains_Mono } from "next/font/google";
 import "@/app/globals.css";
+import "@/app/fonts.css";
 import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
+import { FontPreloads } from "@/components/layout/FontPreloads";
 
 /* ============================================================
    SHELL RAÍZ COMPARTIDO · LANDINGS DE PAGO
@@ -11,20 +12,6 @@ import { SealmetricsTracker } from "@/components/analytics/SealmetricsTracker";
    variar por página: (lp) sirve ES y (lp-en) sirve EN, y ambos
    delegan aquí para no duplicar fuentes, tracker ni metadatos.
    ============================================================ */
-
-const onest = Onest({
-  subsets: ["latin"],
-  variable: "--font-sans",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500"],
-});
 
 export const landingViewport: Viewport = {
   width: "device-width",
@@ -59,8 +46,9 @@ export function LandingRootShell({
   children: React.ReactNode;
 }) {
   return (
-    <html lang={locale} className={`${onest.variable} ${jetbrainsMono.variable}`}>
+    <html lang={locale}>
       <body className="font-sans antialiased" data-design-system="signal-v4">
+        <FontPreloads />
         <a href="#main-content" className="skip-to-content">
           {SKIP[locale]}
         </a>

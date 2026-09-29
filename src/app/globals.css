@@ -80,8 +80,8 @@
 
   /* Aliases for the names the v4 Signal CSS actually references — 113 uses of
      --font-jetbrains-mono and 11 of --font-onest across src/components/v4.
-     Neither was ever defined: SharedLayout.tsx declares the next/font
-     variables as --font-sans and --font-mono. A `font:` shorthand containing
+     Neither was ever defined: the font variables are --font-sans and
+     --font-mono (set in src/app/fonts.css, which self-hosts both families). A `font:` shorthand containing
      an undefined var() is invalid at computed-value time and is dropped
      WHOLESALE, so every eyebrow, breadcrumb, data label and chart label that
      should be JetBrains Mono 10px uppercase silently rendered as 16px Onest
