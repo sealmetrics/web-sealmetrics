@@ -352,13 +352,14 @@ export default function PrivacyPageEs() {
                 (a) Generar el informe y enviártelo por correo, porque lo has
                 pedido (art. 6.1.b RGPD). (b) Conservar un registro de la
                 solicitud, para evitar el abuso de un servicio gratuito y
-                atender cualquier consulta sobre ella (art. 6.1.f). (c)
-                Enviarte de vez en cuando informes y novedades, sólo si marcas
-                la casilla separada y opcional del formulario (art. 6.1.a RGPD
-                y art. 21 de la LSSI). No marcarla no afecta al informe, y
-                puedes retirar ese consentimiento cuando quieras desde el enlace
-                de baja de cualquier correo o escribiendo a
-                privacy@sealmetrics.com.
+                atender cualquier consulta sobre ella (art. 6.1.f). (c) Sólo
+                para quien pidió el informe antes del 29 de septiembre de 2026
+                y marcó la casilla separada y opcional que el formulario ofrecía
+                hasta entonces: enviarle de vez en cuando informes y novedades
+                (art. 6.1.a RGPD y art. 21 de la LSSI). El formulario ya no
+                ofrece esa casilla. Ese consentimiento se puede retirar cuando
+                se quiera desde el enlace de baja de cualquier correo o
+                escribiendo a privacy@sealmetrics.com.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Destinatarios.</strong>
@@ -392,8 +393,9 @@ export default function PrivacyPageEs() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Resend, Inc. (EE. UU.) entrega el informe y, si lo has
-                  consentido, los correos ocasionales, con cláusulas
+                  Resend, Inc. (EE. UU.) entrega el informe y, a quien lo
+                  consintió antes del 29 de septiembre de 2026, los correos
+                  ocasionales, con cláusulas
                   contractuales tipo y su certificación EU-US Data Privacy
                   Framework.
                 </li>
@@ -404,8 +406,9 @@ export default function PrivacyPageEs() {
                 como cualquier otro envío de formulario. La relación entre la
                 referencia del informe y tu correo se borra al entregarlo, o a
                 las 72 horas como máximo. Si consentiste los
-                correos ocasionales, tu dirección permanece en esa lista hasta
-                que te des de baja o retires el consentimiento.
+                correos ocasionales antes del 29 de septiembre de 2026, tu
+                dirección permanece en esa lista hasta que te des de baja o
+                retires el consentimiento.
               </p>
             </div>
 
