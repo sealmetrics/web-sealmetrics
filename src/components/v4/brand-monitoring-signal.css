@@ -510,9 +510,13 @@
   display: grid;
   gap: 4px;
 }
-.sig-brand-models li:first-child,
-.sig-brand-models li:nth-child(2),
-.sig-brand-models li:nth-child(3) {
+/* Seven cells: the open-model cell spans two tracks so the last row fills on both the
+   four-column and the two-column grid. */
+.sig-brand-models li:last-child {
+  grid-column: span 2;
+}
+/* The named commercial models carry the acid rule; the open-model cell closes the list. */
+.sig-brand-models li:not(:last-child) {
   box-shadow: inset 0 3px 0 var(--acid);
 }
 .sig-brand-models strong {
