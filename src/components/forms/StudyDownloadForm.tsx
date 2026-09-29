@@ -124,43 +124,51 @@ export function StudyDownloadForm({ study }: { study: string }) {
         </p>
       ) : null}
 
-      {/* First layer of the GDPR art. 13 information at the point of collection. */}
+      {/* First layer of the GDPR art. 13 information at the point of collection. As in
+          the brand report form: the essentials stay visible in one sentence, the full
+          table sits behind a disclosure (in the static HTML either way). */}
       <div className="sig-brand-notice">
-        <p className="sig-brand-notice-title">Protección de datos, lo básico</p>
-        <dl>
-          <div>
-            <dt>Responsable</dt>
-            <dd>Sealmetrics S.L.</dd>
-          </div>
-          <div>
-            <dt>Finalidad</dt>
-            <dd>
-              Enviarte este estudio por correo. Si marcas la casilla, también correos ocasionales de
-              Sealmetrics.
-            </dd>
-          </div>
-          <div>
-            <dt>Legitimación</dt>
-            <dd>
-              Tu solicitud del estudio (art. 6.1.b RGPD). Para los correos ocasionales, tu
-              consentimiento (art. 6.1.a), que puedes retirar cuando quieras.
-            </dd>
-          </div>
-          <div>
-            <dt>Destinatarios</dt>
-            <dd>
-              Resend (EE. UU., cláusulas contractuales tipo) entrega el correo y Cloudflare hace la
-              comprobación antibots.
-            </dd>
-          </div>
-          <div>
-            <dt>Derechos</dt>
-            <dd>Acceso, rectificación, supresión, oposición y portabilidad, en privacy@sealmetrics.com.</dd>
-          </div>
-        </dl>
-        <p>
-          <a href="/es/privacy/#estudios">Política de privacidad completa</a>
+        <p className="sig-brand-notice-summary">
+          Sealmetrics S.L. usa tu correo para enviarte este estudio, y para correos ocasionales sólo
+          si marcas la casilla. Acceso, supresión y demás derechos: privacy@sealmetrics.com.
         </p>
+        <details className="sig-brand-notice-details">
+          <summary>Protección de datos en detalle</summary>
+          <dl>
+            <div>
+              <dt>Responsable</dt>
+              <dd>Sealmetrics S.L.</dd>
+            </div>
+            <div>
+              <dt>Finalidad</dt>
+              <dd>
+                Enviarte este estudio por correo. Si marcas la casilla, también correos ocasionales de
+                Sealmetrics.
+              </dd>
+            </div>
+            <div>
+              <dt>Legitimación</dt>
+              <dd>
+                Tu solicitud del estudio (art. 6.1.b RGPD). Para los correos ocasionales, tu
+                consentimiento (art. 6.1.a), que puedes retirar cuando quieras.
+              </dd>
+            </div>
+            <div>
+              <dt>Destinatarios</dt>
+              <dd>
+                Resend (EE. UU., cláusulas contractuales tipo) entrega el correo y Cloudflare hace la
+                comprobación antibots.
+              </dd>
+            </div>
+            <div>
+              <dt>Derechos</dt>
+              <dd>Acceso, rectificación, supresión, oposición y portabilidad, en privacy@sealmetrics.com.</dd>
+            </div>
+          </dl>
+          <p>
+            <a href="/es/privacy/#estudios">Política de privacidad completa</a>
+          </p>
+        </details>
       </div>
     </form>
   );
