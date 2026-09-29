@@ -758,9 +758,6 @@
   text-underline-offset: 3px;
   font-weight: 650;
 }
-.sig-brand-sample + .sig-brand-request {
-  padding-top: clamp(48px, 5vw, 76px);
-}
 
 /* ── Client logos ─────────────────────────────────────────────────────── */
 .sig-brand-clients {
@@ -812,6 +809,117 @@
   opacity: 1;
 }
 
+/* ── Hero with the form ───────────────────────────────────────────────── */
+/*
+ * Question on the left, request on the right. The card has its own width so the
+ * form never stretches with the page: at 1440px the old four-across row was 1320px
+ * of inputs. Below 1000px the two stack and the card keeps a readable width.
+ */
+.sig-brand-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(340px, 460px);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+  padding-bottom: clamp(48px, 5vw, 76px);
+}
+.sig-brand-hero h1 {
+  max-width: none;
+  font-size: clamp(44px, 5.4vw, 84px);
+}
+.sig-brand-hero-body {
+  color: var(--ink);
+  opacity: 0.78;
+}
+.sig-brand-hero-copy .sig-brand-models ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.sig-brand-hero-copy .sig-brand-models li:last-child {
+  grid-column: span 3;
+}
+.sig-brand-hero-form {
+  margin-top: 44px;
+  padding-bottom: 0;
+}
+
+/* ── Report form (one column) ─────────────────────────────────────────── */
+.sig-report-form {
+  padding: 22px 22px 20px;
+}
+.sig-report-fields {
+  display: grid;
+  gap: 16px;
+}
+.sig-report-optional {
+  border: 1px solid var(--rule);
+  background: var(--paper);
+}
+.sig-report-optional > summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 14px;
+  font-size: 14px;
+  font-weight: 650;
+}
+.sig-report-optional > summary::-webkit-details-marker {
+  display: none;
+}
+.sig-report-optional > summary > span::before {
+  content: "+";
+  display: inline-block;
+  width: 1.1em;
+  font-family: var(--font-mono), monospace;
+}
+.sig-report-optional[open] > summary > span::before {
+  content: "\2212";
+}
+.sig-report-optional > summary small {
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sig-report-optional > summary:focus-visible {
+  outline: 2px solid var(--acid-ink);
+  outline-offset: 2px;
+}
+.sig-report-optional > .sig-report-fields {
+  padding: 4px 14px 16px;
+}
+.sig-report-optional .sig-brand-field input {
+  background: var(--white);
+}
+.sig-report-form .sig-brand-consent {
+  margin-top: 18px;
+  font-size: 12.5px;
+}
+.sig-report-submit {
+  margin-top: 18px;
+  display: grid;
+  gap: 14px;
+  justify-items: start;
+}
+.sig-report-submit .sig-brand-submit {
+  width: 100%;
+}
+.sig-report-form .sig-brand-notice {
+  font-size: 11.5px;
+}
+.sig-report-form .sig-brand-notice dl > div {
+  grid-template-columns: 11ch minmax(0, 1fr);
+  gap: 10px;
+}
+.sig-brand-hero-form .sig-brand-quick {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
   .sig-brand-row {
@@ -819,6 +927,29 @@
   }
 }
 @media (max-width: 1000px) {
+  /* Stacked, the form comes right after the question and the model list after it:
+     on a phone the roster is six screens of scrolling before anyone can ask. */
+  .sig-brand-hero {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0;
+  }
+  .sig-brand-hero-copy {
+    display: contents;
+  }
+  .sig-brand-hero-form {
+    order: 1;
+    margin-top: 32px;
+    max-width: 560px;
+  }
+  .sig-brand-hero-copy .sig-brand-models {
+    order: 2;
+  }
+  .sig-brand-hero-copy .sig-brand-models ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .sig-brand-hero-copy .sig-brand-models li:last-child {
+    grid-column: span 2;
+  }
   .sig-brand-section-head {
     grid-template-columns: minmax(0, 1fr);
     align-items: start;

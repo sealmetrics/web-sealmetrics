@@ -120,13 +120,13 @@ const copy = {
     eyebrow: "Free report · no account",
     h1: (
       <>
-        Ask nineteen models
+        What do AIs know
         <br />
-        <em>what they know about you.</em>
+        <em>about your brand?</em>
       </>
     ),
     heroBody:
-      "Buyers no longer start at a search box. They ask a model, and the model answers from memory. This report asks nineteen of them six questions about your company and sends you what they actually said, quote by quote.",
+      "Your buyers ask ChatGPT, Claude, Gemini or Perplexity before they reach you. We ask nineteen models six questions about your company and send you every answer, word for word, with the errors marked.",
     modelsLabel: "Who answers",
     models: [
       ["GPT-6 Sol", "OpenAI · ChatGPT"],
@@ -279,13 +279,13 @@ const copy = {
     eyebrow: "Informe gratuito · sin cuenta",
     h1: (
       <>
-        Pregunta a diecinueve modelos
+        ¿Qué saben las IA
         <br />
-        <em>qué saben de ti.</em>
+        <em>de tu marca?</em>
       </>
     ),
     heroBody:
-      "Quien te compra ya no empieza en un buscador. Le pregunta a un modelo, y el modelo contesta de memoria. Este informe hace seis preguntas sobre tu empresa a diecinueve de ellos y te manda lo que dijeron, cita a cita.",
+      "Quien te compra le pregunta a ChatGPT, Claude, Gemini o Perplexity antes de llegar a ti. Hacemos seis preguntas sobre tu empresa a diecinueve modelos y te mandamos cada respuesta, palabra por palabra, con los errores marcados.",
     modelsLabel: "Quién contesta",
     models: [
       ["GPT-6 Sol", "OpenAI · ChatGPT"],
@@ -440,27 +440,47 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
   return (
     <main className="sig-brand-page">
       <section className="sig-brand-hero">
-        <nav className="sig-brand-breadcrumbs" aria-label="Breadcrumb">
-          <Link href={`${prefix}/`}>{t.home}</Link>
-          <span>/</span>
-          <span>{t.breadcrumb}</span>
-        </nav>
-        <p className="sig-brand-eyebrow">
-          <span>{t.eyebrow}</span>
-        </p>
-        <h1>{t.h1}</h1>
-        <p className="sig-brand-hero-body">{t.heroBody}</p>
-        <div className="sig-brand-models">
-          <p className="sig-brand-tag">{t.modelsLabel}</p>
-          <ul className="sig-brand-models-list">
-            {t.models.map(([name, vendor]) => (
-              <li key={name}>
-                <strong>{name}</strong>
-                <span>{vendor}</span>
-              </li>
-            ))}
-          </ul>
-          <p className="sig-brand-models-note">{t.modelsNote}</p>
+        <div className="sig-brand-hero-copy">
+          <nav className="sig-brand-breadcrumbs" aria-label="Breadcrumb">
+            <Link href={`${prefix}/`}>{t.home}</Link>
+            <span>/</span>
+            <span>{t.breadcrumb}</span>
+          </nav>
+          <p className="sig-brand-eyebrow">
+            <span>{t.eyebrow}</span>
+          </p>
+          <h1>{t.h1}</h1>
+          <p className="sig-brand-hero-body">{t.heroBody}</p>
+          <div className="sig-brand-models">
+            <p className="sig-brand-tag">{t.modelsLabel}</p>
+            <ul className="sig-brand-models-list">
+              {t.models.map(([name, vendor]) => (
+                <li key={name}>
+                  <strong>{name}</strong>
+                  <span>{vendor}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="sig-brand-models-note">{t.modelsNote}</p>
+          </div>
+        </div>
+
+        {/* The form sits in the hero, in a card of its own width: the request is the
+            page's one job, and a four-across row stretched to 1320px read as a
+            spreadsheet, not a question. */}
+        <div id="request" className="sig-brand-request sig-brand-hero-form" aria-label={t.formTitle}>
+          <div className="sig-brand-module-top">
+            <span>{t.formTitle}</span>
+            <span>{t.formFoot}</span>
+          </div>
+          <BrandReportForm locale={locale} />
+          <p className="sig-brand-quick">
+            {t.quickPrefix}
+            <Link className="sig-brand-quick-link" href={t.quickHref}>
+              {t.quickLink}
+            </Link>
+            {t.quickSuffix}
+          </p>
         </div>
       </section>
 
@@ -536,21 +556,6 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
             </a>
           </figcaption>
         </figure>
-      </section>
-
-      <section id="request" className="sig-brand-request" aria-label={t.formTitle}>
-        <div className="sig-brand-module-top">
-          <span>{t.formTitle}</span>
-          <span>{t.formFoot}</span>
-        </div>
-        <BrandReportForm locale={locale} />
-        <p className="sig-brand-quick">
-          {t.quickPrefix}
-          <Link className="sig-brand-quick-link" href={t.quickHref}>
-            {t.quickLink}
-          </Link>
-          {t.quickSuffix}
-        </p>
       </section>
 
       <section className="sig-brand-clients" aria-label={t.clientsTag}>

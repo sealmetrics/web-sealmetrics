@@ -180,3 +180,15 @@
     padding: 12px 10px;
   }
 }
+
+/* The report form is one column now; at full content width it would be one 1320px
+   input per row. It sits under the section's text column instead. */
+.sig-sector-request {
+  max-width: 560px;
+  margin-left: auto;
+}
+@media (max-width: 1000px) {
+  .sig-sector-request {
+    margin-left: 0;
+  }
+}
