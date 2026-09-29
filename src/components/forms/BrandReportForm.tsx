@@ -269,6 +269,8 @@ const copy = {
     competitorsPlaceholder: "Two or three names, separated by commas",
     competitorsHint:
       "Optional. Without them, the report finds who the models name instead of you.",
+    optional: "Add sector and competitors",
+    optionalNote: "Optional · a sharper report",
     submit: "Send me the report",
     submitting: "Requesting the report",
     errorBrand: "Tell us which brand to ask about.",
@@ -313,6 +315,8 @@ const copy = {
     competitorsPlaceholder: "Dos o tres nombres, separados por comas",
     competitorsHint:
       "Opcional. Sin ellos, el informe descubre a quién nombran los modelos en tu lugar.",
+    optional: "Añadir sector y competidores",
+    optionalNote: "Opcional · un informe más afinado",
     submit: "Enviadme el informe",
     submitting: "Pidiendo el informe",
     errorBrand: "Dinos por qué marca preguntamos.",
@@ -425,8 +429,11 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
   }
 
   return (
-    <form className="sig-brand-form" onSubmit={handleSubmit} noValidate>
-      <div className="sig-brand-row">
+    <form className="sig-brand-form sig-report-form" onSubmit={handleSubmit} noValidate>
+      {/* One column, the two required fields first. Sector and competitors sharpen
+          the report but are optional, so they wait behind a disclosure instead of
+          doubling the height of the form for everyone. */}
+      <div className="sig-report-fields">
         <label className="sig-brand-field">
           <span>{t.brand}</span>
           <input
@@ -436,6 +443,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
             onChange={(event) => setBrand(event.target.value)}
             placeholder={t.brandPlaceholder}
             maxLength={120}
+            autoComplete="organization"
             required
           />
         </label>
@@ -449,35 +457,44 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
             onChange={(event) => setEmail(event.target.value)}
             placeholder={t.emailPlaceholder}
             maxLength={254}
+            autoComplete="email"
             required
           />
         </label>
 
-        <label className="sig-brand-field">
-          <span>{t.sector}</span>
-          <input
-            type="text"
-            name="sector"
-            value={sector}
-            onChange={(event) => setSector(event.target.value)}
-            placeholder={t.sectorPlaceholder}
-            maxLength={120}
-          />
-          <small>{t.sectorHint}</small>
-        </label>
+        <details className="sig-report-optional">
+          <summary>
+            <span>{t.optional}</span>
+            <small>{t.optionalNote}</small>
+          </summary>
+          <div className="sig-report-fields">
+            <label className="sig-brand-field">
+              <span>{t.sector}</span>
+              <input
+                type="text"
+                name="sector"
+                value={sector}
+                onChange={(event) => setSector(event.target.value)}
+                placeholder={t.sectorPlaceholder}
+                maxLength={120}
+              />
+              <small>{t.sectorHint}</small>
+            </label>
 
-        <label className="sig-brand-field">
-          <span>{t.competitors}</span>
-          <input
-            type="text"
-            name="competitors"
-            value={competitors}
-            onChange={(event) => setCompetitors(event.target.value)}
-            placeholder={t.competitorsPlaceholder}
-            maxLength={200}
-          />
-          <small>{t.competitorsHint}</small>
-        </label>
+            <label className="sig-brand-field">
+              <span>{t.competitors}</span>
+              <input
+                type="text"
+                name="competitors"
+                value={competitors}
+                onChange={(event) => setCompetitors(event.target.value)}
+                placeholder={t.competitorsPlaceholder}
+                maxLength={200}
+              />
+              <small>{t.competitorsHint}</small>
+            </label>
+          </div>
+        </details>
 
         {/* Honeypot: hidden from people, filled by the bots that read the markup. */}
         <input
@@ -502,14 +519,12 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
         <span>{t.marketing}</span>
       </label>
 
-      <div className="sig-brand-foot">
-        <div className="sig-brand-foot-left">
-          <LeadTurnstile
-            onToken={setTurnstileToken}
-            resetKey={turnstileResetKey}
-            locale={locale}
-          />
-        </div>
+      <div className="sig-report-submit">
+        <LeadTurnstile
+          onToken={setTurnstileToken}
+          resetKey={turnstileResetKey}
+          locale={locale}
+        />
         <button
           type="submit"
           className="sig-brand-submit"

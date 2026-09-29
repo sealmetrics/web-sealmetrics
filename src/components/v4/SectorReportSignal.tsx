@@ -211,7 +211,7 @@ export function SectorReportSignal({ report, t }: { report: SectorReport; t: Sec
           </div>
           <p>{t.formBody}</p>
         </div>
-        <div className="sig-brand-request">
+        <div className="sig-brand-request sig-sector-request">
           <div className="sig-brand-module-top">
             <span>Pide el informe de tu hotel o tu cadena</span>
             <span>{t.formFoot}</span>
