@@ -44,7 +44,7 @@
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "8db62bf72cb99883",
+    "hash": "909c62b331157be5",
     "date": "2026-09-29"
   },
   "/real-roas/": {
@@ -1064,7 +1064,7 @@
     "date": "2026-09-29"
   },
   "/es/privacy/": {
-    "hash": "f884b03eb9f8d20a",
+    "hash": "0e1b1d9fec832c0e",
     "date": "2026-09-29"
   },
   "/es/sla/": {
@@ -1108,19 +1108,19 @@
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/": {
-    "hash": "a60b9a748470f65f",
+    "hash": "061d9f3a2c73efe9",
     "date": "2026-09-29"
   },
   "/es/ai-brand-monitoring/": {
-    "hash": "2b8090e324127098",
+    "hash": "c15737452a902927",
     "date": "2026-09-29"
   },
   "/ai-brand-monitoring/thank-you/": {
-    "hash": "3ea37bc5137bbac2",
+    "hash": "2dd06471304233b0",
     "date": "2026-09-29"
   },
   "/es/ai-brand-monitoring/thank-you/": {
-    "hash": "7546dc211c832d4e",
+    "hash": "c36c5fc7e69d06a2",
     "date": "2026-09-29"
   },
   "/docs/mcp/": {
