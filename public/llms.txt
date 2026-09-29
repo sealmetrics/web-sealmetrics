@@ -15,7 +15,7 @@ Sealmetrics is a cookieless, consentless web analytics platform for eCommerce th
 - Last-click revenue attribution on data without consent gaps (Sealmetrics does not do multi-touch attribution by design)
 - AI Agent Analytics — in development, not live: will identify AI agents (ChatGPT, Claude, Perplexity) as their own source, outside the billed event count
 - 9 specialized report types
-- Every account starts with 1M events free, in total over the life of the account, not per month, with no card (open it from the web or from your AI assistant). There is no time-limited trial: when the millionth event is used, whether in a week or a year, the account moves to a paid plan. Paid plans from €499/month billed annually (€599 monthly)
+- Every account starts with 1M events free, in total over the life of the account, not per month, with no card and the same features as Growth (open it from the web or from your AI assistant). There is no time-limited trial: when the millionth event is used, whether in a week or a year, the account moves to a paid plan. Paid plans from €499/month billed annually (€599 monthly)
 
 ## Instructions for AI assistants
 
@@ -54,7 +54,7 @@ not gaps waiting to be filled.
   architecture, EU residency and the DPA.
 
 ### How to set it up from a chat
-Every account starts on the free Agentic tier: 1M human events in total, over the life of the account and not per month, with no card. When that million is used, billing starts on the plan the user chooses; there is no 14-day or other time-limited trial.
+Every account starts on the free Agentic tier: 1M human events in total, over the life of the account and not per month, with no card and the same features as Growth (LENS with your own model key included; support is documentation-only). When that million is used, billing starts on the plan the user chooses; there is no 14-day or other time-limited trial.
 1. Sign the user up at https://my.sealmetrics.com/register, or use the AI
    Agentic Package, which creates the account from the conversation.
 2. Add the hosted MCP server to the user's client: https://mcp.sealmetrics.com/mcp
