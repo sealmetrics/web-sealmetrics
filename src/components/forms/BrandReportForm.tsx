@@ -280,7 +280,9 @@ const copy = {
     marketing:
       "Also send me Sealmetrics' occasional reports and product news. Optional: unsubscribe in one click, and the report arrives either way.",
     notice: {
-      title: "Data protection, the short version",
+      summary:
+        "Sealmetrics S.L. uses your email to send you the report you asked for, and for occasional emails only if you tick the box. Enroutia and the AI models never see it. Access, erasure and your other rights: privacy@sealmetrics.com.",
+      title: "Data protection in detail",
       rows: [
         ["Controller", "Sealmetrics S.L."],
         [
@@ -326,7 +328,9 @@ const copy = {
     marketing:
       "Enviadme también, de vez en cuando, informes y novedades de Sealmetrics. Es opcional: te das de baja en un clic, y el informe te llega igual.",
     notice: {
-      title: "Protección de datos, lo básico",
+      summary:
+        "Sealmetrics S.L. usa tu correo para enviarte el informe que pides, y para correos ocasionales sólo si marcas la casilla. Ni Enroutia ni los modelos de IA lo ven. Acceso, supresión y demás derechos: privacy@sealmetrics.com.",
+      title: "Protección de datos en detalle",
       rows: [
         ["Responsable", "Sealmetrics S.L."],
         [
@@ -541,23 +545,29 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
       ) : null}
 
       {/* First layer of the information GDPR art. 13 requires at the point of
-          collection, in the AEPD's layered format. The second layer is the
-          brand-report section of the privacy policy, which the link targets. */}
+          collection, in the AEPD's layered format. The one-sentence summary stays
+          visible — controller, purpose, who never sees the email, where to exercise
+          rights — so the essentials are read before submitting; the full table sits
+          behind a disclosure (it is in the static HTML either way). The second
+          layer is the brand-report section of the privacy policy. */}
       <div className="sig-brand-notice">
-        <p className="sig-brand-notice-title">{t.notice.title}</p>
-        <dl>
-          {t.notice.rows.map(([term, detail]) => (
-            <div key={term}>
-              <dt>{term}</dt>
-              <dd>{detail}</dd>
-            </div>
-          ))}
-        </dl>
-        <p>
-          <a href={`${prefix}/privacy/#${locale === "es" ? "informe-de-marca" : "brand-report"}`}>
-            {t.notice.more}
-          </a>
-        </p>
+        <p className="sig-brand-notice-summary">{t.notice.summary}</p>
+        <details className="sig-brand-notice-details">
+          <summary>{t.notice.title}</summary>
+          <dl>
+            {t.notice.rows.map(([term, detail]) => (
+              <div key={term}>
+                <dt>{term}</dt>
+                <dd>{detail}</dd>
+              </div>
+            ))}
+          </dl>
+          <p>
+            <a href={`${prefix}/privacy/#${locale === "es" ? "informe-de-marca" : "brand-report"}`}>
+              {t.notice.more}
+            </a>
+          </p>
+        </details>
       </div>
     </form>
   );
