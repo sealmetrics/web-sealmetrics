@@ -19,11 +19,11 @@ export function ProductHeroV3Es() {
             Reserva una demo <span>→</span>
           </Link>
           <a href="https://my.sealmetrics.com/register" className="inline-flex items-center gap-2 px-7 py-4 border border-warm-200 text-ink rounded-md text-[15px] font-semibold no-underline hover:bg-warm-50 transition-colors">
-            Prueba de 14 días
+            Empieza gratis
           </a>
         </div>
         <p className="mt-4 font-mono text-[12px] text-ink-soft uppercase tracking-[0.06em]">
-          Prueba de 14 días · no se cobra nada si cancelas · alojado en UE
+          1M de eventos gratis · Sin tarjeta · alojado en UE
         </p>
       </div>
     </section>
@@ -382,18 +382,18 @@ export function ProductFinalCtaV3Es() {
             La plataforma de analítica que <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>los equipos eCommerce merecen.</em>
           </h2>
           <p className="text-white/70 text-[16px] leading-[1.55] mt-6 mb-8 mx-auto max-w-[52ch] relative">
-            Empieza la prueba de 14 días — instala un script o un módulo nativo en 5 a 30 minutos, según tu plataforma, y empieza a medir lo que GA4 se pierde. Añades tarjeta al empezar y no pagas nada si cancelas antes del día 14. Sin llamada.
+            Empieza gratis — instala un script o un módulo nativo en 5 a 30 minutos, según tu plataforma, y empieza a medir lo que GA4 se pierde. El primer millón de eventos es gratis, en total y sin tarjeta; eliges plan solo cuando se consume. Sin llamada.
           </p>
           <div data-md="skip" className="flex flex-col sm:flex-row justify-center gap-3 flex-wrap relative">
             <Link href="/es/demo" className="inline-flex items-center justify-center gap-2 bg-white text-ink px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:brightness-95">
               Reserva una demo →
             </Link>
             <a href="https://my.sealmetrics.com/register" className="inline-flex items-center justify-center gap-2 border border-white/25 text-white px-8 py-4 rounded-md text-[15px] font-semibold no-underline hover:bg-white/5">
-              Prueba de 14 días
+              Empieza gratis
             </a>
           </div>
           <p className="font-mono text-[11px] text-white/50 uppercase tracking-[0.1em] font-semibold mt-6 relative">
-            Prueba de 14 días · Alojado en UE · Sin consentimiento por diseño
+            1M de eventos gratis · Alojado en UE · Sin consentimiento por diseño
           </p>
         </div>
       </div>

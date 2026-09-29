@@ -213,7 +213,7 @@ function VideoModal({
               rel="noopener noreferrer"
               className="inline-flex items-center px-7 py-3 text-[0.9rem] font-medium text-text-primary border border-warm-200 rounded-[4px] no-underline hover:bg-warm-50 transition-colors"
             >
-              Start 14-day trial
+              Start free
             </a>
           </div>
         </div>

@@ -131,7 +131,7 @@ const copy = {
     finalBody:
       "Run Sealmetrics beside the current stack, define the same events and compare both reported totals with the revenue your store recorded.",
     finalPrimary: "Book a measurement walkthrough",
-    finalSecondary: "Start the 14-day trial",
+    finalSecondary: "Start free",
     finalProof: "Keep your current stack · compare the same period · decide from backend evidence",
     illustrative: "Illustrative data · not a live account",
   },
@@ -233,7 +233,7 @@ const copy = {
     finalBody:
       "Ejecuta Sealmetrics junto al stack actual, define los mismos eventos y compara ambos totales con los ingresos que registró tu tienda.",
     finalPrimary: "Reserva una revisión de medición",
-    finalSecondary: "Empieza la prueba de 14 días",
+    finalSecondary: "Empieza gratis",
     finalProof: "Conserva tu stack · compara el mismo periodo · decide con evidencia del backend",
     illustrative: "Datos ilustrativos · no es una cuenta real",
   },

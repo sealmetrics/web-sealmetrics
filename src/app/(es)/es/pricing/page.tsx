@@ -11,11 +11,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Precios Sealmetrics — Paga por humanos, no por bots",
   description:
-    "Tier Agentic gratis hasta 1M eventos en total, vía tu asistente de IA. Planes desde €499/mes anual con todas las features. Solo pagas más si creces.",
+    "El primer millón de eventos gratis, en total y sin tarjeta. Después, planes desde €499/mes anual con todas las features.",
   openGraph: {
     title: "Precios Sealmetrics — Paga por humanos, no por bots",
     description:
-      "Analítica completa desde €499/mes. Todas las features en cada plan. Los bots no se facturan. Prueba de 14 días.",
+      "Analítica completa desde €499/mes. Todas las features en cada plan. Los bots no se facturan. 1M de eventos gratis.",
     type: "website",
     images: [ogImage("/es/pricing/")],
     locale: "es_ES",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Precios Sealmetrics — Paga por humanos, no por bots",
-    description: "Analítica completa desde €499/mes. Todas las features en cada plan. Los bots no se facturan. Prueba de 14 días.",
+    description: "Analítica completa desde €499/mes. Todas las features en cada plan. Los bots no se facturan. 1M de eventos gratis.",
     images: [ogImage("/es/pricing/")],
   },
   alternates: {
@@ -39,7 +39,7 @@ export default function PricingPageEs() {
   return (
     <>
       <JsonLd data={pricingSchema([
-        { name: "Agentic", price: "0", description: "1M eventos humanos en total · gratis · configurado desde tu asistente de IA" },
+        { name: "Agentic", price: "0", description: "1M eventos humanos en total · gratis · sin tarjeta · desde la web o tu asistente de IA" },
         { name: "Growth", price: "499", description: "5M eventos humanos/mes · anual" },
         { name: "Scale", price: "899", description: "15M eventos humanos/mes · anual" },
       ], { locale: "es" })} />

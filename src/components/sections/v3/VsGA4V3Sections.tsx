@@ -12,9 +12,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " de tu tráfico. Sealmetrics no depende del consentimiento.",
         lede: "GA4 funciona bien para lo que Google necesita. No para el CMO que defiende un presupuesto de 2M€. Esta es la comparación honesta — y por qué la mayoría de equipos eCommerce corren los dos en paralelo.",
-        ctaA: "Prueba de 14 días",
+        ctaA: "Empieza gratis",
         ctaB: "Reserva una demo",
-        micro: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
+        micro: "1M de eventos gratis · Sin tarjeta · Setup en 5–30 min según plataforma",
       }
     : {
         eyebrow: "vs Google Analytics 4",
@@ -22,9 +22,9 @@ export function VsGA4HeroV3({ locale = "en" as Locale }) {
         h1Em: "40%",
         h1Post: " of your traffic. Sealmetrics doesn't depend on consent.",
         lede: "GA4 works fine for what Google needs. Not for the CMO defending a €2M budget. This is the honest comparison — and why most eCommerce teams end up running both in parallel.",
-        ctaA: "Start 14-day trial",
+        ctaA: "Start free",
         ctaB: "Book a demo",
-        micro: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
+        micro: "First 1M events free · No card · 5–30 min setup by platform",
       };
 
   return (

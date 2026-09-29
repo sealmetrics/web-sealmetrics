@@ -3,12 +3,12 @@ import Link from "next/link";
 type Locale = "en" | "es";
 
 // Primary is the assisted path (demo): the ICP is a CMO/eCommerce manager at a
-// 10M€+ company who buys assisted, not self-serve. The trial stays as the
-// secondary path for technical evaluators — and is labelled "14-day trial",
-// not "free", because registration takes a payment method up front.
+// 10M€+ company who buys assisted, not self-serve. The free account stays as
+// the secondary path for technical evaluators. "Free" is honest: registration
+// takes no card and the first 1M events (in total, not per month) cost nothing.
 const COPY = {
-  en: { primary: "Book a demo", secondary: "Start 14-day trial" },
-  es: { primary: "Reserva una demo", secondary: "Prueba de 14 días" },
+  en: { primary: "Book a demo", secondary: "Start free" },
+  es: { primary: "Reserva una demo", secondary: "Empieza gratis" },
 } as const;
 
 export function DualCTA({

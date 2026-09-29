@@ -566,9 +566,9 @@ const STEPS_COPY = {
       "Visits, products, add-to-cart, checkout, purchase — all flowing into your dashboard from the first second. No consent-driven data loss, designed for GDPR.",
       "See the visits GA4 hides from you — 29% on one Shopify store. Reallocate paid media on data that matches Shopify. Defend every euro in front of finance.",
     ],
-    primaryCta: "Start 14-day trial",
+    primaryCta: "Start free",
     secondaryCta: "See your GA4 gap first",
-    foot: "14-day trial · 5–30 min setup by platform · Worth a look before next quarter's budget",
+    foot: "First 1M events free · 5–30 min setup by platform · Worth a look before next quarter's budget",
   },
   es: {
     eyebrow: "Cómo empezar",
@@ -582,9 +582,9 @@ const STEPS_COPY = {
       "Visitas, productos, add-to-cart, checkout, compra — todo fluyendo a tu dashboard desde el primer segundo. Sin pérdida por consentimiento, diseñada para el RGPD.",
       "Ve las visitas que GA4 te oculta — el 29% en una tienda Shopify. Reasigna paid media sobre datos que cuadran con Shopify. Defiende cada euro frente a finanzas.",
     ],
-    primaryCta: "Prueba de 14 días",
+    primaryCta: "Empieza gratis",
     secondaryCta: "Ver tu gap GA4 primero",
-    foot: "Prueba de 14 días · Setup en 5–30 min según plataforma · Antes del próximo presupuesto",
+    foot: "1M de eventos gratis · Setup en 5–30 min según plataforma · Antes del próximo presupuesto",
   },
 } as const;
 
@@ -621,7 +621,7 @@ export function SolutionStepsPLG({ locale = "en" }: { locale?: "en" | "es" }) {
           ))}
         </ol>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div data-md="skip" className="mt-10 flex flex-wrap justify-center gap-3">
           <a
             href="https://my.sealmetrics.com/register"
             className="inline-flex items-center gap-2 px-7 py-4 bg-ink text-white rounded-md text-[15px] font-semibold no-underline hover:bg-brand transition-colors"
@@ -730,7 +730,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>How many more days?</em>
     </>,
     body: "Every day without Sealmetrics means pageviews you don't see, conversions you can't attribute, and budget you waste. Consent rates fall every quarter. Direction is unambiguous: less real data, more statistical fiction.",
-    foot: "14-day trial · Cancel before day 14, pay nothing · 5–30 min setup by platform",
+    foot: "First 1M events free · No card · 5–30 min setup by platform",
   },
   es: {
     eyebrow: "La sangría es diaria",
@@ -738,7 +738,7 @@ const URGENCY_COPY = {
       <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>¿Cuántos días más?</em>
     </>,
     body: "Cada día sin Sealmetrics son pageviews que no ves, conversiones que no atribuyes y presupuesto que tiras. Las tasas de consentimiento bajan cada trimestre. La dirección es clara: menos dato real, más ficción estadística.",
-    foot: "Prueba de 14 días · Cancela antes del día 14 y no pagas · Setup en 5–30 min según plataforma",
+    foot: "1M de eventos gratis · Sin tarjeta · Setup en 5–30 min según plataforma",
   },
 } as const;
 
@@ -809,7 +809,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Billed annually · ${total}/yr`,
     monthlyAlt: (m: string) => `or ${m}/mo billed monthly`,
     lessThanLost: <>Less than what you lose in <em className="italic-accent">one day</em> of incomplete data.</>,
-    trial: "14-day trial · Cancel before day 14, pay nothing",
+    trial: "First 1M events free · No card",
     customLabel: "Custom",
     customSub: "Annual or custom terms",
     growthBlurb: "For teams that want to see their real data.",
@@ -818,7 +818,7 @@ const PRICING_COPY = {
     growthFeatures: (m: number) => [`${m}M human events / month`, "3 domains", "Full MCP + BigQuery + API", "GA4 side-by-side comparison", "Email support"],
     scaleFeatures: (m: number) => [`${m}M human events / month`, "10 domains", "Everything in Growth", "Priority support", "One onboarding session"],
     enterpriseFeatures: ["Unlimited events", "BI & data warehouse integration", "Private AI — exclusive, not shared", "99.9% SLA", "Dedicated account manager"],
-    cta: "Start 14-day trial",
+    cta: "Start free",
     enterpriseCta: "Talk to us",
     quote: <>&ldquo;The data Sealmetrics delivers is agnostic, unbiased and neutral. There&apos;s no black box.&rdquo; <span className="not-italic font-semibold text-ink">— Toni Andújar, Palladium Hotel Group</span></>,
     foot: <>For reference: <b className="text-ink font-semibold">GA360 is quote-based from around $50,000/year</b>. <b className="text-ink font-semibold">Adobe Analytics from around $50,000</b>. Sealmetrics gives you enterprise-grade data without the enterprise contract.</>,
@@ -834,7 +834,7 @@ const PRICING_COPY = {
     billedAnnually: (total: string) => `Anual · ${total}/año`,
     monthlyAlt: (m: string) => `o ${m}/mes con facturación mensual`,
     lessThanLost: <>Menos que lo que pierdes en <em className="italic-accent">un solo día</em> de datos incompletos.</>,
-    trial: "Prueba de 14 días · Cancela antes del día 14 y no pagas",
+    trial: "1M de eventos gratis · Sin tarjeta",
     customLabel: "A medida",
     customSub: "Anual o términos custom",
     growthBlurb: "Para equipos que quieren ver su dato real.",
@@ -843,7 +843,7 @@ const PRICING_COPY = {
     growthFeatures: (m: number) => [`${m}M eventos humanos / mes`, "3 dominios", "MCP + BigQuery + API completos", "Comparativa GA4 lado a lado", "Soporte por email"],
     scaleFeatures: (m: number) => [`${m}M eventos humanos / mes`, "10 dominios", "Todo lo de Growth", "Soporte prioritario", "1 sesión de onboarding"],
     enterpriseFeatures: ["Eventos ilimitados", "Integración BI y data warehouse", "Private AI — exclusiva, no compartida", "SLA 99,9%", "Account manager dedicado"],
-    cta: "Prueba de 14 días",
+    cta: "Empieza gratis",
     enterpriseCta: "Habla con nosotros",
     quote: <>&ldquo;Los datos que da Sealmetrics son agnósticos, no están sesgados y son neutrales. No hay caja negra.&rdquo; <span className="not-italic font-semibold text-ink">— Toni Andújar, Palladium Hotel Group</span></>,
     foot: <>De referencia: <b className="text-ink font-semibold">GA360 va por presupuesto desde unos 50.000$/año</b>. <b className="text-ink font-semibold">Adobe Analytics desde unos 50.000$</b>. Sealmetrics te da dato enterprise sin contrato enterprise.</>,
@@ -987,6 +987,7 @@ export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
 
               {p.type === "register" ? (
                 <a
+                  data-md="skip"
                   href={p.href}
                   className={`inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors ${
                     p.featured
@@ -998,6 +999,7 @@ export function PricingPLG({ locale = "en" }: { locale?: "en" | "es" }) {
                 </a>
               ) : (
                 <Link
+                  data-md="skip"
                   href={p.href}
                   className="inline-flex items-center justify-center px-6 py-3 rounded-md text-[14.5px] font-semibold no-underline w-full transition-colors border border-warm-200 text-ink hover:bg-warm-50"
                 >

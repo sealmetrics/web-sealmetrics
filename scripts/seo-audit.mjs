@@ -632,7 +632,7 @@ for (const p of pages) {
     // ordinary prose and stays — stripping those would damage the writing to
     // satisfy a lint rule.
     const CTA_BUTTON =
-      /^(?:[-*]\s+)?\[[^\]]*\b(?:book a demo|book a pricing review|book a measurement review|book an enterprise review|start 14-day trial|reserva una demo|reserva una revisión|reserva una revisión enterprise|empieza la prueba)\b[^\]]*\]\([^)]*\)\s*$/im;
+      /^(?:[-*]\s+)?\[[^\]]*\b(?:book a demo|book a pricing review|book a measurement review|book an enterprise review|start free|start 14-day trial|reserva una demo|reserva una revisión|reserva una revisión enterprise|empieza gratis|empieza la prueba)\b[^\]]*\]\([^)]*\)\s*$/im;
     if (CTA_BUTTON.test(prose)) {
       fail(
         "markdown-twin-cta-leak",
