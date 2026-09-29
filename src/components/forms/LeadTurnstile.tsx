@@ -6,10 +6,14 @@ const SITE_KEY = process.env.NEXT_PUBLIC_LEAD_TURNSTILE_SITE_KEY ?? "";
 
 export function LeadTurnstile({
   onToken,
+  onFail,
   resetKey = 0,
   locale = "en",
 }: {
   onToken: (token: string | null) => void;
+  /** Cloudflare could not verify the visitor. The widget shows nothing the form can
+   *  read, so without this a refused person is indistinguishable from an idle one. */
+  onFail?: () => void;
   resetKey?: number;
   locale?: "en" | "es";
 }) {
@@ -30,7 +34,10 @@ export function LeadTurnstile({
       options={{ action: "sealmetrics_lead", theme: "light" }}
       onSuccess={(token) => onToken(token)}
       onExpire={() => onToken(null)}
-      onError={() => onToken(null)}
+      onError={() => {
+        onToken(null);
+        onFail?.();
+      }}
     />
   );
 }
