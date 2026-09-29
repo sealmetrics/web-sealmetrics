@@ -106,8 +106,8 @@ const t: SectorCopy = {
     </>
   ),
   formBody:
-    "El mismo estudio, sobre tu marca: quince modelos, seis preguntas, cada respuesta literal y los errores marcados. Gratis, sin cuenta, en tu correo en unos minutos.",
-  formFoot: "Seis preguntas · quince modelos · unos cinco minutos",
+    "Un informe como éste, sobre tu marca: diecinueve modelos, entre ellos GPT-6, Claude, Gemini y Perplexity, seis preguntas, cada respuesta literal y los errores marcados. Gratis, sin cuenta, en tu correo en unos minutos.",
+  formFoot: "Seis preguntas · diecinueve modelos · unos cinco minutos",
   limitsTag: "Cómo lo medimos",
   limitsTitle: (
     <>
@@ -121,6 +121,7 @@ const t: SectorCopy = {
     "Una ejecución por modelo y pregunta, el 23 de septiembre de 2026: dieciséis modelos por cuatro preguntas, 64 respuestas. A diez de ellas, de modelos pequeños que se quedaban razonando sin llegar a contestar, se les repitió la pregunta limitando el razonamiento. Son las que más se inventan, y el informe completo las marca.",
     "Cada cifra lleva su denominador. Las de hoteles concretos cuentan las 48 respuestas de las tres primeras preguntas.",
     "Contamos menciones literales, revisadas a mano. No es una clasificación de calidad hotelera, ni de reservas, ni de precios.",
+    "El panel ha cambiado desde el estudio. Hoy el informe de marca pregunta a diecinueve modelos: GPT-6 Sol y GPT-6 Astra en lugar de GPT-5.6, Gemini 3.8 Flash, y Sonar de Perplexity, que busca en la web antes de contestar. Las cifras de esta página son las del 23 de septiembre, con los dieciséis de entonces.",
   ],
   proof: {
     tag: "Medido en grupos hoteleros",
