@@ -72,8 +72,9 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       tailored annual contract. Every paid plan carries the same collection,
       attribution and activation layers, unlimited sites and users, 24-month
       retention, the REST API, MCP, BigQuery export and a DPA. There is no
-      per-event overage invoice. One distinction worth stating plainly: the
-      14-day trial takes a payment method, and the Agentic tier does not.
+      per-event overage invoice. There is no time-limited trial: every account
+      starts with 1M events free in total, with no card, and billing starts only
+      once that million is used — whether it takes a week or a year.
     </p>
   ),
   es: (
@@ -89,8 +90,9 @@ export const pricingAnswer: Record<Locale, ReactNode> = {
       a medida. Todos los planes de pago llevan las mismas capas de recogida,
       atribución y activación, sites y usuarios ilimitados, 24 meses de
       retención, API REST, MCP, exportación a BigQuery y DPA. No hay factura por
-      exceso de eventos. Una distinción que conviene decir clara: la prueba de
-      14 días sí pide método de pago; el plan Agentic no.
+      exceso de eventos. No hay prueba con fecha de caducidad: cada cuenta
+      empieza con 1M de eventos gratis en total, sin tarjeta, y la facturación
+      solo empieza cuando se consume ese millón, tarde una semana o un año.
     </p>
   ),
 };

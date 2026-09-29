@@ -11,11 +11,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Sealmetrics Pricing — Pay for humans, not bots",
   description:
-    "Free Agentic tier up to 1M events in total, set up from your AI assistant. Paid plans from €499/mo annual, every feature on every plan.",
+    "First 1M events free, in total and with no card. Then paid plans from €499/mo annual, every feature on every plan.",
   openGraph: {
     title: "Sealmetrics Pricing — Pay for humans, not bots",
     description:
-      "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. 14-day trial.",
+      "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. First 1M events free.",
     type: "website",
     images: [ogImage("/pricing/")],
     url: "https://sealmetrics.com/pricing/",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics Pricing — Pay for humans, not bots",
-    description: "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. 14-day trial.",
+    description: "Complete analytics from €499/mo. Every feature in every plan. Bots not billed. First 1M events free.",
     images: [ogImage("/pricing/")],
   },
   alternates: {
@@ -39,7 +39,7 @@ export default function PricingPage() {
   return (
     <>
       <JsonLd data={pricingSchema([
-        { name: "Agentic", price: "0", description: "1M human events in total · free · set up from your AI assistant" },
+        { name: "Agentic", price: "0", description: "1M human events in total · free · no card · from the web or your AI assistant" },
         { name: "Growth", price: "499", description: "5M human events/mo · annual billing" },
         { name: "Scale", price: "899", description: "15M human events/mo · annual billing" },
       ])} />

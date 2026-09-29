@@ -79,7 +79,7 @@ export function SignalHome() {
           </p>
           <div data-md="skip" className="sig-hero-actions">
             <a className="sig-button sig-button-acid" href="https://my.sealmetrics.com/register">
-              Start 14-day trial <Arrow />
+              Start free <Arrow />
             </a>
             <a className="sig-text-link" href="/demo/">
               Show me what&apos;s missing <span aria-hidden="true">→</span>
@@ -328,7 +328,7 @@ export function SignalHome() {
         <div className="sig-offer-copy">
           <p className="sig-section-tag sig-light">A FAIR TEST</p>
           <h2>Don&apos;t take our word for it.<br /><em>Ask your store.</em></h2>
-          <p>Run Sealmetrics beside GA4 for 14 days. Define the eligible events and attribution model, then compare both against the sales your store recorded. Keep the setup that produces the more useful, supportable result.</p>
+          <p>Run Sealmetrics beside GA4 on your first million events, free. Define the eligible events and attribution model, then compare both against the sales your store recorded. Keep the setup that produces the more useful, supportable result.</p>
           <ul>
             <li>One first-party signal · implementation depends on event scope</li>
             <li>One onboarding session on Scale</li>
@@ -336,7 +336,7 @@ export function SignalHome() {
           </ul>
         </div>
         <div className="sig-price-card">
-          <div><span>GROWTH</span><span className="sig-popular">14-DAY SIDE-BY-SIDE TRIAL</span></div>
+          <div><span>GROWTH</span><span className="sig-popular">FIRST 1M EVENTS FREE</span></div>
           <p>For teams ready to test a separate aggregate measurement layer.</p>
           <strong><sup>€</sup>499<small>/mo</small></strong>
           <span className="sig-billing">Billed annually · 2 months free</span>
@@ -346,8 +346,8 @@ export function SignalHome() {
             <li>Full MCP + BigQuery + API</li>
             <li>GA4 side-by-side comparison</li>
           </ul>
-          <a className="sig-button sig-button-acid sig-full" href="https://my.sealmetrics.com/register">Start 14-day trial <Arrow /></a>
-          <small>14-day trial. Review the applicable billing terms before starting.</small>
+          <a className="sig-button sig-button-acid sig-full" href="https://my.sealmetrics.com/register">Start free <Arrow /></a>
+          <small>First 1M events free, in total, no card. When they are used — in a week or in a year — you choose a plan.</small>
         </div>
       </section>
 
@@ -371,7 +371,7 @@ export function SignalHome() {
         <h2>Reality is already there.<br /><em>You should probably see it.</em></h2>
         <p>Eligible aggregate events. Backend comparison. Fewer expensive opinions.</p>
         <div data-md="skip">
-          <a className="sig-button sig-button-dark" href="https://my.sealmetrics.com/register">Start 14-day trial <Arrow /></a>
+          <a className="sig-button sig-button-dark" href="https://my.sealmetrics.com/register">Start free <Arrow /></a>
           <a className="sig-text-link sig-dark-link" href="/demo/">Book a demo <span aria-hidden="true">→</span></a>
         </div>
       </section>

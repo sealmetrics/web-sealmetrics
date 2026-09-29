@@ -2669,7 +2669,7 @@ function ChapterSevenBody() {
     "First overage month per year — free",
     "DPA signature and legal review",
     "Product updates and new features",
-    "The 14-day trial — full product, no charge if you cancel before it ends",
+    "The first 1M events — free, in total, with no card and no expiry date",
   ];
 
   const plans = [
@@ -3043,7 +3043,7 @@ function ChapterSevenBody() {
         {[
           {
             name: "Annual vs monthly.",
-            note: "Annual billing saves two months per year versus monthly. Most customers move to annual after the trial; the difference covers a quarter of bidding-tool budget.",
+            note: "Annual billing saves two months per year versus monthly. Most customers move to annual once their first free million events is used; the difference covers a quarter of bidding-tool budget.",
           },
           {
             name: "One free overage month per year.",

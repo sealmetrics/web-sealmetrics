@@ -66,7 +66,7 @@
     "changelogDesc": "Product updates",
     "login": "Login",
     "bookDemo": "Book a Demo",
-    "startTrial": "Start 14-day trial",
+    "startTrial": "Start free",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
     "productOverview": "Product overview",
@@ -120,7 +120,7 @@
   },
   "common": {
     "bookDemo": "Book a Demo",
-    "startTrial": "Start 14-day trial",
+    "startTrial": "Start free",
     "home": "Home"
   }
 }
