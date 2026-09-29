@@ -920,6 +920,44 @@
   font-size: 14px;
 }
 
+/* ── Data protection disclosure (report form) ─────────────────────────── */
+.sig-brand-notice-summary {
+  line-height: 1.5;
+}
+.sig-brand-notice-details {
+  margin-top: 10px;
+}
+.sig-brand-notice-details > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: baseline;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.sig-brand-notice-details > summary::-webkit-details-marker {
+  display: none;
+}
+.sig-brand-notice-details > summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.2em;
+}
+.sig-brand-notice-details[open] > summary::before {
+  content: "\2212";
+}
+.sig-brand-notice-details > summary:focus-visible {
+  outline: 2px solid var(--acid-ink);
+  outline-offset: 2px;
+}
+.sig-brand-notice-details > dl {
+  margin-top: 12px;
+}
+
 /* ── Responsive ───────────────────────────────────────────────────────── */
 @media (max-width: 1080px) {
   .sig-brand-row {
