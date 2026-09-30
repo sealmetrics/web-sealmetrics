@@ -127,7 +127,6 @@ export function organizationSchema() {
           "Revenue Attribution",
           "Schrems II Compliance",
           "MCP Protocol",
-          "AI Agent Analytics",
         ],
         areaServed: [
           { "@type": "Place", name: "European Union" },
@@ -260,7 +259,6 @@ export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
             "Diseñada para RGPD/ePrivacy (autoevaluación)",
             "Atribución de ingresos a último clic",
             "LENS AI — pregunta a tus datos en lenguaje natural",
-            "Analítica de agentes de IA",
           ]
         : [
       "Cookieless tracking (no consent banner required)",

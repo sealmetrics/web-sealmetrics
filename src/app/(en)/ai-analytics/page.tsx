@@ -45,7 +45,6 @@ export const metadata: Metadata = {
     "mcp analytics",
     "chatgpt analytics",
     "claude analytics",
-    "ai agent analytics",
     "cookieless ai analytics",
     "eu ai analytics",
   ],

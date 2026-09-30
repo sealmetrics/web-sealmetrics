@@ -573,7 +573,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "GPT, Claude, Perplexity, and Google AI Overviews are sending traffic to your site. Traditional analytics cannot see it. Here is why it matters.",
     date: "2026-01-18",
-    dateModified: "2026-09-15",
+    dateModified: "2026-09-30",
     category: "AI & Analytics",
     readTime: "5 min",
     author: AUTHORS.rafa,

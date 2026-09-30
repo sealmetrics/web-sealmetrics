@@ -168,11 +168,11 @@ export const openChapters: OpenChapter[] = [
     part: 3,
     eyebrow: "Commercial",
     summary:
-      "Pay for human events, not for bots or AI agents. One architecture across plans. Honest comparison against the enterprise tier we replace.",
+      "Pay for human events, not for bots. One architecture across plans. Honest comparison against the enterprise tier we replace.",
     readMinutes: 8,
     status: "ready",
     datePublished: "2026-05-28",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-30",
     toc: [
       { id: "what-we-charge-for", label: "What we charge for and what we don't" },
       { id: "three-plans", label: "Three plans, one architecture" },

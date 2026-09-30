@@ -125,7 +125,7 @@ export default function Page() {
               { n: "GDPR architecture", d: "How to design analytics that avoids personal-data collection by architecture rather than by consent layers." },
               { n: "eCommerce analytics", d: "What European DTC and retail teams actually need from an analytics stack." },
               { n: "Schrems II & data residency", d: "Why EU-hosted matters and how sub-processor chains compromise compliance." },
-              { n: "AI-native analytics", d: "MCP servers, AI agent traffic measurement and LLM-ready data warehouses." },
+              { n: "AI-native analytics", d: "MCP servers and LLM-ready data warehouses." },
             ].map((t) => (
               <article key={t.n} className="bg-white border border-warm-100 rounded-xl p-6">
                 <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{t.n}</h3>

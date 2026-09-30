@@ -32,8 +32,8 @@ import type { ProblemLandingContent } from "./types";
  *   10548233 (Consent Mode conversion modelling, 700 ad clicks over 7 days).
  * - Sealmetrics does not send conversions to ad platforms or import spend
  *   (product facts; see also /blog/measure-roas-after-cookie-consent).
- * Not claimed: bot or invalid-click classification (Agent Analytics is not
- * live), an official Google MCP server for Google Ads.
+ * Not claimed: bot or invalid-click classification (AI agent detection is
+ * not offered), an official Google MCP server for Google Ads.
  */
 
 export const GOOGLE_ADS_PUBLISHED = "2026-09-15";
