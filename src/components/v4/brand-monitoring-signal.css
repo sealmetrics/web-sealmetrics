@@ -961,18 +961,6 @@
 .sig-brand-request {
   scroll-margin-top: 96px;
 }
-/* One sentence under the form pointing at the two-question live check. */
-.sig-brand-quick {
-  margin-top: 22px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: var(--ink);
-}
-.sig-brand-page a.sig-brand-quick-link {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  font-weight: 650;
-}
 
 /* ── Client logos ─────────────────────────────────────────────────────── */
 .sig-brand-clients {
@@ -1129,10 +1117,6 @@
 .sig-report-form .sig-brand-notice dl > div {
   grid-template-columns: 11ch minmax(0, 1fr);
   gap: 10px;
-}
-.sig-brand-hero-form .sig-brand-quick {
-  margin-top: 16px;
-  font-size: 14px;
 }
 
 /* ── Data protection disclosure (report form) ─────────────────────────── */
