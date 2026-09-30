@@ -3,6 +3,14 @@ import { getCaseStudy } from "@/lib/content/case-studies";
 
 type Locale = "en" | "es";
 
+function Check() {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2.5">
+      <path d="M4 12.5l5 5L20 6.5" />
+    </svg>
+  );
+}
+
 function Arrow() {
   return (
     <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
@@ -29,43 +37,53 @@ const copy = {
     home: "Home",
     parent: "AI brand monitoring",
     breadcrumb: "Thank you",
-    eyebrow: "Request received",
-    h1: (
+    received: "Request received.",
+    h1Sub: (
       <>
-        Nineteen models are
-        <br />
-        <em>answering right now.</em>
+        Nineteen models are <em>answering right now.</em>
       </>
     ),
+    status: [
+      ["01", "Request received", "Done"],
+      ["02", "19 models answering", "Now"],
+      ["03", "Report in your inbox", "~5 min"],
+    ],
     heroBody:
       "Your report is being written while you read this: six questions, nineteen models, every answer kept whole. It arrives by email in about five minutes, as a page you can open, keep and forward. Keep an eye on your inbox — and on the spam folder, if five minutes pass and nothing has landed.",
-    productTag: "Meet Sealmetrics",
+    productTag: "While you wait · Consentless Analytics",
     productTitle: (
       <>
-        Consentless Analytics.
+        Your analytics is missing
         <br />
-        <em>Visits counted, no banner.</em>
+        <em>the visits you paid for.</em>
       </>
     ),
     productBody:
-      "While the models think, here is what we do the rest of the time. Sealmetrics is web analytics for companies that lost their numbers to the consent banner: it records the visit without cookies, without a banner and without personal data, so the traffic a consent-gated stack never sees stays readable, attributable and good enough to decide on.",
+      "In our experience with clients, between 40% and 60% of traffic doesn't accept cookies, and of those who do, 40% don't accept on the first pageview. Those visitors still clicked the ads, still read the pages, still bought. Sealmetrics counts them without cookies, without a banner and without personal data — next to the GA4 you already have, so you can compare both on your own traffic.",
     productCards: [
       [
         "01",
-        "No cookie, nothing to consent to",
-        "Nothing is written to the visitor's device, so there is no permission to ask for and nothing to lose when permission is refused.",
+        "See the traffic the banner hides",
+        "Nothing is written to the visitor's device, so there is no permission to ask for and nothing to lose when it is refused.",
       ],
       [
         "02",
-        "Source and medium intact",
-        "The visits a consent-gated tool drops come back with their origin attached, which is the part a budget decision actually runs on.",
+        "Know which channel really sells",
+        "The visits a consent-gated tool drops come back with source and medium attached — the part a budget decision actually runs on.",
       ],
       [
         "03",
-        "Designed for GDPR",
-        "No personal data, no cross-site identifier, EU-hosted in Dublin, DPA included. It is built into the design, not a setting — our self-assessment, not a certification.",
+        "Designed for GDPR, hosted in Dublin",
+        "No personal data, no cross-site identifier, DPA included. Built into the design — our self-assessment, not a certification.",
       ],
     ],
+    offerTag: "Free account",
+    offerValue: "1,000,000 events · €0",
+    offerBody:
+      "No time limit and no card. When the millionth event is used — in a week or in a year — you choose a plan. Until then, nothing is charged.",
+    offerPoints: ["No credit card", "Live in 5 to 30 minutes", "Keep GA4 running"],
+    offerCta: "Open my free account",
+    offerSecondary: "See pricing",
     caseTag: "Measured side by side",
     caseTitle: (
       <>
@@ -95,43 +113,53 @@ const copy = {
     home: "Inicio",
     parent: "Monitorización de marca en IA",
     breadcrumb: "Gracias",
-    eyebrow: "Solicitud recibida",
-    h1: (
+    received: "Solicitud recibida.",
+    h1Sub: (
       <>
-        Diecinueve modelos están
-        <br />
-        <em>contestando ahora mismo.</em>
+        Diecinueve modelos están <em>contestando ahora mismo.</em>
       </>
     ),
+    status: [
+      ["01", "Solicitud recibida", "Hecho"],
+      ["02", "19 modelos contestando", "Ahora"],
+      ["03", "Informe en tu correo", "~5 min"],
+    ],
     heroBody:
       "Tu informe se está escribiendo mientras lees esto: seis preguntas, diecinueve modelos y cada respuesta entera. Llega por correo en unos cinco minutos, como una página que puedes abrir, guardar y reenviar. No pierdas de vista tu bandeja de entrada — ni la carpeta de spam, si pasan cinco minutos y no ha aparecido nada.",
-    productTag: "Conoce Sealmetrics",
+    productTag: "Mientras esperas · Consentless Analytics",
     productTitle: (
       <>
-        Consentless Analytics.
+        A tu analítica le faltan
         <br />
-        <em>Visitas contadas, sin banner.</em>
+        <em>las visitas que pagaste.</em>
       </>
     ),
     productBody:
-      "Mientras los modelos piensan, esto es lo que hacemos el resto del tiempo. Sealmetrics es analítica web para empresas que perdieron sus números en el banner de consentimiento: registra la visita sin cookies, sin banner y sin datos personales, así que el tráfico que una analítica sujeta a consentimiento no llega a ver sigue siendo legible, atribuible y suficiente para decidir.",
+      "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Esas personas hicieron clic en tus anuncios, leyeron tus páginas y compraron igual. Sealmetrics las cuenta sin cookies, sin banner y sin datos personales — en paralelo al GA4 que ya tienes, para que compares las dos con tu propio tráfico.",
     productCards: [
       [
         "01",
-        "Sin cookie, nada que consentir",
-        "No se escribe nada en el dispositivo de quien visita, así que no hay permiso que pedir ni nada que perder cuando ese permiso se deniega.",
+        "Ve el tráfico que el banner esconde",
+        "No se escribe nada en el dispositivo de quien visita, así que no hay permiso que pedir ni nada que perder cuando se deniega.",
       ],
       [
         "02",
-        "Con el origen intacto",
-        "Las visitas que una herramienta sujeta a consentimiento descarta vuelven con su source y su medium, que es justo la parte sobre la que se decide un presupuesto.",
+        "Sabe qué canal vende de verdad",
+        "Las visitas que una herramienta sujeta a consentimiento descarta vuelven con su source y su medium — justo la parte sobre la que se decide un presupuesto.",
       ],
       [
         "03",
-        "Diseñada para el RGPD",
-        "Sin datos personales, sin identificador entre sitios, alojado en la UE en Dublín y con el DPA incluido. Va en el diseño, no en una casilla — es nuestra autoevaluación, no una certificación.",
+        "Diseñada para el RGPD, alojada en Dublín",
+        "Sin datos personales, sin identificador entre sitios y con el DPA incluido. Va en el diseño — es nuestra autoevaluación, no una certificación.",
       ],
     ],
+    offerTag: "Cuenta gratis",
+    offerValue: "1.000.000 de eventos · 0 €",
+    offerBody:
+      "Sin límite de tiempo y sin tarjeta. Cuando se gaste el millón de eventos — tarde una semana o un año — eliges un plan. Hasta entonces, no se cobra nada.",
+    offerPoints: ["Sin tarjeta", "En tu web en 5 a 30 minutos", "Te quedas con GA4"],
+    offerCta: "Abrir mi cuenta gratis",
+    offerSecondary: "Ver precios",
     caseTag: "Medido en paralelo",
     caseTitle: (
       <>
@@ -170,7 +198,7 @@ export function BrandReportThankYou({ locale }: { locale: Locale }) {
 
   return (
     <main className="sig-brand-page">
-      <section className="sig-brand-hero">
+      <section className="sig-brand-hero sig-brand-hero-received">
         <nav className="sig-brand-breadcrumbs" aria-label="Breadcrumb">
           <Link href={`${prefix}/`}>{t.home}</Link>
           <span>/</span>
@@ -178,10 +206,24 @@ export function BrandReportThankYou({ locale }: { locale: Locale }) {
           <span>/</span>
           <span>{t.breadcrumb}</span>
         </nav>
-        <p className="sig-brand-eyebrow">
-          <span>{t.eyebrow}</span>
-        </p>
-        <h1>{t.h1}</h1>
+        <h1 className="sig-brand-received">
+          <span className="sig-brand-received-title">
+            <span className="sig-brand-received-check">
+              <Check />
+            </span>
+            {t.received}
+          </span>
+          <span className="sig-brand-received-sub">{t.h1Sub}</span>
+        </h1>
+        <ol className="sig-brand-status">
+          {t.status.map(([number, label, state]) => (
+            <li key={number}>
+              <span>{number}</span>
+              <strong>{label}</strong>
+              <em>{state}</em>
+            </li>
+          ))}
+        </ol>
         <p className="sig-brand-hero-body">{t.heroBody}</p>
       </section>
 
@@ -201,6 +243,27 @@ export function BrandReportThankYou({ locale }: { locale: Locale }) {
               <p>{body}</p>
             </article>
           ))}
+        </div>
+        <div className="sig-brand-offer">
+          <div>
+            <p className="sig-brand-offer-tag">{t.offerTag}</p>
+            <p className="sig-brand-offer-value">{t.offerValue}</p>
+            <p className="sig-brand-offer-body">{t.offerBody}</p>
+            <ul>
+              {t.offerPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
+          </div>
+          <div data-md="skip" className="sig-brand-offer-actions">
+            <Link className="sig-brand-offer-button" href={locale === "es" ? "/es/cuenta-gratis/" : "/free-account/"}>
+              {t.offerCta}
+              <Arrow />
+            </Link>
+            <Link className="sig-brand-offer-link" href={`${prefix}/pricing/`}>
+              {t.offerSecondary} <Arrow />
+            </Link>
+          </div>
         </div>
       </section>
 
