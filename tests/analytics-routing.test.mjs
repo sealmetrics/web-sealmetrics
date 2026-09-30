@@ -38,3 +38,17 @@ test("microconversions accept exported trailing-slash URLs", () => {
   assert.equal(analytics.getMicroConversion("/es/demo/"), "contact_view");
   assert.equal(analytics.getMicroConversion("/audit/"), "audit_view");
 });
+
+test("brand-report thank-you view and its free-account CTA are measured", () => {
+  assert.equal(
+    analytics.getMicroConversion("/ai-brand-monitoring/thank-you/"),
+    "brand_report_thank_you_view",
+  );
+  assert.equal(
+    analytics.getMicroConversion("/es/ai-brand-monitoring/thank-you/"),
+    "brand_report_thank_you_view",
+  );
+  assert.equal(analytics.getMicroConversion("/ai-brand-monitoring/"), undefined);
+  assert.equal(analytics.isCtaHref("/free-account/"), true);
+  assert.equal(analytics.isCtaHref("/es/cuenta-gratis/"), true);
+});

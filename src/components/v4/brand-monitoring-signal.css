@@ -95,6 +95,196 @@
   color: var(--muted);
 }
 
+/* ── Confirmation (thank-you hero) ────────────────────────────────────── */
+/*
+ * The confirmation is the one thing the visitor came back to read, so it takes the
+ * display size and an acid slab; the "models answering" line drops to a subtitle.
+ */
+.sig-brand-hero h1.sig-brand-received {
+  margin-top: 0;
+  max-width: none;
+  font-size: inherit;
+  line-height: normal;
+  letter-spacing: normal;
+  display: grid;
+  gap: 22px;
+}
+.sig-brand-received-title {
+  display: inline-flex;
+  align-items: center;
+  gap: clamp(14px, 2vw, 28px);
+  justify-self: start;
+  max-width: 100%;
+  background: var(--acid);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: clamp(8px, 1.4vw, 20px) clamp(8px, 1.4vw, 20px) 0 var(--ink);
+  padding: clamp(14px, 2vw, 26px) clamp(18px, 2.6vw, 36px);
+  font-size: clamp(44px, 7.2vw, 112px);
+  font-weight: 790;
+  line-height: 0.9;
+  letter-spacing: -0.075em;
+}
+.sig-brand-received-check {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 0.72em;
+  height: 0.72em;
+  background: var(--ink);
+  color: var(--acid);
+}
+.sig-brand-received-check svg {
+  width: 62%;
+  height: 62%;
+}
+.sig-brand-received-sub {
+  margin-top: clamp(10px, 1.4vw, 18px);
+  max-width: 22ch;
+  font-size: clamp(28px, 3.4vw, 52px);
+  font-weight: 790;
+  line-height: 0.95;
+  letter-spacing: -0.05em;
+}
+.sig-brand-status {
+  list-style: none;
+  margin: 34px 0 0;
+  padding: 0;
+  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--ink);
+  border: 1px solid var(--ink);
+}
+.sig-brand-status li {
+  display: grid;
+  gap: 6px;
+  background: var(--white);
+  padding: 14px 16px 16px;
+}
+.sig-brand-status li:first-child {
+  background: var(--ink);
+  color: var(--white);
+}
+.sig-brand-status span,
+.sig-brand-status em {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  font-style: normal;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  -webkit-text-fill-color: currentColor;
+  -webkit-text-stroke: 0;
+}
+.sig-brand-status span {
+  color: var(--muted);
+}
+.sig-brand-status li:first-child span,
+.sig-brand-status li:first-child em {
+  color: var(--acid);
+}
+.sig-brand-status em {
+  color: var(--acid-ink);
+}
+.sig-brand-status strong {
+  font-size: 15px;
+  font-weight: 650;
+}
+
+/* The landing's hero is a copy + form grid; the confirmation is one column. */
+.sig-brand-page .sig-brand-hero.sig-brand-hero-received {
+  display: block;
+}
+.sig-brand-page .sig-brand-hero-received .sig-brand-hero-body {
+  margin-top: 28px;
+}
+
+/* ── Free-account offer (thank-you) ───────────────────────────────────── */
+.sig-brand-offer {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 28px 48px;
+  align-items: center;
+  background: var(--ink);
+  color: var(--white);
+  border: 1px solid var(--ink);
+  box-shadow: clamp(8px, 1.4vw, 20px) clamp(8px, 1.4vw, 20px) 0 var(--acid);
+  padding: clamp(26px, 3.4vw, 48px);
+}
+.sig-brand-offer-tag {
+  display: inline-block;
+  background: var(--acid);
+  color: var(--ink);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+.sig-brand-page .sig-brand-offer-value {
+  margin-top: 16px;
+  font-size: clamp(34px, 4.4vw, 68px);
+  font-weight: 790;
+  line-height: 0.92;
+  letter-spacing: -0.06em;
+  color: var(--acid);
+}
+.sig-brand-page .sig-brand-offer-body {
+  margin-top: 16px;
+  max-width: 52ch;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(255, 253, 247, 0.78);
+}
+.sig-brand-offer ul {
+  list-style: none;
+  margin: 18px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 14px;
+  font-weight: 650;
+}
+.sig-brand-offer li::before {
+  content: "— ";
+  color: var(--acid);
+}
+.sig-brand-offer-actions {
+  display: grid;
+  justify-items: start;
+  gap: 18px;
+}
+.sig-brand-page a.sig-brand-offer-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--acid);
+  color: var(--ink);
+  border: 1px solid var(--acid);
+  box-shadow: 4px 4px 0 var(--white);
+  padding: 18px 28px;
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: 790;
+  transition: transform 0.12s ease;
+}
+.sig-brand-page a.sig-brand-offer-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--white);
+}
+.sig-brand-page a.sig-brand-offer-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 650;
+  color: var(--acid);
+  border-bottom: 1px solid currentColor;
+}
+
 /* ── Request band ─────────────────────────────────────────────────────── */
 /*
  * The form is the page, so it runs the full width under the headline rather than
@@ -992,6 +1182,7 @@
     grid-template-columns: minmax(0, 1fr);
     align-items: start;
   }
+  .sig-brand-offer,
   .sig-brand-measure-grid,
   .sig-brand-stat-grid,
   .sig-brand-report-quotes {
@@ -1013,6 +1204,20 @@
   }
 }
 @media (max-width: 640px) {
+  .sig-brand-status,
+  .sig-brand-offer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sig-brand-status li {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 12px;
+    padding: 12px 14px;
+  }
+  .sig-brand-page a.sig-brand-offer-button {
+    width: 100%;
+    justify-content: center;
+  }
   .sig-brand-row {
     grid-template-columns: minmax(0, 1fr);
   }
