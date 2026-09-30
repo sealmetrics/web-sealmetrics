@@ -75,7 +75,7 @@ export default function OmnibusShortPage() {
         <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
           <p>
             On November 19, 2025, the European Commission released proposal{" "}
-            <a href="https://digital-strategy.ec.europa.eu/en/library/digital-omnibus-regulation-proposal" target="_blank" rel="noopener noreferrer">COM(2025) 837</a> — the Digital Omnibus. If adopted, it would be the
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex:52025PC0837" target="_blank" rel="noopener noreferrer">COM(2025) 837</a> — the Digital Omnibus. If adopted, it would be the
             biggest change to EU data law since GDPR came into force in 2018.
           </p>
 
