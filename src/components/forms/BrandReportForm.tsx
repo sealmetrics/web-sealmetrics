@@ -287,7 +287,7 @@ const copy = {
         ["Controller", "Sealmetrics S.L."],
         [
           "Purpose",
-          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too.",
+          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too, including a short follow-up about your report.",
         ],
         [
           "Legal basis",
@@ -295,7 +295,7 @@ const copy = {
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and prints the PDF. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and prints the PDF. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report.",
         ],
         [
           "Your rights",
@@ -335,7 +335,7 @@ const copy = {
         ["Responsable", "Sealmetrics S.L."],
         [
           "Finalidad",
-          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics.",
+          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics, entre ellos un breve seguimiento sobre tu informe.",
         ],
         [
           "Legitimación",
@@ -343,7 +343,7 @@ const copy = {
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots e imprime el PDF. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots e imprime el PDF. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe.",
         ],
         [
           "Derechos",

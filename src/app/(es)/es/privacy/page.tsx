@@ -355,7 +355,8 @@ export default function PrivacyPageEs() {
                 atender cualquier consulta sobre ella (art. 6.1.f). (c) Sólo
                 para quien marca la casilla separada, opcional y desmarcada del
                 formulario: enviarle de vez en cuando informes y novedades de
-                Sealmetrics (art. 6.1.a RGPD y art. 21 de la
+                Sealmetrics, empezando por una breve serie de correos de
+                seguimiento sobre el informe que pidió (art. 6.1.a RGPD y art. 21 de la
                 LSSI). Del 29 al 30 de septiembre de 2026 el formulario no
                 ofreció la casilla, y a quien lo pidió esos días no se le
                 incluyó. Ese consentimiento se puede retirar cuando se quiera
@@ -398,6 +399,12 @@ export default function PrivacyPageEs() {
                   consintió, los correos ocasionales, con cláusulas
                   contractuales tipo y su certificación EU-US Data Privacy
                   Framework.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  lemlist SAS (Francia), sólo para quien marcó la casilla, envía
+                  los correos de seguimiento sobre el informe. Recibe su correo,
+                  el dominio de su empresa y la marca y el sector consultados.
                 </li>
               </ul>
               <p className="mt-3">

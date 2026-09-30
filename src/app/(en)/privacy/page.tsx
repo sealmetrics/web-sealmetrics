@@ -322,7 +322,9 @@ export default function PrivacyPage() {
               request, to prevent abuse of a free service and to answer any
               question about it (Article 6(1)(f)). (c) Only for those who tick the
               separate, optional and unticked box on the form: sending
-              occasional reports and product news from Sealmetrics (Article
+              occasional reports and product news from Sealmetrics, starting
+              with a short series of follow-up emails about the report they
+              requested (Article
               6(1)(a) GDPR and Article 21 of Spain&rsquo;s
               LSSI). From 29 to 30 September 2026 the form did not offer the
               box, and nobody who requested a report on those days was
@@ -365,6 +367,13 @@ export default function PrivacyPage() {
                 consented, the occasional emails, covered by Standard
                 Contractual Clauses and its EU-US Data Privacy Framework
                 certification.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                lemlist SAS (France), only for those who ticked the box, sends
+                the follow-up emails about the report. It receives their email,
+                their company domain and the brand and sector they asked
+                about.
               </li>
             </ul>
             <p className="mt-3">
