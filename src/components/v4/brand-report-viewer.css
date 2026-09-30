@@ -1,0 +1,144 @@
+/* Full brand report behind a private link: /ai-brand-monitoring/report/#<token>. */
+.sig-report-viewer {
+  --ink: #111412;
+  --acid: #cbff3d;
+  --acid-ink: #4f6900;
+  --paper: #f4f1e8;
+  --white: #fffdf7;
+  --muted: #5d625a;
+  --rule: rgba(17, 20, 18, 0.24);
+  padding-top: 76px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), Onest, sans-serif;
+}
+.sig-report-viewer *,
+.sig-report-viewer *:before,
+.sig-report-viewer *:after {
+  box-sizing: border-box;
+}
+.sig-report-viewer h1,
+.sig-report-viewer h2,
+.sig-report-viewer p {
+  margin: 0;
+}
+.sig-report-viewer a {
+  color: inherit;
+}
+
+.sig-report-viewer-head,
+.sig-report-viewer-status,
+.sig-report-viewer-notice {
+  padding-inline: max(16px, calc((100vw - 1320px) / 2));
+}
+.sig-report-viewer-head {
+  padding-block: clamp(40px, 5vw, 64px) clamp(24px, 3vw, 32px);
+  border-bottom: 1px solid var(--rule);
+}
+.sig-report-viewer-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 24px;
+}
+.sig-report-viewer-crumbs a {
+  text-decoration: none;
+}
+.sig-report-viewer-crumbs a:hover {
+  color: var(--ink);
+}
+.sig-report-viewer-eyebrow {
+  margin-bottom: 16px;
+}
+.sig-report-viewer-eyebrow span {
+  display: inline-block;
+  background: var(--ink);
+  color: var(--acid);
+  font-family: var(--font-mono), monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+.sig-report-viewer h1 {
+  font-size: clamp(34px, 4.4vw, 64px);
+  font-weight: 790;
+  line-height: 0.92;
+  letter-spacing: -0.05em;
+  max-width: 18ch;
+}
+.sig-report-viewer-intro {
+  margin-top: 18px;
+  max-width: 62ch;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+.sig-report-viewer-actions {
+  margin-top: 22px;
+}
+.sig-report-viewer-actions a,
+.sig-report-viewer-notice div a {
+  display: inline-block;
+  background: var(--acid);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 12px 18px;
+  font-weight: 650;
+  font-size: 15px;
+  text-decoration: none;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+.sig-report-viewer-actions a:hover,
+.sig-report-viewer-notice div a:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
+
+.sig-report-viewer-status {
+  padding-block: 48px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* The report scrolls inside its own frame: it is sandboxed without same-origin,
+   so the page cannot read its height to grow around it. */
+.sig-report-viewer-frame {
+  display: block;
+  width: 100%;
+  height: calc(100vh - 76px);
+  min-height: 560px;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+}
+
+.sig-report-viewer-notice {
+  padding-block: clamp(40px, 5vw, 72px);
+  max-width: 820px;
+}
+.sig-report-viewer-notice h2 {
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 790;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+}
+.sig-report-viewer-notice p {
+  margin-top: 14px;
+  max-width: 60ch;
+  line-height: 1.55;
+}
+.sig-report-viewer-notice div {
+  margin-top: 24px;
+}

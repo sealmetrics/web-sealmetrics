@@ -342,7 +342,11 @@ export default function PrivacyPage() {
                 relay that receives the form, and prints the finished report to
                 the PDF attached to the email (Browser Run). For the PDF it
                 receives the report itself &mdash; the brand, the models&rsquo;
-                findings and the recommendations &mdash; never your email.
+                findings and the recommendations &mdash; never your email. It
+                also keeps the full report for 30 days behind the private link
+                in the email, so you can read it at sealmetrics.com; the link
+                carries a random key, not your email, and the report is deleted
+                automatically when the 30 days are up.
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -380,7 +384,8 @@ export default function PrivacyPage() {
               <strong className="text-text-primary">Retention.</strong> The
               request record is kept for up to 24 months, like any other form
               submission. The link between the report reference and your email
-              is deleted on delivery, or after 72 hours at most. If you consented to occasional emails, your address stays
+              is deleted on delivery, or after 72 hours at most. The full report
+              behind the private link is deleted after 30 days. If you consented to occasional emails, your address stays
               on that list until you unsubscribe or withdraw consent.
             </p>
           </div>
