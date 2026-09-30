@@ -1454,5 +1454,25 @@
   "/terms-of-use/": {
     "hash": "34103ed2df68cc0e",
     "date": "2026-09-30"
+  },
+  "/avoid-cookie-consent/": {
+    "hash": "bfd2690c07e86361",
+    "date": "2026-09-30"
+  },
+  "/cookieless-future/": {
+    "hash": "165fb0c79b2aae92",
+    "date": "2026-09-30"
+  },
+  "/free-analytics/": {
+    "hash": "7137e66e17a37086",
+    "date": "2026-09-30"
+  },
+  "/single-source-truth-webanalytics/": {
+    "hash": "2ff5dbe87be2b6b6",
+    "date": "2026-09-30"
+  },
+  "/support/": {
+    "hash": "14e7a7456c8f0169",
+    "date": "2026-09-30"
   }
 }
