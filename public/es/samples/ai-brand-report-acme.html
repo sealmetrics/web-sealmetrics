@@ -121,7 +121,9 @@ blockquote{margin:8px 0;padding-left:12px;border-left:3px solid var(--line);colo
 :root {
   --ink: #111412;
   --soft: #4d524a;
-  --faint: #6b7068;
+  /* Every text colour clears WCAG AA (4.5:1) on every background below: #5d625a is
+     5.05:1 on --raised, the darkest one, and --crit 5.25:1 on --crit-soft. */
+  --faint: #5d625a;
   --line: rgba(17, 20, 18, .16);
   --raised: #ebe7da;
   --page: #f4f1e8;
@@ -129,7 +131,7 @@ blockquote{margin:8px 0;padding-left:12px;border-left:3px solid var(--line);colo
   --ok: #4f6900;
   --ok-soft: #eef7cc;
   --ok-accent: #cbff3d;
-  --crit: #b5423b;
+  --crit: #a53a33;
   --crit-soft: #f6e4e0;
   --pend: #8a5a00;
   --pend-soft: #f6ead2;
