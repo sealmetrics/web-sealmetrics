@@ -103,13 +103,14 @@ export const brandMonitoringFaq = {
 
 type SampleState = "correct" | "partial" | "confused" | "none";
 
-// One square per model for question 01 of the sample. The mix is what the sample's
-// headline figures count — four correct and two partial make "6 / 19", four confused
-// make "4 / 19" — so change one and the other has to move with it.
+// One square per model for question 01 of the sample, in the alphabetical model order of
+// the full sample report (scripts/brand-report-sample/build.py, `STATE`). The mix is what
+// the headline figures count — five correct and four partial make "9 / 19", six confused
+// make "6 / 19" — so change one and the other, and the generated report, move together.
 const SAMPLE_GRID: SampleState[] = [
-  "correct", "partial", "confused", "none", "correct", "none", "none",
-  "none", "confused", "correct", "none", "partial", "none",
-  "confused", "none", "correct", "confused", "none", "none",
+  "correct", "partial", "partial", "correct", "confused", "none", "partial",
+  "correct", "partial", "confused", "confused", "correct", "none",
+  "correct", "confused", "none", "none", "confused", "confused",
 ];
 const SAMPLE_LEGEND: SampleState[] = ["correct", "partial", "confused", "none"];
 
@@ -117,7 +118,7 @@ const copy = {
   en: {
     home: "Home",
     breadcrumb: "AI brand monitoring",
-    eyebrow: "Free report · no account",
+    eyebrow: "Free AI brand benchmark · no account",
     h1: (
       <>
         What do AIs know
@@ -126,7 +127,7 @@ const copy = {
       </>
     ),
     heroBody:
-      "Your buyers ask ChatGPT, Claude, Gemini or Perplexity before they reach you. We ask nineteen models six questions about your company and send you every answer, word for word, with the errors marked.",
+      "Your buyers ask ChatGPT, Claude, Gemini or Perplexity before they reach you. We ask nineteen models six questions about your company and send you every answer, word for word, with the errors marked. The questions are the same for every brand, so the report is a benchmark: you can set yourself against your competitors, and against your own next edition.",
     modelsLabel: "Who answers",
     models: [
       ["GPT-6 Sol", "OpenAI · ChatGPT"],
@@ -148,12 +149,12 @@ const copy = {
       </>
     ),
     sampleBody:
-      "An invented coffee brand run through the same six questions. The layout, the four states and the closing correction are the real report's; the brand and the answers are made up, so no company is on display without having asked.",
-    sampleBar: ["Sample · fictional brand", "Orvalla Coffee · specialty coffee eCommerce"],
+      "An invented coffee brand run through the same six questions. The layout, the four states and the closing correction are the real report's; the brand, its competitors and the answers are made up, so no company is on display without having asked. The full sample report is one click away.",
+    sampleBar: ["Sample · fictional brand", "Acme Coffee · specialty coffee eCommerce"],
     sampleStats: [
-      ["6 / 19", "described the brand correctly or with one error"],
-      ["2 / 11", "named it when asked for a brand like it, without being prompted"],
-      ["4 / 19", "confused it with another company"],
+      ["9 / 19", "described the brand correctly or with one error"],
+      ["3 / 17", "named it when asked for a brand like it, without being prompted"],
+      ["6 / 19", "confused it with another company"],
     ],
     sampleGridLabel: "Question 01 · Who you are · one square per model",
     sampleStates: {
@@ -168,15 +169,15 @@ const copy = {
         vendor: "OpenAI · ChatGPT",
         question: "01 · Who you are",
         state: "correct",
-        text: "Orvalla Coffee is a Spanish online roaster that sells single-origin beans by subscription, roasted to order and shipped within 48 hours.",
+        text: "Acme Coffee is a Spanish online specialty coffee roaster based in Valencia, founded in 2019. It sells single-origin beans by subscription, roasts to order and ships within 48 hours across Spain.",
         note: "",
       },
       {
-        model: "Claude Opus 5.5",
-        vendor: "Anthropic · Claude",
-        question: "03 · Who it recommends",
+        model: "GPT-6 Astra",
+        vendor: "OpenAI · ChatGPT",
+        question: "01 · Who you are",
         state: "partial",
-        text: "For a coffee subscription in Spain, Orvalla Coffee is worth a look, or a larger roaster with national distribution. Orvalla also runs two cafés in Madrid.",
+        text: "Acme Coffee is a Spanish specialty coffee roaster that sells single-origin beans online by subscription. Besides its web shop it runs two cafés in Madrid.",
         note: "One error: the brand sells online only and has no cafés.",
       },
       {
@@ -184,15 +185,16 @@ const copy = {
         vendor: "One of thirteen",
         question: "01 · Who you are",
         state: "confused",
-        text: "Orvalla is a restaurant group in northern Portugal known for wood-fired cooking.",
-        note: "Attaches the name to a different business.",
+        text: "Acme is best known as the fictional Acme Corporation from the Looney Tunes cartoons. I am not aware of a coffee company by that name.",
+        note: "Takes the name for a cartoon company. Three open models do.",
       },
     ],
     sampleFixLabel: "Correction worth making at the source",
     sampleFix:
-      "Say on the About page, in one sentence a model can quote, that Orvalla sells online only and has no physical cafés. Two of the partial answers repeat the same error.",
+      "Say on the About page, in one sentence a model can quote, that Acme Coffee sells online only and has no physical cafés — and use the name in full, never «Acme» alone, so the pages about the roaster stop competing with the cartoon.",
     sampleFoot: "The full report · six questions · nineteen models · 114 answers kept whole",
     sampleCta: "Request yours",
+    sampleFull: "See the full sample report",
     clientsTag: "Built by Sealmetrics",
     clientsBody:
       "The report is free. It comes from the team behind Sealmetrics, the cookieless analytics these companies use to measure what their marketing brings in.",
@@ -276,7 +278,7 @@ const copy = {
   es: {
     home: "Inicio",
     breadcrumb: "Monitorización de marca en IA",
-    eyebrow: "Informe gratuito · sin cuenta",
+    eyebrow: "Benchmark gratuito de marca en IA · sin cuenta",
     h1: (
       <>
         ¿Qué saben las IA
@@ -285,7 +287,7 @@ const copy = {
       </>
     ),
     heroBody:
-      "Quien te compra le pregunta a ChatGPT, Claude, Gemini o Perplexity antes de llegar a ti. Hacemos seis preguntas sobre tu empresa a diecinueve modelos y te mandamos cada respuesta, palabra por palabra, con los errores marcados.",
+      "Quien te compra le pregunta a ChatGPT, Claude, Gemini o Perplexity antes de llegar a ti. Hacemos seis preguntas sobre tu empresa a diecinueve modelos y te mandamos cada respuesta, palabra por palabra, con los errores marcados. Las preguntas son las mismas para todas las marcas, así que el informe es un benchmark: te puedes comparar con tus competidores y con tu próxima edición.",
     modelsLabel: "Quién contesta",
     models: [
       ["GPT-6 Sol", "OpenAI · ChatGPT"],
@@ -307,12 +309,12 @@ const copy = {
       </>
     ),
     sampleBody:
-      "Una marca de café inventada, pasada por las mismas seis preguntas. La estructura, los cuatro estados y la corrección final son los del informe real; la marca y las respuestas son inventadas, para no exponer a ninguna empresa que no lo haya pedido.",
-    sampleBar: ["Muestra · marca ficticia", "Orvalla Coffee · eCommerce de café de especialidad"],
+      "Una marca de café inventada, pasada por las mismas seis preguntas. La estructura, los cuatro estados y la corrección final son los del informe real; la marca, sus competidores y las respuestas son inventados, para no exponer a ninguna empresa que no lo haya pedido. El informe de muestra completo está a un clic.",
+    sampleBar: ["Muestra · marca ficticia", "Acme Coffee · eCommerce de café de especialidad"],
     sampleStats: [
-      ["6 / 19", "describen la marca bien o con un solo error"],
-      ["2 / 11", "la nombran al pedir una marca como ella, sin que nadie la mencione"],
-      ["4 / 19", "la confunden con otra empresa"],
+      ["9 / 19", "describen la marca bien o con un solo error"],
+      ["3 / 17", "la nombran al pedir una marca como ella, sin que nadie la mencione"],
+      ["6 / 19", "la confunden con otra empresa"],
     ],
     sampleGridLabel: "Pregunta 01 · Quién eres · un cuadro por modelo",
     sampleStates: {
@@ -327,15 +329,15 @@ const copy = {
         vendor: "OpenAI · ChatGPT",
         question: "01 · Quién eres",
         state: "correct",
-        text: "Orvalla Coffee es un tostador español que vende online café de origen único por suscripción, tostado bajo pedido y enviado en 48 horas.",
+        text: "Acme Coffee es un tostador español de café de especialidad que vende online, con sede en Valencia y fundado en 2019. Vende café de origen único por suscripción, tuesta bajo pedido y envía en 48 horas a toda España.",
         note: "",
       },
       {
-        model: "Claude Opus 5.5",
-        vendor: "Anthropic · Claude",
-        question: "03 · A quién recomienda",
+        model: "GPT-6 Astra",
+        vendor: "OpenAI · ChatGPT",
+        question: "01 · Quién eres",
         state: "partial",
-        text: "Para una suscripción de café en España, merece la pena mirar Orvalla Coffee o un tostador más grande con distribución nacional. Orvalla tiene además dos cafeterías en Madrid.",
+        text: "Acme Coffee es un tostador español de café de especialidad que vende café de origen único online por suscripción. Además de la tienda web tiene dos cafeterías en Madrid.",
         note: "Un error: la marca sólo vende online y no tiene cafeterías.",
       },
       {
@@ -343,15 +345,16 @@ const copy = {
         vendor: "Uno de trece",
         question: "01 · Quién eres",
         state: "confused",
-        text: "Orvalla es un grupo de restaurantes del norte de Portugal conocido por su cocina a la brasa.",
-        note: "Le cuelga el nombre a otro negocio.",
+        text: "Acme es sobre todo la Acme Corporation ficticia de los dibujos de Looney Tunes. No conozco una empresa de café con ese nombre.",
+        note: "Confunde el nombre con una empresa de dibujos animados. Lo hacen tres modelos abiertos.",
       },
     ],
     sampleFixLabel: "Corrección que merece la pena hacer en origen",
     sampleFix:
-      "Decir en la página de empresa, en una frase que un modelo pueda citar, que Orvalla sólo vende online y no tiene cafeterías físicas. Dos de las respuestas parciales repiten el mismo error.",
+      "Decir en la página de empresa, en una frase que un modelo pueda citar, que Acme Coffee sólo vende online y no tiene cafeterías físicas, y usar siempre el nombre completo, nunca «Acme» a secas, para que las páginas del tostador dejen de competir con los dibujos.",
     sampleFoot: "El informe completo · seis preguntas · diecinueve modelos · 114 respuestas enteras",
     sampleCta: "Pide el tuyo",
+    sampleFull: "Ver el informe de muestra completo",
     clientsTag: "Lo hace Sealmetrics",
     clientsBody:
       "El informe es gratis. Lo hace el equipo de Sealmetrics, la analítica sin cookies con la que estas empresas miden lo que les trae su marketing.",
@@ -551,9 +554,14 @@ export function BrandMonitoringSignal({ locale }: { locale: Locale }) {
           </div>
           <figcaption>
             <span>{t.sampleFoot}</span>
-            <a href="#request" className="sig-brand-report-cta">
-              {t.sampleCta} <Arrow />
-            </a>
+            <span className="sig-brand-report-actions">
+              <Link href={`${prefix}/ai-brand-monitoring/sample-report/`} className="sig-brand-report-full">
+                {t.sampleFull}
+              </Link>
+              <a href="#request" className="sig-brand-report-cta">
+                {t.sampleCta} <Arrow />
+              </a>
+            </span>
           </figcaption>
         </figure>
       </section>
