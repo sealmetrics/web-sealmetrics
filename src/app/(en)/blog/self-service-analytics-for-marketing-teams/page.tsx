@@ -67,7 +67,7 @@ const preconditions = [
 const questions = [
   {
     q: "Why did conversions drop last week?",
-    calls: "Overview, channels, campaigns, funnel, bot stats",
+    calls: "Overview, channels, campaigns, funnel",
     back: "The channel and step where the drop started, with the delta",
   },
   {
