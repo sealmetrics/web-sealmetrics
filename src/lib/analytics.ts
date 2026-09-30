@@ -298,6 +298,12 @@ const MICRO_CONVERSIONS: Record<string, string> = {
   "/audit": "audit_view",
   "/data-loss-calculator": "calculator_view",
   "/growth-calculator": "calculator_view",
+  // The brand-report confirmation, EN and ES. Not a second count of the request —
+  // `brand_report_request` fires on the accepted submission and stays the number
+  // of reports asked for. This one is the entry step of the thank-you page's own
+  // funnel (view → free-account CTA click), so its conversion rate can be read
+  // against visitors who actually saw the offer. Reloads count, by design.
+  "/ai-brand-monitoring/thank-you": "brand_report_thank_you_view",
 };
 
 export function getMicroConversion(pathname: string): string | undefined {
@@ -322,8 +328,11 @@ export function isBookingHref(href: string): boolean {
 }
 
 // Primary lead-driving destinations — clicks toward these are CTA intent.
+// `free-account` / `cuenta-gratis` is the free-account landing: the thank-you
+// offer and any other page that points there report as `cta_click` with the
+// destination, so the click can be broken down by the page it came from.
 const CTA_DESTINATIONS =
-  /^\/(demo|demo-access|audit|free-audit|pricing|data-loss-calculator|growth-calculator)\b/;
+  /^\/(demo|demo-access|audit|free-audit|pricing|data-loss-calculator|growth-calculator|free-account|cuenta-gratis)\b/;
 
 export function isCtaHref(href: string): boolean {
   if (!href.startsWith("/")) return false;
