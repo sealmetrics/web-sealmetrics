@@ -345,10 +345,7 @@ export default function PrivacyPageEs() {
                 Tu correo de empresa, la marca por la que preguntas y, si los
                 indicas, su sector y sus competidores. El formulario no pide tu
                 nombre. El informe es de organizaciones; no se hace sobre
-                personas. Sólo si marcas la casilla de correos ocasionales,
-                añadimos tu nombre, tu puesto y el dominio de tu empresa,
-                obtenidos de fuentes profesionales públicas a partir de tu
-                correo.
+                personas.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Finalidades y base jurídica.</strong>{" "}
@@ -358,8 +355,7 @@ export default function PrivacyPageEs() {
                 atender cualquier consulta sobre ella (art. 6.1.f). (c) Sólo
                 para quien marca la casilla separada, opcional y desmarcada del
                 formulario: enviarle de vez en cuando informes y novedades de
-                Sealmetrics, adaptados a su puesto, y para ello completar su
-                nombre, puesto y empresa (art. 6.1.a RGPD y art. 21 de la
+                Sealmetrics (art. 6.1.a RGPD y art. 21 de la
                 LSSI). Del 29 al 30 de septiembre de 2026 el formulario no
                 ofreció la casilla, y a quien lo pidió esos días no se le
                 incluyó. Ese consentimiento se puede retirar cuando se quiera
@@ -403,14 +399,6 @@ export default function PrivacyPageEs() {
                   contractuales tipo y su certificación EU-US Data Privacy
                   Framework.
                 </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Clay Labs, Inc. (EE. UU.), sólo para quien marcó la casilla,
-                  recibe su correo y la marca consultada y devuelve su nombre,
-                  su puesto y el dominio de su empresa a partir de fuentes
-                  profesionales públicas, con cláusulas contractuales tipo.
-                  Quien no marca la casilla no llega nunca a Clay.
-                </li>
               </ul>
               <p className="mt-3">
                 <strong className="text-text-primary">Conservación.</strong> El
@@ -418,8 +406,7 @@ export default function PrivacyPageEs() {
                 como cualquier otro envío de formulario. La relación entre la
                 referencia del informe y tu correo se borra al entregarlo, o a
                 las 72 horas como máximo. Si consentiste los correos
-                ocasionales, tu dirección y los datos de puesto y empresa
-                permanecen en esa lista y en Clay hasta que te des de baja o
+                ocasionales, tu dirección permanece en esa lista hasta que te des de baja o
                 retires el consentimiento.
               </p>
             </div>

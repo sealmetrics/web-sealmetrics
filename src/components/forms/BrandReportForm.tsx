@@ -278,7 +278,7 @@ const copy = {
     errorPersonal: "Use your company address, not a personal one.",
     errorGeneric: "We could not request it right now. Try again in a moment.",
     marketing:
-      "Also send me Sealmetrics' occasional reports and product news, suited to my role. Optional: unsubscribe in one click, and the report arrives either way.",
+      "Also send me Sealmetrics' occasional reports and product news. Optional: unsubscribe in one click, and the report arrives either way.",
     notice: {
       summary:
         "Sealmetrics S.L. uses your email to send you the report you asked for, and for occasional emails only if you tick the box. Enroutia and the AI models never see it. Access, erasure and your other rights: privacy@sealmetrics.com.",
@@ -287,15 +287,15 @@ const copy = {
         ["Controller", "Sealmetrics S.L."],
         [
           "Purpose",
-          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too, for which we look up your name, role and company in public professional sources.",
+          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too.",
         ],
         [
           "Legal basis",
-          "Your request for the report (art. 6.1.b GDPR). For the occasional emails and the lookup that goes with them, your consent (art. 6.1.a), which you can withdraw at any time.",
+          "Your request for the report (art. 6.1.b GDPR). For the occasional emails, your consent (art. 6.1.a), which you can withdraw at any time.",
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and prints the PDF. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: Clay (USA, Standard Contractual Clauses) receives your email and the brand to look up your name, role and company.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and prints the PDF. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email.",
         ],
         [
           "Your rights",
@@ -326,7 +326,7 @@ const copy = {
     errorPersonal: "Usa el correo de tu empresa, no uno personal.",
     errorGeneric: "Ahora mismo no hemos podido pedirlo. Prueba en un momento.",
     marketing:
-      "Enviadme también, de vez en cuando, informes y novedades de Sealmetrics adaptados a mi puesto. Es opcional: te das de baja en un clic, y el informe te llega igual.",
+      "Enviadme también, de vez en cuando, informes y novedades de Sealmetrics. Es opcional: te das de baja en un clic, y el informe te llega igual.",
     notice: {
       summary:
         "Sealmetrics S.L. usa tu correo para enviarte el informe que pides, y para correos ocasionales sólo si marcas la casilla. Ni Enroutia ni los modelos de IA lo ven. Acceso, supresión y demás derechos: privacy@sealmetrics.com.",
@@ -335,15 +335,15 @@ const copy = {
         ["Responsable", "Sealmetrics S.L."],
         [
           "Finalidad",
-          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics, para los que buscamos tu nombre, puesto y empresa en fuentes profesionales públicas.",
+          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics.",
         ],
         [
           "Legitimación",
-          "Tu solicitud del informe (art. 6.1.b RGPD). Para los correos ocasionales y la búsqueda que los acompaña, tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras.",
+          "Tu solicitud del informe (art. 6.1.b RGPD). Para los correos ocasionales, tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras.",
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots e imprime el PDF. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: Clay (EE. UU., cláusulas contractuales tipo) recibe tu correo y la marca para buscar tu nombre, puesto y empresa.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots e imprime el PDF. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo.",
         ],
         [
           "Derechos",
@@ -364,7 +364,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
   const [sector, setSector] = useState("");
   const [competitors, setCompetitors] = useState("");
   // Unticked by default and never required: the report is the service asked for,
-  // the newsletter (and the Clay lookup that tailors it) is a separate consent
+  // the newsletter is a separate consent
   // (GDPR art. 7.2, LSSI art. 21). n8n subscribes only on an explicit `true`.
   const [marketingConsent, setMarketingConsent] = useState(false);
   // Funnel microconversions, each sent at most once per page: somebody started the
