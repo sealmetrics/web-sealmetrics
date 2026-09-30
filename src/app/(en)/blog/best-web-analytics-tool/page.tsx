@@ -129,8 +129,8 @@ const requirements = [
     id: "req-10",
     title: "Visible bot filtering",
     bar: "Excluded from metrics and inspectable",
-    seal: "Bot traffic and suspicious-session reporting — the exclusions are visible, not just a setting",
-    score: 2,
+    seal: "Bots detected and filtered out of metrics and billing. No bot report: the exclusions cannot be inspected",
+    score: 1,
   },
   {
     n: 11,
@@ -1052,7 +1052,7 @@ export default function BestWebAnalyticsToolPage() {
             </p>
 
           <CommercialModule
-            hook="Want to score Sealmetrics against your own requirements list? The demo walks the 24 requirements on your traffic, including the one we fail."
+            hook="Want to score Sealmetrics against your own requirements list? The demo walks the 24 requirements on your traffic, including the two we do not fully meet."
           />
 
             <h2 className={h2Class}>How Sealmetrics scores against this list</h2>
@@ -1070,7 +1070,7 @@ export default function BestWebAnalyticsToolPage() {
                 happens to share. A buyer whose priority is user-level product
                 analytics, session replay or multi-touch modelling should
                 reweight it, and we would score worse. Here is the scorecard
-                anyway, with the point we lose.
+                anyway, with the points we lose.
               </p>
             </div>
 
@@ -1123,7 +1123,7 @@ export default function BestWebAnalyticsToolPage() {
                       Total
                     </td>
                     <td className="py-4 font-mono text-[0.95rem] text-text-primary font-semibold whitespace-nowrap">
-                      23 / 24
+                      22 / 24
                     </td>
                   </tr>
                 </tbody>
@@ -1132,7 +1132,14 @@ export default function BestWebAnalyticsToolPage() {
 
             <div className="my-8 grid gap-3 sm:grid-cols-2">
               <div className="rounded-[14px] border border-warm-100 bg-white p-6">
-                <Chip tone="test">Where the point is lost</Chip>
+                <Chip tone="test">Where the points are lost</Chip>
+                <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
+                  Requirement 10 — bots are detected and filtered out of the
+                  metrics and the billed event count, but Sealmetrics shows no
+                  bot report, so you cannot inspect what was excluded. The
+                  filtering is real; the visibility the requirement asks for is
+                  not there.
+                </p>
                 <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
                   Requirement 11 — Sealmetrics is not ISO 27001 or SOC 2
                   certified. Everything else in that row is met: no personal
@@ -1201,7 +1208,7 @@ export default function BestWebAnalyticsToolPage() {
           </div>
 
           <CommercialModule
-            hook="The scorecard says 23/24 — and names the miss. See what the 23 look like on your own site before you shortlist."
+            hook="The scorecard says 22/24 — and names both misses. See what the 22 look like on your own site before you shortlist."
           />
 
           <ComparisonLinks locale="en" />

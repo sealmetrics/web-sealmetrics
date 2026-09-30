@@ -193,7 +193,7 @@ export const blogPosts: BlogPost[] = [
     description:
       "Not a vendor list. The 12 technical requirements a web analytics platform must meet — pixel weight, real time, no consent gaps, API, MCP — and how to test each one.",
     date: "2026-08-06",
-    dateModified: "2026-09-21",
+    dateModified: "2026-09-30",
     category: "Comparisons",
     readTime: "12 min",
     author: AUTHORS.rafa,

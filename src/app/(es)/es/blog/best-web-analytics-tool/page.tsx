@@ -129,8 +129,8 @@ const requisitos = [
     id: "req-10",
     title: "Filtrado de bots visible",
     bar: "Excluidos de las métricas e inspeccionables",
-    seal: "Reporting de tráfico bot y sesiones sospechosas — las exclusiones son visibles, no solo un ajuste",
-    score: 2,
+    seal: "Bots detectados y filtrados de las métricas y de la facturación. Sin informe de bots: las exclusiones no se pueden inspeccionar",
+    score: 1,
   },
   {
     n: 11,
@@ -1091,7 +1091,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 comparte. Un comprador cuya prioridad sea product analytics a
                 nivel de usuario, session replay o modelado multi-touch debería
                 reponderarla, y nosotros puntuaríamos peor. Aquí está el
-                marcador igualmente, con el punto que perdemos.
+                marcador igualmente, con los puntos que perdemos.
               </p>
             </div>
 
@@ -1144,7 +1144,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                       Total
                     </td>
                     <td className="py-4 font-mono text-[0.95rem] text-text-primary font-semibold whitespace-nowrap">
-                      23 / 24
+                      22 / 24
                     </td>
                   </tr>
                 </tbody>
@@ -1153,7 +1153,14 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
             <div className="my-8 grid gap-3 sm:grid-cols-2">
               <div className="rounded-[14px] border border-warm-100 bg-white p-6">
-                <Chip tone="test">Dónde se pierde el punto</Chip>
+                <Chip tone="test">Dónde se pierden los puntos</Chip>
+                <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
+                  Requisito 10 — los bots se detectan y se filtran de las
+                  métricas y del recuento de eventos facturados, pero
+                  Sealmetrics no muestra un informe de bots, así que no puedes
+                  inspeccionar qué se ha excluido. El filtrado es real; la
+                  visibilidad que pide el requisito, no.
+                </p>
                 <p className="mt-3 text-[0.95rem] leading-[1.7] text-text-body">
                   Requisito 11 — Sealmetrics no está certificado en ISO 27001 ni
                   SOC 2. Todo lo demás de esa fila se cumple: sin datos
