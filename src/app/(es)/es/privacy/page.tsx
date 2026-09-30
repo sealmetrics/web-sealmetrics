@@ -345,7 +345,10 @@ export default function PrivacyPageEs() {
                 Tu correo de empresa, la marca por la que preguntas y, si los
                 indicas, su sector y sus competidores. El formulario no pide tu
                 nombre. El informe es de organizaciones; no se hace sobre
-                personas.
+                personas. Sólo si marcas la casilla de correos ocasionales,
+                añadimos tu nombre, tu puesto y el dominio de tu empresa,
+                obtenidos de fuentes profesionales públicas a partir de tu
+                correo.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Finalidades y base jurídica.</strong>{" "}
@@ -353,13 +356,15 @@ export default function PrivacyPageEs() {
                 pedido (art. 6.1.b RGPD). (b) Conservar un registro de la
                 solicitud, para evitar el abuso de un servicio gratuito y
                 atender cualquier consulta sobre ella (art. 6.1.f). (c) Sólo
-                para quien pidió el informe antes del 29 de septiembre de 2026
-                y marcó la casilla separada y opcional que el formulario ofrecía
-                hasta entonces: enviarle de vez en cuando informes y novedades
-                (art. 6.1.a RGPD y art. 21 de la LSSI). El formulario ya no
-                ofrece esa casilla. Ese consentimiento se puede retirar cuando
-                se quiera desde el enlace de baja de cualquier correo o
-                escribiendo a privacy@sealmetrics.com.
+                para quien marca la casilla separada, opcional y desmarcada del
+                formulario: enviarle de vez en cuando informes y novedades de
+                Sealmetrics, adaptados a su puesto, y para ello completar su
+                nombre, puesto y empresa (art. 6.1.a RGPD y art. 21 de la
+                LSSI). Del 29 al 30 de septiembre de 2026 el formulario no
+                ofreció la casilla, y a quien lo pidió esos días no se le
+                incluyó. Ese consentimiento se puede retirar cuando se quiera
+                desde el enlace de baja de cualquier correo o escribiendo a
+                privacy@sealmetrics.com.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Destinatarios.</strong>
@@ -394,10 +399,17 @@ export default function PrivacyPageEs() {
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
                   Resend, Inc. (EE. UU.) entrega el informe y, a quien lo
-                  consintió antes del 29 de septiembre de 2026, los correos
-                  ocasionales, con cláusulas
+                  consintió, los correos ocasionales, con cláusulas
                   contractuales tipo y su certificación EU-US Data Privacy
                   Framework.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Clay Labs, Inc. (EE. UU.), sólo para quien marcó la casilla,
+                  recibe su correo y la marca consultada y devuelve su nombre,
+                  su puesto y el dominio de su empresa a partir de fuentes
+                  profesionales públicas, con cláusulas contractuales tipo.
+                  Quien no marca la casilla no llega nunca a Clay.
                 </li>
               </ul>
               <p className="mt-3">
@@ -405,9 +417,9 @@ export default function PrivacyPageEs() {
                 registro de la solicitud se conserva un máximo de 24 meses,
                 como cualquier otro envío de formulario. La relación entre la
                 referencia del informe y tu correo se borra al entregarlo, o a
-                las 72 horas como máximo. Si consentiste los
-                correos ocasionales antes del 29 de septiembre de 2026, tu
-                dirección permanece en esa lista hasta que te des de baja o
+                las 72 horas como máximo. Si consentiste los correos
+                ocasionales, tu dirección y los datos de puesto y empresa
+                permanecen en esa lista y en Clay hasta que te des de baja o
                 retires el consentimiento.
               </p>
             </div>
