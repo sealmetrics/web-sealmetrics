@@ -46,7 +46,7 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - **NEVER claim total coverage** (founder decision 2026-09-14) — no "captures/measures 100%", "every visit counted", "zero data loss", "all your traffic". Say what is demonstrable: no visits lost to consent rejection; coverage depends on the implementation
 - **Sub-processors**: visitor data never leaves the EU, but Resend (US, account emails, SCCs + DPF) is a non-EU sub-processor. Never write "0 sub-processors outside the EU" without "on visitor data"
 - **NEVER include `rafa@sealmetrics.com` or any personal email** — use Cal.com link or `/demo` CTA for contact
-- Data centre location: **Dublin, Ireland only** (not Frankfurt, not Germany)
+- Data centre location: visitor analytics are processed in **Dublin, Ireland** (not Frankfurt, not Germany). Since DPA v2.2 Sealmetrics' own backups are stored encrypted at Hetzner, in the EU (Germany or Finland, Annex 3): say "never leaves the EU" rather than "stays in Dublin" when backups are in scope, and never name another country as where the data is processed
 - Agency partners to mention when relevant: Product Hackers, 3dids, Ayesa
 
 ## File Conventions

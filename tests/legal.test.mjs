@@ -23,11 +23,17 @@ test("the internal note of the canonical policy never reaches the website", () =
   }
 });
 
-test("the web substitutions are applied to every synced document", () => {
+/** The text a reader takes as current: everything but the version history, which
+ * quotes old wording on purpose ("Data Studio instead of Looker Studio"). */
+const current = (text) => text.split(/^## (?:Version history|Historial de versiones)/im)[0];
+
+test("what the documents say matches the product as it is", () => {
   for (const [, target] of DOCUMENTS) {
-    const text = read(target);
+    const text = current(read(target));
     assert.doesNotMatch(text, /Looker Studio/, `${target}: the product is Data Studio`);
     assert.doesNotMatch(text, /[❌✅]/u, `${target}: no emojis on the website`);
+    // Retired on 30 Sep 2026: bots are still detected, AI-agent traffic is not.
+    assert.doesNotMatch(text, /AI agents|agentes de IA|agent detection|detección de agentes/i, target);
   }
 });
 
@@ -54,9 +60,10 @@ test("stripInternalNote removes the whole note and nothing after it", () => {
 
 test("an addition is inserted before its heading, or the sync refuses", () => {
   const md = "## 6. Brand report\n\ntext\n\n## 7. Connector\n";
-  const out = transform(md, "privacy.en.md", () => "### 6.1 Studies\n\nbody\n");
+  const additions = { "privacy.en.md": { before: /^## 7\. /m, file: "x.md" } };
+  const out = transform(md, "privacy.en.md", () => "### 6.1 Studies\n\nbody\n", additions);
   assert.ok(out.indexOf("### 6.1 Studies") < out.indexOf("## 7. Connector"));
-  assert.throws(() => transform("## 6. Only\n", "privacy.en.md", () => "x"));
+  assert.throws(() => transform("## 6. Only\n", "privacy.en.md", () => "x", additions));
 });
 
 test("the versions and dates the pages show are the documents' own", () => {

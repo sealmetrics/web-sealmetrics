@@ -49,27 +49,19 @@ export const DOCUMENTS = [
  * fixed in sealmetrics2 and then deleted from here.
  */
 export const WEB_SUBSTITUTIONS = [
-  // Google reversed the 2022 rebrand in April 2026: the product is Data Studio again.
-  // Confirmed by Rafa on 30 Sep 2026; the canonical v4.0 still says Looker Studio.
-  [/Looker Studio/g, "Data Studio", "product name"],
-  // CLAUDE.md: no emojis on the website. The template's "what not to write" table
-  // uses them as column headers.
-  [/❌ ?/g, "", "no emojis"],
-  [/✅ ?/g, "", "no emojis"],
-  // The house spelling, enforced by the build (`nonstandard-spelling` in seo-audit).
-  // The DPA writes "e-commerce integrations"; the meaning does not change.
-  [/\be-commerce\b/g, "eCommerce", "house spelling"],
+  // Empty since 30 Sep 2026: "Looker Studio", the emojis of the template table and
+  // "e-commerce" were fixed in sealmetrics2 (adinton/sealmetrics2#435). Add an entry
+  // only as a stopgap, with the reason, and remove it once the source is fixed.
 ];
 
 /**
- * Sections inserted before a heading of the canonical text. The downloadable
- * sector studies (published 23 Sep 2026, section 10 of the previous page) collect
- * an email address and are not in the v4.0 draft; dropping them would leave a live
- * form undisclosed.
+ * Sections inserted before a heading of the canonical text, for a processing the
+ * website already runs and the canonical text does not describe yet.
  */
 export const WEB_ADDITIONS = {
-  "privacy.en.md": { before: /^## 7\. /m, file: "additions/privacy-sector-studies.en.md" },
-  "privacy.es.md": { before: /^## 7\. /m, file: "additions/privacy-sector-studies.es.md" },
+  // Empty since 30 Sep 2026: the sector studies section is 6.1 of the canonical
+  // policy now (adinton/sealmetrics2#435). Shape: { "privacy.en.md": { before: /^## 7\. /m,
+  // file: "additions/<name>.en.md" } }, files under src/lib/content/legal/.
 };
 
 export function stripInternalNote(markdown) {
@@ -88,12 +80,12 @@ export function stripInternalNote(markdown) {
   return out.join("\n");
 }
 
-export function transform(markdown, target, readAddition) {
+export function transform(markdown, target, readAddition, additions = WEB_ADDITIONS) {
   let text = stripInternalNote(markdown);
   for (const [pattern, replacement] of WEB_SUBSTITUTIONS) {
     text = text.replace(pattern, replacement);
   }
-  const addition = WEB_ADDITIONS[target];
+  const addition = additions[target];
   if (addition) {
     const match = text.match(addition.before);
     if (!match) throw new Error(`${target}: no heading matches ${addition.before}`);

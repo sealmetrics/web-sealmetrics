@@ -44,7 +44,7 @@
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "7d45b309605883ee",
+    "hash": "ebe120336958e020",
     "date": "2026-09-30"
   },
   "/real-roas/": {
@@ -76,7 +76,7 @@
     "date": "2026-04-25"
   },
   "/terms/": {
-    "hash": "d75eb99cbdbd8861",
+    "hash": "c118abf5a55ff605",
     "date": "2026-09-30"
   },
   "/gdpr-analytics/": {
@@ -96,7 +96,7 @@
     "date": "2026-09-29"
   },
   "/dpa/": {
-    "hash": "26e7406926f78ffb",
+    "hash": "ffebd5302c846266",
     "date": "2026-09-30"
   },
   "/product/": {
@@ -268,7 +268,7 @@
     "date": "2026-09-29"
   },
   "/es/terms/": {
-    "hash": "32b138a718ad6f0d",
+    "hash": "ceb4fabee3528d3d",
     "date": "2026-09-30"
   },
   "/es/consentless-analytics/": {
@@ -284,7 +284,7 @@
     "date": "2026-09-29"
   },
   "/es/dpa/": {
-    "hash": "a292da5a0d9394b6",
+    "hash": "a5b526e1e9bdc9df",
     "date": "2026-09-30"
   },
   "/es/product/": {
@@ -1064,7 +1064,7 @@
     "date": "2026-09-29"
   },
   "/es/privacy/": {
-    "hash": "84233668a3e4ec1c",
+    "hash": "6029005d640df0db",
     "date": "2026-09-30"
   },
   "/es/sla/": {
@@ -1456,11 +1456,11 @@
     "date": "2026-09-30"
   },
   "/es/privacy-template/": {
-    "hash": "b81bcf99e84cc330",
+    "hash": "451089d516d02080",
     "date": "2026-09-30"
   },
   "/privacy-template/": {
-    "hash": "e3ddc12a9149e4a5",
+    "hash": "ced3d35a947459f0",
     "date": "2026-09-30"
   }
 }
