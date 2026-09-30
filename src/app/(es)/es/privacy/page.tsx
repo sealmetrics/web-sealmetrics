@@ -374,7 +374,10 @@ export default function PrivacyPageEs() {
                   terminado en el PDF que va adjunto al correo (Browser Run).
                   Para el PDF recibe el propio informe &mdash;la marca, lo que
                   encontraron los modelos y las recomendaciones&mdash;, nunca tu
-                  correo.
+                  correo. También guarda el informe completo durante 30 días
+                  tras el enlace privado del correo, para que puedas leerlo en
+                  sealmetrics.com; el enlace lleva una clave aleatoria, no tu
+                  correo, y el informe se borra solo al cumplirse los 30 días.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -412,7 +415,8 @@ export default function PrivacyPageEs() {
                 registro de la solicitud se conserva un máximo de 24 meses,
                 como cualquier otro envío de formulario. La relación entre la
                 referencia del informe y tu correo se borra al entregarlo, o a
-                las 72 horas como máximo. Si consentiste los correos
+                las 72 horas como máximo. El informe completo tras el enlace
+                privado se borra a los 30 días. Si consentiste los correos
                 ocasionales, tu dirección permanece en esa lista hasta que te des de baja o
                 retires el consentimiento.
               </p>
