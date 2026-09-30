@@ -320,12 +320,13 @@ export default function PrivacyPage() {
               (a) Generating the report and emailing it to you, because you
               asked for it (Article 6(1)(b) GDPR). (b) Keeping a record of the
               request, to prevent abuse of a free service and to answer any
-              question about it (Article 6(1)(f)). (c) Only for those who
-              requested the report before 29 September 2026 and ticked the
-              separate, optional box the form offered until then: sending
-              occasional reports and product news (Article 6(1)(a) GDPR and
-              Article 21 of Spain&rsquo;s LSSI). The form no longer offers that
-              box. That consent can be withdrawn at any time through the
+              question about it (Article 6(1)(f)). (c) Only for those who tick the
+              separate, optional and unticked box on the form: sending
+              occasional reports and product news from Sealmetrics (Article
+              6(1)(a) GDPR and Article 21 of Spain&rsquo;s
+              LSSI). From 29 to 30 September 2026 the form did not offer the
+              box, and nobody who requested a report on those days was
+              included. That consent can be withdrawn at any time through the
               unsubscribe link in any email or by writing to
               privacy@sealmetrics.com.
             </p>
@@ -361,17 +362,17 @@ export default function PrivacyPage() {
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
                 Resend, Inc. (USA) delivers the report and, to those who
-                consented before 29 September 2026, the occasional emails, covered by Standard Contractual Clauses
-                and its EU-US Data Privacy Framework certification.
+                consented, the occasional emails, covered by Standard
+                Contractual Clauses and its EU-US Data Privacy Framework
+                certification.
               </li>
             </ul>
             <p className="mt-3">
               <strong className="text-text-primary">Retention.</strong> The
               request record is kept for up to 24 months, like any other form
               submission. The link between the report reference and your email
-              is deleted on delivery, or after 72 hours at most. If you consented to occasional emails before 29
-              September 2026, your address stays on that list until you
-              unsubscribe or withdraw consent.
+              is deleted on delivery, or after 72 hours at most. If you consented to occasional emails, your address stays
+              on that list until you unsubscribe or withdraw consent.
             </p>
           </div>
 
