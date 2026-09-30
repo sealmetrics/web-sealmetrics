@@ -63,11 +63,23 @@ type State =
   | { kind: "expired" }
   | { kind: "error" };
 
-// Links inside the report open in a new tab: the frame is sandboxed without
-// same-origin, so a link followed inside it would strand the reader there.
+// Links that leave the report open in a new tab, so a page followed inside the frame
+// does not strand the reader there. In-page anchors (the side navigation: #resumen,
+// #errores…) stay in the frame. Two things broke them on 30 Sep 2026: a document-wide
+// <base target="_blank"> sent them to an empty tab, and a srcdoc document resolves
+// "#errores" against the parent's URL, so the frame tried to load this whole page.
+// `<base href="about:srcdoc">` makes the fragment point at the report itself.
 function withNewTabLinks(html: string): string {
-  const base = '<base target="_blank">';
-  return /<head[^>]*>/i.test(html) ? html.replace(/<head[^>]*>/i, (tag) => `${tag}${base}`) : base + html;
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const base = doc.createElement("base");
+  base.setAttribute("href", "about:srcdoc");
+  doc.head.prepend(base);
+  for (const link of Array.from(doc.querySelectorAll("a[href]"))) {
+    if ((link.getAttribute("href") ?? "").startsWith("#")) continue;
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  }
+  return `<!doctype html>${doc.documentElement.outerHTML}`;
 }
 
 export function BrandReportViewer({ locale }: { locale: Locale }) {
@@ -138,9 +150,10 @@ export function BrandReportViewer({ locale }: { locale: Locale }) {
         <iframe
           className="sig-report-viewer-frame"
           title={t.frameTitle}
-          // No allow-scripts and no allow-same-origin: the report is drawn, not run,
-          // and it cannot reach this page or its storage.
-          sandbox="allow-popups allow-popups-to-escape-sandbox"
+          // No allow-scripts: the report is drawn, never run, so same-origin gives it no
+          // way to reach this page or its storage. Same-origin is what lets the side
+          // navigation's anchors scroll the frame; in an opaque origin they do nothing.
+          sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox"
           referrerPolicy="no-referrer"
           srcDoc={withNewTabLinks(state.html)}
         />
