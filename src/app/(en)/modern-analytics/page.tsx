@@ -40,7 +40,6 @@ export const metadata: Metadata = {
     "modern web analytics",
     "cookieless analytics",
     "first-party analytics",
-    "ai agent analytics",
     "mcp analytics",
     "unmodeled analytics",
     "no sampling analytics",
@@ -56,7 +55,7 @@ const faqs = [
   },
   {
     q: "How is this different from cookieless tools like Plausible or Fathom?",
-    a: "Lightweight cookieless tools focus on privacy and simplicity but stop at page-level metrics. Modern analytics adds full last-click attribution, conversion items with denormalized properties, micro-conversions, agent detection, content groups, and an MCP server so AI agents can query the warehouse directly. It's the difference between a privacy-friendly counter and a decision-grade analytics warehouse.",
+    a: "Lightweight cookieless tools focus on privacy and simplicity but stop at page-level metrics. Modern analytics adds full last-click attribution, conversion items with denormalized properties, micro-conversions, content groups, and an MCP server so AI agents can query the warehouse directly. It's the difference between a privacy-friendly counter and a decision-grade analytics warehouse.",
   },
   {
     q: "Why does \"no modeling\" matter?",

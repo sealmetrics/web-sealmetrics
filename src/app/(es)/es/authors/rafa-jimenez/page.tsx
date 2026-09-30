@@ -128,7 +128,7 @@ export default function Page() {
               { n: "Arquitectura RGPD", d: "Cómo diseñar analítica que evita la recolección de datos personales por arquitectura, no por capas de consentimiento." },
               { n: "Analítica eCommerce", d: "Lo que los equipos DTC y retail europeos realmente necesitan de un stack analítico." },
               { n: "Schrems II & residencia de datos", d: "Por qué UE-hosted importa y cómo las cadenas de sub-procesadores comprometen compliance." },
-              { n: "Analítica AI-native", d: "MCP servers, medición de tráfico de agentes IA y data warehouses listos para LLMs." },
+              { n: "Analítica AI-native", d: "MCP servers y data warehouses listos para LLMs." },
             ].map((t) => (
               <article key={t.n} className="bg-white border border-warm-100 rounded-xl p-6">
                 <h3 className="text-[17px] font-semibold text-ink tracking-[-0.015em]">{t.n}</h3>

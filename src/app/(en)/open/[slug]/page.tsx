@@ -2660,11 +2660,9 @@ function ChapterSevenBody() {
     "Designed for GDPR · DPA signed by default",
     "MCP server + BigQuery export + full API",
     "Unlimited sites and users",
-    "AI agent traffic excluded from billing once Agent Analytics ships",
   ];
 
   const neverExtra = [
-    "AI agent traffic (ChatGPT, Claude, Perplexity, etc.), once Agent Analytics ships",
     "Bot traffic — excluded before it counts",
     "First overage month per year — free",
     "DPA signature and legal review",
@@ -2835,15 +2833,6 @@ function ChapterSevenBody() {
         </div>
       </div>
 
-      <blockquote
-        className="my-10 border-l-[3px] pl-6 py-2 italic text-[1.15rem] leading-[1.55] text-ink-2"
-        style={{ borderColor: "#2E5C8A" }}
-      >
-        "AI agents — ChatGPT, Claude, Perplexity — are a new category of
-        traffic you need visibility into. We track them for free. Charging
-        for the data that shows you how AI reads your site would be
-        backwards."
-      </blockquote>
 
       {/* Section 2 · Three plans */}
       <h2

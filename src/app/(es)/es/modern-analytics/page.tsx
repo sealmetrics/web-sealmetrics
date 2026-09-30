@@ -55,7 +55,7 @@ const faqs = [
   },
   {
     q: "¿En qué se diferencia de herramientas cookieless como Plausible o Fathom?",
-    a: "Las herramientas cookieless ligeras se centran en privacidad y simplicidad pero se quedan en métricas de página. La analítica moderna añade atribución last-click completa, conversion items con propiedades denormalizadas, microconversiones, detección de agentes, content groups y un servidor MCP para que los agentes IA consulten directamente. Es la diferencia entre un contador privacy-friendly y un warehouse analítico decision-grade.",
+    a: "Las herramientas cookieless ligeras se centran en privacidad y simplicidad pero se quedan en métricas de página. La analítica moderna añade atribución last-click completa, conversion items con propiedades denormalizadas, microconversiones, content groups y un servidor MCP para que los agentes IA consulten directamente. Es la diferencia entre un contador privacy-friendly y un warehouse analítico decision-grade.",
   },
   {
     q: "¿Por qué importa el \"sin modelado\"?",

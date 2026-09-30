@@ -53,9 +53,9 @@ const preconditions = [
     us: "40+ named, read-only tools",
   },
   {
-    aspect: "Bot and AI-agent traffic",
+    aspect: "Traditional bot traffic",
     them: "Mixed into human sessions",
-    us: "Detected and reported separately",
+    us: "Filtered out of reports and billing",
   },
   {
     aspect: "Data residency",
@@ -482,15 +482,7 @@ export default function Page() {
               events in total — a one-time allowance, not a monthly one — and it is provisioned by
               the agent itself: Claude or Codex creates the account, generates the tracking pixel and
               builds the first report from a single prompt. Paid tiers keep unlimited sites and add
-              MCP plus BigQuery export and full API access.{" "}
-              <Link
-                href="/blog/ai-agent-traffic-analytics"
-                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
-              >
-                AI agent traffic will be tracked separately
-              </Link>{" "}
-              once Agent Analytics ships, which is in development, and will not count against the
-              event limit.
+              MCP plus BigQuery export and full API access.
             </p>
             <p>
               That is what makes growth scalable rather than linear. A team that adds Germany, France

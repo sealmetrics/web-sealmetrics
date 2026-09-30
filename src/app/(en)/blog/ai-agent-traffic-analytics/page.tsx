@@ -68,7 +68,7 @@ export default function AIAgentTrafficPage() {
             <li>AI assistants (GPT, Claude, Perplexity, Google AI Overviews) read your pages and send visitors to them, and when no referrer or source parameter arrives, traditional analytics files those visits as "direct" or "unassigned."</li>
             <li>AI crawlers do not execute JavaScript and often omit referrer headers — client-side analytics like GA4 cannot detect these visits at all.</li>
             <li>There is no reliable cross-site benchmark for how much traffic this is yet. Size it on your own site: crawler user agents in server logs, and AI referrers and source parameters in your analytics.</li>
-            <li>Sealmetrics Agent Analytics — in development, not yet live — will identify each AI agent type (GPT, Claude, Perplexity) as a distinct source, tracked separately from human traffic and never billed against your event limit.</li>
+            <li>No JavaScript tag can see a crawler that never runs it. What analytics can show is the people who click through from an AI answer, grouped by referrer domain and source parameter into a channel of their own.</li>
           </ul>
         </div>
 
@@ -175,30 +175,25 @@ export default function AIAgentTrafficPage() {
           </ul>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
-            How Sealmetrics will track AI agent traffic
+            What you can measure in Sealmetrics today
           </h2>
 
           <p>
-            Sealmetrics Agent Analytics is in development and not yet
-            available on accounts. When it ships, it will identify AI agent
-            sessions through{" "}
+            Sealmetrics does not detect or classify AI agents, and does not
+            report crawler visits: a crawler that does not execute JavaScript
+            never reaches a{" "}
             <Link href="/how-it-works" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party</Link>{" "}
-            detection — analyzing request patterns, user agent
-            strings, and behavioral signatures that distinguish AI agents from
-            human visitors and traditional crawlers.
+            tag, ours included. For the machines themselves, your server logs
+            remain the source.
           </p>
 
           <p>
-            Each AI agent type (GPT, Claude, Perplexity, Google AI Overview) will
-            be tracked as a distinct source, shown alongside your human traffic
-            in its own report — and excluded from your billable event count.
-          </p>
-
-          <p>
-            The result is visibility into a channel that did not exist two years
-            ago and is growing rapidly. You can see which pages AI agents
-            prefer, which products they recommend, and whether AI-driven
-            visitors convert.{" "}
+            What it does measure is the people who click through from an
+            assistant&apos;s answer. Those visits arrive with a referrer such as
+            chatgpt.com or perplexity.ai, or with a source parameter, and a
+            channel rule can group them into their own channel, so you can see
+            which pages they land on and whether they convert, like any other
+            source.{" "}
             <Link
               href="/product"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
@@ -210,7 +205,7 @@ export default function AIAgentTrafficPage() {
         </div>
 
         <CommercialModule
-          hook="AI agents are already landing on your site — most analytics never sees them. Ask where this traffic shows up in Sealmetrics and what is on the roadmap."
+          hook="Visitors are already clicking through from AI answers. See how Sealmetrics groups them into a channel of their own and ties them to revenue."
         />
 
         {/* Related */}

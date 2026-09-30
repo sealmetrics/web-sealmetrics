@@ -34,7 +34,6 @@ Sealmetrics avoids the consent part of this problem by using first-party server-
 - First-party infrastructure (resistant to ad blockers)
 - No data sampling at any volume
 - Real-time data processing
-- AI agent traffic counted as a distinct channel (ChatGPT, Claude, Perplexity, Google AI Overviews)
 
 ### Intelligence
 - LENS AI: ask business questions in plain language and get answers grounded in your complete data. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap, not live today
@@ -105,8 +104,8 @@ Visitor analytics data is stored exclusively on EU servers and never leaves the 
 **What is LENS AI?**
 LENS is Sealmetrics' AI layer. It answers business questions about your analytics in plain language, grounded in your complete data, and turns those answers into reports. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap and are not live today.
 
-**What is AI Agent Analytics?**
-AI Agent Analytics tracks traffic from AI agents — ChatGPT, Claude, Perplexity, Google AI Overviews, and others — as a distinct channel alongside human traffic. This is included free in all plans. Most analytics tools cannot distinguish AI agent traffic from human traffic.
+**Does Sealmetrics detect AI agents?**
+No. Sealmetrics does not detect, classify or report AI agents or crawlers. Crawlers do not run the JavaScript tag, so server logs are the source for them. Visitors who click through from an AI answer arrive as referral traffic and can be grouped into their own channel with a channel rule.
 
 **What data does Sealmetrics capture?**
 Aggregate counts of pageviews, sessions (anonymous visit windows), referrers, UTM parameters, browser type, screen size, scroll depth, clicks, conversions and ecommerce transactions — without consent loss, with no sampling, no per-user identifier and no cross-session stitching.
@@ -287,7 +286,7 @@ Q: Does Sealmetrics work with ad blockers?
 A: It is much less affected. In first-party mode the collection endpoint runs on the customer's own subdomain, so it is not on the lists ad blockers use to target known third-party analytics endpoints like google-analytics.com. In our test of five major ad blockers it passed all five; some loss is still possible.
 
 Q: How much does Sealmetrics cost?
-A: Pricing starts at €499/month billed annually (Growth plan, 5M human events/month). Scale plan is €899/month (15M events). Every plan includes all features — LENS AI, revenue attribution, API, MCP server, BigQuery export. There is no time-limited trial: every account starts with 1M human events free — in total over the life of the account, not per month — with no card, opened from the web or provisioned from an MCP-capable AI assistant. When the millionth event is used, whether that takes a week or a year, you choose a plan and billing starts. AI agent traffic (ChatGPT, Claude, Perplexity) is tracked free and does not count against event limits.
+A: Pricing starts at €499/month billed annually (Growth plan, 5M human events/month). Scale plan is €899/month (15M events). Every plan includes all features — LENS AI, revenue attribution, API, MCP server, BigQuery export. There is no time-limited trial: every account starts with 1M human events free — in total over the life of the account, not per month — with no card, opened from the web or provisioned from an MCP-capable AI assistant. When the millionth event is used, whether that takes a week or a year, you choose a plan and billing starts.
 
 Q: What integrations does Sealmetrics support?
 A: Google Ads, Meta Ads, Shopify, Prestashop, Magento, WooCommerce, BigQuery, Data Studio, Segment, Zapier, and native MCP server for AI agents (Claude, ChatGPT, custom LLMs). Full integration list at https://sealmetrics.com/integrations.

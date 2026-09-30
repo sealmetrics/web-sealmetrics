@@ -1,6 +1,6 @@
 export const pricingSignalFaqs = {
   en: [
-    ["What counts as a human event?", "A real visitor interaction such as a pageview, click, conversion, form submission or add-to-cart. Traditional bots and detected AI-agent traffic are reported separately and do not count toward the human-event allowance."],
+    ["What counts as a human event?", "A real visitor interaction such as a pageview, click, conversion, form submission or add-to-cart. Traditional bots are filtered out and do not count toward the human-event allowance."],
     ["What happens if I exceed my event allowance?", "Collection does not stop, throttle or start sampling. Growth moves to Scale only after two consecutive non-forgiven overage months and with notice; Scale customers are contacted to discuss Enterprise."],
     ["Is there a free trial?", "There is no time-limited trial. Every account starts with 1M human events free — in total over the life of the account, not per month — and no card. The allowance does not expire: when the millionth event is used, whether that takes a week or a year, you choose a plan and billing starts."],
     ["Are all analytics capabilities included?", "Core analytics, revenue attribution, API, MCP, BigQuery and LENS with your own model key are included on every plan, Agentic included: the free first million has the same features as Growth. Growth adds email support. Scale adds webhooks, audit logs, priority support and managed Private AI tokens. Enterprise adds isolated processing and dedicated governance."],
@@ -10,7 +10,7 @@ export const pricingSignalFaqs = {
     ["Do you charge per-event overages?", "No. There is no variable per-event line item. Sustained growth moves the account to the next fixed plan under the published overage policy."],
   ],
   es: [
-    ["¿Qué cuenta como evento humano?", "Una interacción real: pageview, clic, conversión, envío de formulario o add-to-cart. Los bots tradicionales y el tráfico detectado de agentes IA se informan por separado y no consumen el límite de eventos humanos."],
+    ["¿Qué cuenta como evento humano?", "Una interacción real: pageview, clic, conversión, envío de formulario o add-to-cart. Los bots tradicionales se filtran y no consumen el límite de eventos humanos."],
     ["¿Qué pasa si supero el límite de eventos?", "La captura no se detiene, limita ni empieza a muestrear. Growth pasa a Scale sólo tras dos meses consecutivos de exceso no perdonado y con aviso; con Scale te contactamos para valorar Enterprise."],
     ["¿Hay prueba gratuita?", "No hay una prueba con fecha de caducidad. Cada cuenta empieza con 1M de eventos humanos gratis — en total durante la vida de la cuenta, no al mes — y sin tarjeta. El saldo no caduca: cuando se consume el millón, tarde una semana o un año, eliges plan y empieza la facturación."],
     ["¿Están incluidas todas las capacidades analíticas?", "Analítica core, atribución de ingresos, API, MCP, BigQuery y LENS con tu propia clave de modelo están incluidos en todos los planes, también en Agentic: el primer millón gratis tiene las mismas funciones que Growth. Growth añade soporte por email. Scale añade webhooks, logs de auditoría, soporte prioritario y tokens de Private AI gestionada. Enterprise añade procesamiento aislado y governance dedicada."],
