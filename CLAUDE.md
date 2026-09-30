@@ -56,6 +56,7 @@ Ported from the Sites redesign. **v3 tokens still exist in `globals.css` and mus
 - Layout components: `src/components/layout/[Name].tsx`
 - Reusable UI: `src/components/ui/[Name].tsx`
 - Content data: `src/lib/content/`
+- Legal texts (/privacy, /dpa, /terms, /privacy-template): `src/lib/content/legal/*.md`, copied from sealmetrics2 `docs/legal/` by `node scripts/sync-legal.mjs`. Edit them in sealmetrics2, never here; the only web-side changes are the substitutions and additions listed in the script. `LEGAL_EFFECTIVE_DATE` (`src/lib/legal/documents.ts`) is when the DPA and Terms bind existing customers
 - Design tokens: `src/app/globals.css` (@theme block)
 
 ## SEO Rules (apply to every page)

@@ -44,8 +44,8 @@
     "date": "2026-09-04"
   },
   "/privacy/": {
-    "hash": "1de57928f17682fb",
-    "date": "2026-09-29"
+    "hash": "7d45b309605883ee",
+    "date": "2026-09-30"
   },
   "/real-roas/": {
     "hash": "8b074797d8e9e224",
@@ -56,8 +56,8 @@
     "date": "2026-09-29"
   },
   "/security/": {
-    "hash": "b3a561bbe9064d22",
-    "date": "2026-09-14"
+    "hash": "a84d56dad4e5f7a9",
+    "date": "2026-09-30"
   },
   "/ai-analytics/": {
     "hash": "6d292cdccfb25ee6",
@@ -76,8 +76,8 @@
     "date": "2026-04-25"
   },
   "/terms/": {
-    "hash": "424f50fdbcfc031c",
-    "date": "2026-08-10"
+    "hash": "d75eb99cbdbd8861",
+    "date": "2026-09-30"
   },
   "/gdpr-analytics/": {
     "hash": "803a3328e71f24fd",
@@ -96,8 +96,8 @@
     "date": "2026-09-29"
   },
   "/dpa/": {
-    "hash": "938f5e4b0f83e1d9",
-    "date": "2026-08-10"
+    "hash": "26e7406926f78ffb",
+    "date": "2026-09-30"
   },
   "/product/": {
     "hash": "ceb3d7750cdbf4ce",
@@ -252,8 +252,8 @@
     "date": "2026-09-29"
   },
   "/es/security/": {
-    "hash": "b25b35764b8fc47d",
-    "date": "2026-09-14"
+    "hash": "7a34b7a99179a59c",
+    "date": "2026-09-30"
   },
   "/es/ai-analytics/": {
     "hash": "83d977cb1423ca22",
@@ -268,8 +268,8 @@
     "date": "2026-09-29"
   },
   "/es/terms/": {
-    "hash": "4802903bcca144e7",
-    "date": "2026-08-10"
+    "hash": "32b138a718ad6f0d",
+    "date": "2026-09-30"
   },
   "/es/consentless-analytics/": {
     "hash": "3ebdf6cbd4ea014f",
@@ -284,8 +284,8 @@
     "date": "2026-09-29"
   },
   "/es/dpa/": {
-    "hash": "d3f279a0e6ced256",
-    "date": "2026-08-10"
+    "hash": "a292da5a0d9394b6",
+    "date": "2026-09-30"
   },
   "/es/product/": {
     "hash": "966ac5f3c6985828",
@@ -448,8 +448,8 @@
     "date": "2026-09-15"
   },
   "/es/for/finance/": {
-    "hash": "8ad2afa61d6caae2",
-    "date": "2026-09-21"
+    "hash": "6e5d1309f2535b27",
+    "date": "2026-09-30"
   },
   "/es/for/agencies/": {
     "hash": "128124fa2ace0c62",
@@ -764,8 +764,8 @@
     "date": "2026-09-15"
   },
   "/for/finance/": {
-    "hash": "7fc9846825821b51",
-    "date": "2026-09-21"
+    "hash": "e0fb35026e12ac99",
+    "date": "2026-09-30"
   },
   "/for/agencies/": {
     "hash": "0e888e7e03ac1358",
@@ -1064,8 +1064,8 @@
     "date": "2026-09-29"
   },
   "/es/privacy/": {
-    "hash": "dfdf24b7265e9604",
-    "date": "2026-09-29"
+    "hash": "84233668a3e4ec1c",
+    "date": "2026-09-30"
   },
   "/es/sla/": {
     "hash": "e2d58aadeb110db9",
@@ -1453,6 +1453,14 @@
   },
   "/terms-of-use/": {
     "hash": "34103ed2df68cc0e",
+    "date": "2026-09-30"
+  },
+  "/es/privacy-template/": {
+    "hash": "b81bcf99e84cc330",
+    "date": "2026-09-30"
+  },
+  "/privacy-template/": {
+    "hash": "e3ddc12a9149e4a5",
     "date": "2026-09-30"
   }
 }
