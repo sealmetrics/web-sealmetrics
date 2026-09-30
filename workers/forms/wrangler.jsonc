@@ -32,5 +32,13 @@
         "period": 60
       }
     }
+  ],
+  // Full brand reports behind the private link in the email, 30-day TTL.
+  // See README, "Full brand report link".
+  "kv_namespaces": [
+    {
+      "binding": "BRAND_REPORTS",
+      "id": "5f368ea091684298bddf2cf1f946ef4e"
+    }
   ]
 }
