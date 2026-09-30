@@ -929,6 +929,31 @@
   text-transform: none;
   transition: transform 0.12s ease;
 }
+/* The caption carries two actions: the full sample report (outlined) and the form. */
+.sig-brand-report-actions {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+.sig-brand-page a.sig-brand-report-full {
+  display: inline-flex;
+  align-items: center;
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 10px 16px;
+  font-family: var(--font-sans), sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: transform 0.12s ease;
+}
+.sig-brand-page a.sig-brand-report-full:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--ink);
+}
 .sig-brand-page a.sig-brand-report-cta:hover {
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--ink);

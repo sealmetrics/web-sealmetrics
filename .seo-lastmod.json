@@ -1108,11 +1108,11 @@
     "date": "2026-09-14"
   },
   "/ai-brand-monitoring/": {
-    "hash": "b8d585dbb777ec4a",
+    "hash": "2a3ef027ec96fd22",
     "date": "2026-09-30"
   },
   "/es/ai-brand-monitoring/": {
-    "hash": "712b8aecb51be045",
+    "hash": "8e4384b2ffba8168",
     "date": "2026-09-30"
   },
   "/ai-brand-monitoring/thank-you/": {
@@ -1461,6 +1461,22 @@
   },
   "/es/ai-brand-monitoring/report/": {
     "hash": "0bac67410e4ad010",
+    "date": "2026-09-30"
+  },
+  "/ai-brand-monitoring/sample-report/": {
+    "hash": "7f31fe56ce1375b4",
+    "date": "2026-09-30"
+  },
+  "/es/ai-brand-monitoring/sample-report/": {
+    "hash": "d5cbe3cded444231",
+    "date": "2026-09-30"
+  },
+  "/es/samples/ai-brand-report-acme/": {
+    "hash": "2f4c4042878920ac",
+    "date": "2026-09-30"
+  },
+  "/samples/ai-brand-report-acme/": {
+    "hash": "5bd7773029d33e8b",
     "date": "2026-09-30"
   }
 }

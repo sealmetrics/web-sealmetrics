@@ -142,3 +142,14 @@
 .sig-report-viewer-notice div {
   margin-top: 24px;
 }
+
+/* Secondary action beside the acid button: outlined, same geometry. */
+.sig-report-viewer-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+.sig-report-viewer-actions a.sig-report-viewer-secondary {
+  background: var(--white);
+}
