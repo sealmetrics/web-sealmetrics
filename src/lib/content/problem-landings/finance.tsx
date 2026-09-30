@@ -19,7 +19,7 @@ import type { ProblemLandingContent } from "./types";
  *   1 day, hourly aggregates 90 days, daily aggregates and conversions 24 months;
  *   no ISO 27001 or SOC 2
  * - /dpa (v2.0): Annex 1 data inventory; Annex 2 security measures (TLS 1.2+,
- *   AES-256, server-side pseudonymisation of the session marker, per-client
+ *   encryption of application secrets (v2.2 dropped the unverified AES-256), server-side pseudonymisation of the session marker, per-client
  *   isolation, TTL retention, RBAC, MFA, logged access); Annex 3 sub-processors
  *   (Noraina, Ireland; Scaleway, Paris; Resend, US, service emails, no visitor
  *   data); clause 4.6 DPIA assistance; 4.7 audits; 4.8 30-day export then
@@ -210,7 +210,7 @@ export const financeEn: ProblemLandingContent = {
     items: [
       { role: "Marketing and acquisition", need: "Know which channels and campaigns bring applications, not just clicks.", how: "Applications and lead forms by source, medium and campaign, credited to the last click of each session, without consent loss.", link: { label: "Revenue attribution", href: "/use-cases/revenue-attribution/" } },
       { role: "DPO and compliance", need: "Document what is processed, for which purpose and where.", how: "The Article 28 DPA with its data inventory and sub-processors, assistance with impact assessments, and country analyses that are self-assessments, not certifications.", link: { label: "Analytics for DPOs", href: "/for/dpo/" } },
-      { role: "Information security", need: "Assess access, encryption and the vendor's own controls.", how: "TLS in transit and AES-256 at rest, role-based access and 2FA, audit logs from Scale, IP allowlist and isolated processing on Enterprise.", link: { label: "Security overview", href: "/security/" } },
+      { role: "Information security", need: "Assess access, encryption and the vendor's own controls.", how: "TLS in transit and application-level encryption of API keys and credentials, role-based access and 2FA, audit logs from Scale, IP allowlist and isolated processing on Enterprise.", link: { label: "Security overview", href: "/security/" } },
       { role: "Management", need: "One acquisition number that marketing and compliance both accept.", how: "Measured totals reconciled with the applications your own systems booked, before any channel is compared.", link: { label: "Single source of truth", href: "/use-cases/single-source-of-truth/" } },
     ],
   },
@@ -410,7 +410,7 @@ export const financeEs: ProblemLandingContent = {
     items: [
       { role: "Marketing y captación", need: "Saber qué canales y campañas traen solicitudes, no solo clics.", how: "Solicitudes y formularios por source, medium y campaign, atribuidos al último clic de cada sesión y sin pérdida por consentimiento.", link: { label: "Atribución de ingresos", href: "/es/use-cases/revenue-attribution/" } },
       { role: "DPO y cumplimiento", need: "Documentar qué se trata, con qué finalidad y dónde.", how: "El contrato de encargo del artículo 28 con su inventario de datos y sus subencargados, asistencia con las evaluaciones de impacto y análisis por país que son autoevaluaciones, no certificaciones.", link: { label: "Analítica para DPOs", href: "/es/for/dpo/" } },
-      { role: "Seguridad de la información", need: "Evaluar el acceso, el cifrado y los controles del propio proveedor.", how: "TLS en tránsito y AES-256 en reposo, acceso por roles y doble factor, logs de auditoría desde Scale, lista de IP permitidas y procesamiento aislado en Enterprise.", link: { label: "Visión general de seguridad", href: "/es/security/" } },
+      { role: "Seguridad de la información", need: "Evaluar el acceso, el cifrado y los controles del propio proveedor.", how: "TLS en tránsito y cifrado a nivel de aplicación de claves de API y credenciales, acceso por roles y doble factor, logs de auditoría desde Scale, lista de IP permitidas y procesamiento aislado en Enterprise.", link: { label: "Visión general de seguridad", href: "/es/security/" } },
       { role: "Dirección", need: "Una cifra de captación que acepten a la vez marketing y cumplimiento.", how: "Totales medidos y conciliados con las solicitudes que registraron tus sistemas antes de comparar ningún canal.", link: { label: "Fuente única de verdad", href: "/es/use-cases/single-source-of-truth/" } },
     ],
   },
