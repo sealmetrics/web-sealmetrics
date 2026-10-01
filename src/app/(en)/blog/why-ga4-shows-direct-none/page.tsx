@@ -318,6 +318,13 @@ export default function WhyGa4ShowsDirectNonePage() {
               campaign reporting is covered in{" "}
               <Link href="/use-cases/revenue-attribution" className={link}>campaign revenue attribution</Link>.
             </p>
+            <p>
+              Running Sealmetrics alongside GA4 does not require ripping anything
+              out: it tags the same links, reads the same landing pages, and its{" "}
+              <Link href="/pricing" className={link}>pricing plans</Link>{" "}
+              scale with traffic volume rather than with the number of reports you
+              pull.
+            </p>
           </div>
 
           <CommercialModule hook="How much of your GA4 direct traffic is really direct? We run both tools side by side and show you, channel by channel, where the source was lost." />
