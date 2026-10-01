@@ -148,7 +148,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
 }
 .sig-report-viewer-actions a.sig-report-viewer-secondary {
   background: var(--white);
@@ -172,11 +172,14 @@
   transform: translate(-2px, -2px);
   box-shadow: 5px 5px 0 var(--ink);
 }
+/* The form takes its own row under the buttons: a flex item with a max-width fits
+   beside them, so the row break comes from the full basis and the width cap moves
+   to its contents. */
 .sig-report-share {
-  flex-basis: 100%;
+  flex: 0 0 100%;
   display: grid;
   gap: 14px;
-  max-width: 560px;
+  justify-items: start;
   margin-top: 8px;
   padding: 18px;
   background: var(--white);
@@ -243,4 +246,11 @@
   color: var(--muted);
   font-size: 12px;
   line-height: 1.45;
+}
+.sig-report-share > * {
+  width: 100%;
+  max-width: 560px;
+}
+.sig-report-share > .sig-report-share-actions {
+  width: auto;
 }
