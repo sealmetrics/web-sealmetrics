@@ -202,6 +202,9 @@ const EVENT_MAP: Record<string, Mapping> = {
   // A sector study sent to the visitor's inbox. Registered here on the day the form
   // shipped: an unmapped name is dropped without a trace by the guard below.
   lead_study_download: { kind: "micro", name: "study_download" },
+  // Someone shared their report from the report page. One per send, with how many
+  // recipients; the addresses never reach analytics.
+  brand_report_share: { kind: "micro", name: "brand_report_share" },
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };
@@ -282,6 +285,11 @@ export function getContentGroup(pathname: string): string {
   // Landings de campaña (tráfico de pago). Agrupadas para poder aislar su
   // embudo del resto del site sin tocar esto por cada landing nueva.
   if (path.startsWith("/roas-real") || path.startsWith("/real-roas")) return "landing";
+  // The AI brand report itself: the private one behind the emailed link and the Acme
+  // sample. The landing and its thank-you page stay out, so the group counts reads.
+  if (path === "/ai-brand-monitoring/report" || path === "/ai-brand-monitoring/sample-report") {
+    return "ai-brand-report";
+  }
   return "other";
 }
 

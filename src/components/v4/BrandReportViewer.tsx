@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FORMS_WORKER_BASE } from "@/lib/forms/submit";
+import { ReportShare } from "@/components/v4/ReportShare";
 
 type Locale = "en" | "es";
 
@@ -58,7 +59,7 @@ const copy = {
 
 type State =
   | { kind: "loading" }
-  | { kind: "ready"; html: string }
+  | { kind: "ready"; html: string; token: string }
   | { kind: "missing" }
   | { kind: "expired" }
   | { kind: "error" };
@@ -101,7 +102,7 @@ export function BrandReportViewer({ locale }: { locale: Locale }) {
       .then(async (response) => {
         if (response.status === 404) return setState({ kind: "expired" });
         if (!response.ok) return setState({ kind: "error" });
-        setState({ kind: "ready", html: await response.text() });
+        setState({ kind: "ready", html: await response.text(), token });
       })
       .catch((error: unknown) => {
         if (!(error instanceof DOMException && error.name === "AbortError")) setState({ kind: "error" });
@@ -136,6 +137,7 @@ export function BrandReportViewer({ locale }: { locale: Locale }) {
             <a href={downloadUrl} download={t.downloadName}>
               {t.download}
             </a>
+            <ReportShare locale={locale} token={state.token} />
           </div>
         ) : null}
       </section>

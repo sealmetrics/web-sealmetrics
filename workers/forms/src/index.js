@@ -7,6 +7,7 @@ const FORM_TYPES = new Set([
   "growth",
   "brand_report",
   "study_download",
+  "report_share",
 ]);
 
 // Free-mail, ISP and throwaway domains. Used by `brand_report` (which refuses
@@ -332,6 +333,34 @@ function validatePayload(type, payload) {
     return links.length <= 6 && links.every(validUrl);
   }
 
+  // Sharing a brand report with colleagues: no email of the person sharing, only the
+  // report's key and up to five recipients. Work addresses only, like the report form,
+  // so the button cannot be pointed at a list of free-mail inboxes; and the optional
+  // name is plain text with no link or address in it, because it is printed in an
+  // email we send to people who never asked us for anything.
+  if (type === "report_share") {
+    if (typeof payload.token !== "string" || !REPORT_TOKEN_RE.test(payload.token)) return false;
+    if (payload.language !== "en" && payload.language !== "es") return false;
+    const recipients = Array.isArray(payload.recipients) ? payload.recipients : [];
+    if (recipients.length < 1 || recipients.length > SHARE_MAX_PER_REQUEST) return false;
+    const seen = new Set();
+    for (const value of recipients) {
+      if (typeof value !== "string") return false;
+      const address = value.trim().toLowerCase();
+      if (!EMAIL_RE.test(address) || address.length > 254) return false;
+      if (PERSONAL_EMAIL_DOMAINS.has(address.split("@")[1])) return false;
+      if (seen.has(address)) return false;
+      seen.add(address);
+    }
+    const name = payload.sender_name;
+    if (name === undefined || name === null || name === "") return true;
+    return (
+      typeof name === "string" &&
+      name.trim().length <= 60 &&
+      !/https?:|www\.|@|<|>|\.[a-z]{2,}\//i.test(name)
+    );
+  }
+
   const email = typeof payload.email === "string" ? payload.email.trim() : "";
   if (!EMAIL_RE.test(email) || email.length > 254) return false;
   if (type === "calculator" || type === "growth") return true;
@@ -410,6 +439,7 @@ function endpointFor(type, env) {
   if (type === "careers") return env.N8N_CAREERS_URL;
   if (type === "brand_report") return env.N8N_BRAND_REPORT_URL;
   if (type === "study_download") return env.N8N_STUDY_DOWNLOAD_URL;
+  if (type === "report_share") return env.N8N_REPORT_SHARE_URL;
   return env.N8N_WEBFORM_LEAD_URL;
 }
 
@@ -506,6 +536,34 @@ async function handleSubmission(request, env) {
     return json(request, env, { ok: false, error: "service_unavailable" }, 503);
   }
 
+  let forward = body.payload;
+  let shareCountKey = null;
+  let shareCount = 0;
+  if (body.type === "report_share") {
+    // The report must exist (and not have expired), and one report can be shared with
+    // at most SHARE_MAX_PER_REPORT people over its 30 days, counted here in KV.
+    if (!env.BRAND_REPORTS?.get) {
+      return json(request, env, { ok: false, error: "service_unavailable" }, 503);
+    }
+    const html = await env.BRAND_REPORTS.get(forward.token);
+    if (html === null) {
+      return json(request, env, { ok: false, error: "report_not_found" }, 404);
+    }
+    shareCountKey = `share-count:${forward.token}`;
+    shareCount = Number((await env.BRAND_REPORTS.get(shareCountKey)) || "0");
+    const recipients = forward.recipients.map((r) => r.trim().toLowerCase());
+    if (shareCount + recipients.length > SHARE_MAX_PER_REPORT) {
+      return json(request, env, { ok: false, error: "share_limit" }, 429);
+    }
+    forward = {
+      token: forward.token,
+      language: forward.language,
+      recipients,
+      sender_name: typeof forward.sender_name === "string" ? forward.sender_name.trim() : "",
+      report_title: reportTitle(html),
+    };
+  }
+
   try {
     const response = await fetch(endpoint, {
       method: "POST",
@@ -513,11 +571,16 @@ async function handleSubmission(request, env) {
         "Content-Type": "application/json",
         "User-Agent": "Sealmetrics-Forms/1.0",
       },
-      body: JSON.stringify(body.payload),
+      body: JSON.stringify(forward),
       signal: AbortSignal.timeout(12_000),
     });
     if (!response.ok) {
       return json(request, env, { ok: false, error: "upstream_rejected" }, 502);
+    }
+    if (shareCountKey) {
+      await env.BRAND_REPORTS.put(shareCountKey, String(shareCount + forward.recipients.length), {
+        expirationTtl: REPORT_TTL_SECONDS,
+      });
     }
     return json(request, env, { ok: true });
   } catch {
@@ -546,7 +609,27 @@ async function handleSubmission(request, env) {
 // Enroutia never receives the email, so the stored HTML cannot contain it.
 // ---------------------------------------------------------------------------
 
+const REPORT_TOKEN_RE = /^[A-Za-z0-9_-]{32,64}$/;
 const REPORT_PATH_RE = /^\/api\/report\/([A-Za-z0-9_-]{32,64})$/;
+const SHARE_MAX_PER_REQUEST = 5;
+const SHARE_MAX_PER_REPORT = 20;
+
+// The report's own <h1> («Acme Coffee en respuestas de IA»), as plain text for the
+// subject of the share email. Entities are decoded for the few the renderer emits.
+function reportTitle(html) {
+  const match = /<h1[^>]*>([\s\S]*?)<\/h1>/i.exec(html || "");
+  if (!match) return "";
+  return match[1]
+    .replace(/<[^>]+>/g, "")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;|&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 160);
+}
 const REPORT_TTL_SECONDS = 30 * 24 * 60 * 60;
 const REPORT_MAX_BYTES = 8 * 1024 * 1024;
 

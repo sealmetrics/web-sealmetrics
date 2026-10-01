@@ -26,7 +26,7 @@ type Locale = "en" | "es";
  * The report costs real inference money per request, and a company address is
  * the cheapest signal that there is a company behind the request.
  */
-const PERSONAL_DOMAINS = new Set([
+export const PERSONAL_DOMAINS = new Set([
   // Google.
   "gmail.com",
   "googlemail.com",
