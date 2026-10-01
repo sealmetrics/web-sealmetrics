@@ -370,14 +370,13 @@ export default function PrivacyPageEs() {
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
                   Cloudflare, Inc. hace la comprobación antibots (Turnstile),
-                  opera el relé que recibe el formulario e imprime el informe
-                  terminado en el PDF que va adjunto al correo (Browser Run).
-                  Para el PDF recibe el propio informe &mdash;la marca, lo que
-                  encontraron los modelos y las recomendaciones&mdash;, nunca tu
-                  correo. También guarda el informe completo durante 30 días
-                  tras el enlace privado del correo, para que puedas leerlo en
-                  sealmetrics.com; el enlace lleva una clave aleatoria, no tu
-                  correo, y el informe se borra solo al cumplirse los 30 días.
+                  opera el relé que recibe el formulario y guarda el informe
+                  completo durante 30 días tras el enlace privado del correo,
+                  para que puedas leerlo en sealmetrics.com. Recibe el propio
+                  informe &mdash;la marca, lo que encontraron los modelos y las
+                  recomendaciones&mdash;, nunca tu correo: el enlace lleva una
+                  clave aleatoria, y el informe se borra solo al cumplirse los
+                  30 días.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
