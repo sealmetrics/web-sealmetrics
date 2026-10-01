@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
-import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 /**
  * Asks for an email and sends a sector study to it (n8n `sm-study-download`, through
@@ -25,10 +24,8 @@ export function StudyDownloadForm({ study }: { study: string }) {
   const [status, setStatus] = useState<"idle" | "submitting" | "sent" | "error">("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
-  const canSubmit = Boolean(email.trim() && turnstileToken) && status !== "submitting";
+  const canSubmit = Boolean(email.trim()) && status !== "submitting";
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -45,7 +42,7 @@ export function StudyDownloadForm({ study }: { study: string }) {
       await submitFirstPartyForm(
         "study_download",
         { email: cleanEmail, study, marketing_consent: marketingConsent },
-        { companyFax, turnstileToken: turnstileToken ?? "" },
+        { companyFax },
       );
       // Counted on the request the relay accepted. The email never goes to the pixel.
       pushEvent({ event: "lead_study_download", study });
@@ -53,8 +50,6 @@ export function StudyDownloadForm({ study }: { study: string }) {
     } catch {
       setStatus("error");
       setMessage("Ahora mismo no hemos podido enviarlo. Prueba en un momento.");
-      setTurnstileToken(null);
-      setTurnstileResetKey((key) => key + 1);
     }
   }
 
@@ -112,12 +107,6 @@ export function StudyDownloadForm({ study }: { study: string }) {
         </span>
       </label>
 
-      <div className="sig-brand-foot">
-        <div className="sig-brand-foot-left">
-          <LeadTurnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} locale="es" />
-        </div>
-      </div>
-
       {status === "error" && message ? (
         <p role="alert" className="sig-brand-error">
           {message}
@@ -156,8 +145,8 @@ export function StudyDownloadForm({ study }: { study: string }) {
             <div>
               <dt>Destinatarios</dt>
               <dd>
-                Resend (EE. UU., cláusulas contractuales tipo) entrega el correo y Cloudflare hace la
-                comprobación antibots.
+                Resend (EE. UU., cláusulas contractuales tipo) entrega el correo y Cloudflare opera el
+                relé que recibe el formulario.
               </dd>
             </div>
             <div>

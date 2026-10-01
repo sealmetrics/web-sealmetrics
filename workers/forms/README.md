@@ -14,17 +14,25 @@ be committed:
 - `N8N_CAREERS_URL`
 - `N8N_BRAND_REPORT_URL`
 - `N8N_STUDY_DOWNLOAD_URL`
-- `TURNSTILE_SECRET`
 - `REPORT_UPLOAD_SECRET`
 - `N8N_REPORT_SHARE_URL`
 
 `N8N_BRAND_REPORT_URL` points at the `sm-brand-report` webhook in n8n, the flow
 behind the "what AI says about your brand" report form.
 
-`ALLOWED_ORIGINS`, `TURNSTILE_HOSTNAMES`, `TURNSTILE_ACTION`, and
-`REQUIRE_TURNSTILE` are non-secret settings in `wrangler.jsonc`. Turnstile is
-required on every production lead flow. Origin validation and Cloudflare rate
-limiting are also active.
+`ALLOWED_ORIGINS` is a non-secret setting in `wrangler.jsonc`. Origin
+validation, Cloudflare rate limiting (10 submissions a minute per IP), field
+validation and the `company_fax` honeypot are what stand between the forms and
+automated submissions.
+
+## Retired: Turnstile
+
+Cloudflare Turnstile was required on every lead flow from 13 Aug to 1 Oct 2026
+and then removed, from the forms and from this Worker. The Worker ignores a
+`turnstileToken` field if a cached page still sends one. Deploy this Worker
+**before** the site without the widget goes live: the previous Worker answers
+403 `challenge_failed` to a submission with no token. Once it is deployed,
+delete the unused secret: `npx wrangler secret delete TURNSTILE_SECRET`.
 
 The deployed endpoint is:
 
@@ -53,10 +61,8 @@ uses it.
 3. Configure the secrets above.
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
 5. Point the static forms at the deployed endpoint above.
-6. Confirm the Turnstile widget allows only `sealmetrics.com` and
-   `www.sealmetrics.com`, then keep `REQUIRE_TURNSTILE` set to `true`.
-7. Confirm all seven flows reach the expected mailbox before merging to `main`.
-8. Rotate the n8n webhook paths that were previously present in frontend code.
+6. Confirm all seven flows reach the expected mailbox before merging to `main`.
+7. Rotate the n8n webhook paths that were previously present in frontend code.
 
 If the DNS zone is moved to this Cloudflare account later, add
 `forms.sealmetrics.com` as a Worker custom domain, update
@@ -104,7 +110,7 @@ keep the HTML attachment.
 
 The full report page has a «Share» form. The Worker validates 1–5 unique work
 addresses (free-mail refused), the report key and an optional sender name with no
-link or address in it, runs Turnstile, checks the report still exists in
+link or address in it, checks the report still exists in
 `BRAND_REPORTS`, and caps a report at 20 recipients over its life
 (`share-count:<token>` in the same KV, 30-day TTL). It forwards `{token, language,
 recipients, sender_name, report_title}` to `N8N_REPORT_SHARE_URL` (n8n «Informe de

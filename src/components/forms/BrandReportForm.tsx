@@ -4,7 +4,6 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
-import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 type Locale = "en" | "es";
 
@@ -295,7 +294,7 @@ const copy = {
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the relay that receives the form and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
         ],
         [
           "Your rights",
@@ -343,7 +342,7 @@ const copy = {
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare opera el relé que recibe el formulario y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
         ],
         [
           "Derechos",
@@ -367,12 +366,10 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
   // the newsletter is a separate consent
   // (GDPR art. 7.2, LSSI art. 21). n8n subscribes only on an explicit `true`.
   const [marketingConsent, setMarketingConsent] = useState(false);
-  // Funnel microconversions, each sent at most once per page: somebody started the
-  // form, and Cloudflare refused to verify them. With `brand_report_request` on the
-  // accepted submission, the three show where requests are lost — a real person
-  // stuck on the anti-bot check left no trace before.
+  // Funnel microconversion, sent at most once per page: somebody started the form.
+  // With `brand_report_request` on the accepted submission, the two show where
+  // requests are lost.
   const started = useRef(false);
-  const verificationFailed = useRef(false);
 
   function noteStart(event: React.FormEvent<HTMLFormElement>) {
     const field = (event.target as HTMLInputElement).name;
@@ -382,20 +379,12 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
     pushEvent({ event: "brand_report_start", language: locale });
   }
 
-  function noteVerificationFailed() {
-    if (verificationFailed.current) return;
-    verificationFailed.current = true;
-    pushEvent({ event: "brand_report_verification_failed", language: locale });
-  }
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const canSubmit =
-    Boolean(brand.trim() && email.trim() && turnstileToken) &&
-    status !== "submitting";
+    Boolean(brand.trim() && email.trim()) && status !== "submitting";
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -428,7 +417,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
           language: locale,
           marketing_consent: marketingConsent,
         },
-        { companyFax, turnstileToken: turnstileToken ?? "" },
+        { companyFax },
       );
       // Fired on the submission the relay accepted, not on the thank-you page:
       // what is being counted is the request itself, and a static confirmation
@@ -442,8 +431,6 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
     } catch {
       setStatus("error");
       setMessage(t.errorGeneric);
-      setTurnstileToken(null);
-      setTurnstileResetKey((key) => key + 1);
     }
   }
 
@@ -549,12 +536,6 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
       </label>
 
       <div className="sig-report-submit">
-        <LeadTurnstile
-          onToken={setTurnstileToken}
-          onFail={noteVerificationFailed}
-          resetKey={turnstileResetKey}
-          locale={locale}
-        />
         <button
           type="submit"
           className="sig-brand-submit"

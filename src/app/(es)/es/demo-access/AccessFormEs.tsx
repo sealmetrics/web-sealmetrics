@@ -9,7 +9,6 @@ import {
 } from "@/components/forms/SignupQualifier";
 import { buildSignupPayload } from "@/lib/signup/payload";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
-import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 const FREE_EMAIL_DOMAINS = new Set([
   "gmail.com", "googlemail.com",
@@ -73,8 +72,6 @@ export function AccessFormEs() {
   const [gdpr, setGdpr] = useState(false);
   const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [status, setStatus] = useState<Status>({ kind: "idle" });
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const microFired = useRef(false);
 
   useEffect(() => {
@@ -123,10 +120,6 @@ export function AccessFormEs() {
       setStatus({ kind: "error", message: "Acepta el aviso de privacidad para continuar." });
       return;
     }
-    if (!turnstileToken) {
-      setStatus({ kind: "error", message: "Completa la verificación de seguridad." });
-      return;
-    }
 
     setStatus({ kind: "submitting" });
 
@@ -167,13 +160,11 @@ export function AccessFormEs() {
     pushEvent({ event: "demo_access_request", value: 1, email: payload.email });
 
     try {
-      await submitFirstPartyForm("demo_access", payload, { turnstileToken });
+      await submitFirstPartyForm("demo_access", payload);
       setStatus({ kind: "success" });
     } catch (err) {
       console.warn("Webhook delivery failed", err);
       setStatus({ kind: "error", message: "Algo ha fallado. Inténtalo en un minuto." });
-      setTurnstileToken(null);
-      setTurnstileResetKey((key) => key + 1);
     }
   };
 
@@ -311,12 +302,6 @@ export function AccessFormEs() {
         hide={{ site_url: true }}
       />
 
-      <LeadTurnstile
-        onToken={setTurnstileToken}
-        resetKey={turnstileResetKey}
-        locale="es"
-      />
-
       {errorMsg && (
         <p className="text-[13px] text-red-alert leading-[1.5]" role="alert">
           {errorMsg}
@@ -325,7 +310,7 @@ export function AccessFormEs() {
 
       <button
         type="submit"
-        disabled={submitting || !turnstileToken}
+        disabled={submitting}
         className="w-full py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md hover:bg-brand transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {submitting ? "Enviando…" : "Enviarme credenciales demo →"}

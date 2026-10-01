@@ -369,9 +369,9 @@ export default function PrivacyPageEs() {
               <ul className="space-y-1 pl-5 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Cloudflare, Inc. hace la comprobación antibots (Turnstile),
-                  opera el relé que recibe el formulario y guarda el informe
-                  completo durante 30 días tras el enlace privado del correo,
+                  Cloudflare, Inc. opera el relé que recibe el formulario y
+                  guarda el informe completo durante 30 días tras el enlace
+                  privado del correo,
                   para que puedas leerlo en sealmetrics.com. Recibe el propio
                   informe &mdash;la marca, lo que encontraron los modelos y las
                   recomendaciones&mdash;, nunca tu correo: el enlace lleva una
@@ -480,7 +480,7 @@ export default function PrivacyPageEs() {
               <ul className="space-y-1 pl-5 list-none">
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Cloudflare, Inc. hace la comprobación antibots (Turnstile) y opera el relé que recibe el formulario.
+                  Cloudflare, Inc. opera el relé que recibe el formulario.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>

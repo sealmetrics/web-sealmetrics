@@ -87,7 +87,7 @@ Every origin the site loads a **subresource** from, and the directive that must 
 | `n8n.sealmetrics.com` | `connect-src` | `/demo`, `/demo-access` (EN+ES), data-loss calculator, audit form | **MISSING** |
 | `pixel-auditor.sealmetrics.net` | `connect-src` | `/free-audit` via `NEXT_PUBLIC_PIXEL_AUDITOR_API` (note: `.net`, not `.com`) | **MISSING** |
 | `iframe.mediadelivery.net` | `frame-src` | `/videos`, `/demo/thank-you` (EN+ES) | **MISSING** |
-| `challenges.cloudflare.com` | `script-src`, `connect-src`, `frame-src` | Turnstile on forms | present |
+| `challenges.cloudflare.com` | `script-src`, `connect-src`, `frame-src` | Turnstile on `/free-audit` (removed from the lead forms on 1 Oct 2026) | present |
 | `api.sealmetrics.com` | `connect-src` | audit endpoint | present |
 
 `form-action 'self'` is correct as drafted: every form submits via `onSubmit` + `fetch()`, so no native cross-origin form post exists. The `www.youtube.com` entries in `frame-src` are unused today (YouTube appears only as a `sameAs` in `lib/schema.ts`) and are left in place as harmless headroom.
