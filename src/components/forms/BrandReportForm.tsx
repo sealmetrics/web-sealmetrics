@@ -281,21 +281,21 @@ const copy = {
       "Also send me Sealmetrics' occasional reports and product news. Optional: unsubscribe in one click, and the report arrives either way.",
     notice: {
       summary:
-        "Sealmetrics S.L. uses your email to send you the report you asked for, and for occasional emails only if you tick the box. Enroutia and the AI models never see it. Access, erasure and your other rights: privacy@sealmetrics.com.",
+        "Sealmetrics S.L. uses your email to send you the report you asked for and, in the following days, a short video review of your website's cookie banner and an invitation to our founder's newsletter; occasional emails only if you tick the box. One click stops any of them. Enroutia and the AI models never see your email. Access, erasure and your other rights: privacy@sealmetrics.com.",
       title: "Data protection in detail",
       rows: [
         ["Controller", "Sealmetrics S.L."],
         [
           "Purpose",
-          "Generate this report and email it to you. If you tick the box above, occasional emails from Sealmetrics too, including a short follow-up about your report.",
+          "Generate this report and email it to you. About ten days later, review the cookie banner on the website at your email's domain and send you one email with a short video of it, and invite you, in up to two emails, to the founder's newsletter. If you tick the box above, occasional emails from Sealmetrics too, including a short follow-up about your report.",
         ],
         [
           "Legal basis",
-          "Your request for the report (art. 6.1.b GDPR). For the occasional emails, your consent (art. 6.1.a), which you can withdraw at any time.",
+          "Your request for the report (art. 6.1.b GDPR). For the video review and the newsletter invitation, our legitimate interest in offering services related to what you asked for (art. 6.1.f), which you can object to at any time with one click. For the occasional emails, your consent (art. 6.1.a), which you can withdraw at any time.",
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check, prints the PDF and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check, prints the PDF and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. lemlist (France) sends the video review, the newsletter invitation and, if you tick the box, the follow-up about your report. Airtable (USA, Standard Contractual Clauses) keeps the list. ElevenLabs (USA) voices the video and bunny.net (Slovenia) hosts it; neither receives your email.",
         ],
         [
           "Your rights",
@@ -329,21 +329,21 @@ const copy = {
       "Enviadme también, de vez en cuando, informes y novedades de Sealmetrics. Es opcional: te das de baja en un clic, y el informe te llega igual.",
     notice: {
       summary:
-        "Sealmetrics S.L. usa tu correo para enviarte el informe que pides, y para correos ocasionales sólo si marcas la casilla. Ni Enroutia ni los modelos de IA lo ven. Acceso, supresión y demás derechos: privacy@sealmetrics.com.",
+        "Sealmetrics S.L. usa tu correo para enviarte el informe que pides y, en los días siguientes, un breve vídeo con una revisión del banner de cookies de tu web y una invitación a la newsletter de nuestro fundador; correos ocasionales, sólo si marcas la casilla. Cualquiera de ellos se para con un clic. Ni Enroutia ni los modelos de IA ven tu correo. Acceso, supresión y demás derechos: privacy@sealmetrics.com.",
       title: "Protección de datos en detalle",
       rows: [
         ["Responsable", "Sealmetrics S.L."],
         [
           "Finalidad",
-          "Generar este informe y enviártelo por correo. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics, entre ellos un breve seguimiento sobre tu informe.",
+          "Generar este informe y enviártelo por correo. Unos diez días después, revisar el banner de cookies de la web del dominio de tu correo y enviarte un correo con un breve vídeo de esa revisión, e invitarte, en un máximo de dos correos, a la newsletter del fundador. Si marcas la casilla de arriba, también correos ocasionales de Sealmetrics, entre ellos un breve seguimiento sobre tu informe.",
         ],
         [
           "Legitimación",
-          "Tu solicitud del informe (art. 6.1.b RGPD). Para los correos ocasionales, tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras.",
+          "Tu solicitud del informe (art. 6.1.b RGPD). Para el vídeo y la invitación a la newsletter, nuestro interés legítimo en ofrecerte servicios relacionados con lo que pediste (art. 6.1.f), al que puedes oponerte cuando quieras con un clic. Para los correos ocasionales, tu consentimiento (art. 6.1.a), que puedes retirar cuando quieras.",
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots, imprime el PDF y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots, imprime el PDF y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. lemlist (Francia) envía el vídeo, la invitación a la newsletter y, si marcas la casilla, el seguimiento sobre tu informe. Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista. ElevenLabs (EE. UU.) pone la voz al vídeo y bunny.net (Eslovenia) lo aloja; ninguno de los dos recibe tu correo.",
         ],
         [
           "Derechos",

@@ -343,9 +343,9 @@ export default function PrivacyPageEs() {
               <p className="mb-3">
                 <strong className="text-text-primary">Datos tratados.</strong>{" "}
                 Tu correo de empresa, la marca por la que preguntas y, si los
-                indicas, su sector y sus competidores. El formulario no pide tu
-                nombre. El informe es de organizaciones; no se hace sobre
-                personas.
+                indicas, su sector y sus competidores, y la web del dominio de tu
+                correo. El formulario no pide tu nombre. El informe es de
+                organizaciones; no se hace sobre personas.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Finalidades y base jurídica.</strong>{" "}
@@ -361,7 +361,19 @@ export default function PrivacyPageEs() {
                 ofreció la casilla, y a quien lo pidió esos días no se le
                 incluyó. Ese consentimiento se puede retirar cuando se quiera
                 desde el enlace de baja de cualquier correo o escribiendo a
-                privacy@sealmetrics.com.
+                privacy@sealmetrics.com. (d) Para todas las personas que piden un
+                informe, por el interés legítimo de Sealmetrics en ofrecer
+                servicios de analítica relacionados con lo que pidieron (art.
+                6.1.f RGPD): unos diez días después de la solicitud, nuestro
+                sistema de auditoría visita la web pública del dominio de tu
+                correo, revisa su banner de cookies y graba un breve vídeo, que
+                te enviamos en un correo; y te invitamos, en un máximo de dos
+                correos, a suscribirte a unmodeled, la newsletter del fundador.
+                El vídeo nombra la marca por la que preguntaste, nunca a una
+                persona, porque el formulario no pide tu nombre. Puedes oponerte
+                a cualquiera de los dos cuando quieras, con el enlace de baja de
+                cada correo o escribiendo a privacy@sealmetrics.com, y no se te
+                envía nada más.
               </p>
               <p className="mb-3">
                 <strong className="text-text-primary">Destinatarios.</strong>
@@ -405,17 +417,30 @@ export default function PrivacyPageEs() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  lemlist SAS (Francia), sólo para quien marcó la casilla, envía
-                  los correos de seguimiento sobre el informe. Recibe su correo,
-                  el dominio de su empresa y la marca y el sector consultados.
+                  lemlist SAS (Francia) envía el correo con el vídeo y la
+                  invitación a la newsletter a todas las personas que piden un
+                  informe, y los correos de seguimiento sobre el informe a quien
+                  marcó la casilla. Recibe el correo, el dominio de la empresa y
+                  la marca y el sector consultados.
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Formagrid Inc. (Airtable, EE. UU.), sólo para quien marcó la
-                  casilla, guarda la lista de quienes pidieron el informe: su
-                  correo, el dominio de su empresa, la marca, el sector y los
-                  competidores consultados, el idioma y la fecha. Con cláusulas
-                  contractuales tipo.
+                  ElevenLabs (EE. UU.) genera la voz del vídeo a partir de un
+                  guion que nombra la marca y la web, nunca tu correo, con
+                  cláusulas contractuales tipo y el marco de privacidad de datos
+                  UE-EE. UU. BunnyWay d.o.o. (bunny.net, Eslovenia) aloja el
+                  vídeo, que se muestra en una página de room.sealmetrics.com.
+                  Slack Technologies (EE. UU., cláusulas contractuales tipo)
+                  muestra a nuestro equipo una ficha con el correo y la web de
+                  cada vídeo.
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Formagrid Inc. (Airtable, EE. UU.) guarda la lista de quienes
+                  marcaron la casilla &mdash;correo, dominio de su empresa, marca,
+                  sector y competidores consultados, idioma y fecha&mdash; y la
+                  cola de vídeos, con el correo, la web, el país y la marca de
+                  cada solicitud. Con cláusulas contractuales tipo.
                 </li>
               </ul>
               <p className="mt-3">
@@ -439,6 +464,10 @@ export default function PrivacyPageEs() {
                 privado se borra a los 30 días. Si consentiste los correos
                 ocasionales, tu dirección permanece en esa lista, y en la de
                 Airtable, hasta que te des de baja o retires el consentimiento.
+                Para el vídeo y la invitación a la newsletter, tu dirección sale
+                de la cola de Airtable en cuanto se hace el vídeo, y se queda en
+                lemlist hasta que te opongas, para no enviarte nada dos veces ni
+                después de que hayas dicho que no.
               </p>
             </div>
 

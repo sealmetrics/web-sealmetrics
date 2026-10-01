@@ -312,8 +312,9 @@ export default function PrivacyPage() {
             <p className="mb-3">
               <strong className="text-text-primary">Data processed.</strong>{" "}
               Your work email, the brand you ask about, and optionally its
-              sector and competitors. The form does not ask for your name. The
-              report is about organisations; it is not run on individuals.
+              sector and competitors, and the website at your email&rsquo;s
+              domain. The form does not ask for your name. The report is about
+              organisations; it is not run on individuals.
             </p>
             <p className="mb-3">
               <strong className="text-text-primary">Purposes and legal basis.</strong>{" "}
@@ -330,7 +331,18 @@ export default function PrivacyPage() {
               box, and nobody who requested a report on those days was
               included. That consent can be withdrawn at any time through the
               unsubscribe link in any email or by writing to
-              privacy@sealmetrics.com.
+              privacy@sealmetrics.com. (d) For everyone who requests a report,
+              on Sealmetrics&rsquo; legitimate interest in offering analytics
+              services related to what was asked for (Article 6(1)(f) GDPR):
+              about ten days after the request, our auditing system visits the
+              public website at the domain of your email, reviews its cookie
+              banner and records a short video of it, which we send you in one
+              email; and we invite you, in up to two emails, to subscribe to
+              unmodeled, the founder&rsquo;s newsletter. The video names the
+              brand you asked about, never a person, since the form does not
+              ask for your name. You can object to either at any time, with the
+              unsubscribe link in each email or by writing to
+              privacy@sealmetrics.com, and nothing more is sent.
             </p>
             <p className="mb-3">
               <strong className="text-text-primary">Recipients.</strong>
@@ -374,17 +386,30 @@ export default function PrivacyPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                lemlist SAS (France), only for those who ticked the box, sends
-                the follow-up emails about the report. It receives their email,
-                their company domain and the brand and sector they asked
-                about.
+                lemlist SAS (France) sends the email with the video review and
+                the newsletter invitation to everyone who requests a report,
+                and the follow-up emails about the report to those who ticked
+                the box. It receives the email, the company domain and the
+                brand and sector asked about.
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Formagrid Inc. (Airtable, USA), only for those who ticked the
-                box, holds the list of people who asked for a report: their
-                email, company domain, the brand, sector and competitors asked
-                about, the language and the date. Covered by Standard
+                ElevenLabs (USA) generates the voice-over of the video review
+                from a script that names the brand and the website, never your
+                email, covered by Standard Contractual Clauses and the EU-US
+                Data Privacy Framework. BunnyWay d.o.o. (bunny.net, Slovenia)
+                hosts the video, which is shown on a page at
+                room.sealmetrics.com. Slack Technologies (USA, Standard
+                Contractual Clauses) shows our team a card with the email and
+                the website of each video review.
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Formagrid Inc. (Airtable, USA) holds the list of those who
+                ticked the box &mdash; email, company domain, the brand, sector
+                and competitors asked about, the language and the date &mdash;
+                and the queue of video reviews, with the email, website,
+                country and brand of every request. Covered by Standard
                 Contractual Clauses.
               </li>
             </ul>
@@ -406,7 +431,10 @@ export default function PrivacyPage() {
               is deleted on delivery, or after 72 hours at most. The full report
               behind the private link is deleted after 30 days. If you consented to occasional emails, your address stays
               on that list, and in the Airtable list, until you unsubscribe or
-              withdraw consent.
+              withdraw consent. For the video review and the newsletter
+              invitation, your address leaves the Airtable queue once the video
+              is made, and stays in lemlist until you object, so that nothing is
+              sent to you twice or after you have said no.
             </p>
           </div>
 
