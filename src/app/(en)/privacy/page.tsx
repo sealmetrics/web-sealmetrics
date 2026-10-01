@@ -389,6 +389,17 @@ export default function PrivacyPage() {
               </li>
             </ul>
             <p className="mt-3">
+              <strong className="text-text-primary">Sharing the report.</strong>{" "}
+              The page of the full report lets whoever has its link send it to
+              up to five work addresses at a time, and twenty per report. We
+              send each address one email with the link, through Resend, on the
+              legitimate interest of delivering what the sender asked for
+              (Article 6(1)(f) GDPR). We keep no copy of those addresses: they
+              are not added to any list, not passed to Enroutia, lemlist or
+              Airtable, and not written to again. The optional name of the
+              sender is printed in that email and kept nowhere else.
+            </p>
+            <p className="mt-3">
               <strong className="text-text-primary">Retention.</strong> The
               request record is kept for up to 24 months, like any other form
               submission. The link between the report reference and your email

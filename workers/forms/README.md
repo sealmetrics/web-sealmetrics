@@ -16,6 +16,7 @@ be committed:
 - `N8N_STUDY_DOWNLOAD_URL`
 - `TURNSTILE_SECRET`
 - `REPORT_UPLOAD_SECRET`
+- `N8N_REPORT_SHARE_URL`
 
 `N8N_BRAND_REPORT_URL` points at the `sm-brand-report` webhook in n8n, the flow
 behind the "what AI says about your brand" report form.
@@ -98,3 +99,14 @@ entry of `wrangler.jsonc`. The secret must match the n8n credential
 «Sealmetrics forms Worker — subida de informes» (`Authorization: Bearer …`).
 Without the binding or the secret, the route answers 503 or 401 and the emails
 keep the HTML attachment.
+
+## Sharing a report (`type: "report_share"` on `/api/forms`)
+
+The full report page has a «Share» form. The Worker validates 1–5 unique work
+addresses (free-mail refused), the report key and an optional sender name with no
+link or address in it, runs Turnstile, checks the report still exists in
+`BRAND_REPORTS`, and caps a report at 20 recipients over its life
+(`share-count:<token>` in the same KV, 30-day TTL). It forwards `{token, language,
+recipients, sender_name, report_title}` to `N8N_REPORT_SHARE_URL` (n8n «Informe de
+marca: compartir»), which sends each address one email with the link and keeps no
+copy. The count only moves when n8n accepts the send.

@@ -419,6 +419,18 @@ export default function PrivacyPageEs() {
                 </li>
               </ul>
               <p className="mt-3">
+                <strong className="text-text-primary">Compartir el informe.</strong>{" "}
+                La página del informe completo permite a quien tiene el enlace
+                enviarlo a hasta cinco correos de empresa cada vez, y veinte por
+                informe. Enviamos a cada dirección un único correo con el
+                enlace, a través de Resend, por el interés legítimo de entregar
+                lo que pidió quien lo comparte (art. 6.1.f RGPD). No guardamos
+                copia de esas direcciones: no se añaden a ninguna lista, no se
+                pasan a Enroutia, lemlist ni Airtable y no se les vuelve a
+                escribir. El nombre opcional de quien comparte aparece en ese
+                correo y no se guarda en ningún otro sitio.
+              </p>
+              <p className="mt-3">
                 <strong className="text-text-primary">Conservación.</strong> El
                 registro de la solicitud se conserva un máximo de 24 meses,
                 como cualquier otro envío de formulario. La relación entre la

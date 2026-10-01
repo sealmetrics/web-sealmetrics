@@ -26,6 +26,12 @@ test("content groups accept exported trailing-slash URLs", () => {
     ["/es/how-it-works/", "how-it-works"],
     ["/es/security/", "security"],
     ["/case-studies/dreamplace-hotels/", "case-studies"],
+    ["/ai-brand-monitoring/report/", "ai-brand-report"],
+    ["/es/ai-brand-monitoring/report/", "ai-brand-report"],
+    ["/ai-brand-monitoring/sample-report/", "ai-brand-report"],
+    ["/es/ai-brand-monitoring/sample-report/", "ai-brand-report"],
+    ["/ai-brand-monitoring/", "other"],
+    ["/ai-brand-monitoring/thank-you/", "other"],
   ];
 
   for (const [pathname, expected] of cases) {
