@@ -27,9 +27,9 @@ const copy = {
       "The address must include everything after the # in the email. Open the link from the email again, or copy it whole.",
     expiredTitle: "This report is no longer available.",
     expiredBody:
-      "Full reports stay online for 30 days. The PDF summary attached to the email is still yours; for a fresh report, ask for another one.",
+      "Full reports stay online for 30 days. If you downloaded it, that copy is still yours; for a fresh report, ask for another one.",
     errorTitle: "The report could not be loaded right now.",
-    errorBody: "Try again in a moment. The PDF summary attached to the email has the figures and the recommendations.",
+    errorBody: "Try again in a moment. If it keeps failing, write to privacy@sealmetrics.com and we will send it to you.",
     again: "Ask for a new report",
     frameTitle: "Full AI brand monitoring report",
   },
@@ -49,9 +49,9 @@ const copy = {
       "La dirección tiene que incluir todo lo que va detrás del # en el correo. Vuelve a abrir el enlace desde el correo o cópialo entero.",
     expiredTitle: "Este informe ya no está disponible.",
     expiredBody:
-      "Los informes completos están en línea 30 días. El resumen en PDF que iba adjunto al correo sigue siendo tuyo; si quieres uno al día, pide otro.",
+      "Los informes completos están en línea 30 días. Si lo descargaste, esa copia sigue siendo tuya; si quieres uno al día, pide otro.",
     errorTitle: "Ahora mismo no hemos podido cargar el informe.",
-    errorBody: "Prueba en un momento. El resumen en PDF adjunto al correo tiene las cifras y las recomendaciones.",
+    errorBody: "Prueba en un momento. Si sigue fallando, escríbenos a privacy@sealmetrics.com y te lo enviamos.",
     again: "Pedir un informe nuevo",
     frameTitle: "Informe completo de monitorización de marca en IA",
   },
