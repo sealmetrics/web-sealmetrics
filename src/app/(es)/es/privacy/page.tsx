@@ -367,12 +367,10 @@ export default function PrivacyPageEs() {
                 6.1.f RGPD): unos diez días después de la solicitud, nuestro
                 sistema de auditoría visita la web pública del dominio de tu
                 correo, revisa su banner de cookies y graba un breve vídeo, que
-                te enviamos en un correo; y te invitamos, en un máximo de dos
-                correos, a suscribirte a unmodeled, la newsletter del fundador.
-                El vídeo nombra la marca por la que preguntaste, nunca a una
-                persona, porque el formulario no pide tu nombre. Puedes oponerte
-                a cualquiera de los dos cuando quieras, con el enlace de baja de
-                cada correo o escribiendo a privacy@sealmetrics.com, y no se te
+                te enviamos en un correo. El vídeo nombra la marca por la que
+                preguntaste, nunca a una persona, porque el formulario no pide tu
+                nombre. Puedes oponerte cuando quieras, con el enlace de baja de
+                ese correo o escribiendo a privacy@sealmetrics.com, y no se te
                 envía nada más.
               </p>
               <p className="mb-3">
@@ -417,9 +415,8 @@ export default function PrivacyPageEs() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  lemlist SAS (Francia) envía el correo con el vídeo y la
-                  invitación a la newsletter a todas las personas que piden un
-                  informe, y los correos de seguimiento sobre el informe a quien
+                  lemlist SAS (Francia) envía el correo con el vídeo a todas las
+                  personas que piden un informe, y los correos de seguimiento sobre el informe a quien
                   marcó la casilla. Recibe el correo, el dominio de la empresa y
                   la marca y el sector consultados.
                 </li>
@@ -464,7 +461,7 @@ export default function PrivacyPageEs() {
                 privado se borra a los 30 días. Si consentiste los correos
                 ocasionales, tu dirección permanece en esa lista, y en la de
                 Airtable, hasta que te des de baja o retires el consentimiento.
-                Para el vídeo y la invitación a la newsletter, tu dirección sale
+                Para el vídeo, tu dirección sale
                 de la cola de Airtable en cuanto se hace el vídeo, y se queda en
                 lemlist hasta que te opongas, para no enviarte nada dos veces ni
                 después de que hayas dicho que no.

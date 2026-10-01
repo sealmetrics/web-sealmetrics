@@ -337,11 +337,9 @@ export default function PrivacyPage() {
               about ten days after the request, our auditing system visits the
               public website at the domain of your email, reviews its cookie
               banner and records a short video of it, which we send you in one
-              email; and we invite you, in up to two emails, to subscribe to
-              unmodeled, the founder&rsquo;s newsletter. The video names the
-              brand you asked about, never a person, since the form does not
-              ask for your name. You can object to either at any time, with the
-              unsubscribe link in each email or by writing to
+              email. The video names the brand you asked about, never a person,
+              since the form does not ask for your name. You can object at any
+              time, with the unsubscribe link in that email or by writing to
               privacy@sealmetrics.com, and nothing more is sent.
             </p>
             <p className="mb-3">
@@ -386,8 +384,8 @@ export default function PrivacyPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                lemlist SAS (France) sends the email with the video review and
-                the newsletter invitation to everyone who requests a report,
+                lemlist SAS (France) sends the email with the video review to
+                everyone who requests a report,
                 and the follow-up emails about the report to those who ticked
                 the box. It receives the email, the company domain and the
                 brand and sector asked about.
@@ -431,8 +429,7 @@ export default function PrivacyPage() {
               is deleted on delivery, or after 72 hours at most. The full report
               behind the private link is deleted after 30 days. If you consented to occasional emails, your address stays
               on that list, and in the Airtable list, until you unsubscribe or
-              withdraw consent. For the video review and the newsletter
-              invitation, your address leaves the Airtable queue once the video
+              withdraw consent. For the video review, your address leaves the Airtable queue once the video
               is made, and stays in lemlist until you object, so that nothing is
               sent to you twice or after you have said no.
             </p>
