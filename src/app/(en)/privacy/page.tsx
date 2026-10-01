@@ -379,6 +379,14 @@ export default function PrivacyPage() {
                 their company domain and the brand and sector they asked
                 about.
               </li>
+              <li className="flex items-start gap-3">
+                <span className="text-text-tertiary shrink-0">&mdash;</span>
+                Formagrid Inc. (Airtable, USA), only for those who ticked the
+                box, holds the list of people who asked for a report: their
+                email, company domain, the brand, sector and competitors asked
+                about, the language and the date. Covered by Standard
+                Contractual Clauses.
+              </li>
             </ul>
             <p className="mt-3">
               <strong className="text-text-primary">Retention.</strong> The
@@ -386,7 +394,8 @@ export default function PrivacyPage() {
               submission. The link between the report reference and your email
               is deleted on delivery, or after 72 hours at most. The full report
               behind the private link is deleted after 30 days. If you consented to occasional emails, your address stays
-              on that list until you unsubscribe or withdraw consent.
+              on that list, and in the Airtable list, until you unsubscribe or
+              withdraw consent.
             </p>
           </div>
 

@@ -409,6 +409,14 @@ export default function PrivacyPageEs() {
                   los correos de seguimiento sobre el informe. Recibe su correo,
                   el dominio de su empresa y la marca y el sector consultados.
                 </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-text-tertiary shrink-0">&mdash;</span>
+                  Formagrid Inc. (Airtable, EE. UU.), sólo para quien marcó la
+                  casilla, guarda la lista de quienes pidieron el informe: su
+                  correo, el dominio de su empresa, la marca, el sector y los
+                  competidores consultados, el idioma y la fecha. Con cláusulas
+                  contractuales tipo.
+                </li>
               </ul>
               <p className="mt-3">
                 <strong className="text-text-primary">Conservación.</strong> El
@@ -417,8 +425,8 @@ export default function PrivacyPageEs() {
                 referencia del informe y tu correo se borra al entregarlo, o a
                 las 72 horas como máximo. El informe completo tras el enlace
                 privado se borra a los 30 días. Si consentiste los correos
-                ocasionales, tu dirección permanece en esa lista hasta que te des de baja o
-                retires el consentimiento.
+                ocasionales, tu dirección permanece en esa lista, y en la de
+                Airtable, hasta que te des de baja o retires el consentimiento.
               </p>
             </div>
 
