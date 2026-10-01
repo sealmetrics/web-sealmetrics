@@ -142,7 +142,7 @@ export default function ConsentModeMeasuredVsModelledPage() {
           </header>
 
           <p className="tldr mb-12 text-[1.15rem] leading-[1.7] text-text-secondary font-serif italic">
-            With Consent Mode, GA4 measures the visitors who accept analytics cookies.
+            Built to be useful even if you don&apos;t choose us. With Consent Mode, GA4 measures the visitors who accept analytics cookies.
             For the ones who decline, advanced mode sends cookieless pings, and GA4
             estimates their users, sessions and new users with behavioural modelling
             once the property meets Google&apos;s thresholds. Those estimates appear in
@@ -154,9 +154,9 @@ export default function ConsentModeMeasuredVsModelledPage() {
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className={`text-[0.9rem] leading-[1.7] text-text-secondary ${dashList}`}>
               <li>Basic mode sends nothing to Google when consent is refused. Advanced mode sends cookieless pings: timestamp, user agent, referrer, consent state and ad-click identifiers.</li>
-              <li>GA4 models users, sessions and new users only above a threshold: 1,000 events a day with analytics storage denied for 7 days, and 1,000 daily users with it granted for 7 of the previous 28 days.</li>
+              <li>GA4 models users, sessions and new users only above a threshold: <a href="https://support.google.com/analytics/answer/11161109" className={link} target="_blank" rel="noopener noreferrer">1,000 events a day</a> with analytics storage denied for 7 days, and <a href="https://support.google.com/analytics/answer/11161109" className={link} target="_blank" rel="noopener noreferrer">1,000 daily users</a> with it granted for 7 of the previous 28 days.</li>
               <li>Modelled data shows under the Blended reporting identity and is absent from the BigQuery export, audiences, retention reports and sequence segments.</li>
-              <li>Google Ads models conversions separately, in its own Conversions column, above 700 ad clicks over seven days per country and domain grouping.</li>
+              <li>Google Ads models conversions separately, in its own Conversions column, above <a href="https://support.google.com/google-ads/answer/10548233" className={link} target="_blank" rel="noopener noreferrer">700 ad clicks over seven days</a> per country and domain grouping.</li>
               <li>Modelling estimates totals. It does not give each unconsented visit back its channel, which is what budget decisions need.</li>
             </ul>
           </div>
@@ -284,7 +284,9 @@ export default function ConsentModeMeasuredVsModelledPage() {
               conversion is observed with its channel rather than estimated. Nothing is
               modelled, and the same numbers are in the dashboard, the API and the export.
               The architecture is explained in{" "}
-              <Link href="/complete-data" className={link}>complete data</Link>.
+              <Link href="/complete-data" className={link}>complete data</Link>, and the{" "}
+              <Link href="/pricing" className={link}>plans</Link> are built around traffic
+              volume rather than per-session sampling.
             </p>
             <p>
               It has limits of its own, and they are the reverse of Consent Mode&apos;s.
