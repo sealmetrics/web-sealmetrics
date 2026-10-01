@@ -295,7 +295,7 @@ const copy = {
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check, prints the PDF and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check, prints the PDF and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
         ],
         [
           "Your rights",
@@ -343,7 +343,7 @@ const copy = {
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots, imprime el PDF y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots, imprime el PDF y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
         ],
         [
           "Derechos",
