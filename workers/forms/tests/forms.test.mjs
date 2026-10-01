@@ -4,8 +4,6 @@ import worker from "../src/index.js";
 
 const baseEnv = {
   ALLOWED_ORIGINS: "https://sealmetrics.com,https://www.sealmetrics.com",
-  TURNSTILE_HOSTNAMES: "sealmetrics.com,www.sealmetrics.com",
-  TURNSTILE_ACTION: "sealmetrics_lead",
   ALLOW_INSECURE_TESTING: "true",
 };
 
@@ -109,42 +107,11 @@ test("accepts a demo-access hostname when websiteRaw contains the URL", async ()
   }
 });
 
-test("requires a Turnstile token in production mode", async () => {
-  const response = await worker.fetch(
-    request({
-      type: "demo",
-      payload: {
-        name: "Test Person",
-        email: "test@example.com",
-        website: "https://example.com",
-        gdpr: true,
-      },
-    }),
-    {
-      ...baseEnv,
-      ALLOW_INSECURE_TESTING: "false",
-      REQUIRE_TURNSTILE: "true",
-      TURNSTILE_SECRET: "test-secret",
-      FORM_RATE_LIMITER: { limit: async () => ({ success: true }) },
-      N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
-    },
-  );
-  assert.equal(response.status, 403);
-  assert.deepEqual(await response.json(), { ok: false, error: "challenge_failed" });
-});
-
-test("validates the Turnstile action and hostname before forwarding", async () => {
+test("forwards a lead in production mode without any challenge", async () => {
   const originalFetch = globalThis.fetch;
   const requests = [];
   globalThis.fetch = async (url) => {
     requests.push(String(url));
-    if (String(url).includes("siteverify")) {
-      return Response.json({
-        success: true,
-        action: "sealmetrics_lead",
-        hostname: "sealmetrics.com",
-      });
-    }
     return new Response(null, { status: 204 });
   };
 
@@ -158,24 +125,44 @@ test("validates the Turnstile action and hostname before forwarding", async () =
           website: "https://example.com",
           gdpr: true,
         },
-        turnstileToken: "valid-test-token",
+        // A page cached from before the challenge was removed still sends this
+        // field; it is ignored, not verified.
+        turnstileToken: "stale-token",
       }),
       {
         ...baseEnv,
         ALLOW_INSECURE_TESTING: "false",
-        REQUIRE_TURNSTILE: "true",
-        TURNSTILE_SECRET: "test-secret",
         FORM_RATE_LIMITER: { limit: async () => ({ success: true }) },
         N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
       },
     );
     assert.equal(response.status, 200);
-    assert.equal(requests.length, 2);
-    assert.match(requests[0], /siteverify/);
-    assert.equal(requests[1], "https://automation.invalid/webform");
+    assert.deepEqual(requests, ["https://automation.invalid/webform"]);
   } finally {
     globalThis.fetch = originalFetch;
   }
+});
+
+test("still rate-limits in production mode", async () => {
+  const response = await worker.fetch(
+    request({
+      type: "demo",
+      payload: {
+        name: "Test Person",
+        email: "test@example.com",
+        website: "https://example.com",
+        gdpr: true,
+      },
+    }),
+    {
+      ...baseEnv,
+      ALLOW_INSECURE_TESTING: "false",
+      FORM_RATE_LIMITER: { limit: async () => ({ success: false }) },
+      N8N_WEBFORM_LEAD_URL: "https://automation.invalid/webform",
+    },
+  );
+  assert.equal(response.status, 429);
+  assert.deepEqual(await response.json(), { ok: false, error: "rate_limited" });
 });
 
 test("routes every public form type through the private relay", async () => {

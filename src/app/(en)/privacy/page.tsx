@@ -338,10 +338,9 @@ export default function PrivacyPage() {
             <ul className="space-y-1 pl-5 list-none">
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Cloudflare, Inc. runs the anti-bot check (Turnstile) and the
-                relay that receives the form, and keeps the full report for 30
-                days behind the private link in the email, so you can read it
-                at sealmetrics.com. It receives the report itself &mdash; the
+                Cloudflare, Inc. runs the relay that receives the form and
+                keeps the full report for 30 days behind the private link in
+                the email, so you can read it at sealmetrics.com. It receives the report itself &mdash; the
                 brand, the models&rsquo; findings and the recommendations
                 &mdash; never your email: the link carries a random key, and the
                 report is deleted automatically when the 30 days are up.
@@ -447,7 +446,7 @@ export default function PrivacyPage() {
             <ul className="space-y-1 pl-5 list-none">
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Cloudflare, Inc. runs the anti-bot check (Turnstile) and the relay that receives the form.
+                Cloudflare, Inc. runs the relay that receives the form.
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>

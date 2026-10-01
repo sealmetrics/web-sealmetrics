@@ -372,23 +372,6 @@
   white-space: nowrap;
   border: 0;
 }
-.sig-brand-foot {
-  margin-top: 22px;
-  padding-top: 20px;
-  border-top: 1px solid var(--rule);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-.sig-brand-foot-left {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  flex-wrap: wrap;
-  min-width: 0;
-}
 .sig-brand-submit {
   display: inline-flex;
   justify-content: center;
@@ -1229,9 +1212,6 @@
   }
   .sig-brand-row {
     grid-template-columns: minmax(0, 1fr);
-  }
-  .sig-brand-foot {
-    align-items: stretch;
   }
   .sig-brand-submit {
     width: 100%;

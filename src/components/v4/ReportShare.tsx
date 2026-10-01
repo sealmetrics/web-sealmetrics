@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { PERSONAL_DOMAINS } from "@/components/forms/BrandReportForm";
-import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import { pushEvent } from "@/lib/analytics";
 import { FORMS_WORKER_BASE } from "@/lib/forms/submit";
 
@@ -69,8 +68,6 @@ export function ReportShare({ locale, token }: { locale: Locale; token: string }
   const [recipients, setRecipients] = useState("");
   const [name, setName] = useState("");
   const [companyFax, setCompanyFax] = useState("");
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
-  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [status, setStatus] = useState<"idle" | "sending" | "done" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -109,7 +106,6 @@ export function ReportShare({ locale, token }: { locale: Locale; token: string }
           type: "report_share",
           payload: { token, language: locale, recipients: list, sender_name: name.trim() },
           company_fax: companyFax,
-          turnstileToken: turnstileToken ?? "",
         }),
       });
       const result = (await response.json().catch(() => ({}))) as { ok?: boolean; error?: string };
@@ -122,7 +118,6 @@ export function ReportShare({ locale, token }: { locale: Locale; token: string }
               ? t.errorExpired
               : t.errorGeneric,
         );
-        setTurnstileResetKey((k) => k + 1);
         return;
       }
       // Counted as one share action, with how many people it went to; never the addresses.
@@ -133,7 +128,6 @@ export function ReportShare({ locale, token }: { locale: Locale; token: string }
     } catch {
       setStatus("error");
       setMessage(t.errorGeneric);
-      setTurnstileResetKey((k) => k + 1);
     }
   }
 
@@ -183,9 +177,8 @@ export function ReportShare({ locale, token }: { locale: Locale; token: string }
         aria-hidden="true"
         className="sig-report-share-honeypot"
       />
-      <LeadTurnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} locale={locale} />
       <div className="sig-report-share-actions">
-        <button type="submit" disabled={status === "sending" || !turnstileToken}>
+        <button type="submit" disabled={status === "sending"}>
           {status === "sending" ? t.sending : t.submit}
         </button>
         <button type="button" className="is-secondary" onClick={() => setOpen(false)}>
