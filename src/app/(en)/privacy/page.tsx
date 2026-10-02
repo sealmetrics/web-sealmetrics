@@ -46,8 +46,8 @@ export default function PrivacyPage() {
 
         <div className="prose-sm space-y-8 text-[0.95rem] leading-[1.75] text-text-secondary">
           <p>
-            <strong className="text-text-primary">Last updated:</strong> September
-            29, 2026 ·{" "}
+            <strong className="text-text-primary">Last updated:</strong> October
+            2, 2026 ·{" "}
             <a href="/es/privacy/" className="underline">
               Versión en español
             </a>
@@ -404,6 +404,30 @@ export default function PrivacyPage() {
               behind the private link is deleted after 30 days. If you consented to occasional emails, your address stays
               on that list, and in the Airtable list, until you unsubscribe or
               withdraw consent.
+            </p>
+            <p className="mt-3">
+              <strong className="text-text-primary">Quick AI visibility check.</strong>{" "}
+              The check at{" "}
+              <a href="/what-ai-says/" className="underline">
+                /what-ai-says
+              </a>{" "}
+              asks for no email and no name. It asks the same nineteen models
+              what a brand is and what they would recommend to someone looking
+              for what it sells, and gives a score from 0 to 100. It only
+              processes what you type, a brand and what it sells, which
+              describe an organisation, not a person. To prevent abuse of a
+              free service that costs us every check, Cloudflare, Inc. runs an
+              anti-bot check (Turnstile) that processes your IP address and
+              technical data about your browser, and operates the relay that
+              receives the check (legitimate interest, Art. 6(1)(f) GDPR).
+              Sealmetrics does not keep that technical data. Enroutia receives
+              the brand, what it sells and the language, never your IP address.
+              The models receive only the brand and what it sells, and six of
+              them are served from the United States. Each result is public at
+              its own address and is deleted after 30 days. For the first seven
+              days it is also shown to anyone who looks up that brand. If you
+              represent a brand and want its result removed, write to
+              privacy@sealmetrics.com.
             </p>
           </div>
 
