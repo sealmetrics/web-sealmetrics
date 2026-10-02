@@ -354,7 +354,16 @@ const copy = {
   },
 } as const;
 
-export function BrandReportForm({ locale }: { locale: Locale }) {
+export function BrandReportForm({
+  locale,
+  consentInNotice = false,
+}: {
+  locale: Locale;
+  /** Paid landing: the optional newsletter box moves inside the data-protection
+   *  disclosure so the submit button sits higher on a phone. Still unticked and
+   *  still optional, so the consent is the same one either way. */
+  consentInNotice?: boolean;
+}) {
   const t = copy[locale];
   const prefix = locale === "es" ? "/es" : "";
   const router = useRouter();
@@ -438,6 +447,18 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
     setStatus("error");
     setMessage(text);
   }
+
+  const consentBox = (
+    <label className="sig-brand-consent">
+      <input
+        type="checkbox"
+        name="marketing_consent"
+        checked={marketingConsent}
+        onChange={(event) => setMarketingConsent(event.target.checked)}
+      />
+      <span>{t.marketing}</span>
+    </label>
+  );
 
   return (
     <form
@@ -525,15 +546,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
         />
       </div>
 
-      <label className="sig-brand-consent">
-        <input
-          type="checkbox"
-          name="marketing_consent"
-          checked={marketingConsent}
-          onChange={(event) => setMarketingConsent(event.target.checked)}
-        />
-        <span>{t.marketing}</span>
-      </label>
+      {consentInNotice ? null : consentBox}
 
       <div className="sig-report-submit">
         <button
@@ -561,6 +574,7 @@ export function BrandReportForm({ locale }: { locale: Locale }) {
         <p className="sig-brand-notice-summary">{t.notice.summary}</p>
         <details className="sig-brand-notice-details">
           <summary>{t.notice.title}</summary>
+          {consentInNotice ? consentBox : null}
           <dl>
             {t.notice.rows.map(([term, detail]) => (
               <div key={term}>

@@ -73,7 +73,7 @@ export function LandingFooter({ locale = "es" }: { locale?: "es" | "en" }) {
           >
             {t.terms.label}
           </Link>
-          <span className="font-mono text-[11.5px] uppercase tracking-[0.1em] text-dark-text-tertiary">
+          <span className="font-mono text-[11.5px] uppercase tracking-[0.1em] text-dark-text-secondary">
             {t.badges}
           </span>
         </div>
