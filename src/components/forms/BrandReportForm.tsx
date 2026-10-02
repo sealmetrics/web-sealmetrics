@@ -4,6 +4,7 @@ import { useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 type Locale = "en" | "es";
 
@@ -270,6 +271,10 @@ const copy = {
       "Optional. Without them, the report finds who the models name instead of you.",
     optional: "Add sector and competitors",
     optionalNote: "Optional · a sharper report",
+    sells: "What do you sell?",
+    sellsPlaceholder: "e.g. specialty coffee online",
+    optionalCompetitors: "Add competitors",
+    errorSells: "Tell us what your company sells.",
     submit: "Send me the report",
     submitting: "Requesting the report",
     errorBrand: "Tell us which brand to ask about.",
@@ -294,7 +299,7 @@ const copy = {
         ],
         [
           "Recipients",
-          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the relay that receives the form and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
+          "Resend (USA, Standard Contractual Clauses) delivers the report and Cloudflare runs the anti-bot check and keeps the full report for 30 days behind the private link in the email. Enroutia, which generates the report, and the AI models receive only the brand, sector and competitors you enter, never your email. Only if you tick the box: lemlist (France) sends the follow-up about your report, and Airtable (USA, Standard Contractual Clauses) holds the list of those who asked for it.",
         ],
         [
           "Your rights",
@@ -318,6 +323,10 @@ const copy = {
       "Opcional. Sin ellos, el informe descubre a quién nombran los modelos en tu lugar.",
     optional: "Añadir sector y competidores",
     optionalNote: "Opcional · un informe más afinado",
+    sells: "¿Qué vendes?",
+    sellsPlaceholder: "p. ej. café de especialidad online",
+    optionalCompetitors: "Añadir competidores",
+    errorSells: "Dinos qué vende tu empresa.",
     submit: "Enviadme el informe",
     submitting: "Pidiendo el informe",
     errorBrand: "Dinos por qué marca preguntamos.",
@@ -342,7 +351,7 @@ const copy = {
         ],
         [
           "Destinatarios",
-          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare opera el relé que recibe el formulario y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
+          "Resend (EE. UU., cláusulas contractuales tipo) entrega el informe y Cloudflare hace la comprobación antibots y guarda el informe completo 30 días tras el enlace privado del correo. Enroutia, que genera el informe, y los modelos de IA reciben sólo la marca, el sector y los competidores que escribas, nunca tu correo. Sólo si marcas la casilla: lemlist (Francia) envía el seguimiento sobre tu informe y Airtable (EE. UU., cláusulas contractuales tipo) guarda la lista de quienes lo pidieron.",
         ],
         [
           "Derechos",
@@ -357,12 +366,17 @@ const copy = {
 export function BrandReportForm({
   locale,
   consentInNotice = false,
+  askWhatYouSell = false,
 }: {
   locale: Locale;
   /** Paid landing: the optional newsletter box moves inside the data-protection
    *  disclosure so the submit button sits higher on a phone. Still unticked and
    *  still optional, so the consent is the same one either way. */
   consentInNotice?: boolean;
+  /** Paid landing: "What do you sell?" is a visible, required field instead of the
+   *  optional sector behind the disclosure. It feeds the report's purchase question
+   *  ("recommend me a …"), which says little when it is left blank. */
+  askWhatYouSell?: boolean;
 }) {
   const t = copy[locale];
   const prefix = locale === "es" ? "/es" : "";
@@ -375,10 +389,12 @@ export function BrandReportForm({
   // the newsletter is a separate consent
   // (GDPR art. 7.2, LSSI art. 21). n8n subscribes only on an explicit `true`.
   const [marketingConsent, setMarketingConsent] = useState(false);
-  // Funnel microconversion, sent at most once per page: somebody started the form.
-  // With `brand_report_request` on the accepted submission, the two show where
-  // requests are lost.
+  // Funnel microconversions, each sent at most once per page: somebody started the
+  // form, and Cloudflare refused to verify them. With `brand_report_request` on the
+  // accepted submission, the three show where requests are lost — a real person
+  // stuck on the anti-bot check left no trace before.
   const started = useRef(false);
+  const verificationFailed = useRef(false);
 
   function noteStart(event: React.FormEvent<HTMLFormElement>) {
     const field = (event.target as HTMLInputElement).name;
@@ -388,12 +404,20 @@ export function BrandReportForm({
     pushEvent({ event: "brand_report_start", language: locale });
   }
 
+  function noteVerificationFailed() {
+    if (verificationFailed.current) return;
+    verificationFailed.current = true;
+    pushEvent({ event: "brand_report_verification_failed", language: locale });
+  }
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const canSubmit =
-    Boolean(brand.trim() && email.trim()) && status !== "submitting";
+    Boolean(brand.trim() && email.trim() && turnstileToken) &&
+    status !== "submitting";
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -406,6 +430,7 @@ export function BrandReportForm({
     if (!cleanBrand) return fail(t.errorBrand);
     if (!EMAIL_RE.test(cleanEmail)) return fail(t.errorEmail);
     if (PERSONAL_DOMAINS.has(domain)) return fail(t.errorPersonal);
+    if (askWhatYouSell && !sector.trim()) return fail(t.errorSells);
 
     setStatus("submitting");
     setMessage("");
@@ -418,15 +443,22 @@ export function BrandReportForm({
           email: cleanEmail,
           brand: cleanBrand,
           sector: trimmedSector,
-          // The purchase question asks for a recommendation without naming anyone, so it
-          // needs a category rather than a sector: "recommend me a {category}".
-          category: trimmedSector ? `${trimmedSector} tool` : "",
+          // The purchase question asks for a recommendation without naming anyone:
+          // Enroutia writes "Recomiéndame una {category}…" / "Recommend me a
+          // {category}…". It used to append " tool", which only fitted software — a
+          // coffee shop got asked for a "café de especialidad tool". "Marca de …" fits
+          // the feminine article and any business, software included.
+          category: trimmedSector
+            ? locale === "es"
+              ? `marca de ${trimmedSector}`
+              : `${trimmedSector} brand`
+            : "",
           country: locale === "es" ? "España" : "Europe",
           competitors: competitors.trim(),
           language: locale,
           marketing_consent: marketingConsent,
         },
-        { companyFax },
+        { companyFax, turnstileToken: turnstileToken ?? "" },
       );
       // Fired on the submission the relay accepted, not on the thank-you page:
       // what is being counted is the request itself, and a static confirmation
@@ -440,6 +472,8 @@ export function BrandReportForm({
     } catch {
       setStatus("error");
       setMessage(t.errorGeneric);
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
     }
   }
 
@@ -457,6 +491,24 @@ export function BrandReportForm({
         onChange={(event) => setMarketingConsent(event.target.checked)}
       />
       <span>{t.marketing}</span>
+    </label>
+  );
+
+  const sectorField = (
+    <label className="sig-brand-field">
+      <span>{askWhatYouSell ? t.sells : t.sector}</span>
+      <input
+        type="text"
+        name="sector"
+        value={sector}
+        onChange={(event) => setSector(event.target.value)}
+        placeholder={askWhatYouSell ? t.sellsPlaceholder : t.sectorPlaceholder}
+        // 110, not the Worker's 120: the category adds "marca de " / " brand" and is
+        // checked against the same 120 there.
+        maxLength={110}
+        required={askWhatYouSell}
+      />
+      {askWhatYouSell ? null : <small>{t.sectorHint}</small>}
     </label>
   );
 
@@ -485,6 +537,8 @@ export function BrandReportForm({
           />
         </label>
 
+        {askWhatYouSell ? sectorField : null}
+
         <label className="sig-brand-field">
           <span>{t.email}</span>
           <input
@@ -501,22 +555,11 @@ export function BrandReportForm({
 
         <details className="sig-report-optional">
           <summary>
-            <span>{t.optional}</span>
+            <span>{askWhatYouSell ? t.optionalCompetitors : t.optional}</span>
             <small>{t.optionalNote}</small>
           </summary>
           <div className="sig-report-fields">
-            <label className="sig-brand-field">
-              <span>{t.sector}</span>
-              <input
-                type="text"
-                name="sector"
-                value={sector}
-                onChange={(event) => setSector(event.target.value)}
-                placeholder={t.sectorPlaceholder}
-                maxLength={120}
-              />
-              <small>{t.sectorHint}</small>
-            </label>
+            {askWhatYouSell ? null : sectorField}
 
             <label className="sig-brand-field">
               <span>{t.competitors}</span>
@@ -549,6 +592,12 @@ export function BrandReportForm({
       {consentInNotice ? null : consentBox}
 
       <div className="sig-report-submit">
+        <LeadTurnstile
+          onToken={setTurnstileToken}
+          onFail={noteVerificationFailed}
+          resetKey={turnstileResetKey}
+          locale={locale}
+        />
         <button
           type="submit"
           className="sig-brand-submit"

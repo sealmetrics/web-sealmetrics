@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import {
   SignupQualifier,
   EMPTY_QUALIFIER,
@@ -372,6 +373,8 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [scoreTier, setScoreTier] = useState<"high" | "mid" | "low">("mid");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const [deliveryError, setDeliveryError] = useState<string | null>(null);
   const microFired = useRef(false);
 
@@ -397,11 +400,12 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
         contact.company.trim() &&
           contact.website.trim() &&
           contact.email.trim() &&
-          contact.name.trim()
+          contact.name.trim() &&
+          turnstileToken
       );
     }
     return Boolean(answers[step]);
-  }, [step, answers, contact, isContactStep]);
+  }, [step, answers, contact, isContactStep, turnstileToken]);
 
   const progressPct = ((step - 1) / TOTAL_QUESTIONS) * 100;
 
@@ -428,6 +432,11 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
   async function handleSubmit() {
     setSubmitting(true);
     setDeliveryError(null);
+    if (!turnstileToken) {
+      setDeliveryError(locale === "es" ? "Completa la verificación de seguridad." : "Please complete the security verification.");
+      setSubmitting(false);
+      return;
+    }
     const raw = Object.values(answers).reduce((sum, a) => sum + a.score, 0);
     const normalized = Math.max(
       1,
@@ -480,9 +489,11 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
     };
 
     try {
-      await submitFirstPartyForm("audit", payload);
+      await submitFirstPartyForm("audit", payload, { turnstileToken });
     } catch {
       setDeliveryError(locale === "es" ? "No hemos podido enviar la auditoría. Inténtalo de nuevo." : "We could not send the audit. Please try again.");
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
       setSubmitting(false);
       return;
     }
@@ -653,6 +664,13 @@ export function AuditForm({ locale = "en" }: { locale?: Locale }) {
                 sector: true,
                 ads_spend_band: true,
               }}
+            />
+          </div>
+          <div className="mt-5">
+            <LeadTurnstile
+              onToken={setTurnstileToken}
+              resetKey={turnstileResetKey}
+              locale={locale}
             />
           </div>
           {deliveryError && <p role="alert" className="mt-3 text-[13px] text-red-alert">{deliveryError}</p>}

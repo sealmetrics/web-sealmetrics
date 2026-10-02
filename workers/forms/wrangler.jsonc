@@ -9,7 +9,10 @@
     "head_sampling_rate": 1
   },
   "vars": {
-    "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com"
+    "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com",
+    "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
+    "TURNSTILE_ACTION": "sealmetrics_lead",
+    "REQUIRE_TURNSTILE": "true"
   },
   "ratelimits": [
     {
