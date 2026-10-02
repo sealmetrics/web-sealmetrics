@@ -1,6 +1,26 @@
 {
   "version": 1,
   "targets": {
+    "public/ads/ai-brand-monitoring/portada-15s-es.avif": {
+      "source": "public/ads/ai-brand-monitoring/portada-15s-es.jpg",
+      "sourceHash": "a5599580399a347959769d334666fef14ad1de80408a90255a0c469f57572795",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/ads/ai-brand-monitoring/portada-15s-es.webp": {
+      "source": "public/ads/ai-brand-monitoring/portada-15s-es.jpg",
+      "sourceHash": "a5599580399a347959769d334666fef14ad1de80408a90255a0c469f57572795",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/ads/ai-brand-monitoring/portada-50s-es.avif": {
+      "source": "public/ads/ai-brand-monitoring/portada-50s-es.jpg",
+      "sourceHash": "651c641cf4adcc4f5b28f16b89f146d68782edc944d899606c937d1bcf53cb64",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/ads/ai-brand-monitoring/portada-50s-es.webp": {
+      "source": "public/ads/ai-brand-monitoring/portada-50s-es.jpg",
+      "sourceHash": "651c641cf4adcc4f5b28f16b89f146d68782edc944d899606c937d1bcf53cb64",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/favicon.avif": {
       "source": "public/favicon.png",
       "sourceHash": "81290297fca8a80cbe60a6054d5f17cf87cd22f6458eecb728a07fc748e640eb",
@@ -769,6 +789,16 @@
     "public/og/blog/what-is-data-loss-in-analytics.webp": {
       "source": "public/og/blog/what-is-data-loss-in-analytics.png",
       "sourceHash": "f30189a81ba9a36768e2428224a281e8be8dce89ec30eadda477997c4a4a83e2",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/blog/why-ga4-misses-traffic.avif": {
+      "source": "public/og/blog/why-ga4-misses-traffic.png",
+      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/blog/why-ga4-misses-traffic.webp": {
+      "source": "public/og/blog/why-ga4-misses-traffic.png",
+      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/blog/why-ga4-shows-13pct-eu-traffic.avif": {
@@ -1859,36 +1889,6 @@
     "public/videos/platform-overview.webp": {
       "source": "public/videos/platform-overview.jpg",
       "sourceHash": "32daf556a18a25050b5fa17b53ac6692fc953f8ef092356a8d2fd67738a3ee25",
-      "signature": "webp:{\"quality\":78}"
-    },
-    "public/og/blog/why-ga4-misses-traffic.avif": {
-      "source": "public/og/blog/why-ga4-misses-traffic.png",
-      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
-      "signature": "avif:{\"quality\":60,\"effort\":4}"
-    },
-    "public/og/blog/why-ga4-misses-traffic.webp": {
-      "source": "public/og/blog/why-ga4-misses-traffic.png",
-      "sourceHash": "e59b19f61c271e346b7cbeee670ebc0680976b84a11060a9ef7ddfe924438bd2",
-      "signature": "webp:{\"quality\":78}"
-    },
-    "public/og/que-dicen-las-ia.avif": {
-      "source": "public/og/que-dicen-las-ia.png",
-      "sourceHash": "ef03505847c48a366f2affd1fe22b0c7e38dacfc7d22764617c9a2f4aef1818b",
-      "signature": "avif:{\"quality\":60,\"effort\":4}"
-    },
-    "public/og/que-dicen-las-ia.webp": {
-      "source": "public/og/que-dicen-las-ia.png",
-      "sourceHash": "ef03505847c48a366f2affd1fe22b0c7e38dacfc7d22764617c9a2f4aef1818b",
-      "signature": "webp:{\"quality\":78}"
-    },
-    "public/og/what-ai-says.avif": {
-      "source": "public/og/what-ai-says.png",
-      "sourceHash": "483732f8c72149a7203c456e0316cfa12f78a50f85ce2cde62a31e0cc2824490",
-      "signature": "avif:{\"quality\":60,\"effort\":4}"
-    },
-    "public/og/what-ai-says.webp": {
-      "source": "public/og/what-ai-says.png",
-      "sourceHash": "483732f8c72149a7203c456e0316cfa12f78a50f85ce2cde62a31e0cc2824490",
       "signature": "webp:{\"quality\":78}"
     }
   }
