@@ -1,0 +1,192 @@
+/* Landing de pago del informe de marca. Se apoya en brand-monitoring-signal.css
+   para los tokens de .sig-brand-page y para el formulario, que es el mismo
+   componente que el de la página orgánica; aquí sólo vive el esqueleto. */
+
+.lp-brand {
+  padding-top: 0;
+  min-height: 100vh;
+}
+
+.lp-brand-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--rule);
+}
+.lp-brand-logo {
+  height: 26px;
+  width: auto;
+}
+.lp-brand-free {
+  background: var(--ink);
+  color: var(--acid);
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 6px 9px;
+}
+
+.lp-brand-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 56px;
+  align-items: start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 40px 56px;
+}
+
+.lp-brand h1 {
+  font-size: clamp(40px, 4vw, 58px);
+  font-weight: 790;
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+}
+.lp-brand-sub {
+  margin-top: 22px !important;
+  max-width: 34em;
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+.lp-brand-logos {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--rule);
+  border-left: 1px solid var(--rule);
+}
+.lp-brand-logos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+  border-right: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  background: var(--white);
+  font-size: 15px;
+  font-weight: 650;
+  min-width: 0;
+}
+.lp-brand-logos img {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+.lp-brand-logos span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lp-brand-logos-note {
+  margin-top: 10px !important;
+  font-family: var(--font-mono), "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* .sig-brand-request trae un padding inferior pensado para la página orgánica;
+   aquí la sombra recogía ese hueco y dibujaba una banda ácida bajo la tarjeta. */
+.lp-brand .lp-brand-form {
+  padding-bottom: 0;
+}
+.lp-brand-form {
+  position: sticky;
+  top: 24px;
+  box-shadow: 12px 12px 0 var(--acid);
+}
+
+.lp-brand-receives {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 40px 72px;
+  border-top: 1px solid var(--rule);
+}
+.lp-brand-receives h2 {
+  font-size: 28px;
+  font-weight: 790;
+  letter-spacing: -0.04em;
+}
+.lp-brand-receives ul {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 40px;
+}
+.lp-brand-receives li {
+  position: relative;
+  padding-left: 26px;
+  font-size: 17px;
+  line-height: 1.45;
+}
+.lp-brand-receives li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+}
+.lp-brand a.lp-brand-sample {
+  display: inline-block;
+  margin-top: 24px;
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .lp-brand-header {
+    padding: 14px 16px;
+  }
+  .lp-brand-hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 28px 16px 40px;
+  }
+  .lp-brand-sub {
+    margin-top: 14px !important;
+    font-size: 17px;
+  }
+  .lp-brand-logos {
+    margin-top: 22px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  /* En el móvil, rejilla compacta de 4 × 2 con el nombre debajo en pequeño: el
+     formulario tiene que asomar en la primera pantalla. */
+  .lp-brand-logos li {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 2px;
+    font-size: 11px;
+  }
+  .lp-brand-logos img {
+    width: 20px;
+    height: 20px;
+  }
+  .lp-brand-form {
+    position: static;
+    box-shadow: 6px 6px 0 var(--acid);
+  }
+  .lp-brand-receives {
+    padding: 36px 16px 56px;
+  }
+  .lp-brand-receives ul {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sig-brand-submit {
+    width: 100%;
+  }
+}
