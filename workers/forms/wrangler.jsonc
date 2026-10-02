@@ -9,7 +9,12 @@
     "head_sampling_rate": 1
   },
   "vars": {
-    "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com"
+    "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com",
+    "ENROUTIA_API_BASE": "https://platform.enroutia.com",
+    // Turnstile guards the brand check only; the lead forms have none since 1 Oct 2026.
+    "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
+    "TURNSTILE_ACTION": "sealmetrics_brand_check",
+    "REQUIRE_TURNSTILE": "true"
   },
   "ratelimits": [
     {

@@ -14,25 +14,39 @@ be committed:
 - `N8N_CAREERS_URL`
 - `N8N_BRAND_REPORT_URL`
 - `N8N_STUDY_DOWNLOAD_URL`
+- `ENROUTIA_BRAND_CHECK_TOKEN`
+- `TURNSTILE_SECRET` (brand check only)
 - `REPORT_UPLOAD_SECRET`
 - `N8N_REPORT_SHARE_URL`
 
 `N8N_BRAND_REPORT_URL` points at the `sm-brand-report` webhook in n8n, the flow
 behind the "what AI says about your brand" report form.
 
-`ALLOWED_ORIGINS` is a non-secret setting in `wrangler.jsonc`. Origin
+`ENROUTIA_BRAND_CHECK_TOKEN` is the Enroutia `pat_` key (scope `inference`)
+that pays for "what do AIs say about…?" checks. Set it with
+`npx wrangler secret put ENROUTIA_BRAND_CHECK_TOKEN`. Without it,
+`POST /api/brand-check` answers 503 `unavailable`; the public reads keep working,
+anonymously and limited per IP by Enroutia. Enroutia also caps the checks one
+project can create at 300 a day (cache hits are free).
+
+`ALLOWED_ORIGINS`, `ENROUTIA_API_BASE`, `TURNSTILE_HOSTNAMES`,
+`TURNSTILE_ACTION` and `REQUIRE_TURNSTILE` are non-secret settings in
+`wrangler.jsonc`. For the lead forms, origin
 validation, Cloudflare rate limiting (10 submissions a minute per IP), field
 validation and the `company_fax` honeypot are what stand between the forms and
 automated submissions.
 
-## Retired: Turnstile
+## Turnstile: the brand check only
 
 Cloudflare Turnstile was required on every lead flow from 13 Aug to 1 Oct 2026
-and then removed, from the forms and from this Worker. The Worker ignores a
-`turnstileToken` field if a cached page still sends one. Deploy this Worker
-**before** the site without the widget goes live: the previous Worker answers
-403 `challenge_failed` to a submission with no token. Once it is deployed,
-delete the unused secret: `npx wrangler secret delete TURNSTILE_SECRET`.
+and then removed from them; `/api/forms` ignores a `turnstileToken` field if a
+cached page still sends one. It stays on `POST /api/brand-check`, which is
+free, needs no email and costs an Enroutia inference per new check (decided 2
+Oct 2026). The check's widget uses its own action, `sealmetrics_brand_check`,
+so a token issued anywhere else is refused. `TURNSTILE_SECRET` must therefore
+stay set: `npx wrangler secret put TURNSTILE_SECRET` if it was deleted after
+1 Oct. The site key is `NEXT_PUBLIC_BRAND_CHECK_TURNSTILE_SITE_KEY` in
+`.env.production`.
 
 The deployed endpoint is:
 
@@ -44,21 +58,39 @@ never sees or calls n8n, although the temporary public hostname is under
 `sealmetrics.com` DNS zone remains at GoDaddy rather than in this Cloudflare
 account.
 
-## Retired: brand check (`/api/brand-check`)
+## Brand check (`/api/brand-check`)
 
-The free two-question check at `/what-ai-says/` and `/es/que-dicen-las-ia/` was
-withdrawn on 30 Sep 2026: nothing on the site is given away without at least an
-email. The route is gone and both pages redirect to `/ai-brand-monitoring/`. Once
-the Worker without the route is deployed, delete the old secret:
-`npx wrangler secret delete ENROUTIA_BRAND_CHECK_TOKEN`. The
-`BRAND_CHECK_READ_LIMITER` binding keeps its name because the report link's read
-uses it.
+The page at `/que-dicen-las-ia/` and `/what-ai-says/` talks only to this
+Worker; the Enroutia token never reaches the browser.
+
+- `POST /api/brand-check` with JSON
+  `{brand, category, language, country?, turnstileToken, company_fax?}`. `brand` is
+  1–120 characters and must not be an email or URL; `category` (what the brand
+  sells, Enroutia D-354) is 1–80 characters, same refusals except a slash;
+  `language` is `es` or `en`;
+  `country` is optional, at most 60 characters. Same protections as
+  `/api/forms` (allowed origin, `FORM_RATE_LIMITER`, JSON, honeypot,
+  Turnstile). Forwarded to `POST ${ENROUTIA_API_BASE}/api/brand-checks` with
+  the bearer token, 15 s timeout. Enroutia's 200/202 body is returned as is;
+  429 becomes 429 `quota`; 400/422 become 400 `invalid_fields`; anything else
+  (401/402/403/409/5xx/timeout, or a missing token) becomes 503 `unavailable`.
+  Upstream error bodies are never relayed.
+- `GET /api/brand-check?brand=…&language=…` or `GET /api/brand-check?id=<uuid>`
+  proxies Enroutia's public read (`/api/brand-checks/public…`). No Turnstile,
+  its own limiter (`BRAND_CHECK_READ_LIMITER`, 120/60 s per IP, enough for a
+  two-brand comparison polling every 2 s). When `ENROUTIA_BRAND_CHECK_TOKEN` is
+  set it is sent as a bearer token, so Enroutia rate-limits per project rather
+  than per IP (every visitor shares the Worker's IP); without it the read still
+  works anonymously. The token is never returned to the browser. A foreign
+  `Origin` is refused; no `Origin` (a shared link opened directly) is allowed.
+  200 and 404 are relayed with Enroutia's `Cache-Control`; 429 stays 429;
+  anything else becomes 503 `unavailable`.
 
 ## Deployment sequence
 
 1. Run `npm ci` and `npm test` in this directory.
 2. Confirm the target Cloudflare account with `npx wrangler whoami`.
-3. Configure the secrets above.
+3. Configure the six secrets above.
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
 5. Point the static forms at the deployed endpoint above.
 6. Confirm all seven flows reach the expected mailbox before merging to `main`.
