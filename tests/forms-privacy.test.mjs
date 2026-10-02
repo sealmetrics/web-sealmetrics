@@ -24,9 +24,7 @@ test("browser source contains no n8n webhook endpoint", () => {
   assert.deepEqual(exposed, []);
 });
 
-// Turnstile was removed from the lead forms on 1 Oct 2026. The relay no longer
-// verifies a token, so a widget left behind would only block people for nothing.
-test("every public lead flow uses the relay, and none renders a challenge", () => {
+test("every first-party form caller requires a Turnstile token", () => {
   const callers = files.filter((file) => {
     const source = readFileSync(file, "utf8");
     return (
@@ -37,7 +35,8 @@ test("every public lead flow uses the relay, and none renders a challenge", () =
   assert.ok(callers.length >= 8, "expected every public lead flow to use the relay");
   for (const file of callers) {
     const source = readFileSync(file, "utf8");
-    assert.doesNotMatch(source, /turnstile/i, `${file} still references Turnstile`);
+    assert.match(source, /LeadTurnstile/, `${file} does not render Turnstile`);
+    assert.match(source, /turnstileToken/, `${file} does not submit a Turnstile token`);
   }
 });
 

@@ -5,6 +5,7 @@ import { type QuizAnswers } from "@/lib/content/diagnostic";
 import { pushEvent } from "@/lib/analytics";
 import { buildSignupPayload } from "@/lib/signup/payload";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
 interface DemoAccessCTAProps {
   answers: QuizAnswers;
@@ -16,6 +17,8 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
   const [company, setCompany] = useState("");
   const [gdprConsent, setGdprConsent] = useState(false);
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
   const microFired = useRef(false);
 
   useEffect(() => {
@@ -25,7 +28,7 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
   }, [status, email]);
 
   const canSubmit =
-    name.trim() && email.trim() && company.trim() && gdprConsent && status !== "submitting";
+    name.trim() && email.trim() && company.trim() && gdprConsent && turnstileToken && status !== "submitting";
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -54,11 +57,14 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
           source: "diagnostic_demo_access",
           quiz_answers: answers,
           signup,
-        }
+        },
+        { turnstileToken: turnstileToken ?? "" }
       );
       setStatus("success");
     } catch {
       setStatus("error");
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
     }
   }
 
@@ -158,6 +164,8 @@ export function DemoAccessCTA({ answers }: DemoAccessCTAProps) {
                 </a>
               </span>
             </label>
+
+            <LeadTurnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} />
 
             {status === "error" && (
               <p className="text-[0.85rem] text-red-alert">

@@ -32,7 +32,7 @@ function share(payload) {
   return new Request("https://forms.sealmetrics.com/api/forms", {
     method: "POST",
     headers: { "Content-Type": "application/json", Origin: "https://sealmetrics.com" },
-    body: JSON.stringify({ type: "report_share", payload }),
+    body: JSON.stringify({ type: "report_share", payload, turnstileToken: "ok" }),
   });
 }
 

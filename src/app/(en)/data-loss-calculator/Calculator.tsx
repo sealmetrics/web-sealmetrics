@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import {
   REJECTION_DEFAULT,
   REJECTION_MAX,
@@ -332,6 +333,8 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
   };
   const [reportEmail, setReportEmail] = useState("");
   const [reportSent, setReportSent] = useState(false);
+  const [reportTurnstileToken, setReportTurnstileToken] = useState<string | null>(null);
+  const [reportTurnstileResetKey, setReportTurnstileResetKey] = useState(0);
   const [reportError, setReportError] = useState(false);
 
   const inputClasses =
@@ -535,7 +538,7 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
                           <button
                             type="button"
                             className="px-4 py-2 text-[0.85rem] font-medium text-text-primary border border-warm-200 rounded-[4px] hover:border-text-body transition-colors whitespace-nowrap cursor-pointer disabled:opacity-40 disabled:cursor-not-allowed"
-                            disabled={!reportEmail}
+                            disabled={!reportEmail || !reportTurnstileToken}
                             onClick={async () => {
                               try {
                                 pushEvent({ event: "calculator_report_email", email: reportEmail });
@@ -550,17 +553,21 @@ export function Calculator({ locale = "en" }: { locale?: Locale }) {
                                     revenue: String(monthlyRevenue),
                                     rejection: `${rejectionPct}%`,
                                     dataLoss: `${Math.round(s.unseen * 100)}%`,
-                                  }
+                                  },
+                                  { turnstileToken: reportTurnstileToken ?? "" }
                                 );
                                 setReportSent(true);
                               } catch {
                                 setReportError(true);
+                                setReportTurnstileToken(null);
+                                setReportTurnstileResetKey((key) => key + 1);
                               }
                             }}
                           >
                             {t.sendReport}
                           </button>
                         </div>
+                        <LeadTurnstile onToken={setReportTurnstileToken} resetKey={reportTurnstileResetKey} />
                         {reportError && <p role="alert" className="text-[0.75rem] text-red-alert">{t.reportError}</p>}
                       </div>
                     )}
