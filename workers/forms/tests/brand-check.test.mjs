@@ -9,7 +9,8 @@ const CHECK_ID = "3f2b8c1e-9a4d-4e6f-8b21-0c5d7e9f1a2b";
 const baseEnv = {
   ALLOWED_ORIGINS: "https://sealmetrics.com,https://www.sealmetrics.com",
   TURNSTILE_HOSTNAMES: "sealmetrics.com,www.sealmetrics.com",
-  TURNSTILE_ACTION: "sealmetrics_brand_check",
+  TURNSTILE_ACTION: "sealmetrics_lead",
+  BRAND_CHECK_TURNSTILE_ACTION: "sealmetrics_brand_check",
   ALLOW_INSECURE_TESTING: "true",
   ENROUTIA_API_BASE: ENROUTIA,
   ENROUTIA_BRAND_CHECK_TOKEN: TOKEN,

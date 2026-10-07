@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { scoreAnswers, type DemoAnswers } from "@/lib/demo-scoring";
 import { pushEvent } from "@/lib/analytics";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
+import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 import {
   SignupQualifier,
   EMPTY_QUALIFIER,
@@ -139,6 +140,8 @@ export function DemoForm() {
   const [qualifier, setQualifier] = useState<QualifierState>(EMPTY_QUALIFIER);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [turnstileResetKey, setTurnstileResetKey] = useState(0);
 
   const select = (id: keyof DemoAnswers, value: string) => {
     setAnswers((prev) => ({ ...prev, [id]: value }));
@@ -165,6 +168,11 @@ export function DemoForm() {
       !answers.pressure
     ) {
       setError("Please complete all questions before submitting.");
+      setSubmitting(false);
+      return;
+    }
+    if (!turnstileToken) {
+      setError("Please complete the security verification.");
       setSubmitting(false);
       return;
     }
@@ -213,11 +221,13 @@ export function DemoForm() {
     pushEvent({ event: "demo_request", value: 1, email });
 
     try {
-      await submitFirstPartyForm("demo", payload);
+      await submitFirstPartyForm("demo", payload, { turnstileToken });
     } catch (err) {
       console.warn("Form delivery failed", err);
       setError("We could not send your request. Please try again.");
       setSubmitting(false);
+      setTurnstileToken(null);
+      setTurnstileResetKey((key) => key + 1);
       return;
     }
 
@@ -385,11 +395,13 @@ export function DemoForm() {
             }}
           />
 
+          <LeadTurnstile onToken={setTurnstileToken} resetKey={turnstileResetKey} />
+
           {error && <p className="text-[13px] text-red-alert">{error}</p>}
 
           <button
             type="submit"
-            disabled={submitting}
+            disabled={submitting || !turnstileToken}
             className="w-full py-3.5 text-[15px] font-semibold text-white bg-ink rounded-md hover:bg-brand transition-colors cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {submitting ? "Sending…" : "Talk with a Privacy-Analytics Specialist →"}

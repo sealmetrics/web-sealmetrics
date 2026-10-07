@@ -18,7 +18,7 @@ This file is the operational record for porting the current website to the Signa
 | Block | English | Spanish | Status | Notes |
 | --- | --- | --- | --- | --- |
 | Global shell | Shared | Shared | Complete | Signal header/footer and common layout are in place; the repository logo requested by the user is restored. |
-| Forms security | Shared | Shared | Complete | First-party proxy and tracking protections are on `main`. Turnstile was removed from the lead forms on 1 Oct 2026. |
+| Forms security | Shared | Shared | Complete | First-party proxy, Turnstile and tracking protections are on `main`. |
 | Homepage | `/` | `/es/` | Covered | English is Native Signal; Spanish is Signal adapted with the shared v4 layer. |
 | Product | `/product/` | `/es/product/` | Complete in PR | Real bilingual React component, Signal styling, metadata and schemas validated. |
 | How it works | `/how-it-works/` | `/es/how-it-works/` | Complete in PR | Signal path, semantic data-contract table, implementation sequence and visible FAQ. |

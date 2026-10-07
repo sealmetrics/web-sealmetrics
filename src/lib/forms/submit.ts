@@ -23,7 +23,7 @@ export const FORMS_WORKER_BASE = FORMS_ENDPOINT.replace(/\/api\/forms\/?$/, "");
 export async function submitFirstPartyForm(
   type: FirstPartyFormType,
   payload: Record<string, unknown>,
-  options: { companyFax?: string } = {}
+  options: { companyFax?: string; turnstileToken?: string } = {}
 ) {
   const response = await fetch(FORMS_ENDPOINT, {
     method: "POST",
@@ -33,6 +33,7 @@ export async function submitFirstPartyForm(
       type,
       payload,
       company_fax: options.companyFax ?? "",
+      turnstileToken: options.turnstileToken ?? "",
     }),
   });
 

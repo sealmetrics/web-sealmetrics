@@ -195,9 +195,10 @@ const EVENT_MAP: Record<string, Mapping> = {
   // name was absent from this table until now, so every request since the page
   // shipped was silently dropped by the `!mapping` guard below.
   lead_brand_report: { kind: "micro", name: "brand_report_request" },
-  // The step before it, so the funnel shows where requests are lost: the first
-  // keystroke in the form.
+  // The two steps before it, so the funnel shows where requests are lost: the
+  // first keystroke in the form, and a visitor Cloudflare's check refused.
   brand_report_start: { kind: "micro", name: "brand_report_start" },
+  brand_report_verification_failed: { kind: "micro", name: "brand_report_verification_failed" },
   // A sector study sent to the visitor's inbox. Registered here on the day the form
   // shipped: an unmapped name is dropped without a trace by the guard below.
   lead_study_download: { kind: "micro", name: "study_download" },

@@ -81,9 +81,9 @@ export function BrandReportLanding() {
           <div id="request" className="sig-brand-request lp-brand-form">
             <div className="sig-brand-module-top">
               <span>Pide tu informe</span>
-              <span>Marca + correo</span>
+              <span>Tres datos · un minuto</span>
             </div>
-            <BrandReportForm locale="es" consentInNotice />
+            <BrandReportForm locale="es" consentInNotice askWhatYouSell />
           </div>
         </section>
 

@@ -15,7 +15,7 @@ be committed:
 - `N8N_BRAND_REPORT_URL`
 - `N8N_STUDY_DOWNLOAD_URL`
 - `ENROUTIA_BRAND_CHECK_TOKEN`
-- `TURNSTILE_SECRET` (brand check only)
+- `TURNSTILE_SECRET`
 - `REPORT_UPLOAD_SECRET`
 - `N8N_REPORT_SHARE_URL`
 
@@ -30,23 +30,13 @@ anonymously and limited per IP by Enroutia. Enroutia also caps the checks one
 project can create at 300 a day (cache hits are free).
 
 `ALLOWED_ORIGINS`, `ENROUTIA_API_BASE`, `TURNSTILE_HOSTNAMES`,
-`TURNSTILE_ACTION` and `REQUIRE_TURNSTILE` are non-secret settings in
-`wrangler.jsonc`. For the lead forms, origin
-validation, Cloudflare rate limiting (10 submissions a minute per IP), field
-validation and the `company_fax` honeypot are what stand between the forms and
-automated submissions.
-
-## Turnstile: the brand check only
-
-Cloudflare Turnstile was required on every lead flow from 13 Aug to 1 Oct 2026
-and then removed from them; `/api/forms` ignores a `turnstileToken` field if a
-cached page still sends one. It stays on `POST /api/brand-check`, which is
-free, needs no email and costs an Enroutia inference per new check (decided 2
-Oct 2026). The check's widget uses its own action, `sealmetrics_brand_check`,
-so a token issued anywhere else is refused. `TURNSTILE_SECRET` must therefore
-stay set: `npx wrangler secret put TURNSTILE_SECRET` if it was deleted after
-1 Oct. The site key is `NEXT_PUBLIC_BRAND_CHECK_TURNSTILE_SITE_KEY` in
-`.env.production`.
+`TURNSTILE_ACTION`, `BRAND_CHECK_TURNSTILE_ACTION` and `REQUIRE_TURNSTILE` are
+non-secret settings in `wrangler.jsonc`. Turnstile is required on every
+production lead flow (action `sealmetrics_lead`) and on `POST /api/brand-check`
+(action `sealmetrics_brand_check`, site key
+`NEXT_PUBLIC_BRAND_CHECK_TURNSTILE_SITE_KEY`), both verified with
+`TURNSTILE_SECRET`; a token issued for one action is refused on the other.
+Origin validation and Cloudflare rate limiting are also active.
 
 The deployed endpoint is:
 
@@ -93,8 +83,10 @@ Worker; the Enroutia token never reaches the browser.
 3. Configure the six secrets above.
 4. Deploy to the generated `workers.dev` hostname and run synthetic tests.
 5. Point the static forms at the deployed endpoint above.
-6. Confirm all seven flows reach the expected mailbox before merging to `main`.
-7. Rotate the n8n webhook paths that were previously present in frontend code.
+6. Confirm the Turnstile widget allows only `sealmetrics.com` and
+   `www.sealmetrics.com`, then keep `REQUIRE_TURNSTILE` set to `true`.
+7. Confirm all seven flows reach the expected mailbox before merging to `main`.
+8. Rotate the n8n webhook paths that were previously present in frontend code.
 
 If the DNS zone is moved to this Cloudflare account later, add
 `forms.sealmetrics.com` as a Worker custom domain, update
@@ -142,7 +134,7 @@ keep the HTML attachment.
 
 The full report page has a «Share» form. The Worker validates 1–5 unique work
 addresses (free-mail refused), the report key and an optional sender name with no
-link or address in it, checks the report still exists in
+link or address in it, runs Turnstile, checks the report still exists in
 `BRAND_REPORTS`, and caps a report at 20 recipients over its life
 (`share-count:<token>` in the same KV, 30-day TTL). It forwards `{token, language,
 recipients, sender_name, report_title}` to `N8N_REPORT_SHARE_URL` (n8n «Informe de
