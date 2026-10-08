@@ -208,10 +208,20 @@ const EVENT_MAP: Record<string, Mapping> = {
   // "What do AIs say about…?" (/what-ai-says, /es/que-dicen-las-ia). The brand
   // typed is never sent: it is free text, and a visitor can type a person's
   // name however clearly the page says not to.
+  // Every press of "Ver mi puntuación" / "See my score" that passes the form's own
+  // checks. `brand_check_request` below only counts the ones the relay accepted, so
+  // the gap between the two is quota, Turnstile and network failures.
+  brand_check_submit: { kind: "micro", name: "brand_check_submit" },
   brand_check_start: { kind: "micro", name: "brand_check_request" }, // check accepted by the relay
   brand_check_done: { kind: "micro", name: "brand_check_result" }, // a result finished on screen
   brand_check_share: { kind: "micro", name: "brand_check_share" }, // share button, copy or PNG
   brand_check_compare: { kind: "micro", name: "brand_check_compare" }, // second brand requested
+  // The funnel from the score to the full report: a click on "Pide el informe
+  // completo" under the result, and the report request made by someone who arrived
+  // through that click (the link carries `?from=brand-check`). The second one fires
+  // alongside `brand_report_request`, which keeps counting every request.
+  brand_check_report_click: { kind: "micro", name: "brand_check_report_click" },
+  brand_check_report_request: { kind: "micro", name: "brand_check_report_request" },
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };

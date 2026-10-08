@@ -159,6 +159,27 @@ test("the brand report request is a mapped microconversion, and carries no email
   }
 });
 
+test("the score-to-report funnel on the brand check is mapped, one microconversion per step", async () => {
+  // An unmapped name is dropped in silence by the `!mapping` guard: these three
+  // are the funnel Rafa reads (score pressed, report link clicked, report asked).
+  const { analytics, received, loadAll } = await loadAnalytics();
+
+  analytics.pageview("other");
+  loadAll();
+  analytics.pushEvent({ event: "brand_check_submit", language: "es" });
+  analytics.pushEvent({ event: "brand_check_report_click", language: "es" });
+  analytics.pushEvent({ event: "brand_check_report_request", language: "en" });
+
+  for (const id of accounts) {
+    const hits = received.get(id).filter((h) => h.kind !== "pageview");
+    assert.deepEqual(
+      hits.map((h) => `${h.kind}:${h.event}`),
+      ["micro:brand_check_submit", "micro:brand_check_report_click", "micro:brand_check_report_request"],
+      `${id} must receive each step exactly once`
+    );
+  }
+});
+
 test("hits fired before a tag finishes loading are queued per account, not dropped", async () => {
   const { analytics, scripts, received, loadTag } = await loadAnalytics();
 

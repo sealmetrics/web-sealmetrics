@@ -103,7 +103,7 @@ const copy = {
     reportBody:
       "Seis preguntas a los mismos modelos: qué valoran y qué critican de ti, a quién ponen en tu lugar, cómo te comparan con un competidor y qué errores conviene corregir en origen. Gratis, te llega por correo.",
     reportCta: "Pide el informe completo",
-    reportHref: "/es/ai-brand-monitoring/#request",
+    reportHref: "/es/ai-brand-monitoring/?from=brand-check#request",
     agree: "En qué coinciden",
     disagree: "En qué discrepan",
     byModel: "Modelo a modelo",
@@ -179,7 +179,7 @@ const copy = {
     reportBody:
       "Six questions to the same models: what they praise and criticise, who they put in your place, how they compare you with a competitor and which errors are worth correcting at the source. Free, and it arrives by email.",
     reportCta: "Request the full report",
-    reportHref: "/ai-brand-monitoring/#request",
+    reportHref: "/ai-brand-monitoring/?from=brand-check#request",
     agree: "Where they agree",
     disagree: "Where they disagree",
     byModel: "Model by model",
@@ -662,12 +662,16 @@ function ScoreBlock({ score, t }: { score: NonNullable<CheckView["score"]>; t: C
   );
 }
 
-function ReportCta({ t }: { t: Copy }) {
+function ReportCta({ t, locale }: { t: Copy; locale: Locale }) {
   return (
     <aside className="sig-check-report" data-md="skip">
       <h3>{t.reportTitle}</h3>
       <p>{t.reportBody}</p>
-      <a className="sig-brand-submit" href={t.reportHref}>
+      <a
+        className="sig-brand-submit"
+        href={t.reportHref}
+        onClick={() => pushEvent({ event: "brand_check_report_click", language: locale })}
+      >
         {t.reportCta}
         <Arrow />
       </a>
@@ -764,7 +768,7 @@ function Result({
         ) : null}
       </section>
 
-      {done && !isVs ? <ReportCta t={t} /> : null}
+      {done && !isVs ? <ReportCta t={t} locale={locale} /> : null}
 
       {slot.phase === "live" && slot.stalled ? (
         <div className="sig-check-alert" role="status">
@@ -919,6 +923,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
     setProblem(p);
     setCategoryIssue(c);
     if (p || c || !token) return;
+    pushEvent({ event: "brand_check_submit", language: locale });
     secondary.reset();
     setCompareOpen(false);
     setUrl(clean, "", cleanCategory);
