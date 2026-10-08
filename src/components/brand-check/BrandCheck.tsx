@@ -28,8 +28,11 @@ import {
   shareLinks,
   shareUrl,
   slugify,
+  STAGE_HINTS,
+  STAGE_STEPS,
   takedownMailto,
   toView,
+  type CheckStage,
 } from "@/lib/brand-check/view";
 
 /**
@@ -46,6 +49,8 @@ import {
 const ENDPOINT = `${FORMS_WORKER_BASE}/api/brand-check`;
 /** How long after a finished score the floating report panel waits to appear. */
 const FLOAT_DELAY_MS = 1500;
+/** How long each hint of the active step stays before the next one. */
+const HINT_INTERVAL_MS = 2200;
 /** Reads that fail for reasons other than 429 before the page stops and says so. */
 const MAX_READ_FAILURES = 4;
 
@@ -707,11 +712,52 @@ function ReportCta({ t, locale, brand, category }: { t: Copy; locale: Locale; br
 }
 
 /**
- * The full report, offered again from a moment after the score lands until the
- * visitor leaves. It stays out of the way of the result's own report box and of the
- * page's closing section — two invitations to the same thing on one screen is
- * one too many — and once closed it does not come back on this visit. Nothing
- * is stored: closing it lasts as long as the page.
+ * The three steps of a running check — asking, judging, summary and score —
+ * with the active one pulsing and its hints taking turns, so the minute a
+ * check takes reads as work being done rather than a page that stopped.
+ */
+function Stages({ stage, locale, progressLine }: { stage: CheckStage; locale: Locale; progressLine: string }) {
+  const steps = STAGE_STEPS[locale];
+  const active = steps.findIndex((step) => step.id === stage);
+  const hints = active >= 0 ? STAGE_HINTS[locale][steps[active].id] : [];
+  const [hint, setHint] = useState(0);
+
+  useEffect(() => {
+    setHint(0);
+    if (hints.length < 2) return;
+    const id = setInterval(() => setHint((h) => (h + 1) % hints.length), HINT_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [stage, hints.length]);
+
+  return (
+    <ol className="sig-check-stages" aria-label={locale === "es" ? "Estado de la consulta" : "Check status"}>
+      {steps.map((step, i) => {
+        const state = i < active ? "is-done" : i === active ? "is-active" : "is-pending";
+        return (
+          <li key={step.id} className={`sig-check-stage ${state}`} aria-current={i === active ? "step" : undefined}>
+            <span className="sig-check-stage-dot" aria-hidden="true" />
+            <span className="sig-check-stage-label">
+              {step.label}
+              {step.id === "asking" && i === active ? <span className="sig-check-stage-count"> · {progressLine}</span> : null}
+            </span>
+            {i === active && hints.length ? (
+              <span className="sig-check-stage-hint" key={`${step.id}-${hint}`}>
+                {hints[hint % hints.length]}
+              </span>
+            ) : null}
+          </li>
+        );
+      })}
+    </ol>
+  );
+}
+
+/**
+ * The full report, offered from a moment after the check finishes until the
+ * visitor leaves — always, with or without a score and next to the result's own
+ * report box (Sealmetrics, 08/10/2026: the offer is the point of the page). Once
+ * closed it does not come back on this visit. Nothing is stored: closing it
+ * lasts as long as the page.
  */
 function ReportFloat({
   t,
@@ -724,7 +770,6 @@ function ReportFloat({
   brand: string;
   category: string;
 }) {
-  const [blocked, setBlocked] = useState(true);
   const [ready, setReady] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const shownReported = useRef(false);
@@ -735,25 +780,7 @@ function ReportFloat({
     return () => clearTimeout(id);
   }, []);
 
-  useEffect(() => {
-    if (typeof IntersectionObserver === "undefined") return;
-    const targets = Array.from(
-      document.querySelectorAll(".sig-check-report, .sig-brand-final"),
-    );
-    if (!targets.length) return;
-    const visible = new Set<Element>();
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) visible.add(entry.target);
-        else visible.delete(entry.target);
-      }
-      setBlocked(visible.size > 0);
-    });
-    targets.forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
-  }, []);
-
-  const open = ready && !blocked && !dismissed;
+  const open = ready && !dismissed;
   useEffect(() => {
     if (!open || shownReported.current) return;
     shownReported.current = true;
@@ -865,7 +892,10 @@ function Result({
         ) : done ? (
           <p className="sig-check-card-line">{t.doneNoCard}</p>
         ) : (
-          <p className="sig-check-card-line is-running">{t.asking(view.brand)}</p>
+          <>
+            <p className="sig-check-card-line is-running">{t.asking(view.brand)}</p>
+            <Stages stage={view.stage} locale={locale} progressLine={view.progressLine} />
+          </>
         )}
         {!failed ? (
           <div className="sig-check-progress">
@@ -1108,7 +1138,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
   const rows = pView && sView ? compareRows(pView, sView, locale) : [];
   const busy = primary.slot.phase === "submitting" || primary.slot.phase === "loading";
   const canCompare = primary.slot.phase === "live";
-  const showFloat = secondary.slot.phase === "idle" && pView?.status === "done" && Boolean(pView.score);
+  const showFloat = pView?.status === "done";
 
   return (
     <div className="sig-check-app">

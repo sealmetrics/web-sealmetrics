@@ -277,6 +277,84 @@
   transition: width 0.4s ease;
 }
 
+/* Steps of a running check: done ones ticked in ink, the active one pulsing in
+   acid with its hint fading in turn, the rest muted. */
+.sig-check-stages {
+  display: grid;
+  gap: 10px;
+  margin: 4px 0 2px;
+  padding: 0;
+  list-style: none;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sig-check-stage {
+  display: grid;
+  grid-template-columns: 14px 1fr;
+  column-gap: 10px;
+  align-items: center;
+  color: var(--muted);
+}
+.sig-check-stage.is-done,
+.sig-check-stage.is-active {
+  color: var(--ink);
+}
+.sig-check-stage-dot {
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+.sig-check-stage.is-done .sig-check-stage-dot {
+  background: var(--ink);
+}
+.sig-check-stage.is-active .sig-check-stage-dot {
+  background: var(--acid);
+  border-color: var(--ink);
+  animation: sig-check-pulse 1.1s ease-in-out infinite;
+}
+.sig-check-stage-count {
+  color: var(--muted);
+}
+.sig-check-stage-hint {
+  grid-column: 2;
+  margin-top: 4px;
+  font-family: inherit;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  font-size: 13px;
+  color: var(--muted);
+  animation: sig-check-hint 0.35s ease;
+}
+.sig-check-stage-hint::after {
+  content: "…";
+}
+@keyframes sig-check-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.35);
+    opacity: 0.55;
+  }
+}
+@keyframes sig-check-hint {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
 /* Agree / disagree. */
 .sig-check-consensus {
   display: grid;
@@ -745,8 +823,8 @@
 
 /* ── Floating full-report panel ───────────────────────────────────────── */
 /* Ink slab with the acid offset shadow, bottom right. It sits off-screen and
-   slides in when neither the result's own report box nor the closing section
-   is in view; `aria-hidden` and `tabindex` follow the same state. */
+   slides in once the check is done, until closed; `aria-hidden` and `tabindex`
+   follow the same state. */
 .sig-check-float {
   position: fixed;
   right: 24px;
@@ -864,5 +942,9 @@
   .sig-check-float,
   .sig-check-float.is-open {
     transition: none;
+  }
+  .sig-check-stage.is-active .sig-check-stage-dot,
+  .sig-check-stage-hint {
+    animation: none;
   }
 }

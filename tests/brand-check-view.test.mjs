@@ -105,6 +105,7 @@ test("a running check shows live counts and no card yet", () => {
   assert.equal(view.expectedModels, 19);
   assert.equal(view.progressLine, "3 de 19 modelos han contestado");
   assert.ok(view.percent > 0 && view.percent < 100);
+  assert.equal(view.stage, "asking");
   // No verdict yet: every arrived model is "being classified", not "not reviewed".
   assert.ok(view.models.every((m) => m.state === "pending"));
 });
@@ -121,6 +122,7 @@ test("a finished check renders the card, consensus, states and methodology", () 
   const view = v.toView(v.parseCheckBody(DONE), "es");
   assert.equal(view.running, false);
   assert.equal(view.percent, 100);
+  assert.equal(view.stage, "done");
   assert.equal(view.card, DONE.summary.card);
   assert.deepEqual(view.agree, DONE.summary.agree);
   assert.deepEqual(view.disagree, DONE.summary.disagree);
@@ -355,4 +357,20 @@ test("the full-report link carries the brand and what it sells, and only the che
   assert.equal(v.readReportPrefill("?marca=Vueling&vende=vuelos", "es"), null);
   assert.equal(v.readReportPrefill("?from=brand-check&cta=evil", "en").cta, null);
   assert.equal(v.REPORT_ANSWERS, 114);
+});
+
+test("a running check names its step: asking, judging, then summary and score", () => {
+  assert.equal(v.checkStage("running", 3, 19, false), "asking");
+  assert.equal(v.checkStage("queued", 0, 0, false), "asking");
+  assert.equal(v.checkStage("running", 19, 19, false), "judging");
+  assert.equal(v.checkStage("running", 19, 19, true), "summarizing");
+  assert.equal(v.checkStage("done", 19, 19, true), "done");
+  assert.equal(v.checkStage("failed", 4, 19, false), "failed");
+  for (const locale of ["es", "en"]) {
+    assert.deepEqual(
+      v.STAGE_STEPS[locale].map((step) => step.id),
+      ["asking", "judging", "summarizing"],
+    );
+    for (const step of v.STAGE_STEPS[locale]) assert.ok(v.STAGE_HINTS[locale][step.id].length >= 2);
+  }
 });
