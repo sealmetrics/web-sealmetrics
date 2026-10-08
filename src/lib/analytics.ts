@@ -222,6 +222,14 @@ const EVENT_MAP: Record<string, Mapping> = {
   // alongside `brand_report_request`, which keeps counting every request.
   brand_check_report_click: { kind: "micro", name: "brand_check_report_click" },
   brand_check_report_request: { kind: "micro", name: "brand_check_report_request" },
+  // Both carry `cta`: "inline" for the box under the score, "float" for the
+  // floating panel that follows the reader down the model cards. The panel's own
+  // two steps below say how often it is seen and how often it is closed unused.
+  brand_check_float_shown: { kind: "micro", name: "brand_check_float_shown" },
+  brand_check_float_dismiss: { kind: "micro", name: "brand_check_float_dismiss" },
+  // "¿Y el de tu marca?": someone who arrived on another brand's shared result
+  // and went for their own score.
+  brand_check_own_click: { kind: "micro", name: "brand_check_own_click" },
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };

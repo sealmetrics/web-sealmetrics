@@ -22,6 +22,9 @@ import {
   nextPoll,
   parseCheckBody,
   readParams,
+  REPORT_ANSWERS,
+  REPORT_MODELS,
+  reportHref,
   shareLinks,
   shareUrl,
   slugify,
@@ -103,7 +106,14 @@ const copy = {
     reportBody:
       "Seis preguntas a los mismos modelos: qué valoran y qué critican de ti, a quién ponen en tu lugar, cómo te comparan con un competidor y qué errores conviene corregir en origen. Gratis, te llega por correo.",
     reportCta: "Pide el informe completo",
-    reportHref: "/es/ai-brand-monitoring/?from=brand-check#request",
+    floatEyebrow: "Informe completo · gratis",
+    floatTitle: (b: string) =>
+      `Descárgate el informe completo: ${REPORT_ANSWERS} respuestas de ${REPORT_MODELS} IA sobre cómo posicionan a ${b}.`,
+    floatBody: "Seis preguntas, cada respuesta entera y los errores marcados. Te llega por correo en unos cinco minutos.",
+    floatCta: "Quiero el informe",
+    floatClose: "Cerrar",
+    ownTitle: (b: string) => `Este resultado es de ${b}. ¿Y el de tu marca?`,
+    ownCta: "Ver mi puntuación",
     agree: "En qué coinciden",
     disagree: "En qué discrepan",
     byModel: "Modelo a modelo",
@@ -179,7 +189,14 @@ const copy = {
     reportBody:
       "Six questions to the same models: what they praise and criticise, who they put in your place, how they compare you with a competitor and which errors are worth correcting at the source. Free, and it arrives by email.",
     reportCta: "Request the full report",
-    reportHref: "/ai-brand-monitoring/?from=brand-check#request",
+    floatEyebrow: "Full report · free",
+    floatTitle: (b: string) =>
+      `Download the full report: ${REPORT_ANSWERS} answers from ${REPORT_MODELS} AIs on how they position ${b}.`,
+    floatBody: "Six questions, every answer in full and the errors marked. It arrives by email in about five minutes.",
+    floatCta: "Get the report",
+    floatClose: "Close",
+    ownTitle: (b: string) => `This result is for ${b}. What about your brand?`,
+    ownCta: "See my score",
     agree: "Where they agree",
     disagree: "Where they disagree",
     byModel: "Model by model",
@@ -662,17 +679,97 @@ function ScoreBlock({ score, t }: { score: NonNullable<CheckView["score"]>; t: C
   );
 }
 
-function ReportCta({ t, locale }: { t: Copy; locale: Locale }) {
+function ReportCta({ t, locale, brand, category }: { t: Copy; locale: Locale; brand: string; category: string }) {
   return (
     <aside className="sig-check-report" data-md="skip">
       <h3>{t.reportTitle}</h3>
       <p>{t.reportBody}</p>
       <a
         className="sig-brand-submit"
-        href={t.reportHref}
-        onClick={() => pushEvent({ event: "brand_check_report_click", language: locale })}
+        href={reportHref(locale, brand, category, "inline")}
+        onClick={() => pushEvent({ event: "brand_check_report_click", language: locale, cta: "inline" })}
       >
         {t.reportCta}
+        <Arrow />
+      </a>
+    </aside>
+  );
+}
+
+/**
+ * The full report, offered again while the visitor reads the nineteen model
+ * cards. It stays out of the way of the result's own report box and of the
+ * page's closing section — two invitations to the same thing on one screen is
+ * one too many — and once closed it does not come back on this visit. Nothing
+ * is stored: closing it lasts as long as the page.
+ */
+function ReportFloat({
+  t,
+  locale,
+  brand,
+  category,
+}: {
+  t: Copy;
+  locale: Locale;
+  brand: string;
+  category: string;
+}) {
+  const [blocked, setBlocked] = useState(true);
+  const [dismissed, setDismissed] = useState(false);
+  const shownReported = useRef(false);
+
+  useEffect(() => {
+    if (typeof IntersectionObserver === "undefined") return;
+    const targets = Array.from(
+      document.querySelectorAll(".sig-check-card, .sig-check-report, .sig-brand-final, .sig-check-form"),
+    );
+    if (!targets.length) return;
+    const visible = new Set<Element>();
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) visible.add(entry.target);
+        else visible.delete(entry.target);
+      }
+      setBlocked(visible.size > 0);
+    });
+    targets.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
+
+  const open = !blocked && !dismissed;
+  useEffect(() => {
+    if (!open || shownReported.current) return;
+    shownReported.current = true;
+    pushEvent({ event: "brand_check_float_shown", language: locale });
+  }, [open, locale]);
+
+  if (dismissed) return null;
+  return (
+    <aside className={`sig-check-float${open ? " is-open" : ""}`} data-md="skip" aria-hidden={!open}>
+      <button
+        type="button"
+        className="sig-check-float-close"
+        aria-label={t.floatClose}
+        tabIndex={open ? 0 : -1}
+        onClick={() => {
+          setDismissed(true);
+          pushEvent({ event: "brand_check_float_dismiss", language: locale });
+        }}
+      >
+        <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" fill="none" stroke="currentColor" strokeWidth="2">
+          <path d="M6 6l12 12M18 6L6 18" />
+        </svg>
+      </button>
+      <p className="sig-check-float-eyebrow">{t.floatEyebrow}</p>
+      <p className="sig-check-float-title">{t.floatTitle(brand)}</p>
+      <p className="sig-check-float-body">{t.floatBody}</p>
+      <a
+        className="sig-brand-submit"
+        href={reportHref(locale, brand, category, "float")}
+        tabIndex={open ? 0 : -1}
+        onClick={() => pushEvent({ event: "brand_check_report_click", language: locale, cta: "float" })}
+      >
+        {t.floatCta}
         <Arrow />
       </a>
     </aside>
@@ -686,6 +783,8 @@ function Result({
   t,
   url,
   isVs,
+  category = "",
+  onOwnScore,
   onRetry,
   onResume,
 }: {
@@ -695,6 +794,10 @@ function Result({
   t: Copy;
   url: string;
   isVs: boolean;
+  /** What the result was asked with, carried to the report form. */
+  category?: string;
+  /** Set when the result came from someone else's link: invites a check of one's own. */
+  onOwnScore?: () => void;
   onRetry: () => void;
   onResume: () => void;
 }) {
@@ -768,7 +871,16 @@ function Result({
         ) : null}
       </section>
 
-      {done && !isVs ? <ReportCta t={t} locale={locale} /> : null}
+      {done && onOwnScore ? (
+        <div className="sig-check-own" data-md="skip">
+          <p>{t.ownTitle(view.brand)}</p>
+          <button type="button" className="sig-check-link-button" onClick={onOwnScore}>
+            {t.ownCta} <Arrow />
+          </button>
+        </div>
+      ) : null}
+
+      {done && !isVs ? <ReportCta t={t} locale={locale} brand={view.brand} category={category} /> : null}
 
       {slot.phase === "live" && slot.stalled ? (
         <div className="sig-check-alert" role="status">
@@ -867,6 +979,10 @@ export function BrandCheck({ locale }: { locale: Locale }) {
   const [vsToken, setVsToken] = useState<string | null>(null);
   const [vsTokenKey, setVsTokenKey] = useState(0);
   const [compareOpen, setCompareOpen] = useState(false);
+  // The result on screen came from a shared link, not from this visitor's own
+  // check: it is someone else's brand, so the page asks for theirs.
+  const [fromLink, setFromLink] = useState(false);
+  const brandInput = useRef<HTMLInputElement>(null);
 
   const [comparing, setComparing] = useState(false);
   const primary = useCheckSlot(locale, comparing);
@@ -886,6 +1002,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
     if (!b) return;
     setBrand(b);
     if (c) setCategory(c);
+    setFromLink(true);
     void primary.load(b);
     if (vs) {
       setVsInput(vs);
@@ -924,6 +1041,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
     setCategoryIssue(c);
     if (p || c || !token) return;
     pushEvent({ event: "brand_check_submit", language: locale });
+    setFromLink(false);
     secondary.reset();
     setCompareOpen(false);
     setUrl(clean, "", cleanCategory);
@@ -947,6 +1065,20 @@ export function BrandCheck({ locale }: { locale: Locale }) {
     setVsTokenKey((k) => k + 1);
   }
 
+  /** Empties the form and takes the visitor to it; the result stays below. */
+  function startOwnScore() {
+    pushEvent({ event: "brand_check_own_click", language: locale });
+    setFromLink(false);
+    setBrand("");
+    setCategory("");
+    setProblem(null);
+    setCategoryIssue(null);
+    const input = brandInput.current;
+    if (!input) return;
+    input.scrollIntoView({ behavior: "smooth", block: "center" });
+    input.focus({ preventScroll: true });
+  }
+
   function removeCompare() {
     secondary.reset();
     setVsInput("");
@@ -959,6 +1091,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
   const rows = pView && sView ? compareRows(pView, sView, locale) : [];
   const busy = primary.slot.phase === "submitting" || primary.slot.phase === "loading";
   const canCompare = primary.slot.phase === "live";
+  const showFloat = secondary.slot.phase === "idle" && pView?.status === "done" && Boolean(pView.score);
 
   return (
     <div className="sig-check-app">
@@ -969,6 +1102,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
             <input
               type="text"
               name="brand"
+              ref={brandInput}
               value={brand}
               onChange={(e) => {
                 setBrand(e.target.value);
@@ -1048,6 +1182,8 @@ export function BrandCheck({ locale }: { locale: Locale }) {
             t={t}
             url={url}
             isVs={false}
+            category={primaryCategory}
+            onOwnScore={fromLink ? startOwnScore : undefined}
             onRetry={() => primaryBrand && primary.load(primaryBrand)}
             onResume={primary.resume}
           />
@@ -1102,6 +1238,7 @@ export function BrandCheck({ locale }: { locale: Locale }) {
                 t={t}
                 url={url}
                 isVs={false}
+                category={primaryCategory}
                 onRetry={() => primaryBrand && primary.load(primaryBrand)}
                 onResume={primary.resume}
               />
@@ -1173,6 +1310,10 @@ export function BrandCheck({ locale }: { locale: Locale }) {
             </button>
           )}
         </section>
+      ) : null}
+
+      {showFloat && pView ? (
+        <ReportFloat key={pView.id} t={t} locale={locale} brand={pView.brand} category={primaryCategory} />
       ) : null}
     </div>
   );

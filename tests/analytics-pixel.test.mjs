@@ -169,12 +169,22 @@ test("the score-to-report funnel on the brand check is mapped, one microconversi
   analytics.pushEvent({ event: "brand_check_submit", language: "es" });
   analytics.pushEvent({ event: "brand_check_report_click", language: "es" });
   analytics.pushEvent({ event: "brand_check_report_request", language: "en" });
+  analytics.pushEvent({ event: "brand_check_float_shown", language: "es" });
+  analytics.pushEvent({ event: "brand_check_float_dismiss", language: "es" });
+  analytics.pushEvent({ event: "brand_check_own_click", language: "es" });
 
   for (const id of accounts) {
     const hits = received.get(id).filter((h) => h.kind !== "pageview");
     assert.deepEqual(
       hits.map((h) => `${h.kind}:${h.event}`),
-      ["micro:brand_check_submit", "micro:brand_check_report_click", "micro:brand_check_report_request"],
+      [
+        "micro:brand_check_submit",
+        "micro:brand_check_report_click",
+        "micro:brand_check_report_request",
+        "micro:brand_check_float_shown",
+        "micro:brand_check_float_dismiss",
+        "micro:brand_check_own_click",
+      ],
       `${id} must receive each step exactly once`
     );
   }
