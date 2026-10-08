@@ -872,18 +872,18 @@ function Result({
             <p aria-live="polite" aria-atomic="true">
               {view.progressLine}
             </p>
-            {!done ? (
-              <div
-                className="sig-check-bar"
-                role="progressbar"
-                aria-label={t.progressLabel}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={view.percent}
-              >
-                <span style={{ width: `${view.percent}%` }} />
-              </div>
-            ) : null}
+            {/* Stays on screen, full, once every model has answered: the bar
+                is the visual half of «19 de 19», not only a loading state. */}
+            <div
+              className="sig-check-bar"
+              role="progressbar"
+              aria-label={t.progressLabel}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={view.percent}
+            >
+              <span style={{ width: `${view.percent}%` }} />
+            </div>
           </div>
         ) : null}
       </section>
