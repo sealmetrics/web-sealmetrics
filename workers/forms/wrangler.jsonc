@@ -10,8 +10,12 @@
   },
   "vars": {
     "ALLOWED_ORIGINS": "https://sealmetrics.com,https://www.sealmetrics.com",
+    "ENROUTIA_API_BASE": "https://platform.enroutia.com",
     "TURNSTILE_HOSTNAMES": "sealmetrics.com,www.sealmetrics.com",
     "TURNSTILE_ACTION": "sealmetrics_lead",
+    // The free brand check has its own widget action, so a lead-form token
+    // cannot be replayed against it (and the other way round).
+    "BRAND_CHECK_TURNSTILE_ACTION": "sealmetrics_brand_check",
     "REQUIRE_TURNSTILE": "true"
   },
   "ratelimits": [

@@ -205,6 +205,13 @@ const EVENT_MAP: Record<string, Mapping> = {
   // Someone shared their report from the report page. One per send, with how many
   // recipients; the addresses never reach analytics.
   brand_report_share: { kind: "micro", name: "brand_report_share" },
+  // "What do AIs say about…?" (/what-ai-says, /es/que-dicen-las-ia). The brand
+  // typed is never sent: it is free text, and a visitor can type a person's
+  // name however clearly the page says not to.
+  brand_check_start: { kind: "micro", name: "brand_check_request" }, // check accepted by the relay
+  brand_check_done: { kind: "micro", name: "brand_check_result" }, // a result finished on screen
+  brand_check_share: { kind: "micro", name: "brand_check_share" }, // share button, copy or PNG
+  brand_check_compare: { kind: "micro", name: "brand_check_compare" }, // second brand requested
   video_play: { kind: "micro", name: "video_play" },
   "404": { kind: "micro", name: "404_error" },
 };

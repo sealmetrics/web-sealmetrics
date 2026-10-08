@@ -14,7 +14,8 @@ const FORMS_ENDPOINT =
 
 /**
  * The forms Worker's origin plus any base path, without `/api/forms`. Other
- * Worker routes (the full report link at `/api/report/<token>`) hang off it, so they
+ * Worker routes (the full report link at `/api/report/<token>`, the brand check at
+ * `/api/brand-check`) hang off it, so they
  * follow NEXT_PUBLIC_FORMS_ENDPOINT instead of needing a variable of their own.
  */
 export const FORMS_WORKER_BASE = FORMS_ENDPOINT.replace(/\/api\/forms\/?$/, "");

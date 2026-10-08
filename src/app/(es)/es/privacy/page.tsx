@@ -54,7 +54,7 @@ export default function PrivacyPageEs() {
               <strong className="text-text-primary">
                 Última actualización:
               </strong>{" "}
-              29 de septiembre de 2026 ·{" "}
+              2 de octubre de 2026 ·{" "}
               <a href="/privacy/" className="underline">
                 English version
               </a>
@@ -438,6 +438,30 @@ export default function PrivacyPageEs() {
                 privado se borra a los 30 días. Si consentiste los correos
                 ocasionales, tu dirección permanece en esa lista, y en la de
                 Airtable, hasta que te des de baja o retires el consentimiento.
+              </p>
+              <p className="mt-3">
+                <strong className="text-text-primary">Consulta rápida de visibilidad en IA.</strong>{" "}
+                La consulta de{" "}
+                <a href="/es/que-dicen-las-ia/" className="underline">
+                  /es/que-dicen-las-ia
+                </a>{" "}
+                no pide correo ni nombre. Pregunta a los mismos diecinueve
+                modelos qué es una marca y qué recomendarían a quien busca lo
+                que vende, y da una puntuación de 0 a 100. Solo trata lo que
+                escribes, la marca y lo que vende, que son datos de una
+                organización y no de una persona. Para evitar el abuso de un
+                servicio gratuito que nos cuesta cada consulta, Cloudflare, Inc.
+                hace una comprobación antibots (Turnstile) que trata tu
+                dirección IP y datos técnicos de tu navegador, y opera el relé
+                que recibe la consulta (interés legítimo, art. 6.1.f RGPD).
+                Sealmetrics no conserva esos datos técnicos. Enroutia recibe la
+                marca, lo que vende y el idioma, nunca tu IP. Los modelos
+                reciben solo la marca y lo que vende, y seis de ellos se sirven
+                desde Estados Unidos. Cada resultado es público en su propia
+                dirección y se borra a los 30 días. Durante los primeros siete
+                días se muestra también a quien consulte esa marca. Si
+                representas a una marca y quieres que retiremos su resultado,
+                escribe a privacy@sealmetrics.com.
               </p>
             </div>
 

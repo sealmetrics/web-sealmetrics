@@ -128,7 +128,9 @@ const translatedPaths = new Set([
  * the Spanish path WITHOUT the `/es` prefix. Every other translated page keeps
  * the same slug in both languages and lives in `translatedPaths` above.
  */
-const localizedSlugs: Record<string, string> = {};
+const localizedSlugs: Record<string, string> = {
+  "/what-ai-says": "/que-dicen-las-ia",
+};
 const englishForSpanishSlug: Record<string, string> = Object.fromEntries(
   Object.entries(localizedSlugs).map(([en, es]) => [es, en]),
 );

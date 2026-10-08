@@ -160,6 +160,7 @@ const HUB_OVERRIDES = {
   security: { eyebrow: "Security", title: "Designed for GDPR, EU-hosted in Dublin" },
   open: { eyebrow: "Open", title: "How Sealmetrics works, written down in public" },
   blog: { eyebrow: "Blog", title: "Measurement, attribution and privacy for eCommerce" },
+  "what-ai-says": { eyebrow: "Free · no signup · 0 to 100", title: "Your brand's AI visibility score" },
 };
 
 /** First path segment → the eyebrow line printed above the title. */
@@ -548,6 +549,7 @@ for (const c of parseOpenChapters()) {
 // route to the card at its own (unprefixed) slug, so a Spanish-only slug gets
 // its own Spanish card instead of falling through to the generic image.
 const ES_ONLY_CARDS = [
+  { route: "que-dicen-las-ia", eyebrow: "Gratis · sin registro · de 0 a 100", title: "La visibilidad en IA de tu marca" },
 ];
 for (const c of ES_ONLY_CARDS) {
   const out = path.join(outDir, `${c.route}.png`);

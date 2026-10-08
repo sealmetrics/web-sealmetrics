@@ -1681,6 +1681,16 @@
       "sourceHash": "9f94ce826d6bda0818592ae39ad3bf858e23d6a04a690a53356e36622270a9b5",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/que-dicen-las-ia.avif": {
+      "source": "public/og/que-dicen-las-ia.png",
+      "sourceHash": "aa4fda0166345421bf2d2f89ee0c6d76aee33c7f4dc2f88a334de7bc27155c32",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/que-dicen-las-ia.webp": {
+      "source": "public/og/que-dicen-las-ia.png",
+      "sourceHash": "aa4fda0166345421bf2d2f89ee0c6d76aee33c7f4dc2f88a334de7bc27155c32",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/reg-gap-analysis.avif": {
       "source": "public/og/reg-gap-analysis.png",
       "sourceHash": "ab3944b6335690cf08a71fbee4cd7d188eec85d2926cab046589328bf2106f25",
@@ -1859,6 +1869,16 @@
     "public/og/vs/piwik-pro.webp": {
       "source": "public/og/vs/piwik-pro.png",
       "sourceHash": "0dd0356bf2e0adaaf7175a4b9419917e31dfcc2ad5536eac2b6cc2f4dd53dd21",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/what-ai-says.avif": {
+      "source": "public/og/what-ai-says.png",
+      "sourceHash": "d2f595375d05156f6913003d145a41f7504c71a543ab01fb0dc8afffa4a35647",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/what-ai-says.webp": {
+      "source": "public/og/what-ai-says.png",
+      "sourceHash": "d2f595375d05156f6913003d145a41f7504c71a543ab01fb0dc8afffa4a35647",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/why-sealmetrics.avif": {
