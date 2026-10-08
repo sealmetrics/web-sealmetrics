@@ -74,7 +74,7 @@ const copy = {
       [
         "03",
         "Designed for GDPR, hosted in Dublin",
-        "No personal data, no cross-site identifier, DPA included. Built into the design — our self-assessment, not a certification.",
+        "No data that identifies anyone, no cross-site identifier, DPA included. Built into the design — our self-assessment, not a certification.",
       ],
     ],
     offerTag: "Free account",
@@ -135,7 +135,7 @@ const copy = {
       </>
     ),
     productBody:
-      "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Esas personas hicieron clic en tus anuncios, leyeron tus páginas y compraron igual. Sealmetrics las cuenta sin cookies, sin banner y sin datos personales — en paralelo al GA4 que ya tienes, para que compares las dos con tu propio tráfico.",
+      "En nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y de quienes las aceptan, el 40% no lo hace en la primera página vista. Esas personas hicieron clic en tus anuncios, leyeron tus páginas y compraron igual. Sealmetrics las cuenta sin cookies, sin banner y sin datos que identifiquen a nadie — en paralelo al GA4 que ya tienes, para que compares las dos con tu propio tráfico.",
     productCards: [
       [
         "01",
@@ -150,7 +150,7 @@ const copy = {
       [
         "03",
         "Diseñada para el RGPD, alojada en Dublín",
-        "Sin datos personales, sin identificador entre sitios y con el DPA incluido. Va en el diseño — es nuestra autoevaluación, no una certificación.",
+        "Ningún dato que identifique a nadie, sin identificador entre sitios y con el DPA incluido. Va en el diseño — es nuestra autoevaluación, no una certificación.",
       ],
     ],
     offerTag: "Cuenta gratis",

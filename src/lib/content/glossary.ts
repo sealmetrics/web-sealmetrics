@@ -50,7 +50,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Multi-Touch Attribution",
     shortDefinition:
-      "An analytics model that distributes conversion credit across multiple touchpoints observed for the same identified visitor. Requires per-user tracking and is not part of Sealmetrics' last-click, anonymous architecture.",
+      "An analytics model that distributes conversion credit across multiple touchpoints observed for the same identified visitor. Requires per-user tracking and is not part of Sealmetrics' last-click, aggregate architecture.",
     category: "Attribution",
     related: ["attribution-model", "revenue-attribution", "event-tracking", "data-loss-in-analytics"],
   },
@@ -167,7 +167,7 @@ export const glossaryTerms: GlossaryTerm[] = [
     hasPage: true,
     term: "Last-Click Attribution",
     shortDefinition:
-      "An attribution model where 100% of the conversion credit goes to the final marketing touchpoint observed before the conversion event. Sealmetrics applies last-click on data without consent gaps — aggregate, anonymous, at channel level.",
+      "An attribution model where 100% of the conversion credit goes to the final marketing touchpoint observed before the conversion event. Sealmetrics applies last-click on data without consent gaps — aggregate, at channel level.",
     category: "Attribution",
     related: ["attribution-model", "revenue-attribution", "attribution-window", "multi-touch-attribution"],
   },

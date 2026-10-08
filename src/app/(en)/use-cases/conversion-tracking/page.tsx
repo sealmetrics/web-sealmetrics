@@ -125,7 +125,7 @@ export default function ConversionTrackingPage() {
         answer={
           <>
             Conversion tracking in 2026 needs two layers, not one. A
-            <strong> measurement layer</strong> (anonymous, cookieless,
+            <strong> measurement layer</strong> (aggregated, cookieless,
             captures conversions without consent gaps for revenue reporting) and an
             <strong> optimisation layer</strong> (Meta pixel, Google
             Ads pixel — feeds the bidder, still requires consent for
@@ -140,7 +140,7 @@ export default function ConversionTrackingPage() {
         bullets={[
           <><strong>Two layers</strong> — measurement (Sealmetrics) + optimisation (Meta / Google pixels).</>,
           <><strong>One dataLayer push</strong> feeds both.</>,
-          <><strong>Any conversion type</strong> — purchase, form, signup, custom — aggregate-anonymous.</>,
+          <><strong>Any conversion type</strong> — purchase, form, signup, custom — aggregated.</>,
           <><strong>Offline conversions</strong> via business-key join (discount codes, CRM IDs), not visitor stitching.</>,
         ]}
       />
@@ -163,8 +163,8 @@ export default function ConversionTrackingPage() {
             <div className="border border-warm-100 rounded-2xl p-7 bg-warm-white">
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-4">Measurement layer</h3>
               <p className="text-[15px] leading-[1.7] text-ink">
-                The number the CFO sees. Aggregate, anonymous, no
-                cookie, no identifier, no consent banner. Captures
+                The number the CFO sees. Aggregate, no
+                cookie, no persistent identifier, no consent loss. Captures
                 observed conversions from visitors who accept and reject the
                 banner alike, without consent gaps.
                 Reconciles with the eCommerce backend&rsquo;s order total.
@@ -353,7 +353,7 @@ export default function ConversionTrackingPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Pillar</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Cookieless analytics</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                The architecture that makes the measurement layer possible — first-party server-side without identifiers.
+                The architecture that makes the measurement layer possible — first-party server-side without persistent identifiers.
               </p>
             </Link>
           </div>
@@ -378,8 +378,8 @@ export default function ConversionTrackingPage() {
 
       <FinalCtaSharedV3
         locale="en"
-        titleEn={<>Set up <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>complete conversion tracking</em>. Without the banner.</>}
-        titleEs={<>Configura <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>conversion tracking completo</em>. Sin banner.</>}
+        titleEn={<>Set up <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>complete conversion tracking</em>. Without the consent loss.</>}
+        titleEs={<>Configura <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>conversion tracking completo</em>. Sin pérdida por consentimiento.</>}
         ledeEn="Book 30 minutes with the founder. We map your existing conversion goals to Sealmetrics live, configure custom events, and confirm the platform pixels stay intact."
         ledeEs="Reserva 30 min con el founder. Mapeamos tus goals existentes a Sealmetrics en directo, configuramos eventos custom y confirmamos que los pixels de plataforma siguen vivos."
       />

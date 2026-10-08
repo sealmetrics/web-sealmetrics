@@ -43,7 +43,7 @@ export const productAnswer: Record<Locale, ReactNode> = {
   es: (
     <p>
       Sealmetrics es una plataforma de analítica web cookieless y sin
-      consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores y sin
+      consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores persistentes y sin
       banner, así que el total que reporta incluye a quien acepta y a quien
       rechaza el banner, no solo a la parte que aceptó ser medida — en la tienda Shopify de
       Incapto, medida durante 48 días, GA4 no registró el 29% de las visitas, y
@@ -102,8 +102,8 @@ export const securityAnswer: Record<Locale, ReactNode> = {
     <p>
       Sealmetrics security starts before encryption: the safest visitor record
       is the one never created. No cookie is set, no identifier is stored on the
-      device and no IP address is retained, so there is no personal data to
-      secure, to breach or to hand over. What remains is aggregate, anonymous
+      device and no IP address is retained, so there is no data that identifies anyone
+      to secure, to breach or to hand over. What remains is aggregate
       event data — encrypted in transit and at rest, isolated per account and
       deleted on a fixed retention schedule. Visitor data is processed and stored in
       Dublin, Ireland only, so no visitor-data transfer leaves the EU, GDPR
@@ -119,8 +119,8 @@ export const securityAnswer: Record<Locale, ReactNode> = {
       La seguridad de Sealmetrics empieza antes del cifrado: el registro de
       visitante más seguro es el que nunca se crea. No se escribe ninguna
       cookie, no se guarda ningún identificador en el dispositivo y no se
-      retiene ninguna IP, así que no hay dato personal que proteger, que filtrar
-      ni que entregar. Lo que queda es dato de evento agregado y anónimo —
+      retiene ninguna IP, así que no hay ningún dato que identifique a nadie que
+      proteger, que filtrar ni que entregar. Lo que queda es dato de evento agregado —
       cifrado en tránsito y en reposo, aislado por cuenta y borrado según un
       calendario de retención fijo. El dato de visitante se trata y almacena
       solo en Dublín, Irlanda, así que ninguna transferencia de ese dato sale de

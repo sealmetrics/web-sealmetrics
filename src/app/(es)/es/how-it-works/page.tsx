@@ -10,11 +10,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Cómo funciona Sealmetrics — Sin cookies y UE",
   description:
-    "Pixel first-party de 846 bytes. Conteo de eventos anónimo en servidor. Almacenamiento en Dublín. Diseñado para el RGPD desde la arquitectura, no con una capa de compliance.",
+    "Pixel first-party de 846 bytes. Conteo de eventos agregado en servidor. Almacenamiento en Dublín. Diseñado para el RGPD desde la arquitectura, no con una capa de compliance.",
   openGraph: {
     title: "Cómo funciona Sealmetrics — Sin cookies y UE",
     description:
-      "Tres capas. Un pipeline. Cómo Sealmetrics cuenta tu tráfico de forma anónima y sin depender del consentimiento, sin cookies ni seguimiento de usuarios.",
+      "Tres capas. Un pipeline. Cómo Sealmetrics cuenta tu tráfico de forma agregada y sin depender del consentimiento, sin cookies ni seguimiento de usuarios.",
     type: "website",
     images: [ogImage("/es/how-it-works/")],
     locale: "es_ES",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cómo funciona Sealmetrics — Sin cookies y UE",
-    description: "Tres capas. Un pipeline. Cómo Sealmetrics cuenta tu tráfico de forma anónima y sin depender del consentimiento, sin cookies ni seguimiento de usuarios.",
+    description: "Tres capas. Un pipeline. Cómo Sealmetrics cuenta tu tráfico de forma agregada y sin depender del consentimiento, sin cookies ni seguimiento de usuarios.",
     images: [ogImage("/es/how-it-works/")],
   },
   alternates: {

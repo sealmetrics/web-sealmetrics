@@ -73,8 +73,8 @@ export function IndustriesBuiltForEs() {
           <IndustryCardEs
             tag="Infraestructura"
             name={<>Alojado en UE <em className="italic-accent">por arquitectura</em></>}
-            line="Alojado en Dublín, Irlanda. Schrems II limpio. Diseñada para el RGPD desde la arquitectura (autoevaluación), no como capa de compliance."
-            proof="Dublín · Irlanda · Schrems II limpio · RGPD"
+            line="Los datos de analítica se alojan y procesan solo en la UE (Dublín). Diseñado para cumplir el RGPD desde la arquitectura (autoevaluación), no como capa de compliance."
+            proof="Dublín · Irlanda · analítica solo en la UE · RGPD"
             scene={
               <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
                 <rect width="400" height="300" fill="#0E0E0C" />
@@ -232,13 +232,13 @@ export function HowItWorksV3Es() {
             <h2 className="h-section mt-5">De la instalación a <em>decisiones defendibles</em> en una semana.</h2>
           </div>
           <p className="text-[18px] leading-[1.55] text-ink-soft max-w-[54ch]">
-            Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta de analítica — pero sin banner de cookies y sin muestreo. Datos reales desde la primera hora.
+            Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta de analítica — pero sin perder visitas por el banner y sin muestreo. Datos reales desde la primera hora.
           </p>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-4">
           {[
-            { n: "Paso 01", time: "5–30 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin banners de cookies, sin piruetas en tag manager." },
+            { n: "Paso 01", time: "5–30 minutos", title: "Instala el pixel", p: "Un solo script. Funciona junto a GA4. Sin cambios de código, sin pérdida por el banner, sin piruetas en tag manager." },
             { n: "Paso 02", time: "Día 1", title: "Datos visibles", p: "Tráfico desde la primera hora. Visitantes, fuentes y conversiones — observados server-side, sin depender del consentimiento." },
             { n: "Paso 03", time: "Semana 1", title: "Escala lo que funciona", p: "Reubica presupuesto hacia los canales que realmente generan ingresos. Corta los que GA4 decía que funcionaban — pero no." },
           ].map((s) => (
@@ -297,7 +297,7 @@ export function CredentialsV3Es() {
               <circle cx="60" cy="85" r="2" /><circle cx="220" cy="135" r="2" /><circle cx="380" cy="210" r="2" />
               <circle cx="720" cy="110" r="2" /><circle cx="880" cy="185" r="2" /><circle cx="1040" cy="235" r="2" />
             </g>
-            <text x="600" y="345" fill="#6B6B5E" fontFamily="JetBrains Mono,monospace" fontSize="11" letterSpacing="3" textAnchor="middle">ALOJADO EN UE · DUBLÍN, IRLANDA · RGPD · SCHREMS II LIMPIO</text>
+            <text x="600" y="345" fill="#6B6B5E" fontFamily="JetBrains Mono,monospace" fontSize="11" letterSpacing="3" textAnchor="middle">ALOJADO EN UE · DUBLÍN, IRLANDA · RGPD · ANALÍTICA SOLO EN LA UE</text>
           </svg>
         </div>
 
@@ -305,7 +305,7 @@ export function CredentialsV3Es() {
           {[
             { n: <><em className="italic-accent">+5</em> años</>, l: "En producción · 2.000+ cuentas en hoteles, DTC y medios" },
             { n: <>99,<em className="italic-accent">99</em>%</>, l: "SLA de uptime · probado a escala de Black Friday" },
-            { n: <>UE-<em className="italic-accent">hosted</em></>, l: "Alojado en Dublín, Irlanda · Schrems II limpio · Diseñada para el RGPD" },
+            { n: <>UE-<em className="italic-accent">hosted</em></>, l: "Alojado en Dublín, Irlanda · analítica solo en la UE · Diseñado para cumplir el RGPD" },
             { n: <><em className="italic-accent">846</em> bytes</>, l: "Tamaño del pixel · unas 100× más ligero que el tag de GA4" },
           ].map((c, i) => (
             <div key={i} className="bg-white border border-warm-100 rounded-xl p-6">

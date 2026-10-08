@@ -121,7 +121,7 @@ const faqs = [
   {
     question: "Does connecting an AI assistant create a new consent obligation?",
     answer:
-      "No. The connector reads aggregate data that was collected without cookies and without personal data, so there is nothing to consent to that was not already lawful to collect. The processing terms are the ones in the DPA you already signed.",
+      "No. The connector reads aggregate data that was collected without cookies and without data that identifies anyone; the connector adds no new collection. The processing terms are the ones in the DPA you already signed.",
   },
   {
     question: "Which model or vendor processes my data?",
@@ -314,7 +314,7 @@ export default function McpDocsPage() {
           <p className="mt-6 text-[17px] leading-[1.65] text-ink-soft max-w-[70ch]">
             Sealmetrics is{" "}
             <Link href="/glossary/cookieless-analytics">cookieless analytics</Link>: no cookie, no
-            fingerprint, no visitor identifier, and therefore no{" "}
+            persistent visitor identifier, and therefore no{" "}
             <Link href="/glossary/personal-data-in-analytics">personal data</Link> in the store the
             connector reads. That is what makes an AI assistant safe to point at it — the model cannot
             leak an identifier that was never collected.

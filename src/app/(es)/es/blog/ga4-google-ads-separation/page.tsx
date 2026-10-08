@@ -485,8 +485,8 @@ export default function GA4GoogleAdsSeparationPage() {
                 <strong className="text-text-primary">
                   Analítica web: Sealmetrics
                 </strong>{" "}
-                &mdash; mide el tráfico sin depender del consentimiento: sin cookies, sin banners de
-                consentimiento, sin transferencias de datos de visitantes a terceros.
+                &mdash; mide el tráfico sin depender del consentimiento: sin cookies, nada guardado en el
+                dispositivo, sin transferencias de datos de visitantes a terceros.
                 Datos sin huecos de consentimiento para decisiones de negocio.
               </li>
               <li className="text-text-secondary">

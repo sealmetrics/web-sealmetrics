@@ -16,11 +16,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-29";
 const PILLAR_DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "Analítica sin consentimiento — medición legal, sin banners",
+  title: "Analítica sin consentimiento — medir sin banner de cookies",
   description:
-    "Analítica sin consentimiento: la vía legal a la medición web sin banner. RGPD, ePrivacy, exención CNIL — qué la hace lícita, por arquitectura.",
+    "Analítica sin consentimiento: cuándo puede medirse sin banner de cookies bajo RGPD y ePrivacy, la exención CNIL y los límites por país.",
   openGraph: {
-    title: "Analítica sin consentimiento — legal por arquitectura",
+    title: "Analítica sin consentimiento, diseñada para cumplir el RGPD",
     description:
       "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La ruta arquitectónica, la guía de autoridades, los límites.",
     type: "article",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica sin consentimiento — legal por arquitectura",
+    title: "Analítica sin consentimiento, diseñada para cumplir el RGPD",
     description: "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La ruta arquitectónica, la guía de autoridades, los límites.",
     images: [ogImage("/es/consentless-analytics/")],
   },
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿La analítica sin consentimiento es realmente legal bajo RGPD?",
-    a: "Sí, cuando la arquitectura cumple los criterios de exención. El RGPD aplica al tratamiento de datos personales. El Art. 5(3) de ePrivacy regula el almacenamiento/acceso a información del dispositivo. Si un sistema de medición no almacena cookie, no establece identificador y no procesa datos personales, ambas normas quedan satisfechas sin diálogo de consentimiento. La CNIL ha publicado criterios explícitos para analítica; la DSK alemana, la AEPD, el Garante italiano, el ICO británico y la AP holandesa han emitido guía alineada. Esto no es un workaround — es la carve-out original que contemplaron las normas.",
+    a: "Depende del tratamiento real y de las normas aplicables. Revisa si se tratan datos personales, si se almacena o se lee información del dispositivo y si aplica una exención. La CNIL describe una exención condicionada para la medición de audiencia. Las demás fuentes oficiales enlazadas abajo deben leerse en sus propios términos: no establecen una exención uniforme ni certifican ningún producto. En Alemania, la DSK no extiende la exención a la medición de audiencia.",
   },
   {
     q: "¿Qué cambiaría el Digital Omnibus UE?",
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "¿En qué se diferencia de herramientas «consent-light» o «privacy-friendly»?",
-    a: "La mayoría de herramientas lightweight todavía instalan una cookie first-party o un ID de visitante aleatorio — son consent-light, no consentless. La exención CNIL es específica: sin identificador, sin enlace entre sesiones, sin profiling. Sealmetrics está construido para esa vara. El trade-off es honesto — sin identificación de visitantes recurrentes — y es la decisión de diseño deliberada que produce la exención legal.",
+    a: "La mayoría de herramientas lightweight todavía instalan una cookie first-party o un ID de visitante aleatorio — son consent-light, no consentless. Las etiquetas de producto no bastan para comparar despliegues: revisa identificadores, finalidades, combinación de datos y capacidades de reporting frente a los requisitos aplicables. Sealmetrics se centra en la medición agregada; revisa su documentación actual y tu configuración antes de decidir si hace falta consentimiento.",
   },
   {
     q: "¿Y Schrems II y las transferencias a EE.UU.?",
@@ -74,25 +74,25 @@ const authorities = [
     country: "Francia",
     body: "CNIL",
     summary:
-      "Publicó criterios explícitos de exención de analítica en 2020, reafirmados en 2024: sin identificador por usuario, sin tracking entre sesiones, reporting agregado, procesamiento UE-only. Sealmetrics cumple cada criterio.",
+      "Revisa la guía de la CNIL sobre medición de audiencia y las condiciones de la exención de consentimiento.",
   },
   {
     country: "Alemania",
     body: "DSK / BfDI",
     summary:
-      "Guía de la Datenschutzkonferenz: las herramientas de analítica sin cookies y sin fingerprinting no requieren consentimiento bajo §25 TDDDG. Alineada con la posición CNIL.",
+      "Consulta la guía de la DSK para las reglas aplicables al despliegue concreto en Alemania: la DSK no extiende la exención del §25(2) TDDDG a la medición de audiencia.",
   },
   {
     country: "España",
     body: "AEPD",
     summary:
-      "Guía sobre el uso de cookies (2024): excluye explícitamente la medición agregada anónima de la obligación de consentimiento. Alineada con la Opinión EDPB 5/2019.",
+      "Revisa la guía de cookies de la AEPD y evalúa la finalidad y la configuración de la medición.",
   },
   {
     country: "Italia",
     body: "Garante",
     summary:
-      "Tras la decisión sobre Google Analytics de 2022: las herramientas que anonimizan en la recolección y alojan en la UE no disparan las mismas restricciones. El procesamiento en Dublín y el diseño cero-identificador de Sealmetrics encajan en la exención.",
+      "Consulta la guía del Garante sobre cookies y otras tecnologías de seguimiento.",
   },
   {
     country: "Reino Unido",
@@ -104,7 +104,7 @@ const authorities = [
     country: "Países Bajos",
     body: "Autoriteit Persoonsgegevens",
     summary:
-      "La guía de la AP sigue la posición EDPB: la analítica privacy-friendly — sin cookies, sin identificadores, procesamiento UE — está exenta del requisito de consentimiento.",
+      "Consulta la guía de la autoridad neerlandesa sobre cookies y analítica antes de evaluar una exención.",
   },
 ];
 
@@ -116,14 +116,14 @@ export default function ConsentlessAnalyticsPillarEs() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/es/consentless-analytics",
-          name: "Analítica sin consentimiento — medición legal, sin banners",
+          name: "Analítica sin consentimiento — medir sin banner de cookies",
         })}
       />
       <JsonLd
         data={articleSchema({
-          headline: "Analítica sin consentimiento — la vía legal a la medición web sin banner",
+          headline: "Analítica sin consentimiento — cuándo se puede medir sin banner",
           description:
-            "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La exención arquitectónica, la guía de seis autoridades europeas y el stack de compliance.",
+            "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. Las condiciones que evaluar, las fuentes oficiales y la documentación de cumplimiento.",
           datePublished: PILLAR_DATE_PUBLISHED,
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/es/consentless-analytics",
@@ -140,15 +140,15 @@ export default function ConsentlessAnalyticsPillarEs() {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "24ch" }}>
             Analítica sin banners.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              Legal por arquitectura, no por papeleo.
+              Diseñado para cumplir el RGPD, no por papeleo.
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            La vía legal a la medición web sin diálogo de cookies no es
-            un workaround — es la exención que el RGPD y ePrivacy
-            contemplaron desde el día uno. Seis autoridades europeas de
-            protección de datos han descrito qué requiere la exención.
-            Esto es cómo se ve en la práctica, y dónde están los límites.
+            Los requisitos de consentimiento dependen del tratamiento y de
+            las normas aplicables. Revisa la configuración técnica junto a
+            la guía oficial para entender cuándo la medición puede
+            funcionar sin diálogo de consentimiento y qué condiciones
+            siguen aplicando.
           </p>
         </div>
       </section>
@@ -156,23 +156,23 @@ export default function ConsentlessAnalyticsPillarEs() {
       <TldrBlock
         answer={
           <>
-            La analítica sin consentimiento es medición web que no
-            requiere banner porque no instala cookie, no almacena
-            identificador personal y no crea perfil por usuario. La base
-            legal es arquitectónica: sin datos personales procesados, el
-            ámbito material del RGPD no aplica; sin almacenamiento en
-            dispositivo, no se dispara el requisito de consentimiento
-            del Art. 5(3) ePrivacy. La CNIL, la DSK alemana, la AEPD,
-            el Garante, el ICO y la AP han publicado guía de exención
-            alineada. El trade-off es concreto: sólo medición agregada
-            y anónima — sin identificación de visitantes recurrentes,
-            sin tracking entre sesiones.
+            Analítica sin cookies y analítica exenta de consentimiento
+            describen cosas distintas. Algunas configuraciones pueden
+            acogerse a una exención según su finalidad y funcionamiento;
+            quitar las cookies no basta para saber si un despliegue
+            necesita consentimiento. Sealmetrics no guarda nada en el
+            dispositivo ni datos que identifiquen a nadie: el
+            identificador de sesión rota cada día y los informes son
+            siempre agregados. Revisa la implantación real, los flujos
+            de datos y los criterios de tu autoridad (en Alemania, la DSK
+            no extiende la exención a la medición de audiencia) en vez de
+            tratar una etiqueta de producto como garantía de cumplimiento.
           </>
         }
         bullets={[
-          <><strong>Art. 6 RGPD</strong> — sin datos personales procesados, no se requiere selección de base legal.</>,
-          <><strong>Art. 5(3) ePrivacy</strong> — sin almacenamiento o acceso al dispositivo, no se requiere diálogo de consentimiento.</>,
-          <><strong>Seis autoridades UE</strong> han publicado guía explícita de exención (CNIL, DSK, AEPD, Garante, ICO, AP).</>,
+          <><strong>Art. 6 RGPD</strong> — el identificador de sesión es un seudónimo y necesita base jurídica, como el interés legítimo.</>,
+          <><strong>Art. 5(3) ePrivacy</strong> — revisa el almacenamiento y el acceso al dispositivo y las condiciones de la exención aplicable.</>,
+          <><strong>Guía local</strong> — cada país necesita su revisión; las exenciones no son idénticas entre países.</>,
           <><strong>Procesamiento sólo en UE</strong> en Dublín, Irlanda — la evaluación Schrems II es irrelevante porque no hay transferencia.</>,
         ]}
       />
@@ -245,8 +245,8 @@ export default function ConsentlessAnalyticsPillarEs() {
                   el impacto del banner sobre tu analítica
                 </Link>
                 . Efecto neto: el coste legal de correr analítica
-                basada en cookies subió; el coste legal de correr
-                analítica sin consentimiento es cero.
+                basada en cookies subió; la analítica sin
+                consentimiento carga con algo más ligero: cumplir las condiciones de la exención.
               </p>
             </div>
           </div>
@@ -271,12 +271,14 @@ export default function ConsentlessAnalyticsPillarEs() {
                 El RGPD aplica al «tratamiento de datos personales». Dato
                 personal es cualquier información que se refiere a una
                 persona física identificada o identificable. Si un
-                sistema de medición procesa sólo conteos agregados —
-                nunca un identificador, nunca un fingerprint, nunca un
-                perfil de comportamiento — el sistema no procesa datos
-                personales. El reglamento no aplica al output de
-                medición. El EDPB confirmó este razonamiento en la
-                Opinión 5/2019.
+                sistema de medición informa solo con conteos agregados —
+                nunca un identificador persistente, nunca un
+                perfil de comportamiento — sus informes no contienen
+                datos personales. Un identificador de sesión
+                seudonimizado tratado por el camino sigue siendo dato
+                personal y necesita base jurídica, como el interés
+                legítimo. Evalúa el dato en cada fase, no solo el informe
+                final.
               </p>
             </div>
 
@@ -287,10 +289,13 @@ export default function ConsentlessAnalyticsPillarEs() {
                 ePrivacy exige consentimiento antes de almacenar o acceder
                 a información en el dispositivo del usuario. El ejemplo
                 clásico es una cookie. Si el sistema de medición no
-                escribe cookie, no lee localStorage y no usa fingerprint,
-                no hay nada en el dispositivo que dispare el Art. 5(3).
-                No se requiere diálogo de consentimiento para esa ruta
-                de procesamiento.
+                escribe cookie ni localStorage, no conserva identificadores
+                persistentes y usa lo que lee solo para las estadísticas de
+                audiencia de la propia web — sin seguimiento entre webs ni
+                reutilización —, encaja en la exención de medición de
+                audiencia que autoridades como la CNIL y la AEPD aplican al
+                Art. 5(3). No se requiere diálogo de consentimiento para esa
+                ruta de procesamiento.
               </p>
             </div>
 
@@ -298,20 +303,19 @@ export default function ConsentlessAnalyticsPillarEs() {
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-2">Anclaje 3</h3>
               <h4 className="text-[18px] font-semibold text-ink mb-3">Los criterios de exención de la CNIL</h4>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
-                La CNIL publicó cinco criterios concretos que un sistema
-                de analítica debe cumplir para calificar para la
-                exención: propósito estrictamente limitado, sin tracking
-                entre sitios, IPs anonimizadas o no almacenadas, sin
-                combinación con datos personales de otras fuentes, y
-                reporting sólo agregado. Sealmetrics cumple cada criterio
-                por diseño — no por configuración. Otras autoridades se
-                han alineado en torno a los mismos cinco puntos.
+                La CNIL describe una exención condicionada para la
+                medición de audiencia. Su alcance incluye límites de
+                finalidad, de combinación de datos y de uso entre sitios,
+                junto a otros requisitos. Revisa la{" "}
+                <a href="https://www.cnil.fr/fr/node/677" className="text-brand underline">guía completa de la CNIL</a>{" "}
+                frente a la configuración desplegada. Una etiqueta de
+                producto no basta para dar por cumplida cada condición.
               </p>
             </div>
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            La implementación técnica — recolección first-party server-side sin identificadores — está documentada en{" "}
+            La implementación técnica — recolección first-party server-side sin identificadores persistentes — está documentada en{" "}
             <Link href="/es/cookieless-analytics" className="text-brand underline decoration-1 underline-offset-2">
               analítica sin cookies
             </Link>

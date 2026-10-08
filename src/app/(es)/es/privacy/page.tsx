@@ -88,9 +88,10 @@ export default function PrivacyPageEs() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-text-tertiary shrink-0">&mdash;</span>
-                  Datos de analítica anónimos mediante nuestro propio script de
-                  Sealmetrics (páginas vistas, duración de la sesión, referente
-                  &mdash; sin datos personales)
+                  Datos de analítica mediante nuestro propio script de Sealmetrics
+                  (páginas vistas, duración de la sesión, referente), agrupados
+                  con un identificador de sesión seudonimizado que rota cada día;
+                  no se guarda nada en tu dispositivo
                 </li>
               </ul>
               <p className="mt-3">
@@ -225,7 +226,7 @@ export default function PrivacyPageEs() {
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">No recogemos:</strong>{" "}
-                huellas digitales de dispositivo, nombres, direcciones de email
+                identificadores persistentes de dispositivo, nombres, direcciones de email
                 ni ningún dato que pueda identificar a un visitante individual.
                 No se usan cookies, local storage, session storage ni IndexedDB.
               </p>
@@ -241,12 +242,12 @@ export default function PrivacyPageEs() {
                 (art. 6.1.f). Para nuestro propio script de analítica en
                 sealmetrics.com y en el proceso de alta de my.sealmetrics.com:
                 nuestro interés legítimo en medir la audiencia de nuestro propio
-                sitio y la eficacia de nuestro marketing (art. 6.1.f), dado que
-                no se tratan datos personales. Para los datos de analítica en los
-                sitios de los
+                sitio y la eficacia de nuestro marketing (art. 6.1.f). Para los datos de analítica en los sitios de los
                 Clientes: interés legítimo del Cliente en comprender el uso de
-                su sitio web (art. 6.1.f), dado que no se tratan datos
-                personales.
+                su sitio web (art. 6.1.f). En ambos casos el único dato
+                seudonimizado es el identificador de sesión, que rota cada día
+                y, al rotar, no se puede reconstruir, ni siquiera por nosotros;
+                los informes son siempre agregados.
               </p>
             </div>
 
@@ -310,8 +311,9 @@ export default function PrivacyPageEs() {
                 portar y limitar el tratamiento de tus datos personales. Para
                 los datos que hayas facilitado mediante formularios, escríbenos
                 a privacy@sealmetrics.com. Ten en cuenta que los datos de
-                analítica recogidos en los sitios de los Clientes son anónimos y
-                no pueden vincularse a ningún individuo.
+                analítica recogidos en los sitios de los Clientes no contienen
+                datos que identifiquen a nadie y, cuando el identificador diario
+                rota, no pueden vincularse a ningún individuo.
               </p>
             </div>
 

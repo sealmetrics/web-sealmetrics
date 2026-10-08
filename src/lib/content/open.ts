@@ -107,7 +107,7 @@ export const openChapters: OpenChapter[] = [
     part: 2,
     eyebrow: "Method",
     summary:
-      "No cookies, no fingerprinting, no localStorage. 60+ server-side validation rules and last-click attribution over events without consent gaps.",
+      "No cookies, no localStorage, no persistent identifier. 60+ server-side validation rules and last-click attribution over events without consent gaps.",
     readMinutes: 10,
     status: "draft",
     datePublished: "2026-05-27",
@@ -207,7 +207,7 @@ export const openChapters: OpenChapter[] = [
     part: 3,
     eyebrow: "Limits",
     summary:
-      "No multi-touch attribution. No session reconstruction. No individual identification. No fingerprinting. Why this is a position, not a limitation.",
+      "No multi-touch attribution. No session reconstruction. No individual identification. No persistent fingerprint. Why this is a position, not a limitation.",
     readMinutes: 7,
     status: "ready",
     datePublished: "2026-05-28",
@@ -216,7 +216,7 @@ export const openChapters: OpenChapter[] = [
       { id: "no-multi-touch", label: "We won't do multi-touch attribution" },
       { id: "no-sessions", label: "We won't reconstruct sessions" },
       { id: "no-individuals", label: "We won't identify individuals" },
-      { id: "no-fingerprint", label: "We won't fingerprint" },
+      { id: "no-fingerprint", label: "We won't keep a fingerprint" },
       { id: "why", label: "Why this is a position" },
     ],
   },

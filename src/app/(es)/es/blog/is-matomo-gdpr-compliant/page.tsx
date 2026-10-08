@@ -248,9 +248,10 @@ export default function Page() {
               para un servicio que el usuario ha pedido, y la analítica no lo es.
               Un Matomo configurado exactamente según los criterios CNIL,
               desplegado en un sitio alemán, sigue necesitando banner. La DSK
-              alemana sí acepta que las herramientas que no dejan nada en el
-              dispositivo y no tratan dato personal quedan fuera del requisito —
-              pero eso es otra arquitectura, no otra configuración.
+              alemana no extiende la exención a la medición de audiencia, así que
+              incluso una arquitectura que no deja nada en el dispositivo se apoya
+              en una lectura, no en una posición resuelta en Alemania — y eso es
+              otra arquitectura, no otra configuración.
             </p>
             <p>
               Si operas en varios mercados de la UE, la pregunta práctica es para
@@ -288,9 +289,12 @@ export default function Page() {
             <p>
               Hay una segunda vía al mismo sitio, y es la que no depende de
               sostener una configuración correcta en el tiempo. Si una herramienta
-              no escribe nada en el dispositivo ni lee nada de él, el artículo 5(3)
-              no llega a activarse. Si no trata dato personal, la pregunta del
-              consentimiento bajo RGPD tampoco se plantea. El cumplimiento deja de
+              no escribe nada en el dispositivo, no conserva identificadores
+              persistentes y usa lo que lee solo para las estadísticas de audiencia
+              de la propia web, encaja por construcción en la exención de medición
+              de audiencia del artículo 5(3). Si además no guarda datos que identifiquen a
+              nadie, la parte del RGPD se reduce a un identificador seudonimizado que
+              rota cada día. El cumplimiento deja de
               ser un ajuste que tu equipo tiene que mantener y demostrar, y pasa a
               ser una propiedad de cómo se recoge el dato.
             </p>

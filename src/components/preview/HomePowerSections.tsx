@@ -36,7 +36,7 @@ export function HeroPower({ variant = "a" }: { variant?: "a" | "b" }) {
               className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]"
               style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
             >
-              Your traffic measured without depending on consent — legally. Every dashboard
+              We measure all the traffic you lose today to the cookie banner. Every dashboard
               computed in real time, Black Friday included. Any property on any event. And LENS AI
               on top: your own keys, or a private AI that never lets your data leave Europe.
             </p>
@@ -442,7 +442,7 @@ export function LensTriadSlab() {
             {
               tag: "Private AI",
               title: "LENS Private AI",
-              body: "An open-weight model (gpt-oss-120b, Apache 2.0) served from Scaleway — a French cloud, in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model.",
+              body: "An open-weight model (gpt-oss-120b, Apache 2.0) served from Scaleway — a French cloud, in Paris. Your data is processed only in the EU, is never shared with any company, and never trains a third-party model.",
               foot: "Scale includes 5M tokens/mo",
               featured: true,
             },
@@ -587,7 +587,7 @@ export function EuStackBand() {
           </h3>
           <p className="mt-3 text-[15.5px] leading-[1.55] text-ink-soft max-w-[70ch]">
             Analytics data hosted in Dublin, Ireland. AI inference on Scaleway in Paris, France.
-            Zero sub-processors outside the EU, GDPR by architecture, Schrems II clean, DPA
+            Analytics data hosted and processed only in the EU, built to comply with the GDPR (self-assessed), DPA
             included with every plan.
           </p>
         </div>

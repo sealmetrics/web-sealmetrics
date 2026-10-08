@@ -494,8 +494,8 @@ function ChapterOneBody() {
             </h3>
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
               Captured server-side, before ad blockers see the request and
-              before consent banners are decided. Aggregate, anonymous, never
-              personal. Visitors who reject the banner as well as those who
+              before consent banners are decided. Aggregated, nothing that
+              identifies anyone. Visitors who reject the banner as well as those who
               accept it, not a sample of the consenting majority.
             </p>
           </div>
@@ -529,7 +529,7 @@ function ChapterOneBody() {
               Compliance should be architectural
             </h3>
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
-              No cookies, no localStorage, no fingerprinting. Hosted in
+              No cookies, no localStorage, no persistent identifier. Hosted in
               Dublin. Designed for GDPR and ePrivacy from the architecture up
               (self-assessed) — not by legal interpretation. The legal grounding lives at{" "}
               <Link
@@ -753,7 +753,8 @@ function ChapterFiveBody() {
         By architecture, there are things the pixel{" "}
         <em className="italic-accent">cannot</em> capture — not in this
         chapter, not in any other. We do not identify individuals, we do not
-        reconstruct cross-device sessions, and we do not fingerprint. That
+        reconstruct cross-device sessions, and we keep no persistent device
+        identifier. That
         boundary is covered in{" "}
         <Link
           href="/open/what-we-wont-do"
@@ -875,12 +876,12 @@ function ChapterNineBody() {
         </>
       ),
       instead:
-        "Anonymous event measurement at population scale. No identifier survives long enough to resolve to a person.",
+        "Aggregate event measurement at population scale. No identifier survives beyond a day.",
     },
     {
       id: "no-fingerprint",
       number: "04",
-      title: "We won't fingerprint",
+      title: "We won't keep a fingerprint",
       body: (
         <>
           <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
@@ -892,11 +893,18 @@ function ChapterNineBody() {
             setting a cookie and requires consent.
           </p>
           <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-            We strip fingerprint vectors before storage. User agents are
-            generalised to family and version. IPs are not stored. Canvas,
-            fonts, and audio context are never collected. What lands in
-            ClickHouse cannot be re-identified to a browser, let alone to a
-            person.
+            We do compute one short-lived value from the browser, and we say
+            so. To group the hits of a visit, the tracker hashes the site's
+            account ID with a handful of browser characteristics: user agent,
+            time zone, languages, screen size, colour depth, colour-scheme and
+            motion preferences, CPU cores and device memory. Before any use,
+            the server replaces that hash with a keyed hash salted with a
+            random salt that rotates every day, and the previous salt is
+            deleted. The raw value is never stored, and the result cannot be
+            linked across days or across sites — not even by us. That narrow
+            use is what the audience-measurement exemption covers; a
+            persistent fingerprint that follows a browser is not. IPs are not
+            stored. Canvas, fonts, and audio context are never collected.
           </p>
           <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
             This constraint costs us a little — some bot-detection signals
@@ -994,7 +1002,8 @@ function ChapterNineBody() {
               hallucination. If we reconstructed sessions, we would introduce
               regulatory exposure for our customers. If we identified
               individuals, we would become responsible for data we should not
-              hold. If we fingerprinted, we would be cookieless in name only.
+              hold. If we kept a persistent fingerprint, we would be cookieless
+              in name only.
             </p>
             <p className="mt-5 text-[1.05rem] leading-[1.75] text-dark-text-secondary">
               Each refusal makes the product narrower. Each refusal also makes
@@ -1467,21 +1476,19 @@ function ChapterSixBody() {
         the store.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        Sealmetrics does not rely on consent because there is no personal
-        data to consent to. What we measure is aggregate event data — a
+        Sealmetrics stores nothing on the device and no data that
+        identifies anyone. What we report is aggregate event data — a
         request hit /product-X, originated from a referrer, on a device
-        whose fingerprint{" "}
-        <em className="italic-accent">we do not collect</em>. There is no
-        identifier that resolves to a person. The data is not personal data
-        within the meaning of GDPR Article 4(1). Therefore none of Article
-        6's lawful bases applies — because Article 6 concerns personal data,
-        and we do not process any.
+        for which we keep{" "}
+        <em className="italic-accent">no persistent identifier</em>. The
+        session identifier rotates daily and, once rotated, not even we can
+        reconstruct it. During the day it is a pseudonym, and pseudonymised
+        data is still personal data under GDPR, so it needs a lawful basis.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        For the narrow set of fields where pseudonymisation is technically
-        possible (e.g., a visit-scoped ID used for last-click attribution
-        within a single visit, then discarded), the lawful basis is Article
-        6(1)(f) — legitimate interest in measuring a customer's own website.
+        For the session identifier (pseudonymised on the server with a
+        salt that rotates daily, used to group the hits of a visit for
+        last-click attribution), the lawful basis is Article 6(1)(f) — legitimate interest in measuring a customer's own website.
         The Legitimate Interest Assessment (LIA) is documented in the DPA
         package.
       </p>
@@ -1526,20 +1533,28 @@ function ChapterSixBody() {
         terminal.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        Sealmetrics does none of these. The pixel sends a single HTTPS POST
-        with the event payload. No terminal storage is set, no terminal
-        storage is read. The user-agent string is parsed server-side and
-        immediately generalised to browser family plus major version. IPs
-        are not stored. Canvas, audio context, font lists, screen
-        resolution, plugin lists — none are collected.
+        Sealmetrics stores nothing on the terminal: no terminal storage is
+        set, no terminal storage is read. The pixel sends a single HTTPS
+        POST with the event payload. To group the hits of a visit, it does
+        read a few browser characteristics — user agent, time zone,
+        languages, screen size, colour depth, colour-scheme and motion
+        preferences, CPU cores, device memory — and hashes them with the
+        site's account ID. Before any use, the server replaces that hash
+        with a keyed hash salted daily, and the previous salt is deleted,
+        so the value cannot be linked across days or across sites. IPs are
+        not stored. Canvas, audio context, font lists and plugin lists are
+        never collected. That reading is limited to the site's own audience
+        statistics, with no cross-site tracking and no reuse: the case the
+        audience-measurement exemption from Article 5(3) covers.
       </p>
 
       <blockquote
         className="my-10 border-l-[3px] pl-6 py-2 italic text-[1.15rem] leading-[1.55] text-ink-2"
         style={{ borderColor: "#2E5C8A" }}
       >
-        "There is no terminal access. Article 5(3) does not apply. No
-        consent banner is required for measurement."
+        "Nothing is stored on the terminal, and what is read serves only
+        the site's own audience statistics, with an identifier that rotates
+        daily. No consent banner is required for measurement."
         <footer className="not-italic text-[0.85rem] text-text-tertiary mt-3 font-normal">
           — The one-line summary of this section
         </footer>
@@ -2248,7 +2263,9 @@ function ChapterElevenBody() {
       body: (
         <>
           European rule that governs access to terminal equipment. Cookies,
-          localStorage, fingerprinting all trigger it. We do none of them.
+          localStorage, fingerprinting all trigger it. We store nothing on
+          the terminal, and our measurement stays within the
+          audience-measurement exemption.
         </>
       ),
       chapterHref: "/open/gdpr-by-architecture",
@@ -2341,12 +2358,12 @@ function ChapterElevenBody() {
       id: "cookieless",
       term: "Cookieless",
       plain:
-        "Measurement that does not set or read cookies. The word is overused — many tools that call themselves cookieless rely on fingerprinting or localStorage instead, which trigger ePrivacy Article 5(3) anyway. We are cookieless in name and in fact.",
+        "Measurement that does not set or read cookies. The word is overused — many tools that call themselves cookieless rely on a persistent fingerprint or localStorage instead, which trigger ePrivacy Article 5(3) anyway. We are cookieless in name and in fact.",
       body: (
         <>
           Measurement that does not set or read cookies. The word is
-          overused — many tools that call themselves cookieless rely on
-          fingerprinting or localStorage instead, which trigger ePrivacy
+          overused — many tools that call themselves cookieless rely on a
+          persistent fingerprint or localStorage instead, which trigger ePrivacy
           Article 5(3) anyway. We are cookieless in name and in fact.
         </>
       ),
@@ -2357,13 +2374,13 @@ function ChapterElevenBody() {
       id: "fingerprinting",
       term: "Fingerprinting",
       plain:
-        "Combining terminal signals — user agent, canvas hash, fonts, audio context, screen, plugins, IP — into a near-unique browser identifier. Functionally equivalent to setting a cookie under ePrivacy Article 5(3). Sealmetrics strips the vectors before storage.",
+        "Combining terminal signals — user agent, canvas hash, fonts, audio context, screen, plugins, IP — into a near-unique browser identifier. Functionally equivalent to setting a cookie under ePrivacy Article 5(3). Sealmetrics keeps no persistent fingerprint: its session hash is re-keyed with a salt that rotates daily and is never stored raw.",
       body: (
         <>
           Combining terminal signals — UA, canvas, fonts, audio context, IP
           — into a near-unique browser identifier. Functionally equivalent
-          to a cookie under ePrivacy Article 5(3). We strip the vectors
-          before storage.
+          to a cookie under ePrivacy Article 5(3). We keep none: our session
+          hash is re-keyed daily and never stored raw.
         </>
       ),
       chapterHref: "/open/what-we-wont-do",

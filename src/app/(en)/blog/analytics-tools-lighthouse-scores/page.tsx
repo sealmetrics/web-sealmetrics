@@ -372,8 +372,7 @@ export default function LighthouseScoresPage() {
               cookieless
             </Link>{" "}
             approach eliminates the need for these modules entirely. No cookie
-            management code. No consent-gating logic on the client. No
-            fingerprinting fallbacks. The result is a script that does less on the
+            management code. No consent-gating logic on the client. The result is a script that does less on the
             client because it does not need to.
           </p>
 
@@ -478,7 +477,7 @@ export default function LighthouseScoresPage() {
               cookieless first-party collection
             </Link>{" "}
             with zero measurable impact on page performance. No consent banner
-            required. No tag manager dependency. The data isn&apos;t reduced by consent and the
+            for its own analytics in our self-assessment. No tag manager dependency. The data isn&apos;t reduced by consent and the
             Lighthouse score stays where it was before you added analytics.
           </p>
 

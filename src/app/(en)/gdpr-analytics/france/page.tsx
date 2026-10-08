@@ -47,7 +47,7 @@ const criteria = [
     n: "01",
     title: "Strictly limited purpose",
     cnil: "Measurement must serve only audience analytics — no marketing, no advertising, no profiling.",
-    us: "Aggregate channel and conversion counts only. No identifier, no profile, no audience export to ad platforms.",
+    us: "Aggregate channel and conversion counts only. No persistent identifier, no profile, no audience export to ad platforms.",
   },
   {
     n: "02",
@@ -59,13 +59,13 @@ const criteria = [
     n: "03",
     title: "IP anonymisation or non-collection",
     cnil: "Last octet of IP addresses must be removed before processing (or IPs not collected at all).",
-    us: "No IP address is ever stored — it has no column in any analytics database. The IP is used transiently in memory during request handling and then discarded. The CNIL requirement is met by exceeding it.",
+    us: "No IP address is stored — it has no column in any analytics database. To filter bots we check the IP in flight against a public list of automated-traffic IPs, and don't keep it. The CNIL requirement is met by exceeding it.",
   },
   {
     n: "04",
     title: "No merging with other personal data",
     cnil: "Analytics data must not be combined with personal data from other sources.",
-    us: "There is no personal data to merge. Aggregate counts are isolated from any CRM, advertising or marketing identifier.",
+    us: "There is no data that identifies anyone to merge. Aggregate counts are isolated from any CRM, advertising or marketing identifier.",
   },
   {
     n: "05",
@@ -175,8 +175,8 @@ export default function GdprAnalyticsFrancePage() {
             purpose, no cross-site tracking, anonymised or
             uncollected IPs, no merging with other personal data, and
             aggregate-only reporting. Sealmetrics meets each criterion
-            by design — no identifier is generated, no cookie is set,
-            no IP is collected, no cross-site data path exists. The
+            by design — no persistent identifier is generated, no cookie is set,
+            no IP is stored, no cross-site data path exists. The
             architecture sits inside the exemption rather than
             depending on it.
           </>
@@ -262,8 +262,8 @@ export default function GdprAnalyticsFrancePage() {
             </p>
             <p className="text-ink">
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.12em] text-brand">Sealmetrics:</span>{" "}
-              No IP address is ever stored — it is used transiently in memory
-              during request handling and then discarded.
+              We don&apos;t store IPs. To filter bots we check the IP in flight
+              against a public list of automated-traffic IPs, and don&apos;t keep it.
             </p>
             <hr className="border-warm-100" />
             <p className="text-ink-soft">
@@ -353,7 +353,7 @@ export default function GdprAnalyticsFrancePage() {
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
                 French rejection rates against standard banners run
                 50–60%. With no banner gate, visitors who would reject a
-                banner are counted on the same anonymous-aggregate basis — no Consent Mode
+                banner are counted on the same aggregate basis — no Consent Mode
                 modelling required to fill the gap.
               </p>
             </div>

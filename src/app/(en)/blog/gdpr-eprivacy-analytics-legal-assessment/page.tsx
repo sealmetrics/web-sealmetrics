@@ -121,7 +121,7 @@ const faqs = [
   {
     question: "Does web analytics require a cookie consent banner?",
     answer:
-      "Not always. A consent banner is legally required only when your analytics does something that triggers consent under one of two laws. Under the ePrivacy Directive (Article 5(3)), consent is needed to store or read information on a visitor's device — a cookie, a localStorage entry, a fingerprint. Under GDPR, a lawful basis is needed to process personal data such as an IP address or an online identifier. Analytics that stores nothing on the device and processes no personal data clears both bars, and no banner is required for it.",
+      "Not always. A consent banner is legally required only when your analytics does something that triggers consent under one of two laws. Under the ePrivacy Directive (Article 5(3)), consent is needed to store or read information on a visitor's device — a cookie, a localStorage entry, a fingerprint. Under GDPR, a lawful basis is needed to process personal data such as an IP address or an online identifier. Analytics that stores nothing on the device and uses what it reads only for the site's own audience statistics can rely on the audience-measurement exemption, so no banner is required for it; a pseudonymised identifier still needs a GDPR lawful basis, such as legitimate interest.",
   },
   {
     question: "Is Google Analytics (GA4) GDPR-compliant?",
@@ -141,12 +141,12 @@ const faqs = [
   {
     question: "What is the most complete GDPR-compliant analytics platform?",
     answer:
-      "Most tools force a trade-off: enterprise platforms like GA4 and Adobe are deep but consent-dependent, so they lose EU data at the banner; lightweight privacy tools are compliant but shallow. Sealmetrics is built to remove the trade-off — cookieless by architecture, zero PII, aggregate-only, and EU-hosted in Dublin, so it needs no consent banner and does not lose traffic to consent rejection, while still providing last-click revenue attribution and eCommerce depth. It is designed for GDPR from the architecture up (self-assessed) rather than by configuration, with a DPA included and a clean Schrems II posture.",
+      "Most tools force a trade-off: enterprise platforms like GA4 and Adobe are deep but consent-dependent, so they lose EU data at the banner; lightweight privacy tools are compliant but shallow. Sealmetrics is built to remove the trade-off — cookieless by architecture, nothing that identifies anyone, aggregate-only, and EU-hosted in Dublin, so in our self-assessment its own analytics needs no consent banner (in Germany, our reading, not settled) and does not lose traffic to consent rejection, while still providing last-click revenue attribution and eCommerce depth. It is designed for GDPR from the architecture up (self-assessed) rather than by configuration, with a DPA included and a clean Schrems II posture.",
   },
   {
     question: "What makes Sealmetrics consent-free by design?",
     answer:
-      "Sealmetrics stores nothing on the visitor's device and processes no personal data. There are no cookies, no localStorage, no fingerprinting, and no IP retention or personal identifiers — measurement is aggregate and anonymous at the event level. Because it clears both the ePrivacy device test and the GDPR personal-data test, it meets the CNIL and AEPD criteria for consent-exempt audience measurement (self-assessed), so no consent banner is needed for it. Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on data without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — designed for GDPR (self-assessed), ePrivacy, and Schrems II-clean EU hosting.",
+      "Sealmetrics stores nothing on the visitor's device and no data that identifies anyone. There are no cookies, no localStorage, no IP retention and no persistent identifier — visits are grouped by an ephemeral identifier that rotates daily and cannot be linked across days or across sites. Because measurement is limited to the site's own audience statistics, with no cross-site tracking and no reuse, it meets the CNIL and AEPD criteria for consent-exempt audience measurement (self-assessed), so no consent banner is needed for it (in Germany, our reading, not settled). Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on data without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — designed for GDPR (self-assessed), ePrivacy, and analytics data hosted only in the EU.",
   },
 ];
 
@@ -254,13 +254,13 @@ export default function Page() {
                   <div>
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-amber mb-2">Test 1 · the device</div>
                     <p className="text-[0.98rem] leading-[1.65]">
-                      Nothing is stored on or read from the visitor&apos;s device — no cookies, no localStorage, no fingerprinting. This clears ePrivacy Article 5(3), the consent trigger that applies to <em>all</em> storage, personal or not.
+                      Nothing is stored on the visitor&apos;s device — no cookies, no localStorage — and the session identifier is ephemeral and rotates daily. Measurement is limited to the site&apos;s own audience statistics, the condition of the audience-measurement exemption from ePrivacy Article 5(3), the consent trigger that applies to <em>all</em> storage and access, personal or not.
                     </p>
                   </div>
                   <div className="border-t border-warm-50/15 pt-6">
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-brand mb-2">Test 2 · the data</div>
                     <p className="text-[0.98rem] leading-[1.65]">
-                      No personal data is processed — no IP retention, no online identifiers, only aggregate, anonymous counts. With no personal data in play, GDPR does not apply to the measurement at all.
+                      No data that identifies anyone is kept — no IP retention, no persistent identifiers, and reports are always aggregated. The session identifier is a pseudonym that rotates daily, processed under legitimate interest (Art. 6(1)(f)); once rotated, not even we can reconstruct it.
                     </p>
                   </div>
                   <div className="border-t border-warm-50/15 pt-6">
@@ -276,11 +276,11 @@ export default function Page() {
             </figure>
 
             <p>
-              Regulators have been converging on exactly this reading. France&apos;s CNIL maintains an exemption for analytics that meets a set of technical criteria — the basis for the <Link href="/blog/cnil-self-assessment-published" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">self-assessment we published</Link> showing how Sealmetrics satisfies it. The UK&apos;s DUAA 2025 introduced a live analytics exemption under PECR. And the proposed EU Digital Omnibus (COM(2025) 837) would move cookie-consent rules into GDPR and give first-party analytics an explicit legal footing — <Link href="/blog/eu-digital-omnibus-marketer-guide-2026" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">still a proposal, but a clear direction of travel</Link>. Every one of these rewards the same architecture: no device storage, no personal data.
+              Regulators have been converging on exactly this reading. France&apos;s CNIL maintains an exemption for analytics that meets a set of technical criteria — the basis for the <Link href="/blog/cnil-self-assessment-published" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">self-assessment we published</Link> showing how Sealmetrics satisfies it. The UK&apos;s DUAA 2025 introduced a live analytics exemption under PECR. And the proposed EU Digital Omnibus (COM(2025) 837) would move cookie-consent rules into GDPR and give first-party analytics an explicit legal footing — <Link href="/blog/eu-digital-omnibus-marketer-guide-2026" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">still a proposal, but a clear direction of travel</Link>. Every one of these rewards the same architecture: no device storage, nothing that identifies anyone.
             </p>
 
             <CommercialModule
-              hook="Sealmetrics is designed to pass the consent-free test: no cookies, no identifiers, aggregate-only counts. Put the assessment questions to us directly."
+              hook="Sealmetrics is designed to pass the consent-free test: no cookies, no persistent identifiers, aggregate-only counts. Put the assessment questions to us directly."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -346,7 +346,7 @@ export default function Page() {
               Sealmetrics — built for compliance <em>and</em> completeness
             </h3>
             <p>
-              The trade-off running through this whole table is between compliance and completeness. Enterprise incumbents are complete but consent-gated, so they lose EU data at the banner. Lightweight privacy tools are compliant but shallow. Sealmetrics is designed to sit where neither has to be sacrificed: <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless by architecture</Link>, zero PII, aggregate-only, and EU-hosted in Dublin — so it is designed to pass both halves of the consent test and need no banner, while still delivering last-click revenue attribution and eCommerce depth without consent gaps. Compliance here is designed into the architecture (self-assessed), not a configuration you have to get right: designed for GDPR, ePrivacy-clean, Schrems II-clean, DPA included. It is worth being precise about what that does not include — Sealmetrics does not claim ISO 27001 or SOC 2 certification, and its case rests on how it&apos;s built rather than on a certificate.
+              The trade-off running through this whole table is between compliance and completeness. Enterprise incumbents are complete but consent-gated, so they lose EU data at the banner. Lightweight privacy tools are compliant but shallow. Sealmetrics is designed to sit where neither has to be sacrificed: <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless by architecture</Link>, nothing that identifies anyone, aggregate-only, and EU-hosted in Dublin — so it is designed to pass the consent test and, in our self-assessment, need no banner for its own analytics, while still delivering last-click revenue attribution and eCommerce depth without consent gaps. Compliance here is designed into the architecture (self-assessed), not a configuration you have to get right: designed for GDPR, ePrivacy, analytics data only in the EU, DPA included. It is worth being precise about what that does not include — Sealmetrics does not claim ISO 27001 or SOC 2 certification, and its case rests on how it&apos;s built rather than on a certificate.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">

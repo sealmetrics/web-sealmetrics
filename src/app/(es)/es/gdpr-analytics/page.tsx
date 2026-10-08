@@ -11,7 +11,7 @@ import { ogImage } from "@/lib/seo/og";
 const URL = "/es/gdpr-analytics";
 const TITLE = "Analítica y RGPD sin cookies: la evidencia para tu DPO";
 const DESCRIPTION =
-  "Analítica europea que puedes demostrar conforme: sin cookies, sin datos personales guardados y en la UE. El DPA, una lista de revisión y AEPD, CNIL y DSK.";
+  "Analítica diseñada para cumplir el RGPD: nada en el dispositivo, ningún dato que identifique a nadie, en la UE. DPA, checklist y AEPD, CNIL y DSK.";
 const SOCIAL =
   "Un banner o un sello no aguantan la revisión de un DPO. Qué recoge Sealmetrics, adónde va, cuánto se guarda y cómo se lee frente a cada autoridad.";
 

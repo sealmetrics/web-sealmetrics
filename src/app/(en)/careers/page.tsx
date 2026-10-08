@@ -41,7 +41,7 @@ const TEAMS = [
   },
   {
     name: "Product & Design",
-    desc: "Turning aggregate, anonymous data into decisions a CMO signs off on. Editorial interfaces, dense data, no dark patterns.",
+    desc: "Turning aggregate data into decisions a CMO signs off on. Editorial interfaces, dense data, no dark patterns.",
   },
   {
     name: "Growth & Marketing",

@@ -53,21 +53,21 @@ const requirements = [
     title: "Consentimiento para el almacenamiento en el dispositivo",
     demand: "Cualquier cookie, entrada de localStorage o fingerprint no esencial necesita consentimiento previo antes de colocarse.",
     gap: "GA4 y Adobe dejan cookies, así que el banner es obligatorio — y en torno a un tercio de los visitantes UE lo rechaza.",
-    close: "Sin cookies, sin localStorage, sin fingerprinting — no se almacena nada en el dispositivo, así que no se activa el consentimiento.",
+    close: "Sin cookies, sin localStorage — no se almacena nada en el dispositivo. El identificador de sesión es efímero y rota cada día, y la medición encaja en la exención de medición de audiencia.",
   },
   {
     reg: "RGPD · Art. 6",
     title: "Base jurídica para el dato personal",
     demand: "Tratar una IP o un identificador online necesita una base jurídica válida — consentimiento o un interés legítimo defendible.",
     gap: "Las herramientas basadas en cookies se apoyan en un consentimiento que a menudo se retira, o en un interés legítimo cada vez más cuestionado.",
-    close: "La medición no trata dato personal alguno, así que no hay base que establecer — el RGPD no aplica a ella.",
+    close: "Interés legítimo (art. 6(1)(f)) para un identificador de sesión seudonimizado que rota cada día; no se guarda ningún dato que identifique a nadie.",
   },
   {
     reg: "RGPD · Art. 5(1)(c)",
     title: "Minimización de datos",
     demand: "Recoger solo el dato necesario para la finalidad — ni uno más.",
     gap: "Los client IDs, los grafos de dispositivo y los perfiles de comportamiento recogen mucho más de lo que la medición requiere.",
-    close: "Solo eventos agregados y anónimos — lo mínimo para contar qué pasó, nada que identifique a una persona.",
+    close: "Solo eventos agregados — lo mínimo para contar qué pasó, nada que identifique a una persona.",
   },
   {
     reg: "RGPD · Capítulo V",
@@ -81,7 +81,7 @@ const requirements = [
     title: "Derechos del interesado (acceso, supresión)",
     demand: "Las personas pueden solicitar acceso a su dato personal y su supresión.",
     gap: "El dato analítico por usuario crea una obligación permanente de localizarlo, comunicarlo y borrarlo a petición.",
-    close: "No se almacena dato personal, así que no hay nada que comunicar ni borrar — la obligación no llega a surgir en la medición.",
+    close: "No se guarda ningún dato que identifique a nadie y, cuando rota el identificador diario, ni nosotros podemos reconstruirlo, así que no hay nada que asociar a una solicitud.",
   },
   {
     reg: "AEPD · guía de cookies",
@@ -102,7 +102,7 @@ const requirements = [
     title: "Exención de consentimiento para analítica",
     demand: "La analítica solo puede funcionar sin consentimiento en Reino Unido si cumple los criterios de la exención DUAA 2025 / PECR.",
     gap: "La analítica basada en cookies, entre sitios o con dato personal no cumple los criterios de la exención.",
-    close: "Cookieless, first-party, sin dato personal — el perfil para el que se escribió la exención. Ver nuestro autoinforme PECR.",
+    close: "Cookieless, first-party, nada que identifique a nadie — el perfil para el que se escribió la exención. Ver nuestro autoinforme PECR.",
   },
 ];
 
@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     q: "¿Qué regulaciones debe cubrir una auditoría de cumplimiento de analítica?",
-    a: "Como mínimo: la Directiva ePrivacy (artículo 5(3), el disparador de consentimiento para el almacenamiento en el dispositivo); el RGPD (base jurídica, minimización de datos, transferencias internacionales y derechos del interesado); la guía de la autoridad de control donde operes —para España, la guía de cookies de la AEPD—; y, para tráfico del Reino Unido, PECR modificada por la Data (Use and Access) Act 2025. La analítica basada en cookies suele tener que superar todas; la analítica cookieless y first-party que no trata dato personal supera la mayoría por arquitectura.",
+    a: "Como mínimo: la Directiva ePrivacy (artículo 5(3), el disparador de consentimiento para el almacenamiento en el dispositivo); el RGPD (base jurídica, minimización de datos, transferencias internacionales y derechos del interesado); la guía de la autoridad de control donde operes —para España, la guía de cookies de la AEPD—; y, para tráfico del Reino Unido, PECR modificada por la Data (Use and Access) Act 2025. La analítica basada en cookies suele tener que superar todas; la analítica cookieless y first-party que no guarda datos que identifiquen a nadie supera la mayoría por arquitectura.",
   },
   {
     q: "¿GA4 pasa un análisis de brechas RGPD y ePrivacy?",
@@ -130,11 +130,11 @@ const faqs = [
   },
   {
     q: "¿Cómo cierra Sealmetrics las brechas de cumplimiento habituales de la analítica?",
-    a: "Por arquitectura y no por configuración. Sealmetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), trata cero dato personal como eventos agregados y anónimos (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: diseñado para el RGPD (autoevaluación), ePrivacy limpio, Schrems II limpio.",
+    a: "Por arquitectura y no por configuración. Sealmetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), no guarda ningún dato que identifique a nadie e informa solo con eventos agregados (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: diseñado para el RGPD (autoevaluación), ePrivacy, datos de analítica alojados solo en la UE.",
   },
   {
     q: "¿Puede la analítica funcionar sin banner tras un análisis de brechas?",
-    a: "Sí, cuando el análisis confirma dos cosas: que no se almacena ni se lee nada en el dispositivo del visitante (superando el artículo 5(3) de ePrivacy), y que no se trata dato personal (así que el RGPD no aplica a la medición). Los reguladores han convergido en esta lectura — la CNIL francesa mantiene una exención de analítica, y la DUAA 2025 del Reino Unido introdujo otra bajo PECR. Una herramienta que cumple ambas condiciones puede medir de forma lícita sin banner y, como consecuencia, sin la pérdida de dato UE que un banner provoca.",
+    a: "Sí, cuando el análisis confirma dos cosas: que no se almacena nada en el dispositivo del visitante y que lo que se lee solo sirve para las estadísticas de audiencia de la propia web, sin identificador persistente (encajando en la exención de medición de audiencia del artículo 5(3) de ePrivacy), y que no se guarda nada que identifique a nadie, con cualquier identificador seudonimizado cubierto por una base jurídica como el interés legítimo. Los reguladores han convergido en esta lectura — la CNIL francesa mantiene una exención de analítica, y la DUAA 2025 del Reino Unido introdujo otra bajo PECR. Una herramienta que cumple ambas condiciones puede medir de forma lícita sin banner y, como consecuencia, sin la pérdida de dato UE que un banner provoca.",
   },
 ];
 
@@ -194,12 +194,12 @@ export default function RegGapAnalysisEsPage() {
             <strong>RGPD</strong>, <strong>AEPD</strong> y <strong>PECR</strong> para encontrar dónde se
             queda corta. Las herramientas basadas en cookies abren brechas en almacenamiento en el
             dispositivo, base jurídica, transferencias y derechos del interesado. Una arquitectura{" "}
-            <strong>cookieless, cero PII y alojada en la UE</strong> las cierra por diseño.
+            <strong>cookieless, sin nada que identifique a nadie y alojada en la UE</strong> las cierra por diseño.
           </>
         }
         bullets={[
           <>Las brechas recurrentes: cookies (ePrivacy), dato personal (RGPD), transferencias a EE. UU. (Schrems II), UX de banner (AEPD).</>,
-          <>Cookieless + cero dato personal + alojamiento UE en Dublín supera la mayoría de requisitos de forma estructural.</>,
+          <>Cookieless + nada que identifique a nadie + alojamiento UE en Dublín supera la mayoría de requisitos de forma estructural.</>,
           <>Lee el razonamiento legal en nuestro <Link href="/es/blog/gdpr-eprivacy-analytics-legal-assessment" className="text-brand no-underline border-b border-warm-200 hover:border-brand">análisis legal de RGPD y ePrivacy</Link>.</>,
         ]}
       />

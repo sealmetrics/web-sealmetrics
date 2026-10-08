@@ -86,7 +86,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "01 · Collect",
           title: "846-byte first-party pixel",
-          p: "A tiny JavaScript tag, 846 bytes at its minimum and 1.1 KB on the wire in full. It ships from t.sealmetrics.com by default, and you can switch it to a subdomain of your own — first-party mode — so ad-blocker lists that target third-party analytics domains have nothing to match. No cookies are written. No local storage. No fingerprinting.",
+          p: "A tiny JavaScript tag, 846 bytes at its minimum and 1.1 KB on the wire in full. It ships from t.sealmetrics.com by default, and you can switch it to a subdomain of your own — first-party mode — so ad-blocker lists that target third-party analytics domains have nothing to match. No cookies are written. No local storage. No persistent identifier.",
           bullet: [
             "Optional first-party mode on your own subdomain",
             "1.1 KB on the wire · ~132× lighter than GA4",
@@ -96,8 +96,8 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         },
         {
           n: "02 · Process",
-          title: "Anonymous server-side event counting",
-          p: "Events are processed on our servers, not in the browser. Each pageview is logged with anonymous channel metadata (referrer, UTM, landing page) and aggregated into channel totals. No user identifier, no session stitching, no cross-visit linking. Zero sampling at any scale.",
+          title: "Aggregate server-side event counting",
+          p: "Events are processed on our servers, not in the browser. Each pageview is logged with channel metadata (referrer, UTM, landing page) and aggregated into channel totals. No user identifier, no session stitching, no cross-visit linking. Zero sampling at any scale.",
           bullet: [
             "No client-side aggregation",
             "No per-user identifiers · no session stitching",
@@ -110,10 +110,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           title: "EU-hosted · Dublin, Ireland",
           p: "Visitor data lives exclusively on EU infrastructure — no transfers of visitor data outside the EU and no third-country sub-processors in the visitor data path. The single non-EEA transfer anywhere in the service is account-user service email via Resend (USA, SCCs + EU-US DPF), which touches no visitor data. Designed for GDPR from the architecture up (our self-assessment), not by a legal layer bolted on afterwards.",
           bullet: [
-            "Dublin, Ireland — Schrems II clean",
+            "Dublin, Ireland — analytics data only in the EU",
             "No third-country sub-processors in the visitor data path",
             "24 months data retention included",
-            "GDPR · ePrivacy · Schrems II clean",
+            "Built to comply with the GDPR · ePrivacy",
           ],
         },
       ],
@@ -131,7 +131,7 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         {
           n: "01 · Captura",
           title: "Pixel first-party de 846 bytes",
-          p: "Un script JavaScript diminuto: 846 bytes en su versión mínima y 1,1 KB en red al completo. Por defecto se sirve desde t.sealmetrics.com, y puedes moverlo a un subdominio tuyo — modo first-party — para que las listas de bloqueadores que atacan dominios de analítica de terceros no tengan nada que bloquear. Sin cookies. Sin localStorage. Sin fingerprinting.",
+          p: "Un script JavaScript diminuto: 846 bytes en su versión mínima y 1,1 KB en red al completo. Por defecto se sirve desde t.sealmetrics.com, y puedes moverlo a un subdominio tuyo — modo first-party — para que las listas de bloqueadores que atacan dominios de analítica de terceros no tengan nada que bloquear. Sin cookies. Sin localStorage. Sin identificador persistente.",
           bullet: [
             "Modo first-party opcional en tu propio subdominio",
             "1,1 KB en red · ~132× más ligero que GA4",
@@ -141,8 +141,8 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
         },
         {
           n: "02 · Procesa",
-          title: "Conteo de eventos anónimo en servidor",
-          p: "Los eventos se procesan en nuestros servidores, no en el navegador. Cada pageview se registra con metadatos anónimos de canal (referrer, UTM, landing) y se agrega en totales por canal. Sin identificador de usuario, sin session stitching, sin enlazar visitas entre sí. Cero muestreo a cualquier escala.",
+          title: "Conteo de eventos agregado en servidor",
+          p: "Los eventos se procesan en nuestros servidores, no en el navegador. Cada pageview se registra con metadatos de canal (referrer, UTM, landing) y se agrega en totales por canal. Sin identificador de usuario, sin session stitching, sin enlazar visitas entre sí. Cero muestreo a cualquier escala.",
           bullet: [
             "Sin agregación en el cliente",
             "Sin identificadores por usuario · sin session stitching",
@@ -155,10 +155,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           title: "Alojado en UE · Dublín, Irlanda",
           p: "El dato de visitante vive exclusivamente en infraestructura UE — sin transferencias de dato de visitante fuera de UE y sin sub-procesadores de terceros países en su ruta. La única transferencia fuera del EEE en todo el servicio son los emails de servicio a usuarios de la cuenta vía Resend (EE. UU., CCT + EU-US DPF), que no tocan dato de visitante. Diseñada para el RGPD desde la arquitectura (autoevaluación), no por una capa legal añadida después.",
           bullet: [
-            "Dublín, Irlanda — Schrems II limpio",
+            "Dublín, Irlanda — analítica solo en la UE",
             "Sin sub-procesadores en terceros países en la ruta del dato de visitante",
             "24 meses de retención incluidos",
-            "RGPD · ePrivacy · Schrems II limpio",
+            "Diseñado para cumplir el RGPD · ePrivacy",
           ],
         },
       ],
@@ -223,10 +223,10 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without the cookie banner and without the sampling.",
+        "Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without losing visits to the cookie banner and without the sampling.",
       steps: [
         { n: "Step 01", time: "5–30 minutes", t: "Install the pixel", p: "Add one script tag or a native module. Works with any CMS or framework. Your dev deploys it in 5 to 30 minutes, depending on the platform." },
-        { n: "Step 02", time: "Day 1", t: "Real data flows", p: "Full traffic visibility from the first hour. Every visitor, every source, every conversion — 100% observed." },
+        { n: "Step 02", time: "Day 1", t: "Real data flows", p: "From the first hour, the traffic you lose today to the cookie banner shows up, with its source and conversions." },
         { n: "Step 03", time: "Day 3", t: "GA4 side-by-side", p: "We help you calibrate and compare against your existing GA4. You see the gap with your own numbers, not ours." },
         { n: "Step 04", time: "Day 5", t: "Microconversions", p: "Tag the 5–10 microconversions that matter for revenue attribution. Cart adds, form completes, video plays." },
         { n: "Step 05", time: "Week 1", t: "Decision-ready", p: "Funnels, channels, attribution — all calibrated. Your team starts making reallocation decisions with defensible data." },
@@ -240,10 +240,10 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta — pero sin banner de cookies y sin muestreo.",
+        "Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta — pero sin perder visitas por el banner y sin muestreo.",
       steps: [
         { n: "Paso 01", time: "5–30 minutos", t: "Instala el pixel", p: "Añade un script o un módulo nativo. Funciona con cualquier CMS o framework. Tu dev lo despliega en 5 a 30 minutos, según la plataforma." },
-        { n: "Paso 02", time: "Día 1", t: "Fluyen los datos reales", p: "Visibilidad completa del tráfico desde la primera hora. Cada visitante, cada fuente, cada conversión — 100% observado." },
+        { n: "Paso 02", time: "Día 1", t: "Fluyen los datos reales", p: "Desde la primera hora aparece el tráfico que hoy se pierde por el banner de cookies, con su fuente y sus conversiones." },
         { n: "Paso 03", time: "Día 3", t: "GA4 en paralelo", p: "Te ayudamos a calibrar y comparar con tu GA4 actual. Ves el gap con tus propios datos, no los nuestros." },
         { n: "Paso 04", time: "Día 5", t: "Microconversiones", p: "Etiqueta las 5–10 microconversiones que importan para atribución. Add-to-cart, formularios, video plays." },
         { n: "Paso 05", time: "Semana 1", t: "Decisiones defendibles", p: "Embudos, canales, atribución — todo calibrado. Tu equipo empieza a tomar decisiones con datos defendibles." },
@@ -295,21 +295,21 @@ import { FaqAccordionV3 } from "./FaqAccordionV3";
 
 export function HowItWorksFaqV3({ locale = "en" as Locale }) {
   const itemsEn = [
-    { q: "How does cookieless tracking work without identifying users?", a: "Sealmetrics does not identify users at all. Each pageview is logged anonymously with channel metadata (referrer, UTM parameters, landing page, country, device class) and aggregated into channel totals on the server. No cookies, no localStorage, no fingerprinting, no cross-visit stitching — counts only, no per-user journeys." },
+    { q: "How does cookieless tracking work without identifying users?", a: "Sealmetrics does not identify users at all. Each pageview is logged with channel metadata (referrer, UTM parameters, landing page, country, device class) and aggregated into channel totals on the server. No cookies, no localStorage, no persistent identifier, no cross-visit stitching — counts only, no per-user journeys." },
     { q: "Is Sealmetrics affected by ad blockers?", a: "The collection endpoint can run in first-party mode on your own subdomain. Ad blockers work mostly from lists of known third-party analytics domains (like google-analytics.com), so first-party requests are far less likely to be blocked. The default install loads from t.sealmetrics.com, which a list can target." },
     { q: "How long does setup take?", a: "5 to 30 minutes, depending on the platform. Add one JavaScript tag to your website — either directly in the HTML or via Google Tag Manager. No consent mode configuration, no cookie banner integration, and no Tag Manager variables to set up." },
-    { q: "Do I need to modify my consent banner?", a: "No. Sealmetrics does not require consent under GDPR or ePrivacy because it uses no cookies and collects no personal data. If you already have a consent banner for other tools (like GA4 or advertising pixels), Sealmetrics operates independently of it." },
+    { q: "Do I need to modify my consent banner?", a: "Not for Sealmetrics' own analytics, according to our self-assessment: it uses no cookies, stores nothing on the device and no data that identifies anyone, and its reports are always aggregated. In Germany that is our reading, not settled — check with your DPO. If you already have a consent banner for other tools (like GA4 or advertising pixels), Sealmetrics operates independently of it." },
     { q: "Where is data processed and stored?", a: "Visitor analytics data is processed and stored exclusively on EU servers in Dublin, Ireland, with no transfer outside the EU and no third-country sub-processor in its path. The only non-EEA sub-processor in the whole service is Resend (USA), which sends service emails to account users under Standard Contractual Clauses and the EU-US DPF and never receives visitor data. The full list is Annex 3 of the DPA." },
-    { q: "Does Sealmetrics use fingerprinting?", a: "No. Sealmetrics does not use browser fingerprinting, canvas fingerprinting, or any technique that creates a unique identifier from device characteristics. This is a deliberate architectural choice — fingerprinting creates personal data and would require consent." },
+    { q: "Does Sealmetrics use fingerprinting?", a: "Not a stored or persistent one. The tracker stores nothing on the device. To group the hits of a visit it computes, in the browser, a hash of the site's account ID and a few browser characteristics (user agent, time zone, languages, screen size, colour depth, colour-scheme and motion preferences, CPU cores, device memory). Before any use, the server replaces that value with a keyed hash salted with a random salt that rotates daily, and the previous salt is deleted. The raw value is never stored, and the result cannot be linked across days or across sites — not even by Sealmetrics." },
     { q: "What happens if I exceed my event limit?", a: "We never block your tracking. At 80% of your event limit you receive an email alert, at 100% a dashboard notification, and at 120% we contact you to discuss upgrading. No data is lost during any overage period." },
   ];
   const itemsEs = [
-    { q: "¿Cómo funciona el tracking sin cookies sin identificar al usuario?", a: "Sealmetrics no identifica a los usuarios, en absoluto. Cada pageview se registra de forma anónima con metadatos de canal (referrer, UTM, landing, país, tipo de dispositivo) y se agrega en totales por canal en servidor. Sin cookies, sin localStorage, sin fingerprinting, sin stitching entre visitas — solo conteos, sin journeys por usuario." },
+    { q: "¿Cómo funciona el tracking sin cookies sin identificar al usuario?", a: "Sealmetrics no identifica a los usuarios, en absoluto. Cada pageview se registra con metadatos de canal (referrer, UTM, landing, país, tipo de dispositivo) y se agrega en totales por canal en servidor. Sin cookies, sin localStorage, sin identificador persistente, sin stitching entre visitas — solo conteos, sin journeys por usuario." },
     { q: "¿Afectan los bloqueadores de anuncios a Sealmetrics?", a: "El endpoint de recogida puede funcionar en modo first-party sobre tu propio subdominio. Los bloqueadores trabajan sobre todo con listas de dominios de analítica de terceros conocidos (como google-analytics.com), así que las peticiones first-party tienen muchas menos probabilidades de bloquearse. La instalación por defecto carga desde t.sealmetrics.com, que una lista sí puede incluir." },
     { q: "¿Cuánto tarda la instalación?", a: "De 5 a 30 minutos, según la plataforma. Añade un script JavaScript a tu web — directamente en el HTML o vía Google Tag Manager. Sin configurar consent mode, sin integrar banner de cookies, sin variables de Tag Manager." },
-    { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No. Sealmetrics no requiere consentimiento bajo RGPD o ePrivacy porque no usa cookies ni recopila datos personales. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), Sealmetrics opera independientemente." },
+    { q: "¿Tengo que modificar mi banner de consentimiento?", a: "No para la propia analítica de Sealmetrics, según nuestra autoevaluación: no usa cookies, no guarda nada en el dispositivo ni datos que identifiquen a nadie, y los informes son siempre agregados. En Alemania es nuestra lectura, no algo resuelto: consúltalo con tu DPO. Si ya tienes un banner para otras herramientas (GA4 o pixels publicitarios), Sealmetrics opera independientemente." },
     { q: "¿Dónde se procesan y almacenan los datos?", a: "El dato de analítica de visitantes se procesa y almacena exclusivamente en servidores UE en Dublín, Irlanda, sin transferencias fuera de la UE ni sub-procesadores de terceros países en su ruta. El único sub-procesador fuera del EEE en todo el servicio es Resend (EE. UU.), que envía los emails de servicio a usuarios de la cuenta con Cláusulas Contractuales Tipo y el EU-US DPF y nunca recibe dato de visitante. La lista completa es el Anexo 3 del DPA." },
-    { q: "¿Usa Sealmetrics fingerprinting?", a: "No. Sealmetrics no usa fingerprinting de navegador, canvas fingerprinting ni ninguna técnica que cree un identificador único a partir de características del dispositivo. Es una decisión arquitectónica — el fingerprinting crea dato personal y requeriría consentimiento." },
+    { q: "¿Usa Sealmetrics fingerprinting?", a: "No uno guardado ni persistente. El tracker no guarda nada en el dispositivo. Para agrupar los hits de una visita calcula, en el navegador, un hash del ID de cuenta del sitio y de unas pocas características del navegador (user agent, zona horaria, idiomas, tamaño de pantalla, profundidad de color, preferencias de modo oscuro y de movimiento, núcleos de CPU y memoria del dispositivo). Antes de usarlo, el servidor lo sustituye por un hash con clave y una sal aleatoria que rota cada día, y la sal anterior se borra. El valor original no se guarda nunca y el resultado no se puede enlazar entre días ni entre webs, ni siquiera por Sealmetrics." },
     { q: "¿Qué pasa si supero mi límite de eventos?", a: "Nunca bloqueamos tu tracking. Al 80% del límite recibes un email, al 100% una notificación en dashboard, y al 120% te contactamos para hablar de upgrade. Ningún dato se pierde durante el exceso." },
   ];
   const items = locale === "es" ? itemsEs : itemsEn;

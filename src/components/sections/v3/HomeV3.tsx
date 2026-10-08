@@ -557,7 +557,7 @@ const STEPS_COPY = {
   en: {
     eyebrow: "How to start",
     headline: <>5 to 30 minutes to see your <em>real traffic.</em></>,
-    lede: "No migration. No cookie banner. No data team required. A script or a module on your CMS, installed in 5 to 30 minutes depending on the platform.",
+    lede: "No migration. No consent loss. No data team required. A script or a module on your CMS, installed in 5 to 30 minutes depending on the platform.",
     stepLabel: "Step",
     times: ["5–30 min", "Once installed", "Week 1"],
     titles: ["Paste our 846 bytes script", "See real data", "Unlock your real ROAs"],
@@ -573,7 +573,7 @@ const STEPS_COPY = {
   es: {
     eyebrow: "Cómo empezar",
     headline: <>De 5 a 30 minutos para ver tu <em>tráfico real.</em></>,
-    lede: "Sin migración. Sin banner. Sin equipo de data. Un script o un módulo en tu CMS, instalado en 5 a 30 minutos según la plataforma.",
+    lede: "Sin migración. Sin pérdida por consentimiento. Sin equipo de data. Un script o un módulo en tu CMS, instalado en 5 a 30 minutos según la plataforma.",
     stepLabel: "Paso",
     times: ["5–30 min", "Una vez instalado", "Semana 1"],
     titles: ["Pega nuestro script de 846 bytes", "Ve datos reales", "Desbloquea tu ROAS real"],

@@ -27,7 +27,7 @@ export function Hero() {
     <section className="bg-warm-white pt-14 md:pt-20 pb-20">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10">
         <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-ink-soft">
-          Privacy-by-design analytics · No cookies, no identifiers · Designed for GDPR from the architecture up
+          Privacy-by-design analytics · No cookies, no persistent identifiers · Designed for GDPR from the architecture up
         </p>
 
         <h1 className="h-display mt-5 max-w-[16ch]">
@@ -226,9 +226,10 @@ export function WhatWeDo() {
         </div>
         <div>
           <p className="text-ink-2 leading-[1.5] max-w-[58ch]" style={{ fontSize: "clamp(17px,1.6vw,20px)" }}>
-            Sealmetrics does not reconstruct journeys. It records aggregate hits that are unconnected to each
-            other, with no user identifier, no cookies and no profiling. Since nobody is identifiable now or
-            later, no consent is needed to measure.
+            Sealmetrics does not reconstruct journeys. It records aggregate hits, grouped at most within a visit
+            by an ephemeral identifier that rotates daily, with no user identifier, no cookies and no profiling.
+            Visits cannot be linked across days or sites, which keeps measurement within the audience-measurement
+            exemption from consent.
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             The pixel fires before the banner and measures{" "}
@@ -329,16 +330,16 @@ const PBD = [
     d: "Neither first nor third party. No localStorage, no sessionStorage, no storage of any kind on the visitor's device.",
   },
   {
-    k: "Identifiers",
+    k: "Persistent identifiers",
     v: "0",
     t: "There is no user column",
-    d: "No user ID, no client ID, no anonymous pseudonym. Two visits from the same browser are not recognisable as such, now or in two years.",
+    d: "No user ID, no client ID. The hits of a visit share an ephemeral identifier that rotates daily; two visits from the same browser on different days cannot be linked, now or in two years.",
   },
   {
-    k: "Fingerprint signals",
+    k: "Stored fingerprints",
     v: "0",
-    t: "We derive no identity from the device",
-    d: "No canvas, no installed fonts, no header combinations. Fingerprinting is explicitly ruled out, not merely unused.",
+    t: "Nothing from the device persists",
+    d: "No canvas, no installed fonts. The session hash computed in the browser is replaced on the server by a keyed hash with a salt that rotates daily; the raw value is never stored and cannot be linked across days or sites.",
   },
   {
     k: "Cross-site joins",
@@ -423,14 +424,14 @@ export function PrivacyByDesign() {
 
 /* ---------- 07 · THE TRADE-OFF ---------- */
 const TRADE_NO = [
-  "Multi-touch attribution models. Without visitor identifiers, the only possible model is last-click.",
+  "Multi-touch attribution models. Without persistent visitor identifiers, the only possible model is last-click.",
   "Individual customer journeys or session sequences.",
   "Audience building for activation on ad platforms.",
   "User cohorts, individual retention or per-person LTV.",
 ];
 
 const TRADE_YES = [
-  "Sessions, events and sales with no consent loss. With no banner in the way.",
+  "Sessions, events and sales with no consent loss.",
   "Channel, campaign, medium, keyword, content and referrer across that same data.",
   "The complete aggregate funnel: visit → product viewed → cart → checkout → purchase.",
   "Product-level data: size, colour, brand, category, price range, SKU.",
@@ -446,7 +447,7 @@ export function Tradeoff() {
           We tell you what you lose <em>before you find out yourself.</em>
         </h2>
         <p className="mt-6 max-w-[60ch] text-ink-2 leading-[1.55]" style={{ fontSize: "clamp(16px,1.5vw,19px)" }}>
-          Measuring without cookies or identifiers has a price and we do not hide it in the small print. If what you need is
+          Measuring without cookies or persistent identifiers has a price and we do not hide it in the small print. If what you need is
           in the left-hand column, we are not your tool and we will tell you so on the first call.
         </p>
 
@@ -551,7 +552,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
 
 const TABLE_ROWS = [
   ["Hit transport", "sendBeacon · survives page close", "Beacon type", "Image GET · cancelled on exit"],
-  ["Consent in the EU", "No cookies or identifiers · banner depends on your setup", "Yes · Consent Mode models the gap", "Yes in most installations"],
+  ["Consent in the EU", "No cookies or persistent identifiers · banner depends on your setup", "Yes · Consent Mode models the gap", "Yes in most installations"],
   ["Traffic measured in parallel", "Baseline", "25–45% less (our client sample)", "25% less (30 days dual-tagged, field)"],
 ];
 
@@ -567,7 +568,7 @@ const SPECS = [
   {
     h: "Data truth",
     items: [
-      { v: "No consent loss", l: "No cookies, no identifiers: nothing for the visitor to reject." },
+      { v: "No consent loss", l: "No cookies, no persistent identifiers: nothing for the visitor to reject." },
       { v: "Zero modelling", l: "No modelling. No sampling. No estimates. If it is in the report, it happened." },
       { v: "+25% vs Adobe or GA4", l: "Measured in the field, 30 days dual-tagged on the same site." },
     ],
@@ -809,7 +810,7 @@ export function Implementation() {
           </p>
 
           <p className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.06em] text-ink-soft">
-            1.1 KB · DEFER · SENDBEACON · NO COOKIES · NO IDENTIFIERS
+            1.1 KB · DEFER · SENDBEACON · NO COOKIES · NO PERSISTENT IDS
           </p>
         </div>
       </div>

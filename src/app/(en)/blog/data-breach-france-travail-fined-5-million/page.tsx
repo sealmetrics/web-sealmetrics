@@ -188,7 +188,7 @@ export default function Page() {
               Sealmetrics changes the math by removing the liability at the source. 
             </p>
             <p>
-              Because our architecture does not rely on cookies, IP addresses, or any form of PII, we don't create an attack surface within your measurement stack. We practice privacy-by-design, not privacy-by-policy. 
+              Because our architecture uses no cookies, stores no IP addresses and keeps nothing that identifies anyone, we don't create an attack surface within your measurement stack. We practice privacy-by-design, not privacy-by-policy. 
             </p>
             <p>
               This matters deeply when considering the impact of a security incident. Under the new EU regulatory landscape, the requirement to notify authorities often hinges on whether a breach poses a "high risk" to individuals. By stripping away the identifiers that enable identity theft, profiling, or fraud, you significantly reduce the likelihood that an analytics-related incident will ever reach that "high risk" threshold. You aren't just protecting users; you are protecting your company from the catastrophic costs of regulatory escalation.

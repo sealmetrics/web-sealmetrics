@@ -279,7 +279,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
 
             <CommercialModule
               locale="es"
-              hook="¿Tu medición depende de que el Marco de Privacidad de Datos sobreviva a la próxima sentencia? Ve en una demo cómo sería medir sin transferencias a EE. UU. que defender: dato anónimo, agregado y procesado en la UE."
+              hook="¿Tu medición depende de que el Marco de Privacidad de Datos sobreviva a la próxima sentencia? Ve en una demo cómo sería medir sin transferencias a EE. UU. que defender: nada que identifique a nadie, informes agregados y datos procesados en la UE."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -298,8 +298,8 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
             </p>
             <p>
               La primera forma de romperlo es no recoger datos personales. Una
-              analítica que nunca recoge IPs, cookies, huellas de dispositivo ni
-              identificadores de visitante no tiene datos personales que
+              analítica que nunca guarda IPs ni instala cookies y no guarda ningún
+              identificador persistente de visitante no tiene datos personales que
               transferir. La segunda es mantener el tratamiento en un encargado
               constituido en la UE que no tenga matriz estadounidense, de modo
               que ningún régimen extraterritorial lo alcance.

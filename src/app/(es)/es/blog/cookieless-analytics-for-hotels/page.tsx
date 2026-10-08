@@ -133,7 +133,7 @@ export default function CookielessAnalyticsForHotelsPageEs() {
             <ul className={`text-[0.9rem] leading-[1.7] text-text-secondary ${dashList}`}>
               <li>Con GA4, los grupos hoteleros pierden el canal de una parte relevante de la venta directa: en Palladium Hotel Group, el 35% de las reservas registradas no tenía canal.</li>
               <li>El origen se pierde en tres puntos: el rechazo del consentimiento, la caducidad de cookies que impone Safari y el salto al motor de reservas o a la pasarela de pago.</li>
-              <li>La analítica sin cookies cuenta las reservas de forma anónima, sin identificar huéspedes, y atribuye cada una a último clic al origen de la sesión en la que ocurre.</li>
+              <li>La analítica sin cookies cuenta las reservas de forma agregada, sin identificar huéspedes, y atribuye cada una a último clic al origen de la sesión en la que ocurre.</li>
               <li>Los totales por canal se contrastan con el PMS o el CRM, sea cual sea, porque la reserva llega como un evento de conversión estándar.</li>
               <li>Las reservas hechas en la web de una OTA no pasan por tu web y quedan fuera de la medición; su fuente sigue siendo la extranet de la OTA.</li>
             </ul>

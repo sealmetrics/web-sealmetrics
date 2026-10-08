@@ -42,7 +42,7 @@ const faqs = [
   {
     question: "Does my online store need a cookie banner for analytics?",
     answer:
-      "No — not if the analytics tool sets no cookies and processes no personal data. A banner is legally required only when measurement stores something on the device (a cookie, localStorage) or processes personal data such as an IP address. The AEPD's cookie guidance exempts anonymous, aggregate audience measurement with no cross-site tracking. With cookieless analytics like Sealmetrics, no banner is required for measurement; if you also run marketing cookies, those still need consent on their own.",
+      "No — not if the analytics tool sets no cookies and processes no personal data. A banner is legally required only when measurement stores something on the device (a cookie, localStorage) or processes personal data such as an IP address. The AEPD's cookie guidance exempts anonymous, aggregate audience measurement with no cross-site tracking. With cookieless analytics like Sealmetrics, in our self-assessment no banner is required for measurement; if you also run marketing cookies, those still need consent on their own.",
   },
   {
     question: "What does the AEPD say about analytics cookies?",
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "Can I measure conversions and campaigns without cookies?",
     answer:
-      "Yes. Cookieless measurement counts events anonymously and in aggregate — visits, conversions, revenue by channel and campaign — without storing anything on the device or identifying the visitor. Attribution is computed last-click on traffic without consent gaps. What it does not do, by design: reconstruct an individual user's journey or run multi-touch attribution, both of which require personal identifiers.",
+      "Yes. Cookieless measurement counts events in aggregate — visits, conversions, revenue by channel and campaign — without storing anything on the device or identifying the visitor. Attribution is computed last-click on traffic without consent gaps. What it does not do, by design: reconstruct an individual user's journey or run multi-touch attribution, both of which require personal identifiers.",
   },
   {
     question: "What are the fines for using analytics cookies without consent in Spain?",
@@ -146,7 +146,7 @@ export default function GdprAnalyticsSpainFaqPage() {
           </div>
 
           <CommercialModule
-            hook="Seven answers, one pattern: analytics that never processes personal data needs no consent. See it on your own traffic in a 30-minute demo."
+            hook="Seven answers, one pattern: analytics that stores nothing on the device and keeps no data that identifies anyone can measure without consent. See it on your own traffic in a 30-minute demo."
           />
 
           <RelatedReading currentSlug="gdpr-analytics-spain-faq" />

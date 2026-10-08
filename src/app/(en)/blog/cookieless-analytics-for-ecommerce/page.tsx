@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
     description:
-      "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
+      "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, nothing on the device.",
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
-    description: "Aggregate, anonymous event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
+    description: "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, nothing on the device.",
     images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
   },
   alternates: {
@@ -125,8 +125,8 @@ export default function Page() {
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Consent rejection, ad blockers and Safari restrictions compound. How much they remove depends on the store and the channel. Measured on Incapto&apos;s Shopify store over 48 days, GA4 did not record 29% of visits or 45% of pageviews.</li>
-              <li>Cookieless analytics counts events anonymously — no cookies, no identifiers, no per-user tracking — and attributes each conversion last-click at channel level.</li>
-              <li>Because no information is stored on or read from the device, the ePrivacy storage-and-access rule has nothing to attach to. Whether your analytics is consent-exempt still depends on your configuration and your national authority&apos;s criteria.</li>
+              <li>Cookieless analytics counts events in aggregate — no cookies, no persistent identifiers, no per-user tracking — and attributes each conversion last-click at channel level.</li>
+              <li>Because nothing is stored on the device, no identifier persists and measurement serves only the site&apos;s own audience statistics, it can fit the audience-measurement exemption from the ePrivacy storage-and-access rule. Whether your analytics is consent-exempt still depends on your configuration and your national authority&apos;s criteria.</li>
               <li>The check that matters is against the backend: in Incapto&apos;s parallel run, Sealmetrics recorded 96% of real Shopify orders and 97% of revenue.</li>
               <li>Run side-by-side with GA4 over a full commercial cycle to compare; no migration needed.</li>
             </ul>
@@ -166,16 +166,16 @@ export default function Page() {
               Cookieless analytics for eCommerce replaces the three-layer loss cascade with a different architecture. It is important to state what this architecture does <em>not</em> do: it does not identify individual visitors, it does not stitch pageviews into per-user journeys, and it does not build behavioral profiles. It counts events. That&apos;s all.
             </p>
             <p>
-              <strong>1. First-party event collection.</strong> A small tracking script, which you can serve from a subdomain of your own domain instead of a third-party endpoint. Ad blockers work mostly from lists of known third-party tracking domains, so a first-party request is far less likely to be blocked. Each pageview logs anonymous metadata: referrer, UTM parameters, landing page, country, device class.
+              <strong>1. First-party event collection.</strong> A small tracking script, which you can serve from a subdomain of your own domain instead of a third-party endpoint. Ad blockers work mostly from lists of known third-party tracking domains, so a first-party request is far less likely to be blocked. Each pageview logs channel metadata: referrer, UTM parameters, landing page, country, device class.
             </p>
             <p>
-              <strong>2. Aggregate, anonymous counts.</strong> Events are aggregated on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign and landing page. At no point is a pageview linked to a specific person or device. There is no cross-session identifier and no &ldquo;returning user&rdquo; concept.
+              <strong>2. Aggregated counts.</strong> Events are aggregated on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign and landing page. At no point is a pageview linked to a specific person or device. There is no cross-session identifier and no &ldquo;returning user&rdquo; concept.
             </p>
             <p>
               <strong>3. Session-scoped last-click attribution.</strong> A conversion is credited to the source of the session in which it fires; the session closes after about two hours of inactivity. If the visitor came from Google Ads three days earlier, that visit counted towards the Google Ads channel total; it is not stitched onto the later conversion. Sessions stand on their own. Channel totals are what rolls up.
             </p>
             <p>
-              <strong>4. No cookies, nothing to consent to on the device.</strong> Because nothing is stored on or read from the visitor&apos;s device, the storage-and-access rule of the ePrivacy Directive has nothing to attach to. Whether your deployment is consent-exempt still depends on your configuration and your regulator&apos;s criteria; where it is, the consent-rejection gap disappears because there is nothing to reject.
+              <strong>4. No cookies, nothing to consent to on the device.</strong> Because nothing is stored on the visitor&apos;s device, no identifier persists and measurement serves only the site&apos;s own audience statistics, it can fit the audience-measurement exemption from the storage-and-access rule of the ePrivacy Directive. Whether your deployment is consent-exempt still depends on your configuration and your regulator&apos;s criteria; where it is, the consent-rejection gap disappears because there is nothing to reject.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -188,7 +188,7 @@ export default function Page() {
               <li><strong>Totals reconcile with the backend.</strong> In Incapto&apos;s 48-day parallel run, Sealmetrics recorded 96% of real Shopify orders and 97% of revenue — so the channel split built on top of it can be trusted.</li>
               <li><strong>No Black Friday sampling.</strong> Cookieless analytics does not sample at volume thresholds, so peak-day decisions are made on real counts.</li>
               <li><strong>Microconversions visible.</strong> Add-to-carts, checkout starts and form submissions are counted on every session that loads the tracker, not only on consenting ones.</li>
-              <li><strong>CFO-defensible numbers.</strong> Because the architecture is provable (no PII, no identifiers) and aggregate revenue reconciles with the backend, finance can sign off on the channel mix without a three-hour meeting.</li>
+              <li><strong>CFO-defensible numbers.</strong> Because the architecture is provable (nothing that identifies anyone, no persistent identifiers) and aggregate revenue reconciles with the backend, finance can sign off on the channel mix without a three-hour meeting.</li>
             </ul>
 
             <CommercialModule hook="Pixel says 340, Shopify says 180? The demo reconciles your numbers against your backend, live." />
@@ -197,7 +197,7 @@ export default function Page() {
               What you give up — on purpose
             </h2>
             <p>
-              Aggregate, anonymous measurement has trade-offs. Be clear about them:
+              Aggregate measurement has trade-offs. Be clear about them:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li><strong>No per-user journey reports.</strong> You will not see &ldquo;customer X saw ad, then visited three times, then bought.&rdquo; Those reports require cookie-based tracking and personal identifiers.</li>
@@ -232,7 +232,7 @@ export default function Page() {
               The value of cookieless analytics scales with the size of the channel-allocation decisions being made. If a gap like the one measured at Incapto — 29% of visits unrecorded, and paid campaigns undercounted three to five times more than direct traffic — would not change where your budget goes, switching analytics is marginal.
             </p>
             <p>
-              If your team relies on per-user journey analysis or multi-touch attribution models, cookieless analytics is not a drop-in replacement. It is a different category of measurement — aggregate, anonymous, defensible — and the trade-off is by design.
+              If your team relies on per-user journey analysis or multi-touch attribution models, cookieless analytics is not a drop-in replacement. It is a different category of measurement — aggregate, defensible — and the trade-off is by design.
             </p>
 
           </div>

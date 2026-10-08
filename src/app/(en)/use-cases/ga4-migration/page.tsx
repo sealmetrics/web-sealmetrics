@@ -210,7 +210,7 @@ export default function Ga4MigrationPage() {
                 defending in writing. GA4&rsquo;s compliance defence is
                 always &ldquo;here are the layers we added on top.&rdquo;
                 Cookieless EU-hosted is the answer for teams that prefer
-                lawful by architecture over lawful by paperwork. See the{" "}
+                compliance designed into the architecture over compliance by paperwork. See the{" "}
                 <Link
                   href="/consentless-analytics"
                   className="text-brand underline decoration-1 underline-offset-2"

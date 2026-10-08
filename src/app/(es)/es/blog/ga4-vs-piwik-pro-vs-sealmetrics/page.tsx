@@ -18,7 +18,7 @@ const HEADLINE = "GA4 vs Piwik PRO vs Sealmetrics: cuál encaja en un equipo de 
 const DESCRIPTION =
   "Tres arquitecturas, no tres versiones de una herramienta. Precio, identificadores, qué pasa sin consentimiento, atribución, retención y dónde gana cada una.";
 const SOCIAL =
-  "Una suite gratuita de Google, una suite de privacidad configurable y una capa de medición sin identificadores. Qué hace cada una cuando un visitante rechaza el banner y cuándo conviene.";
+  "Una suite gratuita de Google, una suite de privacidad configurable y una capa de medición sin identificadores persistentes. Qué hace cada una cuando un visitante rechaza el banner y cuándo conviene.";
 
 export const metadata: Metadata = {
   title: "GA4 vs Piwik PRO vs Sealmetrics: comparativa para la UE",
@@ -137,7 +137,7 @@ export default function Ga4VsPiwikProVsSealmetricsPageEs() {
             una suite de pago con analítica, gestor de etiquetas, gestor de
             consentimiento y activación, en la que cada identificador que desactivas por
             privacidad se lleva informes. Sealmetrics es una capa de medición más
-            estrecha y sin identificadores que atribuye los ingresos a último clic en cada
+            estrecha y sin identificadores persistentes que atribuye los ingresos a último clic en cada
             visita. Elige por la decisión que necesitas tomar.
           </p>
 

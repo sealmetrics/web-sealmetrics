@@ -41,7 +41,7 @@ const useCases = [
     name: "Revenue attribution without cookies",
     job: "Attribute revenue",
     tagline:
-      "Last-click revenue attribution without consent gaps, anonymously at channel level. How it works without cookies, what it captures and what it doesn't.",
+      "Last-click revenue attribution without consent gaps, in aggregate at channel level. How it works without cookies, what it captures and what it doesn't.",
   },
   {
     href: "/use-cases/conversion-tracking",
@@ -106,7 +106,7 @@ export default function Page() {
               losing a quarter of reporting, and giving marketing and finance
               one number that reconciles with real orders. Each page below covers the setup,
               the data model, and the limits — including what the approach does
-              not measure. Sealmetrics is aggregate, anonymous, event-level
+              not measure. Sealmetrics is aggregate, event-level
               measurement: it attributes revenue last-click across the full
               dataset, and it does not reconstruct individual sessions or
               customer journeys. If your requirement is per-user journey

@@ -41,7 +41,7 @@ export const signalHomeFaqs = [
   {
     question: "How can measurement avoid analytics-cookie dependence?",
     answer:
-      "Sealmetrics is built for aggregate measurement without analytics cookies, persistent visitor identifiers or fingerprinting. That architecture does not depend on acceptance of analytics cookies for the defined measurement use case. Your legal basis still depends on purpose, configuration, jurisdiction and the rest of your processing.",
+      "Sealmetrics is built for aggregate measurement without analytics cookies, persistent visitor identifiers or stored fingerprints. That architecture does not depend on acceptance of analytics cookies for the defined measurement use case. Your legal basis still depends on purpose, configuration, jurisdiction and the rest of your processing.",
   },
   {
     question: "Do we need to remove GA4?",
@@ -286,7 +286,7 @@ export function SignalHome() {
             <span>01 / OBSERVE</span>
             <div className="sig-flow-icon">•••</div>
             <h3>Collect aggregate events</h3>
-            <p>Built without analytics cookies, persistent visitor IDs or fingerprinting.</p>
+            <p>Built without analytics cookies, persistent visitor IDs or stored fingerprints.</p>
           </article>
           <b aria-hidden="true">→</b>
           <article>

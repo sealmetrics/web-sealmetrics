@@ -14,10 +14,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-  description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+  description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
   openGraph: {
     title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
     type: "website",
     images: [ogImage("/vs/piwik-pro/")],
     url: "https://sealmetrics.com/vs/piwik-pro/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
     images: [ogImage("/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro/", languages: getAlternates("/vs/piwik-pro") },
@@ -50,7 +50,7 @@ export default function Page() {
         criteria: [
           "Identifier and cookie configuration",
           "Consent and anonymous collection modes",
-          "Reporting trade-offs without visitor identifiers",
+          "Reporting trade-offs without persistent visitor identifiers",
           "Hosting locations and deployment models",
           "Product scope and operating model",
           "Attribution under each identifier mode",
@@ -75,7 +75,7 @@ export default function Page() {
           <QuickAnswer>
             <p>
               Sealmetrics is cookieless, aggregate web analytics for EU teams that need
-              campaign and revenue reporting without browser identifiers. Piwik PRO is a
+              campaign and revenue reporting without persistent browser identifiers. Piwik PRO is a
               broader analytics suite with consent management, flexible hosting and up to
               seven attribution models when identifiers are enabled. Its own{" "}
               <Link href="https://help.piwik.pro/support/privacy/collect-data-in-a-privacy-friendly-way/">

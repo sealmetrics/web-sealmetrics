@@ -22,7 +22,7 @@ const ITEMS = [
   },
   {
     q: "¿Cumple RGPD sin banner de consentimiento?",
-    a: "Está diseñada para ello; es nuestra autoevaluación, no una certificación. Sin cookies por arquitectura — sin cookies, sin almacenamiento de datos personales, sin tracking cross-site. 100% alojado en UE, Dublín, Irlanda. Diseñada para el RGPD, ePrivacy y Schrems II, sin banner de consentimiento.",
+    a: "Está diseñada para ello; es nuestra autoevaluación, no una certificación. Diseñado para cumplir el RGPD: nada guardado en el dispositivo, datos solo en la UE (Dublín, Irlanda), informes agregados — sin cookies, sin datos que identifiquen a nadie, sin tracking cross-site. Según nuestra autoevaluación, la propia analítica de Sealmetrics no necesita banner; en Alemania es nuestra lectura, no algo resuelto.",
   },
   {
     q: "¿Cuánto tarda la implementación?",

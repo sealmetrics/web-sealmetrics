@@ -143,7 +143,7 @@ export default function VideosPage() {
             Start tracking without cookies today
           </h2>
           <p className="text-[1.05rem] text-text-secondary mb-8 max-w-[480px] mx-auto leading-relaxed">
-            No cookies. No consent banners. Just clear, accurate analytics
+            No cookies. Nothing stored on the device. Just clear, accurate analytics
             that respects your visitors.
           </p>
           <div data-md="skip" className="flex flex-wrap justify-center gap-4">

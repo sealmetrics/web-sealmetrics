@@ -51,7 +51,7 @@ const FAQ = [
   {
     question: "¿Puede una analítica con IA cumplir el RGPD sin consentimiento?",
     answer:
-      "Sí, siempre que la analítica de base no recoja datos personales. El consentimiento de la normativa ePrivacy se activa al almacenar o acceder a información en un dispositivo, y las obligaciones del RGPD se activan al tratar datos personales. Una analítica que no instala cookies y no recoge IPs, huellas de dispositivo ni identificadores de visitante evita ambos disparadores, así que la capa de IA que lee esas métricas agregadas tampoco trata datos personales.",
+      "Sí, siempre que la analítica de base no recoja datos personales. El consentimiento de la normativa ePrivacy se activa al almacenar o acceder a información en un dispositivo, y las obligaciones del RGPD se activan al tratar datos personales. Una analítica que no instala cookies, no guarda IPs, no conserva identificadores persistentes de visitante y se limita a las estadísticas de audiencia de la propia web puede apoyarse en la exención de medición de audiencia y no tratar datos personales, así que la capa de IA que lee esas métricas agregadas tampoco trata datos personales.",
   },
   {
     question: "¿Qué datos envía realmente al modelo un asistente de analítica con IA?",
@@ -66,7 +66,7 @@ const FAQ = [
   {
     question: "¿Puede un asistente de IA ver visitantes individuales en mi analítica?",
     answer:
-      "En Sealmetrics no puede, porque los visitantes individuales no están identificados en ninguna parte del sistema. No hay cookies, ni direcciones IP, ni huellas de dispositivo, ni identificadores de visitante que consultar, así que ningún informe y ninguna respuesta de la IA puede resolverse hasta una persona. Es una propiedad del modelo de datos, no un ajuste de permisos.",
+      "En Sealmetrics no puede, porque los visitantes individuales no están identificados en ninguna parte del sistema. No hay cookies, ni direcciones IP, ni identificadores persistentes de visitante que consultar — el identificador de sesión rota cada día y no se puede enlazar entre días —, así que ningún informe y ninguna respuesta de la IA puede resolverse hasta una persona. Es una propiedad del modelo de datos, no un ajuste de permisos.",
   },
   {
     question: "¿Qué diferencia hay entre privacidad desde el diseño y privacidad por política en la IA?",
@@ -154,8 +154,8 @@ export default function ThePromptIsBornCleanPageEs() {
                 creado aguas arriba, en la recogida.
               </li>
               <li>
-                Sealmetrics nunca recoge IPs, cookies, huellas de dispositivo ni
-                identificadores de visitante, así que no hay ningún identificador
+                Sealmetrics nunca guarda IPs ni instala cookies y no conserva ningún
+                identificador persistente de visitante, así que no hay ningún identificador
                 personal disponible para meter en un prompt.
               </li>
               <li>
@@ -198,11 +198,12 @@ export default function ThePromptIsBornCleanPageEs() {
             <p>
               Sealmetrics es analítica sin consentimiento. Eso no es una
               afirmación sobre lo opcionales que son los banners de cookies; es
-              una afirmación sobre lo que registra el tracker. Nunca recoge
-              direcciones IP, nunca instala cookies, nunca construye huellas de
-              dispositivo y nunca asigna identificadores de visitante: ni
-              hasheados, ni seudonimizados, ni &quot;anonimizados&quot;. Esos
-              campos no existen en el modelo de datos.
+              una afirmación sobre lo que registra el tracker. Nunca guarda
+              direcciones IP, nunca instala cookies y nunca asigna un
+              identificador persistente de visitante. El único identificador es
+              uno de sesión efímero, seudonimizado en el servidor con una sal que
+              rota cada día, así que no se puede enlazar entre días. Los campos
+              de visitante y de usuario no existen en el modelo de datos.
             </p>
             <p>
               Lo que significa que, cuando una capa de IA se apoya en esa base de
@@ -253,7 +254,7 @@ export default function ThePromptIsBornCleanPageEs() {
                     },
                     {
                       in: "Etiquetas de agrupación: canal, campaña, fuente, medio, término",
-                      out: "Huellas de dispositivo o señales de identidad probabilísticas",
+                      out: "Identificadores persistentes de dispositivo o señales de identidad probabilísticas",
                     },
                     {
                       in: "Desgloses por dimensión: página, landing page, tipo de dispositivo, país",
@@ -308,7 +309,7 @@ export default function ThePromptIsBornCleanPageEs() {
 
             <CommercialModule
               locale="es"
-              hook="¿Sabes exactamente qué contiene el prompt que tu analítica le envía a su IA? En una demo ves qué recibe LENS: agregados anónimos, nunca datos personales."
+              hook="¿Sabes exactamente qué contiene el prompt que tu analítica le envía a su IA? En una demo ves qué recibe LENS: agregados, nunca datos que identifiquen a nadie."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -384,7 +385,7 @@ export default function ThePromptIsBornCleanPageEs() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu DPO pregunta qué ve el modelo? Respóndele con una demo: el prompt de LENS nace de dato anónimo y agregado, y la inferencia no sale de la UE."
+            hook="¿Tu DPO pregunta qué ve el modelo? Respóndele con una demo: el prompt de LENS nace de dato agregado que no identifica a nadie, y la inferencia no sale de la UE."
           />
 
           <section className="mt-16 pt-10 border-t border-warm-100">

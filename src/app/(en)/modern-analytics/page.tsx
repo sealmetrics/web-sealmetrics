@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Is this really compliant with GDPR and ePrivacy?",
-    a: "It is designed to be; this is our self-assessment, not a certification. There is no personal data, no cookie, no localStorage, no fingerprinting. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
+    a: "It is designed to be; this is our self-assessment, not a certification. There is no data that identifies anyone, no cookie, no localStorage, no persistent identifier. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. In our self-assessment no consent banner is required for its own measurement (in Germany, our reading, not settled).",
   },
   {
     q: "How do I switch from legacy analytics?",
@@ -118,14 +118,14 @@ const pillars = [
   {
     eyebrow: "Compliance",
     title: "Designed for GDPR",
-    body: "No cookies. No localStorage. No fingerprint. No personal data. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
+    body: "No cookies. No localStorage. No persistent identifier. No data that identifies anyone. EU-hosted in Dublin. Built to comply with the GDPR (self-assessed, not certified).",
     metric: "0 cookies",
     metricLabel: "0 banners required",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
-  { feature: "Cookies / fingerprinting", legacy: "Required", modern: "None" },
+  { feature: "Cookies / persistent identifiers", legacy: "Required", modern: "None" },
   { feature: "Consent banner needed", legacy: "Yes", modern: "No" },
   { feature: "EU traffic captured", legacy: "Misses visitors who reject consent (40–60% of traffic, in our experience with clients)", modern: "No consent loss" },
   { feature: "Sampling on heavy queries", legacy: "Yes (Card-2 / data thresholds)", modern: "No" },
@@ -191,7 +191,7 @@ export default function ModernAnalyticsPage() {
             <p className="mt-8 text-[19px] leading-[1.6] text-ink-soft max-w-[68ch]">
               Legacy analytics rely on cookies, consent, sampling, and modeling. Modern analytics
               measure every real event server-side, attribute revenue last-click on raw data, and
-              expose it to humans and AI agents through MCP. No estimates, no banners, no blind spots.
+              expose it to humans and AI agents through MCP. No estimates, no consent loss, no blind spots.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link

@@ -149,7 +149,7 @@ const entries = [
       {
         title: "Legal approval for IP-based bot filtering",
         type: "New",
-        desc: "After legal review, incoming hits are checked against our bot IP database: a match is excluded from your analytics, a non-match is registered as human traffic without the IP being stored. No human IP is ever retained, tracked or exposed. Precision without crossing the privacy line.",
+        desc: "After legal review, incoming hits are checked against our bot IP database: a match is excluded from your analytics, a non-match is let through and counted. The IP is checked in flight and not stored. Precision without crossing the privacy line.",
       },
       {
         title: "Facebook traffic classification fix",

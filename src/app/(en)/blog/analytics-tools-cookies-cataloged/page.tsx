@@ -601,7 +601,7 @@ export default function AnalyticsToolsCookiesCatalogedPage() {
             >
               cookieless first-party collection
             </Link>{" "}
-            — no cookies, no consent banners, no consent-driven data loss. Read more about
+            — no cookies, nothing stored on the device, no consent-driven data loss. Read more about
             how we handle{" "}
             <Link
               href="/security"

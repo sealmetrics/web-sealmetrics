@@ -219,7 +219,7 @@ export default function Page() {
               <Link href="/glossary/cookieless-analytics" className={linkCls}>
                 cookieless analytics
               </Link>{" "}
-              that sets nothing on the device and collects no personal data, so it
+              that sets nothing on the device and keeps no data that identifies anyone, so it
               does not depend on consent and keeps measuring the visitors who
               decline the banner. From €499/mo, hosted only in Dublin, first
               decision-ready report inside a week.
@@ -291,7 +291,7 @@ export default function Page() {
                   <tr>
                     <td className="py-3 pr-4 font-medium">Sealmetrics</td>
                     <td className="py-3 pr-4">From €499/mo</td>
-                    <td className="py-3 pr-4">No — no cookies, no personal data</td>
+                    <td className="py-3 pr-4">No — no cookies, no data that identifies anyone</td>
                     <td className="py-3">Yes — Dublin only</td>
                   </tr>
                 </tbody>

@@ -70,7 +70,7 @@ export default function CookielessAnalyticsExplainedPageEs() {
             <li>La analítica basada en cookies falla a tres niveles estructurales: los navegadores bloquean las cookies de terceros por defecto, con el consentimiento RGPD, en nuestra experiencia con clientes, entre el 40% y el 60% del tráfico no acepta cookies, y los ad blockers eliminan los scripts en parte de lo que queda.</li>
             <li>La analítica cookieless reemplaza las cookies por recolección de datos first-party a través de tu propia infraestructura — sin servidor de terceros, sin scripts bloqueados, sin dependencia del consentimiento.</li>
             <li>El tracking con cookies no ve parte de tu tráfico, y cuánto depende de la tienda: en Incapto, medido en Shopify durante 48 días, GA4 no registró el 29% de las visitas; el tracking cookieless no pierde visitas por el consentimiento porque no hay nada que rechazar ni que expire.</li>
-            <li>La exención de consentimiento es arquitectónica, no un workaround — no se recogen datos personales y no se almacenan cookies, en línea con las guías de la CNIL y del DSK alemán.</li>
+            <li>La exención de consentimiento es arquitectónica, no un workaround — no se guarda ningún dato que identifique a nadie y no se almacenan cookies, siguiendo la guía de la CNIL (en Alemania, donde la DSK no extiende la exención a la medición de audiencia, es nuestra lectura, no algo resuelto).</li>
           </ul>
         </div>
 
@@ -224,15 +224,17 @@ export default function CookielessAnalyticsExplainedPageEs() {
           <p>
             Una idea común equivocada es que la analítica cookieless es un workaround
             para evitar requisitos de consentimiento. No lo es. El motivo de que el consentimiento no
-            sea requerido es arquitectónico: no se recogen datos personales y no se
-            almacenan cookies en el dispositivo del visitante.
+            sea requerido es arquitectónico: no se guarda ningún dato que identifique
+            a nadie, no se almacenan cookies en el dispositivo del visitante y los
+            informes son siempre agregados.
           </p>
 
           <p>
             Esto es consistente con los criterios de exención de la{" "}
             <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">CNIL</a>{" "}
-            (DPA francesa) para herramientas de medición de audiencia y con la guía del DSK alemán
-            sobre analítica sin consentimiento. La página de{" "}
+            (DPA francesa) para herramientas de medición de audiencia. En Alemania la DSK no
+            extiende la exención a la medición de audiencia, así que allí es nuestra
+            lectura, no una posición resuelta. La página de{" "}
             <Link
               href="/es/security"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

@@ -222,8 +222,8 @@ export default function PersonalDataInAnalyticsPage() {
               <Link href="/consentless-analytics" className={linkCls}>
                 consentless analytics
               </Link>
-              : no identifiers, no device storage, aggregate event measurement
-              only. Because neither test is engaged, the consent banner stops
+              : no persistent identifiers, no device storage, aggregate event
+              measurement only. Because neither test is engaged, the consent banner stops
               being a data-loss path — which matters, because visitors who
               reject consent are otherwise never measured. The longer legal argument is in the{" "}
               <Link href="/blog/gdpr-eprivacy-analytics-legal-assessment" className={linkCls}>
@@ -260,7 +260,7 @@ export default function PersonalDataInAnalyticsPage() {
             </p>
           </div>
 
-          <CommercialModule hook="Sealmetrics stores no personal data — not pseudonymised, none. See what analytics looks like when there is nothing to redact." />
+          <CommercialModule hook="Sealmetrics stores nothing on the device and no data that identifies anyone; its session identifier rotates daily and cannot be reconstructed. See what that looks like." />
 
           <RelatedGlossaryTerms slug="personal-data-in-analytics" />
         </div>

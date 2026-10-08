@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     "A cohort is a group sharing a starting characteristic, tracked over time. How cohort analysis works, what it needs, and where Sealmetrics draws the line.",
   openGraph: {
     title: "What Is Cohort Analysis?",
-    description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that anonymous measurement refuses.",
+    description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that aggregate measurement refuses.",
     type: "article",
     url: "https://sealmetrics.com/glossary/cohort/",
     siteName: "Sealmetrics",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Cohort Analysis?",
-    description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that anonymous measurement refuses.",
+    description: "Groups sharing a starting point, compared over time — and what per-user cohort tracking requires that aggregate measurement refuses.",
     images: [ogImage("/glossary/cohort/")],
   },
   alternates: {
@@ -74,7 +74,7 @@ export default function CohortPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What Sealmetrics does and does not do</h2>
           <p>
-            Sealmetrics does not build per-user cohorts, deliberately. Its architecture is anonymous, aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on traffic measured without depending on consent: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; Sealmetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, Sealmetrics is the wrong tool for that job, and it is designed to be.
+            Sealmetrics does not build per-user cohorts, deliberately. Its architecture is aggregate event measurement: no persistent visitor identifier is ever created, so there is no mechanism for recognising an individual across sessions — the precondition for behavioural cohort tracking. What it provides instead is aggregate comparison over time on traffic measured without depending on consent: acquisition, conversions and revenue by channel and period, segmentable and unbiased by consent status. For purchase-based cohorts — the kind most retention and LTV work actually uses — the natural home is your order database, where customer identity already persists lawfully; Sealmetrics&rsquo; role is supplying the complete channel-level acquisition data those cohorts are joined against. If per-user behavioural cohorts inside the analytics tool are a hard requirement, Sealmetrics is the wrong tool for that job, and it is designed to be.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What cohort analysis does not tell you</h2>

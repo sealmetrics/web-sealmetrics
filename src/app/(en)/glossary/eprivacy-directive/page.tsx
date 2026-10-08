@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Directive 2002/58/EC — the EU rule (Art. 5(3)) requiring consent before storing or reading information on a device. The legal basis for cookie banners.",
   openGraph: {
     title: "What Is the ePrivacy Directive?",
-    description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
+    description: "Article 5(3) explained, how it interacts with GDPR, and how architecture, not consent, can keep analytics exempt.",
     type: "article",
     url: "https://sealmetrics.com/glossary/eprivacy-directive/",
     siteName: "Sealmetrics",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is the ePrivacy Directive?",
-    description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
+    description: "Article 5(3) explained, how it interacts with GDPR, and how architecture, not consent, can keep analytics exempt.",
     images: [ogImage("/glossary/eprivacy-directive/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/eprivacy-directive/" },
@@ -70,7 +70,7 @@ export default function EPrivacyDirectivePage() {
             <p>Art. 5(3) requires that the user has given consent &ldquo;having been provided with clear and comprehensive information&rdquo; before any information is stored on or accessed from their terminal device. The classic example is a cookie. The carve-outs are narrow: strictly necessary cookies (cart, session) and — in most member states&rsquo; interpretation — anonymous audience measurement that does not allow cross-site tracking. The CNIL, AEPD, DSK and ICO have all published explicit exemption criteria for the latter.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why cookieless analytics sits outside Art. 5(3)</h2>
-            <p>Art. 5(3) triggers on storage of or access to terminal-device information. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> writes no cookie, reads no localStorage, generates no fingerprint. There is nothing on the terminal device to trigger the consent requirement. The data path is first-party server-side, the events are aggregated anonymously, and the architecture meets the exemption criteria the authorities have published. See the full legal walk-through on the <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics pillar</Link>.</p>
+            <p>Art. 5(3) triggers on storage of or access to terminal-device information. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> writes no cookie and no localStorage and keeps no persistent identifier. What lets it run without consent is the audience-measurement exemption: statistics for the site's own audience only, no cross-site tracking, no reuse. The data path is first-party server-side, the events are aggregated, and the architecture meets the exemption criteria the authorities have published. See the full legal walk-through on the <Link href="/consentless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">consentless analytics pillar</Link>.</p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">The ePrivacy Regulation that never arrived</h2>
             <p>The proposed ePrivacy Regulation (intended to replace the Directive) has been in draft since 2017 and has never been adopted. The Digital Omnibus (COM(2025) 837, proposed 19 November 2025) would take a different route — moving the terminal-device rules into the GDPR under a new Article 88a and exempting first-party, aggregated audience measurement for the controller&apos;s own use. It is also still only a proposal: Parliament and Council have yet to agree a text, and adoption is realistically 2027&ndash;2028. Until then Article 5(3) of the Directive, as transposed by each member state, is the rule that applies.</p>
@@ -90,7 +90,7 @@ export default function EPrivacyDirectivePage() {
                 The ePrivacy Directive (Directive 2002/58/EC) is the EU framework on privacy in electronic communications, distinct from but often co-applied with GDPR. Its Article 5(3) is the legal basis for cookie consent banners: storing or accessing information on a user&rsquo;s terminal device requires informed consent, except for strictly necessary functions and — per CNIL, AEPD, DSK and ICO guidance — anonymous audience measurement that does not enable cross-site tracking.
               </p>
               <p>
-                For analytics, the consequence is binary: if the tool sets a cookie or stores any identifier on the device, ePrivacy Art. 5(3) triggers and a consent banner is required regardless of GDPR posture. If the tool writes nothing on the device — cookieless, no localStorage, no fingerprinting — Art. 5(3) does not engage and consent is not required. Sealmetrics is built to the second pattern: server-side, first-party, aggregate-only, outside the storage-and-access trigger.
+                For analytics, the consequence is binary: if the tool sets a cookie or stores any identifier on the device, ePrivacy Art. 5(3) triggers and a consent banner is required regardless of GDPR posture. If the tool writes nothing on the device — cookieless, no localStorage — keeps no persistent identifier and uses what it reads only for the site's own audience statistics, it fits the audience-measurement exemption and consent is not required. Sealmetrics is built to the second pattern: server-side, first-party, aggregate-only, with a session identifier that rotates daily.
               </p>
             </QuickAnswer>
           </div>

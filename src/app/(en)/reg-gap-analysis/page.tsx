@@ -53,21 +53,21 @@ const requirements = [
     title: "Consent for device storage",
     demand: "Any non-essential cookie, localStorage entry or fingerprint needs prior consent before it is set.",
     gap: "GA4 and Adobe set cookies, so a consent banner is mandatory — and roughly a third of EU visitors decline it.",
-    close: "No cookies, no localStorage, no fingerprinting — nothing is stored on the device, so no consent is triggered.",
+    close: "No cookies, no localStorage — nothing is stored on the device. The session identifier is ephemeral and rotates daily, and measurement fits the audience-measurement exemption.",
   },
   {
     reg: "GDPR · Art 6",
     title: "Lawful basis for personal data",
     demand: "Processing an IP address or online identifier needs a valid lawful basis — consent or a defensible legitimate interest.",
     gap: "Cookie-based tools lean on consent that is often withheld, or a legitimate interest that regulators increasingly contest.",
-    close: "Measurement processes no personal data at all, so there is no basis to establish — GDPR does not apply to it.",
+    close: "Legitimate interest (Art. 6(1)(f)) for a pseudonymised session identifier that rotates daily; no data that identifies anyone is kept.",
   },
   {
     reg: "GDPR · Art 5(1)(c)",
     title: "Data minimisation",
     demand: "Collect only the data necessary for the purpose — no more.",
     gap: "Client IDs, device graphs and behavioural profiles collect far more than measurement requires.",
-    close: "Aggregate, anonymous events only — the minimum needed to count what happened, nothing that identifies a person.",
+    close: "Aggregate events only — the minimum needed to count what happened, nothing that identifies a person.",
   },
   {
     reg: "GDPR · Chapter V",
@@ -81,7 +81,7 @@ const requirements = [
     title: "Data subject rights (access, erasure)",
     demand: "Individuals can request access to, and erasure of, their personal data.",
     gap: "Per-user analytics data creates a standing obligation to locate, disclose and delete it on request.",
-    close: "No personal data is stored, so there is nothing to disclose or erase — the obligation never arises for measurement.",
+    close: "No data that identifies anyone is stored, and once the daily identifier rotates not even we can reconstruct it, so there is nothing to match to a request.",
   },
   {
     reg: "AEPD · cookie guidance",
@@ -102,7 +102,7 @@ const requirements = [
     title: "Analytics consent exemption",
     demand: "Analytics can run without consent in the UK only if it meets the DUAA 2025 / PECR exemption criteria.",
     gap: "Cookie-based, cross-site or personal-data analytics does not qualify for the exemption.",
-    close: "Cookieless, first-party, no personal data — the profile the exemption was written for. See our PECR self-assessment.",
+    close: "Cookieless, first-party, nothing that identifies anyone — the profile the exemption was written for. See our PECR self-assessment.",
   },
 ];
 
@@ -122,7 +122,7 @@ const faqs = [
   },
   {
     q: "Which regulations should an analytics compliance audit cover?",
-    a: "At minimum: the ePrivacy Directive (Article 5(3), the consent trigger for device storage); the GDPR (lawful basis, data minimisation, international transfers, and data-subject rights); national supervisory-authority guidance where you operate — for Spain, the AEPD's cookie guidance; and, for UK traffic, PECR as amended by the Data (Use and Access) Act 2025. Cookie-based analytics typically has to clear all of these; cookieless, first-party analytics that processes no personal data clears most of them by architecture.",
+    a: "At minimum: the ePrivacy Directive (Article 5(3), the consent trigger for device storage); the GDPR (lawful basis, data minimisation, international transfers, and data-subject rights); national supervisory-authority guidance where you operate — for Spain, the AEPD's cookie guidance; and, for UK traffic, PECR as amended by the Data (Use and Access) Act 2025. Cookie-based analytics typically has to clear all of these; cookieless, first-party analytics that keeps no data that identifies anyone clears most of them by architecture.",
   },
   {
     q: "Does GA4 pass a GDPR and ePrivacy gap analysis?",
@@ -130,11 +130,11 @@ const faqs = [
   },
   {
     q: "How does Sealmetrics close the common analytics compliance gaps?",
-    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), processes zero personal data as aggregate anonymous events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: designed for GDPR (self-assessed), ePrivacy-clean, Schrems II-clean.",
+    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), keeps no data that identifies anyone and reports only aggregate events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: designed for GDPR (self-assessed), ePrivacy, analytics data hosted only in the EU.",
   },
   {
     q: "Can analytics run without a consent banner after a gap analysis?",
-    a: "Yes, when the analysis confirms two things: nothing is stored on or read from the visitor's device (clearing ePrivacy Article 5(3)), and no personal data is processed (so GDPR does not apply to the measurement). Regulators have converged on this reading — France's CNIL maintains an analytics exemption, and the UK's DUAA 2025 introduced one under PECR. A tool that meets both conditions can measure lawfully with no banner and, as a result, without the EU data loss a banner causes.",
+    a: "Yes, when the analysis confirms two things: nothing is stored on the visitor's device and what is read serves only the site's own audience statistics, with no persistent identifier (fitting the audience-measurement exemption from ePrivacy Article 5(3)), and nothing that identifies anyone is kept, with any pseudonymised identifier covered by a lawful basis such as legitimate interest. Regulators have converged on this reading — France's CNIL maintains an analytics exemption, and the UK's DUAA 2025 introduced one under PECR. A tool that meets both conditions can measure lawfully with no banner and, as a result, without the EU data loss a banner causes.",
   },
 ];
 
@@ -192,13 +192,13 @@ export default function RegGapAnalysisPage() {
             A regulatory gap analysis maps analytics against <strong>ePrivacy</strong>,{" "}
             <strong>GDPR</strong>, <strong>AEPD</strong> and <strong>UK PECR</strong> to find where it
             falls short. Cookie-based tools open gaps on device storage, lawful basis, transfers and
-            data-subject rights. A <strong>cookieless, zero-PII, EU-hosted</strong> architecture closes
+            data-subject rights. A <strong>cookieless, EU-hosted architecture that keeps nothing that identifies anyone</strong> architecture closes
             them by design.
           </>
         }
         bullets={[
           <>The recurring gaps: cookies (ePrivacy), personal data (GDPR), US transfers (Schrems II), banner UX (AEPD).</>,
-          <>Cookieless + zero personal data + EU hosting in Dublin clears most requirements structurally.</>,
+          <>Cookieless + nothing that identifies anyone + EU hosting in Dublin clears most requirements structurally.</>,
           <>Read the legal reasoning in our <Link href="/blog/gdpr-eprivacy-analytics-legal-assessment" className="text-brand no-underline border-b border-warm-200 hover:border-brand">GDPR &amp; ePrivacy legal assessment</Link>.</>,
         ]}
       />

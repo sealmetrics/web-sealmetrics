@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Por qué Sealmetrics — analítica agregada sin IDs",
     description:
-      "Mide eventos observados de campañas e ingresos sin identificadores del navegador, con proceso alojado en la UE y límites claros.",
+      "Mide eventos observados de campañas e ingresos sin identificadores persistentes del navegador, con proceso alojado en la UE y límites claros.",
     type: "website",
     images: [ogImage("/es/why-sealmetrics/")],
     locale: "es_ES",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Por qué Sealmetrics — analítica agregada sin IDs",
-    description: "Mide eventos observados de campañas e ingresos sin identificadores del navegador, con proceso alojado en la UE y límites claros.",
+    description: "Mide eventos observados de campañas e ingresos sin identificadores persistentes del navegador, con proceso alojado en la UE y límites claros.",
     images: [ogImage("/es/why-sealmetrics/")],
   },
   alternates: {
@@ -80,7 +80,7 @@ function Hero() {
         <DualCTA locale="es" className="justify-center mt-8" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["Arquitectura orientada a privacidad", "Sin identificadores del navegador", "Proceso UE", "Alojado en UE · Dublín"].map((b) => (
+          {["Arquitectura orientada a privacidad", "Sin identificadores persistentes", "Proceso UE", "Alojado en UE · Dublín"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -683,9 +683,9 @@ function CmoOutcomes() {
    ============================================ */
 function Mechanism() {
   const steps = [
-    { n: "01", t: "Sin cookies", d: "Sin identificadores ni fingerprints. Eventos agregados — hits, no personas." },
+    { n: "01", t: "Sin cookies", d: "No guardamos nada en el dispositivo; identificador efímero que rota cada día. Eventos agregados — hits, no personas." },
     { n: "02", t: "Eventos agregados", d: "El producto se diseña alrededor de hits y propiedades comerciales, no de perfiles personales." },
-    { n: "03", t: "Sin identificador", d: "La cobertura depende de implementación y entrega; la privacidad no depende de un perfil de visitante." },
+    { n: "03", t: "Sin identificador persistente", d: "La cobertura depende de implementación y entrega; la privacidad no depende de un perfil de visitante." },
   ];
 
   return (
@@ -694,7 +694,7 @@ function Mechanism() {
         <div className="max-w-[52ch] mb-12">
           <span className="eyebrow mb-5">La pregunta obvia</span>
           <h2 className="h-section mt-5">
-            ¿Cómo funciona la medición <em>sin identificadores del navegador?</em>
+            ¿Cómo funciona la medición <em>sin identificadores persistentes?</em>
           </h2>
         </div>
 
@@ -717,7 +717,7 @@ function Mechanism() {
 
         <div className="mt-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pt-8 border-t border-warm-100">
           <div className="flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-            {["Diseñada para el RGPD", "ePrivacy", "Schrems II limpio", "Alojado en UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
+            {["Diseñada para el RGPD", "ePrivacy", "Analítica solo en la UE", "Alojado en UE · Dublín", "DPA incluido", "Paquete TPSR"].map((b) => (
               <span key={b} className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                 {b}
@@ -981,7 +981,7 @@ export default function WhySealmetricsPageEs() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/es/why-sealmetrics",
-          name: "Por qué Sealmetrics — analítica agregada sin identificadores",
+          name: "Por qué Sealmetrics — analítica agregada sin identificadores persistentes",
           dateModified: "2026-09-21",
         })}
       />
@@ -1068,7 +1068,7 @@ export default function WhySealmetricsPageEs() {
           <QuickAnswer label="Respuesta rápida">
             <p>
               Sealmetrics es analítica agregada sin cookies para equipos de comercio electrónico
-              y marketing que necesitan reporting de campañas e ingresos sin identificadores.
+              y marketing que necesitan reporting de campañas e ingresos sin identificadores persistentes.
               Plausible es analítica ligera y de código abierto. Su{" "}
               <Link href="https://plausible.io/privacy-focused-web-analytics">
                 documentación de privacidad

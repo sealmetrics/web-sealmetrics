@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "¿Existe una herramienta de analítica con IA conforme con el RGPD?",
-    a: "Sealmetrics es analítica con IA diseñada para el RGPD desde la arquitectura; es nuestra autoevaluación, no una certificación. La capa de medición es cookieless y no trata dato personal, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Tu dato nunca sale de la UE, nunca se comparte con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
+    a: "Sealmetrics es analítica con IA diseñada para el RGPD desde la arquitectura; es nuestra autoevaluación, no una certificación. La capa de medición es cookieless y no guarda ningún dato que identifique a nadie, y la capa de IA corre sobre infraestructura privada y alojada en la UE. Con LENS private AI, la inferencia corre sobre un modelo open-weight (gpt-oss-120b, Apache 2.0) alojado por Scaleway en París, mientras tu dato analítico permanece en Dublín — ambos en la UE. Los datos de analítica se alojan y procesan solo en la UE, nunca se comparten con ninguna empresa y nunca se usa para entrenar modelos de terceros. No hay banner de consentimiento ni dato personal en juego.",
   },
   {
     q: "¿Puedo conectar ChatGPT o Claude a mi analítica?",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "¿La analítica con IA necesita cookies o dato personal?",
-    a: "No tiene por qué. Sealmetrics mide eventos agregados y anónimos sin cookies, sin localStorage, sin fingerprinting y sin dato personal, y atribuye el revenue a último clic a nivel de evento. Como hay cero PII por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
+    a: "No tiene por qué. Sealmetrics mide eventos agregados sin cookies, sin localStorage, sin identificador persistente (solo uno efímero que rota cada día) y sin ningún dato que identifique a nadie, y atribuye el revenue a último clic a nivel de evento. Como nada identifica a nadie por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
   },
 ];
 
@@ -95,7 +95,7 @@ const pillars = [
   {
     eyebrow: "El algoritmo",
     title: "IA privada, en la UE",
-    body: "LENS private AI ejecuta la inferencia sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París, mientras tu dato permanece en Dublín. Nunca sale de la UE, nunca se comparte, nunca entrena modelos de terceros.",
+    body: "LENS private AI ejecuta la inferencia sobre un modelo open-weight (gpt-oss-120b) alojado por Scaleway en París, mientras tu dato permanece en Dublín. Procesado solo en la UE, nunca se comparte, nunca entrena modelos de terceros.",
     metric: "Solo UE",
     metricLabel: "inferencia + almacenamiento",
   },
@@ -108,7 +108,7 @@ const pillars = [
   },
   {
     eyebrow: "El guardarraíl",
-    title: "Cero PII, respuestas honestas",
+    title: "Nadie identificable, respuestas honestas",
     body: "Medición solo agregada: sin journeys por usuario, sin identificadores entre sesiones, sin modelos multi-touch. El modelo no puede fabricar a una persona porque nunca se almacenó ninguna.",
     metric: "0 PII",
     metricLabel: "por construcción",
@@ -147,7 +147,7 @@ const useCases = [
   {
     role: "CTO / DPO",
     headline: "Una capa de IA que compliance aprueba",
-    body: "IA privada alojada en la UE, cero PII en el dato, sin entrenamiento de modelos de terceros, un DPA incluido. La IA nunca ve a una persona porque nunca se almacenó ninguna.",
+    body: "IA privada alojada en la UE, ningún dato que identifique a nadie, sin entrenamiento de modelos de terceros, un DPA incluido. La IA nunca ve a una persona porque nunca se almacenó ninguna.",
   },
   {
     role: "Constructor de IA",
@@ -222,7 +222,7 @@ export default function AiAnalyticsEsPage() {
             La analítica con IA solo es tan fiable como el dato de debajo. Sealmetrics combina{" "}
             <strong>dato cookieless sin huecos de consentimiento</strong> con un <strong>MCP semántico</strong> e{" "}
             <strong>IA privada alojada en la UE</strong> (LENS AI), así un LLM responde tus preguntas de
-            revenue desde dato completo que no puede malinterpretar — con cero dato personal en juego.
+            revenue desde dato completo que no puede malinterpretar — sin ningún dato que identifique a nadie en juego.
           </>
         }
         bullets={[
@@ -448,7 +448,7 @@ export default function AiAnalyticsEsPage() {
               Cuatro pasos, unos dos minutos. Lo que distingue esto de cualquier otro MCP de analítica
               es lo que hay detrás: el dato de visitante vive solo en la UE, alojado en Dublín; el
               modelo corre en Scaleway en París o con tu propia clave; y la medición es agregada y
-              anónima, así que no hay identificador personal que entregar a un modelo. La atribución
+              no guarda datos que identifiquen a nadie, así que no hay identificador personal que entregar a un modelo. La atribución
               es a último clic sobre el dato completo — mira{" "}
               <Link href="/es/complete-data" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
                 dato completo
@@ -507,8 +507,8 @@ export default function AiAnalyticsEsPage() {
             </em>
           </>
         }
-        ledeEn="Book a demo and ask LENS AI a question about your own traffic. Complete cookieless data, private AI in the EU, zero PII. Thirty minutes, on your numbers."
-        ledeEs="Reserva una demo y hazle a LENS AI una pregunta sobre tu propio tráfico. Dato cookieless completo, IA privada en la UE, cero PII. Treinta minutos, sobre tus números."
+        ledeEn="Book a demo and ask LENS AI a question about your own traffic. Complete cookieless data, private AI in the EU, nothing that identifies anyone. Thirty minutes, on your numbers."
+        ledeEs="Reserva una demo y hazle a LENS AI una pregunta sobre tu propio tráfico. Dato cookieless completo, IA privada en la UE, ningún dato que identifique a nadie. Treinta minutos, sobre tus números."
         primaryTextEn="Book a Demo →"
         primaryTextEs="Reserva una demo →"
       />

@@ -123,7 +123,7 @@ export default function Page() {
           <h2 className="h-section mt-5">De lo que Rafa <em>escribe y habla.</em></h2>
           <div className="grid md:grid-cols-2 gap-3 mt-10">
             {[
-              { n: "Analítica sin cookies", d: "Conteo de eventos anónimo server-side first-party — sin cookies, sin identificadores, sin journeys por usuario." },
+              { n: "Analítica sin cookies", d: "Conteo de eventos server-side first-party — sin cookies, sin identificadores persistentes, sin journeys por usuario." },
               { n: "Atribución de ingresos", d: "Last-click sobre datos completos — por qué la atribución modelada se rompe en Europa." },
               { n: "Arquitectura RGPD", d: "Cómo diseñar analítica que evita la recolección de datos personales por arquitectura, no por capas de consentimiento." },
               { n: "Analítica eCommerce", d: "Lo que los equipos DTC y retail europeos realmente necesitan de un stack analítico." },

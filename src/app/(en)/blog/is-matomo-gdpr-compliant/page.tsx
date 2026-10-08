@@ -246,10 +246,11 @@ export default function Page() {
               on the device that is not strictly necessary for a service the user
               requested, and analytics is not strictly necessary. A Matomo
               configured exactly to the CNIL criteria, deployed on a German
-              site, still needs a banner. The German DSK does accept that tools
-              which set nothing on the device and process no personal data fall
-              outside the requirement — but that is a different architecture, not
-              a different configuration.
+              site, still needs a banner. The German DSK does not extend the
+              exemption to audience measurement at all, so even an architecture
+              that sets nothing on the device rests on a reading rather than a
+              settled position in Germany — and that is a different architecture,
+              not a different configuration.
             </p>
             <p>
               If you operate across the EU, the practical question is which of
@@ -287,9 +288,12 @@ export default function Page() {
             <p>
               There is a second route to the same place, and it is the one that
               does not depend on holding a configuration correct over time. If a
-              tool writes nothing to the device and reads nothing from it,
-              Article 5(3) is not engaged at all. If it processes no personal
-              data, the GDPR consent question does not arise either. Compliance
+              tool writes nothing to the device, keeps no persistent identifier
+              and uses what it reads only for the site&apos;s own audience
+              statistics, it fits the audience-measurement exemption from
+              Article 5(3) by construction. If it also keeps no data that
+              identifies anyone, the GDPR side shrinks to a pseudonymised identifier
+              that rotates daily. Compliance
               stops being a setting your team has to maintain and evidence, and
               becomes a property of how collection works.
             </p>

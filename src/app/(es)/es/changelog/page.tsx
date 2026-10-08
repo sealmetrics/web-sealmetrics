@@ -149,7 +149,7 @@ const entries = [
       {
         title: "Aprobación legal para el filtrado de bots por IP",
         type: "New",
-        desc: "Tras revisión legal, los hits entrantes se comprueban contra nuestra base de datos de IPs de bots: si coincide, se excluye de tu analítica; si no coincide, se registra como tráfico humano sin que la IP se almacene. Ninguna IP humana se retiene, rastrea ni expone jamás. Precisión sin cruzar la línea de la privacidad.",
+        desc: "Tras revisión legal, los hits entrantes se comprueban contra nuestra base de datos de IPs de bots: si coincide, se excluye de tu analítica; si no coincide, se deja pasar y se cuenta. La IP se comprueba al vuelo y no se guarda. Precisión sin cruzar la línea de la privacidad.",
       },
       {
         title: "Corrección en la clasificación del tráfico de Facebook",

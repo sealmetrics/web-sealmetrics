@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
-    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos personales, ni cookies, ni localStorage, ni fingerprinting. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
+    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos que identifiquen a nadie, ni cookies, ni localStorage, ni identificador persistente. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
   },
   {
     q: "¿Cómo migro desde mi analítica actual?",
@@ -118,14 +118,14 @@ const pillars = [
   {
     eyebrow: "Cumplimiento",
     title: "Diseñada para el RGPD",
-    body: "Sin cookies. Sin localStorage. Sin fingerprint. Sin datos personales. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
+    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Ningún dato que identifique a nadie. Hosted en la UE (Dublín). Diseñado para cumplir el RGPD (autoevaluación, no certificación).",
     metric: "0 cookies",
     metricLabel: "0 banners requeridos",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
-  { feature: "Cookies / fingerprinting", legacy: "Requerido", modern: "Ninguno" },
+  { feature: "Cookies / identificadores persistentes", legacy: "Requerido", modern: "Ninguno" },
   { feature: "Banner de consentimiento", legacy: "Sí", modern: "No" },
   { feature: "Tráfico UE capturado", legacy: "No ve a quien rechaza el consentimiento (el 40–60% del tráfico, en nuestra experiencia con clientes)", modern: "Sin pérdida por consentimiento" },
   { feature: "Sampling en queries pesadas", legacy: "Sí (Card-2 / umbrales)", modern: "No" },
@@ -191,7 +191,7 @@ export default function ModernAnalyticsPageEs() {
             <p className="mt-8 text-[19px] leading-[1.6] text-ink-soft max-w-[68ch]">
               La analítica legacy depende de cookies, consentimiento, sampling y modelado. La analítica
               moderna mide cada evento real en servidor, atribuye revenue last-click sobre datos crudos
-              y los expone a humanos y agentes IA mediante MCP. Sin estimaciones, sin banners, sin puntos ciegos.
+              y los expone a humanos y agentes IA mediante MCP. Sin estimaciones, sin pérdida por consentimiento, sin puntos ciegos.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link

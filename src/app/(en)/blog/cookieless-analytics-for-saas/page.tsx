@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cookieless Analytics for SaaS — 2026 Guide",
     description:
-      "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
+      "Aggregate marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-saas/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-saas/",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cookieless Analytics for SaaS — 2026 Guide",
-    description: "Aggregate, anonymous marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
+    description: "Aggregate marketing-site attribution for product-led SaaS. Complements your product analytics tool. BigQuery export included.",
     images: [ogImage("/blog/cookieless-analytics-for-saas/")],
   },
   alternates: {
@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual visitors or users?",
     answer:
-      "No. On the marketing site, Sealmetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in your product analytics tool or your own product database, where the user is authenticated and tracking is a different compliance question.",
+      "No. On the marketing site, Sealmetrics counts events in aggregate — no cookies, no persistent identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in your product analytics tool or your own product database, where the user is authenticated and tracking is a different compliance question.",
   },
   {
     question: "Does cookieless analytics replace my product analytics tool?",
@@ -115,7 +115,7 @@ export default function Page() {
               If you run growth at a European SaaS company, you have one version of this conversation every quarter. Finance asks what the CAC is. You quote a number from your standard analytics tool. They ask how confident you are. You shrug. You know that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, that your Google Ads spend converts to signups the attribution model can&apos;t see, and that the number you just quoted is optimistic by some unknown factor.
             </p>
             <p>
-              Product-led growth depends on a measurement stack that works. When the marketing-site layer is broken, every downstream CAC calculation, every paid-channel ROI decision is made on partial data. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> fixes the top of the funnel — not by tracking harder, but by counting events anonymously and attributing each signup last-click at channel level. For the cross-vertical category overview, see the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this post is the SaaS-specific reading.
+              Product-led growth depends on a measurement stack that works. When the marketing-site layer is broken, every downstream CAC calculation, every paid-channel ROI decision is made on partial data. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless analytics</Link> fixes the top of the funnel — not by tracking harder, but by counting events in aggregate and attributing each signup last-click at channel level. For the cross-vertical category overview, see the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this post is the SaaS-specific reading.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -140,7 +140,7 @@ export default function Page() {
               Cookieless analytics for SaaS replaces the standard market analytics tool at the marketing-site layer. It does not replace your product analytics tool anywhere. The two systems have different jobs:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Cookieless analytics (marketing site, anonymous).</strong> Counts visits and signups by channel, campaign and landing page. No user identification, no per-visitor journey.</li>
+              <li><strong>Cookieless analytics (marketing site, aggregated).</strong> Counts visits and signups by channel, campaign and landing page. No user identification, no per-visitor journey.</li>
               <li><strong>Product analytics tool (authenticated product, user-level).</strong> Tracks what each logged-in user does inside the app. Retention cohorts, feature adoption, in-app funnels.</li>
             </ul>
             <p>
@@ -170,7 +170,7 @@ export default function Page() {
               A working PQL definition for European PLG SaaS requires joining three datasets in the warehouse:
             </p>
             <ol className="list-decimal pl-5 space-y-2">
-              <li>Aggregate marketing attribution from cookieless analytics: acquisition channel, campaign, UTM — stored anonymously with signup event metadata.</li>
+              <li>Aggregate marketing attribution from cookieless analytics: acquisition channel, campaign, UTM — stored in aggregate with signup event metadata.</li>
               <li>Trial signup records from the product database: email, signup timestamp, plan selected (user-level once authenticated).</li>
               <li>In-product activation from your product analytics tool or your own event log: activation event, time-to-value (user-level).</li>
             </ol>

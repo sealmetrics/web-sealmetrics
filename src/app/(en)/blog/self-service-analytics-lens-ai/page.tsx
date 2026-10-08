@@ -111,7 +111,7 @@ const faqs = [
   {
     question: "Does LENS AI reconstruct customer journeys or do multi-touch attribution?",
     answer:
-      "No. Sealmetrics measures aggregate, anonymous events and attributes revenue last-click at the event level. It does not identify individuals, does not stitch pageviews into per-user journeys, and does not run multi-touch models. The model can only answer questions the underlying aggregate data can answer — which is exactly what keeps the answers honest.",
+      "No. Sealmetrics measures aggregate events and attributes revenue last-click at the event level. It does not identify individuals, does not stitch pageviews into per-user journeys, and does not run multi-touch models. The model can only answer questions the underlying aggregate data can answer — which is exactly what keeps the answers honest.",
   },
   {
     question: "Where does the AI run, and does my data leave the EU?",
@@ -212,7 +212,7 @@ export default function Page() {
               Self-service analytics is a data-quality problem before it is an AI problem. If your measurement layer only captures the visitors who accepted a cookie banner, every answer built on top of it inherits that bias — and no amount of prompting fixes a dataset that was never collected. A model reasoning over partial data isn&apos;t wrong because it&apos;s a bad model; it&apos;s wrong because it&apos;s reasoning over a fraction of reality and has no way to know it.
             </p>
             <p>
-              Sealmetrics starts here. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless, first-party measurement</Link> counts events anonymously on your own domain: no cookies to reject, no third-party endpoint for ad blockers to target, nothing on the device to expire, and no sampling at volume. When the model asks &ldquo;how many conversions from paid search last week,&rdquo; the number counts visitors who accept and reject the banner alike — not just the consenting remainder. If you want to see how the alternative erodes, we walked through why <Link href="/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 doesn&rsquo;t see part of your traffic</Link>.
+              Sealmetrics starts here. <Link href="/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Cookieless, first-party measurement</Link> counts events in aggregate on your own domain: no cookies to reject, no third-party endpoint for ad blockers to target, nothing on the device to expire, and no sampling at volume. When the model asks &ldquo;how many conversions from paid search last week,&rdquo; the number counts visitors who accept and reject the banner alike — not just the consenting remainder. If you want to see how the alternative erodes, we walked through why <Link href="/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 doesn&rsquo;t see part of your traffic</Link>.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -343,8 +343,8 @@ export default function Page() {
               Self-service is dangerous when it lets people generate authoritative-looking numbers no one can defend. Four things keep it grounded, and all four are structural rather than promised:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Zero PII by construction.</strong> The event-level tools validate against personal data and reject it. The model cannot surface a person because a person was never stored.</li>
-              <li><strong>Aggregate-only measurement.</strong> No per-user journeys, no cross-session identifiers, no multi-touch models — so the model cannot fabricate one. It answers only what aggregate, anonymous counts can answer.</li>
+              <li><strong>Nothing that identifies anyone, by construction.</strong> The event-level tools validate against personal data and reject it. The model cannot surface a person because a person was never stored.</li>
+              <li><strong>Aggregate-only measurement.</strong> No per-user journeys, no cross-session identifiers, no multi-touch models — so the model cannot fabricate one. It answers only what aggregate counts can answer.</li>
               <li><strong>One definition per concept.</strong> Because each tool carries a single canonical metric, two people asking the same thing in different words get the same number. Consistency is enforced by the surface, not by discipline.</li>
               <li><strong>Provenance you can trace.</strong> Every answer resolves to a named tool over an explicit period in your account timezone — so you can always see which metric produced it, and attribution is <Link href="/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">last-click at the event level</Link>.</li>
             </ul>

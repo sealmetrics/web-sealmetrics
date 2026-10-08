@@ -17,11 +17,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
-  title: "Consentless analytics — lawful measurement without banners",
+  title: "Consentless analytics — measuring without cookie banners",
   description:
-    "Consentless analytics: the legal route to web measurement without cookie banners. GDPR, ePrivacy, CNIL exemption — what makes it lawful, by architecture.",
+    "Consentless analytics: when web measurement can run without cookie banners under GDPR and ePrivacy, the CNIL exemption, and the limits by country.",
   openGraph: {
-    title: "Consentless analytics — lawful by architecture",
+    title: "Consentless analytics — built to comply with the GDPR",
     description:
       "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
     type: "article",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Consentless analytics — lawful by architecture",
+    title: "Consentless analytics — built to comply with the GDPR",
     description: "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
     images: [ogImage("/consentless-analytics/")],
   },
@@ -115,13 +115,13 @@ export default function ConsentlessAnalyticsPillar() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/consentless-analytics",
-          name: "Consentless analytics — lawful web measurement without banners",
+          name: "Consentless analytics — web measurement without banners",
         })}
       />
       <JsonLd
         data={articleSchema({
           headline:
-            "Consentless analytics — the legal route to web measurement without cookie banners",
+            "Consentless analytics — when web measurement can run without cookie banners",
           description:
             "How analytics can be lawful under GDPR and ePrivacy without a consent banner. The conditions to assess, official regulatory sources, and the compliance documentation.",
           datePublished: PILLAR_DATE_PUBLISHED,
@@ -154,7 +154,7 @@ export default function ConsentlessAnalyticsPillar() {
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              Lawful by architecture, not by paperwork.
+              Built to comply with the GDPR, not by paperwork.
             </em>
           </h1>
           <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="en" />
@@ -287,8 +287,8 @@ export default function ConsentlessAnalyticsPillar() {
                   the marketer&apos;s guide
                 </Link>
                 . Net effect: the legal cost of running cookie-based
-                analytics rose; the legal cost of running consentless
-                analytics is zero.
+                analytics rose; consentless analytics
+                carries the lighter burden of meeting the exemption&apos;s conditions.
               </p>
             </div>
           </div>
@@ -318,10 +318,12 @@ export default function ConsentlessAnalyticsPillar() {
                 GDPR applies to &ldquo;the processing of personal
                 data.&rdquo; Personal data is any information that relates
                 to an identified or identifiable natural person. If a
-                measurement system processes only aggregate counts — never
-                an identifier, never a fingerprint, never a behavioural
-                profile — the system does not process personal data. The
-                Regulation does not apply to its measurement output. Assess the data processed at every stage, not only the final report.
+                measurement system reports only aggregate counts — never
+                a persistent identifier, never a behavioural
+                profile — its reports contain no personal data. A
+                pseudonymised session identifier processed along the way is
+                still personal data and needs a lawful basis, such as
+                legitimate interest. Assess the data processed at every stage, not only the final report.
               </p>
             </div>
 
@@ -336,10 +338,12 @@ export default function ConsentlessAnalyticsPillar() {
                 ePrivacy requires consent before storing or accessing
                 information on the user&apos;s terminal device. The classic
                 example is a cookie. If the measurement system writes no
-                cookie, reads no localStorage, and uses no device
-                fingerprint, there is nothing on the terminal device to
-                trigger Art. 5(3). No consent dialog is required for that
-                processing path.
+                cookie and no localStorage, keeps no persistent identifier
+                and uses what it reads only for the site&apos;s own audience
+                statistics — no cross-site tracking, no reuse — it fits the
+                audience-measurement exemption that authorities such as the
+                CNIL and the AEPD apply to Art. 5(3). No consent dialog is
+                required for that processing path.
               </p>
             </div>
 
@@ -363,7 +367,7 @@ export default function ConsentlessAnalyticsPillar() {
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
             The technical implementation — first-party server-side
-            collection without identifiers — is documented at{" "}
+            collection without persistent identifiers — is documented at{" "}
             <Link
               href="/cookieless-analytics"
               className="text-brand underline decoration-1 underline-offset-2"

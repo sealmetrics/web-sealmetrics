@@ -265,8 +265,8 @@ export default function SealAiVsByokPage() {
             <p>
               There is one more property worth naming, because it is upstream of
               everything above. Sealmetrics is consentless analytics: it never
-              collects IP addresses, cookies, fingerprints or visitor
-              identifiers at all. There is no personal identifier in the dataset
+              collects IP addresses or cookies and keeps no persistent visitor
+              identifier, only an ephemeral one that rotates daily. There is no personal identifier in the dataset
               to send to a model in the first place. The prompt is born clean.
             </p>
 

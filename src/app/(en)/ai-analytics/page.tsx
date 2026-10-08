@@ -15,7 +15,7 @@ import { mcpSetupSteps } from "@/lib/content/mcp-setup";
 export const metadata: Metadata = {
   title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
   description:
-    "AI analytics you can trust: complete cookieless data, a semantic MCP and private EU-hosted AI. Ask Claude or ChatGPT revenue questions — no cookies, no PII.",
+    "AI analytics you can trust: complete cookieless data, a semantic MCP and private EU-hosted AI. Ask Claude or ChatGPT about revenue — no one identifiable.",
   openGraph: {
     title: "AI Analytics — Private AI on Complete, EU-Hosted Data",
     description:
@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Is there a GDPR-compliant AI analytics tool?",
-    a: "Sealmetrics is AI analytics designed for GDPR from the architecture up; this is our self-assessment, not a certification. The measurement layer is cookieless and processes zero personal data, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. There is no consent banner and no personal data in play.",
+    a: "Sealmetrics is AI analytics designed for GDPR from the architecture up; this is our self-assessment, not a certification. The measurement layer is cookieless and keeps no data that identifies anyone, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Analytics data is hosted and processed only in the EU, is never shared with any company, and is never used to train third-party models. Nothing that identifies anyone is in play.",
   },
   {
     q: "Can I connect ChatGPT or Claude to my analytics?",
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "Does AI analytics require cookies or personal data?",
-    a: "It does not have to. Sealmetrics measures aggregate, anonymous events with no cookies, no localStorage, no fingerprinting and no personal data, and attributes revenue last-click at the event level. Because there is zero PII by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
+    a: "It does not have to. Sealmetrics measures aggregate events with no cookies, no localStorage, no persistent identifier (only an ephemeral one that rotates daily) and no data that identifies anyone, and attributes revenue last-click at the event level. Because nothing identifies anyone by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
   },
 ];
 
@@ -95,7 +95,7 @@ const pillars = [
   {
     eyebrow: "The algorithm",
     title: "Private AI, in the EU",
-    body: "LENS private AI runs inference on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris, while your data stays in Dublin. Never leaves the EU, never shared, never trains third-party models.",
+    body: "LENS private AI runs inference on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris, while your data stays in Dublin. Processed only in the EU, never shared, never trains third-party models.",
     metric: "EU-only",
     metricLabel: "inference + storage",
   },
@@ -108,7 +108,7 @@ const pillars = [
   },
   {
     eyebrow: "The guardrail",
-    title: "Zero PII, honest answers",
+    title: "No one identifiable, honest answers",
     body: "Aggregate-only measurement: no per-user journeys, no cross-session identifiers, no multi-touch models. The model cannot fabricate a person because none was ever stored.",
     metric: "0 PII",
     metricLabel: "by construction",
@@ -147,7 +147,7 @@ const useCases = [
   {
     role: "CTO / DPO",
     headline: "An AI layer compliance signs off on",
-    body: "Private AI hosted in the EU, zero PII in the data, no third-party model training, a DPA included. The AI never sees a person because none was ever stored.",
+    body: "Private AI hosted in the EU, no data that identifies anyone, no third-party model training, a DPA included. The AI never sees a person because none was ever stored.",
   },
   {
     role: "AI builder",
@@ -221,7 +221,7 @@ export default function AiAnalyticsPage() {
             AI analytics is only as trustworthy as the data beneath it. Sealmetrics pairs{" "}
             <strong>cookieless data with no consent gaps</strong> with a <strong>semantic MCP</strong> and{" "}
             <strong>private AI hosted in the EU</strong> (LENS AI), so an LLM answers your revenue
-            questions from complete data it cannot misread — with zero personal data in play.
+            questions from complete data it cannot misread — with no data that identifies anyone in play.
           </>
         }
         bullets={[
@@ -444,8 +444,8 @@ export default function AiAnalyticsPage() {
             <p className="mt-6 text-[16.5px] leading-[1.65] text-ink-soft">
               Four steps, about two minutes. What makes this different from every other analytics MCP
               is what sits behind it: the visitor data path is EU-only, hosted in Dublin; the model
-              runs on Scaleway in Paris or on your own key; and the measurement is aggregate and
-              anonymous, so there is no personal identifier to hand a model in the first place.
+              runs on Scaleway in Paris or on your own key; and the measurement is aggregated and
+              keeps no data that identifies anyone, so there is no personal identifier to hand a model in the first place.
               Attribution is last-click on the complete dataset — see{" "}
               <Link href="/complete-data" className="text-brand no-underline border-b border-warm-200 hover:border-brand">
                 complete data
@@ -508,8 +508,8 @@ export default function AiAnalyticsPage() {
             </em>
           </>
         }
-        ledeEn="Book a demo and ask LENS AI a question about your own traffic. Complete cookieless data, private AI in the EU, zero PII. Thirty minutes, on your numbers."
-        ledeEs="Reserva una demo y hazle a LENS AI una pregunta sobre tu propio tráfico. Dato cookieless completo, IA privada en la UE, cero PII. Treinta minutos, sobre tus números."
+        ledeEn="Book a demo and ask LENS AI a question about your own traffic. Complete cookieless data, private AI in the EU, nothing that identifies anyone. Thirty minutes, on your numbers."
+        ledeEs="Reserva una demo y hazle a LENS AI una pregunta sobre tu propio tráfico. Dato cookieless completo, IA privada en la UE, ningún dato que identifique a nadie. Treinta minutos, sobre tus números."
         primaryTextEn="Book a Demo →"
         primaryTextEs="Reserva una demo →"
       />

@@ -9,11 +9,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Privacy end to end — Sealmetrics",
   description:
-    "Private from the first hit to private-AI processing. No cookies, no personal data, EU-hosted — and an AI that runs in Europe and never trains on your data.",
+    "Private from the first hit to AI processing. No cookies, nothing that identifies anyone, EU-hosted — and an AI in Europe that never trains on your data.",
   openGraph: {
     title: "Privacy end to end — Sealmetrics",
     description:
-      "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
+      "Private from collection to AI. No cookies, no data that identifies anyone, EU-hosted, and a private EU AI that never trains on your data.",
     type: "website",
     images: [ogImage("/privacy-end-to-end/")],
     url: "https://sealmetrics.com/privacy-end-to-end/",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Privacy end to end — Sealmetrics",
-    description: "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
+    description: "Private from collection to AI. No cookies, no data that identifies anyone, EU-hosted, and a private EU AI that never trains on your data.",
     images: [ogImage("/privacy-end-to-end/")],
   },
   alternates: {
@@ -37,19 +37,19 @@ const STEPS = [
   {
     n: "01",
     title: "Collection",
-    p: "An 846-byte pixel records anonymous events — no cookies, no fingerprinting, no personal data. There is nothing to consent to, so traffic is measured legally, without consent-driven loss.",
-    tags: ["No cookies", "No personal data", "No consent banner"],
+    p: "An 846-byte pixel records events — no cookies, nothing stored on the device, only an ephemeral identifier that rotates daily. Measurement is limited to the site's own audience statistics, so traffic is measured without consent-driven loss.",
+    tags: ["No cookies", "No data that identifies anyone", "Nothing on the device"],
   },
   {
     n: "02",
     title: "Processing",
-    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU in the visitor data path. Designed for GDPR (self-assessed), ePrivacy, Schrems II clean.",
+    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure: analytics data is hosted and processed only in the EU. Designed to comply with the GDPR (self-assessed, not certified).",
     tags: ["EU-hosted · Dublin", "No non-EU sub-processors on visitor data", "DPA included"],
   },
   {
     n: "03",
     title: "Private AI",
-    p: "LENS analyses your data on an open-weight model (gpt-oss-120b, Apache 2.0) hosted in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
+    p: "LENS analyses your data on an open-weight model (gpt-oss-120b, Apache 2.0) hosted in Paris. Your data is processed only in the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
     tags: ["EU AI · Paris", "Never shared", "Never trains third parties"],
   },
 ];

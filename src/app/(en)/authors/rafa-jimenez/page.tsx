@@ -120,7 +120,7 @@ export default function Page() {
           <h2 className="h-section mt-5">What Rafa <em>writes and speaks about.</em></h2>
           <div className="grid md:grid-cols-2 gap-3 mt-10">
             {[
-              { n: "Cookieless analytics", d: "First-party, anonymous event counting on the server side — no cookies, no identifiers, no per-user journeys." },
+              { n: "Cookieless analytics", d: "First-party event counting on the server side — no cookies, no persistent identifiers, no per-user journeys." },
               { n: "Revenue attribution", d: "Last-click attribution on complete data — why modelled attribution breaks in Europe." },
               { n: "GDPR architecture", d: "How to design analytics that avoids personal-data collection by architecture rather than by consent layers." },
               { n: "eCommerce analytics", d: "What European DTC and retail teams actually need from an analytics stack." },

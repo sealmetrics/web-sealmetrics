@@ -14,10 +14,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs Piwik PRO — modos de privacidad",
-  description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
+  description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis agregado.",
   openGraph: {
     title: "Sealmetrics vs Piwik PRO — modos de privacidad",
-    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
+    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis agregado.",
     type: "website",
     images: [ogImage("/es/vs/piwik-pro/")],
     url: "https://sealmetrics.com/es/vs/piwik-pro/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs Piwik PRO — modos de privacidad",
-    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis anónimo.",
+    description: "Compara Piwik PRO y Sealmetrics en identificadores, consentimiento, atribución, hosting UE y límites del análisis agregado.",
     images: [ogImage("/es/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/es/vs/piwik-pro/", languages: getAlternatesEs("/vs/piwik-pro") },
@@ -41,7 +41,7 @@ export default function Page() {
       <JsonLd data={breadcrumbSchema([{ name: "vs Piwik PRO", url: "/es/vs/piwik-pro" }])} />
       <JsonLd data={comparisonPageSchema({
         name: "Sealmetrics vs Piwik PRO",
-        description: "Comparativa de Sealmetrics y Piwik PRO en identificadores, consentimiento, atribución, hosting UE y límites del reporting anónimo.",
+        description: "Comparativa de Sealmetrics y Piwik PRO en identificadores, consentimiento, atribución, hosting UE y límites del reporting agregado.",
         url: "/es/vs/piwik-pro",
         competitor: competitor("piwik-pro"),
         datePublished: "2026-04-15",
@@ -50,7 +50,7 @@ export default function Page() {
         criteria: [
           "Configuración de identificadores y cookies",
           "Modos de consentimiento y recogida anónima",
-          "Límites del reporting sin identificadores de visitante",
+          "Límites del reporting sin identificadores persistentes de visitante",
           "Ubicaciones de hosting y modelos de despliegue",
           "Alcance de producto y modelo operativo",
           "Atribución según el modo de identificadores",
@@ -76,7 +76,7 @@ export default function Page() {
           <QuickAnswer label="Respuesta rápida">
             <p>
               Sealmetrics es analítica web agregada y sin cookies para equipos europeos que
-              necesitan reporting de campañas e ingresos sin identificadores del navegador.
+              necesitan reporting de campañas e ingresos sin identificadores persistentes del navegador.
               Piwik PRO es una suite más amplia, con gestión de consentimiento, hosting
               flexible y hasta siete modelos de atribución cuando se activan identificadores.
               Su propia{" "}

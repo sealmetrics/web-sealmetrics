@@ -334,9 +334,11 @@ export default function WhyGA4MissesTrafficPage() {
             </Link>
             , server-side approach. A lightweight script (under 1 KB), which
             can be served from a subdomain of your own domain, collects
-            events. No cookies are set. Because nothing is stored on or read
-            from the visitor&apos;s device, the cookie-consent requirement has
-            nothing to attach to, and no visits are lost to consent rejection.
+            events. No cookies are set and nothing is stored on the visitor&apos;s
+            device; the session identifier rotates daily and serves only the
+            site&apos;s own audience statistics, so measurement can rely on the
+            audience-measurement exemption and no visits are lost to consent
+            rejection.
             How complete the rest of the coverage is depends on the
             implementation, which is why the Incapto figures are reconciled
             against the store&rsquo;s real orders rather than asserted.

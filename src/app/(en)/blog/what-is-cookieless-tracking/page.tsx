@@ -67,8 +67,8 @@ export default function WhatIsCookielessTrackingPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
             <li>Cookie-based tracking doesn&apos;t see part of your traffic, and how much depends on the store: at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
-            <li>Cookieless tracking is not fingerprinting — it collects aggregate, non-identifying data points (URLs, referrals, timestamps) that cannot identify individual visitors.</li>
-            <li>Privacy is designed into the architecture: no cookies stored, no PII collected, no cross-site tracking — built around CNIL and German DSK guidance for consent-free analytics, and assessed per deployment.</li>
+            <li>Cookieless tracking is not persistent fingerprinting — it collects aggregate data points (URLs, referrals, timestamps) and, at most, an ephemeral session identifier that cannot be linked across days.</li>
+            <li>Privacy is designed into the architecture: no cookies stored, no data that identifies anyone, no cross-site tracking — built around CNIL guidance for consent-free analytics (in Germany, where the DSK does not extend the exemption to audience measurement, our reading, not settled), and assessed per deployment.</li>
             <li>Every downstream analytics function improves when input data goes from the consenting fraction to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
           </ul>
         </div>
@@ -163,9 +163,10 @@ export default function WhatIsCookielessTrackingPage() {
             </Link>
             , ad blockers cannot distinguish analytics requests from regular
             page requests. Browser privacy features like ITP and ETP have no
-            cookies to restrict. And consent banners are not required because
-            no personal data is collected and nothing is stored on the
-            visitor&rsquo;s device.
+            cookies to restrict. And consent banners are not required for the
+            analytics itself because nothing that identifies anyone is kept and
+            nothing is stored on the visitor&rsquo;s device (in Germany, our
+            reading, not settled).
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -218,7 +219,7 @@ export default function WhatIsCookielessTrackingPage() {
                   {
                     aspect: "Privacy compliance",
                     cookie: "Requires consent banner + DPA",
-                    cookieless: "Compliant by architecture",
+                    cookieless: "Built to comply with the GDPR (self-assessed)",
                   },
                 ].map((row) => (
                   <tr
@@ -310,8 +311,8 @@ export default function WhatIsCookielessTrackingPage() {
           </h2>
 
           <p>
-            No. This is a common and important misconception to address.
-            Browser fingerprinting collects a combination of device
+            Not in the tracking sense. This is a common and important
+            misconception to address. Browser fingerprinting collects a combination of device
             characteristics &mdash; screen resolution, installed fonts, browser
             plugins, operating system version &mdash; to create a unique
             identifier for each visitor. It is a tracking technique that
@@ -320,11 +321,14 @@ export default function WhatIsCookielessTrackingPage() {
           </p>
 
           <p>
-            Cookieless tracking as implemented by privacy-compliant platforms
-            does not fingerprint. It collects aggregate, non-identifying data
+            Cookieless tracking as implemented by privacy-focused platforms
+            does not keep a persistent fingerprint. It collects aggregate data
             points: page URLs, referral sources, timestamps, and general
-            geographic region. No combination of these data points can identify
-            an individual visitor. The distinction is critical: fingerprinting
+            geographic region. Some platforms, Sealmetrics included, also hash
+            a few browser characteristics to group the hits of a single visit,
+            then re-key that value on the server with a salt that rotates
+            daily, so it cannot be linked across days or across sites. The
+            distinction is critical: fingerprinting
             replaces cookies with a different surveillance mechanism,
             while cookieless tracking eliminates the need for any
             visitor-level identification.

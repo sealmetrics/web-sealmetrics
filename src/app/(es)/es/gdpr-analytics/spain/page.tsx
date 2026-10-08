@@ -49,14 +49,14 @@ const criteria = [
     title: "Medición agregada y anónima",
     requirement:
       "Guía de cookies de la AEPD de 2024: las herramientas usadas únicamente para medición de audiencia anónima, sin seguimiento entre sitios, no requieren consentimiento.",
-    us: "Solo recuentos agregados de canal y conversión. Ningún identificador por visitante, ningún perfil, ningún comportamiento cruzado entre sitios. El criterio se cumple por diseño de la arquitectura, no por configuración.",
+    us: "Solo recuentos agregados de canal y conversión. Ningún identificador persistente por visitante, ningún perfil, ningún comportamiento cruzado entre sitios. El criterio se cumple por diseño de la arquitectura, no por configuración.",
   },
   {
     n: "02",
-    title: "Sin tratamiento de datos personales",
+    title: "Ningún dato que identifique a nadie",
     requirement:
       "La AEPD se alinea con el Dictamen 5/2019 del EDPB: si el tratamiento no se refiere a una persona identificada o identificable, no entra en el ámbito material del RGPD.",
-    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. No se genera identificador. Los eventos son agregados a nivel de canal desde que llegan al servidor.",
+    us: "No guardamos IPs: para filtrar bots comparamos al vuelo la IP con una lista pública de IPs de tráfico automatizado, y no la guardamos. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor. El identificador de sesión es un seudónimo tratado por interés legítimo; al rotar, ni nosotros podemos reconstruirlo.",
   },
   {
     n: "03",
@@ -178,10 +178,11 @@ export default function Page() {
             audiencia agregada y anónima siempre que se cumplan cuatro
             condiciones: informes solo agregados, sin datos personales,
             contexto de primera parte sin seguimiento entre sitios y
-            residencia en la UE. Sealmetrics está construido para cumplir cada
-            una por diseño — el mismo patrón de arquitectura que cubre la
-            exención de la CNIL en Francia y la del §25 de la TDDDG en
-            Alemania.
+            residencia en la UE. Sealmetrics está construido en torno a
+            esas condiciones (autoevaluación, no certificación) — el mismo
+            patrón de arquitectura que evaluamos frente a los criterios de la
+            CNIL en Francia; en Alemania la DSK no extiende la exención a la
+            medición de audiencia, así que allí es nuestra lectura, no algo resuelto.
           </>
         }
         bullets={[

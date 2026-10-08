@@ -71,7 +71,7 @@ export default function AttributionModelEsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Qué hace Sealmetrics</h2>
           <p>
-            Sealmetrics no aplica modelos <Link href={glossaryHref("multi-touch-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link>: hace <Link href={glossaryHref("revenue-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución de ingresos last-click</Link> sobre el dato observado sin huecos de consentimiento, de forma anónima y a nivel de canal. Es una decisión de arquitectura, no una limitación temporal: no se reconstruyen recorridos por usuario porque no se identifica a ningún usuario.
+            Sealmetrics no aplica modelos <Link href={glossaryHref("multi-touch-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">multi-touch</Link>: hace <Link href={glossaryHref("revenue-attribution", "es")} className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">atribución de ingresos last-click</Link> sobre el dato observado sin huecos de consentimiento, de forma agregada y a nivel de canal. Es una decisión de arquitectura, no una limitación temporal: no se reconstruyen recorridos por usuario porque no se identifica a ningún usuario.
           </p>
         </div>
 
