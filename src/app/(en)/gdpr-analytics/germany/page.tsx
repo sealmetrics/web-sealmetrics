@@ -47,19 +47,19 @@ const criteria = [
     n: "01",
     title: "No terminal-device storage",
     requirement: "§25 TDDDG requires consent before storing or accessing information on the user's terminal device — cookies, localStorage, fingerprinting.",
-    us: "No cookie is set, no localStorage is written, no fingerprint is generated. The terminal-device trigger never engages.",
+    us: "No cookie is set and no localStorage is written: nothing is stored on the device. The session identifier is ephemeral and rotates daily, and measurement is limited to the site's own audience statistics.",
   },
   {
     n: "02",
     title: "No personal-data processing",
     requirement: "DSK orientation paper: if no personal data is processed, GDPR's material scope does not apply.",
-    us: "Aggregate channel counts only. No IP address stored, no identifier created, no per-visitor profile. Nothing relating to an identifiable person.",
+    us: "Aggregate channel counts only. No IP address stored, no persistent identifier created, no per-visitor profile. Nothing relating to an identifiable person.",
   },
   {
     n: "03",
     title: "No cross-site or fingerprinting",
     requirement: "BfDI guidance: tools that enable cross-site tracking or device fingerprinting cannot rely on the exemption.",
-    us: "First-party server-side. Pixel runs on a CNAME under the customer's own domain. No third-party identifier, no fingerprint of IP + User-Agent stored.",
+    us: "First-party server-side. Pixel runs on a CNAME under the customer's own domain. No third-party identifier, no fingerprint of IP + User-Agent stored. The session identifier is specific to each site and rotates daily, so it cannot be linked across sites or across days.",
   },
   {
     n: "04",

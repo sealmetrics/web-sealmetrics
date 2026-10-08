@@ -57,9 +57,9 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           </h1>
           <p className="text-[1.05rem] leading-[1.7] text-text-secondary mb-6">
             Analytics can run without a consent banner when nothing is stored
-            on or read from the visitor&apos;s device, no personal data is
-            collected, and the deployment meets your regulator&apos;s
-            exemption criteria. Sealmetrics is built to that design for EU
+            on the visitor&apos;s device, no persistent identifier is kept,
+            measurement is limited to the site&apos;s own audience statistics,
+            and the deployment meets your regulator&apos;s exemption criteria. Sealmetrics is built to that design for EU
             eCommerce and hotel teams, with last-click revenue attribution on
             every visit it records.
           </p>
@@ -78,7 +78,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Consent-free analytics is legally possible under both GDPR (Article 6(1)(f) legitimate interest) and ePrivacy (Article 5(3) does not apply when nothing is stored on the user's device).</li>
             <li>The CNIL has published specific criteria for consent-exempt analytics: anonymous statistical output only, no cross-site tracking, no advertising use, and IP anonymization at minimum.</li>
-            <li>Six technical requirements must all be met: no cookies, no localStorage, no fingerprinting, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>
+            <li>Six technical requirements must all be met: no cookies, no localStorage, no persistent identifier, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>
             <li>The EU Digital Omnibus would create a harmonized EU-wide framework explicitly authorizing first-party analytics without consent, replacing the current patchwork of national DPA interpretations.</li>
             <li>Sealmetrics was built from the ground up for consent-free operation — no cookies, no PII, EU-only infrastructure — satisfying CNIL, ePrivacy, and GDPR requirements simultaneously.</li>
           </ul>
@@ -169,11 +169,14 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             The critical distinction is this: Article 5(3) applies to
             <em> storage on and access to the user&rsquo;s device</em>.
-            If an analytics tool does not place cookies, does not use
-            localStorage, does not use browser fingerprinting, and does
-            not access any information stored on the device, then
-            Article 5(3) is not triggered. No storage, no access, no
-            consent requirement.
+            If an analytics tool does not place cookies or use
+            localStorage, nothing is stored. Reading device information is
+            still access, so what remains is whether that access fits the
+            audience-measurement exemption: statistics for the site&apos;s
+            own audience only, no cross-site tracking, no reuse, and no
+            identifier that persists over time. Meet those conditions and
+            regulators such as the CNIL and the AEPD do not require
+            consent for the measurement.
           </p>
 
           <p>
@@ -265,7 +268,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
-              <strong className="font-semibold text-text-primary">No fingerprinting</strong> &mdash; no combining device characteristics (screen size, fonts, plugins) to create a unique identifier
+              <strong className="font-semibold text-text-primary">No persistent fingerprint</strong> &mdash; no identifier built from device characteristics that persists over time or can be linked across days or across sites
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -354,9 +357,10 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             through a first-party subdomain (e.g.,
             analytics.yourdomain.com). When a visitor loads a page,
             the request is processed without setting any
-            cookies, accessing localStorage, or fingerprinting the
-            browser. Session recognition uses ephemeral
-            signals that do not persist on the user&rsquo;s device.
+            cookies or accessing localStorage. The hits of one visit are
+            grouped by an ephemeral identifier, replaced on the server by a
+            keyed hash with a salt that rotates daily, so it cannot be
+            linked across days and nothing persists on the user&rsquo;s device.
           </p>
 
           <p>

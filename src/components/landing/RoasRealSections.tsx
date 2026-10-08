@@ -26,7 +26,7 @@ export function Hero() {
     <section className="bg-warm-white pt-14 md:pt-20 pb-20">
       <div className="max-w-[1200px] mx-auto px-5 sm:px-10">
         <p className="font-mono text-[11.5px] uppercase tracking-[0.16em] text-ink-soft">
-          Analítica privacy by design · Sin cookies ni identificadores · Diseñada para el RGPD desde la arquitectura
+          Analítica privacy by design · Sin cookies ni identificadores persistentes · Diseñada para el RGPD desde la arquitectura
         </p>
 
         <h1 className="h-display mt-5 max-w-[16ch]">
@@ -225,9 +225,10 @@ export function WhatWeDo() {
         </div>
         <div>
           <p className="text-ink-2 leading-[1.5] max-w-[58ch]" style={{ fontSize: "clamp(17px,1.6vw,20px)" }}>
-            Sealmetrics no reconstruye recorridos. Registra hits agregados e inconexos entre sí, sin
-            identificador de usuario, sin cookies, sin perfilado. Como nadie es identificable ni ahora ni
-            después, no hace falta consentimiento para medir.
+            Sealmetrics no reconstruye recorridos. Registra hits agregados, agrupados como mucho dentro de
+            una visita con un identificador efímero que rota cada día, sin identificador de usuario, sin cookies,
+            sin perfilado. Las visitas no se pueden enlazar entre días ni entre webs, y eso mantiene la medición
+            dentro de la exención de consentimiento para la medición de audiencia.
           </p>
           <p className="mt-5 text-[16px] leading-[1.6] text-ink-soft">
             El píxel se dispara antes del banner y mide{" "}
@@ -328,16 +329,16 @@ const PBD = [
     d: "Ni propias ni de terceros. Ni localStorage, ni sessionStorage, ni ningún almacenamiento en el dispositivo del visitante.",
   },
   {
-    k: "Identificadores",
+    k: "Identificadores persistentes",
     v: "0",
     t: "No existe la columna usuario",
-    d: "No hay user ID, ni client ID, ni un pseudónimo anónimo. Dos visitas del mismo navegador no son reconocibles como tales, ni ahora ni dentro de dos años.",
+    d: "No hay user ID ni client ID. Los hits de una visita comparten un identificador efímero que rota cada día; dos visitas del mismo navegador en días distintos no se pueden enlazar, ni ahora ni dentro de dos años.",
   },
   {
-    k: "Señales de huella",
+    k: "Huellas guardadas",
     v: "0",
-    t: "No derivamos identidad del dispositivo",
-    d: "Ni canvas, ni fuentes instaladas, ni combinación de cabeceras. El fingerprinting está expresamente descartado, no simplemente sin usar.",
+    t: "Nada del dispositivo persiste",
+    d: "Ni canvas, ni fuentes instaladas. El hash de sesión que se calcula en el navegador se sustituye en el servidor por un hash con clave y una sal que rota cada día; el valor original no se guarda nunca y no se puede enlazar entre días ni entre webs.",
   },
   {
     k: "Cruces entre webs",
@@ -422,7 +423,7 @@ export function PrivacyByDesign() {
 
 /* ---------- 08 · EL INTERCAMBIO ---------- */
 const TRADE_NO = [
-  "Modelos de atribución multitouch. Sin identificadores de visitante, el único modelo posible es last-click.",
+  "Modelos de atribución multitouch. Sin identificadores persistentes de visitante, el único modelo posible es last-click.",
   "Customer journeys individuales ni secuencias de sesión.",
   "Construcción de audiencias para activar en plataformas.",
   "Cohortes de usuario, retención individual o LTV por persona.",
@@ -445,7 +446,7 @@ export function Tradeoff() {
           Te decimos lo que pierdes <em>antes de que lo descubras tú.</em>
         </h2>
         <p className="mt-6 max-w-[60ch] text-ink-2 leading-[1.55]" style={{ fontSize: "clamp(16px,1.5vw,19px)" }}>
-          Medir sin cookies ni identificadores tiene un precio y no lo escondemos en la letra pequeña. Si lo que necesitas
+          Medir sin cookies ni identificadores persistentes tiene un precio y no lo escondemos en la letra pequeña. Si lo que necesitas
           está en la columna izquierda, no somos tu herramienta y te lo diremos en la primera llamada.
         </p>
 
@@ -550,7 +551,7 @@ const GAUGES: { title: string; rows: GaugeRow[]; note: React.ReactNode }[] = [
 
 const TABLE_ROWS = [
   ["Transporte del hit", "sendBeacon · sobrevive al cierre de página", "Tipo beacon", "Image GET · se cancela al salir"],
-  ["Consentimiento en la UE", "Sin cookies ni identificadores · el banner depende de tu configuración", "Sí · Consent Mode modela el hueco", "Sí en la mayoría de instalaciones"],
+  ["Consentimiento en la UE", "Sin cookies ni identificadores persistentes · el banner depende de tu configuración", "Sí · Consent Mode modela el hueco", "Sí en la mayoría de instalaciones"],
   ["Tráfico medido en paralelo", "Referencia", "25–45% menos (muestra de nuestros clientes)", "25% menos (30 días con doble etiqueta, campo)"],
 ];
 
@@ -566,7 +567,7 @@ const SPECS = [
   {
     h: "Verdad del dato",
     items: [
-      { v: "Sin pérdida por consentimiento", l: "Sin cookies ni identificadores: no hay nada que el visitante tenga que rechazar." },
+      { v: "Sin pérdida por consentimiento", l: "Sin cookies ni identificadores persistentes: no hay nada que el visitante tenga que rechazar." },
       { v: "Cero modelado", l: "No modeling. No sampling. No estimaciones. Si está en el informe, pasó." },
       { v: "+25% vs Adobe o GA4", l: "Medido en campo, 30 días de doble etiqueta sobre el mismo sitio." },
     ],
@@ -809,7 +810,7 @@ export function Implementation() {
           </p>
 
           <p className="mt-6 font-mono text-[11.5px] uppercase tracking-[0.06em] text-ink-soft">
-            1,1 KB · DEFER · SENDBEACON · SIN COOKIES · SIN IDENTIFICADORES
+            1,1 KB · DEFER · SENDBEACON · SIN COOKIES · SIN IDS PERSISTENTES
           </p>
         </div>
       </div>

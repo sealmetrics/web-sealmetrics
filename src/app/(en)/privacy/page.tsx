@@ -212,7 +212,7 @@ export default function PrivacyPage() {
               <strong className="text-text-primary">
                 We do not collect:
               </strong>{" "}
-              device fingerprints, names, email addresses, or any data that
+              persistent device identifiers, names, email addresses, or any data that
               could identify an individual visitor. No cookies, local storage,
               session storage, or IndexedDB are used.
             </p>

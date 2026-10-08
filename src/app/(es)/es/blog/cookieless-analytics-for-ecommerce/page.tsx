@@ -135,8 +135,8 @@ export default function CookielessAnalyticsForEcommercePageEs() {
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Conclusiones clave</h2>
             <ul className={`text-[0.9rem] leading-[1.7] text-text-secondary ${dashList}`}>
               <li>El rechazo del consentimiento, los ad-blockers y las restricciones de Safari se suman. Cuánto se llevan depende de la tienda y del canal. Medido en la tienda Shopify de Incapto durante 48 días, GA4 no registró el 29% de las visitas ni el 45% de las páginas vistas.</li>
-              <li>La analítica sin cookies cuenta eventos de forma anónima, sin identificadores ni seguimiento individual, y atribuye cada conversión a último clic por canal.</li>
-              <li>Como no guarda ni lee nada en el dispositivo, la regla de ePrivacy sobre almacenamiento y acceso no tiene a qué aplicarse. Que tu analítica quede exenta de consentimiento depende de tu configuración y de los criterios de tu autoridad nacional.</li>
+              <li>La analítica sin cookies cuenta eventos de forma agregada, sin identificadores persistentes ni seguimiento individual, y atribuye cada conversión a último clic por canal.</li>
+              <li>Como no guarda nada en el dispositivo, no conserva identificadores persistentes y solo sirve para las estadísticas de audiencia de la propia web, puede encajar en la exención de medición de audiencia de la regla de ePrivacy sobre almacenamiento y acceso. Que tu analítica quede exenta de consentimiento depende de tu configuración y de los criterios de tu autoridad nacional.</li>
               <li>La prueba que importa es el backend: en la medición en paralelo de Incapto, Sealmetrics registró el 96% de los pedidos reales de Shopify y el 97% de la facturación.</li>
               <li>Se instala junto a GA4 y se compara durante un ciclo comercial completo, sin migración.</li>
             </ul>
@@ -240,9 +240,11 @@ export default function CookielessAnalyticsForEcommercePageEs() {
             </p>
             <p>
               <strong>4. Nada en el dispositivo que consentir.</strong> Como no se
-              guarda ni se lee nada en el dispositivo del visitante, la regla de la
-              Directiva ePrivacy sobre almacenamiento y acceso no tiene a qué
-              aplicarse. Que tu configuración quede exenta de consentimiento depende
+              guarda nada en el dispositivo del visitante, no persiste ningún
+              identificador y la medición solo sirve para las estadísticas de
+              audiencia de la propia web, puede encajar en la exención de medición
+              de audiencia de la regla de la Directiva ePrivacy sobre
+              almacenamiento y acceso. Que tu configuración quede exenta de consentimiento depende
               de los criterios de tu autoridad; donde lo está, el hueco del rechazo
               desaparece porque no hay nada que rechazar.
             </p>

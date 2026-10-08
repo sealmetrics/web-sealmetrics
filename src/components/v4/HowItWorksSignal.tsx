@@ -6,19 +6,19 @@ type Locale = "en" | "es";
 
 const faqs = {
   en: [
-    ["How does cookieless measurement work without identifying people?", "Sealmetrics records aggregate events and their declared acquisition context. It does not create a persistent visitor identifier, use fingerprinting or reconstruct a cross-visit profile."],
+    ["How does cookieless measurement work without identifying people?", "Sealmetrics records aggregate events and their declared acquisition context. It does not create a persistent visitor identifier, store a fingerprint or reconstruct a cross-visit profile."],
     ["Is Sealmetrics affected by ad blockers?", "The collection endpoint can run in first-party mode on your own subdomain. This reduces the loss caused by lists that block known third-party analytics domains."],
     ["How long does implementation take?", "The initial script can be installed in minutes. A useful comparison starts on day one; event calibration and revenue reconciliation normally continue through the first week."],
     ["Do I have to remove GA4 first?", "No. Run both systems side by side, define the same commercial events and compare each reported total with the revenue recorded by your backend."],
-    ["Where is visitor data processed and stored?", "The visitor data path is hosted in Dublin, Ireland. Sealmetrics is designed without analytics cookies, persistent visitor IDs or fingerprinting."],
+    ["Where is visitor data processed and stored?", "The visitor data path is hosted in Dublin, Ireland. Sealmetrics is designed without analytics cookies, persistent visitor IDs or stored fingerprints."],
     ["Does Sealmetrics sample data?", "No. Eligible events are retained at full resolution. Reports state the model being applied instead of presenting sampled or modeled data as direct observation."],
   ],
   es: [
-    ["¿Cómo funciona la medición sin cookies sin identificar personas?", "Sealmetrics registra eventos agregados y su contexto de adquisición declarado. No crea identificadores persistentes, no usa fingerprinting ni reconstruye perfiles entre visitas."],
+    ["¿Cómo funciona la medición sin cookies sin identificar personas?", "Sealmetrics registra eventos agregados y su contexto de adquisición declarado. No crea identificadores persistentes, no guarda huellas ni reconstruye perfiles entre visitas."],
     ["¿Afectan los bloqueadores a Sealmetrics?", "El endpoint de captura puede funcionar en modo first-party sobre tu propio subdominio. Así se reduce la pérdida causada por listas que bloquean dominios conocidos de analítica de terceros."],
     ["¿Cuánto tarda la implantación?", "El script inicial se instala en minutos. La comparación útil empieza el primer día; la calibración de eventos y la conciliación de ingresos continúan durante la primera semana."],
     ["¿Tengo que retirar GA4 primero?", "No. Ejecuta ambos sistemas en paralelo, define los mismos eventos comerciales y compara cada total con los ingresos registrados por tu backend."],
-    ["¿Dónde se procesan y almacenan los datos de visitante?", "La ruta del dato de visitante está alojada en Dublín, Irlanda. Sealmetrics está diseñado sin cookies analíticas, identificadores persistentes ni fingerprinting."],
+    ["¿Dónde se procesan y almacenan los datos de visitante?", "La ruta del dato de visitante está alojada en Dublín, Irlanda. Sealmetrics está diseñado sin cookies analíticas, identificadores persistentes ni huellas guardadas."],
     ["¿Sealmetrics muestrea los datos?", "No. Los eventos elegibles se conservan a resolución completa. Los informes declaran el modelo aplicado en vez de presentar datos muestreados o modelados como observación directa."],
   ],
 } as const;
@@ -61,7 +61,7 @@ const copy = {
     answerTitle: <>One signal path.<br /><em>Four explicit stages.</em></>,
     answerBody: "Sealmetrics keeps collection and interpretation separate. That makes it possible to identify whether a disagreement comes from missing events, a commercial definition or the attribution model.",
     stages: [
-      ["01 / Collect", "First-party collection option", "A lightweight event contract records pageviews and commercial actions without analytics cookies, persistent visitor IDs or fingerprinting.", ["One script tag", "Works with CMS, SPA and headless stacks", "Optional endpoint on your own subdomain"]],
+      ["01 / Collect", "First-party collection option", "A lightweight event contract records pageviews and commercial actions without analytics cookies, persistent visitor IDs or stored fingerprints.", ["One script tag", "Works with CMS, SPA and headless stacks", "Optional endpoint on your own subdomain"]],
       ["02 / Process", "Aggregate events at full resolution", "The processing layer validates eligible events and keeps aggregate acquisition context such as referrer, UTM and landing page.", ["No cross-visit identity graph", "No sampling thresholds", "Recent data available within minutes"]],
       ["03 / Attribute", "Revenue under a named model", "Recorded outcomes are connected to channel and campaign using a declared last-click model on the complete eligible dataset.", ["Model is visible", "Backend revenue remains the reference", "Campaign and creative breakdowns"]],
       ["04 / Activate", "The same evidence leaves through APIs", "Reports, BigQuery, REST and MCP expose the defined metrics. LENS answers against that layer instead of inventing another dataset.", ["Nine reporting surfaces", "Documented exports", "Supervised AI workflows"]],
@@ -76,7 +76,7 @@ const copy = {
       ["Commercial event", "Conversion and revenue totals", "Defined metric", "No payment details"],
       ["Country + device class", "Operational breakdown", "Coarse aggregate", "No IP address stored"],
       ["Persistent identifier", "Not collected", "—", "Prohibited by design"],
-      ["Browser fingerprint", "Not generated", "—", "Prohibited by design"],
+      ["Browser fingerprint", "Session hash, re-keyed daily", "Never stored raw", "Not linkable across days or sites"],
     ],
     implementationTag: "Implementation sequence",
     implementationTitle: <>Compare first.<br /><em>Change later.</em></>,
@@ -134,7 +134,7 @@ const copy = {
     answerTitle: <>Una ruta de señal.<br /><em>Cuatro etapas explícitas.</em></>,
     answerBody: "Sealmetrics mantiene separadas la captura y la interpretación. Así se puede identificar si un desacuerdo nace de eventos ausentes, de una definición comercial o del modelo de atribución.",
     stages: [
-      ["01 / Captura", "Opción de captura first-party", "Un contrato ligero registra pageviews y acciones comerciales sin cookies analíticas, identificadores persistentes ni fingerprinting.", ["Un script", "Funciona con CMS, SPA y headless", "Endpoint opcional en tu subdominio"]],
+      ["01 / Captura", "Opción de captura first-party", "Un contrato ligero registra pageviews y acciones comerciales sin cookies analíticas, identificadores persistentes ni huellas guardadas.", ["Un script", "Funciona con CMS, SPA y headless", "Endpoint opcional en tu subdominio"]],
       ["02 / Procesa", "Eventos agregados a resolución completa", "La capa de procesamiento valida eventos elegibles y conserva contexto agregado de adquisición: referrer, UTM y landing.", ["Sin grafo de identidad entre visitas", "Sin umbrales de muestreo", "Dato reciente en minutos"]],
       ["03 / Atribuye", "Ingresos bajo un modelo nombrado", "Los resultados registrados se conectan con canal y campaña mediante last-click declarado sobre el conjunto elegible completo.", ["Modelo visible", "El ingreso backend sigue siendo la referencia", "Desglose por campaña y creatividad"]],
       ["04 / Activa", "La misma evidencia sale por APIs", "Informes, BigQuery, REST y MCP exponen las métricas definidas. LENS responde contra esa capa, no inventa otro dataset.", ["Nueve superficies de reporting", "Exports documentados", "Flujos de IA supervisados"]],
@@ -149,7 +149,7 @@ const copy = {
       ["Evento comercial", "Conversiones e ingresos", "Métrica definida", "Sin datos de pago"],
       ["País + tipo de dispositivo", "Desglose operativo", "Agregado grueso", "Sin almacenar IP"],
       ["Identificador persistente", "No se recoge", "—", "Prohibido por diseño"],
-      ["Fingerprint del navegador", "No se genera", "—", "Prohibido por diseño"],
+      ["Fingerprint del navegador", "Hash de sesión, con clave que rota a diario", "Nunca en bruto", "No enlazable entre días ni webs"],
     ],
     implementationTag: "Secuencia de implantación",
     implementationTitle: <>Compara primero.<br /><em>Cambia después.</em></>,

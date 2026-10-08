@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Is this really compliant with GDPR and ePrivacy?",
-    a: "It is designed to be; this is our self-assessment, not a certification. There is no personal data, no cookie, no localStorage, no fingerprinting. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
+    a: "It is designed to be; this is our self-assessment, not a certification. There is no personal data, no cookie, no localStorage, no persistent identifier. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
   },
   {
     q: "How do I switch from legacy analytics?",
@@ -118,14 +118,14 @@ const pillars = [
   {
     eyebrow: "Compliance",
     title: "Designed for GDPR",
-    body: "No cookies. No localStorage. No fingerprint. No personal data. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
+    body: "No cookies. No localStorage. No persistent identifier. No personal data. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners required",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
-  { feature: "Cookies / fingerprinting", legacy: "Required", modern: "None" },
+  { feature: "Cookies / persistent identifiers", legacy: "Required", modern: "None" },
   { feature: "Consent banner needed", legacy: "Yes", modern: "No" },
   { feature: "EU traffic captured", legacy: "Misses visitors who reject consent (40–60% of traffic, in our experience with clients)", modern: "No consent loss" },
   { feature: "Sampling on heavy queries", legacy: "Yes (Card-2 / data thresholds)", modern: "No" },

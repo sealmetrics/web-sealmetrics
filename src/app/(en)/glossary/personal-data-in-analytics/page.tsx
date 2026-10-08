@@ -222,8 +222,8 @@ export default function PersonalDataInAnalyticsPage() {
               <Link href="/consentless-analytics" className={linkCls}>
                 consentless analytics
               </Link>
-              : no identifiers, no device storage, aggregate event measurement
-              only. Because neither test is engaged, the consent banner stops
+              : no persistent identifiers, no device storage, aggregate event
+              measurement only. Because neither test is engaged, the consent banner stops
               being a data-loss path — which matters, because visitors who
               reject consent are otherwise never measured. The longer legal argument is in the{" "}
               <Link href="/blog/gdpr-eprivacy-analytics-legal-assessment" className={linkCls}>

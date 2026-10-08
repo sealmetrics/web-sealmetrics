@@ -50,7 +50,7 @@ export default function Page() {
         criteria: [
           "Configuración de identificadores y cookies",
           "Modos de consentimiento y recogida anónima",
-          "Límites del reporting sin identificadores de visitante",
+          "Límites del reporting sin identificadores persistentes de visitante",
           "Ubicaciones de hosting y modelos de despliegue",
           "Alcance de producto y modelo operativo",
           "Atribución según el modo de identificadores",
@@ -76,7 +76,7 @@ export default function Page() {
           <QuickAnswer label="Respuesta rápida">
             <p>
               Sealmetrics es analítica web agregada y sin cookies para equipos europeos que
-              necesitan reporting de campañas e ingresos sin identificadores del navegador.
+              necesitan reporting de campañas e ingresos sin identificadores persistentes del navegador.
               Piwik PRO es una suite más amplia, con gestión de consentimiento, hosting
               flexible y hasta siete modelos de atribución cuando se activan identificadores.
               Su propia{" "}

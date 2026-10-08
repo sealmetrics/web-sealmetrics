@@ -44,7 +44,7 @@ const industries = [
   { slug: "media", name: "Medios y publishers", tagline: "Lectores contados sin cookies, desde un subdominio propio." },
   { slug: "finance", name: "Finanzas y banca", tagline: "Solicitudes por canal, con los documentos que pide una revisión." },
   { slug: "healthcare", name: "Salud", tagline: "Solicitudes de cita por canal, en agregado y sin cookies." },
-  { slug: "education", name: "Educación", tagline: "Consultas y solicitudes por canal, sin identificadores." },
+  { slug: "education", name: "Educación", tagline: "Consultas y solicitudes por canal, sin identificadores persistentes." },
 ];
 
 export default function Page() {

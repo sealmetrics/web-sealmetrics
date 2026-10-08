@@ -69,7 +69,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>La analítica sin consentimiento es legalmente posible tanto bajo RGPD (Art. 6(1)(f) interés legítimo) como bajo ePrivacy (el Art. 5(3) no aplica si no se almacena nada en el dispositivo del usuario).</li>
             <li>La CNIL ha publicado criterios específicos para analítica exenta de consentimiento: solo output estadístico anónimo, sin cross-site tracking, sin uso publicitario y, como mínimo, anonimización de IP.</li>
-            <li>Hay que cumplir seis requisitos técnicos: sin cookies, sin localStorage, sin fingerprinting, sin datos personales, solo first-party y residencia de dato en UE — cualquier fallo invalida el enfoque.</li>
+            <li>Hay que cumplir seis requisitos técnicos: sin cookies, sin localStorage, sin identificador persistente, sin datos personales, solo first-party y residencia de dato en UE — cualquier fallo invalida el enfoque.</li>
             <li>El Digital Omnibus de la UE crearía un marco armonizado a nivel UE autorizando explícitamente la analítica first-party sin consentimiento, reemplazando el patchwork actual de interpretaciones por DPA nacional.</li>
             <li>Sealmetrics se construyó desde cero para operar sin consentimiento — sin cookies, sin PII, infraestructura solo UE — cumpliendo simultáneamente los requisitos de CNIL, ePrivacy y RGPD.</li>
           </ul>
@@ -147,10 +147,14 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
           <p>
             La distinción crítica es esta: el Art. 5(3) aplica a
             <em> almacenamiento en y acceso al dispositivo del usuario</em>.
-            Si una herramienta no coloca cookies, no usa localStorage, no usa
-            fingerprinting y no accede a información del dispositivo, el Art.
-            5(3) no se dispara. Sin almacenamiento, sin acceso, sin requisito
-            de consentimiento.
+            Si una herramienta no coloca cookies ni usa localStorage, no
+            almacena nada. Leer información del dispositivo sigue siendo
+            acceso, así que lo que queda es si ese acceso encaja en la exención
+            de medición de audiencia: estadísticas solo de la audiencia de la
+            propia web, sin seguimiento entre webs, sin reutilización y sin
+            identificador que persista en el tiempo. Si se cumplen esas
+            condiciones, autoridades como la CNIL y la AEPD no exigen
+            consentimiento para la medición.
           </p>
 
           <p>
@@ -245,7 +249,7 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
-              <strong className="font-semibold text-text-primary">Sin fingerprinting</strong> &mdash; sin combinar características de dispositivo (resolución, fuentes, plugins) para crear un identificador único
+              <strong className="font-semibold text-text-primary">Sin huella persistente</strong> &mdash; sin ningún identificador construido con características del dispositivo que persista en el tiempo o se pueda enlazar entre días o entre webs
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -330,9 +334,11 @@ export default function GDPRAnalyticsWithoutConsentPageEs() {
             </Link>{" "}
             a través de un subdominio first-party (ej. analytics.tudominio.com).
             Cuando un visitante carga una página, la petición se procesa sin
-            poner cookies, sin acceder a localStorage y sin fingerprinting del
-            navegador. El reconocimiento de sesión usa señales efímeras que no
-            persisten en el dispositivo del usuario.
+            poner cookies y sin acceder a localStorage. Las visitas de una
+            sesión se agrupan con un identificador efímero que el servidor
+            sustituye por un hash con clave y una sal que rota cada día, así
+            que no se puede enlazar entre días y nada persiste en el
+            dispositivo del usuario.
           </p>
 
           <p>

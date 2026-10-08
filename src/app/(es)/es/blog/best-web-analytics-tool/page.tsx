@@ -951,7 +951,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 >
                   datos personales
                 </Link>{" "}
-                recogidos, sin cookies, sin fingerprinting de dispositivo, sin
+                recogidos, sin cookies, sin identificador persistente de dispositivo, sin
                 almacenamiento en cliente. Esto no es una versión más estricta
                 del cumplimiento: es un mecanismo distinto. Una plataforma que
                 no trata datos personales queda en buena medida fuera del ámbito

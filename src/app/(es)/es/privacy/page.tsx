@@ -225,7 +225,7 @@ export default function PrivacyPageEs() {
               </p>
               <p className="mt-3">
                 <strong className="text-text-primary">No recogemos:</strong>{" "}
-                huellas digitales de dispositivo, nombres, direcciones de email
+                identificadores persistentes de dispositivo, nombres, direcciones de email
                 ni ningún dato que pueda identificar a un visitante individual.
                 No se usan cookies, local storage, session storage ni IndexedDB.
               </p>

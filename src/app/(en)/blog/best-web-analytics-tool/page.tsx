@@ -938,7 +938,7 @@ export default function BestWebAnalyticsToolPage() {
                 >
                   personal data
                 </Link>{" "}
-                collected, no cookies, no device fingerprinting, no client-side
+                collected, no cookies, no persistent device identifier, no client-side
                 storage. This is not a stricter version of compliance — it is a
                 different mechanism. A platform that processes no personal data
                 is largely outside the material scope of the rules, rather than

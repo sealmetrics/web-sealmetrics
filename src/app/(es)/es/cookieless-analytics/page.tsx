@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "¿La analítica sin cookies es legal bajo RGPD?",
-    a: "Puede serlo, y la vía es arquitectónica, no contractual. Cuando no se almacenan datos personales ni identificadores y nada se guarda ni se lee en el dispositivo, no se activan las obligaciones del RGPD ligadas al dato personal y la regla de almacenamiento y acceso de ePrivacy no tiene a qué aplicarse. Que una implantación concreta quede exenta de consentimiento depende aun así de su configuración y de los criterios de cada autoridad: la CNIL, la DSK alemana y el ICO británico publican los suyos, y no son idénticos. Sealmetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
+    a: "Puede serlo, y la vía es arquitectónica, no contractual. Cuando no se conservan datos personales ni identificadores persistentes, nada se guarda en el dispositivo y la medición solo sirve para las estadísticas de audiencia de la propia web, no se activan las obligaciones del RGPD ligadas al dato personal y el uso encaja en la exención de medición de audiencia de la regla de almacenamiento y acceso de ePrivacy. Que una implantación concreta quede exenta de consentimiento depende aun así de su configuración y de los criterios de cada autoridad: la CNIL, la DSK alemana y el ICO británico publican los suyos, y no son idénticos. Sealmetrics incluye DPA, procesamiento exclusivo en la UE (Dublín) y un paquete TPSR para revisión legal.",
   },
   {
     q: "¿Qué precisión tiene comparada con GA4?",
@@ -132,8 +132,8 @@ export default function CookielessAnalyticsPillarEs() {
             La analítica sin cookies es analítica web que captura
             páginas vistas, eventos y conversiones{" "}
             <strong>anónimamente, en el lado servidor</strong>, opcionalmente
-            desde un subdominio de tu propio dominio — sin cookies, sin
-            fingerprinting, sin identificadores personales. No pierde visitas
+            desde un subdominio de tu propio dominio — sin cookies y sin
+            identificadores persistentes. No pierde visitas
             por el rechazo del consentimiento porque no hay cookie que el
             navegador expire ni que el visitante rechace, y servida first-party
             reduce la pérdida por ad-blockers. El trade-off es honesto:
@@ -251,7 +251,7 @@ export default function CookielessAnalyticsPillarEs() {
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 El endpoint del pixel corre en Dublín y cuenta eventos
                 a nivel de canal, campaña y landing page. No se crea
-                identificador de usuario. No se almacena fingerprint de
+                identificador persistente de usuario. No se almacena fingerprint de
                 IP + User-Agent. El sistema sabe que llegaron 142
                 pageviews desde Google CPC en una landing específica;
                 no sabe que el visitante A y el visitante B eran la

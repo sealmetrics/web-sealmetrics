@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Why Sealmetrics — aggregate analytics without IDs",
     description:
-      "Measure observed campaign and revenue events without browser identifiers, with EU-hosted processing and clear reporting boundaries.",
+      "Measure observed campaign and revenue events without persistent browser identifiers, with EU-hosted processing and clear reporting boundaries.",
     type: "website",
     images: [ogImage("/why-sealmetrics/")],
     url: "https://sealmetrics.com/why-sealmetrics/",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Why Sealmetrics — aggregate analytics without IDs",
-    description: "Measure observed campaign and revenue events without browser identifiers, with EU-hosted processing and clear reporting boundaries.",
+    description: "Measure observed campaign and revenue events without persistent browser identifiers, with EU-hosted processing and clear reporting boundaries.",
     images: [ogImage("/why-sealmetrics/")],
   },
   alternates: {
@@ -80,7 +80,7 @@ function Hero() {
         <DualCTA locale="en" className="justify-center mt-8" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["Privacy-led architecture", "No browser identifiers", "EU processing", "EU-hosted · Dublin"].map((b) => (
+          {["Privacy-led architecture", "No persistent identifiers", "EU processing", "EU-hosted · Dublin"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -474,7 +474,7 @@ function FiveOutcomes() {
               <MiniBar label="Sealmetrics" pct={100} color="var(--color-brand)" textColor="text-brand" />
             </div>
             <p className="text-[14px] leading-[1.55] text-ink-soft mt-auto">
-              No browser identifier or consent gate in the analytics layer. Coverage still
+              No persistent browser identifier or consent gate in the analytics layer. Coverage still
               depends on correct implementation, network delivery and blockers.{" "}
               <Link href="/complete-data" className="text-brand no-underline border-b border-brand/30 hover:border-brand">
                 Complete data
@@ -684,9 +684,9 @@ function CmoOutcomes() {
    ============================================ */
 function Mechanism() {
   const steps = [
-    { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
+    { n: "01", t: "No cookies", d: "Nothing stored on the device; an ephemeral identifier that rotates daily. Aggregate events — hits, not people." },
     { n: "02", t: "Aggregate events", d: "The product is designed around hits and commercial properties, not personal profiles." },
-    { n: "03", t: "No browser identifier", d: "Coverage still depends on implementation and delivery; the privacy model does not depend on a visitor profile." },
+    { n: "03", t: "No persistent identifier", d: "Coverage still depends on implementation and delivery; the privacy model does not depend on a visitor profile." },
   ];
 
   return (
@@ -695,7 +695,7 @@ function Mechanism() {
         <div className="max-w-[52ch] mb-12">
           <span className="eyebrow mb-5">The obvious question</span>
           <h2 className="h-section mt-5">
-            How does measurement work <em>without browser identifiers?</em>
+            How does measurement work <em>without persistent identifiers?</em>
           </h2>
         </div>
 
@@ -812,7 +812,7 @@ function ProofSlab() {
    ============================================ */
 function ComparisonAnchor() {
   const rows: { label: string; ga4: string; ga360: string; adobe: string; seal: string }[] = [
-    { label: "EU traffic collection", ga4: "Consent-gated", ga360: "Consent-gated", adobe: "Consent-gated", seal: "No browser identifier or consent gate in the analytics layer" },
+    { label: "EU traffic collection", ga4: "Consent-gated", ga360: "Consent-gated", adobe: "Consent-gated", seal: "No persistent browser identifier or consent gate in the analytics layer" },
     { label: "Attribution", ga4: "Modelled", ga360: "Modelled + sampled", adobe: "Consented data only", seal: "Last-click on observed aggregate events" },
     { label: "EU compliance", ga4: "Schrems II review", ga360: "Schrems II review", adobe: "US transfer review", seal: "Privacy-led architecture · Dublin" },
     { label: "Your data & AI", ga4: "Google ecosystem", ga360: "Google ecosystem", adobe: "Adobe ecosystem", seal: "Private AI or BYOK" },
@@ -981,7 +981,7 @@ export default function WhySealmetricsPage() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/why-sealmetrics",
-          name: "Why Sealmetrics — aggregate analytics without identifiers",
+          name: "Why Sealmetrics — aggregate analytics without persistent identifiers",
           dateModified: "2026-09-21",
         })}
       />

@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     question: "Does Sealmetrics require changes to my existing cookie banner?",
-    answer: "No. Sealmetrics does not use cookies, localStorage or fingerprinting, so no consent banner is required for its operation. It runs alongside any existing CMP configuration without interfering with it.",
+    answer: "No. Sealmetrics stores nothing on the device (no cookies, no localStorage) and uses only an ephemeral identifier that rotates daily, for the site's own audience statistics, so in our self-assessment no consent banner is required for its operation. It runs alongside any existing CMP configuration without interfering with it.",
   },
 ];
 import { getAlternates } from "@/lib/i18n/navigation";

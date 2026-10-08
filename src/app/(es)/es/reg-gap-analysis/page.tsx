@@ -53,7 +53,7 @@ const requirements = [
     title: "Consentimiento para el almacenamiento en el dispositivo",
     demand: "Cualquier cookie, entrada de localStorage o fingerprint no esencial necesita consentimiento previo antes de colocarse.",
     gap: "GA4 y Adobe dejan cookies, así que el banner es obligatorio — y en torno a un tercio de los visitantes UE lo rechaza.",
-    close: "Sin cookies, sin localStorage, sin fingerprinting — no se almacena nada en el dispositivo, así que no se activa el consentimiento.",
+    close: "Sin cookies, sin localStorage — no se almacena nada en el dispositivo. El identificador de sesión es efímero y rota cada día, y la medición encaja en la exención de medición de audiencia.",
   },
   {
     reg: "RGPD · Art. 6",
@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "¿Puede la analítica funcionar sin banner tras un análisis de brechas?",
-    a: "Sí, cuando el análisis confirma dos cosas: que no se almacena ni se lee nada en el dispositivo del visitante (superando el artículo 5(3) de ePrivacy), y que no se trata dato personal (así que el RGPD no aplica a la medición). Los reguladores han convergido en esta lectura — la CNIL francesa mantiene una exención de analítica, y la DUAA 2025 del Reino Unido introdujo otra bajo PECR. Una herramienta que cumple ambas condiciones puede medir de forma lícita sin banner y, como consecuencia, sin la pérdida de dato UE que un banner provoca.",
+    a: "Sí, cuando el análisis confirma dos cosas: que no se almacena nada en el dispositivo del visitante y que lo que se lee solo sirve para las estadísticas de audiencia de la propia web, sin identificador persistente (encajando en la exención de medición de audiencia del artículo 5(3) de ePrivacy), y que no se trata dato personal (así que el RGPD no aplica a la medición). Los reguladores han convergido en esta lectura — la CNIL francesa mantiene una exención de analítica, y la DUAA 2025 del Reino Unido introdujo otra bajo PECR. Una herramienta que cumple ambas condiciones puede medir de forma lícita sin banner y, como consecuencia, sin la pérdida de dato UE que un banner provoca.",
   },
 ];
 

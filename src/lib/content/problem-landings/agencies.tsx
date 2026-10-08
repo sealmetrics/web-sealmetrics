@@ -394,7 +394,7 @@ export const agenciesEs: ProblemLandingContent = {
       ["No importa la inversión", "El coste sale de cada plataforma y se cruza con los ingresos medidos en una hoja de cálculo, en BigQuery o con un asistente de IA."],
       ["Un cliente cada vez en el panel", "Los clientes son organizaciones separadas y se cambia de una a otra. Una vista que combine varios clientes se construye en BigQuery o con la API."],
       ["El acceso lo decide el cliente", "El Owner controla la facturación y los miembros. Un Admin no puede eliminar a un Owner y un Member solo ve los sitios asignados."],
-      ["Sin audiencias ni datos por usuario", "Los datos son agregados y sin identificadores de visitante, así que no sirven para listas de remarketing ni para seguir a una persona entre sesiones."],
+      ["Sin audiencias ni datos por usuario", "Los datos son agregados y sin identificadores persistentes de visitante, así que no sirven para listas de remarketing ni para seguir a una persona entre sesiones."],
       ["Último clic por sesión y nada más", "Sin modelo multitoque ni view-through. Las campañas de parte alta del embudo necesitan un test con grupo de control o por zonas antes de recortarlas."],
     ],
   },

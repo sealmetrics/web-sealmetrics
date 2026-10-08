@@ -120,7 +120,7 @@ const faqs = [
   {
     question: "¿La analítica web requiere un banner de consentimiento?",
     answer:
-      "No siempre. Un banner solo es legalmente obligatorio cuando tu analítica hace algo que activa el consentimiento bajo una de dos leyes. Bajo la Directiva ePrivacy (artículo 5(3)) se necesita consentimiento para almacenar o leer información en el dispositivo del visitante —una cookie, una entrada de localStorage, un fingerprint—. Bajo el RGPD se necesita una base jurídica para tratar datos personales como una IP o un identificador online. La analítica que no almacena nada en el dispositivo y no trata dato personal supera ambas barreras, y no requiere banner.",
+      "No siempre. Un banner solo es legalmente obligatorio cuando tu analítica hace algo que activa el consentimiento bajo una de dos leyes. Bajo la Directiva ePrivacy (artículo 5(3)) se necesita consentimiento para almacenar o leer información en el dispositivo del visitante —una cookie, una entrada de localStorage, un fingerprint—. Bajo el RGPD se necesita una base jurídica para tratar datos personales como una IP o un identificador online. La analítica que no almacena nada en el dispositivo, usa lo que lee solo para las estadísticas de audiencia de la propia web y no trata dato personal puede superar ambas barreras gracias a la exención de medición de audiencia, y no requiere banner.",
   },
   {
     question: "¿Google Analytics (GA4) cumple el RGPD?",
@@ -145,7 +145,7 @@ const faqs = [
   {
     question: "¿Qué hace a Sealmetrics libre de consentimiento por diseño?",
     answer:
-      "Sealmetrics no almacena nada en el dispositivo del visitante ni trata dato personal. No hay cookies, ni localStorage, ni fingerprinting, ni retención de IP ni identificadores personales — la medición es agregada y anónima a nivel de evento. Como supera tanto el test de dispositivo de ePrivacy como el test de dato personal del RGPD, no se requiere legalmente ningún banner. El dato de visitantes se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2; su caso se apoya en la arquitectura — diseñada para el RGPD desde la arquitectura (autoevaluación), ePrivacy y alojamiento UE limpio bajo Schrems II.",
+      "Sealmetrics no almacena nada en el dispositivo del visitante ni trata dato personal. No hay cookies, ni localStorage, ni retención de IP, ni identificador persistente — las visitas se agrupan con un identificador efímero que rota cada día y no se puede enlazar entre días ni entre webs. Como la medición se limita a las estadísticas de audiencia de la propia web, sin seguimiento entre webs ni reutilización, y no trata dato personal, no se requiere legalmente ningún banner. El dato de visitantes se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2; su caso se apoya en la arquitectura — diseñada para el RGPD desde la arquitectura (autoevaluación), ePrivacy y alojamiento UE limpio bajo Schrems II.",
   },
 ];
 
@@ -254,7 +254,7 @@ export default function Page() {
                   <div>
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-amber mb-2">Test 1 · el dispositivo</div>
                     <p className="text-[0.98rem] leading-[1.65]">
-                      No se almacena ni se lee nada en el dispositivo del visitante — sin cookies, sin localStorage, sin fingerprinting. Esto supera el artículo 5(3) de ePrivacy, el disparador de consentimiento que aplica a <em>todo</em> almacenamiento, personal o no.
+                      No se almacena nada en el dispositivo del visitante — sin cookies, sin localStorage — y el identificador de sesión es efímero y rota cada día. La medición se limita a las estadísticas de audiencia de la propia web, la condición de la exención de medición de audiencia del artículo 5(3) de ePrivacy, el disparador de consentimiento que aplica a <em>todo</em> almacenamiento y acceso, personal o no.
                     </p>
                   </div>
                   <div className="border-t border-warm-50/15 pt-6">

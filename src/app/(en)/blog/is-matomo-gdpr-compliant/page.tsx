@@ -287,8 +287,10 @@ export default function Page() {
             <p>
               There is a second route to the same place, and it is the one that
               does not depend on holding a configuration correct over time. If a
-              tool writes nothing to the device and reads nothing from it,
-              Article 5(3) is not engaged at all. If it processes no personal
+              tool writes nothing to the device, keeps no persistent identifier
+              and uses what it reads only for the site&apos;s own audience
+              statistics, it fits the audience-measurement exemption from
+              Article 5(3) by construction. If it processes no personal
               data, the GDPR consent question does not arise either. Compliance
               stops being a setting your team has to maintain and evidence, and
               becomes a property of how collection works.

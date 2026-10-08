@@ -372,7 +372,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           h2a: "¿Medir sin consentimiento, legalmente?",
           h2em: "Así es cómo.",
           steps: [
-            { n: "01", t: "Sin cookies", d: "Sin identificadores, sin fingerprints. Eventos agregados — hits, no personas." },
+            { n: "01", t: "Sin cookies", d: "No guardamos nada en el dispositivo; identificador efímero que rota cada día. Eventos agregados — hits, no personas." },
             { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
             { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Medir sin pérdida por consentimiento y la privacidad son el mismo diseño." },
           ],
@@ -395,7 +395,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           h2a: "\u201cMeasure without consent, legally?\u201d",
           h2em: "Here's how.",
           steps: [
-            { n: "01", t: "No cookies", d: "No identifiers, no fingerprints. Aggregate events — hits, not people." },
+            { n: "01", t: "No cookies", d: "Nothing stored on the device; an ephemeral identifier that rotates daily. Aggregate events — hits, not people." },
             { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
             { n: "03", t: "Nothing to consent to", d: "No profile to object to. Consent-independent measurement and privacy are the same design." },
           ],

@@ -47,7 +47,7 @@ const criteria = [
     n: "01",
     title: "Strictly limited purpose",
     cnil: "Measurement must serve only audience analytics — no marketing, no advertising, no profiling.",
-    us: "Aggregate channel and conversion counts only. No identifier, no profile, no audience export to ad platforms.",
+    us: "Aggregate channel and conversion counts only. No persistent identifier, no profile, no audience export to ad platforms.",
   },
   {
     n: "02",
@@ -175,7 +175,7 @@ export default function GdprAnalyticsFrancePage() {
             purpose, no cross-site tracking, anonymised or
             uncollected IPs, no merging with other personal data, and
             aggregate-only reporting. Sealmetrics meets each criterion
-            by design — no identifier is generated, no cookie is set,
+            by design — no persistent identifier is generated, no cookie is set,
             no IP is collected, no cross-site data path exists. The
             architecture sits inside the exemption rather than
             depending on it.

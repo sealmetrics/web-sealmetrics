@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is cookieless analytics legal under GDPR?",
-    a: "It can be, and the route is architectural rather than contractual. When no personal data or identifier is stored and nothing is stored on or read from the device, the GDPR obligations that attach to personal data are not triggered and the ePrivacy storage-and-access rule has nothing to attach to. Whether a given deployment is consent-exempt still depends on its configuration and on the national regulator's criteria — the CNIL, the German DSK and the UK ICO each publish their own, and they are not identical. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
+    a: "It can be, and the route is architectural rather than contractual. When no personal data or persistent identifier is kept, nothing is stored on the device and measurement serves only the site's own audience statistics, the GDPR obligations that attach to personal data are not triggered and the use fits the audience-measurement exemption from the ePrivacy storage-and-access rule. Whether a given deployment is consent-exempt still depends on its configuration and on the national regulator's criteria — the CNIL, the German DSK and the UK ICO each publish their own, and they are not identical. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
@@ -145,8 +145,8 @@ export default function CookielessAnalyticsPillar() {
             Cookieless analytics is web analytics that captures pageviews,
             events and conversions{" "}
             <strong>anonymously, on the server side</strong>, optionally from
-            a subdomain of your own domain — without cookies, fingerprinting
-            or personal identifiers. It doesn&apos;t lose visitors to consent
+            a subdomain of your own domain — without cookies or persistent
+            identifiers. It doesn&apos;t lose visitors to consent
             rejection because there is no cookie for browsers to expire or for
             visitors to reject, and served first-party it is far less exposed
             to ad blockers. The
@@ -297,7 +297,7 @@ export default function CookielessAnalyticsPillar() {
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 The pixel endpoint runs in Dublin and counts events at
-                channel, campaign and landing-page level. No user identifier
+                channel, campaign and landing-page level. No persistent user identifier
                 is created. No fingerprint of IP plus User-Agent is stored.
                 The system knows that 142 pageviews arrived from Google CPC
                 on a specific landing page; it does not know that visitor

@@ -288,8 +288,10 @@ export default function Page() {
             <p>
               Hay una segunda vía al mismo sitio, y es la que no depende de
               sostener una configuración correcta en el tiempo. Si una herramienta
-              no escribe nada en el dispositivo ni lee nada de él, el artículo 5(3)
-              no llega a activarse. Si no trata dato personal, la pregunta del
+              no escribe nada en el dispositivo, no conserva identificadores
+              persistentes y usa lo que lee solo para las estadísticas de audiencia
+              de la propia web, encaja por construcción en la exención de medición
+              de audiencia del artículo 5(3). Si no trata dato personal, la pregunta del
               consentimiento bajo RGPD tampoco se plantea. El cumplimiento deja de
               ser un ajuste que tu equipo tiene que mantener y demostrar, y pasa a
               ser una propiedad de cómo se recoge el dato.

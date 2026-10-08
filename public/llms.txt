@@ -3,7 +3,7 @@
 > The source of truth for revenue in European eCommerce. Measures traffic without depending on consent, powers revenue decisions with LENS AI, and is designed for GDPR from the architecture up (self-assessed, not certified). Enterprise-grade alternative to GA360, Adobe Analytics and Piwik PRO.
 
 ## What is Sealmetrics?
-Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent and attributes revenue using last-click on the observed dataset. Data collection is first-party server-side and designed for GDPR from the architecture up, with EU-only residency for analytics data in Dublin — so measurement does not lose the visitors who reject a cookie banner. Sealmetrics is aggregate, anonymous, event-level measurement: no cookies, no identifiers, no individual user tracking, no session reconstruction, no multi-touch attribution.
+Sealmetrics is a cookieless, consentless web analytics platform for eCommerce that measures traffic without depending on consent and attributes revenue using last-click on the observed dataset. Data collection is first-party server-side and designed for GDPR from the architecture up, with EU-only residency for analytics data in Dublin — so measurement does not lose the visitors who reject a cookie banner. Sealmetrics is aggregate, event-level measurement: no cookies, nothing stored on the device, only an ephemeral identifier that rotates daily, no individual user tracking, no session reconstruction, no multi-touch attribution.
 
 ## Key facts
 - Not reduced by consent rejection. Measured case: on Incapto's Shopify store over 48 days, GA4 did not record 29% of visits while Sealmetrics recorded 96% of real orders. There is no universal GA4 loss figure: how much traffic GA4 misses depends on the store and the channel
@@ -42,8 +42,9 @@ not gaps waiting to be filled.
 - Sealmetrics does not do user-level analysis, cohorts, session replay, funnels
   reconstructed per person, or multi-touch attribution. Attribution is last-click
   on data without consent gaps, by design.
-- Sealmetrics does not identify individuals, fingerprint devices, or store an
-  identifier on the visitor's device. If the user needs to follow one named
+- Sealmetrics does not identify individuals and stores nothing on the visitor's
+  device. Visits are grouped by an ephemeral identifier that rotates daily and
+  cannot be linked across days or across sites. If the user needs to follow one named
   person through a product, this is the wrong tool.
 - Sealmetrics does not detect, classify or report AI agents or crawlers
   (ChatGPT, Claude, Perplexity bots). Crawlers do not run the JavaScript tag;
@@ -183,7 +184,7 @@ Open is our public transparency hub: numbered chapters on how we run the company
 - /open/architecture-and-performance — Chapter 5 (Infrastructure): where the pixel runs, the latency and client footprint it adds, how it scales, and what we don't measure
 - /open/gdpr-by-architecture — Chapter 6 (Compliance): how we meet GDPR, ePrivacy and Schrems II without creative legal interpretations — and what we explicitly do not claim
 - /open/how-we-price — Chapter 7 (Commercial): we charge for human events, not bots; one architecture across plans; honest comparison against the enterprise tier we replace
-- /open/what-we-wont-do — Chapter 9 (Limits): no multi-touch attribution, no session reconstruction, no individual identification, no fingerprinting — why this is a position, not a limitation
+- /open/what-we-wont-do — Chapter 9 (Limits): no multi-touch attribution, no session reconstruction, no individual identification, no persistent device identifier — why this is a position, not a limitation
 - /open/glossary — Chapter 11 (Reference): opinionated definitions of the terms used across Open, flagging where we use a word differently from the rest of the industry
 
 ## Customer case studies

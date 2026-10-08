@@ -271,8 +271,8 @@ export default function SealAiVsByokPageEs() {
             <p>
               Hay una propiedad más que conviene nombrar, porque está aguas arriba de
               todo lo anterior. Sealmetrics es analítica sin consentimiento: no recoge
-              direcciones IP, ni cookies, ni fingerprints, ni identificadores de
-              visitante. No hay ningún identificador personal en el conjunto de datos
+              direcciones IP ni cookies y no conserva ningún identificador
+              persistente de visitante, solo uno efímero que rota cada día. No hay ningún identificador personal en el conjunto de datos
               que enviar a un modelo, para empezar. El prompt nace limpio.
             </p>
 

@@ -272,7 +272,7 @@ export default function ConsentlessAnalyticsPillarEs() {
                 personal es cualquier información que se refiere a una
                 persona física identificada o identificable. Si un
                 sistema de medición procesa sólo conteos agregados —
-                nunca un identificador, nunca un fingerprint, nunca un
+                nunca un identificador persistente, nunca un
                 perfil de comportamiento — el sistema no procesa datos
                 personales. El reglamento no aplica al output de
                 medición. El EDPB confirmó este razonamiento en la
@@ -287,10 +287,13 @@ export default function ConsentlessAnalyticsPillarEs() {
                 ePrivacy exige consentimiento antes de almacenar o acceder
                 a información en el dispositivo del usuario. El ejemplo
                 clásico es una cookie. Si el sistema de medición no
-                escribe cookie, no lee localStorage y no usa fingerprint,
-                no hay nada en el dispositivo que dispare el Art. 5(3).
-                No se requiere diálogo de consentimiento para esa ruta
-                de procesamiento.
+                escribe cookie ni localStorage, no conserva identificadores
+                persistentes y usa lo que lee solo para las estadísticas de
+                audiencia de la propia web — sin seguimiento entre webs ni
+                reutilización —, encaja en la exención de medición de
+                audiencia que autoridades como la CNIL y la AEPD aplican al
+                Art. 5(3). No se requiere diálogo de consentimiento para esa
+                ruta de procesamiento.
               </p>
             </div>
 
@@ -311,7 +314,7 @@ export default function ConsentlessAnalyticsPillarEs() {
           </div>
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
-            La implementación técnica — recolección first-party server-side sin identificadores — está documentada en{" "}
+            La implementación técnica — recolección first-party server-side sin identificadores persistentes — está documentada en{" "}
             <Link href="/es/cookieless-analytics" className="text-brand underline decoration-1 underline-offset-2">
               analítica sin cookies
             </Link>

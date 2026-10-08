@@ -43,7 +43,7 @@ export const productAnswer: Record<Locale, ReactNode> = {
   es: (
     <p>
       Sealmetrics es una plataforma de analítica web cookieless y sin
-      consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores y sin
+      consentimiento para eCommerce. Mide las visitas sin cookies, sin identificadores persistentes y sin
       banner, así que el total que reporta incluye a quien acepta y a quien
       rechaza el banner, no solo a la parte que aceptó ser medida — en la tienda Shopify de
       Incapto, medida durante 48 días, GA4 no registró el 29% de las visitas, y

@@ -335,9 +335,11 @@ export default function WhyGA4MissesTrafficPageEs() {
             </Link>
             , server-side. Un script ligero (menos de 1 KB), que puede servirse
             desde un subdominio de tu propio dominio, recoge los eventos. No se
-            instalan cookies. Como nada se guarda ni se lee en el dispositivo del
-            visitante, el requisito de consentimiento no tiene a qué aplicarse, y
-            no se pierde ninguna visita por rechazo del banner. Lo completa que
+            instalan cookies ni se guarda nada en el dispositivo del visitante; el
+            identificador de sesión rota cada día y solo sirve para las
+            estadísticas de audiencia de la propia web, así que la medición puede
+            apoyarse en la exención de medición de audiencia y no se pierde
+            ninguna visita por rechazo del banner. Lo completa que
             sea el resto de la cobertura depende de la implementación; por eso
             las cifras de Incapto se cuadran contra los pedidos reales de la
             tienda en lugar de darse por hechas.

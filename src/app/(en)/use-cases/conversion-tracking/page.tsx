@@ -163,8 +163,8 @@ export default function ConversionTrackingPage() {
             <div className="border border-warm-100 rounded-2xl p-7 bg-warm-white">
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-4">Measurement layer</h3>
               <p className="text-[15px] leading-[1.7] text-ink">
-                The number the CFO sees. Aggregate, anonymous, no
-                cookie, no identifier, no consent banner. Captures
+                The number the CFO sees. Aggregate, no
+                cookie, no persistent identifier, no consent banner. Captures
                 observed conversions from visitors who accept and reject the
                 banner alike, without consent gaps.
                 Reconciles with the eCommerce backend&rsquo;s order total.
@@ -353,7 +353,7 @@ export default function ConversionTrackingPage() {
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand">Pillar</span>
               <h3 className="mt-3 text-[18px] font-semibold tracking-[-0.01em] text-ink leading-[1.3] group-hover:text-brand transition-colors">Cookieless analytics</h3>
               <p className="mt-3 text-[14.5px] leading-[1.6] text-ink-soft">
-                The architecture that makes the measurement layer possible — first-party server-side without identifiers.
+                The architecture that makes the measurement layer possible — first-party server-side without persistent identifiers.
               </p>
             </Link>
           </div>

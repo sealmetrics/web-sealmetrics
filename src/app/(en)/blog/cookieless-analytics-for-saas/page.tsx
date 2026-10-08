@@ -44,7 +44,7 @@ const faqs = [
   {
     question: "Does cookieless analytics track individual visitors or users?",
     answer:
-      "No. On the marketing site, Sealmetrics counts events anonymously — no cookies, no identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in your product analytics tool or your own product database, where the user is authenticated and tracking is a different compliance question.",
+      "No. On the marketing site, Sealmetrics counts events in aggregate — no cookies, no persistent identifiers, no per-visitor profile. The output is channel-level totals. Per-user product analytics happens downstream in your product analytics tool or your own product database, where the user is authenticated and tracking is a different compliance question.",
   },
   {
     question: "Does cookieless analytics replace my product analytics tool?",

@@ -319,7 +319,7 @@ export default function ConsentlessAnalyticsPillar() {
                 data.&rdquo; Personal data is any information that relates
                 to an identified or identifiable natural person. If a
                 measurement system processes only aggregate counts — never
-                an identifier, never a fingerprint, never a behavioural
+                a persistent identifier, never a behavioural
                 profile — the system does not process personal data. The
                 Regulation does not apply to its measurement output. Assess the data processed at every stage, not only the final report.
               </p>
@@ -336,10 +336,12 @@ export default function ConsentlessAnalyticsPillar() {
                 ePrivacy requires consent before storing or accessing
                 information on the user&apos;s terminal device. The classic
                 example is a cookie. If the measurement system writes no
-                cookie, reads no localStorage, and uses no device
-                fingerprint, there is nothing on the terminal device to
-                trigger Art. 5(3). No consent dialog is required for that
-                processing path.
+                cookie and no localStorage, keeps no persistent identifier
+                and uses what it reads only for the site&apos;s own audience
+                statistics — no cross-site tracking, no reuse — it fits the
+                audience-measurement exemption that authorities such as the
+                CNIL and the AEPD apply to Art. 5(3). No consent dialog is
+                required for that processing path.
               </p>
             </div>
 
@@ -363,7 +365,7 @@ export default function ConsentlessAnalyticsPillar() {
 
           <p className="mt-10 text-[17px] leading-[1.75] text-ink-soft">
             The technical implementation — first-party server-side
-            collection without identifiers — is documented at{" "}
+            collection without persistent identifiers — is documented at{" "}
             <Link
               href="/cookieless-analytics"
               className="text-brand underline decoration-1 underline-offset-2"

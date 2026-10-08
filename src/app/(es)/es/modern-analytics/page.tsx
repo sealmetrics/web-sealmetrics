@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
-    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos personales, ni cookies, ni localStorage, ni fingerprinting. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
+    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos personales, ni cookies, ni localStorage, ni identificador persistente. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
   },
   {
     q: "¿Cómo migro desde mi analítica actual?",
@@ -118,14 +118,14 @@ const pillars = [
   {
     eyebrow: "Cumplimiento",
     title: "Diseñada para el RGPD",
-    body: "Sin cookies. Sin localStorage. Sin fingerprint. Sin datos personales. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
+    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Sin datos personales. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners requeridos",
   },
 ];
 
 const comparisonRows: Array<{ feature: string; legacy: string; modern: string }> = [
-  { feature: "Cookies / fingerprinting", legacy: "Requerido", modern: "Ninguno" },
+  { feature: "Cookies / identificadores persistentes", legacy: "Requerido", modern: "Ninguno" },
   { feature: "Banner de consentimiento", legacy: "Sí", modern: "No" },
   { feature: "Tráfico UE capturado", legacy: "No ve a quien rechaza el consentimiento (el 40–60% del tráfico, en nuestra experiencia con clientes)", modern: "Sin pérdida por consentimiento" },
   { feature: "Sampling en queries pesadas", legacy: "Sí (Card-2 / umbrales)", modern: "No" },

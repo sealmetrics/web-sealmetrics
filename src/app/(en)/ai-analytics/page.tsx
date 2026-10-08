@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "Does AI analytics require cookies or personal data?",
-    a: "It does not have to. Sealmetrics measures aggregate, anonymous events with no cookies, no localStorage, no fingerprinting and no personal data, and attributes revenue last-click at the event level. Because there is zero PII by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
+    a: "It does not have to. Sealmetrics measures aggregate events with no cookies, no localStorage, no persistent identifier (only an ephemeral one that rotates daily) and no personal data, and attributes revenue last-click at the event level. Because there is zero PII by construction, the AI layer cannot surface a person, reconstruct an individual journey, or run multi-touch models — it answers only what aggregate, complete data can answer, which is exactly what keeps the answers honest and compliant.",
   },
 ];
 

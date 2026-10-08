@@ -314,7 +314,7 @@ export default function McpDocsPage() {
           <p className="mt-6 text-[17px] leading-[1.65] text-ink-soft max-w-[70ch]">
             Sealmetrics is{" "}
             <Link href="/glossary/cookieless-analytics">cookieless analytics</Link>: no cookie, no
-            fingerprint, no visitor identifier, and therefore no{" "}
+            persistent visitor identifier, and therefore no{" "}
             <Link href="/glossary/personal-data-in-analytics">personal data</Link> in the store the
             connector reads. That is what makes an AI assistant safe to point at it — the model cannot
             leak an identifier that was never collected.

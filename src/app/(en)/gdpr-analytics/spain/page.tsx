@@ -47,13 +47,13 @@ const criteria = [
     n: "01",
     title: "Anonymous aggregate measurement",
     requirement: "AEPD 2024 cookies guide: tools used only for anonymous audience measurement, with no cross-site tracking, do not require consent.",
-    us: "Aggregate channel and conversion counts only. No identifier per visitor, no profile, no cross-site behaviour tracked. The criterion is met by architectural design.",
+    us: "Aggregate channel and conversion counts only. No persistent identifier per visitor, no profile, no cross-site behaviour tracked. The criterion is met by architectural design.",
   },
   {
     n: "02",
     title: "No personal data processed",
     requirement: "AEPD aligns with the EDPB Opinion 5/2019: if the processing does not relate to an identified or identifiable person, GDPR material scope does not apply.",
-    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No identifier generated. The events are channel-level aggregates from the moment they hit the server.",
+    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No persistent identifier: the session identifier rotates daily and cannot be linked across days. The events are channel-level aggregates from the moment they hit the server.",
   },
   {
     n: "03",

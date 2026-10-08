@@ -53,7 +53,7 @@ const requirements = [
     title: "Consent for device storage",
     demand: "Any non-essential cookie, localStorage entry or fingerprint needs prior consent before it is set.",
     gap: "GA4 and Adobe set cookies, so a consent banner is mandatory — and roughly a third of EU visitors decline it.",
-    close: "No cookies, no localStorage, no fingerprinting — nothing is stored on the device, so no consent is triggered.",
+    close: "No cookies, no localStorage — nothing is stored on the device. The session identifier is ephemeral and rotates daily, and measurement fits the audience-measurement exemption.",
   },
   {
     reg: "GDPR · Art 6",
@@ -134,7 +134,7 @@ const faqs = [
   },
   {
     q: "Can analytics run without a consent banner after a gap analysis?",
-    a: "Yes, when the analysis confirms two things: nothing is stored on or read from the visitor's device (clearing ePrivacy Article 5(3)), and no personal data is processed (so GDPR does not apply to the measurement). Regulators have converged on this reading — France's CNIL maintains an analytics exemption, and the UK's DUAA 2025 introduced one under PECR. A tool that meets both conditions can measure lawfully with no banner and, as a result, without the EU data loss a banner causes.",
+    a: "Yes, when the analysis confirms two things: nothing is stored on the visitor's device and what is read serves only the site's own audience statistics, with no persistent identifier (fitting the audience-measurement exemption from ePrivacy Article 5(3)), and no personal data is processed (so GDPR does not apply to the measurement). Regulators have converged on this reading — France's CNIL maintains an analytics exemption, and the UK's DUAA 2025 introduced one under PECR. A tool that meets both conditions can measure lawfully with no banner and, as a result, without the EU data loss a banner causes.",
   },
 ];
 

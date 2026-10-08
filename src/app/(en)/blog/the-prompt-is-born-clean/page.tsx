@@ -51,7 +51,7 @@ const FAQ = [
   {
     question: "Can AI analytics be GDPR compliant without consent?",
     answer:
-      "Yes, if the underlying analytics collects no personal data. Consent under ePrivacy is triggered by storing or accessing information on a device, and GDPR obligations are triggered by processing personal data. Analytics that sets no cookies and collects no IPs, fingerprints or visitor identifiers avoids both triggers, so an AI layer reading those aggregated metrics is not processing personal data either.",
+      "Yes, if the underlying analytics collects no personal data. Consent under ePrivacy is triggered by storing or accessing information on a device, and GDPR obligations are triggered by processing personal data. Analytics that sets no cookies, collects no IPs, keeps no persistent visitor identifier and is limited to the site's own audience statistics can rely on the audience-measurement exemption and process no personal data, so an AI layer reading those aggregated metrics is not processing personal data either.",
   },
   {
     question: "What data does an AI analytics assistant actually send to the model?",
@@ -66,7 +66,7 @@ const FAQ = [
   {
     question: "Does an AI assistant see individual visitors in my analytics?",
     answer:
-      "In Sealmetrics it cannot, because individual visitors are not identified anywhere in the system. There are no cookies, no IP addresses, no device fingerprints and no visitor identifiers to query, so no report and no AI answer can be resolved down to a person. That is a property of the data model, not a permission setting.",
+      "In Sealmetrics it cannot, because individual visitors are not identified anywhere in the system. There are no cookies, no IP addresses and no persistent visitor identifiers to query — the session identifier rotates daily and cannot be linked across days — so no report and no AI answer can be resolved down to a person. That is a property of the data model, not a permission setting.",
   },
   {
     question: "What is the difference between privacy-by-design and privacy-by-policy for AI?",
@@ -147,8 +147,8 @@ export default function ThePromptIsBornCleanPage() {
                 manage a risk created upstream, at collection.
               </li>
               <li>
-                Sealmetrics never collects IPs, cookies, fingerprints or visitor
-                identifiers, so there is no personal identifier available to put
+                Sealmetrics never collects IPs or cookies and keeps no persistent
+                visitor identifier, so there is no personal identifier available to put
                 in a prompt in the first place.
               </li>
               <li>
@@ -191,9 +191,10 @@ export default function ThePromptIsBornCleanPage() {
               Sealmetrics is consentless analytics. That is not a claim about
               cookie banners being optional; it is a statement about what the
               tracker records. It never collects IP addresses, never sets
-              cookies, never builds device fingerprints and never assigns visitor
-              identifiers — not hashed, not pseudonymised, not
-              &quot;anonymised.&quot; Those fields do not exist in the data
+              cookies and never assigns a persistent visitor identifier. The
+              only identifier is an ephemeral session one, pseudonymised on the
+              server with a salt that rotates daily, so it cannot be linked
+              across days. Visitor and user fields do not exist in the data
               model.
             </p>
             <p>
@@ -248,7 +249,7 @@ export default function ThePromptIsBornCleanPage() {
                     },
                     {
                       in: "Grouping labels: channel, campaign, source, medium, term",
-                      out: "Device fingerprints or probabilistic identity signals",
+                      out: "Persistent device identifiers or probabilistic identity signals",
                     },
                     {
                       in: "Dimension breakdowns: page, landing page, device type, country",

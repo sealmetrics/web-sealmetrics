@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "¿La analítica con IA necesita cookies o dato personal?",
-    a: "No tiene por qué. Sealmetrics mide eventos agregados y anónimos sin cookies, sin localStorage, sin fingerprinting y sin dato personal, y atribuye el revenue a último clic a nivel de evento. Como hay cero PII por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
+    a: "No tiene por qué. Sealmetrics mide eventos agregados sin cookies, sin localStorage, sin identificador persistente (solo uno efímero que rota cada día) y sin dato personal, y atribuye el revenue a último clic a nivel de evento. Como hay cero PII por construcción, la capa de IA no puede sacar a una persona, reconstruir un journey individual ni ejecutar modelos multi-touch — solo responde lo que el dato agregado y completo puede responder, que es justo lo que mantiene las respuestas honestas y conformes.",
   },
 ];
 

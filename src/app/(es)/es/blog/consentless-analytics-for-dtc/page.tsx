@@ -47,12 +47,12 @@ const FAQ = [
   {
     question: "¿Qué es la analítica sin consentimiento?",
     answer:
-      "Es una medición web diseñada para no activar el requisito de consentimiento: no guarda información en el dispositivo del visitante, no la lee y no recoge identificadores personales. Sin cookies, sin localStorage, sin fingerprinting y sin seguimiento individual. Cuenta eventos de forma anónima y atribuye cada conversión a último clic por canal. Queda fuera de la regla de almacenamiento y acceso de la Directiva ePrivacy; si necesita consentimiento o no depende después de los criterios de tu autoridad nacional.",
+      "Es una medición web diseñada para funcionar sin consentimiento: no guarda nada en el dispositivo del visitante, no conserva ningún identificador persistente y solo sirve para las estadísticas de audiencia de la propia web. Sin cookies, sin localStorage, sin seguimiento individual y sin seguimiento entre webs. Cuenta eventos de forma agregada y atribuye cada conversión a último clic por canal. Autoridades como la CNIL y la AEPD eximen del consentimiento de la Directiva ePrivacy a la medición de audiencia limitada a las estadísticas de la propia web, sin seguimiento entre webs ni reutilización; si necesita consentimiento o no depende después de los criterios de tu autoridad nacional.",
   },
   {
     question: "¿Sin consentimiento es lo mismo que sin cookies?",
     answer:
-      "Están muy relacionados, pero no son lo mismo. Sin cookies significa, literalmente, que no usa cookies. Sin consentimiento es un estándar más estricto: sin cookies, sin localStorage, sin fingerprinting y sin identificadores personales, de modo que la regla de almacenamiento y acceso no tiene a qué aplicarse. Toda analítica sin consentimiento es sin cookies; no toda analítica sin cookies es sin consentimiento.",
+      "Están muy relacionados, pero no son lo mismo. Sin cookies significa, literalmente, que no usa cookies. Sin consentimiento es un estándar más estricto: sin cookies, sin localStorage, sin identificador persistente y con la medición limitada a las estadísticas de audiencia de la propia web, que son las condiciones de la exención de medición de audiencia. Toda analítica sin consentimiento es sin cookies; no toda analítica sin cookies es sin consentimiento.",
   },
   {
     question: "¿La analítica sin consentimiento sigue a visitantes concretos?",
@@ -67,7 +67,7 @@ const FAQ = [
   {
     question: "¿Es legal según el RGPD?",
     answer:
-      "Puede serlo, si está bien implantada. El RGPD regula el tratamiento de datos personales; si no se recogen datos personales ni se guarda o lee ningún identificador en el dispositivo, la arquitectura evita las obligaciones asociadas a esos datos. Es algo que tu DPO debe confirmar sobre la implantación concreta; Sealmetrics incluye un DPA y un paquete TPSR para esa revisión.",
+      "Puede serlo, si está bien implantada. El RGPD regula el tratamiento de datos personales; si no se recogen datos personales ni se conserva ningún identificador persistente, la arquitectura evita las obligaciones asociadas a esos datos. Es algo que tu DPO debe confirmar sobre la implantación concreta; Sealmetrics incluye un DPA y un paquete TPSR para esa revisión.",
   },
   {
     question: "¿Puedo usarla junto a los píxeles publicitarios?",
@@ -124,7 +124,7 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
             Una marca DTC decide su presupuesto con el ROAS de sus campañas, y ese
             ROAS se calcula sobre las conversiones que su analítica llega a ver. Si
             la analítica espera al banner, solo ve a quienes aceptaron. La analítica
-            sin consentimiento no guarda ni lee nada en el dispositivo, no sigue a
+            sin consentimiento no guarda nada en el dispositivo, no sigue a
             nadie y mide cada visita, así que el reparto por canal deja de depender
             de lo que cada visitante pulsó en el banner.
           </p>
@@ -132,7 +132,7 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
           <div className="key-takeaways mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Conclusiones clave</h2>
             <ul className={`text-[0.9rem] leading-[1.7] text-text-secondary ${dashList}`}>
-              <li>Analítica sin consentimiento significa sin cookies, sin localStorage, sin fingerprinting, sin identificadores personales y sin seguimiento individual. Ese diseño es el que permite medir sin consentimiento allí donde se cumplen los criterios de exención de tu autoridad.</li>
+              <li>Analítica sin consentimiento significa sin cookies, sin localStorage, sin identificador persistente, sin seguimiento individual y sin seguimiento entre webs. Ese diseño es el que permite medir sin consentimiento allí donde se cumplen los criterios de exención de tu autoridad.</li>
               <li>Para una marca DTC, cierra el hueco que el rechazo del banner abre en el ROAS por canal: en la tienda Shopify de Incapto, GA4 no registró el 29% de las visitas.</li>
               <li>Convive con los píxeles publicitarios de Meta y Google Ads, que siguen necesitando consentimiento; la analítica no.</li>
               <li>Los totales se contrastan con el backend: en los 48 días de medición en paralelo de Incapto, Sealmetrics registró el 96% de los pedidos reales y el 97% de la facturación.</li>
@@ -158,8 +158,9 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
               describir una arquitectura diseñada para no activar el requisito de
               consentimiento. No es &ldquo;pedimos consentimiento y respetamos la
               respuesta&rdquo;, porque eso sigue dependiendo del banner: es no
-              necesitarlo, porque no se guarda ni se lee nada en el dispositivo y
-              nunca existe un identificador personal. El análisis legal, con los
+              necesitarlo, porque no se guarda nada en el dispositivo, no existe
+              ningún identificador persistente y la medición se limita a las
+              estadísticas de audiencia de la propia web. El análisis legal, con los
               criterios de cada autoridad, está en la guía de{" "}
               <Link href="/es/consentless-analytics" className={link}>analítica sin consentimiento</Link>;
               la arquitectura, en la de{" "}
@@ -170,8 +171,10 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
             <p>
               Es el punto que más se malinterpreta en marketing. La analítica sin
               consentimiento no anonimiza a un usuario al que sigue: no sigue a ningún
-              usuario. No hay identificador, ni cookie, ni clave en localStorage, ni
-              huella del navegador, ni ID anonimizado. Se cuentan vistas, se cuentan
+              usuario. No hay identificador persistente, ni cookie, ni clave en
+              localStorage, ni huella guardada. Como mucho, las visitas de una
+              sesión se agrupan con un identificador efímero que rota cada día y
+              no se puede enlazar entre días. Se cuentan vistas, se cuentan
               conversiones y cada evento lleva los metadatos del canal: referrer, UTM
               y página de llegada. Ese es todo el modelo de datos.
             </p>
@@ -187,23 +190,27 @@ export default function ConsentlessAnalyticsForDtcPageEs() {
               Los dos términos se solapan, pero no son sinónimos. Sin cookies
               significa que no se usan cookies. Sin consentimiento es un estándar más
               exigente: sin cookies, sin localStorage, sin sessionStorage, sin
-              IndexedDB, sin fingerprinting y sin ningún identificador persistente que
-              active la regla de almacenamiento y acceso de la Directiva ePrivacy.
+              IndexedDB, sin ningún identificador persistente y sin otro uso que las
+              estadísticas de audiencia de la propia web, que es lo que exige la
+              exención de medición de audiencia de la Directiva ePrivacy.
             </p>
             <p>
               Algunas herramientas &ldquo;sin cookies&rdquo; siguen usando
-              localStorage o la huella del dispositivo y, técnicamente, siguen
-              necesitando consentimiento. Las que son de verdad sin consentimiento no
-              usan ninguna de esas técnicas. Las dos opciones son mejores que una
-              analítica con cookies, pero solo una arquitectura que no guarda ni lee
-              nada en el dispositivo saca de la ecuación esa regla; si hace falta
+              localStorage o una huella persistente del dispositivo que reconoce al
+              visitante con el tiempo y, técnicamente, siguen necesitando
+              consentimiento. Las que son de verdad sin consentimiento no usan
+              ninguna de esas técnicas. Las dos opciones son mejores que una
+              analítica con cookies, pero solo una arquitectura que no guarda nada
+              en el dispositivo, no conserva identificadores persistentes y se
+              limita a las estadísticas de audiencia de la propia web encaja en la
+              exención de esa regla; si hace falta
               consentimiento o no depende después de los criterios de tu autoridad.
             </p>
 
             <h2 className={h2}>Cómo encaja en un stack DTC</h2>
             <p>Un stack DTC europeo con analítica sin consentimiento suele quedar así:</p>
             <ul className={dashList}>
-              <li><strong>Shopify, WooCommerce o Magento con analítica sin consentimiento.</strong> La analítica cuenta eventos antes del banner e independientemente de lo que se elija en él, sin crear nunca un identificador. Los detalles de instalación están en <Link href="/es/platforms/shopify" className={link}>Sealmetrics para Shopify</Link>.</li>
+              <li><strong>Shopify, WooCommerce o Magento con analítica sin consentimiento.</strong> La analítica cuenta eventos antes del banner e independientemente de lo que se elija en él, sin crear nunca un identificador persistente. Los detalles de instalación están en <Link href="/es/platforms/shopify" className={link}>Sealmetrics para Shopify</Link>.</li>
               <li><strong>Píxeles de Meta y Google Ads detrás del banner.</strong> Siguen necesitando consentimiento, porque usan datos personales para personalizar anuncios. Sealmetrics no envía conversiones a las plataformas, así que las pujas siguen funcionando con esos píxeles.</li>
               <li><strong>Plataforma de email o CRM.</strong> Funciona con el alta explícita en la lista; el seguimiento en la web que añada tiene su propio requisito de consentimiento.</li>
               <li><strong>BigQuery para modelos de marketing mix agregados.</strong> Alimentado con los totales por canal a través del conector de BigQuery, incluido en todos los planes, también en el Agentic gratuito.</li>

@@ -49,14 +49,14 @@ const criteria = [
     title: "Medición agregada y anónima",
     requirement:
       "Guía de cookies de la AEPD de 2024: las herramientas usadas únicamente para medición de audiencia anónima, sin seguimiento entre sitios, no requieren consentimiento.",
-    us: "Solo recuentos agregados de canal y conversión. Ningún identificador por visitante, ningún perfil, ningún comportamiento cruzado entre sitios. El criterio se cumple por diseño de la arquitectura, no por configuración.",
+    us: "Solo recuentos agregados de canal y conversión. Ningún identificador persistente por visitante, ningún perfil, ningún comportamiento cruzado entre sitios. El criterio se cumple por diseño de la arquitectura, no por configuración.",
   },
   {
     n: "02",
     title: "Sin tratamiento de datos personales",
     requirement:
       "La AEPD se alinea con el Dictamen 5/2019 del EDPB: si el tratamiento no se refiere a una persona identificada o identificable, no entra en el ámbito material del RGPD.",
-    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. No se genera identificador. Los eventos son agregados a nivel de canal desde que llegan al servidor.",
+    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor.",
   },
   {
     n: "03",

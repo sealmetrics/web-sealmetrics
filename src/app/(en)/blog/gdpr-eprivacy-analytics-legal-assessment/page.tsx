@@ -121,7 +121,7 @@ const faqs = [
   {
     question: "Does web analytics require a cookie consent banner?",
     answer:
-      "Not always. A consent banner is legally required only when your analytics does something that triggers consent under one of two laws. Under the ePrivacy Directive (Article 5(3)), consent is needed to store or read information on a visitor's device — a cookie, a localStorage entry, a fingerprint. Under GDPR, a lawful basis is needed to process personal data such as an IP address or an online identifier. Analytics that stores nothing on the device and processes no personal data clears both bars, and no banner is required for it.",
+      "Not always. A consent banner is legally required only when your analytics does something that triggers consent under one of two laws. Under the ePrivacy Directive (Article 5(3)), consent is needed to store or read information on a visitor's device — a cookie, a localStorage entry, a fingerprint. Under GDPR, a lawful basis is needed to process personal data such as an IP address or an online identifier. Analytics that stores nothing on the device, uses what it reads only for the site's own audience statistics and processes no personal data can clear both bars through the audience-measurement exemption, and no banner is required for it.",
   },
   {
     question: "Is Google Analytics (GA4) GDPR-compliant?",
@@ -146,7 +146,7 @@ const faqs = [
   {
     question: "What makes Sealmetrics consent-free by design?",
     answer:
-      "Sealmetrics stores nothing on the visitor's device and processes no personal data. There are no cookies, no localStorage, no fingerprinting, and no IP retention or personal identifiers — measurement is aggregate and anonymous at the event level. Because it clears both the ePrivacy device test and the GDPR personal-data test, it meets the CNIL and AEPD criteria for consent-exempt audience measurement (self-assessed), so no consent banner is needed for it. Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on data without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — designed for GDPR (self-assessed), ePrivacy, and Schrems II-clean EU hosting.",
+      "Sealmetrics stores nothing on the visitor's device and processes no personal data. There are no cookies, no localStorage, no IP retention and no persistent identifier — visits are grouped by an ephemeral identifier that rotates daily and cannot be linked across days or across sites. Because measurement is limited to the site's own audience statistics, with no cross-site tracking and no reuse, and processes no personal data, it meets the CNIL and AEPD criteria for consent-exempt audience measurement (self-assessed), so no consent banner is needed for it. Data is hosted in Dublin, Ireland, a DPA is included, and attribution is last-click on data without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification; its compliance case rests on architecture — designed for GDPR (self-assessed), ePrivacy, and Schrems II-clean EU hosting.",
   },
 ];
 
@@ -254,7 +254,7 @@ export default function Page() {
                   <div>
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-amber mb-2">Test 1 · the device</div>
                     <p className="text-[0.98rem] leading-[1.65]">
-                      Nothing is stored on or read from the visitor&apos;s device — no cookies, no localStorage, no fingerprinting. This clears ePrivacy Article 5(3), the consent trigger that applies to <em>all</em> storage, personal or not.
+                      Nothing is stored on the visitor&apos;s device — no cookies, no localStorage — and the session identifier is ephemeral and rotates daily. Measurement is limited to the site&apos;s own audience statistics, the condition of the audience-measurement exemption from ePrivacy Article 5(3), the consent trigger that applies to <em>all</em> storage and access, personal or not.
                     </p>
                   </div>
                   <div className="border-t border-warm-50/15 pt-6">
@@ -280,7 +280,7 @@ export default function Page() {
             </p>
 
             <CommercialModule
-              hook="Sealmetrics is designed to pass the consent-free test: no cookies, no identifiers, aggregate-only counts. Put the assessment questions to us directly."
+              hook="Sealmetrics is designed to pass the consent-free test: no cookies, no persistent identifiers, aggregate-only counts. Put the assessment questions to us directly."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">

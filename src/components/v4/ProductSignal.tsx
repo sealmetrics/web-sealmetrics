@@ -83,7 +83,7 @@ const copy = {
     layersBody:
       "Each layer uses the same defined inputs. That removes the hand-off where collection, attribution and reporting usually start telling different stories.",
     layers: [
-      ["01", "Capture", "Cookieless aggregate measurement", "Observe eligible events without analytics cookies, persistent visitor IDs or fingerprinting."],
+      ["01", "Capture", "Cookieless aggregate measurement", "Observe eligible events without analytics cookies, persistent visitor IDs or stored fingerprints."],
       ["02", "Attribute", "Revenue under a declared model", "Connect recorded outcomes to channel, campaign and creative using last-click on data without consent gaps."],
       ["03", "Understand", "Reports plus LENS AI", "Inspect nine reporting surfaces or ask defined metrics a plain-language question."],
       ["04", "Activate", "API, MCP and BigQuery", "Move the same evidence into your warehouse, BI layer and supervised AI workflows."],
@@ -185,7 +185,7 @@ const copy = {
     layersBody:
       "Cada capa utiliza los mismos inputs definidos. Así desaparece el punto donde captura, atribución y reporting suelen empezar a contar historias distintas.",
     layers: [
-      ["01", "Captura", "Medición agregada sin cookies", "Observa eventos elegibles sin cookies analíticas, identificadores persistentes ni fingerprinting."],
+      ["01", "Captura", "Medición agregada sin cookies", "Observa eventos elegibles sin cookies analíticas, identificadores persistentes ni huellas guardadas."],
       ["02", "Atribuye", "Ingresos bajo un modelo declarado", "Conecta resultados registrados con canal, campaña y creatividad mediante last-click sobre datos sin huecos de consentimiento."],
       ["03", "Entiende", "Informes y LENS AI", "Revisa nueve superficies de reporting o pregunta a métricas definidas en lenguaje natural."],
       ["04", "Activa", "API, MCP y BigQuery", "Lleva la misma evidencia a tu warehouse, BI y flujos de IA supervisados."],
