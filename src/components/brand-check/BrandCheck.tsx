@@ -44,6 +44,8 @@ import {
  */
 
 const ENDPOINT = `${FORMS_WORKER_BASE}/api/brand-check`;
+/** How long after a finished score the floating report panel waits to appear. */
+const FLOAT_DELAY_MS = 1500;
 /** Reads that fail for reasons other than 429 before the page stops and says so. */
 const MAX_READ_FAILURES = 4;
 
@@ -107,8 +109,12 @@ const copy = {
       "Seis preguntas a los mismos modelos: qué valoran y qué critican de ti, a quién ponen en tu lugar, cómo te comparan con un competidor y qué errores conviene corregir en origen. Gratis, te llega por correo.",
     reportCta: "Pide el informe completo",
     floatEyebrow: "Informe completo · gratis",
-    floatTitle: (b: string) =>
-      `Recibe el informe completo: ${REPORT_ANSWERS} respuestas de ${REPORT_MODELS} IA sobre cómo posicionan a ${b}.`,
+    floatTitle: (b: string) => (
+      <>
+        Recibe el informe completo: {REPORT_ANSWERS} respuestas de {REPORT_MODELS} IA sobre cómo posicionan a{" "}
+        <span className="sig-check-float-brand">{b}</span>.
+      </>
+    ),
     floatBody: "Seis preguntas, cada respuesta entera y los errores marcados. Te llega por correo en unos cinco minutos.",
     floatCta: "Quiero el informe",
     floatClose: "Cerrar",
@@ -190,8 +196,12 @@ const copy = {
       "Six questions to the same models: what they praise and criticise, who they put in your place, how they compare you with a competitor and which errors are worth correcting at the source. Free, and it arrives by email.",
     reportCta: "Request the full report",
     floatEyebrow: "Full report · free",
-    floatTitle: (b: string) =>
-      `Get the full report: ${REPORT_ANSWERS} answers from ${REPORT_MODELS} AIs on how they position ${b}.`,
+    floatTitle: (b: string) => (
+      <>
+        Get the full report: {REPORT_ANSWERS} answers from {REPORT_MODELS} AIs on how they position{" "}
+        <span className="sig-check-float-brand">{b}</span>.
+      </>
+    ),
     floatBody: "Six questions, every answer in full and the errors marked. It arrives by email in about five minutes.",
     floatCta: "Get the report",
     floatClose: "Close",
@@ -697,8 +707,8 @@ function ReportCta({ t, locale, brand, category }: { t: Copy; locale: Locale; br
 }
 
 /**
- * The full report, offered again while the visitor reads the nineteen model
- * cards. It stays out of the way of the result's own report box and of the
+ * The full report, offered again from a moment after the score lands until the
+ * visitor leaves. It stays out of the way of the result's own report box and of the
  * page's closing section — two invitations to the same thing on one screen is
  * one too many — and once closed it does not come back on this visit. Nothing
  * is stored: closing it lasts as long as the page.
@@ -715,13 +725,20 @@ function ReportFloat({
   category: string;
 }) {
   const [blocked, setBlocked] = useState(true);
+  const [ready, setReady] = useState(false);
   const [dismissed, setDismissed] = useState(false);
   const shownReported = useRef(false);
+
+  // A beat after the score lands, so the number is read before the offer slides in.
+  useEffect(() => {
+    const id = setTimeout(() => setReady(true), FLOAT_DELAY_MS);
+    return () => clearTimeout(id);
+  }, []);
 
   useEffect(() => {
     if (typeof IntersectionObserver === "undefined") return;
     const targets = Array.from(
-      document.querySelectorAll(".sig-check-card, .sig-check-report, .sig-brand-final, .sig-check-form"),
+      document.querySelectorAll(".sig-check-report, .sig-brand-final"),
     );
     if (!targets.length) return;
     const visible = new Set<Element>();
@@ -736,7 +753,7 @@ function ReportFloat({
     return () => observer.disconnect();
   }, []);
 
-  const open = !blocked && !dismissed;
+  const open = ready && !blocked && !dismissed;
   useEffect(() => {
     if (!open || shownReported.current) return;
     shownReported.current = true;
@@ -855,18 +872,18 @@ function Result({
             <p aria-live="polite" aria-atomic="true">
               {view.progressLine}
             </p>
-            {!done ? (
-              <div
-                className="sig-check-bar"
-                role="progressbar"
-                aria-label={t.progressLabel}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-valuenow={view.percent}
-              >
-                <span style={{ width: `${view.percent}%` }} />
-              </div>
-            ) : null}
+            {/* Stays on screen, full, once every model has answered: the bar
+                is the visual half of «19 de 19», not only a loading state. */}
+            <div
+              className="sig-check-bar"
+              role="progressbar"
+              aria-label={t.progressLabel}
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={view.percent}
+            >
+              <span style={{ width: `${view.percent}%` }} />
+            </div>
           </div>
         ) : null}
       </section>
