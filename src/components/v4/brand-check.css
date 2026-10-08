@@ -236,6 +236,11 @@
   text-decoration: none;
   box-shadow: 3px 3px 0 var(--white);
 }
+/* Ink on acid, like every other primary button: `.sig-brand-page a { color:
+   inherit }` would hand it the ink box's white text. */
+.sig-check-page .sig-check-report .sig-brand-submit {
+  color: var(--ink);
+}
 
 .sig-check-card-line {
   font-size: clamp(20px, 2.1vw, 30px);
@@ -788,10 +793,19 @@
   line-height: 1.12;
   letter-spacing: -0.03em;
 }
+/* The brand in acid: on the ink slab it is the one word the reader looks for. */
+.sig-check-float-brand {
+  color: var(--acid);
+}
 .sig-check-float-body {
   font-size: 14px;
   line-height: 1.5;
   color: rgba(255, 253, 247, 0.78);
+}
+/* Ink on acid. `.sig-brand-page a { color: inherit }` would otherwise hand the
+   button the slab's white text. */
+.sig-check-page .sig-check-float .sig-brand-submit {
+  color: var(--ink);
 }
 .sig-check-float .sig-brand-submit {
   margin-top: 6px;
