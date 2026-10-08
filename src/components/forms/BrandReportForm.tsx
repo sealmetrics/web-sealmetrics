@@ -1,8 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { pushEvent } from "@/lib/analytics";
+import { readReportPrefill } from "@/lib/brand-check/view";
 import { submitFirstPartyForm } from "@/lib/forms/submit";
 import { LeadTurnstile } from "@/components/forms/LeadTurnstile";
 
@@ -409,6 +410,22 @@ export function BrandReportForm({
     verificationFailed.current = true;
     pushEvent({ event: "brand_report_verification_failed", language: locale });
   }
+  // Arriving from the score on «¿Qué dicen las IA de…?»: the brand and what it
+  // sells are already known, so the form opens with them instead of asking twice.
+  // Read once, from the URL; the sector sits behind the disclosure on this form,
+  // so it is opened to show what was filled in.
+  const optionalRef = useRef<HTMLDetailsElement>(null);
+  const prefillCta = useRef<string | null>(null);
+  useEffect(() => {
+    const prefill = readReportPrefill(window.location.search, locale);
+    if (!prefill) return;
+    prefillCta.current = prefill.cta;
+    if (prefill.brand) setBrand(prefill.brand);
+    if (prefill.category) {
+      setSector(prefill.category);
+      if (!askWhatYouSell && optionalRef.current) optionalRef.current.open = true;
+    }
+  }, [locale, askWhatYouSell]);
   const [status, setStatus] = useState<"idle" | "submitting" | "error">("idle");
   const [message, setMessage] = useState("");
   const [companyFax, setCompanyFax] = useState("");
@@ -469,8 +486,13 @@ export function BrandReportForm({
       // The same request, counted again when it came from the score on «¿Qué dicen
       // las IA de…?»: its "full report" link adds `?from=brand-check`. Read from the
       // URL, not stored anywhere, so nothing stays on the visitor's device.
+      // `cta` says which button brought them: the result's own box or the floating one.
       if (new URLSearchParams(window.location.search).get("from") === "brand-check") {
-        pushEvent({ event: "brand_check_report_request", language: locale });
+        pushEvent({
+          event: "brand_check_report_request",
+          language: locale,
+          ...(prefillCta.current ? { cta: prefillCta.current } : {}),
+        });
       }
       // `status` stays "submitting" so the button remains disabled while the
       // client-side navigation runs.
@@ -559,7 +581,7 @@ export function BrandReportForm({
           />
         </label>
 
-        <details className="sig-report-optional">
+        <details className="sig-report-optional" ref={optionalRef}>
           <summary>
             <span>{askWhatYouSell ? t.optionalCompetitors : t.optional}</span>
             <small>{t.optionalNote}</small>

@@ -342,3 +342,17 @@ test("category validation mirrors the Worker, slash included", () => {
   assert.equal(v.categoryProblem("software B2B/SaaS"), null);
   assert.equal(v.categoryProblem("café   de especialidad"), null);
 });
+
+test("the full-report link carries the brand and what it sells, and only the check's link fills the form", () => {
+  const href = v.reportHref("es", "Vueling", "vuelos baratos", "float");
+  assert.equal(href, "/es/ai-brand-monitoring/?from=brand-check&cta=float&marca=Vueling&vende=vuelos+baratos#request");
+  assert.equal(
+    v.reportHref("en", "Monzo", "", "inline"),
+    "/ai-brand-monitoring/?from=brand-check&cta=inline&brand=Monzo#request",
+  );
+  const search = href.slice(href.indexOf("?"), href.indexOf("#"));
+  assert.deepEqual(v.readReportPrefill(search, "es"), { brand: "Vueling", category: "vuelos baratos", cta: "float" });
+  assert.equal(v.readReportPrefill("?marca=Vueling&vende=vuelos", "es"), null);
+  assert.equal(v.readReportPrefill("?from=brand-check&cta=evil", "en").cta, null);
+  assert.equal(v.REPORT_ANSWERS, 114);
+});

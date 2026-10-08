@@ -557,6 +557,46 @@ export function shareUrl(locale: Locale, brand: string, vs = "", category = ""):
   return `${SITE}${PAGE_PATH[locale]}${buildSearch(locale, brand, vs, category)}`;
 }
 
+/**
+ * The full report's size, as the request page states it: six questions to
+ * nineteen models (BrandMonitoringSignal.tsx). Kept apart from the check's own
+ * panel on purpose: the free check and the report are different runs, and the
+ * report's figure must not move with the check's model count.
+ */
+export const REPORT_QUESTIONS = 6;
+export const REPORT_MODELS = 19;
+export const REPORT_ANSWERS = REPORT_QUESTIONS * REPORT_MODELS;
+
+/** Which of the two full-report buttons on the check was pressed. */
+export type ReportCta = "inline" | "float";
+
+/**
+ * The report request form, with the brand and what it sells carried over so
+ * nobody types them twice. `from=brand-check` is what the form reads to count
+ * the request as coming from the score; `cta` tells the two buttons apart.
+ */
+export function reportHref(locale: Locale, brand: string, category: string, cta: ReportCta): string {
+  const q = new URLSearchParams({ from: "brand-check", cta });
+  if (brand) q.set(BRAND_PARAM[locale], brand.slice(0, 120));
+  if (brand && category) q.set(CATEGORY_PARAM[locale], category.slice(0, CATEGORY_MAX));
+  return `${locale === "es" ? "/es" : ""}/ai-brand-monitoring/?${q}#request`;
+}
+
+/**
+ * The report form's side of `reportHref`. Only a link from the check fills the
+ * form: any other URL with a `marca` parameter is not ours to read.
+ */
+export function readReportPrefill(
+  search: string,
+  locale: Locale,
+): { brand: string; category: string; cta: ReportCta | null } | null {
+  const q = new URLSearchParams(search);
+  if (q.get("from") !== "brand-check") return null;
+  const { brand, category } = readParams(search, locale);
+  const cta = q.get("cta");
+  return { brand, category, cta: cta === "inline" || cta === "float" ? cta : null };
+}
+
 export function shareLinks(text: string, url: string): { linkedin: string; x: string; whatsapp: string } {
   const e = encodeURIComponent;
   return {
