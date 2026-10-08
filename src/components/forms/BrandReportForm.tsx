@@ -466,6 +466,12 @@ export function BrandReportForm({
       // email is not passed at all: `sanitize()` would strip it, but data the
       // pixel never needed should not depend on a filter to stay out of it.
       pushEvent({ event: "lead_brand_report" });
+      // The same request, counted again when it came from the score on «¿Qué dicen
+      // las IA de…?»: its "full report" link adds `?from=brand-check`. Read from the
+      // URL, not stored anywhere, so nothing stays on the visitor's device.
+      if (new URLSearchParams(window.location.search).get("from") === "brand-check") {
+        pushEvent({ event: "brand_check_report_request", language: locale });
+      }
       // `status` stays "submitting" so the button remains disabled while the
       // client-side navigation runs.
       router.push(`${prefix}/ai-brand-monitoring/thank-you/`);
