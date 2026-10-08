@@ -108,7 +108,7 @@ const copy = {
     reportCta: "Pide el informe completo",
     floatEyebrow: "Informe completo · gratis",
     floatTitle: (b: string) =>
-      `Descárgate el informe completo: ${REPORT_ANSWERS} respuestas de ${REPORT_MODELS} IA sobre cómo posicionan a ${b}.`,
+      `Recibe el informe completo: ${REPORT_ANSWERS} respuestas de ${REPORT_MODELS} IA sobre cómo posicionan a ${b}.`,
     floatBody: "Seis preguntas, cada respuesta entera y los errores marcados. Te llega por correo en unos cinco minutos.",
     floatCta: "Quiero el informe",
     floatClose: "Cerrar",
@@ -191,7 +191,7 @@ const copy = {
     reportCta: "Request the full report",
     floatEyebrow: "Full report · free",
     floatTitle: (b: string) =>
-      `Download the full report: ${REPORT_ANSWERS} answers from ${REPORT_MODELS} AIs on how they position ${b}.`,
+      `Get the full report: ${REPORT_ANSWERS} answers from ${REPORT_MODELS} AIs on how they position ${b}.`,
     floatBody: "Six questions, every answer in full and the errors marked. It arrives by email in about five minutes.",
     floatCta: "Get the report",
     floatClose: "Close",
