@@ -84,7 +84,7 @@ export default function ItpEsPage() {
               Intelligent Tracking Prevention (ITP) es el sistema de privacidad de Safari, guiado por aprendizaje automático, que limita las cookies de analítica first-party a 7 días, descarta por completo las cookies de terceros y reduce la vida de la cookie a 24 horas cuando se fija por JavaScript en una página que llegó con un parámetro de seguimiento. Firefox incorpora una función equivalente llamada Enhanced Tracking Protection (ETP).
             </p>
             <p>
-              Para una analítica que depende de cookies para reconocer visitantes recurrentes o coser una atribución de varios días, ITP hace inviable medir con precisión el más del 20% del tráfico europeo que usa Safari. La recolección first-party server-side sin cookies no fija ninguna cookie, así que ITP y ETP no tienen ningún efecto: las visitas se cuentan sobre la misma base anónima y agregada, sea cual sea el navegador y hayan pasado los días que hayan pasado.
+              Para una analítica que depende de cookies para reconocer visitantes recurrentes o coser una atribución de varios días, ITP hace inviable medir con precisión el más del 20% del tráfico europeo que usa Safari. La recolección first-party server-side sin cookies no fija ninguna cookie, así que ITP y ETP no tienen ningún efecto: las visitas se cuentan sobre la misma base agregada, sea cual sea el navegador y hayan pasado los días que hayan pasado.
             </p>
           </QuickAnswer>
         </div>

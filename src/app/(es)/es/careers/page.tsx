@@ -40,7 +40,7 @@ const TEAMS = [
   },
   {
     name: "Producto y Diseño",
-    desc: "Convertir datos agregados y anónimos en decisiones que un CMO firma. Interfaces editoriales, datos densos, cero dark patterns.",
+    desc: "Convertir datos agregados en decisiones que un CMO firma. Interfaces editoriales, datos densos, cero dark patterns.",
   },
   {
     name: "Growth y Marketing",
@@ -83,7 +83,7 @@ const FAQ = [
   {
     question: "¿Por qué no aceptáis CVs ni PDFs?",
     answer:
-      "Sealmetrics no recoge datos personales de los visitantes de una web — esa disciplina se extiende a la contratación. Un CV cuenta lo que afirmas; el trabajo público muestra lo que haces. Además, reducimos al mínimo los datos personales que guardamos de cada candidato: los enlaces que decidiste compartir, nada más.",
+      "Sealmetrics no guarda datos que identifiquen a los visitantes de una web — esa disciplina se extiende a la contratación. Un CV cuenta lo que afirmas; el trabajo público muestra lo que haces. Además, reducimos al mínimo los datos personales que guardamos de cada candidato: los enlaces que decidiste compartir, nada más.",
   },
   {
     question: "¿Y si no tengo GitHub ni mucho trabajo público?",

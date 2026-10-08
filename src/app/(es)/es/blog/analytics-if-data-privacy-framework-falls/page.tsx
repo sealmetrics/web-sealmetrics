@@ -279,7 +279,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
 
             <CommercialModule
               locale="es"
-              hook="¿Tu medición depende de que el Marco de Privacidad de Datos sobreviva a la próxima sentencia? Ve en una demo cómo sería medir sin transferencias a EE. UU. que defender: dato anónimo, agregado y procesado en la UE."
+              hook="¿Tu medición depende de que el Marco de Privacidad de Datos sobreviva a la próxima sentencia? Ve en una demo cómo sería medir sin transferencias a EE. UU. que defender: nada que identifique a nadie, informes agregados y datos procesados en la UE."
             />
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

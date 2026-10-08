@@ -60,7 +60,7 @@ const faqs = [
   {
     question: "¿Puedo medir conversiones y campañas sin cookies?",
     answer:
-      "Sí. La medición cookieless cuenta eventos de forma anónima y agregada — visitas, conversiones, revenue por canal y campaña — sin almacenar nada en el dispositivo ni identificar al visitante. La atribución se calcula a último clic sobre tráfico sin huecos de consentimiento. Lo que no hace, por diseño: reconstruir el recorrido individual de un usuario ni atribución multi-touch, que requieren identificadores personales.",
+      "Sí. La medición cookieless cuenta eventos de forma agregada — visitas, conversiones, revenue por canal y campaña — sin almacenar nada en el dispositivo ni identificar al visitante. La atribución se calcula a último clic sobre tráfico sin huecos de consentimiento. Lo que no hace, por diseño: reconstruir el recorrido individual de un usuario ni atribución multi-touch, que requieren identificadores personales.",
   },
   {
     question: "¿Qué sanciones hay por usar cookies de analítica sin consentimiento en España?",
@@ -143,7 +143,7 @@ export default function GdprAnalyticsSpainFaqEsPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu caso no encaja del todo en estas siete respuestas? Tráelo a una demo y ve cómo mediría tu tienda sin banner: dato anónimo y agregado, alojado en la UE."
+            hook="¿Tu caso no encaja del todo en estas siete respuestas? Tráelo a una demo y ve cómo mediría tu tienda sin banner: ningún dato que identifique a nadie, informes agregados y alojamiento en la UE."
           />
 
           <div className="mt-16 pt-10 border-t border-warm-100">

@@ -70,7 +70,7 @@ export default function CookielessAnalyticsExplainedPage() {
             <li>Cookie-based analytics fails at three structural levels: browsers block third-party cookies by default, GDPR consent means that, in our experience with clients, between 40% and 60% of traffic doesn&apos;t accept cookies, and ad blockers strip scripts from part of what is left.</li>
             <li>Cookieless analytics replaces cookies with first-party data collection through your own infrastructure — no third-party server, no blocked scripts, no consent dependency.</li>
             <li>Cookie-based tracking doesn&apos;t see part of your traffic, and how much depends on the store: at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
-            <li>Consent exemption is architectural, not a workaround — no personal data is collected and no cookies are stored, which is consistent with CNIL and German DSK guidance.</li>
+            <li>Consent exemption is architectural, not a workaround — nothing that identifies anyone is kept and no cookies are stored, built around CNIL guidance (in Germany, where the DSK does not extend the exemption to audience measurement, this is our reading, not settled).</li>
           </ul>
         </div>
 
@@ -227,14 +227,16 @@ export default function CookielessAnalyticsExplainedPage() {
           <p>
             A common misconception is that cookieless analytics is a workaround
             to avoid consent requirements. It is not. The reason consent is not
-            required is architectural: no personal data is collected, and no
-            cookies are stored on the visitor&rsquo;s device.
+            required is architectural: nothing that identifies anyone is kept,
+            no cookies are stored on the visitor&rsquo;s device, and reports
+            are always aggregated.
           </p>
 
           <p>
             This is consistent with the <a href="https://www.cnil.fr/en/cookies-and-other-tracking-devices-cnil-publishes-new-guidelines" target="_blank" rel="noopener noreferrer">CNIL</a> (French DPA) exemption criteria for
-            audience measurement tools and with German DSK guidance on
-            consent-free analytics. The{" "}
+            audience measurement tools. In Germany the DSK does not extend
+            the exemption to audience measurement, so there it is our
+            reading, not a settled position. The{" "}
             <Link
               href="/security"
               className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"

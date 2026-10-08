@@ -148,7 +148,7 @@ const en: FreeAccountCopy = {
       ["The whole funnel, in aggregate counts", "Visit, product, cart, checkout, purchase: step counts by channel, so you see where each channel's buyers drop."],
       ["Fresh data, Black Friday included", "Hits usually reach your reports in under two minutes, with no sampling, and each day is complete before 6 AM. You adjust during the campaign, not the week after."],
     ],
-    boundary: "Measurement is aggregate and anonymous: no visitor identifiers, no cross-device journeys, no multi-touch model. Last click on complete data, and a number you can reconcile against your orders.",
+    boundary: "Measurement is aggregate: no persistent visitor identifiers, no cross-device journeys, no multi-touch model. Last click on complete data, and a number you can reconcile against your orders.",
   },
   promo: {
     tag: "04 / THE DATES THAT MATTER", start: "Sign now.", end: "Run peak season on the Enterprise SLA.",
@@ -277,7 +277,7 @@ const en: FreeAccountCopy = {
     { question: "What exactly is the Black Friday offer?", answer: "Contract a Growth or Scale plan before 27 November 2026 and your account carries the Enterprise SLA, 99.9% availability with service credits and priority support, until 6 January 2027, at your plan's price. Fresh, unsampled reports are part of the product on every plan; the offer is the contractual guarantee on top." },
     { question: "What happens when I reach one million events?", answer: "You choose a plan. Growth starts at €499 a month billed annually with 5 million events a month. Nothing is charged without you choosing a plan, because there is no card on file." },
     { question: "Does it work with Shopify, WooCommerce, Magento or GTM?", answer: "Yes. Shopify and WordPress take about 5 minutes, custom or headless builds up to 30. Through GTM, a Custom HTML tag on All Pages; whether it fires without your consent trigger depends on your configuration and your national authority's criteria. Claude can generate the code for your platform." },
-    { question: "Is this multi-touch attribution?", answer: "No, and it never will be. Sealmetrics is aggregate, anonymous measurement: it attributes each conversion last click to the source of the session in which it fires, on the complete dataset. No visitor identifiers, no cross-device journeys." },
+    { question: "Is this multi-touch attribution?", answer: "No, and it never will be. Sealmetrics is aggregate measurement: it attributes each conversion last click to the source of the session in which it fires, on the complete dataset. No visitor identifiers, no cross-device journeys." },
   ],
   final: {
     tag: "THE NEXT COMPARISON IS YOURS", start: "Measure in parallel.", end: "One number to reconcile.",
@@ -473,7 +473,7 @@ const es: FreeAccountCopy = {
     { question: "¿En qué consiste exactamente la oferta de Black Friday?", answer: "Contrata un plan Growth o Scale antes del 27 de noviembre de 2026 y tu cuenta lleva el SLA de Enterprise, disponibilidad del 99,9% con créditos de servicio y soporte prioritario, hasta el 6 de enero de 2027, al precio de tu plan. Los informes frescos y sin muestreo forman parte del producto en todos los planes; la oferta es la garantía contractual que va encima." },
     { question: "¿Qué pasa cuando llego al millón de eventos?", answer: "Eliges un plan. Growth empieza en 499 € al mes con facturación anual y 5 millones de eventos al mes. No se te cobra nada sin que elijas un plan, porque no hay ninguna tarjeta registrada." },
     { question: "¿Funciona con Shopify, WooCommerce, Magento o GTM?", answer: "Sí. Shopify y WordPress llevan unos 5 minutos; un desarrollo a medida o headless, hasta 30. En GTM, una etiqueta HTML personalizado en All Pages; que se dispare sin tu disparador de consentimiento depende de la configuración y del criterio de tu autoridad nacional. Claude puede generar el código para tu plataforma." },
-    { question: "¿Esto es atribución multi-touch?", answer: "No, y nunca lo será. Sealmetrics es medición agregada y anónima: atribuye cada conversión por último clic a la fuente de la sesión en la que ocurre, sobre el conjunto completo de datos. Sin identificadores de visitante ni recorridos entre dispositivos." },
+    { question: "¿Esto es atribución multi-touch?", answer: "No, y nunca lo será. Sealmetrics es medición agregada: atribuye cada conversión por último clic a la fuente de la sesión en la que ocurre, sobre el conjunto completo de datos. Sin identificadores de visitante ni recorridos entre dispositivos." },
   ],
   final: {
     tag: "LA SIGUIENTE COMPARACIÓN ES LA TUYA", start: "Mide en paralelo.", end: "Un número que conciliar.",

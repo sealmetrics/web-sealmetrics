@@ -136,8 +136,8 @@ const requirements = [
     n: 11,
     id: "req-11",
     title: "Compliance by architecture",
-    bar: "No personal data, named EU location, DPA included, certifications verifiable",
-    seal: "No personal data, EU-hosted in Dublin, DPA in the standard contract. Not ISO 27001 or SOC 2 certified",
+    bar: "No data that identifies anyone, named EU location, DPA included, certifications verifiable",
+    seal: "No data that identifies anyone, EU-hosted in Dublin, DPA in the standard contract. Not ISO 27001 or SOC 2 certified",
     score: 1,
   },
   {
@@ -490,8 +490,8 @@ export default function BestWebAnalyticsToolPage() {
                 The platform must observe page loads without depending
                 on the visitor accepting anything, and without being classified
                 as a tracker by blocklists. That is only achievable if it stores
-                no personal data — because if it did, consent would be legally
-                required and you would be back at 40%. Completeness and privacy
+                nothing on the device and nothing that identifies anyone —
+                because otherwise consent would be legally required and you would be back at 40%. Completeness and privacy
                 are the same requirement stated twice, not a trade-off, which is
                 the whole argument for{" "}
                 <Link href="/glossary/cookieless-analytics" className={linkClass}>
@@ -936,14 +936,14 @@ export default function BestWebAnalyticsToolPage() {
                   href="/glossary/personal-data-in-analytics"
                   className={linkClass}
                 >
-                  personal data
+                  data that identifies anyone
                 </Link>{" "}
-                collected, no cookies, no persistent device identifier, no client-side
+                kept, no cookies, no persistent device identifier, no client-side
                 storage. This is not a stricter version of compliance — it is a
-                different mechanism. A platform that processes no personal data
-                is largely outside the material scope of the rules, rather than
-                compliant within them, and that difference is what removes the
-                consent banner and with it the 60% loss.
+                different mechanism. A platform that stores nothing on the
+                device and keeps nothing that identifies anyone can rely on the
+                audience-measurement exemption instead of a consent dialog, and
+                that difference is what removes the consent banner and with it the 60% loss.
               </p>
               <p>
                 Then the operational layer: data hosted in your jurisdiction

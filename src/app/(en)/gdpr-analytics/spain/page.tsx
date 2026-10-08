@@ -51,9 +51,9 @@ const criteria = [
   },
   {
     n: "02",
-    title: "No personal data processed",
+    title: "No data that identifies anyone",
     requirement: "AEPD aligns with the EDPB Opinion 5/2019: if the processing does not relate to an identified or identifiable person, GDPR material scope does not apply.",
-    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No persistent identifier: the session identifier rotates daily and cannot be linked across days. The events are channel-level aggregates from the moment they hit the server.",
+    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No persistent identifier: the session identifier rotates daily and cannot be linked across days. The events are channel-level aggregates from the moment they hit the server. The session identifier is a pseudonym processed under legitimate interest; once rotated, not even we can reconstruct it.",
   },
   {
     n: "03",
@@ -156,10 +156,11 @@ export default function GdprAnalyticsSpainPage() {
             measurement from the consent requirement provided four
             conditions hold: aggregate-only reporting, no personal
             data, first-party context with no cross-site tracking,
-            and EU residency. Sealmetrics is built to meet each
-            condition by design — same architectural pattern that
-            covers the CNIL exemption in France and the §25 TDDDG
-            exemption in Germany.
+            and EU residency. Sealmetrics is built around these
+            conditions (self-assessed, not certified) — the same
+            architectural pattern we assess against the CNIL criteria in
+            France; in Germany the DSK does not extend the exemption to
+            audience measurement, so there it is our reading, not settled.
           </>
         }
         bullets={[

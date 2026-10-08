@@ -201,7 +201,7 @@ export function ValuePropTabs() {
 /* --- Block 7: team segmentation grid ------------------------ */
 const TEAMS = [
   { role: "CMO", d: "Align brand, paid-media agencies and finance on one number every party accepts.", href: "/for/cmo" },
-  { role: "CTO", d: "846-byte pixel, full API, native MCP, BigQuery export. EU-hosted, zero PII stored.", href: "/for/cto" },
+  { role: "CTO", d: "846-byte pixel, full API, native MCP, BigQuery export. EU-hosted, nothing that identifies anyone stored.", href: "/for/cto" },
   { role: "DPO", d: "GDPR by architecture, DPA + TPSR included, Schrems II clean. No consent layer to defend.", href: "/for/dpo" },
   { role: "Agencies", d: "Multi-client dashboards and reporting on complete data your clients can trust.", href: "/for/agencies" },
 ];

@@ -68,7 +68,7 @@ export default function WhatIsCookielessTrackingPage() {
             <li>Cookieless tracking collects analytics data without storing cookies or identifiers on the visitor's browser — it removes the entire tracking chain that modern browsers, regulations, and users resist.</li>
             <li>Cookie-based tracking doesn&apos;t see part of your traffic, and how much depends on the store: at Incapto, measured on Shopify over 48 days, GA4 did not record 29% of visits; cookieless tracking does not depend on consent because there is no cookie to block, reject, or expire.</li>
             <li>Cookieless tracking is not persistent fingerprinting — it collects aggregate data points (URLs, referrals, timestamps) and, at most, an ephemeral session identifier that cannot be linked across days.</li>
-            <li>Privacy is designed into the architecture: no cookies stored, no PII collected, no cross-site tracking — built around CNIL and German DSK guidance for consent-free analytics, and assessed per deployment.</li>
+            <li>Privacy is designed into the architecture: no cookies stored, no data that identifies anyone, no cross-site tracking — built around CNIL guidance for consent-free analytics (in Germany, where the DSK does not extend the exemption to audience measurement, our reading, not settled), and assessed per deployment.</li>
             <li>Every downstream analytics function improves when input data goes from the consenting fraction to traffic measured without consent gaps: attribution, A/B testing, campaign optimization, and budget allocation all reflect real audience behavior.</li>
           </ul>
         </div>
@@ -163,9 +163,10 @@ export default function WhatIsCookielessTrackingPage() {
             </Link>
             , ad blockers cannot distinguish analytics requests from regular
             page requests. Browser privacy features like ITP and ETP have no
-            cookies to restrict. And consent banners are not required because
-            no personal data is collected and nothing is stored on the
-            visitor&rsquo;s device.
+            cookies to restrict. And consent banners are not required for the
+            analytics itself because nothing that identifies anyone is kept and
+            nothing is stored on the visitor&rsquo;s device (in Germany, our
+            reading, not settled).
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">

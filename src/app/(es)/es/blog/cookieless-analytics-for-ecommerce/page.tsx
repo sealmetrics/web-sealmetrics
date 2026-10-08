@@ -16,7 +16,7 @@ const HEADLINE = "Cómo mide el eCommerce europeo sus ingresos sin esperar al ba
 const DESCRIPTION =
   "Cómo mide un eCommerce europeo visitas, pedidos e ingresos por canal sin cookies ni seguimiento de usuarios, y cómo lo contrasta con Shopify, WooCommerce o Magento.";
 const SOCIAL =
-  "Recuentos agregados y anónimos, atribuidos a último clic al canal de cada conversión y contrastados con los pedidos reales de la tienda. Sin cookies.";
+  "Recuentos agregados, atribuidos a último clic al canal de cada conversión y contrastados con los pedidos reales de la tienda. Sin cookies.";
 
 export const metadata: Metadata = {
   title: "Analítica sin cookies para eCommerce: guía 2026",
@@ -220,11 +220,11 @@ export default function CookielessAnalyticsForEcommercePageEs() {
               dominio en lugar de un endpoint de terceros. Los ad-blockers trabajan
               sobre todo con listas de dominios de seguimiento conocidos, así que una
               petición first-party es mucho menos probable que se bloquee. Cada vista
-              registra metadatos anónimos: referrer, UTM, página de llegada, país y
+              registra metadatos de canal: referrer, UTM, página de llegada, país y
               tipo de dispositivo.
             </p>
             <p>
-              <strong>2. Recuentos agregados y anónimos.</strong> Los eventos se
+              <strong>2. Recuentos agregados.</strong> Los eventos se
               agregan en servidor —vistas, conversiones, ingresos— por canal, campaña
               y página de llegada. En ningún momento una vista queda vinculada a una
               persona o a un dispositivo concreto: no hay identificador entre
@@ -254,11 +254,11 @@ export default function CookielessAnalyticsForEcommercePageEs() {
               <li><strong>Los totales cuadran con el backend.</strong> En los 48 días de medición en paralelo de Incapto, Sealmetrics registró el 96% de los pedidos reales de Shopify y el 97% de la facturación, así que el reparto por canal que se construye encima es fiable.</li>
               <li><strong>Sin muestreo en Black Friday.</strong> Sealmetrics no muestrea a partir de umbrales de volumen, así que las decisiones del día pico se toman con recuentos reales.</li>
               <li><strong>Microconversiones visibles.</strong> Añadidos al carrito, inicios de checkout y envíos de formularios se cuentan en cada sesión que carga el tracker, no solo en las que aceptaron el banner.</li>
-              <li><strong>Cifras que finanzas puede firmar.</strong> Una arquitectura sin datos personales ni identificadores y unos ingresos agregados que cuadran con el backend permiten cerrar el reparto por canal sin una reunión de tres horas. Es el mismo razonamiento que en{" "}<Link href="/es/use-cases/single-source-of-truth" className={link}>una sola cifra para marketing y finanzas</Link>.</li>
+              <li><strong>Cifras que finanzas puede firmar.</strong> Una arquitectura sin datos que identifiquen a nadie ni identificadores persistentes y unos ingresos agregados que cuadran con el backend permiten cerrar el reparto por canal sin una reunión de tres horas. Es el mismo razonamiento que en{" "}<Link href="/es/use-cases/single-source-of-truth" className={link}>una sola cifra para marketing y finanzas</Link>.</li>
             </ul>
 
             <h2 className={h2}>A qué renuncias, a propósito</h2>
-            <p>La medición agregada y anónima tiene contrapartidas, y conviene tenerlas claras:</p>
+            <p>La medición agregada tiene contrapartidas, y conviene tenerlas claras:</p>
             <ul className={dashList}>
               <li><strong>Sin informes de recorrido por usuario.</strong> No verás &ldquo;el cliente X vio el anuncio, volvió tres veces y compró&rdquo;. Esos informes necesitan cookies e identificadores personales.</li>
               <li><strong>Sin atribución multi-touch.</strong> Solo último clic. Si tu modelo necesita repartir el mérito entre varios puntos de contacto de la misma persona, esta no es la herramienta.</li>
@@ -297,7 +297,7 @@ export default function CookielessAnalyticsForEcommercePageEs() {
             <p>
               Si tu equipo depende del análisis de recorridos por usuario o de modelos
               multi-touch, tampoco es un sustituto directo. Es otra categoría de
-              medición —agregada, anónima y defendible—, y esa contrapartida es de
+              medición —agregada y defendible—, y esa contrapartida es de
               diseño.
             </p>
           </div>

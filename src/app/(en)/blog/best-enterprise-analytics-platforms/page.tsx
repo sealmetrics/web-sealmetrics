@@ -513,7 +513,7 @@ export default function BestEnterpriseAnalyticsPlatformsPage() {
               >
                 cookieless analytics
               </Link>{" "}
-              to measure traffic without depending on consent. No cookies are set. No personal data
+              to measure traffic without depending on consent. No cookies are set. No data that identifies anyone
               is collected. No consent banner is needed: it meets the CNIL and AEPD criteria for consent-exempt audience measurement (self-assessed).
             </p>
 

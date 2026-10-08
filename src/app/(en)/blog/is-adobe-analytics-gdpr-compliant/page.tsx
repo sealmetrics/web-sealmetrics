@@ -220,8 +220,9 @@ export default function Page() {
             <p>
               There is a second route, and it is the one European regulators have
               been signposting. If a tool sets nothing on the device, ePrivacy
-              Article 5(3) is not engaged. If it collects no personal data, the
-              GDPR consent question does not arise either. Compliance stops being
+              Article 5(3) is not engaged by storage, and if it also keeps no data
+              that identifies anyone, the GDPR side shrinks to a pseudonymised
+              identifier with a lawful basis. Compliance stops being
               a configuration you maintain and becomes a property of the
               architecture.
             </p>

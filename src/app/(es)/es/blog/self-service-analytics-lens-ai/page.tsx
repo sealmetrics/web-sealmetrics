@@ -82,7 +82,7 @@ const comparison = [
   {
     aspect: "Exposición de dato personal",
     naive: "Posible — las filas en bruto pueden llevar PII",
-    mcp: "Imposible — cero PII por construcción, rechazado en la herramienta",
+    mcp: "Imposible — nada que identifique a nadie por construcción, rechazado en la herramienta",
   },
   {
     aspect: "Atribución",
@@ -110,7 +110,7 @@ const faqs = [
   {
     question: "¿LENS AI reconstruye customer journeys o hace atribución multi-touch?",
     answer:
-      "No. Sealmetrics mide eventos agregados y anónimos y atribuye el revenue a último clic, a nivel de evento. No identifica individuos, no cose pageviews en journeys por usuario y no ejecuta modelos multi-touch. El modelo solo puede responder lo que el dato agregado subyacente puede responder — que es precisamente lo que mantiene las respuestas honestas.",
+      "No. Sealmetrics mide eventos agregados y atribuye el revenue a último clic, a nivel de evento. No identifica individuos, no cose pageviews en journeys por usuario y no ejecuta modelos multi-touch. El modelo solo puede responder lo que el dato agregado subyacente puede responder — que es precisamente lo que mantiene las respuestas honestas.",
   },
   {
     question: "¿Dónde corre la IA y sale mi dato de la UE?",
@@ -212,7 +212,7 @@ export default function Page() {
               La analítica self-service es un problema de calidad del dato antes que un problema de IA. Si tu capa de medición solo captura a los visitantes que aceptaron un banner, cada respuesta construida encima hereda ese sesgo — y ningún prompt arregla un dataset que nunca se recogió. Un modelo que razona sobre dato parcial no se equivoca por ser mal modelo; se equivoca porque razona sobre una fracción de la realidad y no tiene forma de saberlo.
             </p>
             <p>
-              Sealmetrics empieza aquí. La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">medición cookieless y first-party</Link> cuenta eventos de forma anónima en tu propio dominio: no hay cookies que rechazar, no hay endpoint de terceros que los ad blockers puedan atacar, no hay nada en el dispositivo que expire, y no hay muestreo por volumen. Cuando el modelo pregunta «¿cuántas conversiones de búsqueda de pago la semana pasada?», el número cuenta a quien acepta y a quien rechaza el banner — no solo al resto que consintió. Si quieres ver cómo se erosiona la alternativa, repasamos por qué <Link href="/es/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no ve parte de tu tráfico</Link>.
+              Sealmetrics empieza aquí. La <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">medición cookieless y first-party</Link> cuenta eventos de forma agregada en tu propio dominio: no hay cookies que rechazar, no hay endpoint de terceros que los ad blockers puedan atacar, no hay nada en el dispositivo que expire, y no hay muestreo por volumen. Cuando el modelo pregunta «¿cuántas conversiones de búsqueda de pago la semana pasada?», el número cuenta a quien acepta y a quien rechaza el banner — no solo al resto que consintió. Si quieres ver cómo se erosiona la alternativa, repasamos por qué <Link href="/es/blog/why-ga4-misses-traffic" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GA4 no ve parte de tu tráfico</Link>.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -344,8 +344,8 @@ export default function Page() {
               El self-service es peligroso cuando deja que la gente genere números de aspecto autoritario que nadie puede defender. Cuatro cosas lo mantienen con los pies en la tierra, y las cuatro son estructurales, no una promesa:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li><strong>Cero PII por construcción.</strong> Las herramientas a nivel de evento validan contra el dato personal y lo rechazan. El modelo no puede sacar a una persona porque nunca se almacenó una persona.</li>
-              <li><strong>Medición solo agregada.</strong> No hay journeys por usuario, no hay identificadores entre sesiones, no hay modelos multi-touch — así que el modelo no puede fabricar uno. Solo responde lo que las cuentas agregadas y anónimas pueden responder.</li>
+              <li><strong>Nada que identifique a nadie, por construcción.</strong> Las herramientas a nivel de evento validan contra el dato personal y lo rechazan. El modelo no puede sacar a una persona porque nunca se almacenó una persona.</li>
+              <li><strong>Medición solo agregada.</strong> No hay journeys por usuario, no hay identificadores entre sesiones, no hay modelos multi-touch — así que el modelo no puede fabricar uno. Solo responde lo que las cuentas agregadas pueden responder.</li>
               <li><strong>Una definición por concepto.</strong> Como cada herramienta lleva una única métrica canónica, dos personas que preguntan lo mismo con palabras distintas obtienen el mismo número. La consistencia la impone la superficie, no la disciplina.</li>
               <li><strong>Procedencia que puedes rastrear.</strong> Cada respuesta se resuelve a una herramienta con nombre sobre un periodo explícito en la zona horaria de tu cuenta — así que siempre puedes ver qué métrica la produjo, y la atribución es a <Link href="/es/glossary/revenue-attribution" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">último clic, a nivel de evento</Link>.</li>
             </ul>

@@ -73,7 +73,7 @@ export function ConsentlessAnalytics() {
             <Link href="/security" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               Designed for GDPR from the architecture up
             </Link>
-            {" "}(self-assessed), privacy-first everywhere you sell, zero personal data stored. No cookies, no consent
+            {" "}(self-assessed), privacy-first everywhere you sell, no data that identifies anyone stored. No cookies, no consent
             wall, no blind spot from rejected banners.
           </p>
           <p className="mt-4 text-[17px] leading-[1.6] text-ink-soft max-w-[56ch]">
@@ -82,7 +82,7 @@ export function ConsentlessAnalytics() {
             &ldquo;direct&rdquo; and unconsented traffic.
           </p>
           <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-            {["Designed for GDPR", "ePrivacy", "Privacy-first worldwide", "Zero personal data"].map((b) => (
+            {["Designed for GDPR", "ePrivacy", "Privacy-first worldwide", "No data that identifies anyone"].map((b) => (
               <span key={b} className="inline-flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
                 {b}
@@ -373,7 +373,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           h2em: "Así es cómo.",
           steps: [
             { n: "01", t: "Sin cookies", d: "No guardamos nada en el dispositivo; identificador efímero que rota cada día. Eventos agregados — hits, no personas." },
-            { n: "02", t: "Sin datos personales", d: "No se procesa nada personal, así que no se dispara ningún diálogo de consentimiento." },
+            { n: "02", t: "Ningún dato que identifique a nadie", d: "El identificador de sesión rota cada día y, al rotar, ni nosotros podemos reconstruirlo. Los informes son siempre agregados." },
             { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Medir sin pérdida por consentimiento y la privacidad son el mismo diseño." },
           ],
           badges: ["Diseñada para el RGPD", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
@@ -396,7 +396,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
           h2em: "Here's how.",
           steps: [
             { n: "01", t: "No cookies", d: "Nothing stored on the device; an ephemeral identifier that rotates daily. Aggregate events — hits, not people." },
-            { n: "02", t: "No personal data", d: "Nothing personal processed, so no consent dialog is triggered." },
+            { n: "02", t: "No data that identifies anyone", d: "The session identifier rotates daily and, once rotated, not even we can reconstruct it. Reports are always aggregated." },
             { n: "03", t: "Nothing to consent to", d: "No profile to object to. Consent-independent measurement and privacy are the same design." },
           ],
           badges: ["Designed for GDPR", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],

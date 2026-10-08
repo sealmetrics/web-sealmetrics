@@ -260,7 +260,7 @@ export default function PersonalDataInAnalyticsPage() {
             </p>
           </div>
 
-          <CommercialModule hook="Sealmetrics stores no personal data — not pseudonymised, none. See what analytics looks like when there is nothing to redact." />
+          <CommercialModule hook="Sealmetrics stores nothing on the device and no data that identifies anyone; its session identifier rotates daily and cannot be reconstructed. See what that looks like." />
 
           <RelatedGlossaryTerms slug="personal-data-in-analytics" />
         </div>

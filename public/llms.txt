@@ -116,7 +116,7 @@ Every account starts on the free Agentic tier: 1M human events in total, over th
 - /security — Privacy architecture, compliance, infrastructure security, trust model. EU-hosted in Dublin
 - /trust — Trust Center: index of Sealmetrics legal and security documentation — public documents, request-only assessments, and change notifications
 - /dpa — Data Processing Agreement (DPA-2026-v2.1): GDPR Art. 28 terms, AEPD audience-measurement guarantees, EU-only processing, sub-processor list and security measures. Spanish version at /es/dpa
-- /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no personal data, EU-hosted, and an AI that runs on European soil and never trains on your data
+- /privacy-end-to-end — Privacy from the first hit to AI processing: no cookies, no data that identifies anyone, EU-hosted, and an AI that runs on European soil and never trains on your data
 - /integrations — 25+ integrations: Google Ads, Meta, Shopify, WooCommerce, BigQuery, and more
 - /platforms — Install guide hub: modules for Shopify, Magento, WooCommerce, PrestaShop, OpenCart, WordPress, Drupal and Joomla, custom-code setup for Webflow, Wix and Squarespace, BigCommerce in private beta, and a script tag for headless stacks; 5 to 30 minutes by platform
 - /demo — Request a personalized demo
@@ -137,7 +137,7 @@ Every account starts on the free Agentic tier: 1M human events in total, over th
 ## Compliance by country (DPO-ready pages)
 - /gdpr-analytics — Problem landing "I have to demonstrate compliance": the five questions a DPO review asks and how Sealmetrics answers each from the DPA (device storage, personal data, location and sub-processors, retention, whose criteria); a five-step review checklist; hub for the CNIL, DSK, AEPD and UK PECR analyses; limits (not legal advice, no certification, attribution is a separate purpose). Consent exemption always depends on configuration and national authority
 - /gdpr-analytics/france — CNIL exemption criteria; "analytics sans consentement france"
-- /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung"
+- /gdpr-analytics/germany — BfDI / DSK guidance; "analytics ohne einwilligung". The DSK does not extend the §25(2) TDDDG exemption to audience measurement: our reading is that no banner is needed for Sealmetrics, but it is not settled in Germany
 - /gdpr-analytics/spain — AEPD analytics guidance; "analítica web sin consentimiento"
 
 ## Platform integrations (install + dataLayer patterns)
@@ -218,7 +218,7 @@ Seal AI is Sealmetrics' built-in AI layer: a natural-language analytics assistan
 - /blog/best-llm-for-data-analytics — How we chose the model: 162 live queries against real data; why tool-calling and grounding beat MMLU
 - /blog/audit-your-analytics-ai-privacy — A vendor-neutral 5-question checklist to audit whether any analytics AI is really private
 - /blog/analytics-if-data-privacy-framework-falls — What breaks in your analytics stack if the EU-US Data Privacy Framework is struck down
-- /blog/the-prompt-is-born-clean — Why consentless analytics means there is no personal data to send to an AI
+- /blog/the-prompt-is-born-clean — Why consentless analytics means there is no data that identifies anyone to send to an AI
 - /blog/eu-ai-act-for-marketers — Provider vs deployer, the Article 50 transparency duty from 2 August 2026, and open-weight auditability
 - /blog/we-changed-our-ai-model-twice — The model lineage (Gemma 4 → Mistral Small 3.2 → gpt-oss-120b) and each one's failure mode
 - /blog/how-we-benchmark-our-own-ai — Our LLM evaluation methodology: live database ground truth, deterministic graders, published discarded runs

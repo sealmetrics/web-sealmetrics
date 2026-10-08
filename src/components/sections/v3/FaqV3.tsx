@@ -22,7 +22,7 @@ const ITEMS = [
   },
   {
     q: "GDPR compliant without a consent banner?",
-    a: "It is designed for it; this is our self-assessment, not a certification. Cookieless by architecture — no cookies, no personal data storage, no cross-site tracking. 100% EU-hosted in Dublin, Ireland. Designed for GDPR, ePrivacy and Schrems II, with no consent banner.",
+    a: "It is designed for it; this is our self-assessment, not a certification. Designed to comply with the GDPR: nothing stored on the device, EU-only data in Dublin, Ireland, aggregated reports — no cookies, no data that identifies anyone, no cross-site tracking. In our self-assessment Sealmetrics' own analytics needs no consent banner; in Germany that is our reading, not settled.",
   },
   {
     q: "How long does implementation take?",

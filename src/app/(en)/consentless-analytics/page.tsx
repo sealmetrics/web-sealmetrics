@@ -154,7 +154,7 @@ export default function ConsentlessAnalyticsPillar() {
               className="italic font-medium"
               style={{ color: "#E8B84B", fontStyle: "italic" }}
             >
-              Lawful by architecture, not by paperwork.
+              Built to comply with the GDPR, not by paperwork.
             </em>
           </h1>
           <ComparisonByline dateModified={PILLAR_DATE_MODIFIED} locale="en" />
@@ -287,8 +287,8 @@ export default function ConsentlessAnalyticsPillar() {
                   the marketer&apos;s guide
                 </Link>
                 . Net effect: the legal cost of running cookie-based
-                analytics rose; the legal cost of running consentless
-                analytics is zero.
+                analytics rose; consentless analytics
+                carries the lighter burden of meeting the exemption&apos;s conditions.
               </p>
             </div>
           </div>
@@ -318,10 +318,12 @@ export default function ConsentlessAnalyticsPillar() {
                 GDPR applies to &ldquo;the processing of personal
                 data.&rdquo; Personal data is any information that relates
                 to an identified or identifiable natural person. If a
-                measurement system processes only aggregate counts — never
+                measurement system reports only aggregate counts — never
                 a persistent identifier, never a behavioural
-                profile — the system does not process personal data. The
-                Regulation does not apply to its measurement output. Assess the data processed at every stage, not only the final report.
+                profile — its reports contain no personal data. A
+                pseudonymised session identifier processed along the way is
+                still personal data and needs a lawful basis, such as
+                legitimate interest. Assess the data processed at every stage, not only the final report.
               </p>
             </div>
 

@@ -185,8 +185,8 @@ export default function SearchmetricsVsSealmetricsPage() {
               >
                 cookieless analytics
               </Link>{" "}
-              built for eCommerce. It sets no cookies and collects no personal
-              data, which means it does not depend on consent to run — so it keeps
+              built for eCommerce. It sets no cookies and keeps no data that
+              identifies anyone, which means it does not depend on consent to run — so it keeps
               measuring the visitors who decline a cookie banner. In the EU, that
               is most of them.
             </p>

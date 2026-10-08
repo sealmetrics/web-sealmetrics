@@ -668,7 +668,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         comparison: [
           { category: "Consent & exemption", block: "technical", rows: [
             { feature: "Runs without a consent banner", them: "Yes in France · consent-exempt configuration (CNIL criteria)", us: "Yes · every market · no configuration required" },
-            { feature: "Geographic scope", them: "France. Not under Germany's TDDDG §25", us: "All EU markets" },
+            { feature: "Geographic scope", them: "France. Not under Germany's TDDDG §25", us: "All EU markets (Germany: our reading, not settled)" },
             { feature: "UTM / campaign parameters in exempt mode", them: "Stripped", us: "Retained · full channel attribution" },
             { feature: "eCommerce tracking in exempt mode", them: "Recommended off · order IDs anonymised if kept", us: "Full revenue measurement" },
             { feature: "Visit-level reports & raw export", them: "Disabled in exempt mode", us: "Aggregate by design · BigQuery export included" },
@@ -790,7 +790,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         comparison: [
           { category: "Consentimiento y exención", block: "technical", rows: [
             { feature: "Funciona sin banner de consentimiento", them: "Sí en Francia · configuración de exención (criterios CNIL)", us: "Sí · todos los mercados · sin configurar nada" },
-            { feature: "Alcance geográfico", them: "Francia. No bajo el §25 de la TDDDG alemana", us: "Todos los mercados UE" },
+            { feature: "Alcance geográfico", them: "Francia. No bajo el §25 de la TDDDG alemana", us: "Todos los mercados UE (Alemania: nuestra lectura, no resuelta)" },
             { feature: "Parámetros UTM / campaña en modo exento", them: "Eliminados", us: "Conservados · atribución de canal completa" },
             { feature: "Tracking de eCommerce en modo exento", them: "Recomendado off · order IDs anonimizados si se mantiene", us: "Medición de ingresos completa" },
             { feature: "Informes a nivel de visita y export crudo", them: "Deshabilitados en modo exento", us: "Agregado por diseño · export BigQuery incluido" },
@@ -997,7 +997,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
             { feature: "Muestreo a escala", them: "Sí", us: "Nunca" },
           ]},
           { category: "Compliance", block: "technical", rows: [
-            { feature: "Postura RGPD", them: "Banner de consentimiento requerido", us: "Diseñada para el RGPD · sin dato personal persistido" },
+            { feature: "Postura RGPD", them: "Banner de consentimiento requerido", us: "Diseñada para cumplir el RGPD · ningún dato que identifique a nadie" },
             { feature: "Schrems II", them: "Expuesto", us: "Limpio" },
             { feature: "Residencia de datos", them: "US", us: "UE · Dublín" },
           ]},

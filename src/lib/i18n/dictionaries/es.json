@@ -39,7 +39,7 @@
     "finance": "Finanzas",
     "financeDesc": "Analítica de servicios financieros con cumplimiento",
     "healthcare": "Salud",
-    "healthcareDesc": "Analítica del recorrido del paciente, cero PII",
+    "healthcareDesc": "Analítica del recorrido del paciente, sin datos que identifiquen a nadie",
     "education": "Educación",
     "educationDesc": "Atribución completa de matriculación",
     "dataLossCalc": "Calculadora de Pérdida de Datos",

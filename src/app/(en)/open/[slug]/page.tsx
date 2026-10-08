@@ -494,8 +494,8 @@ function ChapterOneBody() {
             </h3>
             <p className="text-[1rem] leading-[1.7] text-ink-2 m-0">
               Captured server-side, before ad blockers see the request and
-              before consent banners are decided. Aggregate, anonymous, never
-              personal. Visitors who reject the banner as well as those who
+              before consent banners are decided. Aggregated, nothing that
+              identifies anyone. Visitors who reject the banner as well as those who
               accept it, not a sample of the consenting majority.
             </p>
           </div>
@@ -876,7 +876,7 @@ function ChapterNineBody() {
         </>
       ),
       instead:
-        "Anonymous event measurement at population scale. No identifier survives long enough to resolve to a person.",
+        "Aggregate event measurement at population scale. No identifier survives beyond a day.",
     },
     {
       id: "no-fingerprint",
@@ -1476,22 +1476,19 @@ function ChapterSixBody() {
         the store.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-5">
-        Sealmetrics does not rely on consent because there is no personal
-        data to consent to. What we measure is aggregate event data — a
+        Sealmetrics stores nothing on the device and no data that
+        identifies anyone. What we report is aggregate event data — a
         request hit /product-X, originated from a referrer, on a device
         for which we keep{" "}
         <em className="italic-accent">no persistent identifier</em>. The
-        session identifier rotates daily, and there is no identifier that
-        resolves to a person. The data is not personal data
-        within the meaning of GDPR Article 4(1). Therefore none of Article
-        6's lawful bases applies — because Article 6 concerns personal data,
-        and we do not process any.
+        session identifier rotates daily and, once rotated, not even we can
+        reconstruct it. During the day it is a pseudonym, and pseudonymised
+        data is still personal data under GDPR, so it needs a lawful basis.
       </p>
       <p className="text-[1.05rem] leading-[1.75] text-ink-2 mb-10">
-        For the narrow set of fields where pseudonymisation is technically
-        possible (e.g., a visit-scoped ID used for last-click attribution
-        within a single visit, then discarded), the lawful basis is Article
-        6(1)(f) — legitimate interest in measuring a customer's own website.
+        For the session identifier (pseudonymised on the server with a
+        salt that rotates daily, used to group the hits of a visit for
+        last-click attribution), the lawful basis is Article 6(1)(f) — legitimate interest in measuring a customer's own website.
         The Legitimate Interest Assessment (LIA) is documented in the DPA
         package.
       </p>

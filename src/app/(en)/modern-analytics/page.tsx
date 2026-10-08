@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "Is this really compliant with GDPR and ePrivacy?",
-    a: "It is designed to be; this is our self-assessment, not a certification. There is no personal data, no cookie, no localStorage, no persistent identifier. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
+    a: "It is designed to be; this is our self-assessment, not a certification. There is no data that identifies anyone, no cookie, no localStorage, no persistent identifier. Events are aggregated into channel-level totals server-side. The Spanish DPA (AEPD) framework and GDPR Article 6(1)(f) legitimate interest both cover this approach. No consent banner is required for measurement.",
   },
   {
     q: "How do I switch from legacy analytics?",
@@ -118,7 +118,7 @@ const pillars = [
   {
     eyebrow: "Compliance",
     title: "Designed for GDPR",
-    body: "No cookies. No localStorage. No persistent identifier. No personal data. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
+    body: "No cookies. No localStorage. No persistent identifier. No data that identifies anyone. EU-hosted in Dublin. No consent banner required for measurement under GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners required",
   },

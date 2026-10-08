@@ -39,7 +39,7 @@
     "finance": "Finance",
     "financeDesc": "Financial services analytics, designed for GDPR",
     "healthcare": "Healthcare",
-    "healthcareDesc": "Patient journey analytics, zero PII",
+    "healthcareDesc": "Patient journey analytics, no data that identifies anyone",
     "education": "Education",
     "educationDesc": "Complete enrollment attribution",
     "dataLossCalc": "Data Loss Calculator",

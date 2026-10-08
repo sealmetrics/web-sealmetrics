@@ -14,7 +14,7 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Consentless Analytics for DTC — 2026 Guide",
   description:
-    "Consentless analytics measures DTC traffic without waiting for the cookie banner — anonymously, at channel level. How it works and what teams gain.",
+    "Consentless analytics measures DTC traffic without waiting for the cookie banner — in aggregate, at channel level. How it works and what teams gain.",
   openGraph: {
     title: "Consentless Analytics for DTC — 2026 Guide",
     description:
@@ -62,7 +62,7 @@ const faqs = [
   {
     question: "Is consentless analytics legal under GDPR?",
     answer:
-      "It can be, when correctly implemented. GDPR regulates processing of personal data; if no personal data is collected and no persistent identifier is kept, the architecture avoids the obligations that attach to personal data. This is a question for a DPO to confirm against the specific implementation — Sealmetrics ships a DPA and TPSR package for this review.",
+      "It can be, when correctly implemented. GDPR regulates processing of personal data; when nothing is stored on the device, nothing that identifies anyone is kept and reports are always aggregated, what remains is a pseudonymised session identifier with a lawful basis such as legitimate interest. This is a question for a DPO to confirm against the specific implementation — Sealmetrics ships a DPA and TPSR package for this review.",
   },
   {
     question: "Can I use consentless analytics alongside advertising pixels?",
@@ -80,7 +80,7 @@ export default function Page() {
       <JsonLd
         data={articleSchema({
           headline: "Consentless Analytics for DTC — 2026 Guide",
-          description: "Consentless analytics measures DTC traffic anonymously at channel level, without waiting for the banner and without tracking anyone.",
+          description: "Consentless analytics measures DTC traffic in aggregate at channel level, without waiting for the banner and without tracking anyone.",
           ...dates,
           url: "/blog/consentless-analytics-for-dtc",
           category: "eCommerce",

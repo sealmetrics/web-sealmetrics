@@ -136,8 +136,8 @@ const requisitos = [
     n: 11,
     id: "req-11",
     title: "Cumplimiento por arquitectura",
-    bar: "Sin datos personales, ubicación UE nombrada, DPA incluido, certificaciones verificables",
-    seal: "Sin datos personales, alojado en la UE en Dublín, DPA en contrato estándar. Sin certificación ISO 27001 ni SOC 2",
+    bar: "Ningún dato que identifique a nadie, ubicación UE nombrada, DPA incluido, certificaciones verificables",
+    seal: "Ningún dato que identifique a nadie, alojado en la UE en Dublín, DPA en contrato estándar. Sin certificación ISO 27001 ni SOC 2",
     score: 1,
   },
   {
@@ -487,8 +487,8 @@ export default function MejorHerramientaAnaliticaWebPage() {
                 La plataforma no debe perder cargas de página porque el visitante
                 no acepte nada, ni porque las listas
                 de bloqueo la clasifiquen como tracker. Eso solo es posible si
-                no almacena datos personales — porque si los almacenara, el
-                consentimiento sería legalmente exigible y volverías al 40%.
+                no guarda nada en el dispositivo ni nada que identifique a nadie —
+                porque si no, el consentimiento sería legalmente exigible y volverías al 40%.
                 Completitud y privacidad son el mismo requisito enunciado dos
                 veces, no un intercambio, y ese es el argumento entero de la{" "}
                 <Link
@@ -949,14 +949,14 @@ export default function MejorHerramientaAnaliticaWebPage() {
                   href="/glossary/personal-data-in-analytics"
                   className={linkClass}
                 >
-                  datos personales
+                  datos que identifiquen a nadie
                 </Link>{" "}
-                recogidos, sin cookies, sin identificador persistente de dispositivo, sin
+                guardados, sin cookies, sin identificador persistente de dispositivo, sin
                 almacenamiento en cliente. Esto no es una versión más estricta
                 del cumplimiento: es un mecanismo distinto. Una plataforma que
-                no trata datos personales queda en buena medida fuera del ámbito
-                material de la norma, en lugar de cumplir dentro de ella, y esa
-                diferencia es la que elimina el banner y con él la pérdida del
+                no guarda nada en el dispositivo ni nada que identifique a nadie
+                puede apoyarse en la exención de medición de audiencia en vez de
+                en un diálogo de consentimiento, y esa diferencia es la que elimina el banner y con él la pérdida del
                 60%.
               </p>
               <p>

@@ -82,7 +82,7 @@ export const opencartEn: ProblemLandingContent = {
       ["begin_checkout", "Checkout page views"],
       ["purchase", "Revenue, payment method, coupon, items"],
     ],
-    foot: "No personal data · no order ID stored outside OpenCart · one setup per store",
+    foot: "No data that identifies anyone · no order ID stored outside OpenCart · one setup per store",
   },
 
   answerLabel: "Quick answer",
@@ -225,7 +225,7 @@ export const opencartEn: ProblemLandingContent = {
     { question: "What does the purchase event include?", answer: "The order value, currency, payment method and coupon, and for each item the product ID, name, SKU, price, quantity, category and brand, with the product options chosen, such as size or colour, sent as properties." },
     { question: "Why is an OpenCart purchase missing in Sealmetrics?", answer: "Check that Track Purchases is enabled, that the order confirmation page loads correctly after payment, because that is where the purchase is sent, and that there are no JavaScript errors in the browser console." },
     { question: "Why is add to cart not tracked?", answer: "Check that Track Add to Cart is enabled and that your store's cart uses the standard OpenCart methods. A theme or extension that replaces the cart may not trigger the event." },
-    { question: "Will I need to change my consent banner?", answer: "Not necessarily for the analytics: the extension sets no cookie and collects no personal data. Ad pixels, chat tools or A/B testing that do store data still need consent, and whether your store is exempt for analytics depends on its configuration and your national authority's criteria." },
+    { question: "Will I need to change my consent banner?", answer: "Not necessarily for the analytics: the extension sets no cookie and keeps no data that identifies anyone. Ad pixels, chat tools or A/B testing that do store data still need consent, and whether your store is exempt for analytics depends on its configuration and your national authority's criteria." },
   ],
 
   final: {
@@ -268,7 +268,7 @@ export const opencartEs: ProblemLandingContent = {
       ["begin_checkout", "Vistas de la página de checkout"],
       ["purchase", "Ingresos, método de pago, cupón, artículos"],
     ],
-    foot: "Sin datos personales · sin ID de pedido fuera de OpenCart · configuración por tienda",
+    foot: "Ningún dato que identifique a nadie · sin ID de pedido fuera de OpenCart · configuración por tienda",
   },
 
   answerLabel: "Respuesta rápida",

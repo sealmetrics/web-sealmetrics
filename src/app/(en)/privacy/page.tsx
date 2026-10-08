@@ -82,8 +82,9 @@ export default function PrivacyPage() {
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-text-tertiary shrink-0">&mdash;</span>
-                Anonymous analytics data via our own Sealmetrics script (page
-                views, session duration, referrer — no PII)
+                Analytics data via our own Sealmetrics script (page views,
+                session duration, referrer), grouped by a pseudonymised session
+                identifier that rotates daily; nothing is stored on your device
               </li>
             </ul>
             <p className="mt-3">
@@ -228,10 +229,12 @@ export default function PrivacyPage() {
               6(1)(f)). For our own analytics script on sealmetrics.com and on
               the my.sealmetrics.com sign-up flow: our legitimate interest in
               measuring the audience of our own site and the effectiveness of
-              our marketing (Article 6(1)(f)), as no personal data is processed.
-              For analytics data on Client websites: legitimate
-              interest of the Client in understanding website usage (Article
-              6(1)(f)), as no personal data is processed.
+              our marketing (Article 6(1)(f)). For analytics data on Client
+              websites: legitimate interest of the Client in understanding
+              website usage (Article 6(1)(f)). In both cases the only
+              pseudonymised data is the session identifier, which rotates daily
+              and, once rotated, cannot be reconstructed, not even by us;
+              reports are always aggregated.
             </p>
           </div>
 
@@ -280,7 +283,8 @@ export default function PrivacyPage() {
               Under GDPR, you have the right to access, rectify, erase, port,
               and restrict processing of your personal data. For data you have
               provided via forms, contact us at privacy@sealmetrics.com. Note
-              that analytics data collected on Client websites is anonymous and
+              that analytics data collected on Client websites contains no data
+              that identifies anyone, and once the daily identifier rotates it
               cannot be linked to any individual.
             </p>
           </div>

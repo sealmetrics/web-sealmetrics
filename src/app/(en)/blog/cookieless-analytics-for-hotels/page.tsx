@@ -114,7 +114,7 @@ export default function Page() {
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>Hotel groups running GA4 lose the channel behind a large share of direct bookings: at Palladium Hotel Group, 35% of the bookings GA4 recorded had no channel.</li>
               <li>The gap comes from consent rejection on mobile, ITP-induced cookie expiry and the jump to an external booking engine or payment gateway.</li>
-              <li>Cookieless analytics counts booking events anonymously — no cookies, no personal identifiers, no per-guest journey — and attributes each booking last-click to the source of the session in which it happens.</li>
+              <li>Cookieless analytics counts booking events in aggregate — no cookies, no data that identifies anyone, no per-guest journey — and attributes each booking last-click to the source of the session in which it happens.</li>
               <li>Aggregate bookings and revenue by channel can be checked against the PMS total — Mews, Cloudbeds, Opera or any other — because the booking arrives as a standard conversion event.</li>
               <li>Bookings made on an OTA&apos;s own site never pass through your website and stay out of the measurement; the OTA extranet remains their source.</li>
             </ul>

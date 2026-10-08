@@ -9,11 +9,11 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Privacy end to end — Sealmetrics",
   description:
-    "Private from the first hit to private-AI processing. No cookies, no personal data, EU-hosted — and an AI that runs in Europe and never trains on your data.",
+    "Private from the first hit to AI processing. No cookies, nothing that identifies anyone, EU-hosted — and an AI in Europe that never trains on your data.",
   openGraph: {
     title: "Privacy end to end — Sealmetrics",
     description:
-      "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
+      "Private from collection to AI. No cookies, no data that identifies anyone, EU-hosted, and a private EU AI that never trains on your data.",
     type: "website",
     images: [ogImage("/privacy-end-to-end/")],
     url: "https://sealmetrics.com/privacy-end-to-end/",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Privacy end to end — Sealmetrics",
-    description: "Private from collection to AI. No cookies, no personal data, EU-hosted, and a private EU AI that never trains on your data.",
+    description: "Private from collection to AI. No cookies, no data that identifies anyone, EU-hosted, and a private EU AI that never trains on your data.",
     images: [ogImage("/privacy-end-to-end/")],
   },
   alternates: {
@@ -38,7 +38,7 @@ const STEPS = [
     n: "01",
     title: "Collection",
     p: "An 846-byte pixel records events — no cookies, nothing stored on the device, only an ephemeral identifier that rotates daily. Measurement is limited to the site's own audience statistics, so traffic is measured without consent-driven loss.",
-    tags: ["No cookies", "No personal data", "No consent banner"],
+    tags: ["No cookies", "No data that identifies anyone", "Nothing on the device"],
   },
   {
     n: "02",

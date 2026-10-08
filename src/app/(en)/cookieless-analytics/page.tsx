@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Is cookieless analytics legal under GDPR?",
-    a: "It can be, and the route is architectural rather than contractual. When no personal data or persistent identifier is kept, nothing is stored on the device and measurement serves only the site's own audience statistics, the GDPR obligations that attach to personal data are not triggered and the use fits the audience-measurement exemption from the ePrivacy storage-and-access rule. Whether a given deployment is consent-exempt still depends on its configuration and on the national regulator's criteria — the CNIL, the German DSK and the UK ICO each publish their own, and they are not identical. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
+    a: "It can be, and the route is architectural rather than contractual. When nothing that identifies anyone or persists is kept, nothing is stored on the device and measurement serves only the site's own audience statistics, GDPR obligations shrink to a pseudonymised session identifier with a lawful basis, and the use fits the audience-measurement exemption from the ePrivacy storage-and-access rule. Whether a given deployment is consent-exempt still depends on its configuration and on the national regulator's criteria — the CNIL, the German DSK and the UK ICO each publish their own, and they are not identical. Sealmetrics ships with a DPA, EU-only processing in Dublin, and a TPSR (Transfer, Privacy and Security Review) package for legal review.",
   },
   {
     q: "How accurate is cookieless tracking compared with GA4?",
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "What can cookieless analytics not do?",
-    a: "It cannot identify a returning visitor. It cannot follow a single person across pages or sessions. It does not build per-user behavioural profiles. If your use case requires user-level identification (logged-in product analytics, CRM triggers based on individual browsing), you need a different category of tool — likely Mixpanel, Amplitude or a CDP. Sealmetrics counts events anonymously and attributes conversions to the channel that drove them, at aggregate scale.",
+    a: "It cannot identify a returning visitor. It cannot follow a single person across pages or sessions. It does not build per-user behavioural profiles. If your use case requires user-level identification (logged-in product analytics, CRM triggers based on individual browsing), you need a different category of tool — likely Mixpanel, Amplitude or a CDP. Sealmetrics counts events in aggregate and attributes conversions to the channel that drove them, at aggregate scale.",
   },
   {
     q: "What about Google Consent Mode v2?",
@@ -144,7 +144,7 @@ export default function CookielessAnalyticsPillar() {
           <>
             Cookieless analytics is web analytics that captures pageviews,
             events and conversions{" "}
-            <strong>anonymously, on the server side</strong>, optionally from
+            <strong>in aggregate, on the server side</strong>, optionally from
             a subdomain of your own domain — without cookies or persistent
             identifiers. It doesn&apos;t lose visitors to consent
             rejection because there is no cookie for browsers to expire or for
@@ -260,7 +260,7 @@ export default function CookielessAnalyticsPillar() {
           <h2 className="h-section">How analytics works without cookies</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
             The architecture removes the cookie as a tracking primitive and
-            replaces it with anonymous, first-party event counting. Three
+            replaces it with aggregate, first-party event counting. Three
             layers, one pipeline:
           </p>
 
@@ -293,7 +293,7 @@ export default function CookielessAnalyticsPillar() {
                 02
               </span>
               <h3 className="text-[18px] font-semibold text-ink mb-2">
-                Anonymous server-side event counting
+                Aggregate server-side event counting
               </h3>
               <p className="text-[16px] leading-[1.7] text-ink-soft">
                 The pixel endpoint runs in Dublin and counts events at
@@ -441,7 +441,7 @@ export default function CookielessAnalyticsPillar() {
               <tbody className="text-ink">
                 {[
                   ["Traffic captured (EU)", "Consent-dependent — lost to consent, ad-block and ITP (GA4 missed 29% of visits on a measured store)", "Not reduced by consent — no script, no expiry"],
-                  ["Consent banner", "Required before any tracking", "Not required — no personal data"],
+                  ["Consent banner", "Required before any tracking", "Not required for Sealmetrics' own analytics, in our self-assessment"],
                   ["Ad-blocker impact", "Script stripped for a share of visits that varies by audience", "First-party request — not in rule lists"],
                   ["Cookie lifespan", "Safari ITP caps at 7 days", "No cookie — irrelevant"],
                   ["Returning-visitor ID", "Possible (when cookie survives)", "Not possible by design"],

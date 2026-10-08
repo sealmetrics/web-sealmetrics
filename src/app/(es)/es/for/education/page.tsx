@@ -48,7 +48,7 @@ export default function EducationPageEs() {
       <JsonLd data={speakableWebPageSchema({ url: URL, name: TITLE })} />
       <JsonLd
         data={articleSchema({
-          headline: "Analítica para educación: peticiones y solicitudes por canal, sin datos personales",
+          headline: "Analítica para educación: peticiones y solicitudes por canal, sin datos que identifiquen a nadie",
           description: DESCRIPTION,
           datePublished: EDUCATION_PUBLISHED_ES,
           dateModified: EDUCATION_MODIFIED,

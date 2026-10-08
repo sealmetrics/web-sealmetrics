@@ -14,10 +14,10 @@ import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
   title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-  description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+  description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
   openGraph: {
     title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
     type: "website",
     images: [ogImage("/vs/piwik-pro/")],
     url: "https://sealmetrics.com/vs/piwik-pro/",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Sealmetrics vs Piwik PRO — privacy modes compared",
-    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of anonymous analytics.",
+    description: "Compare Piwik PRO and Sealmetrics on identifiers, consent modes, attribution, EU hosting and the reporting trade-offs of aggregate analytics.",
     images: [ogImage("/vs/piwik-pro/")],
   },
   alternates: { canonical: "https://sealmetrics.com/vs/piwik-pro/", languages: getAlternates("/vs/piwik-pro") },

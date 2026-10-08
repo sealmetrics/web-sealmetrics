@@ -65,7 +65,7 @@ export default function Page() {
               El problema nunca fueron los analistas. Era la arquitectura. Cada herramienta optimizando para su propio reporte. El rechazo de consentimiento dejaba invisible una parte grande del tráfico: en nuestra experiencia con clientes, entre el 40% y el 60% no acepta cookies. Las cadenas de sub-procesadores se extendían por tres continentes. Los equipos pasaban más tiempo cuadrando números que actuando sobre ellos.
             </p>
             <p>
-              Sealmetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Cero dato personal. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
+              Sealmetrics se construyó para el comité. Una capa neutral que marca, finanzas y agencias firman. Alojada en Dublín. Cero cookies. Ningún dato que identifique a nadie. Resolución completa. Construida por un equipo que vivió el problema durante dos décadas — y decidió dejar de parchearlo.
             </p>
           </div>
 

@@ -283,9 +283,9 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPage() {
               &quot;applies but is satisfied&quot; — never applies.
             </p>
             <p>
-              The first way to break it is to collect no personal data. Analytics
+              The first way to break it is to collect nothing that identifies anyone. Analytics
               that never collects IPs or cookies and keeps no persistent visitor
-              identifier has no personal data to transfer in the first place.
+              identifier has nothing that identifies anyone to transfer in the first place.
               The second is to keep processing with an EU-incorporated processor
               that has no US parent, so no extraterritorial regime reaches it.
             </p>

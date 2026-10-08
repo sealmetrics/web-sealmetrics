@@ -18,11 +18,11 @@ const DATE_MODIFIED = "2026-05-29";
 export const metadata: Metadata = {
   title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
   description:
-    "How analytics runs lawfully in Germany under §25 TDDDG. The DSK orientation paper, BfDI guidance, and the architectural exemption.",
+    "How §25 TDDDG and the DSK position apply to analytics in Germany, why audience measurement has no settled exemption, and our reading.",
   openGraph: {
     title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
     description:
-      "The §25 TDDDG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
+      "The §25 TDDDG rule, the DSK orientation paper, and our reading for cookieless analytics — not settled in Germany.",
     type: "article",
     images: [ogImage("/gdpr-analytics/germany/")],
     url: "https://sealmetrics.com/gdpr-analytics/germany/",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "GDPR analytics in Germany — §25 TDDDG and the DSK position",
-    description: "The §25 TDDDG rule, the DSK orientation paper, and how cookieless architectures meet the exemption by design.",
+    description: "The §25 TDDDG rule, the DSK orientation paper, and our reading for cookieless analytics — not settled in Germany.",
     images: [ogImage("/gdpr-analytics/germany/")],
   },
   alternates: {
@@ -47,13 +47,13 @@ const criteria = [
     n: "01",
     title: "No terminal-device storage",
     requirement: "§25 TDDDG requires consent before storing or accessing information on the user's terminal device — cookies, localStorage, fingerprinting.",
-    us: "No cookie is set and no localStorage is written: nothing is stored on the device. The session identifier is ephemeral and rotates daily, and measurement is limited to the site's own audience statistics.",
+    us: "No cookie is set and no localStorage is written: nothing is stored on the device. The session identifier is ephemeral and rotates daily, and measurement is limited to the site's own audience statistics. To compute that identifier, the tracker reads device properties via JavaScript, which may count as access under §25(1).",
   },
   {
     n: "02",
-    title: "No personal-data processing",
+    title: "No data that identifies anyone",
     requirement: "DSK orientation paper: if no personal data is processed, GDPR's material scope does not apply.",
-    us: "Aggregate channel counts only. No IP address stored, no persistent identifier created, no per-visitor profile. Nothing relating to an identifiable person.",
+    us: "Reports are always aggregated. No IP address stored, no persistent identifier, no per-visitor profile. The session identifier is a pseudonym that rotates daily; once rotated, not even we can reconstruct it.",
   },
   {
     n: "03",
@@ -72,23 +72,23 @@ const criteria = [
 const faqs = [
   {
     q: "Does the §25 TDDDG exemption apply to all analytics?",
-    a: "No. The exemption requires that the analytics is strictly necessary for the operation of the service, OR meets the conditions for anonymous audience measurement — no terminal-device storage, no cross-site tracking, no personal data, EU processing. Cookie-based analytics with a visitor ID does not qualify; Sealmetrics' aggregate cookieless architecture does.",
+    a: "No. §25(2) exempts storage or access that is strictly necessary for a service the user requested, and the DSK does not extend that exemption to audience measurement. Cookie-based analytics with a visitor ID needs consent. Our reading is that no banner is needed for Sealmetrics, which stores nothing on the device and no data that identifies anyone, but it is not settled in Germany: the tracker reads device properties via JavaScript, which may count as access under §25(1). Check with your DPO.",
   },
   {
     q: "What is the DSK orientation paper?",
-    a: "The Datenschutzkonferenz — the conference of all German federal and state data protection authorities — publishes joint guidance. The 2022 orientation paper on telemedia consent specifies when §25 TDDDG requires consent and when it does not. The conditions for the exemption align with the EDPB Opinion 5/2019 and the CNIL guidance: aggregate, anonymous, EU-hosted, no identifier on the device.",
+    a: "The Datenschutzkonferenz — the conference of all German federal and state data protection authorities — publishes joint guidance. The 2022 orientation paper on telemedia consent specifies when §25 TDDDG requires consent and when it does not. Unlike the CNIL, the DSK does not extend the §25(2) exemption to audience measurement.",
   },
   {
     q: "Does the BfDI agree with the state authorities?",
-    a: "Generally yes, on the exemption itself. The BfDI handles federal-level matters; state DPAs (LDI NRW, LfD Bayern, etc.) handle most enforcement. The 2024 BfDI activity report reaffirmed the analytics exemption framing consistent with the DSK position. State authorities can take stronger positions on individual cases — the LfD Bayern is historically the most assertive — but the underlying legal frame is harmonised.",
+    a: "Generally yes. The BfDI handles federal-level matters; state DPAs (LDI NRW, LfD Bayern, etc.) handle most enforcement. State authorities can take stronger positions on individual cases — the LfD Bayern is historically the most assertive — but the underlying legal frame, §25 TDDDG read with the DSK orientation paper, is shared.",
   },
   {
     q: "What about Google Analytics on a German site?",
-    a: "Google Analytics still requires consent under §25 TDDDG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. Sealmetrics operates outside that framework entirely.",
+    a: "Google Analytics still requires consent under §25 TDDDG because it sets cookies and processes personal data through Google infrastructure (transfer to the US). The Garante Italian ban on GA4 in 2022 was followed by similar concerns from German authorities. Consent Mode v2 reduces the cookie load but does not change the fundamental processing nature. Sealmetrics sets no cookies and keeps visitor data in the EU; on the §25 question, see our reading above.",
   },
   {
     q: "Do I still need a Datenschutzerklärung?",
-    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (channel-level aggregates only), retention period (24 months for Sealmetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest, paired with the §25 TDDDG exemption). A template ships with the TPSR package.",
+    a: "Yes. The privacy policy (Datenschutzerklärung) is required under GDPR Art. 13/14 regardless of consent mechanism. It must mention the analytics tool, its purpose, data categories (aggregated reports and a pseudonymised session identifier that rotates daily), retention period (24 months for Sealmetrics, fixed and non-configurable), and the lawful basis (Art. 6(1)(f) legitimate interest). A template ships with the TPSR package.",
   },
   {
     q: "What's the position on the proposed Digital Omnibus?",
@@ -115,9 +115,9 @@ export default function GdprAnalyticsGermanyPage() {
       <JsonLd
         data={articleSchema({
           headline:
-            "GDPR analytics in Germany — §25 TDDDG, the DSK orientation paper, and the exemption that survives",
+            "GDPR analytics in Germany — §25 TDDDG, the DSK orientation paper, and where analytics stands",
           description:
-            "How analytics runs lawfully in Germany without a cookie banner under §25 TDDDG and the DSK position. Architectural requirements, BfDI guidance, and the Digital Omnibus proposal.",
+            "How §25 TDDDG and the DSK position apply to analytics in Germany, our reading for Sealmetrics, BfDI guidance, and the Digital Omnibus proposal.",
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
           url: "/gdpr-analytics/germany",
@@ -134,14 +134,15 @@ export default function GdprAnalyticsGermanyPage() {
           <h1 className="h-display mx-auto mt-5" style={{ maxWidth: "22ch" }}>
             Analytics in Germany.{" "}
             <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>
-              Without an Einwilligungsbanner.
+              Our reading of §25 TDDDG.
             </em>
           </h1>
           <p className="text-ink-soft mt-8 mx-auto max-w-[64ch] leading-[1.55]" style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}>
-            §25 TDDDG governs cookie consent in Germany. The DSK
-            orientation paper and BfDI guidance carve out anonymous
-            audience measurement. This is what the carve-out requires
-            and where the limits are.
+            §25 TDDDG governs cookie consent in Germany, and the DSK
+            does not extend its §25(2) exemption to audience
+            measurement. Our reading is that no banner is needed for
+            Sealmetrics, but it is not settled in Germany — check with
+            your DPO. This is the reasoning and where it can be challenged.
           </p>
         </div>
       </section>
@@ -152,11 +153,14 @@ export default function GdprAnalyticsGermanyPage() {
             German analytics law is governed by §25 TDDDG — the
             domestic implementation of ePrivacy Art. 5(3). Consent
             is required before storing or accessing information on
-            the user&rsquo;s terminal device. The Datenschutzkonferenz
-            (DSK) orientation paper and BfDI guidance both confirm an
-            exemption for anonymous audience measurement that meets
-            four conditions: no terminal-device storage, no personal
-            data, no cross-site tracking, EU-only processing. German
+            the user&rsquo;s terminal device, unless §25(2) applies, and
+            the Datenschutzkonferenz (DSK) does not extend that
+            exemption to audience measurement. Sealmetrics stores
+            nothing on the device and no data that identifies anyone,
+            but its tracker reads device properties via JavaScript,
+            which may count as access under §25(1). Our reading is that
+            no banner is needed for Sealmetrics, but it is not settled
+            in Germany — check with your DPO. German
             rejection rates against standard cookie banners run
             60–70% — the highest in Europe — so the exemption matters
             more here than anywhere else.
@@ -164,7 +168,7 @@ export default function GdprAnalyticsGermanyPage() {
         }
         bullets={[
           <><strong>§25 TDDDG</strong> — Germany&rsquo;s ePrivacy implementation, in force since December 2021.</>,
-          <><strong>DSK orientation paper</strong> on telemedia consent describes when the exemption applies.</>,
+          <><strong>DSK orientation paper</strong> on telemedia consent does not extend the §25(2) exemption to audience measurement.</>,
           <><strong>60–70% rejection rate</strong> on standard banners — the highest in Europe.</>,
           <><strong>State authorities harmonised</strong> — BfDI federal, LDI NRW / LfD Bayern at state level.</>,
         ]}
@@ -172,12 +176,14 @@ export default function GdprAnalyticsGermanyPage() {
 
       <section className="py-20 bg-white border-t border-warm-100">
         <div className="max-w-[840px] mx-auto px-5 sm:px-8">
-          <h2 className="h-section">The 4 conditions of the §25 TDDDG exemption</h2>
+          <h2 className="h-section">The 4 conditions we assess Sealmetrics against</h2>
           <p className="mt-6 text-[17px] leading-[1.75] text-ink-soft">
-            §25 TDDDG sets the rule; the DSK paper and BfDI guidance
-            set the exemption boundary. Four conditions, each
-            architectural rather than procedural — they describe how
-            the tool is built, not what notice is shown.
+            §25 TDDDG sets the rule. Because the DSK does not extend
+            the exemption to audience measurement, these four
+            conditions are how we read the boundary, not an exemption
+            the DSK has confirmed. Each is architectural rather than
+            procedural — they describe how the tool is built, not what
+            notice is shown.
           </p>
 
           <div className="mt-10 space-y-7">
@@ -341,10 +347,10 @@ export default function GdprAnalyticsGermanyPage() {
 
       <FinalCtaSharedV3
         locale="en"
-        titleEn={<>One <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>DSK review</em>. Done.</>}
-        titleEs={<>Una <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>revisión DSK</em>. Resuelta.</>}
+        titleEn={<>One <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>DSK review</em>. With your DPO.</>}
+        titleEs={<>Una <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>revisión DSK</em>. Con tu DPO.</>}
         ledeEn="Book with the founder. Bring your DPO. We walk through the §25 TDDDG criteria live and ship the DPA + TPSR on the call."
-        ledeEs="Reserva con el founder. Trae a tu DPO. Resolvemos §25 TDDDG en directo y enviamos DPA + TPSR en la llamada."
+        ledeEs="Reserva con el founder. Trae a tu DPO. Repasamos §25 TDDDG en directo y enviamos DPA + TPSR en la llamada."
       />
     </>
   );

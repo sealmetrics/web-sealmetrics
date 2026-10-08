@@ -78,9 +78,9 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>Consent-free analytics is legally possible under both GDPR (Article 6(1)(f) legitimate interest) and ePrivacy (Article 5(3) does not apply when nothing is stored on the user's device).</li>
             <li>The CNIL has published specific criteria for consent-exempt analytics: anonymous statistical output only, no cross-site tracking, no advertising use, and IP anonymization at minimum.</li>
-            <li>Six technical requirements must all be met: no cookies, no localStorage, no persistent identifier, no personal data, first-party only, and EU data residency — any single failure invalidates the approach.</li>
+            <li>Six technical requirements must all be met: no cookies, no localStorage, no persistent identifier, no data that identifies anyone, first-party only, and EU data residency — any single failure invalidates the approach.</li>
             <li>The EU Digital Omnibus would create a harmonized EU-wide framework explicitly authorizing first-party analytics without consent, replacing the current patchwork of national DPA interpretations.</li>
-            <li>Sealmetrics was built from the ground up for consent-free operation — no cookies, no PII, EU-only infrastructure — satisfying CNIL, ePrivacy, and GDPR requirements simultaneously.</li>
+            <li>Sealmetrics was built from the ground up for consent-free operation — no cookies, no data that identifies anyone, EU-only infrastructure — designed to meet CNIL, ePrivacy and GDPR requirements (self-assessed, not certified).</li>
           </ul>
         </div>
 
@@ -272,7 +272,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
-              <strong className="font-semibold text-text-primary">No personal data</strong> &mdash; no IP addresses stored, no user-level profiles created
+              <strong className="font-semibold text-text-primary">No data that identifies anyone</strong> &mdash; no IP addresses stored, no user-level profiles created
             </li>
             <li className="flex items-start gap-3 text-[0.95rem]">
               <span className="text-text-tertiary shrink-0">&mdash;</span>
@@ -365,7 +365,7 @@ export default function GDPRAnalyticsWithoutConsentPage() {
 
           <p>
             All visitor data is processed and stored in EU-based infrastructure.
-            No personal data is collected. No individual profiles are
+            No data that identifies anyone is kept. No individual profiles are
             created. The output is aggregate audience measurement &mdash;
             page views, sessions, traffic sources, conversion events
             &mdash; with no traffic lost to consent because no consent
@@ -375,8 +375,8 @@ export default function GDPRAnalyticsWithoutConsentPage() {
           <p>
             This architecture is designed to meet the CNIL exemption criteria, the
             ePrivacy Article 5(3) requirements, and the GDPR legitimate
-            interest basis simultaneously. Sealmetrics is anonymous,
-            cookieless, and designed for GDPR from the architecture up
+            interest basis simultaneously. Sealmetrics keeps nothing that
+            identifies anyone, is cookieless, and designed for GDPR from the architecture up
             (self-assessed).
           </p>
 

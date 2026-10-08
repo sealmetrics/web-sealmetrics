@@ -84,7 +84,7 @@ export default function Page() {
               The problem was never the analysts. It was the architecture. Every tool optimised for its own reporting. Consent rejection hid a large share of traffic: in our experience with clients, between 40% and 60% of it doesn&apos;t accept cookies. Sub-processor chains stretched across three continents. Teams spent more time reconciling numbers than acting on them.
             </p>
             <p>
-              Sealmetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. Zero personal data. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
+              Sealmetrics was built for the boardroom. A neutral layer brand, finance and agencies can all sign against. Hosted in Dublin. Zero cookies. No data that identifies anyone. Full resolution. Built by a team that had lived through the problem for two decades — and decided to stop patching it.
             </p>
           </div>
 

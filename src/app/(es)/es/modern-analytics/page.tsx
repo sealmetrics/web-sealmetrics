@@ -67,7 +67,7 @@ const faqs = [
   },
   {
     q: "¿Es realmente compatible con GDPR y ePrivacy?",
-    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos personales, ni cookies, ni localStorage, ni identificador persistente. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
+    a: "Está diseñada para serlo; es nuestra autoevaluación, no una certificación. No hay datos que identifiquen a nadie, ni cookies, ni localStorage, ni identificador persistente. Los eventos se agregan en totales por canal en servidor. El marco de la AEPD y el artículo 6(1)(f) del GDPR (interés legítimo) cubren este enfoque. No se requiere banner de consentimiento para medición.",
   },
   {
     q: "¿Cómo migro desde mi analítica actual?",
@@ -118,7 +118,7 @@ const pillars = [
   {
     eyebrow: "Cumplimiento",
     title: "Diseñada para el RGPD",
-    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Sin datos personales. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
+    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Ningún dato que identifique a nadie. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
     metric: "0 cookies",
     metricLabel: "0 banners requeridos",
   },

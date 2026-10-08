@@ -125,7 +125,7 @@ export default function ConversionTrackingPage() {
         answer={
           <>
             Conversion tracking in 2026 needs two layers, not one. A
-            <strong> measurement layer</strong> (anonymous, cookieless,
+            <strong> measurement layer</strong> (aggregated, cookieless,
             captures conversions without consent gaps for revenue reporting) and an
             <strong> optimisation layer</strong> (Meta pixel, Google
             Ads pixel — feeds the bidder, still requires consent for
@@ -140,7 +140,7 @@ export default function ConversionTrackingPage() {
         bullets={[
           <><strong>Two layers</strong> — measurement (Sealmetrics) + optimisation (Meta / Google pixels).</>,
           <><strong>One dataLayer push</strong> feeds both.</>,
-          <><strong>Any conversion type</strong> — purchase, form, signup, custom — aggregate-anonymous.</>,
+          <><strong>Any conversion type</strong> — purchase, form, signup, custom — aggregated.</>,
           <><strong>Offline conversions</strong> via business-key join (discount codes, CRM IDs), not visitor stitching.</>,
         ]}
       />

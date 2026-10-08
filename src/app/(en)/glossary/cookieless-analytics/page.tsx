@@ -58,7 +58,7 @@ export default function CookielessAnalyticsPage() {
             Traditional analytics tools (like GA4) rely on cookies — small text files stored in the visitor&rsquo;s browser — to identify returning visitors, track sessions and build per-user journeys. Cookieless analytics replaces this mechanism with <Link href="/glossary/first-party-data-collection" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">first-party data collection</Link> that operates without any identifiers on the visitor&rsquo;s device.
           </p>
           <p>
-            Instead of storing identifiers, cookieless analytics counts events on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign, landing page and country. Each event is logged with anonymous channel metadata (referrer, UTM parameters, landing page, device class). The data path is first-party (your domain to your server), which means it is not blocked by ad blockers, not affected by browser cookie restrictions like <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, and not dependent on consent banners.
+            Instead of storing identifiers, cookieless analytics counts events on the server side — pageview counts, conversion counts, revenue totals — grouped by channel, campaign, landing page and country. Each event is logged with channel metadata (referrer, UTM parameters, landing page, device class). The data path is first-party (your domain to your server), which means it is not blocked by ad blockers, not affected by browser cookie restrictions like <Link href="/glossary/intelligent-tracking-prevention" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">ITP</Link>, and not dependent on consent banners.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What does cookieless analytics not do?</h2>
@@ -66,7 +66,7 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why does cookieless analytics matter for EU eCommerce?</h2>
           <p>
-            In the EU, cookie-based analytics lose traffic to consent rejection, ad blockers and browser restrictions. In our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies; on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&rsquo;s Shopify store, measured over 48 days</Link>, GA4 did not record 29% of visits. Cookieless analytics eliminates all three loss vectors, counting real visits anonymously, without depending on consent.
+            In the EU, cookie-based analytics lose traffic to consent rejection, ad blockers and browser restrictions. In our experience with clients, between 40% and 60% of traffic doesn&rsquo;t accept cookies; on <Link href="/case-studies/incapto" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Incapto&rsquo;s Shopify store, measured over 48 days</Link>, GA4 did not record 29% of visits. Cookieless analytics eliminates all three loss vectors, counting real visits in aggregate, without depending on consent.
           </p>
           <p>
             This is not a marginal improvement — it is the difference between making decisions on a statistical fragment and making decisions on complete aggregate totals.
@@ -74,7 +74,7 @@ export default function CookielessAnalyticsPage() {
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">What are the privacy implications?</h2>
           <p>
-            Cookieless analytics achieves <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link> by architecture: no personal data is collected, no cookies are stored, and no consent is required for the analytics to function. This is consistent with CNIL (French DPA) exemption criteria for audience measurement tools.
+            Cookieless analytics is designed for <Link href="/glossary/gdpr-analytics-compliance" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">GDPR compliance</Link> by architecture: nothing that identifies anyone is kept, no cookies are stored, and the analytics can run without consent where the audience-measurement exemption applies. This is consistent with CNIL (French DPA) exemption criteria for audience measurement tools.
           </p>
         </div>
 

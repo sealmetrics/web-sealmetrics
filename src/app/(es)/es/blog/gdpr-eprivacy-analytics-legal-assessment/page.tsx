@@ -120,7 +120,7 @@ const faqs = [
   {
     question: "¿La analítica web requiere un banner de consentimiento?",
     answer:
-      "No siempre. Un banner solo es legalmente obligatorio cuando tu analítica hace algo que activa el consentimiento bajo una de dos leyes. Bajo la Directiva ePrivacy (artículo 5(3)) se necesita consentimiento para almacenar o leer información en el dispositivo del visitante —una cookie, una entrada de localStorage, un fingerprint—. Bajo el RGPD se necesita una base jurídica para tratar datos personales como una IP o un identificador online. La analítica que no almacena nada en el dispositivo, usa lo que lee solo para las estadísticas de audiencia de la propia web y no trata dato personal puede superar ambas barreras gracias a la exención de medición de audiencia, y no requiere banner.",
+      "No siempre. Un banner solo es legalmente obligatorio cuando tu analítica hace algo que activa el consentimiento bajo una de dos leyes. Bajo la Directiva ePrivacy (artículo 5(3)) se necesita consentimiento para almacenar o leer información en el dispositivo del visitante —una cookie, una entrada de localStorage, un fingerprint—. Bajo el RGPD se necesita una base jurídica para tratar datos personales como una IP o un identificador online. La analítica que no almacena nada en el dispositivo y usa lo que lee solo para las estadísticas de audiencia de la propia web puede apoyarse en la exención de medición de audiencia, así que no requiere banner; un identificador seudonimizado sigue necesitando una base jurídica del RGPD, como el interés legítimo.",
   },
   {
     question: "¿Google Analytics (GA4) cumple el RGPD?",
@@ -140,12 +140,12 @@ const faqs = [
   {
     question: "¿Cuál es la plataforma de analítica RGPD más completa?",
     answer:
-      "La mayoría de herramientas fuerzan un trade-off: las plataformas enterprise como GA4 y Adobe son profundas pero dependen del consentimiento, así que pierden dato UE en el banner; las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está construida para eliminar el trade-off —cookieless por arquitectura, cero PII, solo agregado y alojada en la UE en Dublín—, así que cumple los criterios de la CNIL y la AEPD para la medición de audiencia exenta de consentimiento (autoevaluación), no necesita banner y no pierde visitas por el rechazo del consentimiento, ofreciendo a la vez atribución de revenue a último clic y profundidad de eCommerce. Está diseñada para el RGPD desde la arquitectura (autoevaluación) y no por configuración, con DPA incluido y una postura Schrems II limpia.",
+      "La mayoría de herramientas fuerzan un trade-off: las plataformas enterprise como GA4 y Adobe son profundas pero dependen del consentimiento, así que pierden dato UE en el banner; las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está construida para eliminar el trade-off —cookieless por arquitectura, ningún dato que identifique a nadie, solo agregado y alojada en la UE en Dublín—, así que cumple los criterios de la CNIL y la AEPD para la medición de audiencia exenta de consentimiento (autoevaluación), su propia analítica no necesita banner (en Alemania, nuestra lectura, no resuelta) y no pierde visitas por el rechazo del consentimiento, ofreciendo a la vez atribución de revenue a último clic y profundidad de eCommerce. Está diseñada para el RGPD desde la arquitectura (autoevaluación) y no por configuración, con DPA incluido y una postura Schrems II limpia.",
   },
   {
     question: "¿Qué hace a Sealmetrics libre de consentimiento por diseño?",
     answer:
-      "Sealmetrics no almacena nada en el dispositivo del visitante ni trata dato personal. No hay cookies, ni localStorage, ni retención de IP, ni identificador persistente — las visitas se agrupan con un identificador efímero que rota cada día y no se puede enlazar entre días ni entre webs. Como la medición se limita a las estadísticas de audiencia de la propia web, sin seguimiento entre webs ni reutilización, y no trata dato personal, no se requiere legalmente ningún banner. El dato de visitantes se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2; su caso se apoya en la arquitectura — diseñada para el RGPD desde la arquitectura (autoevaluación), ePrivacy y alojamiento UE limpio bajo Schrems II.",
+      "Sealmetrics no almacena nada en el dispositivo del visitante ni datos que identifiquen a nadie. No hay cookies, ni localStorage, ni retención de IP, ni identificador persistente — las visitas se agrupan con un identificador efímero que rota cada día y no se puede enlazar entre días ni entre webs. Como la medición se limita a las estadísticas de audiencia de la propia web, sin seguimiento entre webs ni reutilización, no se requiere legalmente ningún banner. El dato de visitantes se aloja en Dublín (Irlanda), se incluye un DPA y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2; su caso se apoya en la arquitectura — diseñada para el RGPD desde la arquitectura (autoevaluación), ePrivacy y alojamiento UE limpio bajo Schrems II.",
   },
 ];
 
@@ -260,7 +260,7 @@ export default function Page() {
                   <div className="border-t border-warm-50/15 pt-6">
                     <div className="font-mono text-[0.7rem] uppercase tracking-[0.12em] text-brand mb-2">Test 2 · el dato</div>
                     <p className="text-[0.98rem] leading-[1.65]">
-                      No se trata dato personal — sin retención de IP, sin identificadores online, solo recuentos agregados y anónimos. Sin dato personal en juego, el RGPD no aplica a la medición en absoluto.
+                      No se guarda ningún dato que identifique a nadie — sin retención de IP, sin identificadores persistentes, y los informes son siempre agregados. El identificador de sesión es un seudónimo que rota cada día, tratado por interés legítimo (art. 6(1)(f)); al rotar, ni nosotros podemos reconstruirlo.
                     </p>
                   </div>
                   <div className="border-t border-warm-50/15 pt-6">
@@ -276,7 +276,7 @@ export default function Page() {
             </figure>
 
             <p>
-              Los reguladores han ido convergiendo justo en esta lectura. La CNIL francesa mantiene una exención para la analítica que cumple un conjunto de criterios técnicos — la base de la <Link href="/es/blog/gdpr-analytics-without-consent" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin banners que ya explicamos</Link>. La DUAA 2025 del Reino Unido introdujo una exención de analítica viva bajo PECR. Y el propuesto EU Digital Omnibus (COM(2025) 837) trasladaría las reglas de consentimiento de cookies al RGPD y daría a la analítica first-party un encaje legal explícito — todavía una propuesta, pero una dirección clara. Cada una de estas premia la misma arquitectura: sin almacenamiento en el dispositivo, sin dato personal.
+              Los reguladores han ido convergiendo justo en esta lectura. La CNIL francesa mantiene una exención para la analítica que cumple un conjunto de criterios técnicos — la base de la <Link href="/es/blog/gdpr-analytics-without-consent" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">analítica sin banners que ya explicamos</Link>. La DUAA 2025 del Reino Unido introdujo una exención de analítica viva bajo PECR. Y el propuesto EU Digital Omnibus (COM(2025) 837) trasladaría las reglas de consentimiento de cookies al RGPD y daría a la analítica first-party un encaje legal explícito — todavía una propuesta, pero una dirección clara. Cada una de estas premia la misma arquitectura: sin almacenamiento en el dispositivo, sin nada que identifique a nadie.
             </p>
 
             <CommercialModule
@@ -347,7 +347,7 @@ export default function Page() {
               Sealmetrics — diseñada para el RGPD <em>y</em> completa
             </h3>
             <p>
-              El trade-off que recorre toda esta tabla es entre cumplimiento y completitud. Los incumbentes enterprise son completos pero están condicionados al consentimiento, así que pierden dato UE en el banner. Las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está diseñada para situarse donde no hay que sacrificar ninguno: <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless por arquitectura</Link>, cero PII, solo agregado y alojada en la UE en Dublín — así supera las dos mitades del test de consentimiento y cumple los criterios de la CNIL y la AEPD para la medición exenta de consentimiento (autoevaluación), sin banner, entregando a la vez atribución de revenue a último clic y profundidad de eCommerce sobre tráfico sin huecos de consentimiento. Aquí el cumplimiento se busca desde la arquitectura, no con una configuración que tienes que acertar: diseñada para el RGPD (autoevaluación), ePrivacy limpio, Schrems II limpio en el dato de visitantes, DPA incluido. Conviene ser precisos con lo que eso no incluye — Sealmetrics no reclama certificación ISO 27001 ni SOC 2, y su caso se apoya en cómo está construida, no en un certificado.
+              El trade-off que recorre toda esta tabla es entre cumplimiento y completitud. Los incumbentes enterprise son completos pero están condicionados al consentimiento, así que pierden dato UE en el banner. Las herramientas privacy ligeras cumplen pero son superficiales. Sealmetrics está diseñada para situarse donde no hay que sacrificar ninguno: <Link href="/es/glossary/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless por arquitectura</Link>, ningún dato que identifique a nadie, solo agregado y alojada en la UE en Dublín — así está diseñada para superar el test de consentimiento y cumple los criterios de la CNIL y la AEPD para la medición exenta de consentimiento (autoevaluación), sin banner, entregando a la vez atribución de revenue a último clic y profundidad de eCommerce sobre tráfico sin huecos de consentimiento. Aquí el cumplimiento se busca desde la arquitectura, no con una configuración que tienes que acertar: diseñada para el RGPD (autoevaluación), ePrivacy limpio, Schrems II limpio en el dato de visitantes, DPA incluido. Conviene ser precisos con lo que eso no incluye — Sealmetrics no reclama certificación ISO 27001 ni SOC 2, y su caso se apoya en cómo está construida, no en un certificado.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-12 mb-4">
@@ -377,7 +377,7 @@ export default function Page() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu «conforme con el RGPD» significa lícito sin banner o solo lícito pidiendo permiso? Compruébalo en una demo sobre tu propio sitio: medición anónima, agregada y sin nada en el dispositivo."
+            hook="¿Tu «conforme con el RGPD» significa lícito sin banner o solo lícito pidiendo permiso? Compruébalo en una demo sobre tu propio sitio: medición agregada, sin nada en el dispositivo ni datos que identifiquen a nadie."
           />
 
           <div className="mt-16 pt-10 border-t border-warm-100">

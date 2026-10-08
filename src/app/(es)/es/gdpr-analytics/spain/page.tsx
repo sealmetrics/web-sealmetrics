@@ -53,10 +53,10 @@ const criteria = [
   },
   {
     n: "02",
-    title: "Sin tratamiento de datos personales",
+    title: "Ningún dato que identifique a nadie",
     requirement:
       "La AEPD se alinea con el Dictamen 5/2019 del EDPB: si el tratamiento no se refiere a una persona identificada o identificable, no entra en el ámbito material del RGPD.",
-    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor.",
+    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor. El identificador de sesión es un seudónimo tratado por interés legítimo; al rotar, ni nosotros podemos reconstruirlo.",
   },
   {
     n: "03",
@@ -178,10 +178,11 @@ export default function Page() {
             audiencia agregada y anónima siempre que se cumplan cuatro
             condiciones: informes solo agregados, sin datos personales,
             contexto de primera parte sin seguimiento entre sitios y
-            residencia en la UE. Sealmetrics está construido para cumplir cada
-            una por diseño — el mismo patrón de arquitectura que cubre la
-            exención de la CNIL en Francia y la del §25 de la TDDDG en
-            Alemania.
+            residencia en la UE. Sealmetrics está construido en torno a
+            esas condiciones (autoevaluación, no certificación) — el mismo
+            patrón de arquitectura que evaluamos frente a los criterios de la
+            CNIL en Francia; en Alemania la DSK no extiende la exención a la
+            medición de audiencia, así que allí es nuestra lectura, no algo resuelto.
           </>
         }
         bullets={[

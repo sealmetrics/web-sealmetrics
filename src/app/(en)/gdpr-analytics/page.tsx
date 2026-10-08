@@ -11,7 +11,7 @@ import { ogImage } from "@/lib/seo/og";
 const URL = "/gdpr-analytics";
 const TITLE = "GDPR Analytics Without Cookies: Evidence for Your DPO";
 const DESCRIPTION =
-  "European analytics you can prove compliant: no cookies, no personal data stored, EU-hosted. The DPA, a review checklist and CNIL, DSK and AEPD analyses.";
+  "Analytics built to comply with the GDPR: nothing on the device, no data that identifies anyone, EU-hosted. DPA, checklist and CNIL, DSK, AEPD analyses.";
 const SOCIAL =
   "A banner or a badge will not survive a DPO review. What Sealmetrics collects, where it goes, for how long, and how it reads against each regulator.";
 

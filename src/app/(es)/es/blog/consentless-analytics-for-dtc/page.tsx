@@ -67,7 +67,7 @@ const FAQ = [
   {
     question: "¿Es legal según el RGPD?",
     answer:
-      "Puede serlo, si está bien implantada. El RGPD regula el tratamiento de datos personales; si no se recogen datos personales ni se conserva ningún identificador persistente, la arquitectura evita las obligaciones asociadas a esos datos. Es algo que tu DPO debe confirmar sobre la implantación concreta; Sealmetrics incluye un DPA y un paquete TPSR para esa revisión.",
+      "Puede serlo, si está bien implantada. El RGPD regula el tratamiento de datos personales; cuando no se guarda nada en el dispositivo, nada que identifique a nadie y los informes son siempre agregados, lo que queda es un identificador de sesión seudonimizado con una base jurídica como el interés legítimo. Es algo que tu DPO debe confirmar sobre la implantación concreta; Sealmetrics incluye un DPA y un paquete TPSR para esa revisión.",
   },
   {
     question: "¿Puedo usarla junto a los píxeles publicitarios?",

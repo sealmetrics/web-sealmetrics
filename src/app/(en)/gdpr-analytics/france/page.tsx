@@ -65,7 +65,7 @@ const criteria = [
     n: "04",
     title: "No merging with other personal data",
     cnil: "Analytics data must not be combined with personal data from other sources.",
-    us: "There is no personal data to merge. Aggregate counts are isolated from any CRM, advertising or marketing identifier.",
+    us: "There is no data that identifies anyone to merge. Aggregate counts are isolated from any CRM, advertising or marketing identifier.",
   },
   {
     n: "05",
@@ -353,7 +353,7 @@ export default function GdprAnalyticsFrancePage() {
               <p className="text-[15.5px] leading-[1.7] text-ink-soft">
                 French rejection rates against standard banners run
                 50–60%. With no banner gate, visitors who would reject a
-                banner are counted on the same anonymous-aggregate basis — no Consent Mode
+                banner are counted on the same aggregate basis — no Consent Mode
                 modelling required to fill the gap.
               </p>
             </div>

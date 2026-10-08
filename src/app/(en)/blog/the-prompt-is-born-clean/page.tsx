@@ -51,7 +51,7 @@ const FAQ = [
   {
     question: "Can AI analytics be GDPR compliant without consent?",
     answer:
-      "Yes, if the underlying analytics collects no personal data. Consent under ePrivacy is triggered by storing or accessing information on a device, and GDPR obligations are triggered by processing personal data. Analytics that sets no cookies, collects no IPs, keeps no persistent visitor identifier and is limited to the site's own audience statistics can rely on the audience-measurement exemption and process no personal data, so an AI layer reading those aggregated metrics is not processing personal data either.",
+      "Yes, if the underlying analytics collects no personal data. Consent under ePrivacy is triggered by storing or accessing information on a device, and GDPR obligations are triggered by processing personal data. Analytics that sets no cookies, collects no IPs, keeps no persistent visitor identifier and is limited to the site's own audience statistics can rely on the audience-measurement exemption and keep no data that identifies anyone, so an AI layer reading those aggregated metrics never sees anyone.",
   },
   {
     question: "What data does an AI analytics assistant actually send to the model?",
@@ -368,7 +368,7 @@ export default function ThePromptIsBornCleanPage() {
           </div>
 
           <CommercialModule
-            hook="Privacy by architecture beats privacy by promise: no personal data in, none out, inference on Scaleway Paris. Audit the whole path in 30 minutes."
+            hook="Privacy by architecture beats privacy by promise: nothing that identifies anyone in, nothing out, inference on Scaleway Paris. Audit the whole path in 30 minutes."
           />
 
           <FaqSection items={FAQ} locale="en" />
