@@ -431,7 +431,7 @@ const TRADE_NO = [
 ];
 
 const TRADE_YES = [
-  "Sessions, events and sales with no consent loss. With no banner in the way.",
+  "Sessions, events and sales with no consent loss.",
   "Channel, campaign, medium, keyword, content and referrer across that same data.",
   "The complete aggregate funnel: visit → product viewed → cart → checkout → purchase.",
   "Product-level data: size, colour, brand, category, price range, SKU.",

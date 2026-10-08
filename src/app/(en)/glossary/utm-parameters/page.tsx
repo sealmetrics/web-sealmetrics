@@ -83,7 +83,7 @@ export default function UtmParametersPage() {
           </p>
         </div>
 
-        <CommercialModule hook="Your UTMs are only read on the visits your analytics is allowed to see. Sealmetrics doesn't lose them to consent rejection — no cookies, no consent banner." />
+        <CommercialModule hook="Your UTMs are only read on the visits your analytics is allowed to see. Sealmetrics doesn't lose them to consent rejection — no cookies, nothing on the device." />
 
         <RelatedGlossaryTerms slug="utm-parameters" />
 

@@ -121,7 +121,7 @@ export default function Page() {
             {[
               { n: "2,000+", l: "Active accounts" },
               { n: "5+ yrs", l: "In production" },
-              { n: "100%", l: "EU-hosted" },
+              { n: "EU", l: "Analytics hosted only in the EU" },
               { n: "99.99%", l: "Uptime SLA" },
             ].map((s) => (
               <div key={s.l} className="bg-white border border-warm-100 rounded-xl p-6">

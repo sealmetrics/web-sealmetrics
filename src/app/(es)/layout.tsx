@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sealmetrics.com"),
   title: "Sealmetrics — Analítica Completa para eCommerce",
   description:
-    "Analítica web que no pierde visitas por el rechazo del consentimiento. Sin cookies, sin banners de consentimiento. Datos completos desde 499 EUR/mes.",
+    "Analítica web que no pierde visitas por el rechazo del consentimiento. Sin cookies, nada guardado en el dispositivo. Datos completos desde 499 EUR/mes.",
   openGraph: {
     title: "Sealmetrics — Analítica Completa para eCommerce",
     description:

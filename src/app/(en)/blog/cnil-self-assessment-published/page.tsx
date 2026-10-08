@@ -66,7 +66,7 @@ export default function CnilAssessmentPage() {
           </h2>
           <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
             <li>The French CNIL allows certain cookieless analytics tools to operate without consent banners if they meet 5 permitted objectives and 14 technical criteria.</li>
-            <li>Sealmetrics meets all 14 CNIL criteria and exceeds several — it does not collect IP addresses at all (CNIL only requires last-octet removal) and uses no persistent cookies (CNIL permits up to 13 months).</li>
+            <li>Sealmetrics meets all 14 CNIL criteria and exceeds several — it does not store IP addresses at all (CNIL only requires last-octet removal) and uses no persistent cookies (CNIL permits up to 13 months).</li>
             <li>This is compliance documentation, not official CNIL certification — the authority explicitly prohibits such claims, but the self-assessment is publicly available.</li>
             <li>The regulatory trend across Europe (France, UK, EU Omnibus) is moving toward consent exemption for first-party, aggregated analytics.</li>
           </ul>
@@ -112,8 +112,8 @@ export default function CnilAssessmentPage() {
             <p>
               — CNIL requires last-octet IP removal.{" "}
               <span className="font-medium text-text-primary">
-                We never store IP addresses — they are used transiently in
-                memory during request handling and then discarded.
+                We don&apos;t store IPs. To filter bots we check the IP in flight
+                against a public list of automated-traffic IPs, and don&apos;t keep it.
               </span>
             </p>
             <p>

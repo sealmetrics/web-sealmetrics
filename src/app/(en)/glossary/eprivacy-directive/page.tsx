@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Directive 2002/58/EC — the EU rule (Art. 5(3)) requiring consent before storing or reading information on a device. The legal basis for cookie banners.",
   openGraph: {
     title: "What Is the ePrivacy Directive?",
-    description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
+    description: "Article 5(3) explained, how it interacts with GDPR, and how architecture, not consent, can keep analytics exempt.",
     type: "article",
     url: "https://sealmetrics.com/glossary/eprivacy-directive/",
     siteName: "Sealmetrics",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is the ePrivacy Directive?",
-    description: "Article 5(3) explained, how it interacts with GDPR, and why architecture (not consent) is the lawful path to analytics.",
+    description: "Article 5(3) explained, how it interacts with GDPR, and how architecture, not consent, can keep analytics exempt.",
     images: [ogImage("/glossary/eprivacy-directive/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/eprivacy-directive/" },

@@ -7,10 +7,10 @@ import { ogImage } from "@/lib/seo/og";
 export const metadata: Metadata = {
   title: "Acuerdo de Encargo de Tratamiento (DPA) — Sealmetrics",
   description:
-    "DPA de Sealmetrics (DPA-2026-v2.1). Art. 28 RGPD, garantías AEPD de medición de audiencia, tratamiento 100% UE, subencargados y medidas de seguridad.",
+    "DPA de Sealmetrics (DPA-2026-v2.1): art. 28 RGPD, garantías AEPD, analítica tratada solo en la UE, subencargados y medidas de seguridad.",
   openGraph: {
     title: "Acuerdo de Encargo de Tratamiento (DPA)",
-    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
+    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, analítica tratada solo en la UE, subencargados y medidas de seguridad.",
     url: "https://sealmetrics.com/es/dpa/",
     siteName: "Sealmetrics",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Acuerdo de Encargo de Tratamiento (DPA)",
-    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, tratamiento 100% en la UE, subencargados y medidas de seguridad.",
+    description: "Art. 28 RGPD: garantías AEPD de medición de audiencia, analítica tratada solo en la UE, subencargados y medidas de seguridad.",
     images: [ogImage("/es/dpa/")],
   },
   alternates: {

@@ -28,7 +28,7 @@ const videos: Video[] = [
       "https://iframe.mediadelivery.net/embed/609541/e616aab7-d8cf-47d1-b250-517df6a8c593",
     ctaHeadline: "Ready to see your own data?",
     ctaText:
-      "Install in 5 to 30 minutes, depending on your platform. No cookies, no consent banners, just clean analytics.",
+      "Install in 5 to 30 minutes, depending on your platform. No cookies, nothing stored on the device, just clean analytics.",
   },
   {
     title: "Getting Started",

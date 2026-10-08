@@ -121,7 +121,7 @@ const faqs = [
   {
     question: "Does connecting an AI assistant create a new consent obligation?",
     answer:
-      "No. The connector reads aggregate data that was collected without cookies and without personal data, so there is nothing to consent to that was not already lawful to collect. The processing terms are the ones in the DPA you already signed.",
+      "No. The connector reads aggregate data that was collected without cookies and without data that identifies anyone; the connector adds no new collection. The processing terms are the ones in the DPA you already signed.",
   },
   {
     question: "Which model or vendor processes my data?",

@@ -43,13 +43,13 @@ const STEPS = [
   {
     n: "02",
     title: "Processing",
-    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure with zero sub-processors outside the EU in the visitor data path. Designed for GDPR (self-assessed), ePrivacy, Schrems II clean.",
+    p: "Events are processed and stored exclusively in Dublin, Ireland, on EU-owned infrastructure: analytics data is hosted and processed only in the EU. Designed to comply with the GDPR (self-assessed, not certified).",
     tags: ["EU-hosted · Dublin", "No non-EU sub-processors on visitor data", "DPA included"],
   },
   {
     n: "03",
     title: "Private AI",
-    p: "LENS analyses your data on an open-weight model (gpt-oss-120b, Apache 2.0) hosted in Paris. Your data never leaves the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
+    p: "LENS analyses your data on an open-weight model (gpt-oss-120b, Apache 2.0) hosted in Paris. Your data is processed only in the EU, is never shared with any company, and never trains a third-party model. Enterprise can run a dedicated, non-shared instance.",
     tags: ["EU AI · Paris", "Never shared", "Never trains third parties"],
   },
 ];

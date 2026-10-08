@@ -57,7 +57,7 @@ const faqs = [
   },
   {
     q: "Is there a GDPR-compliant AI analytics tool?",
-    a: "Sealmetrics is AI analytics designed for GDPR from the architecture up; this is our self-assessment, not a certification. The measurement layer is cookieless and keeps no data that identifies anyone, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Your data never leaves the EU, is never shared with any company, and is never used to train third-party models. Nothing that identifies anyone is in play.",
+    a: "Sealmetrics is AI analytics designed for GDPR from the architecture up; this is our self-assessment, not a certification. The measurement layer is cookieless and keeps no data that identifies anyone, and the AI layer runs on private, EU-hosted infrastructure. With LENS private AI, inference runs on an open-weight model (gpt-oss-120b, Apache 2.0) hosted by Scaleway in Paris, while your analytics data stays in Dublin — both in the EU. Analytics data is hosted and processed only in the EU, is never shared with any company, and is never used to train third-party models. Nothing that identifies anyone is in play.",
   },
   {
     q: "Can I connect ChatGPT or Claude to my analytics?",
@@ -95,7 +95,7 @@ const pillars = [
   {
     eyebrow: "The algorithm",
     title: "Private AI, in the EU",
-    body: "LENS private AI runs inference on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris, while your data stays in Dublin. Never leaves the EU, never shared, never trains third-party models.",
+    body: "LENS private AI runs inference on an open-weight model (gpt-oss-120b) hosted by Scaleway in Paris, while your data stays in Dublin. Processed only in the EU, never shared, never trains third-party models.",
     metric: "EU-only",
     metricLabel: "inference + storage",
   },

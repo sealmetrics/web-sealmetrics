@@ -56,7 +56,7 @@ const criteria = [
     title: "Ningún dato que identifique a nadie",
     requirement:
       "La AEPD se alinea con el Dictamen 5/2019 del EDPB: si el tratamiento no se refiere a una persona identificada o identificable, no entra en el ámbito material del RGPD.",
-    us: "La IP no se almacena — se usa de forma transitoria en memoria y se descarta. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor. El identificador de sesión es un seudónimo tratado por interés legítimo; al rotar, ni nosotros podemos reconstruirlo.",
+    us: "No guardamos IPs: para filtrar bots comparamos al vuelo la IP con una lista pública de IPs de tráfico automatizado, y no la guardamos. No se guarda huella de User-Agent. Sin identificador persistente: el de sesión rota cada día y no se puede enlazar entre días. Los eventos son agregados a nivel de canal desde que llegan al servidor. El identificador de sesión es un seudónimo tratado por interés legítimo; al rotar, ni nosotros podemos reconstruirlo.",
   },
   {
     n: "03",

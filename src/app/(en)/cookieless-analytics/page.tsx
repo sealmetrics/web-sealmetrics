@@ -19,7 +19,7 @@ const PILLAR_DATE_MODIFIED = "2026-09-21";
 export const metadata: Metadata = {
   title: "Cookieless analytics, explained — Sealmetrics",
   description:
-    "Cookieless analytics measures traffic without depending on consent, via first-party server-side collection — no cookies, no banners, no sampling.",
+    "Cookieless analytics measures traffic without depending on consent, via first-party server-side collection — no cookies, nothing on the device, no sampling.",
   openGraph: {
     title: "Cookieless analytics, explained",
     description:

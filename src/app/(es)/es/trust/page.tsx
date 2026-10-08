@@ -131,7 +131,7 @@ export default function TrustEsPage() {
             />
             <DocCard
               title="Seguridad"
-              desc="Arquitectura de privacidad, seguridad de infraestructura y modelo de alojamiento 100% UE."
+              desc="Arquitectura de privacidad, seguridad de infraestructura y alojamiento de la analítica solo en la UE."
               href="/es/security/"
               altHref="/security/"
               altLabel="English version (/security)"

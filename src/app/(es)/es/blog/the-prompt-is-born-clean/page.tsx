@@ -51,7 +51,7 @@ const FAQ = [
   {
     question: "¿Puede una analítica con IA cumplir el RGPD sin consentimiento?",
     answer:
-      "Sí, siempre que la analítica de base no recoja datos personales. El consentimiento de la normativa ePrivacy se activa al almacenar o acceder a información en un dispositivo, y las obligaciones del RGPD se activan al tratar datos personales. Una analítica que no instala cookies, no recoge IPs, no conserva identificadores persistentes de visitante y se limita a las estadísticas de audiencia de la propia web puede apoyarse en la exención de medición de audiencia y no tratar datos personales, así que la capa de IA que lee esas métricas agregadas tampoco trata datos personales.",
+      "Sí, siempre que la analítica de base no recoja datos personales. El consentimiento de la normativa ePrivacy se activa al almacenar o acceder a información en un dispositivo, y las obligaciones del RGPD se activan al tratar datos personales. Una analítica que no instala cookies, no guarda IPs, no conserva identificadores persistentes de visitante y se limita a las estadísticas de audiencia de la propia web puede apoyarse en la exención de medición de audiencia y no tratar datos personales, así que la capa de IA que lee esas métricas agregadas tampoco trata datos personales.",
   },
   {
     question: "¿Qué datos envía realmente al modelo un asistente de analítica con IA?",
@@ -154,7 +154,7 @@ export default function ThePromptIsBornCleanPageEs() {
                 creado aguas arriba, en la recogida.
               </li>
               <li>
-                Sealmetrics nunca recoge IPs ni cookies y no conserva ningún
+                Sealmetrics nunca guarda IPs ni instala cookies y no conserva ningún
                 identificador persistente de visitante, así que no hay ningún identificador
                 personal disponible para meter en un prompt.
               </li>
@@ -198,7 +198,7 @@ export default function ThePromptIsBornCleanPageEs() {
             <p>
               Sealmetrics es analítica sin consentimiento. Eso no es una
               afirmación sobre lo opcionales que son los banners de cookies; es
-              una afirmación sobre lo que registra el tracker. Nunca recoge
+              una afirmación sobre lo que registra el tracker. Nunca guarda
               direcciones IP, nunca instala cookies y nunca asigna un
               identificador persistente de visitante. El único identificador es
               uno de sesión efímero, seudonimizado en el servidor con una sal que

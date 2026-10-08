@@ -110,10 +110,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           title: "EU-hosted · Dublin, Ireland",
           p: "Visitor data lives exclusively on EU infrastructure — no transfers of visitor data outside the EU and no third-country sub-processors in the visitor data path. The single non-EEA transfer anywhere in the service is account-user service email via Resend (USA, SCCs + EU-US DPF), which touches no visitor data. Designed for GDPR from the architecture up (our self-assessment), not by a legal layer bolted on afterwards.",
           bullet: [
-            "Dublin, Ireland — Schrems II clean",
+            "Dublin, Ireland — analytics data only in the EU",
             "No third-country sub-processors in the visitor data path",
             "24 months data retention included",
-            "GDPR · ePrivacy · Schrems II clean",
+            "Built to comply with the GDPR · ePrivacy",
           ],
         },
       ],
@@ -155,10 +155,10 @@ export function ArchitectureV3({ locale = "en" as Locale }) {
           title: "Alojado en UE · Dublín, Irlanda",
           p: "El dato de visitante vive exclusivamente en infraestructura UE — sin transferencias de dato de visitante fuera de UE y sin sub-procesadores de terceros países en su ruta. La única transferencia fuera del EEE en todo el servicio son los emails de servicio a usuarios de la cuenta vía Resend (EE. UU., CCT + EU-US DPF), que no tocan dato de visitante. Diseñada para el RGPD desde la arquitectura (autoevaluación), no por una capa legal añadida después.",
           bullet: [
-            "Dublín, Irlanda — Schrems II limpio",
+            "Dublín, Irlanda — analítica solo en la UE",
             "Sin sub-procesadores en terceros países en la ruta del dato de visitante",
             "24 meses de retención incluidos",
-            "RGPD · ePrivacy · Schrems II limpio",
+            "Diseñado para cumplir el RGPD · ePrivacy",
           ],
         },
       ],
@@ -223,10 +223,10 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without the cookie banner and without the sampling.",
+        "Runs alongside GA4. No migration, no disruption. One script — same as any analytics tool — but without losing visits to the cookie banner and without the sampling.",
       steps: [
         { n: "Step 01", time: "5–30 minutes", t: "Install the pixel", p: "Add one script tag or a native module. Works with any CMS or framework. Your dev deploys it in 5 to 30 minutes, depending on the platform." },
-        { n: "Step 02", time: "Day 1", t: "Real data flows", p: "Full traffic visibility from the first hour. Every visitor, every source, every conversion — 100% observed." },
+        { n: "Step 02", time: "Day 1", t: "Real data flows", p: "From the first hour, the traffic you lose today to the cookie banner shows up, with its source and conversions." },
         { n: "Step 03", time: "Day 3", t: "GA4 side-by-side", p: "We help you calibrate and compare against your existing GA4. You see the gap with your own numbers, not ours." },
         { n: "Step 04", time: "Day 5", t: "Microconversions", p: "Tag the 5–10 microconversions that matter for revenue attribution. Cart adds, form completes, video plays." },
         { n: "Step 05", time: "Week 1", t: "Decision-ready", p: "Funnels, channels, attribution — all calibrated. Your team starts making reallocation decisions with defensible data." },
@@ -240,10 +240,10 @@ export function ImplementationStepsV3({ locale = "en" as Locale }) {
         </>
       ),
       lede:
-        "Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta — pero sin banner de cookies y sin muestreo.",
+        "Corre junto a GA4. Sin migración, sin interrupciones. Un script — igual que cualquier herramienta — pero sin perder visitas por el banner y sin muestreo.",
       steps: [
         { n: "Paso 01", time: "5–30 minutos", t: "Instala el pixel", p: "Añade un script o un módulo nativo. Funciona con cualquier CMS o framework. Tu dev lo despliega en 5 a 30 minutos, según la plataforma." },
-        { n: "Paso 02", time: "Día 1", t: "Fluyen los datos reales", p: "Visibilidad completa del tráfico desde la primera hora. Cada visitante, cada fuente, cada conversión — 100% observado." },
+        { n: "Paso 02", time: "Día 1", t: "Fluyen los datos reales", p: "Desde la primera hora aparece el tráfico que hoy se pierde por el banner de cookies, con su fuente y sus conversiones." },
         { n: "Paso 03", time: "Día 3", t: "GA4 en paralelo", p: "Te ayudamos a calibrar y comparar con tu GA4 actual. Ves el gap con tus propios datos, no los nuestros." },
         { n: "Paso 04", time: "Día 5", t: "Microconversiones", p: "Etiqueta las 5–10 microconversiones que importan para atribución. Add-to-cart, formularios, video plays." },
         { n: "Paso 05", time: "Semana 1", t: "Decisiones defendibles", p: "Embudos, canales, atribución — todo calibrado. Tu equipo empieza a tomar decisiones con datos defendibles." },

@@ -1228,7 +1228,7 @@ export default function MejorHerramientaAnaliticaWebPage() {
 
           <CommercialModule
             locale="es"
-            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: sin pérdida por consentimiento, sin banner y con last-click sobre lo observado."
+            hook="¿Tu herramienta actual falla en captura, en cumplimiento o en profundidad de eCommerce? Ve en una demo cómo puntúa Sealmetrics sobre tu propio dominio: sin pérdida por consentimiento, nada en el dispositivo y con last-click sobre lo observado."
           />
 
           <ComparisonLinks locale="es" />

@@ -28,7 +28,7 @@ const VIEWS: Record<ViewId, ViewConfig> = {
     group: "measure",
     title: "Atribución de ingresos",
     kpis: [
-      { l: "Tráfico observado", v: "100%", d: "▲ +30% vs GA" },
+      { l: "Tráfico observado", v: "+30%", d: "▲ vs GA" },
       { l: "Delta atribución", v: "+17%", d: "▲ más cerca del CRM" },
       { l: "Ingresos recuperados", v: "€342K", d: "▲ antes invisibles", hl: true },
       { l: "Fuentes alineadas", v: "4 / 4", d: "marca · finanzas · agencias" },
@@ -275,7 +275,7 @@ function ChartThreeLines() {
           <span className="text-ink-soft font-medium">· ingresos atribuidos</span>
         </div>
         <div className="hidden md:flex gap-3.5 text-[10px] text-ink-soft font-mono tracking-[0.04em]">
-          <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-ink" />Sealmetrics · 100%</span>
+          <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-ink" />Sealmetrics</span>
           <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-brand" />CRM · realidad</span>
           <span className="flex items-center gap-1.5"><span className="w-2.5 h-2.5 rounded-sm bg-warm-300" />GA4 · muestreado</span>
         </div>
@@ -351,7 +351,7 @@ function ChartFunnel() {
   return (
     <>
       <div className="text-[12px] font-semibold mb-4">
-        Embudo · 124.800 visitantes mes <span className="text-ink-soft font-medium">· 100% observado</span>
+        Embudo · 124.800 visitantes mes <span className="text-ink-soft font-medium">· sin pérdida por el banner</span>
       </div>
       <div className="flex-1 flex flex-col gap-2 justify-center">
         {steps.map((s) => (
@@ -380,7 +380,7 @@ function ChartRoasBars() {
   return (
     <>
       <div className="text-[12px] font-semibold mb-4">
-        ROAS por canal <span className="text-ink-soft font-medium">· atribuido sobre 100% de datos observados</span>
+        ROAS por canal <span className="text-ink-soft font-medium">· atribuido sobre datos observados</span>
       </div>
       <div className="flex-1 flex items-end gap-4 justify-around pt-6">
         {roas.map((r) => (

@@ -118,7 +118,7 @@ const pillars = [
   {
     eyebrow: "Cumplimiento",
     title: "Diseñada para el RGPD",
-    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Ningún dato que identifique a nadie. Hosted en la UE (Dublín). Sin banner de consentimiento para medición bajo GDPR + ePrivacy.",
+    body: "Sin cookies. Sin localStorage. Sin identificador persistente. Ningún dato que identifique a nadie. Hosted en la UE (Dublín). Diseñado para cumplir el RGPD (autoevaluación, no certificación).",
     metric: "0 cookies",
     metricLabel: "0 banners requeridos",
   },
@@ -191,7 +191,7 @@ export default function ModernAnalyticsPageEs() {
             <p className="mt-8 text-[19px] leading-[1.6] text-ink-soft max-w-[68ch]">
               La analítica legacy depende de cookies, consentimiento, sampling y modelado. La analítica
               moderna mide cada evento real en servidor, atribuye revenue last-click sobre datos crudos
-              y los expone a humanos y agentes IA mediante MCP. Sin estimaciones, sin banners, sin puntos ciegos.
+              y los expone a humanos y agentes IA mediante MCP. Sin estimaciones, sin pérdida por consentimiento, sin puntos ciegos.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-3 flex-wrap">
               <Link

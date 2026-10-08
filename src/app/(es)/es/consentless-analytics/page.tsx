@@ -16,11 +16,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-29";
 const PILLAR_DATE_MODIFIED = "2026-05-29";
 
 export const metadata: Metadata = {
-  title: "Analítica sin consentimiento — medición legal, sin banners",
+  title: "Analítica sin consentimiento — medir sin banner de cookies",
   description:
-    "Analítica sin consentimiento: la vía legal a la medición web sin banner. RGPD, ePrivacy, exención CNIL — qué la hace lícita, por arquitectura.",
+    "Analítica sin consentimiento: cuándo puede medirse sin banner de cookies bajo RGPD y ePrivacy, la exención CNIL y los límites por país.",
   openGraph: {
-    title: "Analítica sin consentimiento — legal por arquitectura",
+    title: "Analítica sin consentimiento, diseñada para cumplir el RGPD",
     description:
       "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La ruta arquitectónica, la guía de autoridades, los límites.",
     type: "article",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Analítica sin consentimiento — legal por arquitectura",
+    title: "Analítica sin consentimiento, diseñada para cumplir el RGPD",
     description: "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La ruta arquitectónica, la guía de autoridades, los límites.",
     images: [ogImage("/es/consentless-analytics/")],
   },
@@ -116,14 +116,14 @@ export default function ConsentlessAnalyticsPillarEs() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/es/consentless-analytics",
-          name: "Analítica sin consentimiento — medición legal, sin banners",
+          name: "Analítica sin consentimiento — medir sin banner de cookies",
         })}
       />
       <JsonLd
         data={articleSchema({
-          headline: "Analítica sin consentimiento — la vía legal a la medición web sin banner",
+          headline: "Analítica sin consentimiento — cuándo se puede medir sin banner",
           description:
-            "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. La exención arquitectónica, la guía de seis autoridades europeas y el stack de compliance.",
+            "Cómo la analítica puede ser lícita bajo RGPD y ePrivacy sin banner de consentimiento. Las condiciones que evaluar, las fuentes oficiales y la documentación de cumplimiento.",
           datePublished: PILLAR_DATE_PUBLISHED,
           dateModified: PILLAR_DATE_MODIFIED,
           url: "/es/consentless-analytics",

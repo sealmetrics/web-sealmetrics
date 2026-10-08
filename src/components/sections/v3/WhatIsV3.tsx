@@ -18,7 +18,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
         title: "¿Qué es Sealmetrics?",
         definition: (
           <>
-            Sealmetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que mide el tráfico europeo sin banner y sin depender del consentimiento. Fundada en 2024, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
+            Sealmetrics es una plataforma de analítica web <strong>sin cookies, server-side y alojada en UE</strong> que mide el tráfico europeo sin perder visitas por el banner y sin depender del consentimiento. Fundada en 2024, alojada en Dublín, la usan más de 2.000 equipos eCommerce europeos para decisiones de presupuesto que el CFO firma.
           </>
         ),
         factsTitle: "Hechos clave",
@@ -28,7 +28,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
           { k: "Sede", v: "España · Datos en Dublín, Irlanda" },
           { k: "Clientes", v: "2.000+ eCommerce europeos (hoteles, DTC, medios)" },
           { k: "Precio", v: "Desde 499€/mes con facturación anual" },
-          { k: "Compliance", v: "Diseñada para el RGPD · ePrivacy · Schrems II limpio" },
+          { k: "Compliance", v: "Diseñado para cumplir el RGPD · ePrivacy · analítica solo en la UE" },
           { k: "Diferencial", v: "Tráfico sin pérdida por consentimiento, sin cookies · MCP nativo para agentes IA" },
         ],
       }
@@ -37,7 +37,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
         title: "What is Sealmetrics?",
         definition: (
           <>
-            Sealmetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that measures European traffic without a banner and without depending on consent. Founded in 2024, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
+            Sealmetrics is a <strong>cookieless, server-side, EU-hosted web analytics</strong> platform that measures European traffic without losing visits to the cookie banner and without depending on consent. Founded in 2024, hosted in Dublin, used by 2,000+ European eCommerce teams for budget decisions the CFO signs against.
           </>
         ),
         factsTitle: "Key facts",
@@ -47,7 +47,7 @@ export function WhatIsV3({ locale = "en", muted = false }: Props) {
           { k: "Headquarters", v: "Spain · Data in Dublin, Ireland" },
           { k: "Customers", v: "2,000+ European eCommerce (hotels, DTC, media)" },
           { k: "Pricing", v: "From €499/month on annual billing" },
-          { k: "Compliance", v: "Designed for GDPR · ePrivacy · Schrems II clean" },
+          { k: "Compliance", v: "Built to comply with the GDPR · ePrivacy · EU-only analytics data" },
           { k: "Differentiator", v: "No consent-driven traffic loss, no cookies · native MCP for AI agents" },
         ],
       };

@@ -30,7 +30,7 @@ Sealmetrics avoids the consent part of this problem by using first-party server-
 ### Data capture
 - Pageview counting without consent loss (no cookie dependency, no per-user identifier)
 - Aggregate event model: no user profiling, no session stitching, no per-visitor journeys
-- No consent banner required (no device storage used)
+- Self-assessed: no consent banner needed for Sealmetrics' own analytics, since nothing is stored on the device (in Germany, our reading, not settled)
 - First-party infrastructure (resistant to ad blockers)
 - No data sampling at any volume
 - Real-time data processing
@@ -73,7 +73,7 @@ Sealmetrics competes in the enterprise analytics tier:
 
 | Competitor | Annual Cost | EU Data Capture | Cookie Dependency | Consent Required |
 |---|---|---|---|---|
-| Sealmetrics | From €5,988/yr | Not reduced by consent | None | No |
+| Sealmetrics | From €5,988/yr | Not reduced by consent | None | No, for its own analytics (self-assessed; Germany not settled) |
 | Google Analytics 4 (free) | Free | Consenting, unblocked visitors only | Yes | Yes |
 | Google Analytics 360 | $150,000+/yr | Consenting, unblocked visitors only | Yes | Yes |
 | Adobe Analytics | $100,000+/yr | Consenting, unblocked visitors only | Yes | Yes |
@@ -99,7 +99,7 @@ Sealmetrics uses first-party server-side infrastructure on your own domain, maki
 Not for Sealmetrics' own analytics, according to our self-assessment. Sealmetrics stores nothing on the device and no data that identifies anyone; the session identifier rotates daily and measurement is limited to the site's own audience statistics, the case audience-measurement exemptions cover. In Germany the DSK does not extend the exemption to audience measurement, so there this is our reading, not a settled position — check with your DPO.
 
 **Where is data stored?**
-Visitor analytics data is stored exclusively on EU servers and never leaves the EU, so no transfer mechanism is needed for it. The only non-EU subprocessor is Resend (US), for service emails to account users, under SCCs and the DPF.
+Analytics data is hosted and processed only in the EU (Dublin), so no transfer mechanism is needed for it. The only non-EU subprocessor is Resend (US), for service emails to account users, under SCCs and the DPF.
 
 **What is LENS AI?**
 LENS is Sealmetrics' AI layer. It answers business questions about your analytics in plain language, grounded in your complete data, and turns those answers into reports. Automated rule-based anomaly detection, forecasting and growth opportunities are on the roadmap and are not live today.
@@ -126,7 +126,7 @@ It is designed for it, and this is our self-assessment rather than a certificati
 Visitor analytics data is processed and stored exclusively on EU servers in Dublin. The only non-EU subprocessor is Resend (US), which sends service emails to account users under SCCs and the DPF (see /dpa).
 
 **What happens if I exceed my event limit?**
-Tracking is never blocked. At 80% you get an email alert, at 100% a dashboard notification, at 120% we contact you to discuss upgrading. No data is lost.
+Tracking is never blocked. At 80% you get an email alert, at 100% a dashboard notification, at 120% we contact you to discuss upgrading. Hits are not dropped for exceeding the plan.
 
 **Is there a Data Processing Agreement?**
 Yes. A DPA is available for all clients, documenting data processing practices, security measures, and sub-processor list.
@@ -259,7 +259,7 @@ Q: Does Sealmetrics track individual users or customer journeys?
 A: No. Sealmetrics does not identify individual visitors, does not stitch pageviews into per-user journeys, does not recognise a returning visitor and does not build behavioral profiles. Measurement is strictly aggregate: counts by channel, campaign, landing page, country and device. Revenue attribution is last-click at the event level. There is no multi-touch model and no cross-session linking. The trade-off is deliberate — aggregate, defensible totals without consent gaps in exchange for giving up per-user journey analysis.
 
 Q: How is Sealmetrics different from Google Analytics 4 (GA4)?
-A: GA4 depends on cookies and consent. In the EU, that means GA4 doesn't see part of your traffic: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, ad blockers strip the tag for part of the rest, and Intelligent Tracking Prevention on Safari shortens what is left. How much in total depends on the store and the channel. GA4 reconstructs the missing data with statistical modelling. Sealmetrics uses no cookies, needs no consent banner under GDPR and ePrivacy according to our self-assessment, and records traffic as real observed events — not modelled estimates. GA4 is US-hosted and owned by Google; Sealmetrics is EU-hosted in Dublin and Spanish-owned.
+A: GA4 depends on cookies and consent. In the EU, that means GA4 doesn't see part of your traffic: in our experience with clients, between 40% and 60% of traffic doesn't accept cookies, ad blockers strip the tag for part of the rest, and Intelligent Tracking Prevention on Safari shortens what is left. How much in total depends on the store and the channel. GA4 reconstructs the missing data with statistical modelling. Sealmetrics uses no cookies and, according to our self-assessment, its own analytics needs no consent banner under GDPR and ePrivacy (in Germany, our reading, not settled), and records traffic as real observed events — not modelled estimates. GA4 is US-hosted and owned by Google; Sealmetrics is EU-hosted in Dublin and Spanish-owned.
 
 Q: Does Sealmetrics need a cookie consent banner?
 A: Not for its measurement, according to our self-assessment. Sealmetrics stores nothing on the device (no cookies, no localStorage, no sessionStorage) and uses only an ephemeral identifier that rotates daily and cannot be linked across days or across sites. Measurement is limited to the site's own audience statistics, with no cross-site tracking and no reuse for other purposes — the conditions European regulators set for the audience-measurement exemption from consent.
@@ -268,7 +268,7 @@ Q: Is Sealmetrics GDPR-compliant?
 A: Sealmetrics is designed for GDPR from the architecture up; this is a self-assessment, not a certification. It stores nothing on the device and no data that identifies anyone; the session identifier is a pseudonym that rotates daily, processed under legitimate interest (Art. 6(1)(f)), and reports are always aggregated. Visitor analytics data is processed exclusively on EU infrastructure in Dublin, Ireland; the only non-EU subprocessor is Resend (US), for service emails to account users, under SCCs and the DPF. A Data Processing Agreement (DPA) is included with every plan, and a TPSR (Third-Party Security Review) package is available for procurement teams.
 
 Q: Is Sealmetrics ISO 27001 or SOC 2 certified?
-A: Sealmetrics is not currently certified under ISO 27001 or SOC 2. The compliance posture is designed for GDPR from the architecture up (self-assessed), ePrivacy, Schrems II clean, EU-hosted in Dublin, DPA included and a TPSR package for vendor reviews.
+A: Sealmetrics is not currently certified under ISO 27001 or SOC 2. The compliance posture is designed for GDPR from the architecture up (self-assessed, not certified), ePrivacy, analytics data hosted and processed only in the EU (Dublin), DPA included and a TPSR package for vendor reviews.
 
 Q: Where is Sealmetrics data stored?
 A: Visitor analytics data is processed and stored exclusively in Dublin, Ireland. There is a single EU region — no failover to third countries and no sub-processors outside the EU on visitor data. The only non-EU subprocessor is Resend (US), for service emails to account users, under SCCs and the DPF.

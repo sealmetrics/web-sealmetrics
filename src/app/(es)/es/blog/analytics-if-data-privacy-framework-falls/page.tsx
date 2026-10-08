@@ -298,7 +298,7 @@ export default function AnalyticsIfDataPrivacyFrameworkFallsPageEs() {
             </p>
             <p>
               La primera forma de romperlo es no recoger datos personales. Una
-              analítica que nunca recoge IPs ni cookies y no guarda ningún
+              analítica que nunca guarda IPs ni instala cookies y no guarda ningún
               identificador persistente de visitante no tiene datos personales que
               transferir. La segunda es mantener el tratamiento en un encargado
               constituido en la UE que no tenga matriz estadounidense, de modo

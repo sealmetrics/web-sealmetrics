@@ -667,7 +667,7 @@ export function getVsData(key: VsKey, locale: Locale): VsData {
         ],
         comparison: [
           { category: "Consent & exemption", block: "technical", rows: [
-            { feature: "Runs without a consent banner", them: "Yes in France · consent-exempt configuration (CNIL criteria)", us: "Yes · every market · no configuration required" },
+            { feature: "Runs without a consent banner", them: "Yes in France · consent-exempt configuration (CNIL criteria)", us: "Yes, in our self-assessment · no configuration required · Germany: our reading, not settled" },
             { feature: "Geographic scope", them: "France. Not under Germany's TDDDG §25", us: "All EU markets (Germany: our reading, not settled)" },
             { feature: "UTM / campaign parameters in exempt mode", them: "Stripped", us: "Retained · full channel attribution" },
             { feature: "eCommerce tracking in exempt mode", them: "Recommended off · order IDs anonymised if kept", us: "Full revenue measurement" },

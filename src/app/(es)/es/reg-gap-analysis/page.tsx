@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     q: "¿Cómo cierra Sealmetrics las brechas de cumplimiento habituales de la analítica?",
-    a: "Por arquitectura y no por configuración. Sealmetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), no guarda ningún dato que identifique a nadie e informa solo con eventos agregados (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: diseñado para el RGPD (autoevaluación), ePrivacy limpio, Schrems II limpio.",
+    a: "Por arquitectura y no por configuración. Sealmetrics es cookieless y no almacena nada en el dispositivo (cierra la brecha ePrivacy), no guarda ningún dato que identifique a nadie e informa solo con eventos agregados (cierra las brechas de base jurídica, minimización y derechos del interesado), y está alojado de extremo a extremo en Dublín (Irlanda) (cierra la brecha de transferencia internacional). Se incluye un DPA, y la atribución es a último clic sobre tráfico sin huecos de consentimiento. Nota: Sealmetrics no reclama certificación ISO 27001 ni SOC 2 — el caso de cumplimiento se apoya en cómo está construido: diseñado para el RGPD (autoevaluación), ePrivacy, datos de analítica alojados solo en la UE.",
   },
   {
     q: "¿Puede la analítica funcionar sin banner tras un análisis de brechas?",

@@ -254,14 +254,14 @@ export function softwareApplicationSchema(opts?: { locale?: "en" | "es" }) {
     featureList:
       locale === "es"
         ? [
-            "Medición cookieless (sin banner de consentimiento)",
+            "Medición cookieless (sin pérdida por consentimiento)",
             "Medición sin pérdida por consentimiento",
             "Diseñada para RGPD/ePrivacy (autoevaluación)",
             "Atribución de ingresos a último clic",
             "LENS AI — pregunta a tus datos en lenguaje natural",
           ]
         : [
-      "Cookieless tracking (no consent banner required)",
+      "Cookieless tracking (no consent loss)",
       "Traffic measurement without consent loss",
       "Designed for GDPR/ePrivacy (self-assessed)",
       "Revenue attribution",

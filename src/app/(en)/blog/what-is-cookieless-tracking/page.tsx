@@ -219,7 +219,7 @@ export default function WhatIsCookielessTrackingPage() {
                   {
                     aspect: "Privacy compliance",
                     cookie: "Requires consent banner + DPA",
-                    cookieless: "Compliant by architecture",
+                    cookieless: "Built to comply with the GDPR (self-assessed)",
                   },
                 ].map((row) => (
                   <tr

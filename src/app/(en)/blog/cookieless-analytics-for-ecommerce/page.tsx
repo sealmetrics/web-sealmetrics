@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
     description:
-      "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
+      "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, nothing on the device.",
     type: "article",
     images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
     url: "https://sealmetrics.com/blog/cookieless-analytics-for-ecommerce/",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Cookieless Analytics for eCommerce: The 2026 Guide",
-    description: "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, no consent banner.",
+    description: "Aggregate event counts attributed last-click to the channel that drove each conversion. First-party, no cookies, nothing on the device.",
     images: [ogImage("/blog/cookieless-analytics-for-ecommerce/")],
   },
   alternates: {

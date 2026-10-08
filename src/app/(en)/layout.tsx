@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sealmetrics.com"),
   title: "Sealmetrics — Complete Analytics for eCommerce",
   description:
-    "Web analytics that doesn't depend on consent. No cookies, no consent banners, no consent-driven data loss. Enterprise-grade complete data from €499/mo.",
+    "Web analytics that doesn't depend on consent. No cookies, nothing stored on the device, no consent-driven data loss. Enterprise-grade complete data from €499/mo.",
   openGraph: {
     title: "Sealmetrics — Complete Analytics for eCommerce",
     description:

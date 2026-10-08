@@ -93,7 +93,7 @@ export function AiAskDemo() {
 
 /* --- Block 3: 4-column feature grid ------------------------- */
 const ADVANTAGES = [
-  { k: "Complete data", d: "Your traffic measured without depending on a consent banner — legally. No sampling, no modeled gaps.", href: "/complete-data" },
+  { k: "Complete data", d: "We measure all the traffic you lose today to the cookie banner. No sampling, no modeled gaps.", href: "/complete-data" },
   { k: "Real time", d: "Every dashboard computed live, Black Friday included. Not a visitor counter — every report.", href: "#" },
   { k: "Any property", d: "Store value, product, SKU, brand, size — anything — on any event. No property cap.", href: "#" },
   { k: "Private AI", d: "LENS runs on an EU open-source model. Your data never trains a third-party algorithm.", href: "#lens" },
@@ -133,7 +133,7 @@ const TABS = [
   {
     key: "Complete data",
     head: "See beyond the consented slice.",
-    bullets: ["Cookieless pixel captures every visit", "No consent banner, GDPR by architecture", "Numbers that reconcile with Shopify"],
+    bullets: ["Measures the traffic your cookie banner loses", "Nothing on the device, built to comply with the GDPR", "Numbers that reconcile with Shopify"],
     stat: "0", statLabel: "visits lost to consent rejection",
   },
   {
@@ -202,7 +202,7 @@ export function ValuePropTabs() {
 const TEAMS = [
   { role: "CMO", d: "Align brand, paid-media agencies and finance on one number every party accepts.", href: "/for/cmo" },
   { role: "CTO", d: "846-byte pixel, full API, native MCP, BigQuery export. EU-hosted, nothing that identifies anyone stored.", href: "/for/cto" },
-  { role: "DPO", d: "GDPR by architecture, DPA + TPSR included, Schrems II clean. No consent layer to defend.", href: "/for/dpo" },
+  { role: "DPO", d: "Built to comply with the GDPR (self-assessed), analytics data only in the EU, DPA + TPSR included.", href: "/for/dpo" },
   { role: "Agencies", d: "Multi-client dashboards and reporting on complete data your clients can trust.", href: "/for/agencies" },
 ];
 

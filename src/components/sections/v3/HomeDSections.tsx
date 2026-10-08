@@ -32,14 +32,14 @@ export function HeroD() {
           style={{ fontSize: "clamp(17px, 1.4vw, 20px)" }}
         >
           Sealmetrics is cookieless analytics for eCommerce. Measure visits and sales without depending on consent — no
-          cookies, no consent banner, no consent blind spot — so your real ROAS, your channel
+          cookies, nothing stored on the device, no consent blind spot — so your real ROAS, your channel
           decisions and your board numbers finally match what actually happened.
         </p>
 
         <DualCTA locale="en" className="justify-center mt-7" />
 
         <div className="flex flex-wrap justify-center gap-x-5 gap-y-2 mt-6 font-mono text-[11px] uppercase tracking-[0.08em] text-ink-soft">
-          {["No consent-driven data loss", "No cookies · no consent banner", "Designed for GDPR", "Numbers that match Shopify"].map((b) => (
+          {["No consent-driven data loss", "No cookies · nothing on the device", "Built to comply with the GDPR", "Numbers that match Shopify"].map((b) => (
             <span key={b} className="inline-flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-brand shrink-0" />
               {b}
@@ -69,7 +69,7 @@ export function ConsentlessAnalytics() {
             <Link href="/consentless-analytics" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               Consentless analytics
             </Link>{" "}
-            measures your sales without depending on a consent banner — legally.{" "}
+            measures your sales without depending on a consent banner.{" "}
             <Link href="/security" className="text-brand font-medium border-b border-brand/30 hover:border-brand">
               Designed for GDPR from the architecture up
             </Link>
@@ -376,7 +376,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
             { n: "02", t: "Ningún dato que identifique a nadie", d: "El identificador de sesión rota cada día y, al rotar, ni nosotros podemos reconstruirlo. Los informes son siempre agregados." },
             { n: "03", t: "Nada que consentir", d: "No hay perfil al que oponerse. Medir sin pérdida por consentimiento y la privacidad son el mismo diseño." },
           ],
-          badges: ["Diseñada para el RGPD", "ePrivacy", "Schrems II limpio", "Alojado en Dublín", "DPA incluido"],
+          badges: ["Diseñado para cumplir el RGPD", "ePrivacy", "Analítica solo en la UE", "Alojado en Dublín", "DPA incluido"],
         }
       : {
           quote:
@@ -399,7 +399,7 @@ export function CfoObjectionHome({ locale = "en" }: { locale?: "en" | "es" }) {
             { n: "02", t: "No data that identifies anyone", d: "The session identifier rotates daily and, once rotated, not even we can reconstruct it. Reports are always aggregated." },
             { n: "03", t: "Nothing to consent to", d: "No profile to object to. Consent-independent measurement and privacy are the same design." },
           ],
-          badges: ["Designed for GDPR", "ePrivacy", "Schrems II clean", "EU-hosted in Dublin", "DPA included"],
+          badges: ["Built to comply with the GDPR", "ePrivacy", "EU-only analytics data", "EU-hosted in Dublin", "DPA included"],
         };
 
   return (

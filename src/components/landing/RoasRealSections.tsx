@@ -430,7 +430,7 @@ const TRADE_NO = [
 ];
 
 const TRADE_YES = [
-  "Sesiones, eventos y ventas sin pérdida por consentimiento. Sin banner de por medio.",
+  "Sesiones, eventos y ventas sin pérdida por consentimiento.",
   "Canal, campaña, medium, keyword, content y referrer sobre ese mismo dato.",
   "Embudo agregado completo: visita → producto visto → carrito → checkout → compra.",
   "Dato a nivel de producto: talla, color, marca, categoría, rango de precio, SKU.",

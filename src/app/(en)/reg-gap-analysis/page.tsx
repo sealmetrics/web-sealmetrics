@@ -130,7 +130,7 @@ const faqs = [
   },
   {
     q: "How does Sealmetrics close the common analytics compliance gaps?",
-    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), keeps no data that identifies anyone and reports only aggregate events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: designed for GDPR (self-assessed), ePrivacy-clean, Schrems II-clean.",
+    a: "By architecture rather than configuration. Sealmetrics is cookieless and stores nothing on the device (closing the ePrivacy gap), keeps no data that identifies anyone and reports only aggregate events (closing the lawful-basis, minimisation and data-subject-rights gaps), and is hosted end-to-end in Dublin, Ireland (closing the international-transfer gap). A DPA is included, and attribution is last-click on traffic without consent gaps. Note Sealmetrics does not claim ISO 27001 or SOC 2 certification — the compliance case rests on how it is built: designed for GDPR (self-assessed), ePrivacy, analytics data hosted only in the EU.",
   },
   {
     q: "Can analytics run without a consent banner after a gap analysis?",

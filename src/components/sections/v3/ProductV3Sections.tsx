@@ -329,7 +329,7 @@ export function FeaturePrivateAIV3() {
       bullets={[
         "Bring your own keys — Anthropic, OpenAI or Gemini",
         "Or LENS Private AI: an EU-hosted open-weight model (gpt-oss-120b, Paris)",
-        "Data never leaves the EU, never shared, never used for training",
+        "Data processed only in the EU, never shared, never used for training",
         "Enterprise: a dedicated instance, not shared with any other customer",
       ]}
       visual={<PrivateAIVisual />}

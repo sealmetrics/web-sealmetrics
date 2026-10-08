@@ -17,11 +17,11 @@ const PILLAR_DATE_PUBLISHED = "2026-05-28";
 const PILLAR_DATE_MODIFIED = "2026-09-21";
 
 export const metadata: Metadata = {
-  title: "Consentless analytics — lawful measurement without banners",
+  title: "Consentless analytics — measuring without cookie banners",
   description:
-    "Consentless analytics: the legal route to web measurement without cookie banners. GDPR, ePrivacy, CNIL exemption — what makes it lawful, by architecture.",
+    "Consentless analytics: when web measurement can run without cookie banners under GDPR and ePrivacy, the CNIL exemption, and the limits by country.",
   openGraph: {
-    title: "Consentless analytics — lawful by architecture",
+    title: "Consentless analytics — built to comply with the GDPR",
     description:
       "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
     type: "article",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Consentless analytics — lawful by architecture",
+    title: "Consentless analytics — built to comply with the GDPR",
     description: "How analytics can be lawful under GDPR and ePrivacy without a consent banner — the architectural path, the authority guidance, the limits.",
     images: [ogImage("/consentless-analytics/")],
   },
@@ -115,13 +115,13 @@ export default function ConsentlessAnalyticsPillar() {
       <JsonLd
         data={speakableWebPageSchema({
           url: "/consentless-analytics",
-          name: "Consentless analytics — lawful web measurement without banners",
+          name: "Consentless analytics — web measurement without banners",
         })}
       />
       <JsonLd
         data={articleSchema({
           headline:
-            "Consentless analytics — the legal route to web measurement without cookie banners",
+            "Consentless analytics — when web measurement can run without cookie banners",
           description:
             "How analytics can be lawful under GDPR and ePrivacy without a consent banner. The conditions to assess, official regulatory sources, and the compliance documentation.",
           datePublished: PILLAR_DATE_PUBLISHED,

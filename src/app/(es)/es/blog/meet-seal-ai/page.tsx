@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Seal AI: la IA de analítica privada que solo se ejecuta en la UE",
     description:
-      "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que nunca sale de la UE y que no retiene nada.",
+      "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que solo se ejecuta en la UE y que no retiene nada.",
     type: "article",
     url: "https://sealmetrics.com/es/blog/meet-seal-ai/",
     siteName: "Sealmetrics",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Seal AI: la IA de analítica privada que solo se ejecuta en la UE",
-    description: "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que nunca sale de la UE y que no retiene nada.",
+    description: "Respuestas en lenguaje natural sobre tu analítica, con una inferencia que solo se ejecuta en la UE y que no retiene nada.",
     images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
   alternates: {
@@ -56,7 +56,7 @@ const FAQ = [
   {
     question: "¿Seal AI envía mis datos a Estados Unidos?",
     answer:
-      "No. Seal AI ejecuta la inferencia exclusivamente en París (Francia), sobre Scaleway, una empresa francesa sin matriz estadounidense. Como el dato nunca sale de la UE y el proveedor no está sujeto a la jurisdicción de Estados Unidos, no se produce ninguna transferencia internacional: el Capítulo V del RGPD (cláusulas contractuales tipo, evaluaciones de transferencia, Data Privacy Framework) no llega a aplicarse.",
+      "No. Seal AI ejecuta la inferencia exclusivamente en París (Francia), sobre Scaleway, una empresa francesa sin matriz estadounidense. Como el dato se procesa solo en la UE y el proveedor no está sujeto a la jurisdicción de Estados Unidos, no se produce ninguna transferencia internacional: el Capítulo V del RGPD (cláusulas contractuales tipo, evaluaciones de transferencia, Data Privacy Framework) no llega a aplicarse.",
   },
   {
     question: "¿Seal AI entrena sus modelos con mis datos de analítica?",
@@ -248,8 +248,8 @@ export default function MeetSealAiPageEs() {
               </li>
               <li>
                 <strong>El prompt nace limpio.</strong> Sealmetrics es analítica
-                sin consentimiento: no recogemos IPs, cookies ni identificadores de
-                visitante en ningún momento. De modo que no hay ningún
+                sin consentimiento: no guardamos IPs, no instalamos cookies ni
+                conservamos identificadores persistentes de visitante. De modo que no hay ningún
                 identificador personal que enviar a la IA, ni siquiera antes de
                 aplicar controles de privacidad.
               </li>

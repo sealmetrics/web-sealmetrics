@@ -164,7 +164,7 @@ export default function ConversionTrackingPage() {
               <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.14em] text-brand mb-4">Measurement layer</h3>
               <p className="text-[15px] leading-[1.7] text-ink">
                 The number the CFO sees. Aggregate, no
-                cookie, no persistent identifier, no consent banner. Captures
+                cookie, no persistent identifier, no consent loss. Captures
                 observed conversions from visitors who accept and reject the
                 banner alike, without consent gaps.
                 Reconciles with the eCommerce backend&rsquo;s order total.
@@ -378,8 +378,8 @@ export default function ConversionTrackingPage() {
 
       <FinalCtaSharedV3
         locale="en"
-        titleEn={<>Set up <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>complete conversion tracking</em>. Without the banner.</>}
-        titleEs={<>Configura <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>conversion tracking completo</em>. Sin banner.</>}
+        titleEn={<>Set up <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>complete conversion tracking</em>. Without the consent loss.</>}
+        titleEs={<>Configura <em className="italic font-medium" style={{ color: "#E8B84B", fontStyle: "italic" }}>conversion tracking completo</em>. Sin pérdida por consentimiento.</>}
         ledeEn="Book 30 minutes with the founder. We map your existing conversion goals to Sealmetrics live, configure custom events, and confirm the platform pixels stay intact."
         ledeEs="Reserva 30 min con el founder. Mapeamos tus goals existentes a Sealmetrics en directo, configuramos eventos custom y confirmamos que los pixels de plataforma siguen vivos."
       />

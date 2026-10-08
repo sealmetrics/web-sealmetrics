@@ -53,7 +53,7 @@ const criteria = [
     n: "02",
     title: "No data that identifies anyone",
     requirement: "AEPD aligns with the EDPB Opinion 5/2019: if the processing does not relate to an identified or identifiable person, GDPR material scope does not apply.",
-    us: "No IP address stored — used transiently in memory, then discarded. No User-Agent fingerprint stored. No persistent identifier: the session identifier rotates daily and cannot be linked across days. The events are channel-level aggregates from the moment they hit the server. The session identifier is a pseudonym processed under legitimate interest; once rotated, not even we can reconstruct it.",
+    us: "No IP address stored: to filter bots we check it in flight against a public list of automated-traffic IPs, and don't keep it. No User-Agent fingerprint stored. No persistent identifier: the session identifier rotates daily and cannot be linked across days. The events are channel-level aggregates from the moment they hit the server. The session identifier is a pseudonym processed under legitimate interest; once rotated, not even we can reconstruct it.",
   },
   {
     n: "03",
@@ -84,7 +84,7 @@ const faqs = [
   },
   {
     q: "Is Sealmetrics suitable for Spanish public-sector sites?",
-    a: "Yes. Public-sector procurement in Spain typically requires Schrems II clean processing (no US transfer), a signed DPA under GDPR Art. 28, and either explicit consent or an exemption. Sealmetrics ships all three: EU-only processing in Dublin, a pre-filled DPA, and the architectural exemption under LSSI-CE 22.2. Several Spanish public-sector operators run Sealmetrics for that reason.",
+    a: "Yes. Public-sector procurement in Spain typically requires processing with no US transfer, a signed DPA under GDPR Art. 28, and either explicit consent or an exemption. Sealmetrics ships all three: EU-only processing in Dublin, a pre-filled DPA, and the architectural exemption under LSSI-CE 22.2. Several Spanish public-sector operators run Sealmetrics for that reason.",
   },
   {
     q: "What does the privacy policy still need to say?",
@@ -166,7 +166,7 @@ export default function GdprAnalyticsSpainPage() {
         bullets={[
           <><strong>AEPD 2024 cookies guide</strong> — explicit carve-out for anonymous aggregate measurement.</>,
           <><strong>LSSI-CE Art. 22.2</strong> — the Spanish ePrivacy implementation, in force since 2009.</>,
-          <><strong>Public-sector compatible</strong> — Schrems II clean, EU-only, signed DPA, architectural exemption.</>,
+          <><strong>Public-sector compatible</strong> — analytics data only in the EU, signed DPA, architectural exemption.</>,
           <><strong>~50% rejection rate</strong> on standard banners — average for Spanish B2C eCommerce.</>,
         ]}
       />
@@ -216,7 +216,7 @@ export default function GdprAnalyticsSpainPage() {
 
           <ul className="mt-8 space-y-3 text-[16px] leading-[1.7] text-ink-soft list-none pl-0">
             {[
-              "Schrems II clean for visitor data — processed in Dublin; the only US sub-processor, Resend, sends account emails under SCCs + DPF.",
+              "Analytics data hosted and processed only in the EU (Dublin); the only US sub-processor, Resend, sends account emails under SCCs + DPF.",
               "Signed DPA under GDPR Art. 28, available pre-filled for counter-signature.",
               "TPSR package covering data flows, retention, encryption and access control.",
               "ENS / ISO posture documented (we are not currently ISO 27001 or SOC 2 certified — the roadmap and controls operated today are documented in full).",

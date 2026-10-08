@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Meet Seal AI: Private, EU-Only Analytics AI",
     description:
-      "Plain-language answers about your analytics, with inference that never leaves the EU and retains nothing.",
+      "Plain-language answers about your analytics, with inference that runs only in the EU and retains nothing.",
     type: "article",
     url: "https://sealmetrics.com/blog/meet-seal-ai/",
     siteName: "Sealmetrics",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "Meet Seal AI: Private, EU-Only Analytics AI",
-    description: "Plain-language answers about your analytics, with inference that never leaves the EU and retains nothing.",
+    description: "Plain-language answers about your analytics, with inference that runs only in the EU and retains nothing.",
     images: ["https://sealmetrics.com/og/blog/meet-seal-ai.png"],
   },
   alternates: {
@@ -57,7 +57,7 @@ const FAQ = [
   {
     question: "Does Seal AI send my data to the United States?",
     answer:
-      "No. Seal AI runs inference exclusively in Paris, France, on Scaleway — a French company with no US parent. Because the data never leaves the EU and the provider is not subject to US jurisdiction, no international transfer occurs, so GDPR Chapter V (Standard Contractual Clauses, transfer assessments, the Data Privacy Framework) does not apply.",
+      "No. Seal AI runs inference exclusively in Paris, France, on Scaleway — a French company with no US parent. Because the data is processed only in the EU and the provider is not subject to US jurisdiction, no international transfer occurs, so GDPR Chapter V (Standard Contractual Clauses, transfer assessments, the Data Privacy Framework) does not apply.",
   },
   {
     question: "Does Seal AI train on my analytics data?",
@@ -216,7 +216,7 @@ export default function MeetSealAiPage() {
               </li>
               <li>
                 <strong>No transfer, so no transfer problem.</strong> Because your
-                data never leaves the EU and the provider has no US parent, GDPR
+                data is processed only in the EU and the provider has no US parent, GDPR
                 Chapter V generally isn&apos;t triggered — no Standard Contractual
                 Clauses, no transfer assessment, no dependence on the EU-US Data
                 Privacy Framework surviving its next court date. As with any
@@ -230,8 +230,8 @@ export default function MeetSealAiPage() {
               </li>
               <li>
                 <strong>The prompt is born clean.</strong> Sealmetrics is
-                consentless analytics: we never collect IPs, cookies, or visitor
-                identifiers in the first place. So there is no personal identifier
+                consentless analytics: we never store IPs, set cookies or keep
+                persistent visitor identifiers in the first place. So there is no personal identifier
                 to send to the AI, even before privacy controls apply.
               </li>
             </ul>

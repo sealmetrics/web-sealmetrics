@@ -99,7 +99,7 @@ export default function Page() {
             {[
               { n: "2.000+", l: "Cuentas activas" },
               { n: "+5 años", l: "En producción" },
-              { n: "100%", l: "UE-hosted" },
+              { n: "UE", l: "Analítica alojada solo en la UE" },
               { n: "99,99%", l: "SLA de uptime" },
             ].map((s) => (
               <div key={s.l} className="bg-white border border-warm-100 rounded-xl p-6">
