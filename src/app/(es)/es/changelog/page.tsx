@@ -34,6 +34,16 @@ export const metadata: Metadata = {
 
 const entries = [
   {
+    date: "Octubre 2026",
+    updates: [
+      {
+        title: "Sealmetrics ya está en el directorio de conectores de Claude",
+        type: "New",
+        desc: "Pregunta a Claude por tu tráfico, tus campañas y tus ingresos en lenguaje natural: Sealmetrics Analytics aparece en el directorio de conectores de Claude, disponible en claude.ai, en las apps de escritorio y móvil y en Cowork. Busca Sealmetrics, pulsa Connect e inicia sesión con tu cuenta de Sealmetrics: sin API key que copiar ni servidor que instalar. Claude ve exactamente los sitios que ve tu usuario y todas las herramientas son de solo lectura: puede consultar tus informes, nunca cambiar tu configuración. La configuración y la lista completa de herramientas están en la documentación del servidor MCP.",
+      },
+    ],
+  },
+  {
     date: "Septiembre 2026",
     updates: [
       {
