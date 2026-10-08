@@ -281,6 +281,8 @@ export interface CheckView {
   /** 0–100, for the progress bar. */
   percent: number;
   progressLine: string;
+  /** Where a running check is: asking the models, judging, or writing the summary. */
+  stage: CheckStage;
   card: string | null;
   counts: { n: number; know: number; confuse: number; noAnswer: number; recommend: number } | null;
   agree: string[];
@@ -304,6 +306,63 @@ export function progressLine(locale: Locale, answered: number, expected: number)
     ? `${answered} of ${expected} ${plural(expected, "model has", "models have")} answered`
     : `${answered} ${plural(answered, "model has", "models have")} answered`;
 }
+
+/**
+ * The three steps the page shows while a check runs. Enroutia inserts a model's
+ * row once its answers are in, then judges them all and writes the summary and
+ * the score; `progress.judged` turns true once the judge is done.
+ */
+export type CheckStage = "asking" | "judging" | "summarizing" | "done" | "failed";
+
+export function checkStage(
+  status: CheckStatus,
+  answered: number,
+  expected: number,
+  judged: boolean,
+): CheckStage {
+  if (status === "done") return "done";
+  if (status === "failed") return "failed";
+  if (judged) return "summarizing";
+  if (expected > 0 && answered >= expected) return "judging";
+  return "asking";
+}
+
+export const STAGE_STEPS: Record<Locale, { id: "asking" | "judging" | "summarizing"; label: string }[]> = {
+  es: [
+    { id: "asking", label: "Preguntando a las IA" },
+    { id: "judging", label: "Juzgando las respuestas" },
+    { id: "summarizing", label: "Resumen y puntuación" },
+  ],
+  en: [
+    { id: "asking", label: "Asking the models" },
+    { id: "judging", label: "Judging the answers" },
+    { id: "summarizing", label: "Summary and score" },
+  ],
+};
+
+/** What the active step says, in turn, so a wait of a minute reads as work. */
+export const STAGE_HINTS: Record<Locale, Record<"asking" | "judging" | "summarizing", string[]>> = {
+  es: {
+    asking: ["Enviando las preguntas", "Esperando a los modelos que piensan", "Recogiendo respuestas"],
+    judging: [
+      "Leyendo cada respuesta",
+      "Comprobando si te conocen",
+      "Buscando confusiones",
+      "Contando quién te recomienda",
+    ],
+    summarizing: ["Generando el resumen", "Calculando la puntuación", "Preparando el informe"],
+  },
+  en: {
+    asking: ["Sending the questions", "Waiting for the models that think", "Collecting answers"],
+    judging: [
+      "Reading every answer",
+      "Checking whether they know you",
+      "Looking for mix-ups",
+      "Counting who recommends you",
+    ],
+    summarizing: ["Writing the summary", "Working out the score", "Preparing the report"],
+  },
+};
 
 /** Closed references first (the names readers know), then open models; alphabetical within each. */
 function byKind(a: CheckModel, b: CheckModel): number {
@@ -448,6 +507,7 @@ export function toView(body: CheckBody, locale: Locale): CheckView {
     expectedModels,
     percent,
     progressLine: progressLine(locale, answeredModels, expectedModels),
+    stage: checkStage(body.status, answeredModels, expectedModels, body.progress.judged),
     card,
     counts: s
       ? { n: s.n_models, know: s.know, confuse: s.confuse, noAnswer: s.no_answer, recommend: s.recommend }
