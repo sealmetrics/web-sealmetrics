@@ -1641,6 +1641,16 @@
       "sourceHash": "9fd5dcfddb4692c2538b792e8091b27b7dd282336c27cce174914251bb28720a",
       "signature": "webp:{\"quality\":78}"
     },
+    "public/og/por-que-sin-consentimiento.avif": {
+      "source": "public/og/por-que-sin-consentimiento.png",
+      "sourceHash": "699b20d5a586346cdc4503d9c87e68ca55b5a85c7f8c9f34220fe7db70cc39d4",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/por-que-sin-consentimiento.webp": {
+      "source": "public/og/por-que-sin-consentimiento.png",
+      "sourceHash": "699b20d5a586346cdc4503d9c87e68ca55b5a85c7f8c9f34220fe7db70cc39d4",
+      "signature": "webp:{\"quality\":78}"
+    },
     "public/og/pricing.avif": {
       "source": "public/og/pricing.png",
       "sourceHash": "c8ed1b7919f4a76a0cea954b4bfd9b7779cf2208f7a81f7ae559ff5644150b29",
@@ -1879,6 +1889,16 @@
     "public/og/what-ai-says.webp": {
       "source": "public/og/what-ai-says.png",
       "sourceHash": "d2f595375d05156f6913003d145a41f7504c71a543ab01fb0dc8afffa4a35647",
+      "signature": "webp:{\"quality\":78}"
+    },
+    "public/og/why-no-consent.avif": {
+      "source": "public/og/why-no-consent.png",
+      "sourceHash": "38cb3de396cb284cc7964a2c84369ad46ed5479f2b67b5c9fe552297d0914588",
+      "signature": "avif:{\"quality\":60,\"effort\":4}"
+    },
+    "public/og/why-no-consent.webp": {
+      "source": "public/og/why-no-consent.png",
+      "sourceHash": "38cb3de396cb284cc7964a2c84369ad46ed5479f2b67b5c9fe552297d0914588",
       "signature": "webp:{\"quality\":78}"
     },
     "public/og/why-sealmetrics.avif": {

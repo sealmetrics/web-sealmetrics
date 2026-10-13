@@ -130,6 +130,7 @@ const translatedPaths = new Set([
  */
 const localizedSlugs: Record<string, string> = {
   "/what-ai-says": "/que-dicen-las-ia",
+  "/why-no-consent": "/por-que-sin-consentimiento",
 };
 const englishForSpanishSlug: Record<string, string> = Object.fromEntries(
   Object.entries(localizedSlugs).map(([en, es]) => [es, en]),

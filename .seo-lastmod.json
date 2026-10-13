@@ -84,8 +84,8 @@
     "date": "2026-10-08"
   },
   "/consentless-analytics/": {
-    "hash": "59ca8702ced79f7b",
-    "date": "2026-10-08"
+    "hash": "d852508cebfd15fb",
+    "date": "2026-10-13"
   },
   "/growth-calculator/": {
     "hash": "cbadf2174dffac24",
@@ -272,8 +272,8 @@
     "date": "2026-08-10"
   },
   "/es/consentless-analytics/": {
-    "hash": "6ceba712b9834566",
-    "date": "2026-10-08"
+    "hash": "5c575d1955c51b64",
+    "date": "2026-10-13"
   },
   "/es/growth-calculator/": {
     "hash": "91d39e8d6e02a77f",
@@ -1482,5 +1482,13 @@
   "/es/analiza-tu-marca-en-ia/": {
     "hash": "32245154c866f227",
     "date": "2026-10-02"
+  },
+  "/es/por-que-sin-consentimiento/": {
+    "hash": "8676c1c03bafe7ed",
+    "date": "2026-10-13"
+  },
+  "/why-no-consent/": {
+    "hash": "963bf8068581f232",
+    "date": "2026-10-13"
   }
 }

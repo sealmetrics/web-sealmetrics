@@ -381,6 +381,14 @@ export default function ConsentlessAnalyticsPillar() {
             >
               How it works
             </Link>
+            . The same answer for the marketer who has to explain it to the
+            team, with drawings, lives at{" "}
+            <Link
+              href="/why-no-consent/"
+              className="text-brand underline decoration-1 underline-offset-2"
+            >
+              why Sealmetrics measures without consent
+            </Link>
             .
           </p>
         </div>

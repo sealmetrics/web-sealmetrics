@@ -151,6 +151,7 @@
   "public/og/platforms/prestashop.png": "1d456033980a89914111731344d6ccbb",
   "public/og/platforms/shopify.png": "71793e2eca2bbbd7d65e048cdd039d65",
   "public/og/platforms/woocommerce.png": "2b2b31eac5074cf1fb222e931fac61fc",
+  "public/og/por-que-sin-consentimiento.png": "8d1b29746e65719ab1d1369d8684fd2c",
   "public/og/pricing.png": "971ecf44798d2acc8be778f9898cf74a",
   "public/og/privacy-end-to-end.png": "9f0b25bedf54a7c7cd54689a4a9a2769",
   "public/og/privacy.png": "8545a48ac79626fcadcdb98ea89fb4d7",
@@ -175,5 +176,6 @@
   "public/og/vs/matomo.png": "d6d130e6bc53435e0944d5201db23fe3",
   "public/og/vs/piwik-pro.png": "be7f763a8a2c3a8c8290587c14ee2d66",
   "public/og/what-ai-says.png": "ad9e95afce3ed1d97d2d403ddceca656",
+  "public/og/why-no-consent.png": "368059bc2c7bf1dfc561fb0a7980d09d",
   "public/og/why-sealmetrics.png": "a72fce43f1bf4c3bc67529df48049a8b"
 }

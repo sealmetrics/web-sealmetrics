@@ -106,6 +106,7 @@ Every account starts on the free Agentic tier: 1M human events in total, over th
 - /complete-data — Pillar for the problem "GA4 does not reflect reality": the four losses (consent, ad blockers, ITP, sampling), the measured Incapto gap (29% of visits, 45% of pageviews), why there is no universal figure, a five-step method to measure your own gap, and what complete data does not mean
 - /cookieless-analytics — Definitive explainer: what cookieless analytics is, how it works, what it captures, what it doesn't
 - /consentless-analytics — Legal-grade explainer of analytics without consent under GDPR Art. 6(1)(f) and ePrivacy
+- /why-no-consent — The customer question "why can Sealmetrics measure without consent and the others cannot?", answered for the marketer with drawings: what a cookie tool does to the device vs an empty device store, the ephemeral daily-rotating identifier, the three questions of the ePrivacy audience-measurement exemption, the conditions a DPO checks, what you get and what you do not (no returning visitors, no remarketing), the CMP installation mistake, a by-country table, paste-ready text for the DPO and the privacy policy, and a 30-day side-by-side with GA4. Germany: our reading, not settled
 
 ## Core pages
 - / — Homepage: consentless analytics for eCommerce. Measure your traffic without consent loss, with no cookies and no models, EU-hosted in Dublin
@@ -323,6 +324,7 @@ Pillars (ES):
 - /es/complete-data — Pilar del problema «GA4 no refleja la realidad»: las cuatro pérdidas, la brecha medida en Incapto (29% de visitas, 45% de páginas vistas), por qué no hay una cifra universal, un método en cinco pasos para medir la tuya y lo que datos completos no significa
 - /es/cookieless-analytics — Analítica sin cookies explicada: qué es, por qué fallan las cookies en 2026, qué se mide y qué no
 - /es/consentless-analytics — Analítica sin consentimiento: la vía legal a la medición sin banner bajo RGPD y ePrivacy, con la exención CNIL y sus límites
+- /es/por-que-sin-consentimiento — La pregunta de los clientes «¿por qué Sealmetrics puede medir sin consentimiento y los demás no?», contestada para el marketer con dibujos: qué hace una herramienta con cookies en el dispositivo frente al almacenamiento vacío, el identificador efímero que rota cada día, las tres preguntas de la excepción de medición de audiencia de ePrivacy, las condiciones que comprueba un DPO, qué tienes y qué no (sin recurrentes, sin remarketing), el error de instalación en el CMP, tabla por país, textos listos para el DPO y la política de privacidad, y 30 días en paralelo con GA4. Alemania: nuestra lectura, no está asentado
 
 Core pages (ES):
 - /es/ — Homepage (ES)
