@@ -17,6 +17,22 @@ import type { ReactNode } from "react";
  * Regulatory statements are conditional and link to the authority's own
  * publication or to the site's country analyses. Germany is "our reading, not
  * settled", the same wording as llms.txt.
+ *
+ * The by-country table was checked against the compliance-agent's corpus on
+ * 2026-10-13 (one question per row, answers with citation and date):
+ *   - France: confirmed. CNIL conditions as written here (04/07/2025 version).
+ *   - Italy: confirmed. The Garante equates analytics to technical cookies
+ *     under four conditions (no singling out, IP masked, one site, aggregate
+ *     statistics; a third party may not combine the data). Linee guida 2021.
+ *   - Germany: confirmed as not settled. The DSK declines to declare audience
+ *     measurement exempt and evaluates case by case; its only example without
+ *     consent is a simple page counter that captures nothing else. GDPR
+ *     legitimate interest does not satisfy §25 TDDDG on its own.
+ *   - Spain and the UK: NOT confirmable from the corpus. It holds the AEPD's
+ *     general cookie guide but not the specific guide on audience-measurement
+ *     tools it points to, and only the index of the ICO guidance. Both rows
+ *     link to the specific documents and keep the site's existing analyses as
+ *     their source.
  */
 
 export const WHY_NO_CONSENT_PUBLISHED = "2026-10-13";
@@ -103,9 +119,10 @@ export type WhyNoConsentContent = {
 const link = "sig-wnc-inline";
 const CNIL_GUIDANCE = "https://www.cnil.fr/fr/cookies-solutions-pour-les-outils-de-mesure-daudience";
 const AEPD_GUIDE = "https://www.aepd.es/guias/guia-cookies.pdf";
-const DSK_SITE = "https://www.datenschutzkonferenz-online.de/";
-const GARANTE_COOKIES = "https://www.garanteprivacy.it/temi/cookie";
-const ICO_PECR = "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guide-to-pecr/cookies-and-similar-technologies/";
+const AEPD_AUDIENCE_GUIDE = "https://www.aepd.es/guias/guia-cookies-analiticas-externas.pdf";
+const DSK_GUIDANCE = "https://www.datenschutzkonferenz-online.de/media/oh/20211220_oh_telemedien.pdf";
+const GARANTE_GUIDELINES = "https://www.garanteprivacy.it/home/docweb/-/docweb-display/docweb/9677876";
+const ICO_STORAGE_GUIDANCE = "https://ico.org.uk/for-organisations/direct-marketing-and-privacy-and-electronic-communications/guidance-on-the-use-of-storage-and-access-technologies/";
 
 export const whyNoConsentEn: WhyNoConsentContent = {
   route: "/why-no-consent",
@@ -276,11 +293,11 @@ export const whyNoConsentEn: WhyNoConsentContent = {
     body: "The rule is European, but each authority spells out the exemption. Look at the countries you sell in. Each row links to the authority's own publication or to our analysis of it.",
     headers: ["Country", "Authority and document", "Audience measurement without consent", "Worth knowing"],
     rows: [
-      { country: "Spain", authority: <>AEPD · <a className={link} href={AEPD_GUIDE}>Guía sobre el uso de las cookies</a></>, status: "Exemption with conditions", statusMark: "ok", note: <>Inform in the privacy policy and keep the purpose to the site&apos;s own audience. <a className={link} href="/gdpr-analytics/spain/">Our analysis for Spain</a>.</> },
+      { country: "Spain", authority: <>AEPD · <a className={link} href={AEPD_GUIDE}>Guía sobre el uso de las cookies</a> and its <a className={link} href={AEPD_AUDIENCE_GUIDE}>guide on cookies for audience-measurement tools</a></>, status: "Exemption with conditions", statusMark: "ok", note: <>Inform in the privacy policy and keep the purpose to the site&apos;s own audience. <a className={link} href="/gdpr-analytics/spain/">Our analysis for Spain</a>.</> },
       { country: "France", authority: <>CNIL · <a className={link} href={CNIL_GUIDANCE}>Solutions pour les outils de mesure d&apos;audience</a></>, status: "Exemption with conditions", statusMark: "ok", note: <>The reference document: limited purpose, no cross-site matching, bounded retention. <a className={link} href="/gdpr-analytics/france/">Our analysis for France</a>.</> },
-      { country: "Italy", authority: <>Garante · <a className={link} href={GARANTE_COOKIES}>Linee guida cookie</a></>, status: "Own criteria, check them", statusMark: "mid", note: "Criteria close to the CNIL's. Review the deployed configuration against the guidance." },
-      { country: "Germany", authority: <>DSK · <a className={link} href={DSK_SITE}>Orientierungshilfe Telemedien</a> · §25 TDDDG</>, status: "Not settled", statusMark: "mid", note: <>The strictest reading of what counts as access. Our reading is that no banner is needed for Sealmetrics, but it is not settled: review with your adviser. <a className={link} href="/gdpr-analytics/germany/">Our analysis for Germany</a>.</> },
-      { country: "United Kingdom", authority: <>ICO · <a className={link} href={ICO_PECR}>Guide to PECR, cookies and similar technologies</a></>, status: "PECR, own criteria", statusMark: "mid", note: <>Outside the EU: the basis is PECR, not ePrivacy. <a className={link} href="/blog/uk-pecr-analytics-exemption/">The UK PECR analytics exemption, explained</a>.</> },
+      { country: "Italy", authority: <>Garante · <a className={link} href={GARANTE_GUIDELINES}>Linee guida cookie e altri strumenti di tracciamento</a> (10 June 2021)</>, status: "Exemption with conditions", statusMark: "ok", note: "The Garante treats analytics like technical cookies when it cannot single anyone out, the IP is masked, it measures one site only and produces aggregate statistics; a third-party provider may not combine the data with anything else." },
+      { country: "Germany", authority: <>DSK · <a className={link} href={DSK_GUIDANCE}>Orientierungshilfe Telemedien</a> (20 December 2021) · §25 TDDDG</>, status: "Not settled", statusMark: "mid", note: <>The DSK declines to declare audience measurement exempt and assesses it case by case; its only example without consent is a simple page counter that captures nothing else, and GDPR legitimate interest does not satisfy §25 on its own. Our reading is that Sealmetrics fits that example, but it is not settled: review with your adviser. <a className={link} href="/gdpr-analytics/germany/">Our analysis for Germany</a>.</> },
+      { country: "United Kingdom", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a></>, status: "PECR, own criteria", statusMark: "mid", note: <>Outside the EU: the basis is PECR, not ePrivacy, and the ICO guidance has its own section on the statistical-purposes exception. <a className={link} href="/blog/uk-pecr-analytics-exemption/">The UK PECR analytics exemption, explained</a>.</> },
     ],
   },
 
@@ -511,11 +528,11 @@ export const whyNoConsentEs: WhyNoConsentContent = {
     body: "La regla es europea, pero la excepción la concreta cada autoridad. Mira los países donde vendes. Cada fila enlaza a la publicación de la autoridad o a nuestro análisis de ella.",
     headers: ["País", "Autoridad y documento", "Medición de audiencia sin consentimiento", "Qué conviene saber"],
     rows: [
-      { country: "España", authority: <>AEPD · <a className={link} href={AEPD_GUIDE}>Guía sobre el uso de las cookies</a></>, status: "Excepción con condiciones", statusMark: "ok", note: <>Informar en la política de privacidad y limitar la finalidad a la audiencia del propio sitio. <a className={link} href="/es/gdpr-analytics/spain/">Nuestro análisis para España</a>.</> },
+      { country: "España", authority: <>AEPD · <a className={link} href={AEPD_GUIDE}>Guía sobre el uso de las cookies</a> y su <a className={link} href={AEPD_AUDIENCE_GUIDE}>guía sobre cookies para herramientas de medición de audiencia</a></>, status: "Excepción con condiciones", statusMark: "ok", note: <>Informar en la política de privacidad y limitar la finalidad a la audiencia del propio sitio. <a className={link} href="/es/gdpr-analytics/spain/">Nuestro análisis para España</a>.</> },
       { country: "Francia", authority: <>CNIL · <a className={link} href={CNIL_GUIDANCE}>Solutions pour les outils de mesure d&apos;audience</a></>, status: "Excepción con condiciones", statusMark: "ok", note: <>El documento de referencia: finalidad limitada, sin cruce entre sitios, retención acotada. <a className={link} href="/gdpr-analytics/france/">Nuestro análisis para Francia</a> (en inglés).</> },
-      { country: "Italia", authority: <>Garante · <a className={link} href={GARANTE_COOKIES}>Linee guida cookie</a></>, status: "Criterios propios: revisar", statusMark: "mid", note: "Criterios parecidos a los de la CNIL. Revisa la configuración desplegada frente a la guía." },
-      { country: "Alemania", authority: <>DSK · <a className={link} href={DSK_SITE}>Orientierungshilfe Telemedien</a> · §25 TDDDG</>, status: "No está asentado", statusMark: "mid", note: <>La lectura más estricta de qué cuenta como acceso. Nuestra lectura es que Sealmetrics no necesita banner, pero no está asentado: revísalo con tu asesor. <a className={link} href="/gdpr-analytics/germany/">Nuestro análisis para Alemania</a> (en inglés).</> },
-      { country: "Reino Unido", authority: <>ICO · <a className={link} href={ICO_PECR}>Guide to PECR, cookies and similar technologies</a></>, status: "PECR, criterios propios", statusMark: "mid", note: <>Fuera de la UE: la base es PECR, no ePrivacy. <a className={link} href="/blog/uk-pecr-analytics-exemption/">La excepción de analítica de PECR, explicada</a> (en inglés).</> },
+      { country: "Italia", authority: <>Garante · <a className={link} href={GARANTE_GUIDELINES}>Linee guida cookie e altri strumenti di tracciamento</a> (10 de junio de 2021)</>, status: "Excepción con condiciones", statusMark: "ok", note: "El Garante equipara la analítica a las cookies técnicas cuando no puede identificar a nadie, la IP va enmascarada, mide un solo sitio y produce estadísticas agregadas; un proveedor tercero no puede combinar los datos con nada más." },
+      { country: "Alemania", authority: <>DSK · <a className={link} href={DSK_GUIDANCE}>Orientierungshilfe Telemedien</a> (20 de diciembre de 2021) · §25 TDDDG</>, status: "No está asentado", statusMark: "mid", note: <>La DSK no declara exenta la medición de audiencia y la evalúa caso por caso; su único ejemplo sin consentimiento es un contador simple de páginas vistas que no capte nada más, y el interés legítimo del RGPD no basta por sí solo para el §25. Nuestra lectura es que Sealmetrics encaja en ese ejemplo, pero no está asentado: revísalo con tu asesor. <a className={link} href="/gdpr-analytics/germany/">Nuestro análisis para Alemania</a> (en inglés).</> },
+      { country: "Reino Unido", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a></>, status: "PECR, criterios propios", statusMark: "mid", note: <>Fuera de la UE: la base es PECR, no ePrivacy, y la guía del ICO tiene un apartado propio sobre la excepción de fines estadísticos. <a className={link} href="/blog/uk-pecr-analytics-exemption/">La excepción de analítica de PECR, explicada</a> (en inglés).</> },
     ],
   },
 
