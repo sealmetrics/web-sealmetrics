@@ -1,0 +1,843 @@
+/*
+ * "Why no consent" — Native Signal (v4).
+ *
+ * Same discipline as problem-landing-signal.css: tokens scoped to the page
+ * wrapper, radius 0 everywhere, depth only as a hard offset shadow, acid as a
+ * fill (never as text on paper: --acid-ink carries it there), outlined text
+ * for the emphasised span of every H1/H2. Three semantic marks (no / ok / mid)
+ * reuse the data colours CLAUDE.md allows: red alert, acid-ink, amber.
+ */
+.sig-wnc-page {
+  --ink: #111412;
+  --acid: #cbff3d;
+  --acid-ink: #4f6900;
+  --paper: #f4f1e8;
+  --white: #fffdf7;
+  --muted: #5d625a;
+  --rule: rgba(17, 20, 18, 0.24);
+  --alert: #b5423b;
+  --amber: #e8b84b;
+  overflow-x: clip;
+  padding-top: 76px;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), Onest, sans-serif;
+}
+.sig-wnc-page *,
+.sig-wnc-page *:before,
+.sig-wnc-page *:after {
+  box-sizing: border-box;
+}
+.sig-wnc-page h1,
+.sig-wnc-page h2,
+.sig-wnc-page h3,
+.sig-wnc-page p,
+.sig-wnc-page dl,
+.sig-wnc-page dd {
+  margin: 0;
+}
+.sig-wnc-page a {
+  color: inherit;
+  text-decoration: none;
+}
+.sig-wnc-inline {
+  border-bottom: 1px solid currentColor;
+  font-weight: 650;
+}
+
+.sig-wnc-hero,
+.sig-wnc-section,
+.sig-wnc-final {
+  padding-inline: max(24px, calc((100vw - 1320px) / 2));
+}
+
+/* ---------- Hero ---------- */
+.sig-wnc-hero {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+  gap: clamp(50px, 7vw, 110px);
+  align-items: center;
+  padding-block: 42px 92px;
+  border-bottom: 1px solid var(--rule);
+}
+.sig-wnc-hero:before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(17, 20, 18, 0.16) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 20, 18, 0.16) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: linear-gradient(90deg, transparent, #000 18%, #000 82%, transparent);
+  content: "";
+  opacity: 0.35;
+}
+.sig-wnc-breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 46px;
+  color: var(--muted);
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-crumb {
+  display: inline-flex;
+  gap: 10px;
+}
+.sig-wnc-breadcrumbs a {
+  border-bottom: 1px solid currentColor;
+}
+.sig-wnc-eyebrow,
+.sig-wnc-tag {
+  margin-bottom: 24px !important;
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.sig-wnc-eyebrow span,
+.sig-wnc-tag {
+  display: inline-block;
+  padding: 8px 10px;
+  background: var(--ink);
+  color: var(--acid);
+}
+.sig-wnc-tag-light {
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-wnc-mini {
+  display: block;
+  color: var(--muted);
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-hero h1 {
+  max-width: 900px;
+  font-size: clamp(50px, 5.6vw, 92px);
+  font-weight: 790;
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+.sig-wnc-page h2 {
+  font-size: clamp(40px, 5vw, 76px);
+  font-weight: 790;
+  letter-spacing: -0.065em;
+  line-height: 0.9;
+}
+.sig-wnc-hero h1 em,
+.sig-wnc-page h2 em {
+  color: transparent;
+  font-style: normal;
+  -webkit-text-stroke: 1.5px var(--ink);
+}
+.sig-wnc-section-ink h2 em {
+  -webkit-text-stroke-color: var(--white);
+}
+.sig-wnc-hero-body {
+  max-width: 700px;
+  margin-top: 40px !important;
+  font-size: clamp(18px, 1.5vw, 22px);
+  line-height: 1.48;
+}
+.sig-wnc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-top: 34px;
+}
+.sig-wnc-button {
+  display: inline-flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 14px 18px;
+  border: 1px solid var(--ink);
+  font-size: 14px;
+  font-weight: 720;
+  transition:
+    box-shadow 140ms ease,
+    transform 140ms ease;
+}
+.sig-wnc-button:hover {
+  box-shadow: 3px 3px 0 var(--ink);
+  transform: translate(-2px, -2px);
+}
+.sig-wnc-page .sig-wnc-button-acid {
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-wnc-page .sig-wnc-button-dark {
+  background: var(--ink);
+  color: var(--white);
+}
+.sig-wnc-text-link {
+  border-bottom: 1px solid currentColor;
+  font-size: 14px;
+  font-weight: 720;
+}
+.sig-wnc-micro,
+.sig-wnc-byline {
+  margin-top: 28px !important;
+  color: var(--muted);
+  font: 650 9px/1.7 var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sig-wnc-byline {
+  margin-top: 12px !important;
+}
+.sig-wnc-byline a {
+  border-bottom: 1px solid currentColor;
+  color: var(--ink);
+}
+
+/* The "what changes / what does not" module, ink slab with the acid shadow. */
+.sig-wnc-frame {
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  box-shadow: 20px 20px 0 var(--acid);
+  color: var(--white);
+}
+.sig-wnc-frame-title {
+  padding: 15px 18px;
+  border-bottom: 1px solid rgba(255, 253, 247, 0.25);
+  font: 650 9px/1.4 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-frame-row {
+  display: grid;
+  gap: 10px;
+  padding: 22px 18px;
+  border-bottom: 1px solid rgba(255, 253, 247, 0.2);
+}
+.sig-wnc-frame-row:last-child {
+  border-bottom: 0;
+}
+.sig-wnc-frame-row > span {
+  color: var(--amber);
+  font: 650 9px/1 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-frame-row-acid > span {
+  color: var(--acid);
+}
+.sig-wnc-frame-row strong {
+  font-size: 19px;
+  font-weight: 760;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+.sig-wnc-frame-row p {
+  color: rgba(255, 253, 247, 0.72);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* ---------- Section shells ---------- */
+.sig-wnc-section {
+  padding-block: clamp(80px, 9vw, 140px);
+  border-bottom: 1px solid var(--rule);
+}
+.sig-wnc-section-white {
+  background: var(--white);
+}
+.sig-wnc-section-ink {
+  background: var(--ink);
+  color: var(--white);
+  border-bottom-color: rgba(255, 253, 247, 0.25);
+}
+.sig-wnc-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.55fr);
+  gap: clamp(40px, 7vw, 120px);
+  align-items: end;
+  margin-bottom: clamp(48px, 6vw, 84px);
+}
+.sig-wnc-head-single {
+  grid-template-columns: 1fr;
+}
+.sig-wnc-head > p {
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.62;
+}
+.sig-wnc-section-ink .sig-wnc-head > p {
+  color: rgba(255, 253, 247, 0.72);
+}
+
+/* ---------- Marks (data semantics only) ---------- */
+.sig-wnc-mark {
+  display: inline-block;
+  padding: 4px 8px;
+  border: 1px solid currentColor;
+  font: 650 11px/1.3 var(--font-mono), monospace;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+.sig-wnc-mark-no {
+  color: var(--alert);
+}
+.sig-wnc-mark-ok {
+  border-color: var(--acid-ink);
+  background: var(--acid);
+  color: var(--ink);
+}
+.sig-wnc-mark-mid {
+  border-color: var(--amber);
+  color: var(--ink);
+}
+.sig-wnc-section-ink .sig-wnc-mark-no {
+  color: #f0a39d;
+}
+.sig-wnc-verdict {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 18px !important;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+.sig-wnc-verdict .sig-wnc-mark {
+  flex: 0 0 auto;
+  margin-top: 2px;
+}
+
+/* ---------- Pairs and panels ---------- */
+.sig-wnc-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.sig-wnc-panel {
+  padding: 24px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.sig-wnc-panel-acid {
+  box-shadow: 8px 8px 0 var(--acid);
+}
+.sig-wnc-panel h3 {
+  font-size: 22px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+.sig-wnc-panel-label {
+  margin-bottom: 16px !important;
+  color: var(--muted);
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-drawing {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--ink);
+}
+.sig-wnc-svg-mono,
+.sig-wnc-svg-small,
+.sig-wnc-svg-text,
+.sig-wnc-svg-strong {
+  fill: currentColor;
+  font-family: var(--font-sans), Onest, sans-serif;
+}
+.sig-wnc-svg-mono {
+  font: 650 10px var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+}
+.sig-wnc-svg-text {
+  font-size: 12px;
+}
+.sig-wnc-svg-small {
+  font-size: 11px;
+}
+.sig-wnc-svg-strong {
+  font-size: 14px;
+  font-weight: 700;
+}
+.sig-wnc-svg-inverse {
+  fill: var(--white);
+}
+.sig-wnc-svg-ink {
+  fill: #111412;
+}
+
+/* ---------- Lists (dashes, never dots) ---------- */
+.sig-wnc-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.sig-wnc-list li {
+  padding-left: 22px;
+  font-size: 15px;
+  line-height: 1.55;
+  text-indent: -22px;
+}
+.sig-wnc-list li:before {
+  content: "— ";
+}
+.sig-wnc-list strong {
+  font-weight: 700;
+}
+.sig-wnc-list-wide {
+  max-width: 900px;
+  margin-top: 34px;
+  font-size: 16px;
+}
+
+/* ---------- Steps (pipeline and 30 days) ---------- */
+.sig-wnc-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--ink);
+  border-left: 1px solid var(--ink);
+  list-style: none;
+}
+.sig-wnc-steps li {
+  min-height: 280px;
+  padding: 24px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-wnc-steps li > span {
+  display: inline-block;
+  padding: 6px 8px;
+  background: var(--acid);
+  font: 650 10px/1 var(--font-mono), monospace;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.sig-wnc-steps h3 {
+  margin-top: 46px !important;
+  font-size: 21px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+.sig-wnc-steps p {
+  margin-top: 14px !important;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.sig-wnc-steps .sig-wnc-step-highlight {
+  color: var(--ink);
+  font-weight: 650;
+}
+.sig-wnc-retention {
+  display: grid;
+  grid-template-columns: minmax(200px, 0.5fr) minmax(0, 1.5fr);
+  gap: 24px;
+  align-items: center;
+  margin-top: 24px;
+  padding: 18px 24px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-wnc-retention-label {
+  color: var(--muted);
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-retention dl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.sig-wnc-retention dl > div {
+  display: inline-flex;
+  gap: 10px;
+  align-items: baseline;
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  font-size: 14px;
+}
+.sig-wnc-retention dt {
+  color: var(--muted);
+}
+.sig-wnc-retention dd {
+  font: 650 12px/1.4 var(--font-mono), monospace;
+}
+
+/* ---------- The three questions ---------- */
+.sig-wnc-ladder {
+  display: grid;
+  gap: 12px;
+}
+.sig-wnc-lrow {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+}
+.sig-wnc-lcol-head {
+  padding: 0 18px;
+  color: var(--muted);
+  font: 650 10px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.sig-wnc-lq {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  padding: 18px 18px 18px 0;
+}
+.sig-wnc-lq h3 {
+  font-size: 22px;
+  font-weight: 760;
+  letter-spacing: -0.035em;
+  line-height: 1.1;
+}
+.sig-wnc-lq p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.sig-wnc-la {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 18px;
+  border: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-wnc-la .sig-wnc-mini {
+  display: none;
+}
+.sig-wnc-la strong {
+  font-size: 17px;
+  font-weight: 720;
+  letter-spacing: -0.02em;
+}
+.sig-wnc-la p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.sig-wnc-la-no {
+  border-left: 4px solid var(--alert);
+}
+.sig-wnc-la-ok {
+  border-left: 4px solid var(--acid-ink);
+}
+.sig-wnc-la-mid {
+  border-left: 4px solid var(--amber);
+}
+.sig-wnc-la-res {
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.sig-wnc-la-ok.sig-wnc-la-res {
+  background: var(--acid);
+}
+.sig-wnc-la-ok.sig-wnc-la-res p {
+  color: var(--ink);
+}
+
+/* ---------- Tables ---------- */
+.sig-wnc-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--ink);
+  background: var(--white);
+}
+.sig-wnc-table-wrap table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+}
+.sig-wnc-table-wrap th,
+.sig-wnc-table-wrap td {
+  padding: 16px 18px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  text-align: left;
+  vertical-align: top;
+}
+.sig-wnc-table-wrap tr > *:last-child {
+  border-right: 0;
+}
+.sig-wnc-table-wrap tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.sig-wnc-table-wrap thead th {
+  background: var(--ink);
+  color: var(--acid);
+  font: 650 9px/1.5 var(--font-mono), monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.sig-wnc-table-wrap tbody th {
+  font-size: 15px;
+  font-weight: 720;
+  line-height: 1.35;
+}
+.sig-wnc-table-wrap tbody th small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+.sig-wnc-table-wrap td {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.sig-wnc-table-wrap td .sig-wnc-mark {
+  white-space: normal;
+}
+
+/* ---------- Code panels on ink ---------- */
+.sig-wnc-code {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid rgba(255, 253, 247, 0.3);
+}
+.sig-wnc-code .sig-wnc-panel-label {
+  color: rgba(255, 253, 247, 0.72);
+}
+.sig-wnc-code pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 253, 247, 0.3);
+  background: #181c19;
+  color: var(--white);
+  font: 500 12.5px/1.6 var(--font-mono), monospace;
+  white-space: pre;
+}
+.sig-wnc-code .sig-wnc-verdict {
+  color: var(--white);
+}
+.sig-wnc-code .sig-wnc-mark-ok {
+  border-color: var(--acid);
+}
+
+/* ---------- Copy blocks ---------- */
+.sig-wnc-copy {
+  min-width: 0;
+  padding: 22px 24px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+.sig-wnc-copy-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.sig-wnc-copy h3 {
+  font-size: 20px;
+  font-weight: 760;
+  letter-spacing: -0.03em;
+}
+.sig-wnc-copy button {
+  padding: 8px 12px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  font: 720 12px/1 var(--font-sans), Onest, sans-serif;
+  cursor: pointer;
+}
+.sig-wnc-copy button:hover {
+  box-shadow: 3px 3px 0 var(--acid);
+  transform: translate(-2px, -2px);
+}
+.sig-wnc-copy button:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 2px;
+}
+.sig-wnc-copy p {
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+/* ---------- Proof ---------- */
+.sig-wnc-proof {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 26px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--white);
+  box-shadow: 8px 8px 0 var(--acid);
+}
+.sig-wnc-proof .sig-wnc-mini {
+  color: rgba(255, 253, 247, 0.72);
+}
+.sig-wnc-proof strong {
+  color: var(--acid);
+  font: 650 clamp(32px, 4vw, 56px)/1 var(--font-mono), monospace;
+  letter-spacing: -0.04em;
+}
+.sig-wnc-proof p {
+  max-width: 620px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.sig-wnc-proof .sig-wnc-text-link {
+  justify-self: start;
+}
+
+/* ---------- FAQ (plain, not an accordion) ---------- */
+.sig-wnc-faq {
+  border-top: 1px solid var(--ink);
+}
+.sig-wnc-faq > div {
+  display: grid;
+  grid-template-columns: 60px minmax(0, 1fr);
+  gap: 24px;
+  padding: 30px 18px;
+  border-bottom: 1px solid var(--ink);
+}
+.sig-wnc-faq > div > span {
+  padding-top: 8px;
+  font: 650 10px/1.4 var(--font-mono), monospace;
+  letter-spacing: 0.1em;
+}
+.sig-wnc-faq h3 {
+  font-size: clamp(19px, 2vw, 26px);
+  font-weight: 720;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+.sig-wnc-faq p {
+  max-width: 820px;
+  margin-top: 14px !important;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.68;
+}
+.sig-wnc-notsaid {
+  max-width: 900px;
+  margin-top: 40px;
+  padding: 18px 22px;
+  border-left: 4px solid var(--amber);
+  background: var(--paper);
+}
+.sig-wnc-notsaid p + p {
+  margin-top: 8px !important;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ---------- Final ---------- */
+.sig-wnc-final {
+  padding-block: clamp(100px, 12vw, 180px);
+  background: var(--acid);
+}
+.sig-wnc-final h2 {
+  max-width: 1100px;
+}
+.sig-wnc-final > p:not(.sig-wnc-tag) {
+  max-width: 760px;
+  margin-top: 34px !important;
+  font-size: 17px;
+  line-height: 1.62;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+  .sig-wnc-hero {
+    grid-template-columns: 1fr;
+  }
+  .sig-wnc-frame {
+    max-width: 720px;
+  }
+  .sig-wnc-head {
+    grid-template-columns: 1fr;
+  }
+  .sig-wnc-head > p {
+    max-width: 700px;
+  }
+  .sig-wnc-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 860px) {
+  .sig-wnc-pair {
+    grid-template-columns: 1fr;
+  }
+  .sig-wnc-lrow {
+    grid-template-columns: 1fr;
+  }
+  .sig-wnc-lhead {
+    display: none;
+  }
+  .sig-wnc-lq {
+    padding-right: 0;
+  }
+  .sig-wnc-la .sig-wnc-mini {
+    display: block;
+  }
+  .sig-wnc-retention {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 720px) {
+  .sig-wnc-page {
+    padding-top: 66px;
+  }
+  .sig-wnc-hero,
+  .sig-wnc-section,
+  .sig-wnc-final {
+    padding-inline: 20px;
+  }
+  .sig-wnc-hero {
+    gap: 56px;
+    padding-block: 24px 72px;
+  }
+  .sig-wnc-breadcrumbs {
+    margin-bottom: 34px;
+  }
+  .sig-wnc-hero h1 {
+    font-size: clamp(40px, 12vw, 60px);
+  }
+  .sig-wnc-page h2 {
+    font-size: clamp(34px, 11vw, 54px);
+  }
+  .sig-wnc-frame {
+    margin-right: 10px;
+    box-shadow: 10px 10px 0 var(--acid);
+  }
+  .sig-wnc-steps {
+    grid-template-columns: 1fr;
+  }
+  .sig-wnc-steps li {
+    min-height: 0;
+  }
+  .sig-wnc-faq > div {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sig-wnc-button,
+  .sig-wnc-copy button {
+    transition: none;
+  }
+}

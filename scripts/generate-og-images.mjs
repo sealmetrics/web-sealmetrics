@@ -550,6 +550,7 @@ for (const c of parseOpenChapters()) {
 // its own Spanish card instead of falling through to the generic image.
 const ES_ONLY_CARDS = [
   { route: "que-dicen-las-ia", eyebrow: "Gratis · sin registro · de 0 a 100", title: "La visibilidad en IA de tu marca" },
+  { route: "por-que-sin-consentimiento", eyebrow: "Lo que nos preguntan los clientes", title: "Por qué Sealmetrics puede medir sin consentimiento y los demás no" },
 ];
 for (const c of ES_ONLY_CARDS) {
   const out = path.join(outDir, `${c.route}.png`);
