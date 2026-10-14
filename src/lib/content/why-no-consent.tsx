@@ -28,11 +28,14 @@ import type { ReactNode } from "react";
  *     measurement exempt and evaluates case by case; its only example without
  *     consent is a simple page counter that captures nothing else. GDPR
  *     legitimate interest does not satisfy §25 TDDDG on its own.
- *   - Spain and the UK: NOT confirmable from the corpus. It holds the AEPD's
- *     general cookie guide but not the specific guide on audience-measurement
- *     tools it points to, and only the index of the ICO guidance. Both rows
- *     link to the specific documents and keep the site's existing analyses as
- *     their source.
+ *   - Spain and the UK: not confirmable on the first pass (the corpus held
+ *     the AEPD's general cookie guide but not its specific guide on
+ *     audience-measurement tools, and only the index of the ICO guidance).
+ *     Both documents were added to the corpus the same day and the rows were
+ *     re-checked: Spain confirmed (AEPD guide, v. January 2024) and the UK
+ *     confirmed (ICO "What are the exceptions?": sole statistical purpose,
+ *     aggregate output, clear information and a simple, free means to
+ *     object; no advertising, no tracking).
  */
 
 export const WHY_NO_CONSENT_PUBLISHED = "2026-10-13";
@@ -297,7 +300,7 @@ export const whyNoConsentEn: WhyNoConsentContent = {
       { country: "France", authority: <>CNIL · <a className={link} href={CNIL_GUIDANCE}>Solutions pour les outils de mesure d&apos;audience</a></>, status: "Exemption with conditions", statusMark: "ok", note: <>The reference document: limited purpose, no cross-site matching, bounded retention. <a className={link} href="/gdpr-analytics/france/">Our analysis for France</a>.</> },
       { country: "Italy", authority: <>Garante · <a className={link} href={GARANTE_GUIDELINES}>Linee guida cookie e altri strumenti di tracciamento</a> (10 June 2021)</>, status: "Exemption with conditions", statusMark: "ok", note: "The Garante treats analytics like technical cookies when it cannot single anyone out, the IP is masked, it measures one site only and produces aggregate statistics; a third-party provider may not combine the data with anything else." },
       { country: "Germany", authority: <>DSK · <a className={link} href={DSK_GUIDANCE}>Orientierungshilfe Telemedien</a> (20 December 2021) · §25 TDDDG</>, status: "Not settled", statusMark: "mid", note: <>The DSK declines to declare audience measurement exempt and assesses it case by case; its only example without consent is a simple page counter that captures nothing else, and GDPR legitimate interest does not satisfy §25 on its own. Our reading is that Sealmetrics fits that example, but it is not settled: review with your adviser. <a className={link} href="/gdpr-analytics/germany/">Our analysis for Germany</a>.</> },
-      { country: "United Kingdom", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a></>, status: "PECR, own criteria", statusMark: "mid", note: <>Outside the EU: the basis is PECR, not ePrivacy, and the ICO guidance has its own section on the statistical-purposes exception. <a className={link} href="/blog/uk-pecr-analytics-exemption/">The UK PECR analytics exemption, explained</a>.</> },
+      { country: "United Kingdom", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a>, &ldquo;What are the exceptions?&rdquo;</>, status: "Exemption with conditions", statusMark: "ok", note: <>Outside the EU the basis is PECR, not ePrivacy. The ICO&apos;s statistical-purposes exception applies when the sole purpose is statistics about the use of the site, the output is aggregate and identifies nobody, there is no advertising or tracking, and the visitor gets clear information and a simple, free way to object. <a className={link} href="/blog/uk-pecr-analytics-exemption/">The UK PECR analytics exemption, explained</a>.</> },
     ],
   },
 
@@ -532,7 +535,7 @@ export const whyNoConsentEs: WhyNoConsentContent = {
       { country: "Francia", authority: <>CNIL · <a className={link} href={CNIL_GUIDANCE}>Solutions pour les outils de mesure d&apos;audience</a></>, status: "Excepción con condiciones", statusMark: "ok", note: <>El documento de referencia: finalidad limitada, sin cruce entre sitios, retención acotada. <a className={link} href="/gdpr-analytics/france/">Nuestro análisis para Francia</a> (en inglés).</> },
       { country: "Italia", authority: <>Garante · <a className={link} href={GARANTE_GUIDELINES}>Linee guida cookie e altri strumenti di tracciamento</a> (10 de junio de 2021)</>, status: "Excepción con condiciones", statusMark: "ok", note: "El Garante equipara la analítica a las cookies técnicas cuando no puede identificar a nadie, la IP va enmascarada, mide un solo sitio y produce estadísticas agregadas; un proveedor tercero no puede combinar los datos con nada más." },
       { country: "Alemania", authority: <>DSK · <a className={link} href={DSK_GUIDANCE}>Orientierungshilfe Telemedien</a> (20 de diciembre de 2021) · §25 TDDDG</>, status: "No está asentado", statusMark: "mid", note: <>La DSK no declara exenta la medición de audiencia y la evalúa caso por caso; su único ejemplo sin consentimiento es un contador simple de páginas vistas que no capte nada más, y el interés legítimo del RGPD no basta por sí solo para el §25. Nuestra lectura es que Sealmetrics encaja en ese ejemplo, pero no está asentado: revísalo con tu asesor. <a className={link} href="/gdpr-analytics/germany/">Nuestro análisis para Alemania</a> (en inglés).</> },
-      { country: "Reino Unido", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a></>, status: "PECR, criterios propios", statusMark: "mid", note: <>Fuera de la UE: la base es PECR, no ePrivacy, y la guía del ICO tiene un apartado propio sobre la excepción de fines estadísticos. <a className={link} href="/blog/uk-pecr-analytics-exemption/">La excepción de analítica de PECR, explicada</a> (en inglés).</> },
+      { country: "Reino Unido", authority: <>ICO · <a className={link} href={ICO_STORAGE_GUIDANCE}>Guidance on the use of storage and access technologies</a>, «What are the exceptions?»</>, status: "Excepción con condiciones", statusMark: "ok", note: <>Fuera de la UE la base es PECR, no ePrivacy. La excepción de fines estadísticos del ICO aplica cuando el único propósito es la estadística de uso del sitio, el resultado es agregado y no identifica a nadie, no hay publicidad ni seguimiento, y el visitante recibe información clara y un medio simple y gratuito de oponerse. <a className={link} href="/blog/uk-pecr-analytics-exemption/">La excepción de analítica de PECR, explicada</a> (en inglés).</> },
     ],
   },
 
