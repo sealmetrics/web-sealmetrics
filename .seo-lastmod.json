@@ -1490,5 +1490,13 @@
   "/why-no-consent/": {
     "hash": "231c98d97849f104",
     "date": "2026-10-14"
+  },
+  "/checkout/cancel/": {
+    "hash": "74714e5cd380cc5c",
+    "date": "2026-10-20"
+  },
+  "/checkout/success/": {
+    "hash": "329f575a14522696",
+    "date": "2026-10-20"
   }
 }
