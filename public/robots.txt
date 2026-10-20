@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 Disallow: /demo/thank-you
 
 # ============================================================
@@ -32,24 +33,28 @@ Disallow: /demo/thank-you
 User-agent: Googlebot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 Disallow: /*.md$
 Disallow: /llms-full.txt
 
 User-agent: Bingbot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 Disallow: /*.md$
 Disallow: /llms-full.txt
 
 User-agent: DuckDuckBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 Disallow: /*.md$
 Disallow: /llms-full.txt
 
 User-agent: YandexBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 Disallow: /*.md$
 Disallow: /llms-full.txt
 
@@ -60,82 +65,102 @@ Disallow: /llms-full.txt
 User-agent: GPTBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: ChatGPT-User
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Claude-Web
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Perplexity-User
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Applebot-Extended
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: CCBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Bytespider
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: FacebookBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Meta-ExternalAgent
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Amazonbot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Diffbot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: DuckAssistBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: cohere-ai
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: Mistral-AI-User
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 User-agent: YouBot
 Allow: /
 Disallow: /api/
+Disallow: /checkout/
 
 # ============================================================
 # Sitemaps + LLM discoverability
