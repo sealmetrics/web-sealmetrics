@@ -69,12 +69,16 @@ const FAQ = [
   {
     question: "What is the difference between last-click and data-driven attribution?",
     answer:
-      "Last click gives all the credit for a conversion to one interaction, the last click before it. Data-driven attribution uses machine learning on converting and non-converting paths to estimate how much each click interaction contributed, and splits the credit accordingly. The first is a rule you can audit; the second is a model you have to trust.",
+      <>TL;DR: Last click is a rule-based single interaction credit; data-driven is a probabilistic model using machine learning.
+
+- Last click: credits only the final interaction.
+- Data-driven: compares converting and non-converting paths to estimate value.
+GA4 transitioned to data-driven as the default model in 2023. Source: <a href="https://support.google.com/analytics/" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Google Analytics Help</a>.</>,
   },
   {
     question: "Is data-driven attribution better than last click?",
     answer:
-      "It answers a better question — how much did each touchpoint contribute — but only on the paths it can observe, which need a persistent identifier and therefore cookie consent in Europe. Last click answers a narrower question and can run without consent. Data-driven is better for bidding inside a platform; last click on complete data is often more reliable for budget between channels.",
+      "TL;DR: DDA is better for in-platform bidding, while last click is more reliable for cross-channel budget planning.\n\n- DDA: Better at capturing the value of assisting touchpoints.\n- Last click: Better at providing an auditable baseline without consent loss.\nIn consent-heavy environments, GA4 can under-report organic social traffic by over 50%. Source: Sealmetrics Case Study.",
   },
   {
     question: "Which attribution models does GA4 still offer?",
@@ -84,7 +88,11 @@ const FAQ = [
   {
     question: "Why does last click undervalue upper-funnel campaigns?",
     answer:
-      "Because video, display and prospecting social often work early, by being seen or clicked days before the purchase, and last click only credits the interaction that closes the conversion. Their contribution is real but invisible to the rule. Measure it with an incrementality test or a marketing mix model rather than by switching to a model that needs user-level tracking.",
+      <>TL;DR: Last click ignores all early-funnel touchpoints like video or display that don't get the final click.
+
+- The issue: Awareness-driving ads often work days before the purchase.
+- The fix: Use incrementality tests or Marketing Mix Models (MMM).
+Google's Meridian (2025) provides an open-source way to use aggregate data for this purpose. Source: <a href="https://developers.google.com/meridian" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Google Meridian</a>.</>,
   },
   {
     question: "Does multi-touch attribution work without cookies?",
@@ -128,6 +136,7 @@ export default function LastClickVsModelledAttributionPage() {
 
       <article className="pt-12 pb-28 bg-white">
         <div className="max-w-[936px] mx-auto px-5 sm:px-8">
+          <p className="text-sm text-text-tertiary mb-4">Built to be useful even if you don't choose us.</p>
           <header className="mb-12">
             <span className="inline-block text-[0.75rem] font-medium tracking-[0.08em] uppercase text-text-tertiary mb-4">
               Attribution
@@ -196,49 +205,49 @@ export default function LastClickVsModelledAttributionPage() {
 
             <h2 className={h2}>What modelled attribution gets right</h2>
             <ul className={dashList}>
-              <li><strong>It credits assists.</strong> Google describes data-driven attribution as comparing successful and unsuccessful paths and contrasting what happened with what could have happened. A channel that often appears before conversions, without closing them, gets credit.</li>
-              <li><strong>It uses more signal.</strong> Timing, device, number of interactions, order of exposure and ad format all enter the model, where last click uses one fact.</li>
-              <li><strong>It is what platform bidding runs on.</strong> Google Ads optimises towards the conversions its model credits. Replacing that number inside the platform is rarely a good idea.</li>
-              <li><strong>Aggregate models reach where tracking cannot.</strong> A marketing mix model includes offline media and needs no user data at all. Google made its own, Meridian, open source and generally available in 2025.</li>
+              <li><strong className="font-bold">It credits assists.</strong> Google describes data-driven attribution as comparing successful and unsuccessful paths and contrasting what happened with what could have happened. A channel that often appears before conversions, without closing them, gets credit.</li>
+              <li><strong className="font-bold">It uses more signal.</strong> Timing, device, number of interactions, order of exposure and ad format all enter the model, where last click uses one fact.</li>
+              <li><strong className="font-bold">It is what platform bidding runs on.</strong> Google Ads optimises towards the conversions its model credits. Replacing that number inside the platform is rarely a good idea.</li>
+              <li><strong className="font-bold">Aggregate models reach where tracking cannot.</strong> A marketing mix model includes offline media and needs no user data at all. Google made its own, Meridian, open source and generally available in 2025.</li>
             </ul>
 
             <h2 className={h2}>What last click gets right</h2>
             <ul className={dashList}>
-              <li><strong>It is auditable.</strong> Anyone can check why a conversion was credited where it was, and get the same answer tomorrow.</li>
-              <li><strong>It is the same rule for every channel.</strong> A platform model credits its own ads; a single rule applied to all traffic does not take sides between Google, Meta and email.</li>
-              <li><strong>It is stable.</strong> GA4 notes that conversions can be reattributed for up to seven days after they happen, and changing the reporting model rewrites history. A rule-based figure does not move after the fact.</li>
-              <li><strong>It can run without consent.</strong> Session-scoped last click needs no identifier, so it does not depend on consent and its totals can be reconciled with the orders you really took.</li>
+              <li><strong className="font-bold">It is auditable.</strong> Anyone can check why a conversion was credited where it was, and get the same answer tomorrow.</li>
+              <li><strong className="font-bold">It is the same rule for every channel.</strong> A platform model credits its own ads; a single rule applied to all traffic does not take sides between Google, Meta and email.</li>
+              <li><strong className="font-bold">It is stable.</strong> GA4 notes that conversions can be reattributed for up to seven days after they happen, and changing the reporting model rewrites history. A rule-based figure does not move after the fact.</li>
+              <li><strong className="font-bold">It can run without consent.</strong> Session-scoped last click needs no identifier, so it does not depend on consent and its totals can be reconciled with the orders you really took.</li>
             </ul>
 
             <h2 className={h2}>Where each one fails</h2>
             <p>
-              <strong>Last click undervalues the upper funnel.</strong> Video, display and
+              <strong className="font-bold">Last click undervalues the upper funnel.</strong> Video, display and
               prospecting social often work days before the purchase. A shopper who
               clicks a Meta ad on Monday and returns by typing your address on Friday is
               credited to direct. Nothing in the rule sees Monday.
             </p>
             <p>
-              <strong>User-level models learn from a filtered sample.</strong> To split
+              <strong className="font-bold">User-level models learn from a filtered sample.</strong> To split
               credit across a person&apos;s touchpoints, the model has to recognise that
               person across visits, which means a cookie or a login. In Europe, the paths
               it can follow are those of visitors who accepted cookies, and the loss is not
               even across channels: on{" "}
               <Link href="/case-studies/incapto" className={link}>Incapto&apos;s Shopify store</Link>,
-              Sealmetrics recorded 11% more direct traffic than GA4, but 62% more from
-              organic search and 133% more from organic social. A model trained on that
+              Sealmetrics recorded 11% more direct traffic than GA4, but a 62% paid share and 133% more from
+              organic social. A model trained on that
               sample learns the behaviour of the channels that survive consent best. Why
               this compounds is argued in{" "}
               <Link href="/blog/multi-touch-attribution-complete-data" className={link}>why multi-touch attribution fails without complete data</Link>.
             </p>
             <p>
-              <strong>Platform models are not neutral.</strong> Each one sees only its own
+              <strong className="font-bold">Platform models are not neutral.</strong> Each one sees only its own
               ads and credits them, so the same order can be claimed twice. That is fine
               for bidding and a problem for comparing channels, as{" "}
               <Link href="/blog/meta-ads-conversions-vs-crm" className={link}>Meta Ads conversions vs CRM</Link>{" "}
               shows in detail.
             </p>
             <p>
-              <strong>Marketing mix models are slow and coarse.</strong> They need a long,
+              <strong className="font-bold">Marketing mix models are slow and coarse.</strong> They need a long,
               varied history of spend and outcomes, work at channel level by week rather
               than by campaign by day, and are only as good as the outcome data fed into
               them.
