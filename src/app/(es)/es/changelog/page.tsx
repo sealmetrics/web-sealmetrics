@@ -37,6 +37,11 @@ const entries = [
     date: "Octubre 2026",
     updates: [
       {
+        title: "El botón atrás y las recargas ya no cuentan como una nueva visita de campaña",
+        type: "Improved",
+        desc: "Cuando un visitante llegaba desde un enlace de campaña y luego volvía atrás o recargaba la página, algunos navegadores la reconstruían con el referrer original y la URL de entrada, con sus UTMs e identificadores de clic, y Sealmetrics contaba una segunda entrada de la misma campaña. Email y búsqueda de pago eran los canales más inflados. Desde el 28 de octubre de 2026 esas cargas se registran como navegación dentro del sitio: una página vista de la visita en curso, o Rejoined Traffic si ya había caducado. A partir de esa fecha verás menos entradas en los canales de campaña; las páginas vistas no cambian y los datos históricos no se recalculan. No hay que instalar nada: todas las instalaciones del tracker lo reciben automáticamente. Las tiendas Shopify conectadas con la app de Sealmetrics miden con el Web Pixel de Shopify, que no ve estas navegaciones, y no cambian.",
+      },
+      {
         title: "Sealmetrics ya está en el directorio de conectores de Claude",
         type: "New",
         desc: "Pregunta a Claude por tu tráfico, tus campañas y tus ingresos en lenguaje natural: Sealmetrics Analytics aparece en el directorio de conectores de Claude, disponible en claude.ai, en las apps de escritorio y móvil y en Cowork. Busca Sealmetrics, pulsa Connect e inicia sesión con tu cuenta de Sealmetrics: sin API key que copiar ni servidor que instalar. Claude ve exactamente los sitios que ve tu usuario y todas las herramientas son de solo lectura: puede consultar tus informes, nunca cambiar tu configuración. La configuración y la lista completa de herramientas están en la documentación del servidor MCP.",
