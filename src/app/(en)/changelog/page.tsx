@@ -37,6 +37,11 @@ const entries = [
     date: "October 2026",
     updates: [
       {
+        title: "Back button and reloads no longer count as a new campaign visit",
+        type: "Improved",
+        desc: "When a visitor came from a campaign link and then went back or reloaded the page, some browsers rebuilt it with the original referrer and the landing URL, UTMs and click IDs included \u2014 and Sealmetrics counted a second entrance from the same campaign. Email and paid search were the channels most inflated. From October 28, 2026 those loads are recorded as navigation inside the site: a page view of the visit in progress, or Rejoined Traffic if it has expired. Expect fewer entrances on campaign channels from that date; page views are unchanged and historical data is not recalculated. Nothing to install: every tracker installation picks it up automatically. Shopify stores connected through the Sealmetrics app track through Shopify\u2019s Web Pixel, which can\u2019t see these navigations, and are not affected.",
+      },
+      {
         title: "Sealmetrics is now in Claude's connector directory",
         type: "New",
         desc: "Ask Claude about your traffic, campaigns and revenue in plain language: Sealmetrics Analytics is listed in Claude's connector directory, available on claude.ai, the desktop and mobile apps, and Cowork. Search for Sealmetrics, click Connect and sign in with your Sealmetrics account — no API key to copy, no server to install. Claude sees exactly the sites your user can see, and every tool is read-only: it can query your reports, never change your configuration. Setup and the full list of tools are in the MCP server documentation.",
