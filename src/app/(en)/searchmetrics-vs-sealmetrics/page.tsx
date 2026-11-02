@@ -7,9 +7,9 @@ import { breadcrumbSchema, speakableWebPageSchema } from "@/lib/schema";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Searchmetrics vs Sealmetrics — Different Companies",
+  title: "Searchmetrics vs Sealmetrics: What Happened & Pricing",
   description:
-    "Searchmetrics was acquired by Conductor in 2023 and its domain now redirects there. Sealmetrics is an unrelated company: cookieless analytics for eCommerce.",
+    "Searchmetrics was acquired by Conductor in 2023; searchmetrics.com now redirects there. Sealmetrics is unrelated: cookieless eCommerce analytics.",
   openGraph: {
     title: "Searchmetrics vs Sealmetrics — Different Companies",
     description:
@@ -93,7 +93,16 @@ export default function SearchmetricsVsSealmetricsPage() {
             <p>
               On 7 February 2023, Conductor announced it had acquired the company.
               The stated plan at the time was to merge both products into a single
-              platform within about eighteen months. That consolidation has since
+              platform within about eighteen months, according to{" "}
+              <a
+                href="https://www.conductor.com/newsroom/conductor-acquires-searchmetrics/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors"
+              >
+                Conductor's acquisition announcement
+              </a>{" "}
+              (checked March 2025). That consolidation has since
               happened —{" "}
               <a
                 href="https://www.conductor.com/"
@@ -192,8 +201,9 @@ export default function SearchmetricsVsSealmetricsPage() {
             </p>
             <p>
               The consequence is coverage. A consent-dependent tool reports only
-              the share of traffic that accepted the banner; in European eCommerce
-              that is frequently a minority of real visits. Sealmetrics records
+              the share of traffic that accepted the banner; in our experience with clients,
+              between 40% and 60% of European eCommerce traffic does not accept cookies.
+              Sealmetrics records
               traffic and revenue events without depending on consent, then attributes revenue
               with{" "}
               <Link
