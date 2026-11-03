@@ -9,12 +9,12 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Data Sampling in Analytics? — Sealmetrics Glossary",
+  title: "Data Sampling in Analytics: What It Is & Why It Skews Data",
   description:
-    "Data sampling is when analytics tools analyze a subset of data and extrapolate. Learn how it affects GA4 reporting and decision accuracy.",
+    "See how data sampling in cookie-based analytics tools affects reporting — and how full-resolution tracking records every session, no estimates.",
   openGraph: {
     title: "What Is Data Sampling in Analytics?",
-    description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects GA4 reporting.",
+    description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects reporting in cookie-based analytics tools.",
     type: "article",
     url: "https://sealmetrics.com/glossary/data-sampling/",
     siteName: "Sealmetrics",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@sealmetrics",
     title: "What Is Data Sampling in Analytics?",
-    description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects GA4 reporting.",
+    description: "Data sampling analyzes a subset of data and extrapolates. Learn how it affects reporting in cookie-based analytics tools.",
     images: [ogImage("/glossary/data-sampling/")],
   },
   alternates: {
@@ -57,12 +57,12 @@ export default function DataSamplingPage() {
             </p>
           </div>
 
-          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How sampling works in GA4</h2>
+          <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">How sampling works in cookie-based analytics tools</h2>
           <p>
-            When you create exploration reports in GA4 that query large volumes of data, Google may analyze only a portion of events and use statistical methods to estimate the full result. The free version of GA4 has lower sampling thresholds than GA360, meaning sampling activates sooner for most businesses.
+            When you create exploration reports in cookie-based analytics tools that query large volumes of data, the platform may analyze only a portion of events and use statistical methods to estimate the full result. Free tiers typically have lower sampling thresholds than paid enterprise tiers, meaning sampling activates sooner for most businesses.
           </p>
           <p>
-            Google indicates when sampling is active through a shield icon in exploration reports. Standard reports use a different methodology Google calls &ldquo;blended data,&rdquo; which combines observed and modeled data.
+            Some tools indicate when sampling is active through a visual indicator in exploration reports. Standard reports often use a different methodology that combines observed and modeled data, sometimes without clearly flagging it to the user.
           </p>
 
           <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">Why it matters</h2>
@@ -82,7 +82,7 @@ export default function DataSamplingPage() {
 
         <div className="mt-10 pt-6 border-t border-warm-100">
           <p className="text-[0.85rem] text-text-tertiary">
-            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">GA4 Data Sampling: Why Your Traffic Numbers Are Wrong</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
+            Learn more: <Link href="/blog/ga4-data-sampling-problem" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Why Sampling Distorts Your Traffic Numbers</Link> &middot; <Link href="/product" className="text-text-secondary no-underline border-b border-warm-200 pb-0.5 hover:text-text-primary transition-colors">Sealmetrics Product</Link>
           </p>
         </div>
       </div>
