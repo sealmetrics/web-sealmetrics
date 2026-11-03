@@ -23,8 +23,8 @@ const DESCRIPTION =
   "Ask your analytics questions in plain language and get grounded answers — with inference that runs in the EU only, retains nothing, and trains no one's model. Here's how Seal AI works and why it's private by architecture, not by promise.";
 
 export const metadata: Metadata = {
-  title: "Seal AI: EU-Only Analytics AI That Retains Nothing",
-  description: "Seal AI runs inference only in Paris, France (Scaleway) — no US parent, zero prompt retention, no model training on your data.",
+  title: "Seal AI: EU-Only Analytics Assistant, Zero Retention",
+  description: "Seal AI runs only in Paris (Scaleway), retains no prompts, and never trains on your data — ask analytics questions in plain language.",
   openGraph: {
     title: "Meet Seal AI: Private, EU-Only Analytics AI",
     description:
