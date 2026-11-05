@@ -10,11 +10,11 @@ import { getVsData } from "@/components/sections/v3/VsData";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Google Analytics Alternatives — Sealmetrics",
-  description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
+  title: "Google Analytics Alternatives & Competitors | Sealmetrics",
+  description: "Discover top Google Analytics alternatives. Sealmetrics provides EU-hosted, enterprise-grade data without the sampling or consent loss of GA.",
   openGraph: {
-    title: "Google Analytics Alternatives — Sealmetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Google Analytics Alternatives & Competitors | Sealmetrics",
+    description: "Discover top Google Analytics alternatives. Sealmetrics provides EU-hosted, enterprise-grade data without the sampling or consent loss of GA.",
     type: "website",
     images: [ogImage("/alternatives/google-analytics/")],
     url: "https://sealmetrics.com/alternatives/google-analytics/",
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "Google Analytics Alternatives — Sealmetrics",
-    description: "Looking for a GA alternative that doesn't commoditize your data? Sealmetrics is a different category: complete, EU-hosted, enterprise-grade.",
+    title: "Google Analytics Alternatives & Competitors | Sealmetrics",
+    description: "Discover top Google Analytics alternatives. Sealmetrics provides EU-hosted, enterprise-grade data without the sampling or consent loss of GA.",
     images: [ogImage("/alternatives/google-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/alternatives/google-analytics/", languages: getAlternates("/alternatives/google-analytics") },
