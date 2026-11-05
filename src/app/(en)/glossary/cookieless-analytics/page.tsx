@@ -10,12 +10,12 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "What Is Cookieless Analytics? — Sealmetrics Glossary",
+  title: "Cookieless Analytics & Web Analytics Tools | Sealmetrics",
   description:
-    "Cookieless analytics captures visitor data without browser cookies, so measurement doesn't depend on consent. Learn how it works and why it matters.",
+    "Cookieless analytics tools for web measurement. Capture aggregate traffic and revenue data without cookies, consent, or ad blocker interference.",
   openGraph: {
-    title: "What Is Cookieless Analytics?",
-    description: "Cookieless analytics captures visitor data without cookies, so measurement doesn't depend on consent.",
+    title: "Cookieless Analytics & Web Analytics Tools | Sealmetrics",
+    description: "Cookieless analytics tools for web measurement. Capture aggregate traffic and revenue data without cookies, consent, or ad blocker interference.",
     type: "article",
     url: "https://sealmetrics.com/glossary/cookieless-analytics/",
     siteName: "Sealmetrics",
@@ -25,8 +25,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "What Is Cookieless Analytics?",
-    description: "Cookieless analytics captures visitor data without cookies, so measurement doesn't depend on consent.",
+    title: "Cookieless Analytics & Web Analytics Tools | Sealmetrics",
+    description: "Cookieless analytics tools for web measurement. Capture aggregate traffic and revenue data without cookies, consent, or ad blocker interference.",
     images: [ogImage("/glossary/cookieless-analytics/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/cookieless-analytics/", languages: getAlternates("/glossary/cookieless-analytics") },
