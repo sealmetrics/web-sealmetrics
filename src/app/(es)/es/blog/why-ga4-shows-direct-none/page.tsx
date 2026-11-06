@@ -304,6 +304,9 @@ export default function WhyGa4ShowsDirectNonePageEs() {
               refleja eso en los informes de campaña se explica en{" "}
               <Link href="/es/use-cases/revenue-attribution" className={link}>atribución de ingresos por campaña</Link>.
             </p>
+            <p>
+              Si quieres empezar a medir la calidad de tus datos, puedes consultar nuestros <Link href="/pricing/" className={link}>planes y costes</Link>.
+            </p>
           </div>
 
           <CommercialModule
