@@ -182,6 +182,14 @@ export default function ConsentModeMeasuredVsModelledPage() {
             </p>
 
             <h2 className={h2}>The four signals, and the two implementations</h2>
+            <div className="mb-6 p-4 bg-warm-white border-l-4 border-warm-200 rounded-r-[4px]">
+              <p className="text-[0.95rem] font-semibold">TL;DR: Basic mode is all-or-nothing; advanced mode enables modelling via cookieless pings.</p>
+              <ul className={dashList + " text-[0.9rem] mt-2"}>
+                <li>Basic: No signals are sent without consent.</li>
+                <li>Advanced: Sends ~5 key signals to allow for estimation.</li>
+              </ul>
+              <p className="text-[0.85rem] mt-2">Source: <a href="https://developers.google.com/tag-platform/tag-manager/consent-mode" className={link} target="_blank" rel="noopener noreferrer">Google Tag Platform</a></p>
+            </div>
             <p>
               <Link href="/glossary/consent-mode-v2" className={link}>Consent Mode</Link> carries four consent types: <code>ad_storage</code> and{" "}
               <code>analytics_storage</code> for cookies and device identifiers used for
@@ -212,6 +220,14 @@ export default function ConsentModeMeasuredVsModelledPage() {
             </div>
 
             <h2 className={h2}>What is measured</h2>
+            <div className="mb-6 p-4 bg-warm-white border-l-4 border-warm-200 rounded-r-[4px]">
+              <p className="text-[0.95rem] font-semibold">TL;DR: Advanced mode observes event metadata; basic mode observes nothing.</p>
+              <ul className={dashList + " text-[0.9rem] mt-2"}>
+                <li>Advanced mode captures signals like timestamp and referrer.</li>
+                <li>Basic mode results in 0 data points for unconsented users.</li>
+              </ul>
+              <p className="text-[0.85rem] mt-2">Source: <a href="https://support.google.com/analytics/answer/11161109" className={link} target="_blank" rel="noopener noreferrer">GA4 Help</a></p>
+            </div>
             <p>
               For visitors who accept analytics cookies, GA4 works as it always has:
               users, sessions, events, sources and conversions, observed. For visitors
@@ -277,6 +293,14 @@ export default function ConsentModeMeasuredVsModelledPage() {
             </ul>
 
             <h2 className={h2}>The alternative: measure without needing consent</h2>
+            <div className="mb-6 p-4 bg-warm-white border-l-4 border-warm-200 rounded-r-[4px]">
+              <p className="text-[0.95rem] font-semibold">TL;DR: Use a cookieless observer to capture 100% of visits without requiring consent.</p>
+              <ul className={dashList + " text-[0.9rem] mt-2"}>
+                <li>Achieve 100% visibility into all landing page sources.</li>
+                <li>Avoid the up to 45% data gap seen in basic implementations.</li>
+              </ul>
+              <p className="text-[0.85rem] mt-2">Source: <a href="/case-studies/incapto" className={link}>Sealmetrics Case Study</a></p>
+            </div>
             <p>
               The other way to close the gap is to stop depending on analytics cookies.
               Sealmetrics stores nothing on the visitor&apos;s device and reads the source
