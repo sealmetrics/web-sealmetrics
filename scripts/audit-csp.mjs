@@ -54,8 +54,10 @@ const KEEP = {
     "first-party forms proxy, supplied through NEXT_PUBLIC_FORMS_ENDPOINT with this production fallback",
   "https://pixel-pre.sealmetrics.com":
     "connect-src: t.js beacons events back to its own origin from third-party code we can't scan. Its script-src entry IS verified below — do not confuse the two",
+  "https://pixel-pre2.sealmetrics.com":
+    "connect-src: same as pixel-pre above — the second preprod tag beacons to its own origin. The site is triple-tagged (pre + pre2 + production); its script-src entry IS verified below",
   "https://t.sealmetrics.com":
-    "connect-src: same as pixel-pre above — the production tag beacons to its own /event. The site is dual-tagged (preprod + production); its script-src entry IS verified below",
+    "connect-src: same as pixel-pre above — the production tag beacons to its own /event. The site is triple-tagged (pre + pre2 + production); its script-src entry IS verified below",
 };
 
 // ---------------------------------------------------------------------------

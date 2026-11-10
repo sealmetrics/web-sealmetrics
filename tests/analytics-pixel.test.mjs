@@ -5,14 +5,17 @@
 // navigation — 1, 2, 3, 4 … hits per route change, each with a fresh token, so
 // the backend counted them as new entrances.
 //
-// Also guards the dual-tagging contract. Every t.js ends with an unconditional
-// `window.sealmetrics = <its own instance>`, so with two tags the global only
+// Also guards the triple-tagging contract. Every t.js ends with an unconditional
+// `window.sealmetrics = <its own instance>`, so with several tags the global only
 // points at whichever loaded last; the module has to capture each instance in
-// its own onload and fan every call out to both, or one account silently
+// its own onload and fan every call out to all of them, or an account silently
 // receives nothing.
 //
+// Targets are keyed by origin, not by account id: pixel-pre and pixel-pre2
+// share the `sealmetrics2` id.
+//
 // The contract: each tag is requested exactly ONCE per document, in manual mode
-// (auto=0&spa=0), and every pageview/event reaches BOTH accounts exactly once.
+// (auto=0&spa=0), and every pageview/event reaches EVERY target exactly once.
 
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
@@ -32,7 +35,7 @@ const compiled = ts.transpileModule(source, {
 // does: on execution it overwrites window.sealmetrics with itself.
 async function loadAnalytics() {
   const scripts = [];
-  const received = new Map(); // account id -> [{ kind, ... }]
+  const received = new Map(); // origin -> [{ kind, ... }]
 
   globalThis.document = {
     readyState: "complete",
@@ -47,9 +50,9 @@ async function loadAnalytics() {
 
   // Simulate each tag loading: it claims the global, then fires its onload.
   function loadTag(script) {
-    const id = new URL(script.src).searchParams.get("id");
+    const origin = new URL(script.src).origin;
     const log = [];
-    received.set(id, log);
+    received.set(origin, log);
 
     const api = (options) => log.push({ kind: "pageview", group: options?.group ?? null });
     api.micro = (event, props) => log.push({ kind: "micro", event, props });
@@ -63,9 +66,13 @@ async function loadAnalytics() {
   return { analytics, scripts, received, loadAll, loadTag };
 }
 
-const accounts = ["sealmetrics2", "sealmetricsv2"];
+const PRE = "https://pixel-pre.sealmetrics.com";
+const PRE2 = "https://pixel-pre2.sealmetrics.com";
+const PROD = "https://t.sealmetrics.com";
+const accounts = [PRE, PRE2, PROD];
+const expectedId = { [PRE]: "sealmetrics2", [PRE2]: "sealmetrics2", [PROD]: "sealmetricsv2" };
 
-test("both tags are requested once, in manual mode, however many route changes", async () => {
+test("all three tags are requested once, in manual mode, however many route changes", async () => {
   const { analytics, scripts, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
@@ -74,18 +81,19 @@ test("both tags are requested once, in manual mode, however many route changes",
   analytics.pageview("pricing");
   analytics.pageview("blog");
 
-  assert.equal(scripts.length, 2, "exactly one <script> per account, never re-injected");
+  assert.equal(scripts.length, 3, "exactly one <script> per target, never re-injected");
 
   const byId = Object.fromEntries(
     scripts.map((s) => {
       const u = new URL(s.src);
-      return [u.searchParams.get("id"), u];
+      return [u.origin, u];
     })
   );
   assert.deepEqual(Object.keys(byId).sort(), [...accounts].sort());
 
-  assert.equal(byId.sealmetrics2.origin, "https://pixel-pre.sealmetrics.com");
-  assert.equal(byId.sealmetricsv2.origin, "https://t.sealmetrics.com");
+  for (const origin of accounts) {
+    assert.equal(byId[origin].searchParams.get("id"), expectedId[origin], `${origin}: account id`);
+  }
 
   for (const id of accounts) {
     assert.equal(byId[id].pathname, "/t.js");
@@ -95,7 +103,7 @@ test("both tags are requested once, in manual mode, however many route changes",
   }
 });
 
-test("every route change sends exactly one pageview to EACH account", async () => {
+test("every route change sends exactly one pageview to EACH target", async () => {
   const { analytics, received, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
@@ -112,7 +120,7 @@ test("every route change sends exactly one pageview to EACH account", async () =
   }
 });
 
-test("micro and conv events fan out to both accounts", async () => {
+test("micro and conv events fan out to all three targets", async () => {
   const { analytics, received, loadAll } = await loadAnalytics();
 
   analytics.pageview("home");
@@ -200,29 +208,37 @@ test("hits fired before a tag finishes loading are queued per account, not dropp
   // Tags rarely finish together — drain them one at a time.
   loadTag(scripts[0]);
   assert.deepEqual(
-    received.get("sealmetrics2").map((h) => h.kind),
+    received.get(PRE).map((h) => h.kind),
     ["pageview", "micro"],
     "the first tag replays its queue in order"
   );
-  assert.equal(received.has("sealmetricsv2"), false, "the slower tag has not replayed yet");
+  assert.equal(received.has(PRE2), false, "the slower tags have not replayed yet");
+  assert.equal(received.has(PROD), false, "the slower tags have not replayed yet");
 
   loadTag(scripts[1]);
   assert.deepEqual(
-    received.get("sealmetricsv2").map((h) => h.kind),
+    received.get(PRE2).map((h) => h.kind),
     ["pageview", "micro"],
     "the second tag replays the same queue, independently"
+  );
+
+  loadTag(scripts[2]);
+  assert.deepEqual(
+    received.get(PROD).map((h) => h.kind),
+    ["pageview", "micro"],
+    "the third tag replays the same queue, independently"
   );
 });
 
 test("a tag that fails mid-execution never gets another account's instance adopted twice", async () => {
   const { analytics, scripts, received, loadTag } = await loadAnalytics();
 
-  analytics.pageview("home");     // injects both tags, queues the pageview
+  analytics.pageview("home");     // injects all tags, queues the pageview
   loadTag(scripts[0]);            // first tag loads normally, replays the queue
   scripts[1].onload?.();          // second 404s: onload fires, global still tag 1
 
   assert.deepEqual(
-    received.get("sealmetrics2").map((h) => h.group),
+    received.get(PRE).map((h) => h.group),
     ["home"],
     "the healthy account must be hit once, not twice"
   );

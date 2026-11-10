@@ -1,8 +1,8 @@
 // Sealmetrics — cookieless, consentless analytics. Replaces Google Tag Manager.
 //
-// The site is DUAL-TAGGED: every pageview and event is sent to both the preprod
-// account (`pixel-pre`, kept as-is) and the production one (`t.sealmetrics.com`).
-// Both trackers are loaded ONCE per document in fully manual mode
+// The site is TRIPLE-TAGGED: every pageview and event is sent to the preprod
+// account (`pixel-pre`, kept as-is), the second preprod host (`pixel-pre2`) and
+// the production one (`t.sealmetrics.com`). All trackers are loaded ONCE per document in fully manual mode
 // (`auto=0&spa=0`) and every hit is fired by us — see `dispatch()` below.
 //
 // Do NOT go back to re-injecting a script per route change. Removing the
@@ -24,11 +24,16 @@
 // resolves them from source to lint the drafted CSP. Inlining them into the
 // array below would make the origins invisible to that gate.
 const PIXEL_HOST_PRE = "https://pixel-pre.sealmetrics.com";
+const PIXEL_HOST_PRE2 = "https://pixel-pre2.sealmetrics.com";
 const PIXEL_HOST_PROD = "https://t.sealmetrics.com";
 
 // Preprod — the original tag for the marketing site (by design, not a bug).
 export const SEALMETRICS_ID =
   process.env.NEXT_PUBLIC_SEALMETRICS_ID ?? "sealmetrics2";
+
+// Second preprod host. Same account id as `pixel-pre` unless overridden.
+export const SEALMETRICS_ID_PRE2 =
+  process.env.NEXT_PUBLIC_SEALMETRICS_ID_PRE2 ?? "sealmetrics2";
 
 // Production.
 export const SEALMETRICS_ID_PROD =
@@ -43,6 +48,7 @@ export interface PixelTarget {
 
 export const SEALMETRICS_PIXELS: readonly PixelTarget[] = [
   { label: "pre", host: PIXEL_HOST_PRE, id: SEALMETRICS_ID },
+  { label: "pre2", host: PIXEL_HOST_PRE2, id: SEALMETRICS_ID_PRE2 },
   { label: "prod", host: PIXEL_HOST_PROD, id: SEALMETRICS_ID_PROD },
 ];
 
@@ -66,8 +72,8 @@ declare global {
 // Pixel loading + fan-out.
 //
 // Each t.js ends with `window.sealmetrics = <its own instance>`, unconditionally
-// — so with two tags loaded the global only ever points at whichever finished
-// last, and the other account would receive nothing (with auto=0&spa=0 it fires
+// — so with several tags loaded the global only ever points at whichever finished
+// last, and the other accounts would receive nothing (with auto=0&spa=0 it fires
 // nothing on its own). We therefore capture each instance inside its OWN
 // `onload`, the one moment it is guaranteed to be the global, and every call is
 // fanned out to all captured instances. Calls made before a tracker is ready are
@@ -119,8 +125,8 @@ function newScript(index: number): HTMLScriptElement {
 // Each tag is injected explicitly rather than in a loop over SEALMETRICS_PIXELS:
 // `scripts/audit-csp.mjs` reads the literal right-hand side of `.src =` to lint
 // the drafted CSP, and `${target.host}` inside a loop resolves to nothing — it
-// would blind the gate to BOTH origins, including the one it already covers.
-// Adding a third account means adding another three lines here, on purpose.
+// would blind the gate to EVERY origin, including the ones it already covers.
+// Adding another account means adding another three lines here, on purpose.
 function loadPixels(): void {
   if (pixelsRequested) return;
   pixelsRequested = true;
@@ -129,7 +135,11 @@ function loadPixels(): void {
   pre.src = `${PIXEL_HOST_PRE}/t.js?${query(SEALMETRICS_ID)}`;
   document.head.appendChild(pre);
 
-  const prod = newScript(1);
+  const pre2 = newScript(1);
+  pre2.src = `${PIXEL_HOST_PRE2}/t.js?${query(SEALMETRICS_ID_PRE2)}`;
+  document.head.appendChild(pre2);
+
+  const prod = newScript(2);
   prod.src = `${PIXEL_HOST_PROD}/t.js?${query(SEALMETRICS_ID_PROD)}`;
   document.head.appendChild(prod);
 }
