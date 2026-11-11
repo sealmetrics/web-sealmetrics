@@ -8,12 +8,12 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "How Is Bounce Rate Calculated? — The Formula Explained",
+  title: "How Is Bounce Rate Calculated? Formula & GA4 Comparison",
   description:
-    "Bounce rate = single-page sessions ÷ total sessions in traditional analytics tools; standard market tools flip it to inverse of engagement rate (under 10s, no conversion, under 2 pageviews).",
+    "How is bounce rate calculated? Compare traditional formulas vs engagement-based metrics in GA4 and see why incomplete data can distort your results.",
   openGraph: {
-    title: "What Is Bounce Rate?",
-    description: "Bounce rate measures single-page sessions. Learn how standard market tools redefined it and why incomplete data distorts it.",
+    title: "How Is Bounce Rate Calculated? Formula & GA4 Comparison",
+    description: "How is bounce rate calculated? Compare traditional formulas vs engagement-based metrics in GA4 and see why incomplete data can distort your results.",
     type: "article",
     url: "https://sealmetrics.com/glossary/bounce-rate/",
     siteName: "Sealmetrics",
@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@sealmetrics",
-    title: "What Is Bounce Rate?",
-    description: "Bounce rate measures single-page sessions. Learn how standard market tools redefined it and why incomplete data distorts it.",
+    title: "How Is Bounce Rate Calculated? Formula & GA4 Comparison",
+    description: "How is bounce rate calculated? Compare traditional formulas vs engagement-based metrics in GA4 and see why incomplete data can distort your results.",
     images: [ogImage("/glossary/bounce-rate/")],
   },
   alternates: { canonical: "https://sealmetrics.com/glossary/bounce-rate/" },
