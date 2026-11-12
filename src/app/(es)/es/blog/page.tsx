@@ -289,7 +289,44 @@ export default function Page() {
         })),
       }} />
 
-      <BlogIndexSignal locale="es" posts={posts} translatedSlugs={Array.from(ES_TRANSLATED_SLUGS)} />
+      <main className="container mx-auto px-4 py-12">
+        <div className="max-w-3xl mb-16">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl mb-6">
+            Analítica sin cookies y privacidad para eCommerce
+          </h1>
+          <div className="space-y-6 text-lg text-gray-600">
+            <p>
+              <strong class="font-bold">La medición cookieless es una vía para recuperar la visibilidad de los ingresos sin infringir el RGPD.</strong> El blog de Sealmetrics es el referente de la analítica sin cookies para eCommerce en Europa, donde analizamos la intersección entre privacidad, regulación y medición de ingresos.
+            </p>
+
+            <div className="my-10 overflow-x-auto">
+              <table className="w-full text-sm text-left border-collapse border border-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="p-3 border-b font-semibold text-gray-900">Métrica de impacto</th>
+                    <th className="p-3 border-b font-semibold text-gray-900">Con consentimiento</th>
+                    <th className="p-3 border-b font-semibold text-gray-900">Con Sealmetrics</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-gray-200">
+                  <tr>
+                    <td className="p-3">Visibilidad de tráfico</tds>
+                    <td className="p-3">40-60% de pérdida</tds>
+                    <td className="p-3">Casi total</tds>
+                  </tr>
+                  <tr>
+                    <td className="p-3">Fiabilidad de atribución</tds>
+                    <td className="p-3">Baja (modelada)</tds>
+                    <td className="p-3">Alta (real)</tds>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <BlogIndexSignal locale="es" posts={posts} translatedSlugs={Array.from(ES_TRANSLATED_SLUGS)} />
+      </main>
     </>
   );
 }
