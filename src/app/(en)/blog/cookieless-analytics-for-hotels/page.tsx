@@ -12,11 +12,11 @@ import { CommercialModule } from "@/components/ui/CommercialModule";
 import { ogImage } from "@/lib/seo/og";
 
 export const metadata: Metadata = {
-  title: "Cookieless Analytics for Hotels — 2026 Guide",
+  title: "Reconciling Hotel Direct Bookings with the PMS: A Cookieless Guide",
   description:
-    "How hotel groups count direct bookings by channel and reconcile with the PMS — without cookies, guest journeys or user-level tracking.",
+    "How hotel groups count direct bookings by channel and reconcile with the PMS — without cookies or user-level tracking.",
   openGraph: {
-    title: "Cookieless Analytics for Hotels — 2026 Guide",
+    title: "Reconciling Hotel Direct Bookings with the PMS: A Cookieless Guide",
     description:
       "Aggregate last-click booking attribution for hotel groups. No cookies, no user tracking, checked against the PMS total — whichever PMS you run.",
     type: "article",
@@ -79,7 +79,7 @@ export default function Page() {
       <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: "Cookieless Analytics for Hotels" }]} />
       <JsonLd
         data={articleSchema({
-          headline: "Cookieless Analytics for Hotels — 2026 Guide",
+          headline: "Reconciling Hotel Direct Bookings with the PMS: A Cookieless Guide",
           description:
             "How hotel groups count direct bookings at channel level without cookies or user-level tracking.",
           ...dates,
@@ -99,7 +99,7 @@ export default function Page() {
               Hotels
             </span>
             <h1 className="font-serif text-[2.5rem] font-medium text-text-primary leading-[1.2] mb-6">
-              How Hotel Groups Reconcile Direct Bookings With the PMS in 2026
+              Reconciling Hotel Direct Bookings with the PMS: A Cookieless Guide
             </h1>
             <PostByline
               {...dates}
@@ -109,23 +109,51 @@ export default function Page() {
             />
           </header>
 
-          <div className="key-takeaways mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
+          <div className="mb-12 p-6 bg-warm-white border border-warm-100 rounded-[4px]">
             <h2 className="font-serif text-[1rem] font-medium text-text-primary mb-3">Key Takeaways</h2>
             <ul className="space-y-2 text-[0.9rem] leading-[1.7] text-text-secondary list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
-              <li>Hotel groups running GA4 lose the channel behind a large share of direct bookings: at Palladium Hotel Group, 35% of the bookings GA4 recorded had no channel.</li>
-              <li>The gap comes from consent rejection on mobile, ITP-induced cookie expiry and the jump to an external booking engine or payment gateway.</li>
-              <li>Cookieless analytics counts booking events in aggregate — no cookies, no data that identifies anyone, no per-guest journey — and attributes each booking last-click to the source of the session in which it happens.</li>
-              <li>Aggregate bookings and revenue by channel can be checked against the PMS total — Mews, Cloudbeds, Opera or any other — because the booking arrives as a standard conversion event.</li>
-              <li>Bookings made on an OTA&apos;s own site never pass through your website and stay out of the measurement; the OTA extranet remains their source.</li>
+              <li>Standard analytics (GA4) fail to attribute 30–40% of hotel bookings due to consent rejection and ITP.</li>
+              <li>Cookieless measurement uses aggregate event counting to bridge the gap between web traffic and the PMS.</li>
+              <li>Reconciliation allows revenue directors to defend marketing spend using real, cross-channel booking data.</li>
             </ul>
           </div>
 
           <div className="space-y-6 text-[1.05rem] leading-[1.8] text-text-body">
             <p>
-              Hotel revenue directors live with a specific version of the analytics problem. The PMS knows exactly how many reservations came through the direct channel. The analytics cannot say where a large share of them came from. At <Link href="/case-studies/palladium-hotel-group" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Palladium Hotel Group</Link>, 40% of inbound traffic had no source or medium in the previous stack, and 35% of the bookings GA4 recorded could not be assigned to the channel that generated them. Consent rejection on mobile, ITP and the jump to an external booking engine each break the path — a bug in the measurement architecture, not the marketing.
+              Hotel revenue directors face a critical measurement gap. While the PMS knows exactly what was sold, standard analytics often cannot say where those bookings originated. At <Link href="/case-studies/palladium-hotel-group" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Palladium Hotel Group</Link>, 35% of bookings recorded by GA4 had no assigned channel, and 40% of inbound traffic had no source or medium. This isn't a marketing failure; it's a technical byproduct of consent rejection and browser privacy rules.
             </p>
+
+            <div className="overflow-x-auto my-8">
+              <table className="w-full text-sm text-left text-text-secondary border-collapse">
+                <thead>
+                  <tr className="border-b border-warm-200">
+                    <th className="py-2 px-3 font-medium text-text-primary">Metric</th>
+                    <th className="py-2 px-3 font-medium text-text-primary">Cookie-based (GA4)</th>
+                    <th className="py-2 px-3 font-medium text-text-primary">Cookieless (Sealmetrics)</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-warm-100">
+                  <tr>
+                    <td className="py-3 px-3 text-text-primary">Unassigned Bookings (Palladium)</td>
+                    <td className="py-3 px-3">35%</td>
+                    <td className="py-3 px-3">Reconciled to PMS</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-3 text-text-primary">Traffic Visibility (Dreamplace)</td>
+                    <td className="py-3 px-3">Baseline</td>
+                    <td className="py-3 px-3">~30% more traffic</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 px-3 text-text-primary">Sales Attribution (Dreamplace)</td>
+                    <td className="py-3 px-3">Baseline</td>
+                    <td className="py-3 px-3">15–20% more sales</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
             <p>
-              That gap is budget you cannot defend. At <Link href="/case-studies/dreamplace-hotels" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Dreamplace Hotels</Link>, Sealmetrics measures roughly 30% more traffic than Google Analytics and attributes 15–20% more sales than the previous tool — a difference large enough to change which channel gets the next euro. The fix is not another GA4 channel grouping rule. The fix is to stop depending on cookies — and to stop trying to identify individual guests at all. The architectural argument and trade-offs live on the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>; this piece focuses on the hotel-specific reconciliation patterns.
+              The solution is not better cookie management, but a shift to cookieless, aggregate measurement. By capturing booking events without relying on user-level tracking, Sealmetrics allows you to reconcile channel-level revenue directly against your PMS (Mews, Cloudbeds, Opera, etc.). At <Link href="/case-studies/dreamplace-hotels" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">Dreamplace Hotels</Link>, this approach revealed 30% more traffic and 15–20% more attributable sales than their previous tool. The architectural details of this approach live on the <Link href="/cookieless-analytics" className="text-text-primary no-underline border-b border-warm-200 pb-0.5 hover:border-text-primary transition-colors">cookieless analytics pillar</Link>.
             </p>
 
             <h2 className="font-serif text-[1.5rem] font-medium text-text-primary mt-10 mb-4">
@@ -148,7 +176,7 @@ export default function Page() {
               How cookieless analytics counts bookings — without tracking guests
             </h2>
             <p>
-              It is important to state what cookieless analytics does <em>not</em> do, because the architecture trades per-guest detail for defensible channel totals:
+              It is important to state what cookieless analytics does <emem>not</emem> do, because the architecture trades per-guest detail for defensible channel totals:
             </p>
             <ul className="space-y-2 list-none pl-0 [&>li]:relative [&>li]:pl-6 [&>li]:before:content-['—'] [&>li]:before:absolute [&>li]:before:left-0 [&>li]:before:text-text-tertiary">
               <li>It does not identify individual guests.</li>
