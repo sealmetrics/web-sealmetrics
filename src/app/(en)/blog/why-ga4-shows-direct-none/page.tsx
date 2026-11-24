@@ -36,8 +36,9 @@ const DESCRIPTION =
   "(direct) / (none) in GA4 is a symptom, not a channel. The six causes, how to diagnose them in your own property, and what fixing the tag cannot recover.";
 
 export const metadata: Metadata = {
-  title: "Why GA4 Shows (direct) / (none) Traffic, and What Fixes It",
-  description: DESCRIPTION,
+  title: "What Does (direct) / (none) Mean in GA4? — 6 Causes",
+  description:
+    "(direct) / (none) means GA4 found no source. The six causes, how to diagnose each, and what a tag fix can't recover.",
   openGraph: {
     title: "Why GA4 Shows So Much (direct) / (none) Traffic",
     description:
